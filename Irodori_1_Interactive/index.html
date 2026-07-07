@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elementary 1 (A2-1) • Interactive Master Portal & Curriculum Hub</title>
+    <meta name="description" content="Central interactive learning dashboard for Irodori Elementary 1 (A2-1). Navigate all 18 standalone chapters, track your progress, and master foundational Japanese communication.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0c10;
+            --bg-secondary: #12161f;
+            --bg-card: rgba(27, 34, 48, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
+            --accent-primary: #ff4b72;
+            --accent-secondary: #38bdf8;
+            --accent-tertiary: #4ade80;
+            --gradient-primary: linear-gradient(135deg, #ff4b72 0%, #ff8f70 100%);
+            --gradient-secondary: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', 'Noto Sans JP', sans-serif; }
+        body { background-color: var(--bg-primary); color: var(--text-main); min-height: 100vh; padding-bottom: 5rem; }
+        header {
+            background: rgba(18, 22, 31, 0.9);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-area { display: flex; align-items: center; gap: 1rem; }
+        .logo-badge {
+            background: var(--gradient-primary);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(255, 75, 114, 0.3);
+        }
+        .logo-text h1 { font-size: 1.4rem; font-weight: 800; }
+        .logo-text p { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem; }
+        .header-controls { display: flex; gap: 1rem; }
+        .btn-audio-global {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-audio-global:hover { background: var(--gradient-primary); border-color: transparent; }
+        .main-container { max-width: 1280px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+        .portal-banner {
+            background: linear-gradient(135deg, rgba(27, 34, 48, 0.8), rgba(18, 22, 31, 0.95));
+            border: 1px solid rgba(255, 75, 114, 0.3);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            margin-bottom: 2.5rem;
+        }
+        .portal-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff4b72, #ff8f70, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.03em;
+        }
+        .portal-subtitle {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            max-width: 750px;
+            margin: 0 auto 1.8rem auto;
+            line-height: 1.6;
+        }
+        .stats-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.8rem;
+            border-radius: 16px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .stat-num { font-size: 1.8rem; font-weight: 800; color: #ff8f70; display: block; }
+        .stat-label { font-size: 0.85rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; }
+        .search-container { max-width: 650px; margin: 0 auto 2.5rem auto; position: relative; }
+        .search-input {
+            width: 100%;
+            padding: 1.1rem 1.5rem 1.1rem 3.2rem;
+            background: rgba(27, 34, 48, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .search-input:focus { outline: none; border-color: #ff4b72; background: rgba(27, 34, 48, 1); box-shadow: 0 15px 35px rgba(255, 75, 114, 0.25); }
+        .search-icon { position: absolute; left: 1.3rem; top: 50%; transform: translateY(-50%); font-size: 1.2rem; color: #94a3b8; pointer-events: none; }
+        .part-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0 1.5rem 0;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        .part-header h2 { font-size: 1.6rem; font-weight: 800; color: #f8fafc; margin: 0; }
+        .part-badge { background: var(--gradient-primary); color: #fff; padding: 0.4rem 1rem; border-radius: 30px; font-size: 0.85rem; font-weight: 700; }
+        .chapters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+        .chapter-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .chapter-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 75, 114, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 75, 114, 0.15);
+            background: rgba(27, 34, 48, 0.85);
+        }
+        .chapter-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+        .ch-badge {
+            background: rgba(255, 75, 114, 0.2);
+            color: #ff8f70;
+            border: 1px solid rgba(255, 75, 114, 0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .ch-check { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #94a3b8; cursor: pointer; user-select: none; }
+        .ch-check input { cursor: pointer; width: 18px; height: 18px; accent-color: #4ade80; }
+        .ch-title-jp { font-size: 1.35rem; font-weight: 800; color: #f8fafc; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 8px; }
+        .ch-title-en { font-size: 0.95rem; color: #38bdf8; font-weight: 600; margin-bottom: 0.5rem; }
+        .ch-desc { font-size: 0.88rem; color: #cbd5e1; line-height: 1.5; margin-bottom: 1.2rem; }
+        .ch-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .ch-pill { background: rgba(255, 255, 255, 0.06); color: #cbd5e1; font-size: 0.75rem; padding: 0.3rem 0.7rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .ch-actions { display: flex; gap: 0.8rem; }
+        .btn-launch {
+            flex: 1;
+            background: var(--gradient-primary);
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(255, 75, 114, 0.3);
+        }
+        .btn-launch:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(255, 75, 114, 0.5); }
+        .btn-audio { background: transparent; border: none; color: #ff8f70; cursor: pointer; font-size: 1.1rem; }
+        footer { text-align: center; padding: 3rem 1.5rem; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 A2-1 COMPLETE HUB</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 1 (A2-1) • Interactive Master Portal</h1>
+            <p>18 Standalone Interactive Chapters • Foundational Japanese • Speech Synthesis</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('いろどり初級1、全18課へようこそ！基礎から楽しく日本語を勉強しましょう！')">
+            <span>🔊</span> Welcome Speech
+        </button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="portal-banner">
+        <div class="portal-title">Master Japanese Communication from the Basics</div>
+        <div class="portal-subtitle">Welcome to the central interactive dashboard for Irodori Elementary 1 (A2-1). Explore all 18 standalone interactive study modules covering greetings, shopping, transportation, daily routines, and essential grammar.</div>
+        <div class="stats-bar">
+            <div class="stat-box"><span class="stat-num">18 / 18</span><span class="stat-label">Chapters Built</span></div>
+            <div class="stat-box"><span class="stat-num">100%</span><span class="stat-label">Curriculum Complete</span></div>
+            <div class="stat-box"><span class="stat-num">300+</span><span class="stat-label">Audio Flashcards</span></div>
+            <div class="stat-box"><span class="stat-num">A2-1</span><span class="stat-label">CEFR Fluency Level</span></div>
+            <div class="stat-box"><span class="stat-num" id="completed-count">0 / 18</span><span class="stat-label">Completed by You</span></div>
+        </div>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="chapter-search" class="search-input" placeholder="Search topics, grammar, words (e.g. greetings, shopping, train, family, hobbies)..." oninput="filterChapters()">
+    </div>
+
+    <!-- PART 1 -->
+    <div class="part-section" data-part="1">
+        <div class="part-header">
+            <h2>Part 1: Self-Intro, Housing & Daily Routines</h2>
+            <span class="part-badge">Chapters 01 – 06</span>
+        </div>
+        <div class="chapters-grid" id="grid-part-1">
+            <!-- Ch 1 -->
+            <div class="chapter-card" data-keywords="ch1 greetings hajimemashite nice to meet you name country name self introduction">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 01</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(1, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">はじめまして <button class="btn-audio" onclick="speakText('はじめまして')">🔊</button></div>
+                    <div class="ch-title-en">Nice to meet you & Greetings</div>
+                    <div class="ch-desc">Essential first meetings, introducing your name, nationality, and basic workplace greetings.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Greetings</span><span class="ch-pill">Self-Intro</span><span class="ch-pill">Nationalities</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_01.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 2 -->
+            <div class="chapter-card" data-keywords="ch2 workplace intro osewa ni narimasu will be in your care work colleagues etiquette">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 02</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(2, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">これから おせわになります <button class="btn-audio" onclick="speakText('これからおせわになります')">🔊</button></div>
+                    <div class="ch-title-en">I Will Be in Your Care</div>
+                    <div class="ch-desc">Workplace introductions, greeting colleagues, and expressing respect when joining a new company or community.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Workplace</span><span class="ch-pill">Etiquette</span><span class="ch-pill">Colleagues</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_02.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 3 -->
+            <div class="chapter-card" data-keywords="ch3 room home visit sutekina oheya desune furniture house apartment compliments">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 03</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(3, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">すてきな おへやですね <button class="btn-audio" onclick="speakText('すてきなおへやですね')">🔊</button></div>
+                    <div class="ch-title-en">What a Lovely Room</div>
+                    <div class="ch-desc">Visiting someone's home, complimenting their living space, describing furniture and room layouts.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Home Visits</span><span class="ch-pill">Furniture</span><span class="ch-pill">Compliments</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_03.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 4 -->
+            <div class="chapter-card" data-keywords="ch4 family kazoku doko ni imasu ka relationships parents children siblings living place">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 04</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(4, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">かぞくは どこに いますか <button class="btn-audio" onclick="speakText('かぞくはどこにいますか')">🔊</button></div>
+                    <div class="ch-title-en">Where is Your Family?</div>
+                    <div class="ch-desc">Talking about family members, relationships, where they live, and describing household compositions.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Family</span><span class="ch-pill">Relationships</span><span class="ch-pill">Location います</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_04.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 5 -->
+            <div class="chapter-card" data-keywords="ch5 udon food suki desu ka likes dislikes dining preferences dishes">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 05</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(5, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">おうどん、すきですか <button class="btn-audio" onclick="speakText('おうどん、すきですか')">🔊</button></div>
+                    <div class="ch-title-en">Do You Like Udon?</div>
+                    <div class="ch-desc">Expressing food preferences, favorite Japanese dishes, what you like or dislike, and dining out vocabulary.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Food & Dining</span><span class="ch-pill">Likes / Dislikes</span><span class="ch-pill">Ch 1-5 Review</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_05.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 6 -->
+            <div class="chapter-card" data-keywords="ch6 schedule itsu ga ii desu ka date time appointments when is good calendar days">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 06</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(6, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">いつが いいですか <button class="btn-audio" onclick="speakText('いつがいいですか')">🔊</button></div>
+                    <div class="ch-title-en">When is Good for You?</div>
+                    <div class="ch-desc">Setting up appointments, discussing schedules, days of the week, dates, and finding convenient times to meet.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Schedules</span><span class="ch-pill">Dates & Times</span><span class="ch-pill">Appointments</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_06.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div class="part-section" data-part="2">
+        <div class="part-header">
+            <h2>Part 2: Shopping, Outings & Transportation</h2>
+            <span class="part-badge">Chapters 07 – 12</span>
+        </div>
+        <div class="chapters-grid" id="grid-part-2">
+            <!-- Ch 7 -->
+            <div class="chapter-card" data-keywords="ch7 shopping ikura desu ka price money store buying items numbers">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 07</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(7, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">これ、いくらですか <button class="btn-audio" onclick="speakText('これ、いくらですか')">🔊</button></div>
+                    <div class="ch-title-en">How Much is This?</div>
+                    <div class="ch-desc">Shopping simulator, asking for prices, numbers, handling yen, and purchasing daily items at stores.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Shopping</span><span class="ch-pill">Prices & Money</span><span class="ch-pill">Demonstratives</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_07.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 8 -->
+            <div class="chapter-card" data-keywords="ch8 movie invitation eiga wo mi ni ikimasen ka shall we go outing friends leisure">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 08</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(8, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">映画を 見に行きませんか <button class="btn-audio" onclick="speakText('えいがをみにいきませんか')">🔊</button></div>
+                    <div class="ch-title-en">Shall We Go See a Movie?</div>
+                    <div class="ch-desc">Inviting friends out, accepting or declining invitations politely (`～ませんか`), and discussing weekend activities.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Invitations</span><span class="ch-pill">Leisure</span><span class="ch-pill">～ませんか</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_08.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 9 -->
+            <div class="chapter-card" data-keywords="ch9 souvenirs gifts omiyage wo agemasu giving receiving presents holidays day off">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 09</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(9, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">おみやげを あげます <button class="btn-audio" onclick="speakText('おみやげをあげます')">🔊</button></div>
+                    <div class="ch-title-en">Giving Souvenirs & Gifts</div>
+                    <div class="ch-desc">The culture of giving and receiving gifts (`あげます / もらいます`), travel souvenirs, and discussing days off.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Gifts & Souvenirs</span><span class="ch-pill">あげます</span><span class="ch-pill">もらいます</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_09.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 10 -->
+            <div class="chapter-card" data-keywords="ch10 train transport densha de ikimasu transportation means transit tickets bus station">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 10</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(10, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">電車で 行きます <button class="btn-audio" onclick="speakText('でんしゃでいきます')">🔊</button></div>
+                    <div class="ch-title-en">Going by Train & Transit</div>
+                    <div class="ch-desc">Navigating public transport, traveling by train, bus, or subway, and using transportation particle `で`.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Transportation</span><span class="ch-pill">Train & Bus</span><span class="ch-pill">Particle で</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_10.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 11 -->
+            <div class="chapter-card" data-keywords="ch11 duration time dono gurai kakarimasu ka how long hours minutes distance travel time">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 11</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(11, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">どのぐらい かかりますか <button class="btn-audio" onclick="speakText('どのぐらいかかりますか')">🔊</button></div>
+                    <div class="ch-title-en">How Long Does It Take?</div>
+                    <div class="ch-desc">Asking and explaining travel duration (`かかります`), counting hours/minutes, and calculating distances.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Duration</span><span class="ch-pill">Time Counting</span><span class="ch-pill">Travel Distance</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_11.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 12 -->
+            <div class="chapter-card" data-keywords="ch12 descriptions town donna tokoro desu ka adjectives lively quiet beautiful famous">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 12</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(12, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">どんな ところですか <button class="btn-audio" onclick="speakText('どんなところですか')">🔊</button></div>
+                    <div class="ch-title-en">What Kind of Place is It?</div>
+                    <div class="ch-desc">Describing towns and places using Na-adjectives and I-adjectives (`にぎやか、しずか、きれい、ゆうめい`).</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Descriptions</span><span class="ch-pill">Adjectives</span><span class="ch-pill">Places & Towns</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_12.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div class="part-section" data-part="3">
+        <div class="part-header">
+            <h2>Part 3: Hobbies, Health, Dining & Finale</h2>
+            <span class="part-badge">Chapters 13 – 18</span>
+        </div>
+        <div class="chapters-grid" id="grid-part-3">
+            <!-- Ch 13 -->
+            <div class="chapter-card" data-keywords="ch13 permissions photos shashin wo tottemo ii desu ka may i take photo te form permission rules">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 13</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(13, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">写真を 撮っても いいですか <button class="btn-audio" onclick="speakText('しゃしんをとってもいいですか')">🔊</button></div>
+                    <div class="ch-title-en">May I Take a Photo?</div>
+                    <div class="ch-desc">Asking for permission politely (`～てもいいですか`), granting requests, and photography etiquette in public places.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Permission</span><span class="ch-pill">～てもいい</span><span class="ch-pill">Etiquette</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_13.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 14 -->
+            <div class="chapter-card" data-keywords="ch14 sports hobbies badminton ga dekimasu ka can you play potential ability skills sports">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 14</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(14, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">バドミントンが できますか <button class="btn-audio" onclick="speakText('バドミントンができますか')">🔊</button></div>
+                    <div class="ch-title-en">Can You Play Badminton?</div>
+                    <div class="ch-desc">Discussing sports, hobbies, personal skills, and expressing what you can or cannot do (`できます / できません`).</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Hobbies & Sports</span><span class="ch-pill">Skills</span><span class="ch-pill">できます</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_14.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 15 -->
+            <div class="chapter-card" data-keywords="ch15 music entertainment donna ongaku wo yoku kikimasu ka listening habits frequency often sometimes">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 15</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(15, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">どんな 音楽を よく 聞きますか <button class="btn-audio" onclick="speakText('どんなおんがくをよくききますか')">🔊</button></div>
+                    <div class="ch-title-en">What Music Do You Listen To?</div>
+                    <div class="ch-desc">Talking about music genres, movies, entertainment preferences, and frequency words (`よく、ときどき、あまり`).</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Music & Media</span><span class="ch-pill">Frequency</span><span class="ch-pill">Preferences</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_15.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 16 -->
+            <div class="chapter-card" data-keywords="ch16 health headache atama ga itain desu symptoms sickness doctor pharmacy medicine explanation ndesu">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 16</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(16, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">頭が 痛いんです <button class="btn-audio" onclick="speakText('あたまがいたいんです')">🔊</button></div>
+                    <div class="ch-title-en">I Have a Headache</div>
+                    <div class="ch-desc">Explaining physical symptoms to a doctor or pharmacist, using explanatory `～んです`, and buying medicine.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Health & Medical</span><span class="ch-pill">Symptoms</span><span class="ch-pill">Explanatory んです</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_16.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 17 -->
+            <div class="chapter-card" data-keywords="ch17 reservations dining koko wa yoyaku ga irimasu ka need booking restaurants rules manners">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 17</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(17, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">ここは 予約が いりますか <button class="btn-audio" onclick="speakText('ここはよやくがいりますか')">🔊</button></div>
+                    <div class="ch-title-en">Do We Need a Reservation Here?</div>
+                    <div class="ch-desc">Restaurant reservations, dining etiquette, asking if something is required (`～がいります`), and manners.</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Dining & Booking</span><span class="ch-pill">Manners</span><span class="ch-pill">Necessity いります</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_17.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+            <!-- Ch 18 -->
+            <div class="chapter-card" data-keywords="ch18 skill future motto jouzu ni naritai desu want to become skilled reflection course finale progress">
+                <div>
+                    <div class="chapter-top">
+                        <span class="ch-badge">Chapter 18</span>
+                        <label class="ch-check"><input type="checkbox" onchange="toggleCheck(18, this.checked)"> Completed</label>
+                    </div>
+                    <div class="ch-title-jp">もっと 上手に なりたいです <button class="btn-audio" onclick="speakText('もっとじょうずになりたいです')">🔊</button></div>
+                    <div class="ch-title-en">I Want to Become More Skilled</div>
+                    <div class="ch-desc">Course finale! Expressing future aspirations (`～たいです / ～になりたいです`), reflecting on progress, and celebrating A2-1 completion!</div>
+                    <div class="ch-pills">
+                        <span class="ch-pill">Aspirations</span><span class="ch-pill">～になりたい</span><span class="ch-pill">Course Finale 🎉</span>
+                    </div>
+                </div>
+                <div class="ch-actions">
+                    <a href="chapter_18.html" class="btn-launch">🚀 Launch Chapter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 1 (A2-1) • Master Interactive Portal • Designed for Zero-Loss Japanese Fluency & CEFR A2 Success 🎉</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function filterChapters() {
+        const query = document.getElementById('chapter-search').value.toLowerCase().trim();
+        document.querySelectorAll('.chapter-card').forEach(card => {
+            const kw = (card.dataset.keywords || '') + ' ' + card.innerText.toLowerCase();
+            if (kw.includes(query)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    function toggleCheck(chNum, isChecked) {
+        let completed = JSON.parse(localStorage.getItem('irodori1_completed') || '{}');
+        completed[chNum] = isChecked;
+        localStorage.setItem('irodori1_completed', JSON.stringify(completed));
+        updateStats();
+    }
+    function loadProgress() {
+        let completed = JSON.parse(localStorage.getItem('irodori1_completed') || '{}');
+        document.querySelectorAll('.ch-check input').forEach((cb, idx) => {
+            cb.checked = !!completed[idx + 1];
+        });
+        updateStats();
+    }
+    function updateStats() {
+        let completed = JSON.parse(localStorage.getItem('irodori1_completed') || '{}');
+        let count = Object.values(completed).filter(Boolean).length;
+        document.getElementById('completed-count').innerText = `${count} / 18`;
+    }
+    window.addEventListener('DOMContentLoaded', loadProgress);
+</script>
+</body>
+</html>

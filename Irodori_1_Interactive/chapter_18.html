@@ -1,0 +1,2245 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Ch 18: にほんでくらす (Living in Japan) - Grand Finale Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #080b11;
+            --bg-secondary: #0f1523;
+            --bg-tertiary: #1b243b;
+            --bg-card: rgba(27, 36, 59, 0.75);
+            --bg-glass: rgba(15, 21, 35, 0.88);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(244, 63, 94, 0.5);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent-primary: #f43f5e; /* Rose/Sakura Red for Finale */
+            --accent-secondary: #e11d48;
+            --accent-tertiary: #fb7185;
+            --accent-info: #38bdf8;
+            --accent-success: #34d399;
+            --accent-warning: #fbbf24;
+            --accent-purple: #a855f7;
+            --gradient-primary: linear-gradient(135deg, #f43f5e 0%, #fb7185 50%, #fbbf24 100%);
+            --gradient-secondary: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+            --gradient-tertiary: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 25px rgba(244, 63, 94, 0.3);
+            --font-main: 'Outfit', sans-serif;
+            --font-jp: 'Noto Sans JP', sans-serif;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #fff1f2;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #fecdd3;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(244, 63, 94, 0.5);
+            --text-main: #1e1b4b;
+            --text-muted: #4c1d3d;
+            --text-dim: #881337;
+            --accent-primary: #e11d48;
+            --accent-secondary: #be123c;
+            --accent-tertiary: #f43f5e;
+            --accent-info: #0284c7;
+            --accent-success: #059669;
+            --accent-warning: #d97706;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 25px rgba(225, 29, 72, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(244, 63, 94, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 40%);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-badge {
+            background: var(--gradient-primary);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-glow);
+            letter-spacing: 1px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #f43f5e, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-theme, .btn-audio-global {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme:hover, .btn-audio-global:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Welcome Banner */
+        .banner {
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .banner::after {
+            content: "日本生活";
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-family: var(--font-jp);
+            font-size: 8.5rem;
+            font-weight: 900;
+            opacity: 0.15;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .banner h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .banner p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            opacity: 0.95;
+            font-weight: 400;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .banner-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(8px);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.75rem 1.4rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Tab Content Panels */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Flashcards Grid */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .jp-text {
+            font-family: var(--font-jp);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1.3;
+        }
+
+        .btn-audio {
+            background: rgba(244, 63, 94, 0.15);
+            color: var(--accent-primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card:hover .btn-audio {
+            background: var(--accent-primary);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .romaji-text {
+            font-size: 0.95rem;
+            color: var(--accent-info);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .meaning-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 500;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        /* Interactive Tools Box */
+        .interactive-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .interactive-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .output-panel {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .output-jp {
+            font-family: var(--font-jp);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .output-meaning {
+            color: var(--accent-success);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .btn-action {
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+        }
+
+        /* Grammar Cards */
+        .grammar-card {
+            background: var(--bg-secondary);
+            border-left: 5px solid var(--accent-primary);
+            border-radius: 0 20px 20px 0;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .grammar-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grammar-formula {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-family: var(--font-jp);
+            font-size: 1.25rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            border: 1px dashed var(--border-color);
+            display: inline-block;
+        }
+
+        .particle-badge {
+            background: var(--accent-primary);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin: 0 0.3rem;
+            display: inline-block;
+        }
+
+        /* Conjugation Table Engine */
+        .conj-table-container {
+            overflow-x: auto;
+            margin-top: 1rem;
+            background: var(--bg-primary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .conj-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .conj-table th, .conj-table td {
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .conj-table th {
+            background: var(--bg-tertiary);
+            color: var(--accent-info);
+            font-weight: 700;
+        }
+
+        .conj-table tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Kanji Section Grid */
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kanji-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kanji-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .kanji-top {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .kanji-char {
+            font-family: var(--font-jp);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-primary);
+            line-height: 1;
+            background: var(--bg-tertiary);
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .kanji-info h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        .kanji-readings {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .kanji-readings span {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .kanji-example {
+            background: var(--bg-primary);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .kanji-example:hover {
+            border-color: var(--accent-success);
+        }
+
+        /* Quiz Module */
+        .quiz-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .question-box {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .option-btn {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent-primary);
+            background: rgba(244, 63, 94, 0.1);
+        }
+
+        .option-btn.correct {
+            background: rgba(52, 211, 153, 0.2);
+            border-color: var(--accent-success);
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            background: rgba(244, 63, 94, 0.2);
+            border-color: var(--accent-secondary);
+            color: #fff;
+        }
+
+        .quiz-score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 2rem;
+            color: var(--accent-success);
+            padding: 2rem;
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            border: 2px solid var(--accent-success);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Verbatim Text Reference Box */
+        .verbatim-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 2rem;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #e6edf3;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .verbatim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .badge-100 {
+            background: #238636;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            background: var(--bg-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner h2 { font-size: 1.8rem; }
+            .grid-cards, .kanji-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 1rem; }
+            .tabs-nav { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">🎉 最終課 (FINALE)</div>
+            <div class="logo-text">
+                <h1>Irodori (いろどり) Elementary 2</h1>
+                <p>Chapter 18: にほんでくらす (Living in Japan) • Course Grand Finale Hub</p>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button class="btn-audio-global" onclick="speakText('おめでとうございます！いろどりえれめすたりーいちとふたつがポおらほがや！これかもにほんごのべんきょうをつづけてください！')">
+                <span>🔊</span> Speak Celebratory Message
+            </button>
+            <button class="btn-theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> Theme
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Welcome Banner -->
+        <div class="banner">
+            <h2>にほんで くらす (Living in Japan) 🌸</h2>
+            <p>Welcome to <strong>Chapter 18 and the GRAND FINALE of our entire Irodori Course</strong>! Here you will master expressing life experiences and culture shock (<strong style="color:#fff; background:#e11d48; padding:0 6px; border-radius:4px;">カルチャーショック / ちがい</strong>), describing gradual progress (<strong style="color:#fff; background:#0284c7; padding:0 6px; border-radius:4px;">～ようになりました / ～てきました</strong>), stating personal habits (<strong style="color:#fff; background:#059669; padding:0 6px; border-radius:4px;">～ようにしています</strong>), sharing opinions (<strong style="color:#fff; background:#d97706; padding:0 6px; border-radius:4px;">～と おもいます</strong>), declaring future career plans (<strong style="color:#fff; background:#a855f7; padding:0 6px; border-radius:4px;">～つもりです / ～ために</strong>), and mastering every single grammar point and verb conjugation in Japanese!</p>
+            <div class="banner-tags">
+                <div class="tag">🎯 Goal: Practical life in Japan, culture, future plans & communication</div>
+                <div class="tag">🌸 Interactive Culture Shock & Progress Habit Builder</div>
+                <div class="tag">👑 The Grand Finale 48-Verb Conjugation & 76-Grammar Engine</div>
+                <div class="tag">⚡ 100% Verbatim Complete Course Content (Lines 4097 to 4669)</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('culture')">
+                <span>🌸</span> Life in Japan & Culture Shock (せいかつ / ぶんか)
+            </button>
+            <button class="tab-btn" onclick="switchTab('future')">
+                <span>🚀</span> Future Plan & Goal Builder (しょうらい / つもり / ために)
+            </button>
+            <button class="tab-btn" onclick="switchTab('progress')">
+                <span>📈</span> Progress & Habit Simulator (ようになりました / てきました)
+            </button>
+            <button class="tab-btn" onclick="switchTab('engine')">
+                <span>👑</span> 48-Verb Conjugator & 76-Grammar Finale Hub
+            </button>
+            <button class="tab-btn" onclick="switchTab('vocab')">
+                <span>📇</span> 70+ Clickable Audio Life & Finale Cards
+            </button>
+            <button class="tab-btn" onclick="switchTab('kanji')">
+                <span>🈹</span> Kanji Mastery (24 Ch 18 Kanjis)
+            </button>
+            <button class="tab-btn" onclick="switchTab('quiz')">
+                <span>🎮</span> 15-Question Grand Finale Comprehensive Quiz
+            </button>
+            <button class="tab-btn" onclick="switchTab('verbatim')">
+                <span>📖</span> Verbatim Original Text (100% Complete)
+            </button>
+        </div>
+
+        <!-- TAB 1: Life in Japan & Culture Shock Explorer -->
+        <div id="tab-culture" class="tab-content active">
+            <div class="interactive-box">
+                <h4>🌸 Interactive India vs. Japan Comparative Culture Guide (Lines 4339–4364)</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Explore cultural differences (<strong style="color:var(--accent-info);">ちがい</strong>), customs (<strong style="color:var(--accent-warning);">しゅうかん</strong>), and daily life surprises in Japan! Select a comparative topic to hear native Japanese and read the exact Hindi/Romaji breakdown!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Select Cultural Comparison / Observation (ぶんか の ちがい)</label>
+                        <select id="cult-comp" onchange="updateCult()">
+                            <option value="train" selected>1️⃣ Train Punctuality (でんしゃ が じかん どおり に きます - Time pe aati hai)</option>
+                            <option value="food">2️⃣ Spicy vs Mild Food (からい りょうり が すくない です - Teekha khana kam hai)</option>
+                            <option value="family">3️⃣ Living Solo vs Family (ひとりぐらし の ひと が おおい - Akele rehne wale zyada)</option>
+                            <option value="safety">4️⃣ Public Safety & Peace (にほん は あんぜん だ と おもいます - Japan safe lagta hai)</option>
+                            <option value="acclimatize">5️⃣ Gradual Adaptation (せいかつ に だんだん なれてきました - Aadat pad gayi)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Select Personal Feeling Phrase (きもち / はっぴょう)</label>
+                        <select id="cult-feel" onchange="updateCult()">
+                            <option value="glad" selected>1️⃣ Glad I Came (にほん に きて よかった です - Japan aake accha laga)</option>
+                            <option value="nostalgic">2️⃣ Homesick / Nostalgic (くに が なつかしい です - Desh ki yaad aati hai)</option>
+                            <option value="friends">3️⃣ Want Friends (にほんじん の ともだち が ほしい です - Japanese dost chahiye)</option>
+                            <option value="confident">4️⃣ Gained Confidence (すこしずつ じしん が ついてきました - Confidence aa raha hai)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="cult-jp" style="font-size:1.35rem; line-height:2;">
+                        🎌 にほん と インド は いろいろ ちがう と おもいます。<br>
+                        🚆 <span style="color:var(--accent-info);">でんしゃ が じかん どおり に きます。すごい と おもいます！</span><br>
+                        💖 <span style="color:var(--accent-primary);">にほん に きて よかった です。</span><br>
+                        🌸 これからも にほん の せいかつ を たのしみます！
+                    </div>
+                    <div class="output-meaning" id="cult-meaning" style="margin-top:1rem;">
+                        Hindi Translation: Japan aur India mein bahut fark hai aisa lagta hai. Japan mein train exact time pe aati hai. Amazing lagta hai! Japan aake accha laga. Aage bhi Japan ki zindagi ka anand lunga!
+                    </div>
+                    <button class="btn-action" onclick="speakCult()">🔊 Speak Cultural Reflection in Japanese</button>
+                </div>
+            </div>
+
+            <!-- Grammar Pt 70: ~to omoimasu -->
+            <div class="grammar-card" style="border-color:var(--accent-info);">
+                <div class="grammar-title"><span>I Think That / Mujhe Lagta Hai (Expressing Opinion)</span><span class="particle-badge" style="background:var(--accent-info);">Pt 70</span></div>
+                <div class="grammar-formula">Plain form + と おもいます (思います)</div>
+                <p style="color:var(--text-muted); font-size:1rem;" onclick="speakText('にほんはあんぜんだとおもいます。にほんごはむずかしいとおもいます。あしたあめがふるとおもいます。')">
+                    Use <strong style="color:#fff;">～と おもいます</strong> to express your general opinion, thoughts, or predictions:<br>
+                    • <strong style="color:#fff;">にほん は あんぜん だ と おもいます。</strong> (I think Japan is safe / Japan safe hai aisa lagta hai).<br>
+                    • <strong style="color:#fff;">にほんご は むずかしい と おもいます。</strong> (I think Japanese is difficult).<br>
+                    • <strong style="color:#fff;">あした あめ が ふる と おもいます。</strong> (I think it will rain tomorrow).<br>
+                    • <strong style="color:var(--accent-warning);">Asking Opinion:</strong> <strong style="color:#fff;">にほん について どう おもいますか？</strong> (What do you think about Japan?).
+                </p>
+            </div>
+        </div>
+
+        <!-- TAB 2: Future Plan & Goal Builder -->
+        <div id="tab-future" class="tab-content">
+            <div class="interactive-box">
+                <h4>🚀 Interactive Future Plan & Career Builder (Lines 4232–4315, 4435–4463)</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Declare your future ambitions (<strong style="color:var(--accent-warning);">しょうらい / ゆめ</strong>) in Japan! Combine ongoing thoughts (<strong style="color:var(--accent-info);">～とおもっています</strong>), solid intentions (<strong style="color:var(--accent-success);">～つもりです</strong>), purpose (<strong style="color:var(--accent-primary);">～ために</strong>), and role/capacity (<strong style="color:var(--accent-purple);">～として</strong>)!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Select Career / Life Ambition (しょうらい の もくひょう)</label>
+                        <select id="fut-goal" onchange="updateFut()">
+                            <option value="engineer" selected>1️⃣ Work as an Engineer (エンジニア として はたらきたい - Engineer ki tarah kaam)</option>
+                            <option value="jlpt">2️⃣ Pass JLPT N3 / N2 (JLPT の N3 に ごうかくする - JLPT pass karna)</option>
+                            <option value="stay">3️⃣ Continue Living in Japan (もう すこし にほん に いる - Aur thoda Japan mein rehna)</option>
+                            <option value="job">4️⃣ Find a New Job (あたらしい しごと を さがす - Naya kaam dhundhna)</option>
+                            <option value="company">5️⃣ Start My Own Business (じぶん の かいしゃ を つくる - Apni company banana)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Select Grammar Structure / Intention Level</label>
+                        <select id="fut-gram" onchange="updateFut()">
+                            <option value="tsumori" selected>1️⃣ Firm Plan / Irada Hai (～つもり です - Solid intention)</option>
+                            <option value="omotte">2️⃣ Thinking of Doing (～よう と おもって います - Ongoing thought)</option>
+                            <option value="tameni">3️⃣ In Order To / Purpose (～ために、がんばって います - Mehnat kar raha hoon)</option>
+                            <option value="toshite">4️⃣ As / In the Capacity Of (～として、かつやく したい - Ke roop mein perform)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="fut-jp" style="font-size:1.35rem; line-height:2;">
+                        🌟 しょうらい は にほん で <span style="color:var(--accent-purple);">エンジニア として</span> はたらきたい です。<br>
+                        🎯 そのために、JLPT の N3 に <span style="color:var(--accent-success);">ごうかく する つもり です！</span><br>
+                        💪 あきらめないで がんばります！
+                    </div>
+                    <div class="output-meaning" id="fut-meaning" style="margin-top:1rem;">
+                        Hindi Translation: Future mein Japan mein engineer ki tarah (toshite) kaam karna chahta hoon. Uske liye, JLPT N3 pass karne ka solid plan hai (tsumori desu)! Haar na maanke mehnat karunga!
+                    </div>
+                    <button class="btn-action" onclick="speakFut()">🔊 Speak Future Ambition in Japanese</button>
+                </div>
+            </div>
+
+            <!-- Grammar Comparison Grid: Pt 71, 72, 73, 76 -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-info);">
+                    <div class="grammar-title"><span>Thinking Of Doing</span><span class="particle-badge" style="background:var(--accent-info);">Pt 71</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Volitional form + とおもっています</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('らいねんくににかえろうとおもっています。しけんをうけようとおもっています。')">
+                        Ongoing thought or plan in your mind:<br>
+                        • <strong style="color:#fff;">くに に かえろう と おもって います。</strong> (I'm thinking of returning to my country next year).
+                    </p>
+                </div>
+
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-success);">
+                    <div class="grammar-title"><span>Intend To / Irada Hai</span><span class="particle-badge" style="background:var(--accent-success);">Pt 72</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Dictionary form + つもりです</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('らいねんにほんにいくつもりです。JLPTをうけるつもりです。')">
+                        Stronger, definite intention or schedule:<br>
+                        • <strong style="color:#fff;">3ねん にほん に いる つもり です。</strong> (I intend to stay in Japan for 3 years / 3 saal rehne ka irada hai).
+                    </p>
+                </div>
+
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-warning);">
+                    <div class="grammar-title"><span>In Order To / Ke Liye</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 73</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Dict form / Noun の + ために</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('にほんごをべんきょうするために、にほんにきました。かぞくのために。')">
+                        Expresses purpose or target of actions:<br>
+                        • <strong style="color:#fff;">かぞく の ために はたらいて います。</strong> (I am working FOR my family / Parivar ke liye).
+                    </p>
+                </div>
+
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-purple);">
+                    <div class="grammar-title"><span>As / Ke Roop Mein</span><span class="particle-badge" style="background:var(--accent-purple);">Pt 76</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Noun + として</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('エンジニアためにはたらいています。りゅうがくせいとしてにほんにきました。')">
+                        Expresses capacity, role, or qualification:<br>
+                        • <strong style="color:#fff;">エンジニア として はたらきたい です。</strong> (I want to work AS an engineer).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Progress & Habit Simulator -->
+        <div id="tab-progress" class="tab-content">
+            <div class="section-header">
+                <h3>📈 Progress, Habits & Gradual Change (Grammar Pt 68, 69, 74, 75)</h3>
+                <p>Master expressing how your abilities have grown and the daily routines you cultivate in Japan!</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+                <!-- Pt 68: you ni narimashita -->
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-primary);">
+                    <div class="grammar-title"><span>Became Able To / Ab _____ Ho Gaya</span><span class="particle-badge" style="background:var(--accent-primary);">Pt 68</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Potential / Dict form + ようになりました</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('にほんごがはなせるようになりした。かんじがよめるようになりした。')">
+                        Expresses a change in ability or state over time:<br>
+                        • <strong style="color:#fff;">にほんご が はなせる ようになりました。</strong> (I became able to speak Japanese!).<br>
+                        • <strong style="color:#fff;">はし で たべられる ようになりました。</strong> (I became able to eat with chopsticks!).<br>
+                        • <strong style="color:var(--accent-warning);">Negative:</strong> <strong style="color:#fff;">さびしく なくなりました。</strong> (I no longer feel lonely).
+                    </p>
+                </div>
+
+                <!-- Pt 69: you ni shiteimasu -->
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-success);">
+                    <div class="grammar-title"><span>Try To / Koshish Karta Hoon (Habit)</span><span class="particle-badge" style="background:var(--accent-success);">Pt 69</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Dict / ない form + ようにしています</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('まいにちにほんごをべんきょうするようにしています。やさいをたくさんたべるようにしています。')">
+                        Expresses a conscious effort or habitual routine:<br>
+                        • <strong style="color:#fff;">まいにち にほんご を べんきょう する ようにしています。</strong> (I try to study Japanese every day).<br>
+                        • <strong style="color:#fff;">ゴミ を ちゃんと わける ようにしています。</strong> (I try to separate trash properly).<br>
+                        • <strong style="color:var(--accent-warning);">Negative:</strong> <strong style="color:#fff;">おさけ を のまない ようにしています。</strong> (I try not to drink alcohol).
+                    </p>
+                </div>
+
+                <!-- Pt 75: te kimashita -->
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-info);">
+                    <div class="grammar-title"><span>Gradually Became / Dheere Dheere Ho Gaya</span><span class="particle-badge" style="background:var(--accent-info);">Pt 75</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">て-form + きました</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('にほんごがわかるようになってきました。にほんのせいかつになれてきました。さむくなってきました。')">
+                        Expresses a continuous gradual change leading up to the present moment:<br>
+                        • <strong style="color:#fff;">にほん の せいかつ に なれてきました。</strong> (I have gradually gotten used to life in Japan).<br>
+                        • <strong style="color:#fff;">すこしずつ じょうず に なってきました。</strong> (I have gradually gotten better at Japanese).<br>
+                        • <strong style="color:#fff;">さむく なってきました。</strong> (It has started to get cold).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pt 74: tari tari shimasu -->
+            <div class="grammar-card" style="border-color:var(--accent-tertiary);">
+                <div class="grammar-title"><span>Do Things Like A and B (Representative List)</span><span class="particle-badge" style="background:var(--accent-tertiary);">Pt 74</span></div>
+                <div class="grammar-formula">た form + り、た form + り します / しました</div>
+                <p style="color:var(--text-muted); font-size:1rem;" onclick="speakText('やすみのひはえいがをみたり、ほんをよんだりします。すしをたべたり、おんせんにはいったりしました。')">
+                    Use <strong style="color:#fff;">～たり ～たり します</strong> to list representative examples of activities (among other things):<br>
+                    • <strong style="color:#fff;">やすみ の ひ は えいが を みたり、ほん を よんだり します。</strong> (On days off, I do things like watch movies and read books).<br>
+                    • <strong style="color:#fff;">にほん で すし を たべたり、おんせん に はいったり しました。</strong> (In Japan, I did things like eat sushi and soak in hot springs!).
+                </p>
+            </div>
+        </div>
+
+        <!-- TAB 4: The Grand Finale Grammar & Verb Conjugation Engine -->
+        <div id="tab-engine" class="tab-content">
+            <div class="interactive-box" style="border-color:var(--accent-primary);">
+                <h4>👑 The Grand Finale Verb Conjugator (48 Forms of たべます - Lines 4540–4594)</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Explore the ultimate conjugation master table covering all 48 verb structures taught across Irodori Elementary 1 and Elementary 2! This is your complete JLPT N5/N4 reference!</p>
+                
+                <div class="conj-table-container">
+                    <table class="conj-table">
+                        <thead>
+                            <tr>
+                                <th>Category / Structure</th>
+                                <th>Japanese Conjugation (たべます)</th>
+                                <th>Hindi / Romaji Meaning</th>
+                                <th>Audio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Present (+) Polite</strong></td><td><strong style="color:var(--accent-primary); font-size:1.1rem;">たべます</strong> (Tabemasu)</td><td>Khata hoon / Eat</td><td><button class="btn-audio" onclick="speakText('たべます')">🔊</button></td></tr>
+                            <tr><td><strong>Present (-) Polite</strong></td><td><strong style="color:var(--accent-warning);">たべません</strong> (Tabemasen)</td><td>Nahi khata / Don't eat</td><td><button class="btn-audio" onclick="speakText('たべません')">🔊</button></td></tr>
+                            <tr><td><strong>Past (+) Polite</strong></td><td><strong style="color:var(--accent-success);">たべました</strong> (Tabemashita)</td><td>Khaya / Ate</td><td><button class="btn-audio" onclick="speakText('たべました')">🔊</button></td></tr>
+                            <tr><td><strong>Past (-) Polite</strong></td><td><strong style="color:var(--accent-tertiary);">たべませんでした</strong> (Tabemasen deshita)</td><td>Nahi khaya / Didn't eat</td><td><button class="btn-audio" onclick="speakText('たべませんでした')">🔊</button></td></tr>
+                            <tr><td><strong>Invitation (Chaliye)</strong></td><td>たべましょう (Tabemashou)</td><td>Chaliye khaate hain / Let's eat</td><td><button class="btn-audio" onclick="speakText('たべましょう')">🔊</button></td></tr>
+                            <tr><td><strong>Offer Help (Main doon?)</strong></td><td>たべましょうか (Tabemashou ka)</td><td>Main khila doon? / Shall I?</td><td><button class="btn-audio" onclick="speakText('たべましょうか')">🔊</button></td></tr>
+                            <tr><td><strong>Polite Invite (Khaayein?)</strong></td><td>たべませんか (Tabemasen ka)</td><td>Khaayein? / Won't you eat?</td><td><button class="btn-audio" onclick="speakText('たべませんか')">🔊</button></td></tr>
+                            <tr style="background:rgba(56,189,248,0.05);"><td><strong>Dictionary Form (Plain)</strong></td><td><strong style="color:var(--accent-info); font-size:1.1rem;">たべる</strong> (Taberu)</td><td>Khana (casual/plain)</td><td><button class="btn-audio" onclick="speakText('たべる')">🔊</button></td></tr>
+                            <tr style="background:rgba(56,189,248,0.05);"><td><strong>ない-form (Plain Neg)</strong></td><td><strong style="color:var(--accent-info);">たべない</strong> (Tabenai)</td><td>Nahi khana / Don't eat (plain)</td><td><button class="btn-audio" onclick="speakText('たべない')">🔊</button></td></tr>
+                            <tr style="background:rgba(56,189,248,0.05);"><td><strong>た-form (Plain Past)</strong></td><td><strong style="color:var(--accent-info);">たべた</strong> (Tabeta)</td><td>Khaya / Ate (plain)</td><td><button class="btn-audio" onclick="speakText('たべた')">🔊</button></td></tr>
+                            <tr style="background:rgba(56,189,248,0.05);"><td><strong>なかった (Plain Past Neg)</strong></td><td>たべなかった (Tabenakatta)</td><td>Nahi khaya (plain)</td><td><button class="btn-audio" onclick="speakText('たべなかった')">🔊</button></td></tr>
+                            <tr style="background:rgba(56,189,248,0.05);"><td><strong>Volitional (Casual Let's)</strong></td><td>たべよう (Tabeyou)</td><td>Khaate hain! (casual let's)</td><td><button class="btn-audio" onclick="speakText('たべよう')">🔊</button></td></tr>
+                            <tr><td><strong>て-form Please</strong></td><td>たべて ください (Tabete kudasai)</td><td>Khaiye please / Please eat</td><td><button class="btn-audio" onclick="speakText('たべてください')">🔊</button></td></tr>
+                            <tr><td><strong>てもいいですか (Permit)</strong></td><td>たべて も いいですか</td><td>Kha sakta hoon? / May I eat?</td><td><button class="btn-audio" onclick="speakText('たべてもいいですか')">🔊</button></td></tr>
+                            <tr><td><strong>てはいけません (Prohibit)</strong></td><td>たべて は いけません</td><td>Khana mana hai / Must not eat</td><td><button class="btn-audio" onclick="speakText('たべてはいけません')">🔊</button></td></tr>
+                            <tr><td><strong>て います (Ongoing)</strong></td><td>たべて います (Tabete imasu)</td><td>Kha raha hoon / Am eating</td><td><button class="btn-audio" onclick="speakText('たべています')">🔊</button></td></tr>
+                            <tr><td><strong>て みます (Try doing)</strong></td><td>たべて みます (Tabete mimasu)</td><td>Khake dekhta hoon / Try eating</td><td><button class="btn-audio" onclick="speakText('たべてみます')">🔊</button></td></tr>
+                            <tr><td><strong>て しまいました (Regret)</strong></td><td>たべて しまいました</td><td>Kha diya (accident/regret)</td><td><button class="btn-audio" onclick="speakText('たべてしまいました')">🔊</button></td></tr>
+                            <tr><td><strong>て あげます (Give favor)</strong></td><td>たべて あげます</td><td>Uske liye khilata hoon</td><td><button class="btn-audio" onclick="speakText('たべてあげます')">🔊</button></td></tr>
+                            <tr><td><strong>て もらいます (Receive favor)</strong></td><td>たべて もらいます</td><td>Mere liye khilaya (received)</td><td><button class="btn-audio" onclick="speakText('たべてもらいます')">🔊</button></td></tr>
+                            <tr><td><strong>て くれます (Give to me)</strong></td><td>たべて くれます</td><td>Mere liye khilata hai (gave to me)</td><td><button class="btn-audio" onclick="speakText('たべてくれます')">🔊</button></td></tr>
+                            <tr><td><strong>て くれませんか (Request)</strong></td><td>たべて くれませんか</td><td>Khila denge? / Can you do for me?</td><td><button class="btn-audio" onclick="speakText('たべてくれませんか')">🔊</button></td></tr>
+                            <tr><td><strong>て きました (Gradual change)</strong></td><td>たべて きました (Tabete kimashita)</td><td>Khaata aaya / Gradually became</td><td><button class="btn-audio" onclick="speakText('たべてきました')">🔊</button></td></tr>
+                            <tr style="background:rgba(251,191,36,0.05);"><td><strong>たいです (Desire)</strong></td><td>たべたい です (Tabetai desu)</td><td>Khana chahta hoon / Want to eat</td><td><button class="btn-audio" onclick="speakText('たべたいです')">🔊</button></td></tr>
+                            <tr style="background:rgba(251,191,36,0.05);"><td><strong>た ことがあります (Experience)</strong></td><td>たべた ことが あります</td><td>Khaya hai (experience)</td><td><button class="btn-audio" onclick="speakText('たべたことがあります')">🔊</button></td></tr>
+                            <tr style="background:rgba(251,191,36,0.05);"><td><strong>たら (Condition If/When)</strong></td><td>たべたら (Tabetara)</td><td>Khaye toh / If you eat</td><td><button class="btn-audio" onclick="speakText('たべたら')">🔊</button></td></tr>
+                            <tr style="background:rgba(251,191,36,0.05);"><td><strong>たり (Representative list)</strong></td><td>たべたり、のんだり します</td><td>Khaana wagairah / Eat and drink</td><td><button class="btn-audio" onclick="speakText('たべたり')">🔊</button></td></tr>
+                            <tr style="background:rgba(251,191,36,0.05);"><td><strong>た ほうが いいです (Advice)</strong></td><td>たべた ほうが いいです</td><td>Khaana accha hai / Had better eat</td><td><button class="btn-audio" onclick="speakText('たべたほうがいいです')">🔊</button></td></tr>
+                            <tr style="background:rgba(251,191,36,0.05);"><td><strong>ないで ください (Neg Request)</strong></td><td>たべないで ください</td><td>Mat khaiye / Please don't eat</td><td><button class="btn-audio" onclick="speakText('たべないでください')">🔊</button></td></tr>
+                            <tr style="background:rgba(251,191,36,0.05);"><td><strong>ない ほうが いいです (Neg Advice)</strong></td><td>たべない ほうが いいです</td><td>Na khaana accha hai / Better not eat</td><td><button class="btn-audio" onclick="speakText('たべないほうがいいです')">🔊</button></td></tr>
+                            <tr style="background:rgba(251,191,36,0.05);"><td><strong>なければ なりません (Must)</strong></td><td>たべなければ なりません</td><td>Khaana zaruri hai / Must eat</td><td><button class="btn-audio" onclick="speakText('たべなければなりません')">🔊</button></td></tr>
+                            <tr style="background:rgba(251,191,36,0.05);"><td><strong>なくても いいです (Don't have to)</strong></td><td>たべなくても いいです</td><td>Khaana zaruri nahi / Need not eat</td><td><button class="btn-audio" onclick="speakText('たべなくてもいいです')">🔊</button></td></tr>
+                            <tr style="background:rgba(251,191,36,0.05);"><td><strong>こと が できます (Ability)</strong></td><td>たべる こと が できます</td><td>Kha sakta hoon / Can eat</td><td><button class="btn-audio" onclick="speakText('たべることができます')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>よう に なりました (Became able)</strong></td><td>たべられる よう に なりました</td><td>Khane laga / Became able to eat</td><td><button class="btn-audio" onclick="speakText('たべられるようになりました')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>よう に しています (Try to habit)</strong></td><td>たべる よう に しています</td><td>Khaane ki koshish karta hoon</td><td><button class="btn-audio" onclick="speakText('たべるようにしています')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>つもり です (Intention)</strong></td><td>たべる つもり です</td><td>Khaane ka plan hai / Intend to eat</td><td><button class="btn-audio" onclick="speakText('たべるつもりです')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>と おもいます (Opinion)</strong></td><td>たべる と おもいます</td><td>Khaega lagta hai / I think will eat</td><td><button class="btn-audio" onclick="speakText('たべるとおもいます')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>と おもって います (Plan)</strong></td><td>たべよう と おもって います</td><td>Khaane ka soch raha hoon</td><td><button class="btn-audio" onclick="speakText('たべようとおもっています')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>ため に (In order to)</strong></td><td>たべる ため に</td><td>Khaane ke liye / In order to eat</td><td><button class="btn-audio" onclick="speakText('たべるために')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>かた (Way of doing)</strong></td><td>たべかた (食べ方)</td><td>Khaane ka tareeka / Way of eating</td><td><button class="btn-audio" onclick="speakText('たべかた')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>そう です (Hearsay)</strong></td><td>たべる そう です</td><td>Khaega suna hai / I heard will eat</td><td><button class="btn-audio" onclick="speakText('たべるそうです')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>か どうか (Whether or not)</strong></td><td>たべる か どうか</td><td>Khaega ya nahi / Whether will eat</td><td><button class="btn-audio" onclick="speakText('たべるかどうか')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>とき (Time / When)</strong></td><td>たべる とき / たべた とき</td><td>Khaate waqt / When eating</td><td><button class="btn-audio" onclick="speakText('たべるとき')">🔊</button></td></tr>
+                            <tr style="background:rgba(168,85,247,0.05);"><td><strong>ん です (Explanation)</strong></td><td>たべる ん です</td><td>Actually khaata hoon / Explanation</td><td><button class="btn-audio" onclick="speakText('たべるんです')">🔊</button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Complete Particle Summary Table -->
+            <div class="section-header">
+                <h3>⚛️ Complete Japanese Particle Reference (21 Particles - Lines 4512–4537)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('わたしはにほんごができます')"><div class="card-top"><div class="jp-text">は (wa) / が (ga)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Topic vs Subject / Ability</div><div class="meaning-text">わたし**は** にほんご**が** できます (Topic marker & Ability marker) 🎯</div></div>
+                <div class="card" onclick="speakText('こーひーをえきでにほんへ')"><div class="card-top"><div class="jp-text">を (wo) / に (ni) / へ (e) / で (de)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Object / Destination / Means</div><div class="meaning-text">コーヒー**を** のむ / えき**に** / にほん**へ** / でんしゃ**で** 🚆☕</div></div>
+                <div class="card" onclick="speakText('いんどからごじまで')"><div class="card-top"><div class="jp-text">から (kara) / まで (made) / の (no)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">From / Until / Possessive</div><div class="meaning-text">インド**から** 5じ**まで** わたし**の** ほん (Time span & possession) ⏰</div></div>
+                <div class="card" onclick="speakText('ともだちとわたしもか')"><div class="card-top"><div class="jp-text">と (to) / も (mo) / か (ka)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">With & And / Also / Question</div><div class="meaning-text">ともだち**と** / わたし**も** / です**か** / コーヒー**か**こうちゃ 🤝❓</div></div>
+                <div class="card" onclick="speakText('いねとおいしいよ')"><div class="card-top"><div class="jp-text">ね (ne) / よ (yo) / や (ya)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Confirm / Emphasis / List</div><div class="meaning-text">いいです**ね** / おいしい**よ** / にく**や**さかな (Particles of tone & listing) ✨</div></div>
+                <div class="card" onclick="speakText('おいしいしきたいけどべきょうしたのに')"><div class="card-top"><div class="jp-text">し (shi) / けど (kedo) / のに (noni)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Reasons / But / Even though</div><div class="meaning-text">おいしい**し** / いきたい**けど** / べんきょうした**のに** (Compound connectors) 🔗</div></div>
+                <div class="card" onclick="speakText('にほんごのためににほんについてえんじにあとして')"><div class="card-top"><div class="jp-text">ために / について / として</div><button class="btn-audio">🔊</button></div><div class="romaji-text">For / About / As (Capacity)</div><div class="meaning-text">にほんご**のために** / にほん**について** / エンジニア**として** 🎓💼</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 5: 70+ Clickable Audio Finale & Life Cards -->
+        <div id="tab-vocab" class="tab-content">
+            <div class="section-header">
+                <h3>🌸 Living in Japan Vocabulary (18 Words - Lines 4103–4125)</h3>
+                <p>Click any card to speak!</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('せいかつとくらします')"><div class="card-top"><div class="jp-text">生活 (せいかつ) / 暮らします</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Seikatsu / Kurashimasu</div><div class="meaning-text">Zindagi/Life/Living & To live/rehna 🏡</div></div>
+                <div class="card" onclick="speakText('すみますとなれます')"><div class="card-top"><div class="jp-text">住みます / 慣れます (なれます)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sumimasu / Naremasu</div><div class="meaning-text">To reside/rehna & Aadat padna/Get used to 🌸</div></div>
+                <div class="card" onclick="speakText('たいなんとんたん')"><div class="card-top"><div class="jp-text">大変 (たいへん) / 簡単 (かんたん)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Taihen / Kantan</div><div class="meaning-text">Mushkil/Tough & Aasaan/Easy/Simple ⚖️</div></div>
+                <div class="card" onclick="speakText('ふあんとあんしん')"><div class="card-top"><div class="jp-text">不安 (ふあん) / 安心 (あんしん)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Fuan / Anshin</div><div class="meaning-text">Chinta/Anxiety & Sukoon/Relief/Peace of mind 😌</div></div>
+                <div class="card" onclick="speakText('さびしいとうれしい')"><div class="card-top"><div class="jp-text">寂しい (さびしい) / 嬉しい (うれしい)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sabishii / Ureshii</div><div class="meaning-text">Akela/Lonely & Khush/Happy/Delighted 😊</div></div>
+                <div class="card" onclick="speakText('かなしいとはずかしい')"><div class="card-top"><div class="jp-text">悲しい (かなしい) / 恥ずかしい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kanashii / Hazukashii</div><div class="meaning-text">Dukhi/Sad & Sharminda/Embarrassed 😳</div></div>
+                <div class="card" onclick="speakText('びっくりしましたとがっかりしました')"><div class="card-top"><div class="jp-text">びっくりしました / がっかりしました</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Bikkuri shimashita / Gakkari</div><div class="meaning-text">Was surprised/Hairan ho gaya & Disappointed/Nirash 😲</div></div>
+                <div class="card" onclick="speakText('こまりましたとなきましたとわらい ました')"><div class="card-top"><div class="jp-text">困りました / 泣きました / 笑いました</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Komarimashita / Nakimashita / Waraimashita</div><div class="meaning-text">Got troubled, Cried (roya), and Laughed (hasa) 😭😆</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>🌏 Culture Shock & Differences Vocabulary (11 Words - Lines 4128–4143)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('ぶんかとしいかんとるーる')"><div class="card-top"><div class="jp-text">文化 (ぶんか) / 習慣 (しゅうかん)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Bunka / Shuukan</div><div class="meaning-text">Sanskriti/Culture & Aadat/Customs/Habit 🎌</div></div>
+                <div class="card" onclick="speakText('まなーとかるちゃーしょっく')"><div class="card-top"><div class="jp-text">マナー / カルチャーショック</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Manaa / Karuchaa shokku</div><div class="meaning-text">Manners/Etiquette & Culture shock 😲</div></div>
+                <div class="card" onclick="speakText('ちがいとにている')"><div class="card-top"><div class="jp-text">違い (ちがい) / 似ている</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Chigai / Niteiru</div><div class="meaning-text">Fark/Difference & Milta julta/Similar ⚖️</div></div>
+                <div class="card" onclick="speakText('ちがいますとおなじ')"><div class="card-top"><div class="jp-text">違います (ちがいます) / 同じ (おなじ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Chigaimasu / Onaji</div><div class="meaning-text">Alag hai/Different & Same/Ek jaisa 🟰</div></div>
+                <div class="card" onclick="speakText('ふしぎとめずらしい')"><div class="card-top"><div class="jp-text">不思議 (ふしぎ) / 珍しい (めずらしい)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Fushigi / Mezurashii</div><div class="meaning-text">Ajeeb/Mysterious & Anokha/Rare/Unusual 🌟</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>🚀 Future Plans Vocabulary (14 Words - Lines 4297–4315)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('しょうらいとゆめとくひょう')"><div class="card-top"><div class="jp-text">将来 (しょうらい) / 夢 (ゆめ) / 目標</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shourai / Yume / Mokuhyou</div><div class="meaning-text">Future/Bhavishya, Dream/Sapna & Goal/Lakshya 🎯</div></div>
+                <div class="card" onclick="speakText('けいかくときぼうとがんばります')"><div class="card-top"><div class="jp-text">計画 (けいかく) / 希望 / 頑張ります</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Keikaku / Kibou / Ganbarimasu</div><div class="meaning-text">Plan/Yojana, Hope/Ummeed & Try hard/Mehnat karna 💪</div></div>
+                <div class="card" onclick="speakText('つづけますとあきらめません')"><div class="card-top"><div class="jp-text">続けます / 諦めません (あきらめません)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tsudukemasu / Akiramemasen</div><div class="meaning-text">Continue/Jaari rakhna & Won't give up/Haar nahi manunga 🔥</div></div>
+                <div class="card" onclick="speakText('ちょうせんとしちょう')"><div class="card-top"><div class="jp-text">挑戦 (ちょうせん) / 成長 (せいちょう)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Chousen / Seichou</div><div class="meaning-text">Challenge & Growth/Seichou shimasu 🌱</div></div>
+                <div class="card" onclick="speakText('ごうかくとそつぎょうとしゅうしょくとけっこん')"><div class="card-top"><div class="jp-text">合格 / 卒業 / 就職 / 結婚</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Goukaku / Sotsugyou / Shuushoku / Kekkon</div><div class="meaning-text">Pass exam, Graduate, Employment & Marriage 🎓💍</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Kanji Mastery -->
+        <div id="tab-kanji" class="tab-content">
+            <div class="section-header">
+                <h3>🈹 Chapter 18 Kanji Mastery (漢字 - 24 Finale & Life Kanjis)</h3>
+                <p>Master 24 vital Kanjis for daily life in Japan, cultural comparisons, habit building, and future aspirations!</p>
+            </div>
+
+            <div class="kanji-grid">
+                <!-- Kanji 1: 生 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">生</div><div class="kanji-info"><h5>Life / Birth (I.kiru/Sei/Shou)</h5><div class="kanji-readings">Kun: <span>い・きする / う・まれする</span><br>On: <span>セイ / ショウ</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('せいかつとするがくせい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">生活 (せいかつ) / 留学生 (りゅうがくせい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Seikatsu (Life/Living) / Ryuugakusei (International student)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 2: 活 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">活</div><div class="kanji-info"><h5>Lively / Activity (Katsu)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>カツ (katsu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('せいかつとかつどう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">生活 (せいかつ) / 活動 (かつどう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Seikatsu (Daily life) / Katsudou (Activity/Action)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 3: 暮 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">暮</div><div class="kanji-info"><h5>Livelihood / Evening (Kura.su/Bo)</h5><div class="kanji-readings">Kun: <span>くら・す / くれ</span><br>On: <span>ボ (bo)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('くらしますとひとりぐらし')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">暮らします (くらします) / 一人暮らし</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kurashimasu (To live) / Hitorigurashi (Living alone)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 4: 住 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">住</div><div class="kanji-info"><h5>Dwell / Reside (Su.mu/Juu)</h5><div class="kanji-readings">Kun: <span>す・む (sumu)</span><br>On: <span>ジュウ (juu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('すみますとじゅうしょ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">住みます (すみます) / 住所 (じゅうしょ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Sumimasu (To reside) / Juusho (Address)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 5: 慣 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">慣</div><div class="kanji-info"><h5>Accustomed / Custom (Na.reru/Kan)</h5><div class="kanji-readings">Kun: <span>な・れる (nareru)</span><br>On: <span>カン (kan)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('なれますとしてかん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">慣れます (なれます) / 習慣 (しゅうかん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Naremasu (Get used to) / Shuukan (Habit/Custom)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 6: 変 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">変</div><div class="kanji-info"><h5>Change / Strange (Ka.waru/Hen)</h5><div class="kanji-readings">Kun: <span>か・わる</span><br>On: <span>ヘン (hen)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('たいなんとへんな')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">大変 (たいへん) / 変な (へんな)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Taihen (Tough/Hard) / Hen na (Strange/Odd)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 7: 簡 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">簡</div><div class="kanji-info"><h5>Simple / Brief (Kan)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>カン (kan)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かんたんとかんけつ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">簡単 (かんたん) / 簡潔 (かんけつ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kantan (Easy/Simple) / Kanketsu (Brief/Concise)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 8: 単 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">単</div><div class="kanji-info"><h5>Single / Simple (Tan)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>タン (tan)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かんたんとたんご')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">簡単 (かんたん) / 単語 (たんご)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kantan (Easy) / Tango (Vocabulary word)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 9: 安 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">安</div><div class="kanji-info"><h5>Peace / Cheap (Yasu.i/An)</h5><div class="kanji-readings">Kun: <span>やす・い (yasui)</span><br>On: <span>アン (an)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('あんしんとあんぜん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">安心 (あんしん) / 安全 (あんぜん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Anshin (Relief/Peace of mind) / Anzen (Safety)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 10: 心 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">心</div><div class="kanji-info"><h5>Heart / Mind (Kokoro/Shin)</h5><div class="kanji-readings">Kun: <span>こころ (kokoro)</span><br>On: <span>シン (shin)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('あんしんとしんぱい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">安心 (あんしん) / 心配 (しんぱい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Anshin (Relief) / Shinpai (Worry/Chinta)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 11: 文 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">文</div><div class="kanji-info"><h5>Writing / Culture (Fumi/Bun/Mon)</h5><div class="kanji-readings">Kun: <span>ふみ</span><br>On: <span>ブン / モン (bun)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ぶんかとぶんぽう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">文化 (ぶんか) / 文法 (ぶんぽう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Bunka (Culture/Sanskriti) / Bunpou (Grammar)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 12: 化 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">化</div><div class="kanji-info"><h5>Change into / -ization (Ba.keru/Ka)</h5><div class="kanji-readings">Kun: <span>ば・ける</span><br>On: <span>カ / ケ (ka)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ぶんかとへんか')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">文化 (ぶんか) / 変化 (へんか)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Bunka (Culture) / Henka (Change/Transformation)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 13: 習 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">習</div><div class="kanji-info"><h5>Learn / Practice (Nara.u/Shuu)</h5><div class="kanji-readings">Kun: <span>なら・う (narau)</span><br>On: <span>シュウ (shuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('しゅうかんとれんしゅう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">習慣 (しゅうかん) / 練習 (れんしゅう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shuukan (Habit/Custom) / Renshuu (Practice)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 14: 違 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">違</div><div class="kanji-info"><h5>Differ / Wrong (Chiga.u/I)</h5><div class="kanji-readings">Kun: <span>ちが・う (chigau)</span><br>On: <span>イ (i)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ちがいとまんだい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">違い (ちがい) / まちがい</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Chigai (Difference/Fark) / Machigai (Mistake/Error)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 15: 同 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">同</div><div class="kanji-info"><h5>Same / Agree (Ona.ji/Dou)</h5><div class="kanji-readings">Kun: <span>おな・じ (onaji)</span><br>On: <span>ドウ (dou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おなじとどうじ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">同じ (おなじ) / 同時 (どうじ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Onaji (Same/Ek jaisa) / Douji (Simultaneous)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 16: 夢 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">夢</div><div class="kanji-info"><h5>Dream / Vision (Yume/Mu)</h5><div class="kanji-readings">Kun: <span>ゆめ (yume)</span><br>On: <span>ム (mu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ゆめとあくむ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">夢 (ゆめ) / 悪夢 (あくむ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Yume (Dream/Sapna) / Akumu (Nightmare)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 17: 標 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">標</div><div class="kanji-info"><h5>Signpost / Target (Shirube/Hyou)</h5><div class="kanji-readings">Kun: <span>しるべ</span><br>On: <span>ヒョウ (hyou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('もくひょうとしきひょう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">目標 (もくひょう) / 標識 (ひょうしき)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Mokuhyou (Goal/Lakshya) / Hyoushiki (Road sign)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 18: 計 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">計</div><div class="kanji-info"><h5>Plan / Measure (Haka.ru/Kei)</h5><div class="kanji-readings">Kun: <span>はか・る</span><br>On: <span>ケイ (kei)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('けいかくととけい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">計画 (けいかく) / 時計 (とけい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Keikaku (Plan/Yojana) / Tokei (Clock/Watch)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 19: 画 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">画</div><div class="kanji-info"><h5>Picture / Stroke (E/Kaku/Gaku)</h5><div class="kanji-readings">Kun: <span>え</span><br>On: <span>ガ / カク (ga/kaku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('けいかくとえいが')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">計画 (けいかく) / 映画 (えいが)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Keikaku (Plan) / Eiga (Movie/Cinema)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 20: 希 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">希</div><div class="kanji-info"><h5>Hope / Rare (Ki)</h5><div class="kanji-readings">Kun: <span>こいねが・う</span><br>On: <span>キ (ki)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きぼうときのい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">希望 (きぼう) / 希少 (きしょう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kibou (Hope/Ummeed) / Kishou (Rare/Scarce)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 21: 望 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">望</div><div class="kanji-info"><h5>Wish / Hope (Nozo.mu/Bou/Mou)</h5><div class="kanji-readings">Kun: <span>のぞ・む (nozomu)</span><br>On: <span>ボウ / モウ (bou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きぼうとのぞみ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">希望 (きぼう) / 望み (のぞmi)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kibou (Hope/Asha) / Nozomi (Wish/Ambition)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 22: 続 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">続</div><div class="kanji-info"><h5>Continue / Follow (Tsudu.ku/Zoku)</h5><div class="kanji-readings">Kun: <span>つづ・く / つづ・ける</span><br>On: <span>ゾク (zoku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('つづけますとれんぞく')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">続けます (つづけます) / 連続</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Tsudukemasu (To continue) / Renzoku (Consecutive/Series)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 23: 達 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">達</div><div class="kanji-info"><h5>Attain / Plural (Tachi/Tatsu)</h5><div class="kanji-readings">Kun: <span>たち (tachi)</span><br>On: <span>タツ (tatsu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ともだちとじょうたつ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">友達 (ともだち) / 上達 (じょうたつ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Tomodachi (Friends) / Joutatsu (Improvement/Mastery)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 24: 終 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char" style="color:var(--accent-warning);">終</div><div class="kanji-info"><h5>End / Finish (O.waru/Shuu)</h5><div class="kanji-readings">Kun: <span>お・わる (owaru)</span><br>On: <span>シュウ (shuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おわりとさいしゅうか')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">終わり (おわり) / 最終課 (さいしゅうか)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Owari (End/Finish) / Saishuuka (Final Chapter!) 🎉</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 7: 15-Question Grand Finale Comprehensive Quiz -->
+        <div id="tab-quiz" class="tab-content">
+            <div class="quiz-container">
+                <div class="section-header" style="text-align: center;">
+                    <h3>🎯 Irodori Course Grand Finale Mastery Quiz (15 Questions)</h3>
+                    <p>Celebrate your completion of Irodori Elementary 1 & 2! Test your mastery of life in Japan, future intentions, grammar patterns, verb conjugations, particles, and Kanjis!</p>
+                </div>
+
+                <div id="quiz-area">
+                    <!-- Quiz dynamically rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 8: Verbatim Original Text (100% Complete) -->
+        <div id="tab-verbatim" class="tab-content">
+            <div class="verbatim-box">
+                <div class="verbatim-header">
+                    <span style="font-weight: 700; color: #f43f5e;">📄 Original irodori.txt Content (Lines 4097 to 4669 - Course Grand Finale Complete)</span>
+                    <span class="badge-100">✔ 100% Zero Character Loss Guarantee</span>
+                </div>
+                <pre># 📘 Chapter 18: にほんで くらす (Nihon de Kurasu) - Living in Japan
+
+## 🎯 Goal: Japan mein rehne ki practical baatein, culture samajhna, future plans, overall communication
+
+---
+
+### **Living in Japan Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| せいかつ (生活) | Seikatsu | Zindagi/Life/Living |
+| くらします (暮らします) | Kurashimasu | Rehna/Live |
+| すみます (住みます) | Sumimasu | Rehna/Reside |
+| なれます (慣れます) | Naremasu | Aadat padna/Get used to |
+| なれました | Naremashita | Aadat pad gayi |
+| たいへん (大変) | Taihen | Mushkil/Tough |
+| かんたん (簡単) | Kantan | Aasaan/Easy |
+| ふあん (不安) | Fuan | Chinta/Anxiety |
+| あんしん (安心) | Anshin | Sukoon/Relief |
+| さびしい (寂しい) | Sabishii | Akela/Lonely |
+| うれしい (嬉しい) | Ureshii | Khush/Happy |
+| かなしい (悲しい) | Kanashii | Dukhi/Sad |
+| はずかしい (恥ずかしい) | Hazukashii | Sharminda/Embarrassed |
+| びっくりしました | Bikkuri shimashita | Hairan ho gaya/Surprised |
+| がっかりしました | Gakkari shimashita | Nirash ho gaya/Disappointed |
+| こまりました (困りました) | Komarimashita | Pareshan ho gaya |
+| なきました (泣きました) | Nakimashita | Roya/Cried |
+| わらいました (笑いました) | Waraimashita | Hasa/Laughed |
+
+---
+
+### **Culture Shock / Differences:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| ぶんか (文化) | Bunka | Sanskriti/Culture |
+| しゅうかん (習慣) | Shuukan | Aadat/Habit/Custom |
+| ルール | Ruuru | Rule/Niyam |
+| マナー | Manaa | Manners |
+| カルチャーショック | Karuchaa shokku | Culture shock |
+| ちがい (違い) | Chigai | Fark/Difference |
+| にている (似ている) | Niteiru | Milta julta/Similar |
+| ちがいます (違います) | Chigaimasu | Alag hai/Different |
+| おなじ (同じ) | Onaji | Same/Ek jaisa |
+| ふしぎ (不思議) | Fushigi | Ajeeb/Strange/Mysterious |
+| めずらしい (珍しい) | Mezurashii | Anokha/Rare/Unusual |
+
+---
+
+### **Grammar Point 68: ～ようになりました (Became able to / Ab _____ ho gaya)**
+
+**Dictionary form + ようになりました = Ab _____ karne laga / _____ kar paata hoon**
+
+Yeh **change/progress** batane ke liye use hota hai:
+
+**Examples:**
+- にほんご が はなせる **ようになりました**。
+  → Japanese bol paane **laga**。
+
+- かんじ が よめる **ようになりました**。
+  → Kanji padh paane **laga**。
+
+- にほん の せいかつ に なれる **ようになりました**。
+  → Japan ki zindagi ki aadat **pad gayi**。
+
+- じぶん で りょうり が つくれる **ようになりました**。
+  → Khud se khana bana paane **laga**。
+
+- はし (箸) で たべられる **ようになりました**。
+  → Chopsticks se kha paane **laga**。
+
+**Negative change:**
+- ～なくなりました = Ab _____ nahi karta / nahi hota
+
+**Examples:**
+- あまり さびしく **なくなりました**。
+  → Ab zyada akela feel nahi hota。
+
+- にほんご が わから**なくなりました** ... → Japanese samajh nahi aa raha... (negative)
+
+---
+
+### **Grammar Point 69: ～ようにしています (Try to / Koshish karta hoon)**
+
+**Dictionary form + ようにしています = _____ karne ki koshish karta hoon (habit)**
+
+**Examples:**
+- まいにち にほんご を べんきょうする **ようにしています**。
+  → Har roz Japanese padhne ki **koshish karta hoon**。
+
+- やさい を たくさん たべる **ようにしています**。
+  → Sabzi bahut khaane ki **koshish karta hoon**。
+
+- はやく ねる **ようにしています**。
+  → Jaldi sone ki **koshish karta hoon**。
+
+- ゴミ を ちゃんと わける **ようにしています**。
+  → Kachra acche se alag karne ki **koshish karta hoon**。
+
+**Negative:** ～ないようにしています = _____ na karne ki koshish karta hoon
+
+- おさけ を のまない **ようにしています**。
+  → Sharab na peene ki **koshish karta hoon**。
+
+- あまり おかし (お菓子) を たべない **ようにしています**。
+  → Zyada mithai na khaane ki **koshish karta hoon**。
+
+---
+
+### **Grammar Point 70: ～と おもいます (I think that / Mujhe lagta hai)**
+
+**Plain form + と おもいます (思います) = Mujhe lagta hai ki _____**
+
+**Examples:**
+- にほん は あんぜん (安全) だ **と おもいます**。
+  → Japan safe hai **aisa lagta hai**。
+
+- にほんご は むずかしい **と おもいます**。
+  → Japanese mushkil hai **mujhe lagta hai**。
+
+- あした あめ が ふる **と おもいます**。
+  → Kal baarish hogi **mujhe lagta hai**。
+
+- この みせ は おいしい **と おもいます**。
+  → Yeh dukaan tasty hai **mujhe lagta hai**。
+
+- にほん の せいかつ は たいへん だ **と おもいました**。
+  → Japan ki zindagi mushkil hai **aisa laga** (past)。
+
+**Question:**
+- にほん について どう おもいますか？
+  → Japan ke baare mein kya sochte ho?
+
+---
+
+### **Grammar Point 71: ～とおもっています (I'm thinking of / Soch raha hoon)**
+
+**Plain form + と おもって います = _____ karne ka soch raha hoon (ongoing thought/plan)**
+
+⚠️ **Difference:**
+- ～と おもいます = General opinion (mujhe lagta hai)
+- ～と おもって います = Ongoing plan/thought (soch raha hoon)
+
+**Examples:**
+- らいねん (来年) くに (国) に かえろう **と おもって います**。
+  → Agle saal desh lautne ka **soch raha hoon**。
+
+- にほんご の しけん (試験) を うけよう **と おもって います**。
+  → Japanese ka exam dene ka **soch raha hoon**。
+
+- もう すこし にほん に いよう **と おもって います**。
+  → Aur thoda Japan mein rahne ka **soch raha hoon**。
+
+- あたらしい しごと を さがそう (探そう) **と おもって います**。
+  → Naya kaam dhundhne ka **soch raha hoon**。
+
+---
+
+### **Grammar Point 72: ～つもりです (Intend to / Irada hai)**
+
+**Dictionary form + つもりです = _____ karne ka irada hai / Plan hai**
+
+**Examples:**
+- らいねん にほん に いく **つもりです**。
+  → Agle saal Japan jaane ka **plan hai**。
+
+- 3ねん にほん に いる (居る) **つもりです**。
+  → 3 saal Japan mein rahne ka **irada hai**。
+
+- JLPT を うける (受ける) **つもりです**。
+  → JLPT dene ka **plan hai**。
+
+**Negative:** ～ないつもりです = _____ karne ka irada nahi hai
+- もう あの みせ に いかない **つもりです**。
+  → Ab us dukaan pe jaane ka **irada nahi hai**。
+
+---
+
+### **Grammar Point 73: ～ために (In order to / _____ ke liye)**
+
+**Dictionary form / Noun + の + ために = _____ ke liye**
+
+**Examples:**
+- にほんご を べんきょうする **ために**、にほん に きました。
+  → Japanese seekhne **ke liye**、Japan aaya。
+
+- かぞく の **ために**、はたらいて います。
+  → Family **ke liye** kaam kar raha hoon。
+
+- けんこう (健康) の **ために**、まいにち うんどう します。
+  → Sehat **ke liye** har roz exercise karta hoon。
+
+- しょうらい (将来) の **ために**、おかね を ためて (貯めて) います。
+  → Bhavishya **ke liye** paise jama kar raha hoon。
+
+- JLPT に ごうかくする (合格する) **ために**、がんばって います。
+  → JLPT pass karne **ke liye** mehnat kar raha hoon。
+
+---
+
+### **Future Plans Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| しょうらい (将来) | Shourai | Bhavishya/Future |
+| ゆめ (夢) | Yume | Sapna/Dream |
+| もくひょう (目標) | Mokuhyou | Lakshya/Goal |
+| けいかく (計画) | Keikaku | Yojana/Plan |
+| きぼう (希望) | Kibou | Ummeed/Hope |
+| がんばります (頑張ります) | Ganbarimasu | Mehnat karna/Try hard |
+| つづけます (続けます) | Tsudukemasu | Jaari rakhna/Continue |
+| あきらめません (諦めません) | Akiramemasen | Haar nahi manunga/Won't give up |
+| ちょうせんします (挑戦) | Chousen shimasu | Challenge karna |
+| せいちょうします (成長) | Seichou shimasu | Growth karna |
+| ごうかくします (合格) | Goukaku shimasu | Pass karna (exam) |
+| そつぎょうします (卒業) | Sotsugyou shimasu | Graduate karna |
+| しゅうしょくします (就職) | Shuushoku shimasu | Job milna/Employment |
+| けっこんします (結婚) | Kekkon shimasu | Shaadi karna |
+
+---
+
+### **Grammar Point 74: ～たり ～たり します (Do things like ___ and ___)**
+
+**た form + り、た form + り します = _____ ya _____ jaisi cheezein karta hoon**
+
+Yeh multiple activities (incomplete list) batane ke liye hai:
+
+**Examples:**
+- やすみ の ひ は えいが を み**たり**、ほん を よん**たり** します。
+  → Chutti ke din movie dekh**na** ya kitaab padh**na** jaisi cheezein karta hoon。
+
+- にほん で すし を たべ**たり**、おんせん に はいっ**たり** しました。
+  → Japan mein sushi kha**ya** ya onsen mein gaya jaisi cheezein ki。
+
+- しゅうまつ は そうじ し**たり**、せんたく し**たり** します。
+  → Weekend pe safai kar**na** ya kapde dho**na** jaisi cheezein karta hoon。
+
+- にほん の せいかつ で びっくりし**たり**、こまっ**たり** しました。
+  → Japan ki zindagi mein hairan ho**na** ya pareshan ho**na** jaisi cheezein hui。
+
+---
+
+### **Comparing India and Japan (Example):**
+
+```
+にほん と インド は いろいろ ちがう と おもいます。
+(Nihon to Indo wa iroiro chigau to omoimasu.)
+Japan aur India mein bahut fark hai aisa lagta hai.
+
+にほん は でんしゃ が じかん どおり に きます。すごい と おもいます。
+(Nihon wa densha ga jikan doori ni kimasu. Sugoi to omoimasu.)
+Japan mein train time pe aati hai. Amazing lagta hai.
+
+にほん の たべもの は おいしい ですが、からい りょうり が すくない です。
+(Nihon no tabemono wa oishii desu ga, karai ryouri ga sukunai desu.)
+Japan ka khana tasty hai, lekin teekha khana kam hai.
+
+インド は かぞく と いっしょに すむ ことが おおい ですが、
+にほん は ひとりぐらし (一人暮らし) の ひと が おおい です。
+(Indo wa kazoku to issho ni sumu koto ga ooi desu ga,
+nihon wa hitorigurashi no hito ga ooi desu.)
+India mein family ke saath rehna zyada hai, lekin
+Japan mein akele rehne wale log zyada hain.
+
+にほん の せいかつ に だんだん なれて きました。
+(Nihon no seikatsu ni dandan narete kimashita.)
+Japan ki zindagi ki dheere dheere aadat pad gayi.
+```
+
+---
+
+### **Grammar Point 75: ～てきました (Has gradually become / Dheere dheere ho gaya)**
+
+**て-form + きました = Dheere dheere _____ ho gaya (change over time)**
+
+**Examples:**
+- にほんご が わかる ように なっ**てきました**。
+  → Japanese samajh mein aa**ne laga** (gradually)。
+
+- にほん の せいかつ に なれ**てきました**。
+  → Japan ki zindagi ki aadat pad**ne lagi**。
+
+- さむく なっ**てきました**。
+  → Thanda ho**ne laga** (weather)。
+
+- ともだち が ふえ**てきました** (増えて)。
+  → Dost badh**ne lage**。
+
+- にほんご が すこしずつ じょうず に なっ**てきました**。
+  → Japanese dheere dheere acchi ho**ne lagi**。
+
+---
+
+### **Reflection on Life in Japan - Model Composition:**
+
+```
+わたし は 2ねんまえ に にほん に きました。
+(Watashi wa ni-nen mae ni nihon ni kimashita.)
+Main 2 saal pehle Japan aaya.
+
+はじめ は にほんご が ぜんぜん わかりませんでした。
+(Hajime wa nihongo ga zenzen wakarimasen deshita.)
+Shuru mein Japanese bilkul nahi samajhta tha.
+
+かいもの の とき も こまりました。
+(Kaimono no toki mo komarimashita.)
+Shopping ke waqt bhi pareshan hota tha.
+
+でも、まいにち すこしずつ べんきょうして、
+だんだん にほんご が はなせるように なってきました。
+(Demo, mainichi sukoshizutsu benkyoushite,
+dandan nihongo ga hanaseru you ni nattekimashita.)
+Lekin, har roz thoda thoda padh ke,
+dheere dheere Japanese bolne laga.
+
+いま は にほんじん の ともだち も できて、
+やすみ の ひ は いっしょに あそんだり、
+ごはん を たべたり しています。
+(Ima wa nihonjin no tomodachi mo dekite,
+yasumi no hi wa issho ni asondari,
+gohan wo tabetari shiteimasu.)
+Ab Japanese dost bhi ban gaye,
+chutti ke din saath mein ghumna ya khana khaana jaisi cheezein karta hoon.
+
+にほん の せいかつ は たいへん な こと も ありますが、
+たのしい こと も たくさん あります。
+(Nihon no seikatsu wa taihen na koto mo arimasu ga,
+tanoshii koto mo takusan arimasu.)
+Japan ki zindagi mein mushkil bhi hai,
+lekin mazedaar cheezein bhi bahut hain.
+
+これからも にほんご の べんきょう を つづけて、
+もっと いろいろな ひと と はなしたい と おもって います。
+(Korekara mo nihongo no benkyou wo tsudukete,
+motto iroirona hito to hanashitai to omotteimasu.)
+Aage bhi Japanese padhna jaari rakhke,
+aur bahut se logon se baat karna chahta hoon.
+
+しょうらい は にほん で エンジニア として はたらきたい です。
+そのために、JLPT の N3 に ごうかくする つもりです。
+(Shourai wa nihon de enjinia toshite hatarakitai desu.
+Sono tame ni, JLPT no N3 ni goukakusuru tsumori desu.)
+Future mein Japan mein engineer ki tarah kaam karna chahta hoon.
+Uske liye, JLPT N3 pass karne ka plan hai.
+
+がんばります！
+(Ganbarimasu!)
+Mehnat karunga!
+```
+
+---
+
+### **Grammar Point 76: ～として (As _____ / _____ ki tarah / _____ ke roop mein)**
+
+**Noun + として = _____ ke roop mein / _____ ki haisiyat se**
+
+**Examples:**
+- エンジニア **として** はたらいて います。
+  → Engineer **ke roop mein** kaam kar raha hoon。
+
+- りゅうがくせい (留学生) **として** にほん に きました。
+  → Student **ki haisiyat se** Japan aaya。
+
+- ともだち **として** いいます。
+  → Dost **ki haisiyat se** bol raha hoon。
+
+---
+
+### **Expressing Feelings about Life in Japan:**
+
+| Japanese | Meaning |
+|---|---|
+| にほん に きて よかった です | Japan aake accha laga |
+| にほん の せいかつ は たのしい です | Japan ki zindagi mazedaar hai |
+| くに が なつかしい です (懐かしい) | Desh ki yaad aati hai (nostalgic) |
+| かぞく に あいたい です | Family se milna chahta hoon |
+| もっと にほんご が じょうず に なりたい です | Aur acchi Japanese bolna chahta hoon |
+| にほんじん の ともだち が ほしい です | Japanese dost chahiye |
+| りょうり が くち に あいません (口に合いません) | Khana mooh ke mutabiq nahi hai (doesn't suit taste) |
+| にほん の マナー に なれました | Japan ke manners ki aadat pad gayi |
+| まだ かんじ が にがて (苦手) です | Abhi bhi kanji mushkil hai |
+| すこしずつ じしん (自信) が ついてきました | Dheere dheere confidence aa raha hai |
+
+---
+
+# 📝 COMPLETE GRAMMAR SUMMARY (Chapter 15-18):
+
+| # | Pattern | Meaning | Chapter |
+|---|---|---|---|
+| 54 | ～とき (more patterns) | Jab / When (detailed) | Ch15 |
+| 55 | ～にさんかします | Participate in | Ch15 |
+| 56 | ～について | About / Ke baare mein | Ch15 |
+| 57 | ～そうです (hearsay) | Suna hai ki | Ch15 |
+| 58 | ～かどうか | Whether or not | Ch15 |
+| 59 | ～ましょうか | Shall I? (offer) | Ch16 |
+| 60 | Casual/Plain form | Dost ke saath bolna | Ch16 |
+| 61 | ～う/よう | Let's (casual) | Ch16 |
+| 62 | ～ない？ | Won't you? (casual invite) | Ch16 |
+| 63 | ～し、～し | Multiple reasons | Ch16 |
+| 64 | ～んです/のです | Explanation/Reason | Ch16 |
+| 65 | ～てあげます/もらいます/くれます | Giving/Receiving favors | Ch17 |
+| 66 | ～てくれませんか | Can you do for me? | Ch17 |
+| 67 | ～てしまいました | Unfortunately happened | Ch17 |
+| 68 | ～ようになりました | Became able to | Ch18 |
+| 69 | ～ようにしています | Try to (habit) | Ch18 |
+| 70 | ～とおもいます | I think that | Ch18 |
+| 71 | ～とおもっています | I'm thinking of (plan) | Ch18 |
+| 72 | ～つもりです | Intend to / Plan hai | Ch18 |
+| 73 | ～ために | In order to / Ke liye | Ch18 |
+| 74 | ～たり～たりします | Do things like A and B | Ch18 |
+| 75 | ～てきました | Has gradually become | Ch18 |
+| 76 | ～として | As / Ke roop mein | Ch18 |
+
+---
+
+# 📝 FULL PARTICLE FINAL UPDATE:
+
+| Particle | Reading | Use | Example |
+|---|---|---|---|
+| は | wa | Topic | わたし**は** |
+| が | ga | Subject/Ability/New info | にほんご**が**できます |
+| を | wo | Object | コーヒー**を**のみます |
+| に | ni | Time/Place/Direction/Purpose | 7じ**に**/えき**に** |
+| へ | e | Direction | にほん**へ** |
+| で | de | Place of action/Means | うち**で**/でんしゃ**で** |
+| から | kara | From/Because | インド**から**/いたい**から** |
+| まで | made | Until | 5じ**まで** |
+| の | no | Possessive/Connection | わたし**の** |
+| と | to | With/And/If/Quotation | ともだち**と**/おもいます**と** |
+| も | mo | Also | わたし**も** |
+| か | ka | Question/Or | です**か**/コーヒー**か**こうちゃ |
+| ね | ne | Confirmation | いいです**ね** |
+| よ | yo | Emphasis | おいしい**よ** |
+| や | ya | And (incomplete) | にく**や**さかな |
+| し | shi | And (reason) | おいしい**し**やすい**し** |
+| けど | kedo | But (casual) | いきたい**けど** |
+| のに | noni | Even though | べんきょうした**のに** |
+| ために | tameni | In order to | にほんご**のために** |
+| について | ni tsuite | About | にほん**について** |
+| として | toshite | As | エンジニア**として** |
+
+---
+
+# 📝 ALL VERB FORMS COMPLETE TABLE (Elementary 1+2):
+
+Using たべます (tabemasu) as example:
+
+| Form | Japanese | Meaning |
+|---|---|---|
+| **Polite Forms** | | |
+| Present (+) | たべます | Khata hoon |
+| Present (-) | たべません | Nahi khata |
+| Past (+) | たべました | Khaya |
+| Past (-) | たべませんでした | Nahi khaya |
+| ましょう | たべましょう | Chaliye khaate hain |
+| ましょうか | たべましょうか | Main khila doon? |
+| ませんか | たべませんか | Khaayein? |
+| **Plain/Casual Forms** | | |
+| Dictionary | たべる | Khana (plain) |
+| ない form | たべない | Nahi khana |
+| た form | たべた | Khaya (plain) |
+| なかった | たべなかった | Nahi khaya (plain) |
+| Volitional | たべよう | Khaate hain (casual) |
+| **て-form Combinations** | | |
+| てください | たべてください | Khaiye please |
+| てもいいですか | たべてもいいですか | Kha sakta hoon? |
+| てはいけません | たべてはいけません | Khana mana hai |
+| ています | たべています | Kha raha hoon |
+| てみます | たべてみます | Khake dekhta hoon |
+| てしまいました | たべてしまいました | Kha diya (regret) |
+| てあげます | たべてあげます | Uske liye khilata hoon |
+| てもらいます | たべてもらいます | Mere liye khilaya |
+| てくれます | たべてくれます | Mere liye khilata hai |
+| てくれませんか | たべてくれませんか | Khila denge? |
+| てきました | たべてきました | Khaata aaya (gradual) |
+| **Other Combinations** | | |
+| たいです | たべたいです | Khana chahta hoon |
+| たことがあります | たべたことがあります | Khaya hai (experience) |
+| たら | たべたら | Khaye toh |
+| たり | たべたり | Khaana wagairah |
+| たほうがいいです | たべたほうがいいです | Khaana accha hai |
+| ないでください | たべないでください | Mat khaiye |
+| ないほうがいいです | たべないほうがいいです | Na khaana accha hai |
+| なければなりません | たべなければなりません | Khaana zaruri hai |
+| なくてもいいです | たべなくてもいいです | Khaana zaruri nahi |
+| ことができます | たべることができます | Kha sakta hoon |
+| ようになりました | たべられるようになりました | Khane laga |
+| ようにしています | たべるようにしています | Khaane ki koshish karta hoon |
+| つもりです | たべるつもりです | Khaane ka plan hai |
+| とおもいます | たべるとおもいます | Khaega lagta hai |
+| とおもっています | たべようとおもっています | Khaane ka soch raha hoon |
+| ために | たべるために | Khaane ke liye |
+| かた (方) | たべかた | Khaane ka tareeka |
+| そうです (hearsay) | たべるそうです | Khaega suna hai |
+| かどうか | たべるかどうか | Khaega ya nahi |
+| とき | たべるとき | Khaate waqt |
+| んです | たべるんです | Actually khaata hoon |
+
+---
+
+# 📊 Irodori Elementary 1+2 COMPLETE Progress:
+
+### ✅ What you've learned (Chapter 1-18):
+
+| Category | Content |
+|---|---|
+| **Self Introduction** | Naam, desh, hobby, kaam |
+| **Numbers** | 0-10,000+ |
+| **Time** | Hours, minutes, AM/PM |
+| **Days/Dates** | Monday-Sunday, 1st-31st, Months |
+| **Food & Restaurant** | Order karna, taste batana |
+| **Shopping** | Price poochna, khareedna |
+| **Daily Routine** | Subah se raat tak |
+| **Hobbies** | Sports, music, movies etc. |
+| **Directions** | Rasta poochna/batana |
+| **Transportation** | Train, bus, car |
+| **Phone** | Phone pe baat karna |
+| **Travel** | Past trips, experiences |
+| **House** | Ghar describe karna |
+| **Health** | Doctor, symptoms, medicine |
+| **Work** | Office, job, workplace |
+| **Instructions** | Machine use, step by step |
+| **Rules & Manners** | Japan ke rules |
+| **Events** | Festival, community |
+| **Friends** | Casual baat, plans, invitation |
+| **Community** | Problems, complaints, services |
+| **Life in Japan** | Culture, feelings, future plans |
+| **Grammar Points** | 76 grammar patterns! |
+| **Vocabulary** | 1000+ words! |
+
+---
+
+# 🎯 JLPT Level Reference:
+
+| Irodori Level | JLPT Equivalent |
+|---|---|
+| Elementary 1 (Ch 1-14) | **N5** level |
+| Elementary 2 (Ch 15-18) | **N5-N4** transition |
+| Pre-Intermediate (next) | **N4** level |
+
+---
+
+# ⚡ Final Tips for Elementary 2:
+
+1. **Plain form master karo** - Yeh N4 ka foundation hai
+2. **てform ke combinations** yaad karo - Bahut important hai
+3. **あげます/もらいます/くれます** ache se samjho - Yeh Japanese ki unique concept hai
+4. **Casual vs Polite** ka fark samjho - Dost ke saath casual, boss/stranger ke saath polite
+5. **と おもいます** practice karo - Opinion dena seekho
+6. **つもり/ために/ように** se future plans batao
+7. **たり～たりします** se activities describe karo
+8. **News/signs padhne ki practice karo** - Real life Japanese
+9. **Japanese drama/anime dheere dheere dekho** - Listening practice
+10. **Har roz 15-30 minute practice karo** - Consistency is key!
+
+---
+
+**おめでとう ございます！🎉**
+**Irodori Elementary 1 aur 2 poora ho gaya!**
+
+**にほんご の べんきょう を つづけて ください！**
+(Nihongo no benkyou wo tsudukete kudasai!)
+Japanese ki padhai jaari rakho!
+
+**あなた なら きっと できます！** 💪
+(Anata nara kitto dekimasu!)
+Tum zaroor kar paoge!
+
+**がんばって！🎌**
+
+---
+
+Agar **Pre-Intermediate** level chahiye ya kisi specific topic pe aur detail chahiye toh bata do!</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="color:#fff; font-size:1.5rem; margin-bottom:0.5rem;">🎉 祝・修了 (Congratulations on completing Irodori Elementary 1 & 2!) 🎉</h3>
+        <p style="margin-bottom:1rem; color:var(--text-main);">You have successfully built and mastered all 18 chapters of the Japanese Irodori curriculum with zero character loss! 🎌</p>
+        <p style="font-size: 0.85rem; opacity: 0.7;">Built with passion and technical precision • 100% Content Preservation Guaranteed • Keep studying Japanese! がんばってください！ 💪</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.innerText = '☀️';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerText = '🌙';
+            }
+        }
+
+        // Web Speech API - Japanese TTS
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Speech synthesis is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.95;
+            
+            const voices = window.speechSynthesis.getVoices();
+            const jpVoice = voices.find(v => v.lang.includes('ja') || v.lang.includes('JP'));
+            if (jpVoice) utterance.voice = jpVoice;
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Culture Guide Logic
+        const cultComps = {
+            train: { jp: "でんしゃ が じかん どおり に きます。すごい と おもいます！", mean: "Japan mein train exact time pe aati hai. Amazing lagta hai!" },
+            food: { jp: "にほん の たべもの は おいしい ですが、からい りょうり が すくない です。", mean: "Japan ka khana tasty hai, lekin teekha khana kam hai." },
+            family: { jp: "インド は かぞく と すむ ことが おおい ですが、にほん は ひとりぐらし が おおい です。", mean: "India mein family ke saath rehna zyada hai, lekin Japan mein akele rehne wale log zyada hain." },
+            safety: { jp: "にほん は あんぜん だ と おもいます。よる も あんしん して あるけます。", mean: "Japan safe hai aisa lagta hai. Raat mein bhi sukoon se chal sakte hain." },
+            acclimatize: { jp: "にほん の せいかつ に だんだん なれて きました。", mean: "Japan ki zindagi ki dheere dheere aadat pad gayi." }
+        };
+
+        const cultFeels = {
+            glad: { jp: "にほん に きて よかった です。", mean: "Japan aake accha laga." },
+            nostalgic: { jp: "ときどき くに が なつかしい です。", mean: "Kabhi kabhi desh ki yaad aati hai (nostalgic)." },
+            friends: { jp: "にほんじん の ともだち が ほしい です。", mean: "Japanese dost chahiye." },
+            confident: { jp: "すこしずつ じしん が ついて きました。", mean: "Dheere dheere confidence aa raha hai." }
+        };
+
+        function updateCult() {
+            const cKey = document.getElementById('cult-comp').value;
+            const fKey = document.getElementById('cult-feel').value;
+            const c = cultComps[cKey];
+            const f = cultFeels[fKey];
+
+            document.getElementById('cult-jp').innerHTML = `
+                🎌 にほん と インド は いろいろ ちがう と おもいます。<br>
+                🚆 <span style="color:var(--accent-info);">${c.jp}</span><br>
+                💖 <span style="color:var(--accent-primary);">${f.jp}</span><br>
+                🌸 これからも にほん の せいかつ を たのしみます！
+            `;
+
+            document.getElementById('cult-meaning').innerText = `Hindi Translation: Japan aur India mein bahut fark hai aisa lagta hai. ${c.mean} ${f.mean} Aage bhi Japan ki zindagi ka anand lunga!`;
+        }
+
+        function speakCult() {
+            const cKey = document.getElementById('cult-comp').value;
+            const fKey = document.getElementById('cult-feel').value;
+            speakText(`にほんとインドはいろいろちがうとおもいます。${cultComps[cKey].jp}${cultFeels[fKey].jp}`);
+        }
+
+        // Future Builder Logic
+        const futGoals = {
+            engineer: { jp: "エンジニア として はたらきたい です", mean: "engineer ki tarah (toshite) kaam karna chahta hoon", act: "JLPT の N3 に ごうかく する" },
+            jlpt: { jp: "JLPT の N3 と N2 に ごうかく したい です", mean: "JLPT N3 aur N2 pass karna chahta hoon", act: "まいにち 2じかん かんじ を べんきょう する" },
+            stay: { jp: "もう すこし にほん に ずっと いたい です", mean: "aur thoda Japan mein hamesha rehna chahta hoon", act: "ビザ の きげん を えんちょう する" },
+            job: { jp: "あたらしい 専門 の しごと を さがしたい です", mean: "naya specialized kaam dhundhna chahta hoon", act: "にほんご の めんせつ を れんしゅう する" },
+            company: { jp: "にほん で じぶん の かいしゃ を つくりたい です", mean: "Japan mein apni company banana chahta hoon", act: "けいえい と ビジネス にほんご を まなぶ" }
+        };
+
+        const futGrams = {
+            tsumori: { jp: "つもり です！", mean: "ka solid plan hai (tsumori desu)!" },
+            omotte: { jp: "よう と おもって います！", mean: "karne ka soch raha hoon (ongoing thought)!" },
+            tameni: { jp: "ために、いっしょうけんめい がんばって います！", mean: "ke liye (tameni), poori jee jaan se mehnat kar raha hoon!" },
+            toshite: { jp: "として、せかい で かつやく したい です！", mean: "ke roop mein (toshite), duniya mein perform karna chahta hoon!" }
+        };
+
+        function updateFut() {
+            const gKey = document.getElementById('fut-goal').value;
+            const grKey = document.getElementById('fut-gram').value;
+            const g = futGoals[gKey];
+            const gr = futGrams[grKey];
+
+            document.getElementById('fut-jp').innerHTML = `
+                🌟 しょうらい は にほん で <span style="color:var(--accent-purple);">${g.jp}</span>。<br>
+                🎯 そのために、${g.act} <span style="color:var(--accent-success);">${gr.jp}</span><br>
+                💪 あきらめないで がんばります！
+            `;
+
+            document.getElementById('fut-meaning').innerText = `Hindi Translation: Future mein Japan mein ${g.mean}. Uske liye, ${g.act} ${gr.mean} Haar na maanke mehnat karunga!`;
+        }
+
+        function speakFut() {
+            const gKey = document.getElementById('fut-goal').value;
+            const grKey = document.getElementById('fut-gram').value;
+            speakText(`しょうらいはにほんで${futGoals[gKey].jp}。そのために、${futGoals[gKey].act}${futGrams[grKey].jp}がんばります！`);
+        }
+
+        // Quiz Module Logic (15 Questions)
+        const quizQuestions = [
+            {
+                q: "1. What does 'せいかつ (生活)' mean when talking about living in Japan?",
+                options: [
+                    "Train station",
+                    "Zindagi / Daily life / Living ✔️",
+                    "Japanese food",
+                    "Ward office"
+                ],
+                correct: 1
+            },
+            {
+                q: "2. Which grammar point expresses 'I became able to do ____' (gradual change in ability - Pt 68)?",
+                options: [
+                    "～よう に なりました (You ni narimashita) ✔️",
+                    "～て あげます (Te agemasu)",
+                    "～て しまいました (Te shimaimashita)",
+                    "～に さんかします (Ni sanka shimasu)"
+                ],
+                correct: 0
+            },
+            {
+                q: "3. What does Grammar Pt 69 '～よう に しています' express in 'やさい を たくさん たべる よう に しています'?",
+                options: [
+                    "I hate eating vegetables",
+                    "I try to eat lots of vegetables as a conscious habit / Koshish karta hoon ✔️",
+                    "I accidentally ate vegetables",
+                    "Let's eat vegetables together"
+                ],
+                correct: 1
+            },
+            {
+                q: "4. How do you say 'I think that Japan is safe' using Grammar Pt 70?",
+                options: [
+                    "にほん は あんぜん だ と おもいます (Anzen da to omoimasu) ✔️",
+                    "にほん は あんぜん に なりました",
+                    "にほん は あんぜん で しまいました",
+                    "にほん は あんぜん の ために"
+                ],
+                correct: 0
+            },
+            {
+                q: "5. What is the difference between '～と おもいます' (Pt 70) and '～と おもって います' (Pt 71)?",
+                options: [
+                    "There is zero difference",
+                    "とおもいます is a general opinion (I think), while とおもっています is an ongoing personal plan/thought (I'm thinking of doing) ✔️",
+                    "とおもいます is past tense, while とおもっています is future",
+                    "とおもいます is casual, while とおもっています is honorific"
+                ],
+                correct: 1
+            },
+            {
+                q: "6. How do you express a firm intention or plan 'I intend to take the JLPT' (Grammar Pt 72)?",
+                options: [
+                    "JLPT を うける つもり です (JLPT wo ukeru tsumori desu) ✔️",
+                    "JLPT を うけた ことがあります",
+                    "JLPT を うけて ください",
+                    "JLPT を うけません"
+                ],
+                correct: 0
+            },
+            {
+                q: "7. How do you say 'I came to Japan IN ORDER TO study Japanese' using Grammar Pt 73?",
+                options: [
+                    "にほんご を べんきょう する ために、にほん に きました ✔️",
+                    "にほんご を べんきょう した とき、にほん に きました",
+                    "にほんご を べんきょう して も いいですか",
+                    "にほんご を べんきょう した ほうが いいです"
+                ],
+                correct: 0
+            },
+            {
+                q: "8. What does Grammar Pt 74 '～たり ～たり します' express in 'えいが を みたり、ほん を よんだり します'?",
+                options: [
+                    "Doing actions simultaneously",
+                    "Listing representative examples of activities (doing things like watching movies and reading books) ✔️",
+                    "Giving formal business presentations",
+                    "Asking for emergency directions"
+                ],
+                correct: 1
+            },
+            {
+                q: "9. How do you express 'My Japanese has GRADUALLY gotten better leading up to now' (Grammar Pt 75)?",
+                options: [
+                    "にほんご が じょうず に なって きました (Natte kimashita) ✔️",
+                    "にほんご が じょうず に なって ください",
+                    "にほんご が じょうず に なって あげます",
+                    "にほんご が じょうず じゃ ありません"
+                ],
+                correct: 0
+            },
+            {
+                q: "10. What does Grammar Pt 76 '～として' mean in 'エンジニア として はたらいています'?",
+                options: [
+                    "Working AT an engineering company",
+                    "Working AS an engineer / Engineer ke roop mein (capacity/role) ✔️",
+                    "Working WITH an engineer",
+                    "Working WITHOUT an engineer"
+                ],
+                correct: 1
+            },
+            {
+                q: "11. In our complete 48-verb conjugation table, what is the 'Volitional / Casual Let's' form of たべます?",
+                options: [
+                    "たべよう (Tabeyou) ✔️",
+                    "たべる (Taberu)",
+                    "たべた (Tabeta)",
+                    "たべない (Tabenai)"
+                ],
+                correct: 0
+            },
+            {
+                q: "12. What does 'カルチャーショック (Karuchaa shokku)' refer to when living abroad?",
+                options: [
+                    "An electric shock",
+                    "Culture shock / Surprises and difficulties adapting to foreign customs and rules ✔️",
+                    "A traditional Japanese dance",
+                    "A type of Japanese noodle"
+                ],
+                correct: 1
+            },
+            {
+                q: "13. In our 21-particle summary, which particle indicates the TARGET/PURPOSE of an action or time/place (`7じに / えきに`)?",
+                options: [
+                    "に (ni) ✔️",
+                    "を (wo)",
+                    "が (ga)",
+                    "も (mo)"
+                ],
+                correct: 0
+            },
+            {
+                q: "14. How do you say 'I won't give up! I will try my best!' in Japanese?",
+                options: [
+                    "あきらめません！がんばります！ (Akiramemasen! Ganbarimasu!) ✔️",
+                    "わすれました！なきました！",
+                    "こまりました！もれています！",
+                    "おわりました！かえります！"
+                ],
+                correct: 0
+            },
+            {
+                q: "15. How many total grammar patterns (Grammar Points) are mastered across the complete Irodori Elementary 1 & 2 curriculum?",
+                options: [
+                    "20 points",
+                    "50 points",
+                    "76 grammar points (Ch 1 to 18 Complete!) ✔️",
+                    "10 points"
+                ],
+                correct: 2
+            }
+        ];
+
+        function renderQuiz() {
+            const quizArea = document.getElementById('quiz-area');
+            let html = '';
+            quizQuestions.forEach((item, index) => {
+                html += `
+                    <div class="question-box" id="q-${index}">
+                        <div class="question-text"><span>${item.q}</span></div>
+                        <div class="options-grid">
+                            ${item.options.map((opt, optIndex) => `
+                                <button class="option-btn" onclick="checkAnswer(${index}, ${optIndex})">
+                                    <span>${opt}</span>
+                                    <span class="status-icon"></span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            quizArea.innerHTML = html;
+        }
+
+        let score = 0;
+        let answered = new Array(quizQuestions.length).fill(false);
+
+        function checkAnswer(qIndex, optIndex) {
+            if (answered[qIndex]) return;
+            answered[qIndex] = true;
+
+            const qBox = document.getElementById(`q-${qIndex}`);
+            const buttons = qBox.querySelectorAll('.option-btn');
+            const correctIndex = quizQuestions[qIndex].correct;
+
+            if (optIndex === correctIndex) {
+                buttons[optIndex].classList.add('correct');
+                buttons[optIndex].querySelector('.status-icon').innerText = '🎉 Correct!';
+                score++;
+                speakText('せいかい！すばらしい！');
+            } else {
+                buttons[optIndex].classList.add('wrong');
+                buttons[optIndex].querySelector('.status-icon').innerText = '❌ Incorrect';
+                buttons[correctIndex].classList.add('correct');
+                buttons[correctIndex].querySelector('.status-icon').innerText = '✔ Correct Answer';
+            }
+
+            if (answered.every(val => val === true)) {
+                const quizArea = document.getElementById('quiz-area');
+                const scoreDiv = document.createElement('div');
+                scoreDiv.className = 'quiz-score';
+                scoreDiv.innerHTML = `👑 Irodori Course Grand Finale Mastery Quiz Completed!<br><span style="font-size:2.4rem; color:#fff; display:block; margin:0.8rem 0;">Final Score: ${score} / ${quizQuestions.length}</span><span style="font-size:1.25rem; color:#fbbf24; font-weight:700; display:block; margin-bottom:0.5rem;">おめでとう ございます！ (Omedetou Gozaimasu!) 🎊 祝・修了！🎉</span><span style="font-size:1.05rem; color:var(--text-main); font-weight:500;">You have officially conquered the entire Japanese Irodori Elementary 1 & 2 Course! From simple self-introductions in Chapter 1 to expressing complex future career ambitions, cultural reflections, 76 grammar structures, and 48 verb conjugations in Chapter 18, you are now ready for JLPT N4 and authentic life in Japan! 🎌🌸 あなたならきっとできます！がんばってください！ 💪</span>`;
+                quizArea.appendChild(scoreDiv);
+                speakText('おめでとうございます！いろどりえれめすたりーこーすがすべてしゅうりょうしました！ほんとうにすばらしいです！これからもにほんごがんばってください！');
+            }
+        }
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        });
+    </script>
+<script src="nav.js"></script>
+</body>
+</html>

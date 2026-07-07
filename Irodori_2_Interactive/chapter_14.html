@@ -1,0 +1,768 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 14: しょうらい (Future, Dreams & Career Goals)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 14: しょうらい - Future. Covers life goals, career plans, and grammar (~つもりです, ~と思っています, ~ために, ~かもしれません, ~でしょう, ~ていけば).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 14: しょうらい (Future) • Dreams, Career & Life Intentions</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('３０さい まで に、いえ を かう つもり です。てんしょく しよう と おもって います。ゆめ の ため に、いま どりょく して います。このまま つづけて いけば、きみ なら きっと せいこう する でしょう。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>🌟 しょうらい (Shourai) - Future / Bhavishya</h2>
+        <p>Master expressing future goals (<strong>将来・夢・目標・計画</strong>), career milestones (<strong>就職・転職・独立・結婚</strong>), effort and persistence (<strong>努力・挑戦・成功・諦めないで</strong>), and volitional intention grammar (<strong>～つもりです / ～と思っています / ～ために～ています / ～かもしれない / ～でしょう / ～ていけば</strong>)!</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 4869–5177</span>
+            <span class="meta-pill">💬 Grammar Points 68–73</span>
+            <span class="meta-pill">📚 35+ Future & Career Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">🚀 Restaurant Dream Roleplay</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('simulator',this)"><span>🌟</span> Future Goals & Career Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Intentions & Effort (Pt 68–73)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 35+ Audio Vocab & Career Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 14 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>🚀</span> Career Mentor & Restaurant Dream Speech</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Future & Career Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Future Goals & Career Simulator -->
+    <div id="tab-simulator" class="tab-content active">
+        <div class="interactive-box">
+            <h4>🌟 Interactive Future Goals & Life Intention Simulator (将来の夢・キャリア計画シミュレーター)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Select a personal goal or career milestone and an intention grammar pattern to generate authentic Japanese future plans and encouragement!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Life Goal / Career Vision (将来の目標・夢)</label>
+                    <select id="sim-scene" onchange="updateFutureSim()">
+                        <option value="business">🏢 Independence & Business (独立・自分で会社を作る / Opening own business)</option>
+                        <option value="house">🏠 Buying a Home by 30 (３０歳までに家を買う / Financial independence)</option>
+                        <option value="jlpt">📚 Passing JLPT N1/N2 (日本語試験・合格のために毎日勉強する / Language mastery)</option>
+                        <option value="abroad">✈️ Career Change & Abroad Work (転職・海外で働く / International career)</option>
+                        <option value="restaurant">🍳 Opening a Restaurant (料理学校に通い小さなレストランを開く / Chef dream)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updateFutureSim()">
+                        <option value="tsumori">🎯 Firm Plan / Intention (～つもりです - Intend to do / Irada hai)</option>
+                        <option value="omotteiru">💭 Ongoing Consideration (～と思っています - Thinking of doing / Soch raha hoon)</option>
+                        <option value="tameni">💪 Purpose & Effort (～ために ～ています - In order to... I am working hard / Ke liye)</option>
+                        <option value="kamo">⚖️ Uncertainty / Possibility (～かもしれません - Might / May happen / Shayad hoga)</option>
+                        <option value="ikeba">🌱 Continuous Effort (～ていけば - If you keep going / Mehnat karte raho toh...)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">将来（しょうらい）は 自分（じぶん）で 会社（かいしゃ）を 作（つく）る つもりです。</div>
+                <div class="output-rom" id="sim-rom">Shourai wa jibun de kaisha wo tsukuru tsumori desu.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Future mein khud ki company banana ka irada hai (firm intention).</div>
+                <button class="btn-speak" onclick="speakFutureSim()">🔊 Speak Intention in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🚀 Essential Career & Life Keywords (挑戦と人生のステップ)</h3>
+            <p>Click any card to listen to the native Japanese pronunciation and learn how to express motivation and life transitions!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">就職（しゅうしょく）と 転職（てんしょく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shuushoku to Tenshoku • Getting a job vs Career change</div><div class="meaning-text">Getting a job (就職) vs Job change (転職). "キャリアアップのために転職を考えています！"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">独立（どくりつ）/ 起業（きぎょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Dokuritsu / Kigyou • Independence / Starting a business</div><div class="meaning-text">Independence / Own business. "いつか会社を辞めて、自分の店を持って独立したいです。"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">努力（どりょく）と 挑戦（ちょうせん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Doryoku to Chousen • Hard work and taking challenges</div><div class="meaning-text">Mehnat (努力) aur Challenge (挑戦). "失敗を恐れないで、新しいことに挑戦してください！"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">諦（あきら）めないで 頑張（がんば）る</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Akiramenaide ganbaru • Do your best without giving up</div><div class="meaning-text">Haar na manke koshish karna. The golden motto of Japanese culture and life planning!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">経験（けいけん）を 積（つ）む</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Keiken wo tsumu • To accumulate / gain experience</div><div class="meaning-text">Experience banana / hasil karna. "将来のために、今いろんな職場で経験を積んだほうがいいです。"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">夢（ゆめ）を 叶（かな）える</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yume wo kanaeru • To fulfill / achieve a dream</div><div class="meaning-text">Sapna poora karna. "努力していけば、いつか必ず夢は叶うでしょう！"</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Intentions & Ongoing Plans: Intend to / Thinking of doing</span><span class="particle-badge">Pt 68 & 69</span></div>
+            <div class="grammar-formula">Dict/ない form + つもりです (Intend to) / Volitional form (～よう) + と思っています (Thinking of)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～つもりです</strong> for firm personal plans and resolutions ("Irada hai"). Use <strong>～ようと思っています</strong> to express an intention or career plan that you are currently pondering or considering ("Soch raha hoon")!</p>
+            <ul class="example-list">
+                <li onclick="speakText('３０さい まで に、いえ を かう つもり です。')">
+                    <span class="ex-jp">３０歳 まで に、家 を 買（か）う つもり です。</span>
+                    <span class="ex-rom">30 sai made ni, ie wo kau tsumori desu. (30 saal tak ghar khareedne ka irada hai.)</span>
+                </li>
+                <li onclick="speakText('もう おさけ を のまない つもり です。')">
+                    <span class="ex-jp">もう お酒 を 飲（の）まない つもり です。</span>
+                    <span class="ex-rom">Mou osake wo nomanai tsumori desu. (Ab sharab na peene ka irada hai - negative intention.)</span>
+                </li>
+                <li onclick="speakText('らいねん、くに に かえろう と おもって います。')">
+                    <span class="ex-jp">来年、国 に 帰（かえ）ろう と 思（おも）って います。</span>
+                    <span class="ex-rom">Rainen, kuni ni kaerou to omotte imasu. (Agle saal desh lautne ka soch raha hoon.)</span>
+                </li>
+                <li onclick="speakText('てんしょく しよう と おもって います。')">
+                    <span class="ex-jp">転職（てんしょく）しよう と 思って います。</span>
+                    <span class="ex-rom">Tenshoku shiyou to omotte imasu. (Job change karne ka soch raha hoon.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Purpose & Ongoing Effort: In order to... I am doing</span><span class="particle-badge" style="background:var(--accent-success);">Pt 70</span></div>
+            <div class="grammar-formula">Noun の / Verb Dict + ために + Action ています (Working hard for the sake of...)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ために～ています</strong> to connect your future dream or goal with your current daily effort and hard work ("_____ ke liye _____ kar raha hoon")!</p>
+            <ul class="example-list">
+                <li onclick="speakText('しょうらい の ゆめ の ため に、いま どりょく して います。')">
+                    <span class="ex-jp">将来 の 夢 の ため に、今 努力（どりょく）して います。</span>
+                    <span class="ex-rom">Shourai no yume no tame ni, ima doryoku shite imasu. (Bhavishya ke sapne ke liye, abhi mehnat kar raha hoon.)</span>
+                </li>
+                <li onclick="speakText('ＪＬＰＴの Ｎ２に ごうかく する ため に、まいにち ２じかん べんきょう して います。')">
+                    <span class="ex-jp">JLPT の N2に 合格 する ため に、毎日 ２時間 勉強 して います。</span>
+                    <span class="ex-rom">JLPT N2 ni goukaku suru tame ni, mainichi 2 jikan benkyou shite imasu. (JLPT N2 pass karne ke liye, roz 2 ghante padh raha hoon.)</span>
+                </li>
+                <li onclick="speakText('けんこう に なる ため に、ジム に かよって います。')">
+                    <span class="ex-jp">健康 に なる ため に、ジム に 通（かよ）って います。</span>
+                    <span class="ex-rom">Kenkou ni naru tame ni, jimu ni kayotte imasu. (Sehatmand hone ke liye, gym ja raha hoon.)</span>
+                </li>
+                <li onclick="speakText('いえ を かう ため に、おかね を ため て います。')">
+                    <span class="ex-jp">家 を 買（か）う ため に、お金 を 貯（ため）て います。</span>
+                    <span class="ex-rom">Ie wo kau tame ni, okane wo tamete imasu. (Ghar khareedne ke liye, paise jama kar raha hoon.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Uncertainty, Probability & Persistence: Might / Will likely / If you keep doing</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 71–73</span></div>
+            <div class="grammar-formula">Plain form + かもしれません (Might) / でしょう (Will likely) / て-form + いけば (If you keep continuing)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～かもしれません</strong> (~50% certainty) and <strong>～でしょう</strong> (~80-90% certainty) for future predictions. Use <strong>～ていけば</strong> to encourage continuous, step-by-step progress towards a goal ("Mehnat karte raho toh... safal hoge")!</p>
+            <ul class="example-list">
+                <li onclick="speakText('らいねん、てんしょく する かもしれません。')">
+                    <span class="ex-jp">来年、転職 する かもしれません。</span>
+                    <span class="ex-rom">Rainen, tenshoku suru kamo shiremasen. (Agle saal job change kar sakta hoon - uncertain possibility.)</span>
+                </li>
+                <li onclick="speakText('かれ は きっと せいこう する でしょう。')">
+                    <span class="ex-jp">彼 は きっと 成功（せいこう）する でしょう。</span>
+                    <span class="ex-rom">Kare wa kitto seikou suru deshou. (Woh zaroor safal hoga - high probability prediction.)</span>
+                </li>
+                <li onclick="speakText('このまま べんきょう して いけば、きっと うまく なります。')">
+                    <span class="ex-jp">このまま 勉強 して いけば、きっと 上手（うまく）なります。</span>
+                    <span class="ex-rom">Kono mama benkyou shite ikeba, kitto umaku narimasu. (Is tarah padhai jaari rakho toh, zaroor accha ho jaayega.)</span>
+                </li>
+                <li onclick="speakText('あきらめないで つづけて いけば、いつか ゆめ は かなう でしょう。')">
+                    <span class="ex-jp">諦（あきら）めないで 続（つづ）けて いけば、いつか 夢 は 叶（かな）う でしょう。</span>
+                    <span class="ex-rom">Akiramenaide tsuzukete ikeba, itsuka yume wa kanau deshou. (Haare bina jaari rakho toh, kabhi na kabhi sapna poora hoga!)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 14 Future, Dreams & Career Milestones Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize career and life stage vocabulary.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">将来（しょうらい）/ 夢（ゆめ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shourai / Yume</div><div class="meaning-text">Future (bhavishya) / Dream (sapna)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">目標（もくひょう）/ 計画（けいかく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mokuhyou / Keikaku</div><div class="meaning-text">Goal (lakshya) / Plan (yojana)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">希望（きぼう）/ やる気（き）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kibou / Yaruki</div><div class="meaning-text">Hope (ummeed) / Motivation & drive</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">努力（どりょく）/ 挑戦（ちょうせん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Doryoku / Chousen</div><div class="meaning-text">Hard work (mehnat) / Challenge</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">成功（せいこう）/ 失敗（しっぱい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Seikou / Shippai</div><div class="meaning-text">Success (kamyabi) / Failure (nakamyabi)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">諦（あきら）める / 頑張（がんば）る</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Akirameru / Ganbaru</div><div class="meaning-text">To give up / To persevere & do one's best</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">卒業（そつぎょう）/ 就職（しゅうしょく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sotsugyou / Shuushoku</div><div class="meaning-text">Graduation / Finding full-time employment</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">転職（てんしょく）/ 独立（どくりつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tenshoku / Dokuritsu</div><div class="meaning-text">Job change / Independence (own business)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">結婚（けっこん）/ 離婚（りこん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kekkon / Rikon</div><div class="meaning-text">Marriage (shaadi) / Divorce</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">子供（こども）/ 家（いえ）を買（か）う</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kodomo / Ie wo kau</div><div class="meaning-text">Children / Buying a residential home</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">海外（かいがい）/ 経験（けいけん）を 積（つ）む</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaigai / Keiken wo tsumu</div><div class="meaning-text">Overseas (videsh) / To gain experience</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～つもり です / ～ない つもり です</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~tsumori desu / ~nai tsumori desu</div><div class="meaning-text">I intend to do... / I intend NOT to do...</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～ようと 思（おも）って います</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~youto omotte imasu</div><div class="meaning-text">I am thinking of doing... (volitional plan)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～の ために ～て います</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~no tame ni ~te imasu</div><div class="meaning-text">For the sake of [goal], I am doing [effort]</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～かもしれない / ～でしょう</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~kamoshirenai / ~deshou</div><div class="meaning-text">Might happen (50%) / Will likely happen (80%)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～て いけば / 続（つづ）けて いけば</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~te ikeba / tsuzukete ikeba</div><div class="meaning-text">If you keep going / If you keep continuing</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">夢（ゆめ）を 叶（かな）える</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yume wo kanaeru</div><div class="meaning-text">To fulfill / make a dream come true</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">失敗（しっぱい）を 恐（おそ）れないで</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shippai wo osorenaide</div><div class="meaning-text">Without fearing failure / Be courageous</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お金（かね）を 貯（ため）る</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Okane wo tameru</div><div class="meaning-text">To save up money / Build savings</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">料理（りょうり）の 学校（がっこう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ryouri no gakkou</div><div class="meaning-text">Culinary cooking school / academy</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">昇進（しょうしん）する</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shoushin suru</div><div class="meaning-text">To get a promotion in a company</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">きっと / いつか / まず</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kitto / Itsuka / Mazu</div><div class="meaning-text">Surely / Someday (one day) / First of all</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">小さな（ちいさな）レストラン</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Chiisana resutoran</div><div class="meaning-text">Small cozy restaurant (a classic dream!)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">あなた なら きっと できますよ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Anata nara kitto dekimasu yo</div><div class="meaning-text">If it's you, you can surely do it! (support)</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 14 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for future, dreams, goals, hope, hard work, success, failure, challenges, and employment.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">将</div><div class="kanji-info"><h5>General / Future / Officer</h5><div class="kanji-readings">Onyomi: <span>ショウ (shou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('将来、将軍')"><span>将来（しょうらい）- future<br>将軍（しょうぐん）- Shogun</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">来</div><div class="kanji-info"><h5>Come / Future / Next</h5><div class="kanji-readings">Onyomi: <span>ライ (rai)</span><br>Kunyomi: く-る、き-たる</div></div></div><div class="kanji-example" onclick="speakText('将来、来年、来る')"><span>将来（しょうらい）- future<br>来年（らいねん）- next year</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">夢</div><div class="kanji-info"><h5>Dream / Vision / Illusion</h5><div class="kanji-readings">Onyomi: <span>ム (mu)</span><br>Kunyomi: ゆめ、ゆめ-みる</div></div></div><div class="kanji-example" onclick="speakText('夢、悪夢、夢中')"><span>夢（ゆめ）- dream<br>夢中（むちゅう）- absorbed / obsessed</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">目</div><div class="kanji-info"><h5>Eye / Item / Look</h5><div class="kanji-readings">Onyomi: <span>モク、ボク (moku)</span><br>Kunyomi: め、ま</div></div></div><div class="kanji-example" onclick="speakText('目標、目的、目')"><span>目標（もくひょう）- goal<br>目的（もくてき）- purpose</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">標</div><div class="kanji-info"><h5>Signpost / Mark / Target</h5><div class="kanji-readings">Onyomi: <span>ヒョウ (hyou)</span><br>Kunyomi: しるべ</div></div></div><div class="kanji-example" onclick="speakText('目標、標準、標識')"><span>目標（もくひょう）- target / goal<br>標準（ひょうじゅん）- standard</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">希</div><div class="kanji-info"><h5>Hope / Wish / Rare</h5><div class="kanji-readings">Onyomi: <span>キ (ki)</span><br>Kunyomi: こねが-う</div></div></div><div class="kanji-example" onclick="speakText('希望、希少')"><span>希望（きぼう）- hope / wish<br>希少（きしょう）- rare / scarce</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">望</div><div class="kanji-info"><h5>Ambition / Full moon / Hope</h5><div class="kanji-readings">Onyomi: <span>ボウ、モウ (bou)</span><br>Kunyomi: のぞ-む</div></div></div><div class="kanji-example" onclick="speakText('希望、望む、展望')"><span>希望（きぼう）- hope<br>望む（のぞむ）- to desire / wish</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">努</div><div class="kanji-info"><h5>Toil / Diligence / Effort</h5><div class="kanji-readings">Onyomi: <span>ド (do)</span><br>Kunyomi: つと-める</div></div></div><div class="kanji-example" onclick="speakText('努力、努める')"><span>努力（どりょく）- effort / hard work<br>努める（つとめる）- to strive</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">力</div><div class="kanji-info"><h5>Power / Strength / Exert</h5><div class="kanji-readings">Onyomi: <span>リョク、リキ (ryoku)</span><br>Kunyomi: ちから</div></div></div><div class="kanji-example" onclick="speakText('努力、力、能力')"><span>努力（どりょく）- effort<br>能力（のうりょく）- ability / power</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">成</div><div class="kanji-info"><h5>Turn into / Become / Achieve</h5><div class="kanji-readings">Onyomi: <span>セイ、ジョウ (sei)</span><br>Kunyomi: な-る、な-す</div></div></div><div class="kanji-example" onclick="speakText('成功、成長、成人')"><span>成功（せいこう）- success<br>成長（せいちょう）- growth</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">功</div><div class="kanji-info"><h5>Achievement / Merit / Honor</h5><div class="kanji-readings">Onyomi: <span>コウ、ク (kou)</span><br>Kunyomi: いさお</div></div></div><div class="kanji-example" onclick="speakText('成功、功績、年功')"><span>成功（せいこう）- success<br>功績（こうせき）- achievements</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">失</div><div class="kanji-info"><h5>Lose / Error / Fault</h5><div class="kanji-readings">Onyomi: <span>シツ (shitsu)</span><br>Kunyomi: うしな-う</div></div></div><div class="kanji-example" onclick="speakText('失敗、失礼、失う')"><span>失敗（しっぱい）- failure<br>失礼（しつれい）- rudeness / excuse me</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">敗</div><div class="kanji-info"><h5>Failure / Defeat / Reversal</h5><div class="kanji-readings">Onyomi: <span>ハイ (hai)</span><br>Kunyomi: やぶ-れる</div></div></div><div class="kanji-example" onclick="speakText('失敗、敗北、敗れる')"><span>失敗（しっぱい）- failure<br>敗れる（やぶれる）- to be defeated</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">挑</div><div class="kanji-info"><h5>Challenge / Contend / Defy</h5><div class="kanji-readings">Onyomi: <span>チョウ (chou)</span><br>Kunyomi: いど-む</div></div></div><div class="kanji-example" onclick="speakText('挑戦、挑む')"><span>挑戦（ちょうせん）- challenge<br>挑む（いどむ）- to challenge / defy</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">戦</div><div class="kanji-info"><h5>War / Battle / Match</h5><div class="kanji-readings">Onyomi: <span>セン (sen)</span><br>Kunyomi: たたか-う、いくさ</div></div></div><div class="kanji-example" onclick="speakText('挑戦、戦争、戦う')"><span>挑戦（ちょうせん）- challenge<br>戦争（せんそう）- war / conflict</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">卒</div><div class="kanji-info"><h5>Graduate / Soldier / Die</h5><div class="kanji-readings">Onyomi: <span>ソツ (sotsu)</span><br>Kunyomi: お-える</div></div></div><div class="kanji-example" onclick="speakText('卒業、卒業式、新卒')"><span>卒業（そつぎょう）- graduation<br>新卒（しんそつ）- new graduate</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">業</div><div class="kanji-info"><h5>Business / Vocation / Art</h5><div class="kanji-readings">Onyomi: <span>ギョウ、ゴウ (gyou)</span><br>Kunyomi: わざ</div></div></div><div class="kanji-example" onclick="speakText('卒業、仕事、授業')"><span>卒業（そつぎょう）- graduation<br>授業（じゅぎょう）- lesson / class</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">就</div><div class="kanji-info"><h5>Concerning / Settle / Take position</h5><div class="kanji-readings">Onyomi: <span>シュウ、ジュ (shuu)</span><br>Kunyomi: つ-く、つ-ける</div></div></div><div class="kanji-example" onclick="speakText('就職、就任、就く')"><span>就職（しゅうしょく）- finding a job<br>就職活動（しゅうかつ）- job hunting</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">職</div><div class="kanji-info"><h5>Post / Employment / Duty</h5><div class="kanji-readings">Onyomi: <span>ショク (shoku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('就職、転職、職場')"><span>就職（しゅうしょく）- employment<br>転職（てんしょく）- job change</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">独</div><div class="kanji-info"><h5>Single / Alone / Spontaneously</h5><div class="kanji-readings">Onyomi: <span>ドク (doku)</span><br>Kunyomi: ひと-り</div></div></div><div class="kanji-example" onclick="speakText('独立、独身、独特')"><span>独立（どくりつ）- independence<br>独身（どくしん）- single / unmarried</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">立</div><div class="kanji-info"><h5>Stand up / Rise / Set up</h5><div class="kanji-readings">Onyomi: <span>リツ、リュウ (ritsu)</span><br>Kunyomi: た-つ、た-てる</div></div></div><div class="kanji-example" onclick="speakText('独立、立つ、国立')"><span>独立（どくりつ）- independence<br>立つ（たつ）- to stand up</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">結</div><div class="kanji-info"><h5>Tie / Bind / Contract</h5><div class="kanji-readings">Onyomi: <span>ケツ (ketsu)</span><br>Kunyomi: むす-ぶ、ゆ-う</div></div></div><div class="kanji-example" onclick="speakText('結婚、結ぶ、結果')"><span>結婚（けっこん）- marriage<br>結果（けっか）- result / outcome</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">婚</div><div class="kanji-info"><h5>Matrimony / Marriage</h5><div class="kanji-readings">Onyomi: <span>コン (kon)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('結婚、離婚、婚約')"><span>結婚（けっこん）- marriage<br>離婚（りこん）- divorce</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">積</div><div class="kanji-info"><h5>Volume / Product / Accumulate</h5><div class="kanji-readings">Onyomi: <span>セキ (seki)</span><br>Kunyomi: つ-む、つ-もる</div></div></div><div class="kanji-example" onclick="speakText('経験を積む、積極的、面積')"><span>経験を積む（けいけんをつむ）- gain exp.<br>積極的（せっきょくてき）- active / proactive</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay Module -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>🚀 Career Discussion & Restaurant Dream Speech (将来の目標と夢のスピーチ)</h3>
+            <p>Master discussing your career aspirations with mentors and presenting your lifelong dream in Japanese!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-info);">
+            <h4>💬 Scene 1: Discussing Career Plans with a Mentor (将来の計画についての相談)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('しょうらい、なに を したい ですか。')">
+                    <strong style="color:var(--accent-primary);">先輩 (Mentor):</strong> 将来（しょうらい）、何（なに）を したいですか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Shourai, nani wo shitai desu ka. (What would you like to do in the future?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('にほん で えいご の せんせい に なりたい と おもって います。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 日本（にほん）で 英語（えいご）の 先生（せんせい）に なりたいと 思（おも）っています。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Nihon de eigo no sensei ni naritai to omotte imasu. (I am thinking that I would like to become an English teacher in Japan.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('その ために、いま なにか して いますか。')">
+                    <strong style="color:var(--accent-primary);">先輩 (Mentor):</strong> そのために、今（いま）何（なに）か して いますか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sono tame ni, ima nanika shite imasu ka. (For that sake, are you currently doing anything?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('はい、まいにち えいご を べんきょう して いますし、にほんご も れんしゅう して います。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> はい、毎日（まいにち）英語（えいご）を 勉強（べんきょう）して いますし、日本語（にほんご）も 練習（れんしゅう）して います。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hai, mainichi eigo wo benkyou shite imasu shi, nihongo mo renshuu shite imasu. (Yes, I am studying English every day, and I am also practicing Japanese!)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('すごい です ね。きっと うまく いく と おもいます よ。')">
+                    <strong style="color:var(--accent-primary);">先輩 (Mentor):</strong> すごいですね。きっと うまく いくと 思（おも）いますよ。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sugoi desu ne. Kitto umaku iku to omoimasu yo. (That's amazing! I think it will surely go well!)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('ありがとう ございます。がんばります。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> ありがとうございます。頑張（がんば）ります！<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Arigatou gozaimasu. Ganbarimasu. (Thank you very much. I will do my best!)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-success);">
+            <h4>🍳 Scene 2: Speech — My Dream of Opening a Restaurant (小さなレストランを開く夢)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('わたし の ゆめ は、しょうらい じぶん で ちいさな レストラン を ひらく こと です。')">
+                    <strong style="color:var(--accent-secondary);">スピーチ 1:</strong> 私（わたし）の 夢（ゆめ）は、将来（しょうらい）自分（じぶん）で 小（ちい）さな レストランを 開（ひら）くことです。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Watashi no yume wa, shourai jibun de chiisana resutoran wo hiraku koto desu. (My dream is to open a small restaurant by myself in the future.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('その ために、いま りょうり の がっこう に かよって います。')">
+                    <strong style="color:var(--accent-primary);">スピーチ 2:</strong> そのために、今（いま）料理（りょうり）の 学校（がっこう）に 通（かよ）っています。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sono tame ni, ima ryouri no gakkou ni kayotte imasu. (For that purpose, I am currently attending a cooking academy.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('まだ むずかしい こと も たくさん あります が、あきらめないで がんばろう と おもって います。')">
+                    <strong style="color:var(--accent-secondary);">スピーチ 3:</strong> まだ 難（むずか）しい ことも たくさん ありますが、諦（あきら）めないで 頑張（がんば）ろうと 思（おも）っています。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Mada muzukashii koto mo takusan arimasu ga, akiramenaide ganbarou to omotte imasu. (There are still many difficult things, but I intend to persevere without giving up!)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('１０ねんご に は、ゆめ を かなえたい です。')">
+                    <strong style="color:var(--accent-primary);">スピーチ 4:</strong> １０年後（じゅうねんご）には、夢（ゆめ）を 叶（かな）えたいです！<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">10 nengo ni wa, yume wo kanaetai desu. (In 10 years, I want to make my dream come true!)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 14 Future & Career Intention Quiz</h3>
+                <p>Test your understanding of volitional plans, purpose particles, uncertainty modals, and career vocabulary!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 4869–5177)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 14: しょうらい (Shourai) - Future / Bhavishya
+
+## 🎯 Goal:
+- Future plans batana
+- Dreams aur goals express karna
+- Intentions aur decisions share karna
+- Advice dena / lena
+
+---
+
+## 1) Future Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| しょうらい (将来) | しょうらい | Bhavishya / Future |
+| ゆめ (夢) | ゆめ | Sapna / Dream |
+| もくひょう (目標) | もくひょう | Lakshya / Goal |
+| けいかく (計画) | けいかく | Yojana / Plan |
+| きぼう (希望) | きぼう | Ummeed / Hope |
+| やる気 (やるき) | やるき | Motivation |
+| どりょく (努力) | どりょく | Mehnat / Effort |
+| せいこう (成功) | せいこう | Success / Kamyabi |
+| しっぱい (失敗) | しっぱい | Failure / Nakamyabi |
+| ちょうせん (挑戦) | ちょうせん | Challenge |
+| あきらめる (諦める) | あきらめる | Haarna / Give up |
+| がんばる (頑張る) | がんばる | Koshish karna |
+| そつぎょう (卒業) | そつぎょう | Graduation |
+| しゅうしょく (就職) | しゅうしょく | Getting a job |
+| てんしょく (転職) | てんしょく | Job change |
+| どくりつ (独立) | どくりつ | Independence / Own business |
+| けっこん (結婚) | けっこん | Marriage / Shaadi |
+| りこん (離婚) | りこん | Divorce |
+| こども (子供) | こども | Children |
+| いえ を かう (家を買う) | いえをかう | Ghar khareedna |
+| かいがい (海外) | かいがい | Abroad / Videsh |
+
+---
+
+## 2) Grammar Point 68: ～つもりです - Review & Advanced
+## Meaning: "Karne ka plan / irada hai"
+
+**Dictionary form + つもりです**
+**ない form + つもりです**
+
+### Examples:
+
+```
+らいねん、にほんごの しけんを うけるつもりです。
+(Rainen, nihongo no shiken wo ukeru tsumori desu.)
+Agle saal Japanese exam dene ka plan hai.
+
+30さいまでに、いえを かうつもりです。
+(30 sai made ni, ie wo kau tsumori desu.)
+30 saal tak ghar khareedne ka irada hai.
+
+しょうらいは じぶんで かいしゃを つくるつもりです。
+(Shourai wa jibun de kaisha wo tsukuru tsumori desu.)
+Future mein khud company banana ka plan hai.
+
+もう おさけを のまないつもりです。
+(Mou osake wo nomanai tsumori desu.)
+Ab sharab na peene ka irada hai.
+
+にほんに ずっと いるつもりは ありません。
+(Nihon ni zutto iru tsumori wa arimasen.)
+Japan mein hamesha rehne ka irada nahi hai.
+```
+
+---
+
+## 3) Grammar Point 69: ～と おもっています - Review & Advanced
+## Meaning: "Soch raha hoon / considering"
+
+**Plain volitional + と おもっています**
+
+Apna ongoing thought ya plan:
+
+### Examples:
+
+```
+らいねん、くにに かえろうと おもっています。
+(Rainen, kuni ni kaerou to omotteimasu.)
+Agle saal desh lautne ka soch raha hoon.
+
+てんしょくしようと おもっています。
+(Tenshoku shiyou to omotteimasu.)
+Job change karne ka soch raha hoon.
+
+にほんごの N2を とろうと おもっています。
+(Nihongo no N2 wo torou to omotteimasu.)
+Japanese N2 lene ka soch raha hoon.
+
+あたらしい しゅみを はじめようと おもっています。
+(Atarashii shumi wo hajimeyou to omotteimasu.)
+Naya hobby shuru karne ka soch raha hoon.
+```
+
+---
+
+## 4) Grammar Point 70: ～ために ～ています
+## Meaning: "_____ ke liye _____ kar raha hoon"
+
+**Goal の ために + Action ています**
+
+Effort describe karna:
+
+### Examples:
+
+```
+しょうらいの ゆめの ために、いま どりょくして います。
+(Shourai no yume no tame ni, ima doryoku shite imasu.)
+Bhavishya ke sapne ke liye, abhi mehnat kar raha hoon.
+
+JLPT N2に ごうかくする ために、まいにち 2じかん べんきょうして います。
+(JLPT N2 ni goukaku suru tame ni, mainichi 2 jikan benkyou shite imasu.)
+JLPT N2 pass karne ke liye, har roz 2 ghante padh raha hoon.
+
+けんこうに なるために、ジムに かよって います。
+(Kenkou ni naru tame ni, jimu ni kayotte imasu.)
+Sehatmand hone ke liye, gym ja raha hoon.
+
+いえを かうために、おかねを ためています。(貯める)
+(Ie wo kau tame ni, okane wo tamete imasu.)
+Ghar khareedne ke liye, paise jama kar raha hoon.
+```
+
+---
+
+## 5) Grammar Point 71: ～かもしれません
+## Meaning: "Shayad _____ hoga / Might be"
+
+**Plain form + かもしれません**
+
+Uncertainty express karna:
+
+### Examples:
+
+```
+らいねん、にほんを でるかもしれません。
+(Rainen, nihon wo deru kamo shiremasen.)
+Agle saal Japan chhod sakta hoon.
+
+てんしょくは むずかしいかもしれません。
+(Tenshoku wa muzukashii kamo shiremasen.)
+Job change mushkil ho sakta hai.
+
+このかいしゃでは しょうしんできないかもしれません。
+(Kono kaisha de wa shoushin dekinai kamo shiremasen.)
+Is company mein promotion nahi ho sakta.
+
+しょうらい、かいがいで はたらくかもしれません。
+(Shourai, kaigai de hataraku kamo shiremasen.)
+Future mein videsh mein kaam kar sakta hoon.
+
+このしけんは おもったより むずかしいかもしれません。
+(Kono shiken wa omotta yori muzukashii kamo shiremasen.)
+Yeh exam socha tha usse zyada mushkil ho sakta hai.
+```
+
+---
+
+## 6) Grammar Point 72: ～でしょう
+## Meaning: "Shayad _____ hoga / Probably"
+
+**Plain form + でしょう**
+
+かもしれません se zyada confident prediction:
+
+### Examples:
+
+```
+あしたは あめが ふるでしょう。
+(Ashita wa ame ga furu deshou.)
+Kal baarish hogi shayad.
+
+このけいかくは うまくいくでしょう。
+(Kono keikaku wa umaku iku deshou.)
+Yeh plan kaam karega probably.
+
+かれは きっと せいこうするでしょう。
+(Kare wa kitto seikou suru deshou.)
+Woh zaroor safal hoga.
+
+にほんごは もっと じょうずに なるでしょう。
+(Nihongo wa motto jouzu ni naru deshou.)
+Japanese aur acchi ho jaayegi.
+```
+
+---
+
+## 7) Grammar Point 73: ～ていけば
+## Meaning: "Jaari rakha toh / If you keep doing..."
+
+**て-form + いけば**
+
+Ongoing effort ka positive result:
+
+### Examples:
+
+```
+このまま べんきょうして いけば、
+きっと うまく なります。
+(Kono mama benkyou shite ikeba,
+kitto umaku narimasu.)
+Is tarah padhai jaari rakho toh,
+zaroor accha ho jaayega.
+
+どりょくして いけば、ゆめは かなうでしょう。(叶う)
+(Doryoku shite ikeba, yume wa kanau deshou.)
+Mehnat karte raho toh, sapna poora hoga.
+
+あきらめないで つづけて いけば、
+いつか せいこうします。
+(Akiramenaide tsuzukete ikeba,
+itsuka seikou shimasu.)
+Haare bina jaari rakho toh,
+kabhi na kabhi safal ho jaoge.
+```
+
+---
+
+## 8) Future plans discussion
+
+### Sample conversation:
+
+```
+A: しょうらい、なに を したいですか。
+(Shourai, nani wo shitai desu ka.)
+Future mein kya karna chahte ho?
+
+B: にほんで えいごの せんせいに なりたいと おもっています。
+(Nihon de eigo no sensei ni naritai to omotteimasu.)
+Japan mein English teacher banna chahta hoon.
+
+A: そのために、いま なにか して いますか。
+(Sono tame ni, ima nanika shite imasu ka.)
+Uske liye, abhi kuch kar rahe ho?
+
+B: はい、まいにち えいごを べんきょうして いますし、
+にほんごも れんしゅうして います。
+(Hai, mainichi eigo wo benkyou shite imasu shi,
+nihongo mo renshuu shite imasu.)
+Haan, har roz English padh raha hoon aur
+Japanese bhi practice kar raha hoon.
+
+A: すごいですね。きっと うまくいくと おもいますよ。
+(Sugoi desu ne. Kitto umaku iku to omoimasu yo.)
+Amazing hai. Zaroor kaam karega lagta hai.
+
+B: ありがとうございます。がんばります。
+(Arigatou gozaimasu. Ganbarimasu.)
+Thank you. Koshish karunga.
+```
+
+---
+
+## 9) Dream / Goal paragraph
+
+```
+わたしの ゆめは、しょうらい じぶんで ちいさな レストランを
+ひらくことです。(開く)
+(Watashi no yume wa, shourai jibun de chiisa na resutoran wo
+hiraku koto desu.)
+Mera sapna hai ki future mein khud ka chhota restaurant kholun.
+
+そのために、いま りょうりの がっこうに かよっています。
+(Sono tame ni, ima ryouri no gakkou ni kayotte imasu.)
+Uske liye, abhi cooking school ja raha hoon.
+
+まだ むずかしい ことも たくさん ありますが、
+あきらめないで がんばろうと おもっています。
+(Mada muzukashii koto mo takusan arimasu ga,
+akiramenaide ganbarou to omotteimasu.)
+Abhi bahut mushkil cheezein hain, lekin
+haar na manke koshish karne ka soch raha hoon.
+
+10ねん後には、ゆめを かなえたいです。
+(10 nen go ni wa, yume wo kanaetai desu.)
+10 saal baad, sapna poora karna chahta hoon.
+```
+
+---
+
+## 10) Giving advice about future
+
+```
+しょうらいの ために、いま べんきょうした ほうが いいですよ。
+(Shourai no tame ni, ima benkyou shita hou ga ii desu yo.)
+Future ke liye, abhi padhai karna accha hai.
+
+けいけんを つんだ ほうが いいと おもいます。(経験を積む)
+(Keiken wo tsunda hou ga ii to omoimasu.)
+Experience banana accha lagta hai.
+
+まず ちいさな もくひょうから はじめたら どうですか。
+(Mazu chiisa na mokuhyou kara hajimetara dou desu ka.)
+Pehle chhote goals se shuru karte kyun nahi?
+
+しっぱいを おそれないで ちょうせんして ください。
+(Shippai wo osorenaide chousen shite kudasai.)
+Failure se daro mat, challenge karo.
+
+あなたなら きっと できますよ。
+(Anata nara kitto dekimasu yo.)
+Tum zaroor kar paoge.
+```
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 14: しょうらい (Future) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const futureData = {
+        business: {
+            tsumori: { jp: "将来（しょうらい）は 会社（かいしゃ）を 辞（や）めて、自分（じぶん）で 新（あたら）しい 会社（かいしゃ）を 作（つく）る つもりです。", rom: "Shourai wa kaisha wo yamete, jibun de atarashii kaisha wo tsukuru tsumori desu.", hi: "Hindi Translation: Future mein company chhod kar khud ki nayi company banana ka irada hai (firm plan)." },
+            omotteiru: { jp: "来年（らいねん）あたりに 独立（どくりつ）して、自分（じぶん）の ビジネスを 始（はじ）めようと 思（おも）っています。", rom: "Rainen atari ni dokuritsu shite, jibun no bijinesu wo hajimeyou to omotte imasu.", hi: "Hindi Translation: Agle saal ke aaspaas independent ho kar khud ka business shuru karne ka soch raha hoon." },
+            tameni: { jp: "将来（しょうらい）の 独立（どくりつ）の ために、今（いま）ビジネスと 経営（けいえい）の 勉強（べんきょう）を しています。", rom: "Shourai no dokuritsu no tame ni, ima bijinesu to keiei no benkyou wo shite imasu.", hi: "Hindi Translation: Bhavishya ki independence ke liye, abhi business aur management ki padhai kar raha hoon." },
+            kamo: { jp: "起業（きぎょう）は 思（おも）った より 難（むずか）しい かもしれませんが、挑戦（ちょうせん）したいです。", rom: "Kigyou wa omotta yori muzukashii kamo shiremasen ga, chousen shitai desu.", hi: "Hindi Translation: Starting a business socha tha usse mushkil ho sakta hai, lekin challenge karna chahta hoon." },
+            ikeba: { jp: "失敗（しっぱい）を 恐（おそ）れないで 努力（どりょく）していけば、きっと 成功（せいこう）する でしょう。", rom: "Shippai wo osorenaide doryoku shite ikeba, kitto seikou suru deshou.", hi: "Hindi Translation: Nakamyabi se dare bina mehnat jaari rakho toh, zaroor kamyabi milegi!" }
+        },
+        house: {
+            tsumori: { jp: "３０歳（さんじゅっさい）までに、緑（みどり）が 多（おお）い 郊外（こうがい）に 家（いえ）を 買（か）う つもりです。", rom: "30 sai made ni, midori ga ooi kougai ni ie wo kau tsumori desu.", hi: "Hindi Translation: 30 saal tak haryali wale suburbs mein ghar khareedne ka irada hai." },
+            omotteiru: { jp: "家族（かぞく）のために、広（ひろ）い 庭（にわ）が ある 家（いえ）を 探（さが）そうと 思（おも）っています。", rom: "Kazoku no tame ni, hiroi niwa ga aru ie wo sagasou to omotte imasu.", hi: "Hindi Translation: Family ke liye, bade garden wala ghar dhoondhne ka soch raha hoon." },
+            tameni: { jp: "家（いえ）を 買（か）う ために、毎月（まいつき）給料（きゅうりょう）から 貯金（ちょきん）を しています。", rom: "Ie wo kau tame ni, maitsuki kyuuryou kara chokin wo shite imasu.", hi: "Hindi Translation: Ghar khareedne ke liye, har mahine salary se savings kar raha hoon." },
+            kamo: { jp: "都会（とかい）の 家（いえ）は 高（たか）すぎる ので、予算（よさん）が 足（あ）りない かもしれません。", rom: "Tokai no ie wa takasugiru node, yosan ga arinai kamo shiremasen.", hi: "Hindi Translation: City ka ghar bahut mehenga hai isliye, budget kam pad sakta hai (uncertainty)." },
+            ikeba: { jp: "このまま 無駄遣い（むだづかい）を しないで 貯（ため）ていけば、５年後（ごねんご）には 買（か）えるでしょう。", rom: "Kono mama mudazukai wo shinaide tamete ikeba, 5 nengo ni wa kaeru deshou.", hi: "Hindi Translation: Is tarah fizoolkharchi na karke jama karte raho toh, 5 saal baad khareed sakoge!" }
+        },
+        jlpt: {
+            tsumori: { jp: "来年（らいねん）の ７月（しちがつ）に、日本語（にほんご）能力（のうりょく）試験（しけん）の Ｎ１を 受（う）ける つもりです。", rom: "Rainen no shichigatsu ni, nihongo nouryoku shiken no N1 wo ukeru tsumori desu.", hi: "Hindi Translation: Agle saal July mein JLPT N1 exam dene ka firm plan hai!" },
+            omotteiru: { jp: "仕事（しごと）で 日本語（にほんご）を 活（い）かす ために、Ｎ２を 取（と）ろうと 思（おも）っています。", rom: "Shigoto de nihongo wo ikasu tame ni, N2 wo torou to omotte imasu.", hi: "Hindi Translation: Kaam mein Japanese use karne ke liye, N2 lene ka soch raha hoon." },
+            tameni: { jp: "試験（しけん）に 合格（ごうかく）する ために、毎日（まいにち）漢字（かんじ）と 文法（ぶんぽう）を 練習（れんしゅう）しています。", rom: "Shiken ni goukaku suru tame ni, mainichi kanji to bunpou wo renshuu shite imasu.", hi: "Hindi Translation: Exam pass karne ke liye, roz Kanji aur grammar practice kar raha hoon." },
+            kamo: { jp: "仕事（しごと）が 忙（いそが）しいので、今年（ことし）の 合格（ごうかく）は 難（むずか）しい かもしれません。", rom: "Shigoto ga isogashii node, kotoshi no goukaku wa muzukashii kamo shiremasen.", hi: "Hindi Translation: Kaam busy hai isliye, is saal pass hona mushkil ho sakta hai." },
+            ikeba: { jp: "毎日（まいにち）コツコツ 勉強（べんきょう）を 続（つづ）けていけば、きっと 合格（ごうかく）できる でしょう！", rom: "Mainichi kotsukotsu benkyou wo tsuzukete ikeba, kitto goukaku dekiru deshou!", hi: "Hindi Translation: Roz thoda-thoda padhai jaari rakho toh, zaroor pass ho jaoge!" }
+        },
+        abroad: {
+            tsumori: { jp: "将来（しょうらい）は 日本（にほん）を 出（で）て、海外（かいがい）の 会社（かいしゃ）で 働（はたら）く つもりです。", rom: "Shourai wa nihon wo dete, kaigai no kaisha de hataraku tsumori desu.", hi: "Hindi Translation: Future mein Japan chhod kar videsh ki company mein kaam karne ka irada hai." },
+            omotteiru: { jp: "もっと 新（あたら）しい 経験（けいけん）を 積（つ）む ために、転職（てんしょく）しようと 思（おも）っています。", rom: "Motto atarashii keiken wo tsumu tame ni, tenshoku shiyou to omotte imasu.", hi: "Hindi Translation: Aur naya experience hasil karne ke liye, job change karne ka soch raha hoon." },
+            tameni: { jp: "海外（かいがい）勤務（きんむ）の ために、英語（えいご）と 専門（せんもん）スキルを 磨（みが）いています。", rom: "Kaigai kinmu no tame ni, eigo to senmon sukiru wo migaite imasu.", hi: "Hindi Translation: Overseas work ke liye, English aur technical skills polish kar raha hoon." },
+            kamo: { jp: "全（まった）く 新（あたら）しい 国（くに）での 生活（せいかつ）は 大変（たいへん）かもしれない が、行（い）きたいです。", rom: "Mattaku atarashii kuni de no seikatsu wa taihen kamo shiremasen ga, ikitai desu.", hi: "Hindi Translation: Bilkul naye desh mein zindagi mushkil ho sakti hai, lekin jaana chahta hoon." },
+            ikeba: { jp: "自分（じぶん）の 可能性（かのうせい）を 信（しん）じて 挑戦（ちょうせん）していけば、世界（せかい）が 広（ひろ）がるでしょう。", rom: "Jibun no kanousei wo shinjite chousen shite ikeba, sekai ga hirogaru deshou.", hi: "Hindi Translation: Apni potential pe vishwas karke challenge jaari rakho toh, duniya khul jaayegi!" }
+        },
+        restaurant: {
+            tsumori: { jp: "私（わたし）の 夢（ゆめ）は、将来（しょうらい）自分（じぶん）で 小（ちい）さな レストランを 開（ひら）く つもりです。", rom: "Watashi no yume wa, shourai jibun de chiisana resutoran wo hiraku tsumori desu.", hi: "Hindi Translation: Mera sapna hai ki future mein khud ka chhota restaurant kholun (firm goal)." },
+            omotteiru: { jp: "お客様（きゃくさま）を 笑顔（えがお）に できる 料理（りょうり）を 作（つく）ろうと 思（おも）っています。", rom: "Okyakusama wo egao ni dekiru ryouri wo tsukurou to omotte imasu.", hi: "Hindi Translation: Customers ke chehre pe muskaan laane wala khana banane ka soch raha hoon." },
+            tameni: { jp: "その ために、今（いま）専門（せんもん）の 料理（りょうり）学校（がっこう）に 通（かよ）って 練習（れんしゅう）しています。", rom: "Sono tame ni, ima senmon no ryouri gakkou ni kayotte renshuu shite imasu.", hi: "Hindi Translation: Us purpose ke liye, abhi professional cooking school ja kar practice kar raha hoon." },
+            kamo: { jp: "店（みせ）を 経営（けいえい）する のは 想像（そうぞう）より 難（むずか）しい かもしれませんが、頑張（がんば）ります。", rom: "Mise wo keiei suru no wa souzou yori muzukashii kamo shiremasen ga, ganbarimasu.", hi: "Hindi Translation: Restaurant manage karna kalpana se zyada mushkil ho sakta hai, lekin koshish karunga." },
+            ikeba: { jp: "諦（あきら）めないで 腕（うで）を 磨（みが）いていけば、１０年後（じゅうねんご）には 夢（ゆめ）が 叶（かな）うでしょう！", rom: "Akiramenaide ude wo migaite ikeba, 10 nengo ni wa yume ga kanau deshou!", hi: "Hindi Translation: Haare bina skill polish karte raho toh, 10 saal baad sapna zaroor poora hoga!" }
+        }
+    };
+
+    function updateFutureSim() {
+        const s = document.getElementById('sim-scene').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = futureData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakFutureSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 「来年（らいねん）、日本語の 試験（しけん）を 受（う）ける _______です。」\n(I INTEND TO / PLAN TO take the Japanese exam next year - firm intention)", opt: ["つもり (tsumori)", "ために (tame ni)", "ように (you ni)", "くらい (kurai)"], ans: 0 },
+        { q: "2. 「将来（しょうらい）の 夢（ゆめ）の _______、今（いま）毎日（まいにち）努力（どりょく）しています。」\n(FOR THE SAKE OF / IN ORDER TO achieve my future dream, I am working hard)", opt: ["ために (tame ni)", "ように (you ni)", "によって (ni yotte)", "ほど (hodo)"], ans: 0 },
+        { q: "3. 「来年（らいねん）、会社（かいしゃ）の 転職（てんしょく）を しようと _______います。」\n(I AM THINKING OF doing a job change next year - ongoing volitional consideration)", opt: ["思って (omotte)", "言って (itte)", "聞いて (kiite)", "走って (hashitte)"], ans: 0 },
+        { q: "4. 「この 試験（しけん）は 思（おも）った より 難（むずか）しい _______。」\n(This exam MIGHT BE / MAY BE more difficult than I expected - 50% uncertainty)", opt: ["かもしれません (kamoshiremasen)", "べきです (beki desu)", "はずがありません (hazu ga arimasen)", "にちがいありません (ni chigai arimasen)"], ans: 0 },
+        { q: "5. 「諦（あきら）めないで 続（つづ）けて _______、いつか 夢（ゆめ）は 叶（かな）うでしょう。」\n(IF YOU KEEP CONTINUING without giving up, someday your dream will come true)", opt: ["いけば (ikeba)", "きけば (kikeba)", "あけば (akeba)", "おけば (okeba)"], ans: 0 },
+        { q: "6. 「転職（てんしょく）」と 「独立（どくりつ）」の 正しい 意味の 違（ちが）いは どれですか？\n(What is the difference between tenshoku and dokuritsu?)", opt: ["Tenshoku is changing to another company job; Dokuritsu is becoming independent / starting one's own business", "Tenshoku is retiring from work; Dokuritsu is joining a labor union", "Tenshoku is taking a paid vacation; Dokuritsu is going on a business trip", "Tenshoku is graduating from college; Dokuritsu is getting married"], ans: 0 },
+        { q: "7. 「経験を積んだほうがいい（けいけんを つんだ ほうが いい）」の 正しい 意味は どれですか？\n(What is the mentor advising when they say keiken wo tsunda hou ga ii?)", opt: ["It is better to build up and accumulate real-world experience (experience banana accha hai)", "It is better to quit your job immediately without notice", "It is better to spend all your savings on traveling abroad", "It is better to avoid challenging tasks and only do easy work"], ans: 0 },
+        { q: "8. 「あなたなら きっと できますよ」という アドバイスの 正しい 意味・気持ちは どれですか？\n(What does anata nara kitto dekimasu yo mean when cheering someone on?)", opt: ["If it's you, you can surely do it! (Tum zaroor kar paoge - strong encouragement)", "You will probably fail because it is too difficult for you", "You should ask someone else to do your job for you", "You must pay a large amount of money to open a business"], ans: 0 },
+        { q: "9. 「～でしょう」と 「～かもしれません」の 確信度（かくしんど - certainty level）の 違いは どれですか？\n(What is the difference in prediction certainty between deshou and kamoshirenai?)", opt: ["Deshou expresses high probability (probably ~80-90%); Kamoshirenai expresses mere possibility (might/may ~50%)", "Deshou means impossible (0%); Kamoshirenai means absolutely certain (100%)", "Deshou is only used for bad news; Kamoshirenai is only used for good news", "There is no difference at all between them"], ans: 0 },
+        { q: "10. 将来の夢のスピーチで 「小さなレストランを開く（ひらく）」の 正しい 意味は どれですか？\n(What is the speaker's dream when they say chiisana resutoran wo hiraku?)", opt: ["To open and run a small, cozy restaurant of one's own (khud ka chhota restaurant kholna)", "To eat lunch at a famous expensive restaurant in Tokyo", "To work as a waiter in a large hotel banquet hall", "To write a cookbook about traditional Japanese cuisine"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Phenomenal! You can now articulate your life goals and career dreams in Japanese with clarity!':'💪 Keep striving! Review volitional intentions (~つもり / ~と思っています) and purpose structures!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

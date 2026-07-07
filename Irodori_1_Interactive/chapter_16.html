@@ -1,0 +1,1924 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Ch 16: ともだちと (With Friends) - Social & Casual Japanese Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f18;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --bg-card: rgba(31, 41, 55, 0.75);
+            --bg-glass: rgba(17, 24, 39, 0.85);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(16, 185, 129, 0.5);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+            --accent-primary: #10b981; /* Emerald/LINE Green */
+            --accent-secondary: #059669;
+            --accent-tertiary: #6366f1;
+            --accent-info: #38bdf8;
+            --accent-success: #34d399;
+            --accent-warning: #fbbf24;
+            --accent-rose: #f43f5e;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            --gradient-secondary: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            --gradient-tertiary: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.25);
+            --font-main: 'Outfit', sans-serif;
+            --font-jp: 'Noto Sans JP', sans-serif;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f5f9;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(16, 185, 129, 0.5);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #94a3b8;
+            --accent-primary: #059669;
+            --accent-secondary: #047857;
+            --accent-tertiary: #4f46e5;
+            --accent-info: #0284c7;
+            --accent-success: #059669;
+            --accent-warning: #d97706;
+            --accent-rose: #e11d48;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 20px rgba(5, 150, 105, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-badge {
+            background: var(--gradient-primary);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-glow);
+            letter-spacing: 1px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-theme, .btn-audio-global {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme:hover, .btn-audio-global:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Welcome Banner */
+        .banner {
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .banner::after {
+            content: "友達";
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-family: var(--font-jp);
+            font-size: 8.5rem;
+            font-weight: 900;
+            opacity: 0.15;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .banner h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+        }
+
+        .banner p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .banner-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.75rem 1.4rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Tab Content Panels */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Flashcards Grid */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .jp-text {
+            font-family: var(--font-jp);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1.3;
+        }
+
+        .btn-audio {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card:hover .btn-audio {
+            background: var(--accent-primary);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .romaji-text {
+            font-size: 0.95rem;
+            color: var(--accent-info);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .meaning-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 500;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        /* Interactive Tools Box */
+        .interactive-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .interactive-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .output-panel {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .output-jp {
+            font-family: var(--font-jp);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .output-romaji {
+            color: var(--accent-info);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .output-meaning {
+            color: var(--accent-success);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .btn-action {
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+        }
+
+        /* LINE Chat Simulator UI */
+        .line-chat-box {
+            background: #0f172a;
+            border: 3px solid #10b981;
+            border-radius: 24px;
+            padding: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.1);
+        }
+
+        .line-header {
+            background: #10b981;
+            color: #fff;
+            padding: 0.8rem 1.2rem;
+            border-radius: 16px 16px 0 0;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+        }
+
+        .line-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-height: 350px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .msg-bubble {
+            max-width: 80%;
+            padding: 0.8rem 1.2rem;
+            border-radius: 18px;
+            font-family: var(--font-jp);
+            font-size: 1.05rem;
+            line-height: 1.5;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .msg-left {
+            align-self: flex-start;
+            background: #334155;
+            color: #fff;
+            border-bottom-left-radius: 4px;
+        }
+
+        .msg-right {
+            align-self: flex-end;
+            background: #10b981;
+            color: #fff;
+            border-bottom-right-radius: 4px;
+            font-weight: 600;
+        }
+
+        .msg-sub {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-family: var(--font-main);
+            margin-top: 0.3rem;
+            display: block;
+        }
+
+        .chat-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .chat-btn {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chat-btn:hover {
+            background: var(--accent-primary);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        /* Grammar Cards */
+        .grammar-card {
+            background: var(--bg-secondary);
+            border-left: 5px solid var(--accent-primary);
+            border-radius: 0 20px 20px 0;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .grammar-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grammar-formula {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-family: var(--font-jp);
+            font-size: 1.25rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            border: 1px dashed var(--border-color);
+            display: inline-block;
+        }
+
+        .particle-badge {
+            background: var(--accent-primary);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin: 0 0.3rem;
+            display: inline-block;
+        }
+
+        /* Kanji Section Grid */
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kanji-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kanji-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .kanji-top {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .kanji-char {
+            font-family: var(--font-jp);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-primary);
+            line-height: 1;
+            background: var(--bg-tertiary);
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .kanji-info h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        .kanji-readings {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .kanji-readings span {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .kanji-example {
+            background: var(--bg-primary);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .kanji-example:hover {
+            border-color: var(--accent-success);
+        }
+
+        /* Quiz Module */
+        .quiz-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .question-box {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .option-btn {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent-primary);
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .option-btn.correct {
+            background: rgba(52, 211, 153, 0.2);
+            border-color: var(--accent-success);
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            background: rgba(244, 63, 94, 0.2);
+            border-color: var(--accent-rose);
+            color: #fff;
+        }
+
+        .quiz-score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 2rem;
+            color: var(--accent-success);
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            border: 2px solid var(--accent-success);
+        }
+
+        /* Verbatim Text Reference Box */
+        .verbatim-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 2rem;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #e6edf3;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .verbatim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .badge-100 {
+            background: #238636;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner h2 { font-size: 1.8rem; }
+            .grid-cards, .kanji-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 1rem; }
+            .tabs-nav { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">第 16 課 🤝</div>
+            <div class="logo-text">
+                <h1>Irodori (いろどり) Elementary 2</h1>
+                <p>Chapter 16: ともだちと (Tomodachi to) - With Friends & Social Japanese</p>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button class="btn-audio-global" onclick="speakText('あしたなにする？いっしょにえいがない？いいね！いこう！えきのまえでまちあわせしよう。')">
+                <span>🔊</span> Speak Ch 16 Casual Dialogue
+            </button>
+            <button class="btn-theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> Theme
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Welcome Banner -->
+        <div class="banner">
+            <h2>ともだちと (With Friends & Social Japanese) 💬</h2>
+            <p>Welcome to Chapter 16! Take your Japanese from classroom polite to real-life social fluency! Here you will master making friends, offering help (<strong style="color:#fff; background:#059669; padding:0 6px; border-radius:4px;">～ましょうか</strong>), speaking in casual plain form (<strong style="color:#fff; background:#e11d48; padding:0 6px; border-radius:4px;">タメぐち / Tameguchi</strong>), giving casual invitations (<strong style="color:#fff; background:#4f46e5; padding:0 6px; border-radius:4px;">～ない？ / ～よう</strong>), arranging meeting spots (<strong style="color:#fff; background:#d97706; padding:0 6px; border-radius:4px;">まちあわせ</strong>), listing multiple reasons (<strong style="color:#fff; background:#0284c7; padding:0 6px; border-radius:4px;">～し、～し</strong>), explaining situations (<strong style="color:#fff; background:#8b5cf6; padding:0 6px; border-radius:4px;">～んです</strong>), and using Japanese LINE / internet chat slang!</p>
+            <div class="banner-tags">
+                <div class="tag">🎯 Goal: Dost banane ke liye conversation, invitation, plans & casual baat</div>
+                <div class="tag">💬 Interactive LINE & Chat Slang Simulator (タメぐち / SNS)</div>
+                <div class="tag">✨ Polite vs Casual Tameguchi Converter & Plan Builder</div>
+                <div class="tag">⚡ 100% Verbatim Complete Content (Lines 3538 to 3829)</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('line')">
+                <span>💬</span> LINE Chat Slang Simulator (SNS / タメぐち)
+            </button>
+            <button class="tab-btn" onclick="switchTab('plans')">
+                <span>🤝</span> Plan Making & Invitation Builder (～ない？ / ～よう / まちあわせ)
+            </button>
+            <button class="tab-btn" onclick="switchTab('grammar')">
+                <span>✨</span> Tameguchi Converter & Reason Generator (～し / ～んです / ～ましょうか)
+            </button>
+            <button class="tab-btn" onclick="switchTab('vocab')">
+                <span>📇</span> 70+ Clickable Friendship, Slang & Casual Cards
+            </button>
+            <button class="tab-btn" onclick="switchTab('kanji')">
+                <span>🈹</span> Kanji Mastery (24 Ch 16 Kanjis)
+            </button>
+            <button class="tab-btn" onclick="switchTab('quiz')">
+                <span>🎮</span> Social & Casual Mastery Quiz (10 Qs)
+            </button>
+            <button class="tab-btn" onclick="switchTab('verbatim')">
+                <span>📖</span> Verbatim Original Text (100% Complete)
+            </button>
+        </div>
+
+        <!-- TAB 1: LINE Chat Slang Simulator -->
+        <div id="tab-line" class="tab-content active">
+            <div class="interactive-box">
+                <h4>💬 Interactive LINE & Chat Slang Simulator (LINE / SNS Phrases)</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Experience real Japanese internet and social messaging! Click any casual chat button below to send a message to your Japanese best friend (<strong style="color:var(--accent-primary);">しんゆう</strong>), hear the native voice, and see their authentic chat reply!</p>
+                
+                <div class="line-chat-box">
+                    <div class="line-header">
+                        <span>📱 LINE Chat with ケンタ (Kenta - 親友)</span>
+                        <span style="font-size:0.8rem; background:rgba(0,0,0,0.2); padding:0.2rem 0.6rem; border-radius:10px;">🟢 Online</span>
+                    </div>
+                    <div class="line-messages" id="chat-messages">
+                        <div class="msg-bubble msg-left" onclick="speakText('おつー！いまからひまー？')">
+                            おつー！いまから ひまー？ 👀<br>
+                            <span class="msg-sub">Kenta: Otsuu! (Good work tired!). Are you free from right now?</span>
+                        </div>
+                    </div>
+                    <div class="chat-buttons">
+                        <button class="chat-btn" onclick="sendChat('ok', 'うん、ひまだよ！なに？ (Un, hima dayo! Nani?)', 'いいね！ごはん いこー！ (Nice! Let go eat!)')">🟢 うん、ひまだよ！なに？</button>
+                        <button class="chat-btn" onclick="sendChat('ryo', 'りょ！ / 了解！えきで あおう (Ryo! Roger that! See you at station)', 'おけ！また あとでー (OK! See you later!)')">👍 りょ / 了解 (Roger)</button>
+                        <button class="chat-btn" onclick="sendChat('lol', 'うける（笑）/ www / 草 (Ukeru! Hahaha lol!)', 'まじで やばいよね！www (Seriously wild right! lol)')">😂 うける / 草 / www (LOL)</button>
+                        <button class="chat-btn" onclick="sendChat('maji', 'まじで？うそ！(Majide? Uso! Seriously? No way!)', 'ほんと だよ！すごいよね！(It is true! Amazing right!)')">😲 まじ？ / うそ！ (Really?)</button>
+                        <button class="chat-btn" onclick="sendChat('thanks', 'ありがとー！ごめんね！(Arigato! Gomen ne!)', 'ううん、ぜんぜん だいじょうぶ！(No no, totally fine!)')">🙏 ありがとー / ごめんね</button>
+                        <button class="chat-btn" onclick="sendChat('night', 'おやすみー！また あした！(Oyasumi! See you tomorrow!)', 'おやすみー！いい ゆめ みてね！(Good night! Sweet dreams!)')">🌙 おやすみー (Good night)</button>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn-action" onclick="resetChat()">🔄 Reset Conversation</button>
+                </div>
+            </div>
+
+            <!-- Chat Slang Vocabulary Reference Table -->
+            <div style="background:var(--bg-secondary); padding:2rem; border-radius:20px; border:1px solid var(--border-color);">
+                <h4 style="color:var(--accent-primary); font-size:1.4rem; margin-bottom:1rem;">📌 Essential LINE & SNS Chat Dictionary (From Lines 3808–3827)</h4>
+                <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1rem;">
+                    <div style="background:var(--bg-tertiary); padding:1rem; border-radius:12px; border:1px solid var(--border-color);" onclick="speakText('おはよーとおつー')"><strong style="color:var(--accent-primary); font-family:var(--font-jp); font-size:1.15rem;">おはよー / おつー</strong><span style="display:block; font-size:0.85rem; color:var(--text-muted);">Casual "Good morning" / "Otsukare" (Tired greeting)</span></div>
+                    <div style="background:var(--bg-tertiary); padding:1rem; border-radius:12px; border:1px solid var(--border-color);" onclick="speakText('りょうかい')"><strong style="color:var(--accent-info); font-family:var(--font-jp); font-size:1.15rem;">りょ / 了解 (りょうかい) / おけ</strong><span style="display:block; font-size:0.85rem; color:var(--text-muted);">Roger that / OK / Samajh gaya 👍</span></div>
+                    <div style="background:var(--bg-tertiary); padding:1rem; border-radius:12px; border:1px solid var(--border-color);" onclick="speakText('うける、くさ')"><strong style="color:var(--accent-warning); font-family:var(--font-jp); font-size:1.15rem;">うける（笑）/ www / 草 (くさ)</strong><span style="display:block; font-size:0.85rem; color:var(--text-muted);">Hilarious / LOL / Hahaha (Grass icon looks like www) 🌿</span></div>
+                    <div style="background:var(--bg-tertiary); padding:1rem; border-radius:12px; border:1px solid var(--border-color);" onclick="speakText('まじうそやばい')"><strong style="color:var(--accent-rose); font-family:var(--font-jp); font-size:1.15rem;">まじ？ / うそ！ / やばい！</strong><span style="display:block; font-size:0.85rem; color:var(--text-muted);">Seriously? / Jhooth! / Wow/Wild/Oh no! 😲</span></div>
+                    <div style="background:var(--bg-tertiary); padding:1rem; border-radius:12px; border:1px solid var(--border-color);" onclick="speakText('いまからいい')"><strong style="color:var(--accent-success); font-family:var(--font-jp); font-size:1.15rem;">ひまー？ / いまから いい？</strong><span style="display:block; font-size:0.85rem; color:var(--text-muted);">Are you free? / Is right now okay? 👀</span></div>
+                    <div style="background:var(--bg-tertiary); padding:1rem; border-radius:12px; border:1px solid var(--border-color);" onclick="speakText('なにしてる、ごはんいこー')"><strong style="color:var(--accent-tertiary); font-family:var(--font-jp); font-size:1.15rem;">なにしてる？ / ごはん いこー</strong><span style="display:block; font-size:0.85rem; color:var(--text-muted);">What doing? / Let's go eat! 🍱</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: Plan Making & Invitation Builder -->
+        <div id="tab-plans" class="tab-content">
+            <div class="interactive-box">
+                <h4>🤝 Interactive Plan Making & Casual Invitation Builder</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Build an authentic plan-making dialogue with a friend! Choose an activity, propose a time, and arrange a meeting spot (<strong style="color:var(--accent-primary);">まちあわせ</strong>)! Contrast polite classroom invitations (<strong style="color:var(--accent-info);">いきませんか</strong>) with casual friend invitations (<strong style="color:var(--accent-success);">いかない？ / いこう！</strong>)!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Select Activity to Invite Friend (おさそい)</label>
+                        <select id="plan-act" onchange="updatePlan()">
+                            <option value="karaoke" selected>🎤 Karaoke (いっしょに カラオケ いかない？ - Karaoke chalega?)</option>
+                            <option value="movie">🎬 Movie (いっしょに えいが みない？ - Movie dekhega?)</option>
+                            <option value="ramen">🍜 Ramen Eat (いっしょに ラーメン たべない？ - Ramen khayein?)</option>
+                            <option value="shop">🛍️ Shopping (いっしょに かいもの いかない？ - Shopping chalein?)</option>
+                            <option value="game">🎮 Gaming (あした うち で ゲーム しない？ - Ghar pe game khelein?)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Select Meeting Point (まちあわせ の ばしょ)</label>
+                        <select id="plan-spot" onchange="updatePlan()">
+                            <option value="station" selected>1️⃣ Station Front (えき の まえ で まちあわせ しよう)</option>
+                            <option value="cafe">2️⃣ Coffee Shop (カフェ の まえ で あおう)</option>
+                            <option value="park">3️⃣ Park Entrance (こうえん の いりぐち で まちあわせ しよう)</option>
+                            <option value="home">4️⃣ My House (わたし の うち に きてね)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="plan-jp" style="font-size:1.25rem; line-height:2;">
+                        A: こんど の どようび、ひま？<br>
+                        B: うん、ひま だよ。なに？<br>
+                        A: <span style="color:var(--accent-primary);">いっしょに カラオケ いかない？</span><br>
+                        B: いいね！いこう！なんじ に する？<br>
+                        A: 3じ は どう？<br>
+                        B: いいよ。どこ で あう？<br>
+                        A: <span style="color:var(--accent-warning);">えき の まえ で まちあわせ しよう。</span><br>
+                        B: わかった！じゃ、また どようび に！たのしみ！
+                    </div>
+                    <div class="output-meaning" id="plan-meaning" style="margin-top:1rem;">
+                        Hindi Translation: A: Agle Saturday free hai? B: Haan, free hoon. Kya? A: Saath mein karaoke chalega? B: Accha hai! Chalte hain! Kitne baje ka kare? A: 3 baje kaisa? B: Theek hai. Kahaan milein? A: Station ke saamne milte hain. B: Samajh gaya! Toh Saturday ko! Maza aayega!
+                    </div>
+                    <button class="btn-action" onclick="speakPlan()">🔊 Speak Complete Casual Plan Dialogue</button>
+                </div>
+            </div>
+
+            <!-- Polite vs Casual Invitation Grammar Card -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-info);">
+                    <div class="grammar-title"><span>Polite Invitation (Classroom)</span><span class="particle-badge" style="background:var(--accent-info);">Formal</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">～ませんか / ～ましょう</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;">
+                        Used with teachers, seniors (`先輩`), or acquaintances (`知り合い`).<br>
+                        • <strong style="color:#fff;">いっしょに えいが を みませんか？</strong> (Won't you watch a movie with me?).<br>
+                        • <strong style="color:#fff;">いいですね。いきましょう！</strong> (That is nice. Let's go!).
+                    </p>
+                </div>
+
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-primary);">
+                    <div class="grammar-title"><span>Casual Invitation (With Friends)</span><span class="particle-badge" style="background:var(--accent-primary);">Pt 61 & 62</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">～ない？ / ～う・よう</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;">
+                        Used with friends (`友達`) and close buddies (`親友`). Drop polite endings!<br>
+                        • <strong style="color:#fff;">いっしょに えいが みない？</strong> (Movie dekhega / Won't you watch?).<br>
+                        • <strong style="color:#fff;">いいね！いこう！ / みよう！</strong> (Nice! Let's go! / Let's watch!).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Tameguchi Converter & Reason Generator -->
+        <div id="tab-grammar" class="tab-content">
+            <div class="section-header">
+                <h3>✨ Polite vs Casual Tameguchi Converter & Reason Generator</h3>
+                <p>Master casual plain speech (<strong style="color:#fff;">タメぐち</strong>), chaining multiple reasons (<strong style="color:var(--accent-info);">～し、～し</strong>), explaining situations (<strong style="color:var(--accent-warning);">～んです</strong>), and offering assistance (<strong style="color:var(--accent-success);">～ましょうか</strong>)!</p>
+            </div>
+
+            <!-- Tameguchi Interactive Converter -->
+            <div class="interactive-box" style="margin-bottom:2rem;">
+                <h4>🔄 Interactive Tameguchi (Plain Form) Converter (Lines 3588–3637)</h4>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Select a Polite Sentence (ます / です Form)</label>
+                        <select id="tame-select" onchange="updateTame()">
+                            <option value="eat_pos" selected>1️⃣ たべます (I eat) -> たべる (Taberu)</option>
+                            <option value="eat_neg">2️⃣ たべません (Don't eat) -> たべない (Tabenai)</option>
+                            <option value="go_past">3️⃣ いきました (Went) -> いった (Itta)</option>
+                            <option value="go_past_neg">4️⃣ いきませんでした (Didn't go) -> いかなかった (Ikanakatta)</option>
+                            <option value="desu_pos">5️⃣ がくせい です (Is a student) -> がくせい だ (Gakusei da)</option>
+                            <option value="desu_neg">6️⃣ ひま じゃありません (Not free) -> ひま じゃない (Hima janai)</option>
+                            <option value="adj_i">7️⃣ おいしかったです (Was tasty) -> おいしかった (Oishikatta)</option>
+                            <option value="q_go">8️⃣ いきますか？ (Will you go?) -> いく？ (Iku? - rising tone!)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="output-panel" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+                    <div style="border-right:1px solid var(--border-color); padding-right:1rem;">
+                        <span style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:0.3rem;">Polite Form (ます / です)</span>
+                        <div class="output-jp" id="tame-polite" style="color:var(--accent-info);">たべます</div>
+                        <div class="output-romaji" id="tame-polite-rom">Tabemasu</div>
+                    </div>
+                    <div>
+                        <span style="font-size:0.85rem; color:var(--accent-primary); text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:0.3rem;">Casual Plain Form (タメぐち)</span>
+                        <div class="output-jp" id="tame-casual" style="color:var(--accent-primary);">たべる！</div>
+                        <div class="output-romaji" id="tame-casual-rom">Taberu!</div>
+                    </div>
+                </div>
+                <div style="margin-top:1rem; text-align:center;">
+                    <button class="btn-action" onclick="speakTame()">🔊 Speak Polite vs Casual Comparison</button>
+                </div>
+            </div>
+
+            <!-- Grammar Pts 59, 63, 64 -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem;">
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-success);">
+                    <div class="grammar-title"><span>Shall I do it for you?</span><span class="particle-badge" style="background:var(--accent-success);">Pt 59</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Verb ～ましょうか？ = Offer help</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('てつだいましょうか。まどをあけましょうか。')">
+                        Contrast <strong style="color:#fff;">～ましょう</strong> (Let's do together) with <strong style="color:var(--accent-success);">～ましょうか？</strong> (Shall I do it for you / Main kar doon?).<br>
+                        • <strong style="color:#fff;">てつだいましょうか？</strong> (Shall I help you?).<br>
+                        • <strong style="color:#fff;">まど を あけましょうか？</strong> (Shall I open the window?).
+                    </p>
+                </div>
+
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-warning);">
+                    <div class="grammar-title"><span>Listing Multiple Reasons</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 63</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Plain form + し、Plain form + し</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('あのレストランはおいしいし、やすいし、よくいく。')">
+                        Use <strong style="color:var(--accent-warning);">～し、～し</strong> to list multiple reasons (_____ bhi hai aur _____ bhi hai isliye...).<br>
+                        • <strong style="color:#fff;">あの レストラン は おいしいし、やすいし、よくいく。</strong> (That restaurant is tasty AND cheap, so I often go).<br>
+                        • <strong style="color:#fff;">あたま が いたいし、ねつ も あるし、やすみたい。</strong> (Headache and fever, want to rest).
+                    </p>
+                </div>
+
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-tertiary);">
+                    <div class="grammar-title"><span>Explanation / Reason Dena</span><span class="particle-badge" style="background:var(--accent-tertiary);">Pt 64</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Plain form + んです / ん だ</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('どうしたんですか。あたまがいたいんです。あしたいくだ。')">
+                        Use <strong style="color:var(--accent-tertiary);">なんです / んです</strong> to explain reasons or background situations.<br>
+                        • <strong style="color:#fff;">どうしたんですか？</strong> (What happened? - asking reason).<br>
+                        • <strong style="color:#fff;">あたま が いたいんです。</strong> (Actually, I have a headache).<br>
+                        • Casual: <strong style="color:#fff;">あした いくんだ / なにしてるの？</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: 70+ Clickable Friendship, Social & Slang Audio Cards -->
+        <div id="tab-vocab" class="tab-content">
+            <div class="section-header">
+                <h3>🤝 Friendship & Social Vocabulary (16 Words)</h3>
+                <p>Click any card to speak!</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('ともだち')"><div class="card-top"><div class="jp-text">ともだち (友達)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tomodachi</div><div class="meaning-text">Dost / Friend / Mitra 🤝</div></div>
+                <div class="card" onclick="speakText('しんゆう')"><div class="card-top"><div class="jp-text">しんゆう (親友)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shin'yuu</div><div class="meaning-text">Best friend / Pakka dost / Jigri yaer 🌟</div></div>
+                <div class="card" onclick="speakText('なかま')"><div class="card-top"><div class="jp-text">なかま (仲間)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Nakama</div><div class="meaning-text">Companion / Group friend / Sathi 👥</div></div>
+                <div class="card" onclick="speakText('ぐるーぷ')"><div class="card-top"><div class="jp-text">グループ</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Guruupu</div><div class="meaning-text">Group / Samuh ⭕</div></div>
+                <div class="card" onclick="speakText('しりあい')"><div class="card-top"><div class="jp-text">しりあい (知り合い)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shiriai</div><div class="meaning-text">Acquaintance / Jaanpehchaan ka vyakti 👋</div></div>
+                <div class="card" onclick="speakText('きんじょのひと')"><div class="card-top"><div class="jp-text">きんじょ の ひと (近所の人)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kinjo no hito</div><div class="meaning-text">Neighbor / Padosi 🏡</div></div>
+                <div class="card" onclick="speakText('やくそく')"><div class="card-top"><div class="jp-text">やくそく (約束)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Yakusoku</div><div class="meaning-text">Promise / Vaada / Appointment 🤞</div></div>
+                <div class="card" onclick="speakText('まちあわせ')"><div class="card-top"><div class="jp-text">まちあわせ (待ち合わせ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Machiawase</div><div class="meaning-text">Meeting point / Milne ki jagah ka plan 📍</div></div>
+                <div class="card" onclick="speakText('おさそい')"><div class="card-top"><div class="jp-text">おさそい (お誘い)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Osasoi</div><div class="meaning-text">Invitation / Nimantran / Bulawa 🎟️</div></div>
+                <div class="card" onclick="speakText('つごう')"><div class="card-top"><div class="jp-text">つごう (都合)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tsugou</div><div class="meaning-text">Convenience / Availability / Samay ki anukuulta 🗓️</div></div>
+                <div class="card" onclick="speakText('ひま')"><div class="card-top"><div class="jp-text">ひま (暇)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hima</div><div class="meaning-text">Free / Khaali / Fursat mein 🟢</div></div>
+                <div class="card" onclick="speakText('いそがしい')"><div class="card-top"><div class="jp-text">いそがしい (忙しい)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Isogashii</div><div class="meaning-text">Busy / Vyast / Kaam mein zyaada 🔴</div></div>
+                <div class="card" onclick="speakText('よてい')"><div class="card-top"><div class="jp-text">よてい (予定)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Yotei</div><div class="meaning-text">Plan / Schedule / Yojana 📌</div></div>
+                <div class="card" onclick="speakText('えすえぬえす')"><div class="card-top"><div class="jp-text">SNS (エスエヌエス)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Esu-enu-esu</div><div class="meaning-text">Social media (Twitter, IG, FB) 📱</div></div>
+                <div class="card" onclick="speakText('らいん')"><div class="card-top"><div class="jp-text">LINE (ライン)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Rain</div><div class="meaning-text">LINE app (Japan's #1 messenger / WhatsApp) 💬</div></div>
+                <div class="card" onclick="speakText('めっせーじ')"><div class="card-top"><div class="jp-text">メッセージ</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Messeeji</div><div class="meaning-text">Message / Sandesh 📩</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>✨ Casual Particles & Expressions (16 Expressions - Lines 3747–3765)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('すごい')"><div class="card-top"><div class="jp-text">すごい！</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sugoi!</div><div class="meaning-text">Amazing! / Kamaal / Shandar! 🌟</div></div>
+                <div class="card" onclick="speakText('やばい')"><div class="card-top"><div class="jp-text">やばい！</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Yabai!</div><div class="meaning-text">Wow! / Wild / Oh no! (+ or - surprise) 🔥</div></div>
+                <div class="card" onclick="speakText('まじ')"><div class="card-top"><div class="jp-text">まじ？/ まじで？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Maji? / Majide?</div><div class="meaning-text">Seriously? / Sach mein? / Really? 😲</div></div>
+                <div class="card" onclick="speakText('うそ')"><div class="card-top"><div class="jp-text">うそ！</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Uso!</div><div class="meaning-text">No way! / Jhooth! / Unbelievable! 🙀</div></div>
+                <div class="card" onclick="speakText('たのしみ')"><div class="card-top"><div class="jp-text">たのしみ！(楽しみ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tanoshimi!</div><div class="meaning-text">Looking forward to it! / Maza aayega! 🎉</div></div>
+                <div class="card" onclick="speakText('ひさしぶり')"><div class="card-top"><div class="jp-text">ひさしぶり！(久しぶり)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hisashiburi!</div><div class="meaning-text">Long time no see! / Bahut din baad mile! 🤗</div></div>
+                <div class="card" onclick="speakText('だよね')"><div class="card-top"><div class="jp-text">～よね</div><button class="btn-audio">🔊</button></div><div class="romaji-text">~yo ne</div><div class="meaning-text">Hai na! (Strong agreement/confirmation) 👍</div></div>
+                <div class="card" onclick="speakText('だけど')"><div class="card-top"><div class="jp-text">～けど / ～けれど</div><button class="btn-audio">🔊</button></div><div class="romaji-text">~kedo</div><div class="meaning-text">Lekin / But (casual connector) 🔄</div></div>
+                <div class="card" onclick="speakText('だkana')"><div class="card-top"><div class="jp-text">～かな</div><button class="btn-audio">🔊</button></div><div class="romaji-text">~kana</div><div class="meaning-text">I wonder / Shayad / Kya aisa hai? 🤔</div></div>
+                <div class="card" onclick="speakText('いくの')"><div class="card-top"><div class="jp-text">～の？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">~no?</div><div class="meaning-text">Hai kya? (Soft casual question ending) ❓</div></div>
+                <div class="card" onclick="speakText('うんとううん')"><div class="card-top"><div class="jp-text">うん / ううん</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Un / Uun</div><div class="meaning-text">Haan (Yes) / Nahi (No) in casual speech 🟢🔴</div></div>
+                <div class="card" onclick="speakText('てつだいましょうか')"><div class="card-top"><div class="jp-text">てつだいましょか？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tetsudaimashou ka?</div><div class="meaning-text">Main madad kar doon? (Shall I help?) 🤝</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 5: Kanji Mastery -->
+        <div id="tab-kanji" class="tab-content">
+            <div class="section-header">
+                <h3>🈹 Chapter 16 Kanji Mastery (漢字 - 24 Friendship, Social & Emotion Kanjis)</h3>
+                <p>Master 24 vital Kanjis for social relationships, promises, availability, and casual communication!</p>
+            </div>
+
+            <div class="kanji-grid">
+                <!-- Kanji 1: 友 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">友</div><div class="kanji-info"><h5>Friend (Tomo/Yuu)</h5><div class="kanji-readings">Kun: <span>とも (tomo)</span><br>On: <span>ユウ (yuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ともだちとしんゆう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">友達 (ともだち) / 親友 (しんゆう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Tomodachi (Friend) / Shin'yuu (Best friend)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 2: 親 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">親</div><div class="kanji-info"><h5>Parent / Intimate (Oya/Shin)</h5><div class="kanji-readings">Kun: <span>おや / した・しい</span><br>On: <span>シン (shin)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('しんゆうとろーしん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">親友 (しんゆう) / 両親 (りょうしん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shin'yuu (Best friend) / Ryoushin (Parents)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 3: 仲 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">仲</div><div class="kanji-info"><h5>Relationship (Naka)</h5><div class="kanji-readings">Kun: <span>なか (naka)</span><br>On: <span>チュウ (chuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('なかまとなかよし')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">仲間 (なかま) / 仲良し (なかよし)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Nakama (Companion/Group) / Nakayoshi (Good pal)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 4: 間 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">間</div><div class="kanji-info"><h5>Interval / Between (Aida/Kan)</h5><div class="kanji-readings">Kun: <span>あいだ / ま</span><br>On: <span>カン / ケン (kan)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('なかまとじかん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">仲間 (なかま) / 時間 (じかん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Nakama (Group circle) / Jikan (Time)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 5: 知 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">知</div><div class="kanji-info"><h5>Know / Wisdom (Shi.ru/Chi)</h5><div class="kanji-readings">Kun: <span>し・る (shiru)</span><br>On: <span>チ (chi)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('しりあいとしる')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">知り合い (しりあい) / 知る</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shiriai (Acquaintance) / Shiru (To know)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 6: 合 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">合</div><div class="kanji-info"><h5>Fit / Join (A.u/Gou)</h5><div class="kanji-readings">Kun: <span>あ・う / あ・わせる</span><br>On: <span>ゴウ / ガッ (gou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('しりあいとまちあわせ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">知り合い / 待ち合わせ (まちあわせ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shiriai / Machiawase (Meeting point)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 7: 近 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">近</div><div class="kanji-info"><h5>Near / Close (Chika.i/Kin)</h5><div class="kanji-readings">Kun: <span>ちか・い (chikai)</span><br>On: <span>キン / コン (kin)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きんじょとちかい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">近所 (きんじょ) / 近い (ちかい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kinjo (Neighborhood/Pados) / Chikai (Near)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 8: 所 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">所</div><div class="kanji-info"><h5>Place / Spot (Tokoro/Sho)</h5><div class="kanji-readings">Kun: <span>ところ (tokoro)</span><br>On: <span>ショ / ジョ (sho)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きんじょとばしょ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">近所 (きんじょ) / 場所 (ばしょ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kinjo (Neighborhood) / Basho (Place)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 9: 約 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">約</div><div class="kanji-info"><h5>Promise / Approximately (Yaku)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ヤク (yaku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('やくそくとよやく')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">約束 (やくそく) / 予約 (よやく)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Yakusoku (Promise) / Yoyaku (Reservation)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 10: 束 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">束</div><div class="kanji-info"><h5>Bundle / Tie (Taba/Soku)</h5><div class="kanji-readings">Kun: <span>たば (taba)</span><br>On: <span>ソク (soku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('やくそくとけたば')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">約束 (やくそく) / 花束 (はなたば)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Yakusoku (Promise/Vaada) / Hanataba (Bouquet)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 11: 待 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">待</div><div class="kanji-info"><h5>Wait (Ma.tsu/Tai)</h5><div class="kanji-readings">Kun: <span>ま・つ (matsu)</span><br>On: <span>タイ (tai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('まちあわせとまってください')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">待ち合わせ / 待ってください</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Machiawase (Meet up) / Matte kudasai (Please wait)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 12: 誘 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">誘</div><div class="kanji-info"><h5>Invite / Tempt (Saso.u/Yuu)</h5><div class="kanji-readings">Kun: <span>さそ・う (sasou)</span><br>On: <span>ユウ (yuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おさそいとさそう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">お誘い (おさそい) / 誘う</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Osasoi (Invitation) / Sasou (To invite/ask out)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 13: 都 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">都</div><div class="kanji-info"><h5>Metropolis / Convenience (Miyako/To)</h5><div class="kanji-readings">Kun: <span>みやこ</span><br>On: <span>ト / ツ (to/tsu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('つごうととうきょうと')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">都合 (つごう) / 東京都 (と)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Tsugou (Convenience) / Toukyou-to (Tokyo Metropolis)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 14: 暇 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">暇</div><div class="kanji-info"><h5>Free time / Leisure (Hima/Ka)</h5><div class="kanji-readings">Kun: <span>ひま (hima)</span><br>On: <span>カ (ka)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ひまときゅうか')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">暇 (ひま) / 休暇 (きゅうか)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Hima (Free/Khaali time) / Kyuuka (Vacation/Holiday)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 15: 忙 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">忙</div><div class="kanji-info"><h5>Busy (Isoga.shii/Bou)</h5><div class="kanji-readings">Kun: <span>いそが・しい</span><br>On: <span>ボウ (bou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('いそがしいとたぼう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">忙しい (いそがしい) / 多忙</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Isogashii (Busy) / Tabou (Very busy schedule)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 16: 使 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">使</div><div class="kanji-info"><h5>Use / Messenger (Tsuka.u/Shi)</h5><div class="kanji-readings">Kun: <span>つか・う (tsukau)</span><br>On: <span>シ (shi)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('つかうとしよう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">使う (つかう) / 使用 (しよう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Tsukau (To use SNS/app) / Shiyou (Use)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 17: 話 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">話</div><div class="kanji-info"><h5>Talk / Tale (Hana.su/Wa)</h5><div class="kanji-readings">Kun: <span>はな・す / はなし</span><br>On: <span>ワ (wa)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('はなすとかいわ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">話す (はなす) / 会話 (かいわ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Hanasu (To talk) / Kaiwa (Conversation with friend)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 18: 思 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">思</div><div class="kanji-info"><h5>Think / Feel (Omo.u/Shi)</h5><div class="kanji-readings">Kun: <span>おも・う (omou)</span><br>On: <span>シ (shi)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おもうとおもいで')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">思う (おもう) / 思い出 (おもいで)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Omou (To think/feel) / Omoide (Sweet memory)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 19: 心 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">心</div><div class="kanji-info"><h5>Heart / Mind (Kokoro/Shin)</h5><div class="kanji-readings">Kun: <span>こころ (kokoro)</span><br>On: <span>シン (shin)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('こころとしんぱい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">心 (こころ) / 心配 (しんぱい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kokoro (Heart/Spirit) / Shinpai (Worry/Care)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 20: 感 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">感</div><div class="kanji-info"><h5>Feel / Sense (Kan)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>カン (kan)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かんじとかんしゃ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">感じ (かんじ) / 感謝 (かんしゃ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kanji (Feeling/Vibe) / Kansha (Gratitude/Thanks)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 21: 情 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">情</div><div class="kanji-info"><h5>Emotion / Condition (Jou/Na.sake)</h5><div class="kanji-readings">Kun: <span>なさ・け</span><br>On: <span>ジョウ (jou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かんじょうとじょうほう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">感情 (かんじょう) / 情報 (じょうほう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kanjou (Emotion) / Jouhou (Information)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 22: 笑 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">笑</div><div class="kanji-info"><h5>Laugh / Smile (Wara.u/Shou)</h5><div class="kanji-readings">Kun: <span>わら・う / え・む</span><br>On: <span>ショウ (shou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('わらうとうける')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">笑う (わらう) / （笑）/ 笑顔</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Warau (To laugh) / (Wara / LOL) / Egao (Smiling face)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 23: 久 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">久</div><div class="kanji-info"><h5>Long time (Hisa.shii/Kyuu)</h5><div class="kanji-readings">Kun: <span>ひさ・しい</span><br>On: <span>キュウ (kyuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ひさしぶり')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">久しぶり (ひさしぶり)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Hisashiburi (Long time no see! / Bahut din baad)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 24: 楽 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">楽</div><div class="kanji-info"><h5>Pleasure / Music (Tano.shii/Raku/Gaku)</h5><div class="kanji-readings">Kun: <span>たの・しい / たの・しみ</span><br>On: <span>ガク / ラク (gaku/raku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('たのしみとおんがく')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">楽しみ (たのしみ) / 音楽</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Tanoshimi (Looking forward!) / Ongaku (Music)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Social & Casual Mastery Quiz (10 Questions) -->
+        <div id="tab-quiz" class="tab-content">
+            <div class="quiz-container">
+                <div class="section-header" style="text-align: center;">
+                    <h3>🎯 Irodori Chapter 16 Mastery Quiz (10 Questions)</h3>
+                    <p>Test your understanding of casual Tameguchi verb forms, LINE internet slang, offering help, and friendship vocabulary!</p>
+                </div>
+
+                <div id="quiz-area">
+                    <!-- Quiz dynamically rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 7: Verbatim Original Text (100% Complete) -->
+        <div id="tab-verbatim" class="tab-content">
+            <div class="verbatim-box">
+                <div class="verbatim-header">
+                    <span style="font-weight: 700; color: #10b981;">📄 Original irodori.txt Content (Lines 3538 to 3829 - Chapter 16 Complete)</span>
+                    <span class="badge-100">✔ 100% Zero Character Loss Guarantee</span>
+                </div>
+                <pre># 📘 Chapter 16: ともだちと (Tomodachi to) - With Friends
+
+## 🎯 Goal: Dost banane ke liye conversation, invitation dena/lena, plans banana, casual baat karna
+
+---
+
+### **Friendship & Social Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| ともだち (友達) | Tomodachi | Dost/Friend |
+| しんゆう (親友) | Shin'yuu | Best friend/Pakka dost |
+| なかま (仲間) | Nakama | Companion/Group friend |
+| グループ | Guruupu | Group |
+| しりあい (知り合い) | Shiriai | Jaanpehchaan/Acquaintance |
+| きんじょ の ひと (近所の人) | Kinjo no hito | Padosi/Neighbor |
+| やくそく (約束) | Yakusoku | Promise/Vaada |
+| まちあわせ (待ち合わせ) | Machiawase | Meeting point (milne ki jagah) |
+| おさそい (お誘い) | Osasoi | Invitation |
+| つごう (都合) | Tsugou | Convenience/Availability |
+| ひま (暇) | Hima | Free/Khaali |
+| いそがしい (忙しい) | Isogashii | Busy |
+| よてい (予定) | Yotei | Plan |
+| SNS (エスエヌエス) | Esu-enu-esu | Social media |
+| LINE (ライン) | Rain | LINE app (Japan ka WhatsApp) |
+| メッセージ | Messeeji | Message |
+
+---
+
+### **Grammar Point 59: ～ましょうか (Shall I? / Main kar doon?)**
+
+**ましょう ka question form = Offer karna**
+
+⚠️ **Difference:**
+- ～ましょう = Chaliye karte hain (Let's do together)
+- ～ましょうか？ = Main kar doon? (Shall I do it for you?)
+
+**Examples:**
+- てつだい**ましょうか**？ → Main madad kar doon?
+- まど を あけ**ましょうか**？ → Khidki khol doon?
+- しゃしん を とり**ましょうか**？ → Photo le doon?
+- おしえ**ましょうか**？ → Bataa doon?
+- もって いき**ましょうか**？ → Lekar jaun?
+
+**Response:**
+- はい、おねがいします。 → Haan, please.
+- いいえ、だいじょうぶ です。 → Nahi, theek hai.
+
+---
+
+### **Grammar Point 60: Casual/Plain form (タメぐち / Tameguchi)**
+
+Ab tak hum **polite form (ます/です)** seekhte aaye. Doston ke saath **casual/plain form** use hota hai:
+
+#### **Verb Forms:**
+
+| Polite | Casual/Plain | Meaning |
+|---|---|---|
+| たべます | たべる | Khata hoon |
+| たべません | たべない | Nahi khata |
+| たべました | たべた | Khaya |
+| たべませんでした | たべなかった | Nahi khaya |
+| いきます | いく | Jaata hoon |
+| いきません | いかない | Nahi jaata |
+| いきました | いった | Gaya |
+| いきませんでした | いかなかった | Nahi gaya |
+| のみます | のむ | Peeta hoon |
+| します | する | Karta hoon |
+| きます | くる | Aata hoon |
+
+#### **です Forms:**
+
+| Polite | Casual/Plain | Meaning |
+|---|---|---|
+| ___です | ___だ | ___hai |
+| ___じゃないです | ___じゃない | ___nahi hai |
+| ___でした | ___だった | ___tha |
+| ___じゃなかったです | ___じゃなかった | ___nahi tha |
+
+#### **Adjective Forms:**
+
+| Polite | Casual | Type |
+|---|---|---|
+| おいしいです | おいしい | い-adj |
+| おいしくないです | おいしくない | い-adj (-) |
+| おいしかったです | おいしかった | い-adj past |
+| しずかです | しずかだ | な-adj |
+| しずかじゃないです | しずかじゃない | な-adj (-) |
+
+#### **Question in casual:**
+
+| Polite | Casual | Meaning |
+|---|---|---|
+| いきますか？ | いく？ | Jaega? |
+| たべましたか？ | たべた？ | Khaya? |
+| おいしいですか？ | おいしい？ | Tasty hai? |
+| なんですか？ | なに？ | Kya? |
+| だれですか？ | だれ？ | Kaun? |
+| どこですか？ | どこ？ | Kahaan? |
+
+---
+
+### **Casual Conversation Examples:**
+
+**Polite (formal/stranger):**
+```
+A: あした なに を しますか？
+B: えいが を みます。いっしょに いきませんか？
+A: いいですね。いきましょう。
+```
+
+**Casual (friend/dost):**
+```
+A: あした なに する？
+B: えいが みる。いっしょに いかない？
+A: いいね！いこう！
+```
+
+---
+
+### **Grammar Point 61: ～う/よう (Let's - casual form of ましょう)**
+
+| Polite | Casual | Meaning |
+|---|---|---|
+| たべましょう | たべよう | Chaliye khaate hain |
+| いきましょう | いこう | Chaliye chalte hain |
+| のみましょう | のもう | Chaliye peete hain |
+| しましょう | しよう | Chaliye karte hain |
+| みましょう | みよう | Chaliye dekhte hain |
+| あそびましょう | あそぼう | Chaliye khelten hain |
+
+**Rule:**
+- **Group 1 (う-verbs):** Last う sound → おう sound
+  - いく → いこう
+  - のむ → のもう
+  - あそぶ → あそぼう
+  - はなす → はなそう
+- **Group 2 (る-verbs):** る hatao + よう
+  - たべる → たべよう
+  - みる → みよう
+- **Irregular:**
+  - する → しよう
+  - くる → こよう
+
+---
+
+### **Grammar Point 62: ～ない？ (Won't you? - Casual invitation)**
+
+**ない form を question = Casual invitation**
+
+**Examples:**
+- いっしょに いか**ない**？ → Saath chalega?
+- こんど のま**ない**？ → Agle baar peeyein?
+- あした あそば**ない**？ → Kal khelein/ghumein?
+- えいが み**ない**？ → Movie dekhega?
+
+**Response:**
+- いいね！ → Accha hai! (Haan)
+- いいよ！ → Theek hai! (Haan)
+- うん、いこう！ → Haan, chalte hain!
+- ごめん、ちょっと... → Sorry, thoda mushkil hai...
+- その ひ は ちょっと つごう が わるい... → Us din thoda schedule kharab hai...
+
+---
+
+### **Making Plans with Friends:**
+
+```
+A: こんどの どようび、ひま？
+(Kondo no doyoubi, hima?)
+Agle Saturday free hai?
+
+B: うん、ひま だよ。なに？
+(Un, hima dayo. Nani?)
+Haan, free hoon. Kya?
+
+A: いっしょに カラオケ いかない？
+(Issho ni karaoke ikanai?)
+Saath mein karaoke chalega?
+
+B: いいね！いこう！なんじ に する？
+(Ii ne! Ikou! Nanji ni suru?)
+Accha hai! Chalte hain! Kitne baje ka kare?
+
+A: 3じ は どう？
+(San-ji wa dou?)
+3 baje kaisa?
+
+B: いいよ。どこ で あう？
+(Ii yo. Doko de au?)
+Theek hai. Kahaan milein?
+
+A: えき の まえ で まちあわせ しよう。
+(Eki no mae de machiawase shiyou.)
+Station ke saamne milte hain.
+
+B: わかった。じゃ、また どようび に！
+(Wakatta. Ja, mata doyoubi ni!)
+Samajh gaya. Toh, Saturday ko!
+
+A: うん、たのしみ！
+(Un, tanoshimi!)
+Haan, maza aayega!
+```
+
+---
+
+### **Casual particles & Expressions:**
+
+| Japanese | Reading | Meaning | Use |
+|---|---|---|---|
+| ～ね | ne | na? / hai na? | Confirmation |
+| ～よ | yo | hai! / bata raha hoon | Emphasis/New info |
+| ～よね | yone | hai na? (stronger) | Strong confirmation |
+| ～けど / ～けれど | kedo | Lekin / But | Casual "but" |
+| ～し | shi | Aur / And (reason listing) | Multiple reasons |
+| ～かな | kana | I wonder / Shayad | Self-question |
+| ～の？ | no? | Hai kya? (soft question) | Soft question |
+| ～んだ / ～のだ | nda / noda | Actually / Explanation | Explaining |
+| うん | Un | Haan (casual) | Casual yes |
+| ううん | Uun | Nahi (casual) | Casual no |
+| まじ？/ まじで？ | Maji? / Maji de? | Seriously? / Sach mein? | Surprise |
+| すごい！ | Sugoi! | Amazing! / Kamaal! | Impression |
+| やばい！ | Yabai! | Wow! / Oh no! | Surprise (+ or -) |
+| うそ！ | Uso! | Jhooth! / Really?! | Disbelief |
+| たのしみ！(楽しみ) | Tanoshimi! | Looking forward! | Excitement |
+| ひさしぶり！(久しぶり) | Hisashiburi! | Long time no see! | Meeting after long time |
+
+---
+
+### **Grammar Point 63: ～し、～し (Listing reasons)**
+
+**Plain form + し、Plain form + し = _____ bhi hai aur _____ bhi hai (isliye)**
+
+Multiple reasons dene ke liye:
+
+**Examples:**
+- あの レストラン は おいしい **し**、やすい **し**、よく いく。
+  → Woh restaurant tasty bhi hai, sasta bhi hai, isliye aksar jaata hoon.
+
+- きょう は あたま が いたい **し**、ねつ も ある **し**、やすみたい。
+  → Aaj sir dard bhi hai, bukhar bhi hai, isliye aaram karna chahta hoon.
+
+- にほん は たべもの が おいしい **し**、ひと が やさしい (優しい) **し**、すき です。
+  → Japan mein khana tasty bhi hai, log acche bhi hain, isliye pasand hai.
+
+---
+
+### **Grammar Point 64: ～んです / ～のです (Explanation / Reason dena)**
+
+**Plain form + んです = Actually _____ hai (explaining)**
+
+Yeh tab use hota hai jab kisi cheez ka reason ya background explain kar rahe ho:
+
+**Examples:**
+- どうしたんですか？ → Kya hua? (What happened - asking for explanation)
+
+- あたま が いたい **んです**。 → Actually sir dard hai.
+
+- あした にほん に いく **んです**。 → Actually kal Japan ja raha hoon.
+
+- どうして やすんだんですか？ → Kyun chutti li? (Why did you take leave?)
+  - ねつ が あった **んです**。 → Actually bukhar tha.
+
+**Casual:** ～んだ / ～の
+- あした いく**んだ**。 → Actually kal ja raha hoon.
+- なに してる**の**？ → Kya kar rahi ho? (soft question)
+
+---
+
+### **Messaging / LINE / SNS Phrases:**
+
+| Japanese | Meaning |
+|---|---|
+| おはよー | Good morning (casual) |
+| おつー (おつかれー) | Otsukaree (casual tired greeting) |
+| りょ / りょうかい (了解) | OK / Roger that |
+| おけ / OK | OK |
+| まじ？ | Seriously? |
+| うける（笑）| Funny lol |
+| （笑）/ www / 草 (くさ) | Lol / Hahaha |
+| ありがとー | Thanks (casual) |
+| ごめんね | Sorry (casual) |
+| また あとで | Later / Baad mein |
+| おやすみー | Good night (casual) |
+| ひまー？ | Free hai? |
+| いまから いい？ | Abhi se theek? |
+| なにしてる？ | Kya kar raha hai? |
+| ごはん いこー | Khana khaane chalein |
+
+---</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>🤝 Built with precision for Irodori Elementary 2 Course • Chapter 16 Friendship & Social Japanese Hub</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">100% Content Preservation Guaranteed • Master Tameguchi & Real Social Japanese! 🌟</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.innerText = '☀️';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerText = '🌙';
+            }
+        }
+
+        // Web Speech API - Japanese TTS
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Speech synthesis is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.95;
+            
+            const voices = window.speechSynthesis.getVoices();
+            const jpVoice = voices.find(v => v.lang.includes('ja') || v.lang.includes('JP'));
+            if (jpVoice) utterance.voice = jpVoice;
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // LINE Chat Simulator Logic
+        function sendChat(type, userText, replyText) {
+            const container = document.getElementById('chat-messages');
+            
+            // Add user bubble
+            const userBubble = document.createElement('div');
+            userBubble.className = 'msg-bubble msg-right';
+            userBubble.innerHTML = userText;
+            userBubble.onclick = () => speakText(userText.split('(')[0]);
+            container.appendChild(userBubble);
+            
+            speakText(userText.split('(')[0]);
+            container.scrollTop = container.scrollHeight;
+            
+            // Add Kenta reply after 800ms
+            setTimeout(() => {
+                const replyBubble = document.createElement('div');
+                replyBubble.className = 'msg-bubble msg-left';
+                replyBubble.innerHTML = replyText + `<br><span class="msg-sub">Kenta replied just now!</span>`;
+                replyBubble.onclick = () => speakText(replyText.split('(')[0]);
+                container.appendChild(replyBubble);
+                
+                speakText(replyText.split('(')[0]);
+                container.scrollTop = container.scrollHeight;
+            }, 800);
+        }
+
+        function resetChat() {
+            document.getElementById('chat-messages').innerHTML = `
+                <div class="msg-bubble msg-left" onclick="speakText('おつー！いまからひまー？')">
+                    おつー！いまから ひまー？ 👀<br>
+                    <span class="msg-sub">Kenta: Otsuu! (Good work tired!). Are you free from right now?</span>
+                </div>
+            `;
+        }
+
+        // Casual Plan Builder Logic
+        const planActs = {
+            karaoke: { jp: "いっしょに カラオケ いかない？", mean: "Saath mein karaoke chalega?", reply: "いいね！いこう！" },
+            movie: { jp: "いっしょに えいが みない？", mean: "Saath mein movie dekhega?", reply: "いいね！みよう！" },
+            ramen: { jp: "いっしょに ラーメン たべない？", mean: "Saath mein ramen khayein?", reply: "いいね！たべよう！" },
+            shop: { jp: "いっしょに かいもの いかない？", mean: "Saath mein shopping chalein?", reply: "いいね！いこう！" },
+            game: { jp: "あした うち で ゲーム しない？", mean: "Kal ghar pe game khelein?", reply: "いいね！しよう！" }
+        };
+
+        const planSpots = {
+            station: { jp: "えき の まえ で まちあわせ しよう。", mean: "Station ke saamne milte hain." },
+            cafe: { jp: "カフェ の まえ で あおう。", mean: "Coffee shop ke saamne milte hain." },
+            park: { jp: "こうえん の いりぐち で まちあわせ しよう。", mean: "Park ke entrance pe milte hain." },
+            home: { jp: "わたし の うち に 直接 きてね。", mean: "Mere ghar direct aa jaana." }
+        };
+
+        function updatePlan() {
+            const actKey = document.getElementById('plan-act').value;
+            const spotKey = document.getElementById('plan-spot').value;
+            const act = planActs[actKey];
+            const spot = planSpots[spotKey];
+
+            document.getElementById('plan-jp').innerHTML = `
+                A: こんど の どようび、ひま？<br>
+                B: うん、ひま だよ。なに？<br>
+                A: <span style="color:var(--accent-primary);">${act.jp}</span><br>
+                B: ${act.reply} なんじ に する？<br>
+                A: 3じ は どう？<br>
+                B: いいよ。どこ で あう？<br>
+                A: <span style="color:var(--accent-warning);">${spot.jp}</span><br>
+                B: わかった！じゃ、また どようび に！たのしみ！
+            `;
+
+            document.getElementById('plan-meaning').innerText = `Hindi Translation: A: Agle Saturday free hai? B: Haan, free hoon. Kya? A: ${act.mean} B: Accha hai! Kitne baje ka kare? A: 3 baje kaisa? B: Theek hai. Kahaan milein? A: ${spot.mean} B: Samajh gaya! Toh Saturday ko! Maza aayega!`;
+        }
+
+        function speakPlan() {
+            const actKey = document.getElementById('plan-act').value;
+            const spotKey = document.getElementById('plan-spot').value;
+            speakText(`こんどのどようびひま？うんひまだよなに？${planActs[actKey].jp}${planActs[actKey].reply}どこであう？${planSpots[spotKey].jp}わかったたのしみ！`);
+        }
+
+        // Tameguchi Converter Logic
+        const tameData = {
+            eat_pos: { pol: "たべます (Eat)", polR: "Tabemasu", cas: "たべる！", casR: "Taberu! (Drop ます add る)" },
+            eat_neg: { pol: "たべません (Don't eat)", polR: "Tabemasen", cas: "たべない！", casR: "Tabenai! (Plain negative)" },
+            go_past: { pol: "いきました (Went)", polR: "Ikimashita", cas: "いった！", casR: "Itta! (Ta-form past)" },
+            go_past_neg: { pol: "いきませんでした (Didn't go)", polR: "Ikimasen deshita", cas: "いかなかった！", casR: "Ikanakatta! (Past negative)" },
+            desu_pos: { pol: "がくせい です (Is student)", polR: "Gakusei desu", cas: "がくせい だ！", casR: "Gakusei da! (です -> だ)" },
+            desu_neg: { pol: "ひま じゃありません (Not free)", polR: "Hima ja arimasen", cas: "ひま じゃない！", casR: "Hima janai! (Drop です)" },
+            adj_i: { pol: "おいしかったです (Was tasty)", polR: "Oishikatta desu", cas: "おいしかった！", casR: "Oishikatta! (Drop です)" },
+            q_go: { pol: "いきますか？ (Will you go?)", polR: "Ikimasu ka?", cas: "いく？ ↗️", casR: "Iku? (Rising tone, drop か!)" }
+        };
+
+        function updateTame() {
+            const key = document.getElementById('tame-select').value;
+            const data = tameData[key];
+            document.getElementById('tame-polite').innerText = data.pol;
+            document.getElementById('tame-polite-rom').innerText = data.polR;
+            document.getElementById('tame-casual').innerText = data.cas;
+            document.getElementById('tame-casual-rom').innerText = data.casR;
+        }
+
+        function speakTame() {
+            const polText = document.getElementById('tame-polite').innerText.split(' ')[0];
+            const casText = document.getElementById('tame-casual').innerText.replace('↗️', '');
+            speakText(`ていねいけい。${polText}。ためぐち。${casText}`);
+        }
+
+        // Quiz Module Logic (10 Questions)
+        const quizQuestions = [
+            {
+                q: "1. What is the difference between 'てつだいましょう' and 'てつだいましょうか？' (Grammar Pt 59)?",
+                options: [
+                    "They mean exactly the same thing",
+                    "～ましょう is 'Let's do together', while ～ましょうか？ is offering help 'Shall I do it for you?' ✔️",
+                    "～ましょう is casual, while ～ましょうか？ is polite",
+                    "～ましょう is past tense, while ～ましょうか？ is future"
+                ],
+                correct: 1
+            },
+            {
+                q: "2. What is the casual plain form (Tameguchi) of 'たべません' (Don't eat - Grammar Pt 60)?",
+                options: [
+                    "たべた (Tabeta)",
+                    "たべる (Taberu)",
+                    "たべない (Tabenai) ✔️",
+                    "たべなかった (Tabenakatta)"
+                ],
+                correct: 2
+            },
+            {
+                q: "3. How do you form a question in casual Tameguchi speech (e.g., 'Will you go?')?",
+                options: [
+                    "いきますか？ (Ikimasu ka)",
+                    "いく？ (Iku? with rising intonation, dropping か!) ✔️",
+                    "いくです？ (Iku desu)",
+                    "いくます？ (Ikumasu)"
+                ],
+                correct: 1
+            },
+            {
+                q: "4. What is the casual 'Let's' form (～う/よう - Grammar Pt 61) of 'いく' (to go)?",
+                options: [
+                    "いきよう (Ikiyou)",
+                    "いこう (Ikou) ✔️",
+                    "いかない (Ikanai)",
+                    "いいた (Iita)"
+                ],
+                correct: 1
+            },
+            {
+                q: "5. How do you casually invite a friend 'Won't you watch a movie with me?' (Grammar Pt 62)?",
+                options: [
+                    "えいが を みましたか？",
+                    "えいが みない？ (Eiga minai?) ✔️",
+                    "えいが みた？ (Eiga mita?)",
+                    "えいが みる そうです"
+                ],
+                correct: 1
+            },
+            {
+                q: "6. What does the word 'まちあわせ (待ち合わせ)' mean when making plans?",
+                options: [
+                    "Canceling the meeting",
+                    "Meeting point / Milne ki jagah ka arrangement ✔️",
+                    "Paying the bill together",
+                    "Saying goodbye at night"
+                ],
+                correct: 1
+            },
+            {
+                q: "7. How do you list multiple reasons using Grammar Pt 63 (e.g., 'Tasty bhi hai, sasta bhi hai')?",
+                options: [
+                    "おいしい から、やすい から",
+                    "おいしい し、やすい し、よくいく (～し、～し) ✔️",
+                    "おいしい とき、やすい とき",
+                    "おいしい かどうか、やすい かどうか"
+                ],
+                correct: 1
+            },
+            {
+                q: "8. What does '～んです / ～んだ' (Grammar Pt 64) express in conversation?",
+                options: [
+                    "Commanding someone to stop",
+                    "Explaining a reason or background situation (Actually _____ hai) ✔️",
+                    "Expressing doubt or hearsay",
+                    "Inviting a stranger formally"
+                ],
+                correct: 1
+            },
+            {
+                q: "9. What does the Japanese internet/LINE chat slang '草 (くさ) / www / （笑）' mean?",
+                options: [
+                    "Sad / Crying",
+                    "LOL / Hahaha / Hilarious (www looks like grass blades) ✔️",
+                    "Angry / Mad",
+                    "Sleeping / Tired"
+                ],
+                correct: 1
+            },
+            {
+                q: "10. What does the internet chat abbreviation 'りょ / 了解 (りょうかい)' mean?",
+                options: [
+                    "Roger that / OK / Samajh gaya 👍 ✔️",
+                    "Goodbye / See you later",
+                    "Sorry / My mistake",
+                    "Good morning / Hello"
+                ],
+                correct: 0
+            }
+        ];
+
+        function renderQuiz() {
+            const quizArea = document.getElementById('quiz-area');
+            let html = '';
+            quizQuestions.forEach((item, index) => {
+                html += `
+                    <div class="question-box" id="q-${index}">
+                        <div class="question-text"><span>${item.q}</span></div>
+                        <div class="options-grid">
+                            ${item.options.map((opt, optIndex) => `
+                                <button class="option-btn" onclick="checkAnswer(${index}, ${optIndex})">
+                                    <span>${opt}</span>
+                                    <span class="status-icon"></span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            quizArea.innerHTML = html;
+        }
+
+        let score = 0;
+        let answered = new Array(quizQuestions.length).fill(false);
+
+        function checkAnswer(qIndex, optIndex) {
+            if (answered[qIndex]) return;
+            answered[qIndex] = true;
+
+            const qBox = document.getElementById(`q-${qIndex}`);
+            const buttons = qBox.querySelectorAll('.option-btn');
+            const correctIndex = quizQuestions[qIndex].correct;
+
+            if (optIndex === correctIndex) {
+                buttons[optIndex].classList.add('correct');
+                buttons[optIndex].querySelector('.status-icon').innerText = '🎉 Correct!';
+                score++;
+                speakText('せいかい！すばらしい！');
+            } else {
+                buttons[optIndex].classList.add('wrong');
+                buttons[optIndex].querySelector('.status-icon').innerText = '❌ Incorrect';
+                buttons[correctIndex].classList.add('correct');
+                buttons[correctIndex].querySelector('.status-icon').innerText = '✔ Correct Answer';
+            }
+
+            if (answered.every(val => val === true)) {
+                const quizArea = document.getElementById('quiz-area');
+                const scoreDiv = document.createElement('div');
+                scoreDiv.className = 'quiz-score';
+                scoreDiv.innerHTML = `🌟 Irodori Chapter 16 Mastery Quiz Completed!<br><span style="font-size:2rem; color:#fff; display:block; margin:0.5rem 0;">Final Score: ${score} / ${quizQuestions.length}</span><span style="font-size:1.1rem; color:var(--text-main); font-weight:600;">おめでとう ございます！ (Omedetou Gozaimasu!) 🎉<br>You have mastered social Japanese and Tameguchi! You can now invite friends casually, arrange meeting spots, list multiple reasons, explain situations, and text in Japanese chat slang! 🎌</span>`;
+                quizArea.appendChild(scoreDiv);
+            }
+        }
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        });
+    </script>
+<script src="nav.js"></script>
+</body>
+</html>

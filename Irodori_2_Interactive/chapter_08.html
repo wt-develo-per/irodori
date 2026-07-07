@@ -1,0 +1,729 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 08: ともだちと (With Friends & Casual Speech)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 8: ともだちと - With Friends. Covers casual plain speech, invitations, slang, and grammar (~よう/おう, ~ない?, ~ましょうか, ~し~し, ~んだ/の).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 08: ともだちと (With Friends) • Casual Speech, Slang & Hangouts</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('いっしょに ごはん たべよう。こんど えいが みない？にもつ、もって いきましょうか。あの みせ は おいしい し、やすい し、よく いく。どうしたの？ちょっと ねむいんだ。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>🤝 ともだちと (Tomodachi to) - With Friends / Doston ke saath</h2>
+        <p>Master casual plain speech (<strong>タメ口</strong>), making plans with friends, inviting people out (<strong>～ない？ / ～よう・おう</strong>), helpful offers (<strong>～ましょうか</strong>), giving multiple reasons (<strong>～し、～し</strong>), casual explanations (<strong>～んだ・～の</strong>), and native slang (<strong>まじ？・やばい・りょうかい</strong>)!</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 2912–3173</span>
+            <span class="meta-pill">💬 Grammar Points 39–44</span>
+            <span class="meta-pill">📚 35+ Friend & Slang Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">💬 Hangout & Messaging Roleplay</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('simulator',this)"><span>🤝</span> Casual Friend Chat Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Casual Forms (Pt 39–44)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 35+ Audio Vocab & Slang Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 08 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>💬</span> Hangout & Texting Roleplay</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Casual Speech Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Casual Friend Chat Simulator -->
+    <div id="tab-simulator" class="tab-content active">
+        <div class="interactive-box">
+            <h4>🤝 Interactive Casual Friend Chat & Plan Maker (友達の誘い・タメ口シミュレーター)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Practice talking to friends in native casual Japanese! Select a hangout scenario and a grammar function to see how friends invite, propose, offer help, and explain things without polite prefixes.</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Hangout Scenario (状況・あそび)</label>
+                    <select id="sim-scene" onchange="updateFriendSim()">
+                        <option value="movie">🎬 Sunday Movie Hangout (映画見にいく - 日曜日・駅前待ち合わせ)</option>
+                        <option value="karaoke">🎤 Karaoke Night (カラオケにいこう - 新曲を歌う・ストレス解消)</option>
+                        <option value="ramen">🍜 Ramen Dinner (美味しいラーメン - 安いしうまいし近いし)</option>
+                        <option value="study">📚 Japanese Homework Session (一緒に宿題しない？ - カフェで勉強)</option>
+                        <option value="trip">🚗 Weekend Road Trip (週末のドライブ - 暇なら海いかない？)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updateFriendSim()">
+                        <option value="invite">❓ Casual Invitation (～ない？ - Would you like to / Chalega?)</option>
+                        <option value="let">👉 Casual Proposal (～よう / ～おう - Let's do _____ / Chalo karte hain)</option>
+                        <option value="offer">🙋 Helpful Offer (～ましょうか - Shall I do it for you? / Kar doon?)</option>
+                        <option value="reasons">➕ Multiple Reasons (～し、～し - It's both _____ and _____)</option>
+                        <option value="explain">💡 Casual Explanation (～んだ / ～の - Actually, the reason is _____)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">今度（こんど）の 日曜日（にちようび）、一緒（いっしょ）に 映画（えいが）を 見（み）に 行（い）かない？</div>
+                <div class="output-rom" id="sim-rom">Kondo no nichiyoubi, issho ni eiga wo mi ni ikanai?</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Is Sunday ko, mere saath movie dekhne chalega kya? (casual invite)</div>
+                <button class="btn-speak" onclick="speakFriendSim()">🔊 Speak Casual Line in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>⚡ Native Japanese Slang & Everyday Reactions (タメ口・リアクション)</h3>
+            <p>Click any card to hear the native pronunciation and sound just like a real Japanese friend!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">まじ？</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Maji? • Seriously? / No way!</div><div class="meaning-text">Sachi mein? Extremely common casual reaction among friends when hearing surprising news!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">やばい</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yabai • Oh no! / Amazing! / Crazy!</div><div class="meaning-text">Ultimate Japanese slang word! Can mean both negative ("in trouble/dangerous") and positive ("insanely good/cool").</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">りょうかい（了解）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ryoukai • Got it / Understood / OK</div><div class="meaning-text">Samajh gaya / Theek hai. The #1 most used word in Japanese text messaging and line chats!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">そっか / なるほど</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sokka / Naruhodo • I see / Makes sense</div><div class="meaning-text">Acha, samjha. Used to acknowledge when your friend explains something or gives a reason.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">おつかれ（お疲れ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Otsukare • Good job / See ya / Tired greeting</div><div class="meaning-text">Casual version of お疲れ様でした. Used when greeting friends after class, work, or before heading home.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">たのしみ（楽しみ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tanoshimi • Looking forward to it!</div><div class="meaning-text">Bahut wait rahega! Always say this after confirming plans with a friend to express excitement!</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Casual Plain Form & Invitations: Let's / Won't you?</span><span class="particle-badge">Pt 39, 40 & 41</span></div>
+            <div class="grammar-formula">Verb casual form / ～よう・おう (Let's) / ～ない？ (Won't you?)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">With friends, drop <strong>ます/です</strong> for plain forms! Use <strong>～よう/おう</strong> for casual "Let's" (e.g., 行こう, 食べよう) and <strong>～ない？</strong> with rising intonation for casual invitations ("Chalega?").</p>
+            <ul class="example-list">
+                <li onclick="speakText('いっしょに ごはん たべよう。')">
+                    <span class="ex-jp">一緒 に ご飯 食べよう。</span>
+                    <span class="ex-rom">Issho ni gohan tabeyou. (Saath mein khana khaate hain - Let's eat.)</span>
+                </li>
+                <li onclick="speakText('こんど カラオケ いこう。')">
+                    <span class="ex-jp">今度 カラオケ 行こう。</span>
+                    <span class="ex-rom">Kondo karaoke ikou. (Next time karaoke chalte hain.)</span>
+                </li>
+                <li onclick="speakText('こんど えいが みない？')">
+                    <span class="ex-jp">今度 映画 見ない？</span>
+                    <span class="ex-rom">Kondo eiga minai? (Next time movie dekhega? / chalega?)</span>
+                </li>
+                <li onclick="speakText('きょう の よる、ごはん いかない？')">
+                    <span class="ex-jp">今日 の 夜、ご飯 行かない？</span>
+                    <span class="ex-rom">Kyou no yoru, gohan ikanai? (Aaj raat khana khaane chalega?)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Helpful Offers & Multiple Reasons</span><span class="particle-badge" style="background:var(--accent-success);">Pt 42 & 43</span></div>
+            <div class="grammar-formula">～ましょうか (Shall I do...?) / ～し、～し (Not only... but also...)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ましょうか</strong> to proactively offer help ("Main kar doon?"). Use <strong>～し、～し</strong> to list multiple adjectives or reasons why you like something or why you made a choice ("...bhi hai aur ...bhi hai").</p>
+            <ul class="example-list">
+                <li onclick="speakText('にもつ、もって いきましょうか。')">
+                    <span class="ex-jp">荷物、持（も）って 行（い）きましょうか。</span>
+                    <span class="ex-rom">Nimotsu, motte ikimashou ka. (Saamaan le jaun? / madad kar doon?)</span>
+                </li>
+                <li onclick="speakText('しゃしん、とりましょうか。')">
+                    <span class="ex-jp">写真（しゃしん）、撮（と）りましょうか。</span>
+                    <span class="ex-rom">Shashin, torimashou ka. (Photo le doon aapki?)</span>
+                </li>
+                <li onclick="speakText('あの みせ は おいしい し、やすい し、よく いく。')">
+                    <span class="ex-jp">あの 店 は 美味しい し、安い し、よく 行く。</span>
+                    <span class="ex-rom">Ano mise wa oishii shi, yasui shi, yoku iku. (Woh dukaan tasty bhi hai, sasti bhi hai, isliye aksar jaata hoon.)</span>
+                </li>
+                <li onclick="speakText('かれ は やさしい し、おもしろい し、いい ともだち だ。')">
+                    <span class="ex-jp">彼 は 優しい し、面白い し、いい 友達 だ。</span>
+                    <span class="ex-rom">Kare wa yasashii shi, omoshiroi shi, ii tomodachi da. (Woh accha bhi hai, funny bhi hai, accha dost hai.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Casual Explanation: Asking & giving reasons</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 44</span></div>
+            <div class="grammar-formula">Verb plain / Adj / Noun + んだ / ～の (Casual version of ～んです)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">When friends ask "Why?" or "What happened?", use <strong>～んだ</strong> (common for men/neutral) or <strong>～の</strong> (soft/question tone) to provide natural explanations and background context!</p>
+            <ul class="example-list">
+                <li onclick="speakText('どうしたの？ちょっと ねむいんだ。')">
+                    <span class="ex-jp">「どうしたの？」「ちょっと 眠いんだ。」</span>
+                    <span class="ex-rom">"Doushita no?" "Chotto nemuin da." ("Kya hua?" "Thoda neend aa rahi hai actually.")</span>
+                </li>
+                <li onclick="speakText('あした しけん が あるんだ。')">
+                    <span class="ex-jp">明日 試験 が あるんだ。</span>
+                    <span class="ex-rom">Ashita shiken ga arun da. (Kal exam hai actually, isliye busy hoon.)</span>
+                </li>
+                <li onclick="speakText('なんで こなかったの？でんしゃ が おくれたんだ。')">
+                    <span class="ex-jp">「なんで 来なかったの？」「電車 が 遅れたんだ。」</span>
+                    <span class="ex-rom">"Nande konakatta no?" "Densha ga okuretan da." ("Kyun nahi aaya?" "Train late ho gayi thi actually.")</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 8 Friendship, Casual Speech & Slang Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize hangout vocabulary.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">友達（ともだち）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tomodachi</div><div class="meaning-text">Friend / Companion / Dost</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">親友（しんゆう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinyuu</div><div class="meaning-text">Best friend / Close bosom buddy</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">仲間（なかま）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nakama</div><div class="meaning-text">Group mate / Companion / Circle</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">約束（やくそく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yakusoku</div><div class="meaning-text">Promise / Appointment / Plan</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">待ち合わせ（まちあわせ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Machiawase</div><div class="meaning-text">Meeting arrangement / Rendezvous</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">都合（つごう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tsugou</div><div class="meaning-text">Convenience / Schedule availability</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">暇（ひま）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hima</div><div class="meaning-text">Free / Having spare time / Idle</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">忙しい（いそがしい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Isogashii</div><div class="meaning-text">Busy / Occupied with tasks</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">誘う（さそう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sasou</div><div class="meaning-text">To invite out / Ask someone to join</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">遊ぶ（あそぶ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Asobu</div><div class="meaning-text">To hang out / Play / Spend fun time</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">飲みにいく（のみにいく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nomi ni iku</div><div class="meaning-text">To go drinking / Izakaya hangout</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ご飯にいく（ごはんにいく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Gohan ni iku</div><div class="meaning-text">To go out to eat / Dining out</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">了解（りょうかい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ryoukai</div><div class="meaning-text">Got it / Understood / Roger (OK)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">久しぶり（ひさしぶり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hisashiburi</div><div class="meaning-text">Long time no see / It's been a while</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">うん</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Un</div><div class="meaning-text">Yeah / Yes (casual haan)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ううん</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Uun</div><div class="meaning-text">Nah / No (casual nahi)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">いいね</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ii ne</div><div class="meaning-text">Sounds good! / Nice!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">まじ？</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Maji?</div><div class="meaning-text">Seriously? / For real? (slang)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ほんと？</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Honto?</div><div class="meaning-text">Really? / Are you sure?</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">そっか</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sokka</div><div class="meaning-text">I see / Gotcha (casual acknowledgment)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">なるほど</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Naruhodo</div><div class="meaning-text">Indeed / That makes sense</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">やばい</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yabai</div><div class="meaning-text">Oh no / Wow / Insane (universal slang)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">楽しみ（たのしみ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tanoshimi</div><div class="meaning-text">Looking forward to it! / Excitement</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">じゃあね / またね</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Jaa ne / Mata ne</div><div class="meaning-text">See ya / Bye for now (casual parting)</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 8 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for friendship, relationships, promises, schedules, hanging out, and reactions.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">友</div><div class="kanji-info"><h5>Friend / Companion</h5><div class="kanji-readings">Onyomi: <span>ユウ (yuu)</span><br>Kunyomi: とも</div></div></div><div class="kanji-example" onclick="speakText('友達、親友')"><span>友達（ともだち）- friend<br>親友（しんゆう）- best friend</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">親</div><div class="kanji-info"><h5>Intimate / Parent / Close</h5><div class="kanji-readings">Onyomi: <span>シン (shin)</span><br>Kunyomi: おや、した-しい</div></div></div><div class="kanji-example" onclick="speakText('親友、両親、親しい')"><span>親友（しんゆう）- best friend<br>両親（りょうしん）- parents</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">仲</div><div class="kanji-info"><h5>Relationship / Between</h5><div class="kanji-readings">Onyomi: <span>チュウ (chuu)</span><br>Kunyomi: なか</div></div></div><div class="kanji-example" onclick="speakText('仲間、仲良し')"><span>仲間（なかま）- companion<br>仲良し（なかよし）- close friends</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">間</div><div class="kanji-info"><h5>Interval / Between / Space</h5><div class="kanji-readings">Onyomi: <span>カン、ケン (kan)</span><br>Kunyomi: あいだ、ま</div></div></div><div class="kanji-example" onclick="speakText('仲間、時間、人間')"><span>仲間（なかま）- buddy / mate<br>時間（じかん）- time</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">約</div><div class="kanji-info"><h5>Promise / Approximately</h5><div class="kanji-readings">Onyomi: <span>ヤク (yaku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('約束、予約')"><span>約束（やくそく）- promise / plan<br>予約（よやく）- reservation</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">束</div><div class="kanji-info"><h5>Bundle / Tie / Manage</h5><div class="kanji-readings">Onyomi: <span>ソク (soku)</span><br>Kunyomi: たば、たば-ねる</div></div></div><div class="kanji-example" onclick="speakText('約束、花束')"><span>約束（やくそく）- promise / plan<br>花束（はなたば）- flower bouquet</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">待</div><div class="kanji-info"><h5>Wait / Expect</h5><div class="kanji-readings">Onyomi: <span>タイ (tai)</span><br>Kunyomi: ま-つ</div></div></div><div class="kanji-example" onclick="speakText('待ち合わせ、待つ、招待')"><span>待ち合わせ（まちあわせ）- meetup<br>待つ（まつ）- to wait</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">誘</div><div class="kanji-info"><h5>Invite / Tempt / Entice</h5><div class="kanji-readings">Onyomi: <span>ユウ (yuu)</span><br>Kunyomi: さそ-う</div></div></div><div class="kanji-example" onclick="speakText('誘う、勧誘')"><span>誘う（さそう）- to invite out<br>勧誘（かんゆう）- solicitation</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">遊</div><div class="kanji-info"><h5>Play / Hang out / Amuse</h5><div class="kanji-readings">Onyomi: <span>ユウ、ユ (yuu, yu)</span><br>Kunyomi: あそ-ぶ</div></div></div><div class="kanji-example" onclick="speakText('遊ぶ、遊園地')"><span>遊ぶ（あそぶ）- hang out / play<br>遊園地（ゆうえんち）- amusement park</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">飲</div><div class="kanji-info"><h5>Drink / Swallow</h5><div class="kanji-readings">Onyomi: <span>イン (in)</span><br>Kunyomi: の-む</div></div></div><div class="kanji-example" onclick="speakText('飲みにいく、飲み物')"><span>飲みにいく（のみにいく）- go drink<br>飲み物（のみもの）- beverage</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">暇</div><div class="kanji-info"><h5>Spare time / Free / Leisure</h5><div class="kanji-readings">Onyomi: <span>カ (ka)</span><br>Kunyomi: ひま</div></div></div><div class="kanji-example" onclick="speakText('暇、休暇')"><span>暇（ひま）- free time / idle<br>休暇（きゅうか）- holiday / leave</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">忙</div><div class="kanji-info"><h5>Busy / Occupied / Restless</h5><div class="kanji-readings">Onyomi: <span>ボウ (bou)</span><br>Kunyomi: いそが-しい</div></div></div><div class="kanji-example" onclick="speakText('忙しい、多忙')"><span>忙しい（いそがしい）- busy<br>多忙（たぼう）- very busy</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">都</div><div class="kanji-info"><h5>Metropolis / Capital / All</h5><div class="kanji-readings">Onyomi: <span>ト、ツ (to, tsu)</span><br>Kunyomi: みやこ</div></div></div><div class="kanji-example" onclick="speakText('都合、京都、都会')"><span>都合（つごう）- convenience<br>京都（きょうと）- Kyoto</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">合</div><div class="kanji-info"><h5>Fit / Suit / Join / Match</h5><div class="kanji-readings">Onyomi: <span>ゴウ、ガッ (gou)</span><br>Kunyomi: あ-う、あ-わせる</div></div></div><div class="kanji-example" onclick="speakText('都合、待ち合わせ、合う')"><span>都合（つごう）- schedule fit<br>待ち合わせ（まちあわせ）- meet</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">解</div><div class="kanji-info"><h5>Solve / Untie / Understand</h5><div class="kanji-readings">Onyomi: <span>カイ、ゲ (kai, ge)</span><br>Kunyomi: と-く、と-ける</div></div></div><div class="kanji-example" onclick="speakText('了解、解約、解決')"><span>了解（りょうかい）- got it / roger<br>解約（かいやく）- cancel contract</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">久</div><div class="kanji-info"><h5>Long time / Old story</h5><div class="kanji-readings">Onyomi: <span>キュウ、ク (kyuu, ku)</span><br>Kunyomi: ひさ-しい</div></div></div><div class="kanji-example" onclick="speakText('久しぶり、永久')"><span>久しぶり（ひさしぶり）- long time<br>永久（えいきゅう）- eternity</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">疲</div><div class="kanji-info"><h5>Exhausted / Tired</h5><div class="kanji-readings">Onyomi: <span>ヒ (hi)</span><br>Kunyomi: つか-れる、つか-らす</div></div></div><div class="kanji-example" onclick="speakText('お疲れ、疲れる')"><span>お疲れ（おつかれ）- good job<br>疲れる（つかれる）- to get tired</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">楽</div><div class="kanji-info"><h5>Music / Comfort / Fun</h5><div class="kanji-readings">Onyomi: <span>ガク、ラク (gaku, raku)</span><br>Kunyomi: たの-しい、たの-しむ</div></div></div><div class="kanji-example" onclick="speakText('楽しみ、楽しい、音楽')"><span>楽しみ（たのしみ）- looking forward<br>楽しい（たのしい）- enjoyable / fun</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">誰</div><div class="kanji-info"><h5>Who / Someone / Anyone</h5><div class="kanji-readings">Onyomi: <span>スイ (sui)</span><br>Kunyomi: だれ、たれ</div></div></div><div class="kanji-example" onclick="speakText('誰、誰か、誰でも')"><span>誰（だれ）- who<br>誰でも（だれでも）- anyone</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">君</div><div class="kanji-info"><h5>You / Lord / Ruler</h5><div class="kanji-readings">Onyomi: <span>クン (kun)</span><br>Kunyomi: きみ</div></div></div><div class="kanji-example" onclick="speakText('君、～君')"><span>君（きみ）- you (casual/intimate)<br>～君（くん）- name suffix (boys)</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">僕</div><div class="kanji-info"><h5>Me / I (Male speech)</h5><div class="kanji-readings">Onyomi: <span>ボク (boku)</span><br>Kunyomi: しもべ</div></div></div><div class="kanji-example" onclick="speakText('僕、僕たち')"><span>僕（ぼく）- I / me (used by boys)<br>僕たち（ぼくたち）- we / us</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">彼</div><div class="kanji-info"><h5>He / That / Boyfriend</h5><div class="kanji-readings">Onyomi: <span>ヒ (hi)</span><br>Kunyomi: かれ、かの、あれ</div></div></div><div class="kanji-example" onclick="speakText('彼、彼氏、彼女')"><span>彼（かれ）- he / boyfriend<br>彼氏（かれし）- boyfriend</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">女</div><div class="kanji-info"><h5>Woman / Female</h5><div class="kanji-readings">Onyomi: <span>ジョ、ニョ (jo, nyo)</span><br>Kunyomi: おんな、め</div></div></div><div class="kanji-example" onclick="speakText('彼女、女性、女の子')"><span>彼女（かのじょ）- she / girlfriend<br>女性（じょせい）- female</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">呼</div><div class="kanji-info"><h5>Call / Invite / Breathe</h5><div class="kanji-readings">Onyomi: <span>コ (ko)</span><br>Kunyomi: よ-ぶ</div></div></div><div class="kanji-example" onclick="speakText('呼ぶ、呼吸')"><span>呼ぶ（よぶ）- to call / summon<br>呼吸（こきゅう）- breathing</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay Module -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>💬 Making Plans & LINE Text Messaging Roleplay (友達との約束)</h3>
+            <p>Master inviting friends out for movies on weekends and texting in authentic short Japanese!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-info);">
+            <h4>🎬 Scene 1: Making Sunday Movie Plans (映画の約束をする)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('こんどの にちようび、ひま？')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 今度（こんど）の 日曜日（にちようび）、暇（ひま）？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kondo no nichiyoubi, hima? (Are you free this coming Sunday?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('うん、ひまだよ。どうしたの？')">
+                    <strong style="color:var(--accent-primary);">友達 (Friend):</strong> うん、暇（ひま）だよ。どうしたの？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Un, hima da yo. Doushita no? (Yeah, I'm free! What's up?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('じゃ、いっしょに えいが みに いかない？')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> じゃ、一緒（いっしょ）に 映画（えいが）を見（み）に行（い）かない？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ja, issho ni eiga wo mi ni ikanai? (Then, wanna go watch a movie together?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('いいね！なんじ？')">
+                    <strong style="color:var(--accent-primary);">友達 (Friend):</strong> いいね！何時（なんじ）？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ii ne! Nanji? (Sounds great! What time?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('にじ は どう？')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> ２時（にじ）は どう？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Niji wa dou? (How about 2 o'clock?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('いいよ。どこで あう？')">
+                    <strong style="color:var(--accent-primary);">友達 (Friend):</strong> いいよ。どこで 会（あ）う？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ii yo. Doko de au? (Works for me. Where shall we meet?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('えきの まえ で あおう。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 駅（えき）の 前（まえ）で 会（あ）おう。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Eki no mae de aou. (Let's meet in front of the station.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('りょうかい。たのしみ！')">
+                    <strong style="color:var(--accent-primary);">友達 (Friend):</strong> 了解（りょうかい）。楽（たの）しみ！<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ryoukai. Tanoshimi! (Got it / Roger! Can't wait / Looking forward to it!)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-success);">
+            <h4>📱 Scene 2: LINE / Messaging Style Mini Examples (メッセージ・チャット)</h4>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1rem;border-radius:10px;border-top:3px solid var(--accent-success);cursor:pointer;" onclick="speakText('いま ひま？')">
+                    <strong style="color:var(--accent-success);">💬 Text 1: Checking in</strong><br>
+                    <span style="font-size:1.1rem;font-weight:700;">いま 暇（ひま）？</span><br>
+                    <span style="font-size:0.85rem;color:var(--text-muted);">Ima hima? (Are you free right now?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1rem;border-radius:10px;border-top:3px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('ごはん いかない？')">
+                    <strong style="color:var(--accent-secondary);">💬 Text 2: Quick Invite</strong><br>
+                    <span style="font-size:1.1rem;font-weight:700;">ご飯（ごはん）行（い）かない？</span><br>
+                    <span style="font-size:0.85rem;color:var(--text-muted);">Gohan ikanai? (Wanna grab food?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1rem;border-radius:10px;border-top:3px solid var(--accent-danger);cursor:pointer;" onclick="speakText('ごめん、いま むり。')">
+                    <strong style="color:var(--accent-danger);">💬 Text 3: Declining</strong><br>
+                    <span style="font-size:1.1rem;font-weight:700;">ごめん、いま 無理（むり）。</span><br>
+                    <span style="font-size:0.85rem;color:var(--text-muted);">Gomen, ima muri. (Sorry, can't right now.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1rem;border-radius:10px;border-top:3px solid var(--accent-primary);cursor:pointer;" onclick="speakText('じゃ、また あとで！おけー！')">
+                    <strong style="color:var(--accent-primary);">💬 Text 4: Signing off</strong><br>
+                    <span style="font-size:1.1rem;font-weight:700;">じゃ、また 後（あと）で！おけー！</span><br>
+                    <span style="font-size:0.85rem;color:var(--text-muted);">Ja, mata atode! Okee! (Alright, catch ya later! OK!)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 8 Casual Speech & Hangouts Quiz</h3>
+                <p>Test your mastery of plain verb forms, invitations, helpful offers, and Japanese slang!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 2912–3173)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 8: ともだちと - With Friends / Doston ke saath
+
+## 🎯 Goal:
+- casual Japanese use karna  
+- friends ko invite karna  
+- plans banana  
+- short chat, messaging style samajhna  
+
+---
+
+## 1) Friendship Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ともだち (友達) | ともだち | Friend |
+| しんゆう (親友) | しんゆう | Best friend |
+| なかま (仲間) | なかま | Group mate / Companion |
+| やくそく (約束) | やくそく | Promise / Plan |
+| まちあわせ (待ち合わせ) | まちあわせ | Meeting arrangement |
+| つごう (都合) | つごう | Convenience / Schedule |
+| ひま (暇) | ひま | Free |
+| いそがしい (忙しい) | いそがしい | Busy |
+| さそう (誘う) | さそう | Invite karna |
+| あそぶ (遊ぶ) | あそぶ | Hang out / Play |
+| のみに いく | のみに いく | Drinking ke liye jaana |
+| ごはん に いく | ごはん に いく | Khana khaane jaana |
+| りょうかい (了解) | りょうかい | Got it / OK |
+| ひさしぶり (久しぶり) | ひさしぶり | Long time no see |
+
+---
+
+## 2) Grammar Point 39: Plain / Casual Form Review
+
+Doston ke saath **ます / です** ki jagah **plain form** zyada use hota hai.
+
+### Verb casual forms:
+
+| Polite | Casual | Meaning |
+|---|---|---|
+| いきます | いく | Jaata hoon |
+| たべます | たべる | Khata hoon |
+| みます | みる | Dekhta hoon |
+| します | する | Karta hoon |
+| きます | くる | Aata hoon |
+| いきません | いかない | Nahi jaata |
+| たべました | たべた | Khaya |
+| いきました | いった | Gaya |
+
+### Adjective / noun casual:
+
+| Polite | Casual | Meaning |
+|---|---|---|
+| おいしい です | おいしい | Tasty hai |
+| しずか です | しずか だ | Quiet hai |
+| がくせい です | がくせい だ | Student hai |
+| じゃない です | じゃない | Nahi hai |
+| でした | だった | Tha / thi |
+
+### Question in casual:
+- どこ いく？ → Kahaan jaa raha hai?
+- なに する？ → Kya karega?
+- たべた？ → Khaya?
+- ひま？ → Free hai?
+
+---
+
+## 3) Grammar Point 40: ～よう / ～おう  
+## Meaning: “Let’s …” casual style
+
+Ye **～ましょう** ka casual version hai.
+
+### Pattern:
+- Group 1: last sound → おう  
+  - いく → いこう  
+  - のむ → のもう  
+  - あそぶ → あそぼう  
+- Group 2: る hatao + よう  
+  - たべる → たべよう  
+  - みる → みよう  
+- Irregular:
+  - する → しよう  
+  - くる → こよう  
+
+### Examples:
+- いっしょに ごはん たべよう。  
+  → Saath mein khana khaate hain.
+
+- こんど カラオケ いこう。  
+  → Next time karaoke chalte hain.
+
+- もう かえろう。  
+  → Chalo ab ghar chalte hain.
+
+- ちょっと やすもう。  
+  → Thoda rest karein.
+
+---
+
+## 4) Grammar Point 41: ～ない？  
+## Meaning: “Karega?/Chalega?” casual invitation
+
+### Examples:
+- こんど えいが みない？  
+  → Next time movie dekhega?
+
+- きょう の よる、ごはん いかない？  
+  → Aaj raat khana khaane chalega?
+
+- いっしょに べんきょうしない？  
+  → Saath mein padhai karega?
+
+- しゅうまつ、あそばない？  
+  → Weekend pe ghumne chalega?
+
+### Responses:
+- いいね！  
+  → Nice!
+- いいよ。  
+  → Theek hai.
+- うん、いこう。  
+  → Haan, chalte hain.
+- ごめん、ちょっと むり。  
+  → Sorry, thoda mushkil hai.
+- そのひ は つごう が わるい。  
+  → Us din mera schedule theek nahi hai.
+
+---
+
+## 5) Grammar Point 42: ～ましょうか  
+## Meaning: “Main kar doon?” / “Shall I?”
+
+### Examples:
+- にもつ、もって いきましょうか。  
+  → Saamaan le jaun?
+
+- しゃしん、とりましょうか。  
+  → Photo le doon?
+
+- てつだいましょうか。  
+  → Madad kar doon?
+
+- でんわ しましょうか。  
+  → Phone kar doon?
+
+### Responses:
+- はい、おねがいします。  
+  → Haan please.
+- ありがとうございます。  
+  → Thank you.
+- いいえ、だいじょうぶです。  
+  → Nahi, theek hai.
+
+---
+
+## 6) Grammar Point 43: ～し、～し  
+## Meaning: “...bhi hai aur ...bhi hai”
+
+Multiple reasons dene ke liye.
+
+### Examples:
+- あの みせ は おいしい **し**、やすい **し**、よく いく。  
+  → Woh dukaan tasty bhi hai, sasti bhi hai, isliye aksar jaata hoon.
+
+- きょう は つかれた **し**、あした は はやい **し**、もう かえる。  
+  → Aaj thak gaya hoon aur kal subah jaldi bhi hai, isliye ghar jaa raha hoon.
+
+- かれ は やさしい **し**、おもしろい **し**、いい ともだち だ。  
+  → Woh accha bhi hai, funny bhi hai, accha dost hai.
+
+- この アパート は ひろい **し**、えき に ちかい **し**、いいね。  
+  → Yeh apartment bada bhi hai, station ke paas bhi hai, accha hai na.
+
+---
+
+## 7) Grammar Point 44: Casual use of ～んだ / ～の  
+## Meaning: explanation in casual conversation
+
+Pehle humne **～んです** seekha tha. Friends ke saath:
+- ～んだ
+- ～の
+
+### Examples:
+- どうしたの？  
+  → Kya hua?
+
+- ちょっと ねむいんだ。  
+  → Thoda neend aa rahi hai.
+
+- あした しけん が あるんだ。  
+  → Kal exam hai actually.
+
+- なんで こなかったの？  
+  → Kyun nahi aaya?
+
+- でんしゃ が おくれたんだ。  
+  → Train late ho gayi thi.
+
+---
+
+## 8) Casual expressions
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| うん | うん | Haan |
+| ううん | ううん | Nahi |
+| いいね | いいね | Nice |
+| まじ？ | まじ | Seriously? |
+| ほんと？ | ほんと | Really? |
+| そっか | そっか | Acha, samjha |
+| なるほど | なるほど | I see |
+| やばい | やばい | Oh no / Wow |
+| たのしみ | たのしみ | Looking forward |
+| りょうかい | りょうかい | Got it |
+| またね | またね | See you |
+| じゃあね | じゃあね | Bye |
+| おつかれ | おつかれ | Good job / tired greeting |
+
+---
+
+## 9) Making plans with a friend
+
+### Sample conversation:
+**A:** こんどの にちようび、ひま？  
+**B:** うん、ひまだよ。  
+**A:** じゃ、いっしょに えいが みに いかない？  
+**B:** いいね！ なんじ？  
+**A:** 2じ は どう？  
+**B:** いいよ。どこで あう？  
+**A:** えき の まえ で あおう。  
+**B:** りょうかい。たのしみ！  
+
+### Hinglish meaning:
+A: Is Sunday free hai?  
+B: Haan free hoon.  
+A: Toh saath movie dekhne chalega?  
+B: Nice! Kitne baje?  
+A: 2 baje kaisa?  
+B: Theek hai. Kahaan milte hain?  
+A: Station ke saamne milte hain.  
+B: OK. Looking forward!
+
+---
+
+## 10) Messaging style mini examples
+
+- いま ひま？  
+  → Abhi free hai?
+
+- ごはん いかない？  
+  → Khana khaane chalega?
+
+- ごめん、いま むり。  
+  → Sorry, abhi possible nahi.
+
+- じゃ、また あとで！  
+  → Theek hai, baad mein!
+
+- おけー / OK  
+  → Okay
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 08: ともだちと (With Friends) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const friendData = {
+        movie: {
+            invite: { jp: "今度（こんど）の 日曜日（にちようび）、一緒（いっしょ）に 映画（えいが）を 見（み）に 行（い）かない？", rom: "Kondo no nichiyoubi, issho ni eiga wo mi ni ikanai?", hi: "Hindi Translation: Is Sunday ko, mere saath movie dekhne chalega kya? (casual invite)" },
+            let: { jp: "映画館（えいがかん）の 前（まえ）で ２時（にじ）に 会（あ）おう。", rom: "Eigakan no mae de niji ni aou.", hi: "Hindi Translation: Cinema hall ke saamne 2 baje milte hain (casual proposal)." },
+            offer: { jp: "ポップコーンと 飲み物（のみもの）、買（か）って きましょうか。", rom: "Poppukoon to nomimono, katte kimashou ka.", hi: "Hindi Translation: Popcorn aur drinks khareed laung kya aapke liye? (polite offer)" },
+            reasons: { jp: "この 映画（えいが）は 人気（にんき）だ し、俳優（はいゆう）も かっこいい し、見（み）たいんだ。", rom: "Kono eiga wa ninki da shi, haiyuu mo kakkoii shi, mitain da.", hi: "Hindi Translation: Yeh movie popular bhi hai, actor bhi smart hai, isliye dekhna chahta hoon." },
+            explain: { jp: "ごめん、ちょっと 寝坊（ねぼう）して 遅（おく）れたんだ。", rom: "Gomen, chotto nebou shite okuretan da.", hi: "Hindi Translation: Sorry, thoda aankh lag gayi thi / oversleep ho gaya tha actually, isliye late hua." }
+        },
+        karaoke: {
+            invite: { jp: "今日（きょう）の 夜（よる）、駅前（えきまえ）の カラオケに 行（い）かない？", rom: "Kyou no yoru, ekimae no karaoke ni ikanai?", hi: "Hindi Translation: Aaj raat ko station ke saamne karaoke chalega kya?" },
+            let: { jp: "新（あたら）しい 曲（きょく）を たくさん 歌（うた）おう！", rom: "Atarashii kyoku wo takusan utaou!", hi: "Hindi Translation: Bahut saare naye songs gaate hain chalo!" },
+            offer: { jp: "ドリンクバーの 飲み物（のみもの）、取（と）って きましょうか。", rom: "Dorinkubaa no nomimono, totte kimashou ka.", hi: "Hindi Translation: Drink bar se drink laa doon kya?" },
+            reasons: { jp: "カラオケは 楽（たの）しい し、ストレスも 解消（かいしょう）できる し、最高（さいこう）だよ。", rom: "Karaoke wa tanoshii shi, sutoresu mo kaishou dekiru shi, saikou da yo.", hi: "Hindi Translation: Karaoke fun bhi hai, stress bhi door hota hai, best hai!" },
+            explain: { jp: "昨日（きのう）歌（うた）いすぎて、ちょっと 喉（のど）が 痛（いた）いんだ。", rom: "Kinou utaisugite, chotto nodo ga itain da.", hi: "Hindi Translation: Kal zyada gaa liya tha actually, isliye gala pain kar raha hai." }
+        },
+        ramen: {
+            invite: { jp: "お腹（なか）すいたね。駅（えき）の 近く（ちかく）の ラーメン屋（や）に 行（い）かない？", rom: "Onaka suita ne. Eki no chikaku no raamenya ni ikanai?", hi: "Hindi Translation: Bhookh lagi hai na. Station ke paas ramen dukaan chalega?" },
+            let: { jp: "人気（にんき）の 豚骨（とんこつ）ラーメンを 頼（たの）もう。", rom: "Ninki no tonkotsu raamen wo tanomou.", hi: "Hindi Translation: Popular tonkotsu ramen order karte hain chalo." },
+            offer: { jp: "お水（みず）と お箸（はし）、持（も）って きましょうか。", rom: "Omizu to ohashi, motte kimashou ka.", hi: "Hindi Translation: Paani aur chopsticks le aaun kya aapke liye?" },
+            reasons: { jp: "あの 店（みせ）は 安（やす）い し、美味（おい）しい し、出（で）てくるのも 早（はや）い し、よく 行（い）く。", rom: "Ano mise wa yasui shi, oishii shi, detekuru no mo hayai shi, yoku iku.", hi: "Hindi Translation: Woh dukaan sasti bhi hai, tasty bhi hai, aur fast bhi milti hai, isliye aksar jaata hoon." },
+            explain: { jp: "実（じつ）は、今日（きょう）は 朝（あさ）から 何（なに）も 食（た）べていないんだ。", rom: "Jitsu wa, kyou wa asa kara nani mo tabete inain da.", hi: "Hindi Translation: Asal mein, aaj subah se kuch bhi nahi khaya hai actually." }
+        },
+        study: {
+            invite: { jp: "明日（あした）の テストの 勉強（べんきょう）、カフェで 一緒（いっしょ）に しない？", rom: "Ashita no tesuto no benkyou, kafe de issho ni shinai?", hi: "Hindi Translation: Kal ke test ki padhai, cafe mein saath karega kya?" },
+            let: { jp: "漢字（かんじ）と 文法（ぶんぽう）を 集中（しゅうちゅう）して 復習（ふくしゅう）しよう。", rom: "Kanji to bunpou wo shuuchuu shite fukushuu shiyou.", hi: "Hindi Translation: Focus karke Kanji aur grammar revise karte hain chalo." },
+            offer: { jp: "分（わ）からない 漢字（かんじ）の 読（よ）み方（かた）、教（おし）えましょうか。", rom: "Wakaranai kanji no yomikata, oshiemashou ka.", hi: "Hindi Translation: Jo Kanji samajh nahi aa rahi uski reading bata doon kya?" },
+            reasons: { jp: "この カフェは 静（しず）か だ し、Wi-Fiも ある し、勉強（べんきょう）に ぴったりだよ。", rom: "Kono kafe wa shizuka da shi, Wi-Fi mo aru shi, benkyou ni pittari da yo.", hi: "Hindi Translation: Yeh cafe quiet bhi hai, Wi-Fi bhi hai, padhai ke liye perfect hai." },
+            explain: { jp: "昨日（きのう）夜（よる）遅（おそ）くまで 宿題（しゅくだい）をしていて ねむいんだ。", rom: "Kinou yoru osoku made shukudai wo shite ite nemuin da.", hi: "Hindi Translation: Kal raat late tak homework kar raha tha actually, isliye neend aa rahi hai." }
+        },
+        trip: {
+            invite: { jp: "今度（こんど）の 週末（しゅうまつ）、車（くるま）で 海（うみ）まで ドライブに 行（い）かない？", rom: "Kondo no shuumatsu, kuruma de umi made doraibu ni ikanai?", hi: "Hindi Translation: Is weekend, car se beach tak long drive chalega kya?" },
+            let: { jp: "朝（あさ）７時（しちじ）に 出発（しゅっぱつ）して、海（うみ）で 泳（およ）ごう！", rom: "Asa shichiji ni shuppatsu shite, umi de oyogou!", hi: "Hindi Translation: Subah 7 baje nikalte hain aur samundar mein tairte hain chalo!" },
+            offer: { jp: "私（わたし）が 車（くるま）の 運転（うんてん）を しましょうか。", rom: "Watashi ga kuruma no unten wo shimashou ka.", hi: "Hindi Translation: Main car drive kar doon kya?" },
+            reasons: { jp: "天気（てんき）も いい し、景色（けしき）も 綺麗（きれい）だ し、最高（さいこう）の 週末（しゅうまつ）になりそうだね。", rom: "Tenki mo ii shi, keshiki mo kirei da shi, saikou no shuumatsu ni narisou da ne.", hi: "Hindi Translation: Weather bhi accha hai, scenery bhi beautiful hai, best weekend banega!" },
+            explain: { jp: "ずっと 海（うみ）を 見（み）て リフレッシュしたかったんだ。", rom: "Zutto umi wo mite rifuresshu shitakattan da.", hi: "Hindi Translation: Bahut din se beach dekhke refresh hona chahta tha actually." }
+        }
+    };
+
+    function updateFriendSim() {
+        const s = document.getElementById('sim-scene').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = friendData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakFriendSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 「行きます（いきます）」の タメ口（ぐち・Casual plain form）は どれですか？\n(What is the casual dictionary form of 行きます?)", opt: ["いく (iku)", "いって (itte)", "いかない (ikanai)", "いった (itta)"], ans: 0 },
+        { q: "2. 「一緒（いっしょ）に ご飯（ごはん）_______。」\n(Let's eat a meal together! - Casual Let's form of 食べる)", opt: ["たべよう (tabeyou)", "たべろう (taberou)", "たべない (tabenai)", "たべった (tabetta)"], ans: 0 },
+        { q: "3. 「今度（こんど）の 週末（しゅうまつ）、映画（えいが）を 見（み）に _______？」\n(Won't you go watch a movie with me? / Chalega? - Casual invitation)", opt: ["いかない？ (ikanai?)", "いきたい？ (ikitai?)", "いくね？ (iku ne?)", "いった？ (itta?)"], ans: 0 },
+        { q: "4. 「荷物（にもつ）、持（も）って _______。」\n(SHALL I carry your luggage for you? - Polite offer to help)", opt: ["いきましょうか (ikimashou ka)", "いこうか (ikou ka)", "いきますね (ikimasu ne)", "いってある (itte aru)"], ans: 0 },
+        { q: "5. 「あの 店（みせ）は 美味（おい）しい _______、安（やす）い _______、よく 行（い）く。」\n(That shop is BOTH delicious AND cheap, so I go often - Multiple reasons)", opt: ["し / し (shi / shi)", "で / で (de / de)", "から / から (kara / kara)", "のに / のに (noni / noni)"], ans: 0 },
+        { q: "6. 「どうしたの？」「ちょっと ねむい_______。」\n(How do you give a casual explanation for why you are tired/sleepy?)", opt: ["んだ (nda)", "からだ (kara da)", "ためだ (tame da)", "はずだ (hazu da)"], ans: 0 },
+        { q: "7. 友達（ともだち）に 「まじ？」と 言（い）われた時、その 意味（いみ）は 何（なん）ですか？\n(What does the popular slang まじ？ mean when a friend says it?)", opt: ["Seriously? / For real? / No way!", "Goodbye / See you later", "I am very busy right now", "Let's go eat ramen"], ans: 0 },
+        { q: "8. LINEや メッセージで 「りょうかい（了解）」の 意味（いみ）は 何（なん）ですか？\n(What does the ubiquitous chat word 了解 - ryoukai mean?)", opt: ["Got it / Understood / Roger (OK)", "Sorry / I apologize", "Where are you right now?", "Call me immediately"], ans: 0 },
+        { q: "9. 「久しぶり（ひさしぶり）」の 正しい 意味（いみ）と 使う 時は いつですか？\n(When do you say 久しぶり - hisashiburi to a friend?)", opt: ["When meeting someone for the first time", "When meeting a friend you haven't seen in a long time (Long time no see!)", "When saying goodbye at the train station", "When paying the bill at a restaurant"], ans: 1 },
+        { q: "10. 「静か（しずか）です」の タメ口（ぐち・Casual plain form）は どれですか？\n(What is the casual plain form of the na-adjective 静かです?)", opt: ["しずか だ (shizuka da)", "しずか い (shizuka i)", "しずか な (shizuka na)", "しずか く (shizuka ku)"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Amazing! You are a master of Japanese casual speech & friend hangouts!':'💪 Keep practicing! Review the plain verb conversions and slang cards!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

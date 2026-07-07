@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFT-Basic Mock Test 6: Construction & Site Safety (SSW Visa)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="jft_style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="brand">
+                <div class="brand-icon">🇯🇵</div>
+                <div class="brand-text">
+                    <h1>JFT-Basic Mock Test 6</h1>
+                    <p>Construction Industry & Site Safety — SSW (Tokutei Ginou) Visa Practice</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="ssw-badge">🌸 Test 6 of 10 / SSW Ready</div>
+                <button class="theme-btn" id="themeToggleBtn">☀️ Light Mode</button>
+                <a href="index.html" class="nav-btn" id="homeNavBtn">🏠 All Mock Tests Hub</a>
+            </div>
+        </header>
+
+        <!-- Home Introduction Box -->
+        <section class="hero-box" id="homeIntro">
+            <div class="hero-content">
+                <h2>Mock Test 6: Construction Industry, Scaffolding & Site Safety</h2>
+                <p>This test simulates the official **JFT-Basic (Japan Foundation Test for Basic Japanese)** required for the Specified Skilled Worker (SSW / 特定技能) visa. Test 6 focuses on construction scaffolding rules, full-body safety harness continuous connection (２丁掛け), crane slinging (玉掛け), heavy machinery blind spots, morning assemblies (朝礼), and hazard prediction training (KYT / ヒヤリ・ハット).</p>
+                
+                <div class="exam-meta-grid">
+                    <div class="meta-card">
+                        <span class="meta-label">Total Questions</span>
+                        <span class="meta-value">45 CBT Items</span>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Exam Duration</span>
+                        <span class="meta-value">60 Minutes</span>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Official Scale</span>
+                        <span class="meta-value">250 Points Max</span>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Pass Threshold</span>
+                        <span class="meta-value">80% (200 / 250)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mode Selection Cards -->
+        <section id="modeSelection">
+            <h2 class="section-title">🚀 Select Practice Mode</h2>
+            <div class="mode-grid">
+                <div class="mode-card">
+                    <div>
+                        <div class="mode-icon">⏱️</div>
+                        <h3>Timed CBT Exam Simulation</h3>
+                        <p>Experience the exact test environment of the official Computer-Based Testing (CBT) exam under strict time limit.</p>
+                        <ul class="mode-features">
+                            <li>Full 45-question mock test across all 4 sections</li>
+                            <li>60-minute countdown timer with low-time alert</li>
+                            <li>Flag questions for review before submitting</li>
+                            <li>Official 250-point SSW scale grading & scorecard</li>
+                        </ul>
+                    </div>
+                    <button class="start-btn" id="startExamBtn">▶️ Start Timed CBT Simulation</button>
+                </div>
+
+                <div class="mode-card">
+                    <div>
+                        <div class="mode-icon">💡</div>
+                        <h3>Interactive Practice Mode</h3>
+                        <p>Study at your own pace with instant answer validation, detailed grammar notes, and vocabulary breakdowns.</p>
+                        <ul class="mode-features">
+                            <li>Immediate correct / incorrect answer feedback</li>
+                            <li>Detailed explanation box for every question</li>
+                            <li>Filter by individual section (Vocab, Kaiwa, Chokai, Dokkai)</li>
+                            <li>No countdown timer pressure — master every concept</li>
+                        </ul>
+                    </div>
+                    <button class="start-btn practice" id="startPracticeBtn">✍️ Start Practice & Explanations</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Filter Bar -->
+        <div class="section-filter-bar" id="sectionFilterBar" style="display:none;">
+            <button class="sec-tab-btn active" data-sec="all">🌐 All Sections (45)</button>
+            <button class="sec-tab-btn" data-sec="sec1">📝 1. Script & Vocabulary (12)</button>
+            <button class="sec-tab-btn" data-sec="sec2">💬 2. Conversation & Expression (11)</button>
+            <button class="sec-tab-btn" data-sec="sec3">🎧 3. Listening Comprehension (11)</button>
+            <button class="sec-tab-btn" data-sec="sec4">📖 4. Reading Comprehension (11)</button>
+        </div>
+
+        <!-- CBT Testing Arena -->
+        <main class="cbt-arena" id="cbtArena">
+            <div class="question-container">
+                <div class="q-header">
+                    <div>
+                        <span class="q-badge" id="qBadge">Question 1 of 45</span>
+                        <span class="q-sec-name" id="qSecName">1. Script and Vocabulary</span>
+                    </div>
+                    <button class="flag-btn" id="flagBtn">🏳️ Flag for Review</button>
+                </div>
+
+                <div class="q-body">
+                    <div class="q-prompt-jp" id="qPromptJp">Question prompt goes here...</div>
+                    <div class="q-prompt-en" id="qPromptEn">English translation goes here...</div>
+                    <div id="scenarioContainer"></div>
+                    <div class="options-list" id="optionsList"></div>
+                    <div class="explanation-box" id="explanationBox">
+                        <div class="exp-title" id="expTitle">✅ Correct!</div>
+                        <div class="exp-text" id="expText">Detailed explanation...</div>
+                    </div>
+                </div>
+
+                <div class="cbt-footer">
+                    <button class="nav-arrow-btn" id="prevBtn" disabled>⬅️ Previous Question</button>
+                    <button class="submit-exam-btn" id="submitExamBtn">📥 Submit Exam for Grading</button>
+                    <button class="nav-arrow-btn" id="nextBtn">Next Question ➡️</button>
+                </div>
+            </div>
+
+            <aside class="cbt-sidebar">
+                <div class="timer-box">
+                    <span class="timer-label">⏳ Time Remaining</span>
+                    <span class="timer-display" id="timerDisplay">60:00</span>
+                </div>
+                <div class="sidebar-section-title">📊 Question Navigator</div>
+                <div class="q-grid-nav" id="qGridNav"></div>
+                <ul class="legend-list">
+                    <li><span class="legend-box" style="border: 1px solid var(--accent-blue);"></span> Current Question</li>
+                    <li><span class="legend-box" style="background: var(--accent-indigo);"></span> Answered</li>
+                    <li><span class="legend-box" style="background: var(--warning-color);"></span> Flagged for Review</li>
+                    <li><span class="legend-box" style="background: rgba(255,255,255,0.05);"></span> Unanswered</li>
+                </ul>
+            </aside>
+        </main>
+
+        <!-- Results Arena -->
+        <section class="results-arena" id="resultsArena">
+            <div class="score-banner">
+                <div class="score-badge pass" id="scoreBadge">🎉 CONGRATULATIONS! YOU PASSED!</div>
+                <div class="score-num" id="scoreNum">210 / 250 (84%)</div>
+                <div class="score-sub" id="scoreSub">You correctly answered 38 out of 45 questions across all sections.</div>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 8px;">📋 Section-by-Section Performance</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">Review your breakdown below to identify areas for improvement.</p>
+            <div class="section-scores-grid" id="sectionScoresGrid"></div>
+            <div class="results-actions">
+                <button class="restart-btn" id="restartBtn">🔄 Return to Test 6 Home</button>
+                <a href="index.html" class="restart-btn" style="background:var(--accent-cyan); color:#000; text-decoration:none; display:flex; align-items:center;">🏠 Back to All 10 Tests Hub</a>
+            </div>
+        </section>
+    </div>
+    <script src="test6_data.js"></script>
+    <script src="jft_app.js"></script>
+</body>
+</html>

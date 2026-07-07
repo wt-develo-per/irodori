@@ -1,0 +1,1830 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Ch 12: しごと (Work / Kaam)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --bg-card: rgba(31, 41, 55, 0.7);
+            --bg-glass: rgba(17, 24, 39, 0.85);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(99, 102, 241, 0.5);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+            --accent-primary: #6366f1;
+            --accent-secondary: #818cf8;
+            --accent-tertiary: #38bdf8;
+            --accent-info: #fbbf24;
+            --accent-success: #34d399;
+            --accent-danger: #f43f5e;
+            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --gradient-secondary: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+            --gradient-tertiary: linear-gradient(135deg, #34d399 0%, #059669 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.25);
+            --font-main: 'Outfit', sans-serif;
+            --font-jp: 'Noto Sans JP', sans-serif;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f5f9;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(79, 70, 229, 0.5);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #94a3b8;
+            --accent-primary: #4f46e5;
+            --accent-secondary: #6366f1;
+            --accent-tertiary: #0284c7;
+            --accent-info: #d97706;
+            --accent-success: #059669;
+            --accent-danger: #e11d48;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 40%);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-badge {
+            background: var(--gradient-primary);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-glow);
+            letter-spacing: 1px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-theme, .btn-audio-global {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme:hover, .btn-audio-global:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Welcome Banner */
+        .banner {
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .banner::after {
+            content: "しごと";
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-family: var(--font-jp);
+            font-size: 8.5rem;
+            font-weight: 900;
+            opacity: 0.15;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .banner h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+        }
+
+        .banner p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .banner-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.75rem 1.4rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Tab Content Panels */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Flashcards Grid */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .jp-text {
+            font-family: var(--font-jp);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1.3;
+        }
+
+        .btn-audio {
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent-primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card:hover .btn-audio {
+            background: var(--accent-primary);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .romaji-text {
+            font-size: 0.95rem;
+            color: var(--accent-tertiary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .meaning-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 500;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--bg-tertiary);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-bottom-left-radius: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Interactive Tools Box */
+        .interactive-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .interactive-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .output-panel {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .output-jp {
+            font-family: var(--font-jp);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .output-romaji {
+            color: var(--accent-info);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .output-meaning {
+            color: var(--accent-success);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .btn-action {
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Grammar Cards */
+        .grammar-card {
+            background: var(--bg-secondary);
+            border-left: 5px solid var(--accent-primary);
+            border-radius: 0 20px 20px 0;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .grammar-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grammar-formula {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-family: var(--font-jp);
+            font-size: 1.25rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            border: 1px dashed var(--border-color);
+            display: inline-block;
+        }
+
+        .particle-badge {
+            background: var(--accent-primary);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin: 0 0.3rem;
+            display: inline-block;
+        }
+
+        /* Review Master Tables */
+        .review-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .review-table th {
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .review-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .review-table tr:hover {
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .review-table .jp-col {
+            font-family: var(--font-jp);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--accent-tertiary);
+        }
+
+        /* Kanji Section Grid */
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kanji-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kanji-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .kanji-top {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .kanji-char {
+            font-family: var(--font-jp);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-primary);
+            line-height: 1;
+            background: var(--bg-tertiary);
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .kanji-info h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        .kanji-readings {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .kanji-readings span {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .kanji-example {
+            background: var(--bg-primary);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .kanji-example:hover {
+            border-color: var(--accent-success);
+        }
+
+        /* Quiz Module */
+        .quiz-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .question-box {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .option-btn {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent-primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .option-btn.correct {
+            background: rgba(52, 211, 153, 0.2);
+            border-color: var(--accent-success);
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            background: rgba(244, 63, 94, 0.2);
+            border-color: var(--accent-danger);
+            color: #fff;
+        }
+
+        .quiz-score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 2rem;
+            color: var(--accent-success);
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            border: 2px solid var(--accent-success);
+        }
+
+        /* Verbatim Text Reference Box */
+        .verbatim-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 2rem;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #e6edf3;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .verbatim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .badge-100 {
+            background: #238636;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner h2 { font-size: 1.8rem; }
+            .grid-cards, .kanji-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 1rem; }
+            .tabs-nav { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">第 12 課</div>
+            <div class="logo-text">
+                <h1>Irodori (いろどり) Elementary 1</h1>
+                <p>Chapter 12: しごと (Shigoto) - Work / Kaam</p>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button class="btn-audio-global" onclick="speakText('にほんごをはなすことができます。あしたかいぎにでなければなりません。おつかれさまです。')">
+                <span>🔊</span> Speak Ch 12 Key Phrases
+            </button>
+            <button class="btn-theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> Theme
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Welcome Banner -->
+        <div class="banner">
+            <h2>しごと (Shigoto) - Work / Kaam</h2>
+            <p>Master Japanese workplace communication, talk about your abilities and skills, understand office hierarchy, and learn obligations vs. freedom! Learn occupations (<strong style="color:#fff; background:#4f46e5; padding:0 6px; border-radius:4px;">かいしゃいん / 介護士</strong>), ability expressions (<strong style="color:#fff; background:#0284c7; padding:0 6px; border-radius:4px;">ことができます</strong>), timing rules (<strong style="color:#fff; background:#d97706; padding:0 6px; border-radius:4px;">のとき</strong>), and mandatory tasks (<strong style="color:#fff; background:#059669; padding:0 6px; border-radius:4px;">しなければなりません</strong>)!</p>
+            <div class="banner-tags">
+                <div class="tag">🎯 Goal: Kaam batana, workplace communication, job vocabulary</div>
+                <div class="tag">💼 21 Jobs, 21 Workplace Terms & 13 Actions</div>
+                <div class="tag">⚡ 100% Verbatim Complete Content (Lines 2434 to 2662)</div>
+                <div class="tag">🈹 24 Workplace Kanjis & 10-Q Master Quiz</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('ability')">
+                <span>💼</span> Ability & Timing Generator (ことができます / のとき)
+            </button>
+            <button class="tab-btn" onclick="switchTab('obligation')">
+                <span>⚖️</span> Obligation vs Freedom Conjugator (なければなりません / なくてもいいです)
+            </button>
+            <button class="tab-btn" onclick="switchTab('intro')">
+                <span>🤝</span> Self-Introduction Simulator (自己紹介)
+            </button>
+            <button class="tab-btn" onclick="switchTab('vocab')">
+                <span>🗣️</span> 70+ Occupations, Workplace & Hierarchy Cards
+            </button>
+            <button class="tab-btn" onclick="switchTab('phrases')">
+                <span>🙇</span> Workplace Greetings & Etiquette Phrases
+            </button>
+            <button class="tab-btn" onclick="switchTab('kanji')">
+                <span>🈹</span> Kanji Mastery (24 Ch 12 Kanjis)
+            </button>
+            <button class="tab-btn" onclick="switchTab('quiz')">
+                <span>🎮</span> Practice Quiz (10 Qs)
+            </button>
+            <button class="tab-btn" onclick="switchTab('verbatim')">
+                <span>📖</span> Verbatim Original Text (100% Complete)
+            </button>
+        </div>
+
+        <!-- TAB 1: Ability & Timing Generator -->
+        <div id="tab-ability" class="tab-content active">
+            <!-- Interactive Ability & Timing Generator -->
+            <div class="interactive-box">
+                <h4>💼 Interactive Workplace Ability & Timing Generator</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Construct professional Japanese statements about your skills and when to take actions! Combine timing conditions (<strong style="color:#fff;">こまった とき / びょうき の とき</strong>) with your professional abilities (<strong style="color:var(--accent-tertiary);">～こと が できます</strong>) and advice!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="ab-timing">Situation / Timing (Grammar Pt 41 - とき)</label>
+                        <select id="ab-timing">
+                            <option value="こまった (困った) とき、|Komatta toki,|Jab mushkil ho (When in trouble 🆘)" selected>こまった とき (When in trouble 🆘)</option>
+                            <option value="わからない とき、|Wakaranai toki,|Jab samajh na aaye (When you don't understand ❓)">わからない とき (When you don't understand ❓)</option>
+                            <option value="ひるやすみ (昼休み) の とき、|Hiruyasumi no toki,|Lunch break ke waqt (During lunch break 🍱)">ひるやすみ の とき (During lunch break 🍱)</option>
+                            <option value="びょうき (病気) の とき、|Byouki no toki,|Bimaar hone pe (When you are sick 🤒)">びょうき の とき (When you are sick 🤒)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="ab-skill">Skill / Ability (Grammar Pt 40 - ことができます)</label>
+                        <select id="ab-skill">
+                            <option value="にほんご で はなす ことが できます。|Nihongo de hanasu koto ga dekimasu.|Japanese mein bol sakta hoon.|ability" selected>にほんご で はなす ことが できます (I can speak in Japanese 🗣️🇯🇵)</option>
+                            <option value="パソコン を つかう ことが できます。|Pasokon wo tsukau koto ga dekimasu.|Computer use kar sakta hoon.|ability">パソコン を つかう ことが できます (I can use a computer 💻)</option>
+                            <option value="くるま を うんてん する ことが できます。|Kuruma wo unten suru koto ga dekimasu.|Gaadi chala sakta hoon.|ability">くるま を うんてん する ことが できます (I can drive a car 🚗)</option>
+                            <option value="にほんの りょうり を つくる ことが できます。|Nihon no ryouri wo tsukuru koto ga dekimasu.|Japanese khana bana sakta hoon.|ability">にほんの りょうり を つくる ことが できます (I can cook Japanese food 🍜)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="ab-advice">Workplace Action / Advice</label>
+                        <select id="ab-advice">
+                            <option value="いつでも じょうし に そうだんして ください。|Itsudemo joushi ni soudan shite kudasai.|kabhi bhi boss se salah kijiye (Please consult your boss anytime 👔)" selected>じょうし に そうだんして ください (Please consult your boss 👔)</option>
+                            <option value="せんぱい に きいて ください。|Senpai ni kiite kudasai.|senior se poochiye (Please ask your senior 🙋‍♂️)">せんぱい に きいて ください (Please ask your senior 🙋‍♂️)</option>
+                            <option value="しょくどう で たべます。|Shokudou de tabemasu.|canteen mein khata hoon (I eat in the cafeteria 🍽️)">しょくどう で たべます (I eat in the cafeteria 🍽️)</option>
+                            <option value="かいしゃ を やすんで ください。|Kaisha wo yasunde kudasai.|company se chutti lijiye (Please rest from work 🏡)">かいしゃ を やすんで ください (Please take rest from work 🏡)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="ab-jp">こまった とき、いつでも じょうし に そうだんして ください。にほんご で はなす ことが できます。</div>
+                    <div class="output-romaji" id="ab-romaji" style="margin-top:0.8rem;">Komatta toki, itsudemo joushi ni soudan shite kudasai. Nihongo de hanasu koto ga dekimasu.</div>
+                    <div class="output-meaning" id="ab-meaning">Matlab: Jab mushkil ho, kabhi bhi boss se salah kijiye. Japanese mein bol sakta hoon.</div>
+                    <button class="btn-action" onclick="speakGeneratedAbility()">🔊 Speak Ability & Workplace Statement</button>
+                </div>
+            </div>
+
+            <!-- Grammar Point 40 & 41 Card -->
+            <div class="grammar-card">
+                <div class="grammar-title">
+                    <span>Ability & Time/Situation Grammar</span>
+                    <span class="particle-badge">ことができます / のとき</span>
+                </div>
+                <div class="grammar-formula">Verb Dictionary Form + ことが できます / Noun + の とき</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    • <strong style="color:var(--accent-primary);">～ことが できます (Grammar Pt 40)</strong>: Expressing skills and ability ("_____ kar sakta hoon"). Formed by taking any Verb in its dictionary form (e.g., <strong style="color:#fff;">はなす / よむ / うんてんする</strong>) + <strong style="color:#fff;">ことが できます</strong>.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;💡 Negative: <strong style="color:#fff;">かく ことが できません</strong> (Likh nahi sakta / Cannot write).<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;💡 Question: <strong style="color:#fff;">はなす ことが できますか？</strong> (Can you speak? → <strong style="color:#fff;">はい、すこし できます</strong> / <strong style="color:#fff;">いいえ、できません</strong>).<br>
+                    • <strong style="color:var(--accent-tertiary);">～とき (Grammar Pt 41)</strong>: Means "When ____ / Jab ____". Notice how different words connect to <strong style="color:#fff;">とき</strong>:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;💡 Noun + <strong style="color:#fff;">の とき</strong>: <strong style="color:#fff;">ひるやすみ の とき</strong> (During lunch break), <strong style="color:#fff;">びょうき の とき</strong> (When sick).<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;💡 Adjective / Verb + <strong style="color:#fff;">とき</strong>: <strong style="color:#fff;">こまった とき</strong> (When in trouble), <strong style="color:#fff;">わからない とき</strong> (When you don't understand).
+                </p>
+            </div>
+        </div>
+
+        <!-- TAB 2: Obligation vs Freedom Conjugator -->
+        <div id="tab-obligation" class="tab-content">
+            <!-- Grammar Point 42 & 43 Card -->
+            <div class="grammar-card">
+                <div class="grammar-title">
+                    <span>Obligation vs. Freedom (Must Do vs. Don't Have To)</span>
+                    <span class="particle-badge">なければなりません / なくてもいいです</span>
+                </div>
+                <div class="grammar-formula">ない-form se ない → なければ なりません (Must) / なくても いいです (Don't have to)</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    In Japanese workplaces, understanding rules, mandatory deadlines, and exemptions is critical!<br>
+                    • <strong style="color:var(--accent-danger);">～なければ なりません (Grammar Pt 42)</strong> = Karna zaruri hai / Must do. Take the negative <strong style="color:#fff;">ない</strong> form, drop <strong style="color:#fff;">ない</strong>, and add <strong style="color:#fff;">なければ なりません</strong>.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;💡 In casual spoken Japanese, this contracts to <strong style="color:#fff;">～なきゃ</strong> or <strong style="color:#fff;">～ないといけない</strong>! (e.g. <strong style="color:#fff;">いかなきゃ</strong> = Jaana padega).<br>
+                    • <strong style="color:var(--accent-success);">～なくても いいです (Grammar Pt 43)</strong> = Karna zaruri nahi / Don't have to do. Drop <strong style="color:#fff;">ない</strong> and add <strong style="color:#fff;">なくても いいです</strong>.
+                </p>
+
+                <!-- Interactive Obligation Simulator -->
+                <div style="background:var(--bg-tertiary); padding:1.5rem; border-radius:16px; margin-bottom:1.5rem; border:1px solid var(--border-color);">
+                    <h5 style="color:var(--accent-tertiary); margin-bottom:1rem; font-size:1.1rem;">⚖️ Interactive Workplace Rule Conjugator</h5>
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-bottom:1rem;">
+                        <div class="input-group">
+                            <label>Mandatory Rule (Must Do - なければなりません)</label>
+                            <select id="ob-must">
+                                <option value="あした かいぎ に でなければ なりません。|Ashita kaigi ni denakereba narimasen.|Kal meeting mein jaana zaruri hai (Must attend meeting tomorrow 📅)" selected>かいぎ に でなければ なりません (Must attend meeting 📅)</option>
+                                <option value="まいにち じょうし に ほうこく しなければ なりません。|Mainichi joushi ni houkoku shinakereba narimasen.|Har roz boss ko report karna zaruri hai (Must report to boss daily 👔)">ほうこく しなければ なりません (Must report daily 👔)</option>
+                                <option value="5じ まで に メール を ださなければ なりません。|Goji made ni meeru wo dasanakereba narimasen.|5 baje tak mail bhejna zaruri hai (Must send mail by 5 PM ⏰)">メール を ださなければ なりません (Must send email by 5 PM ⏰)</option>
+                                <option value="きょうちゅう に かくにん しなければ なりません。|Kyouchuu ni kakunin shinakereba narimasen.|Aaj ke andar confirm karna zaruri hai (Must confirm today ✔️)">かくにん しなければ なりません (Must confirm today ✔️)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Freedom / Exemption (Don't Have To - なくてもいいです)</label>
+                            <select id="ob-free">
+                                <option value="でも、あした は こなくても いいです。|Demo, ashita wa konakute mo ii desu.|Lekin, kal aana zaruri nahi hai (Don't have to come tomorrow 🏡)" selected>こなくても いいです (Don't have to come tomorrow 🏡)</option>
+                                <option value="でも、ネクタイ を しなくても いいです。|Demo, nekutai wo shinakute mo ii desu.|Lekin, tie lagana zaruri nahi hai (Don't have to wear a tie 👔❌)">ネクタイ を しなくても いいです (Don't have to wear a tie 👔❌)</option>
+                                <option value="でも、きょう は ざんぎょう しなくても いいです。|Demo, kyou wa zangyou shinakute mo ii desu.|Lekin, aaj overtime karna zaruri nahi hai (Don't have to do overtime today ⌛❌)">ざんぎょう しなくても いいです (Don't have to do overtime ⌛❌)</option>
+                                <option value="でも、いま すぐ れんらく しなくても いいです。|Demo, ima sugu renraku shinakute mo ii desu.|Lekin, abhi turant contact karna zaruri nahi hai (Don't have to contact immediately 📞❌)">いま れんらく しなくても いいです (Don't have to contact immediately 📞❌)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Casual Spoken Form (なきゃ)</label>
+                            <select id="ob-casual">
+                                <option value="いかなきゃ！|Ikanakya!|Jaana padega! (Gotta go! 🏃)" selected>いかなきゃ！ (Gotta go! 🏃)</option>
+                                <option value="しなきゃ！|Shinakya!|Karna padega! (Gotta do it! 💪)">しなきゃ！ (Gotta do it! 💪)</option>
+                                <option value="ださなきゃ！|Dasanakya!|Bhejna/Submit karna padega! (Gotta send/submit! 📤)">ださなきゃ！ (Gotta submit! 📤)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-action" style="margin-top:0; width:100%; justify-content:center;" onclick="updateObligation()">🔊 Speak Workplace Rules</button>
+                    <div id="ob-output" style="font-family:var(--font-jp); font-size:1.3rem; font-weight:700; color:var(--text-main); margin-top:1.2rem; padding:1rem; background:var(--bg-primary); border-radius:12px; border:1px solid var(--border-color);">あした かいぎ に でなければ なりません。でも、あした は こなくても いいです。いかなきゃ！<span style="font-size:0.95rem; color:var(--accent-info); font-weight:500; display:block; margin-top:0.5rem; font-style:italic;">(Ashita kaigi ni denakereba narimasen. Demo, ashita wa konakute mo ii desu. Ikanakya!)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Self-Introduction Simulator -->
+        <div id="tab-intro" class="tab-content">
+            <div class="interactive-box" style="border-color: var(--accent-success);">
+                <h4 style="color: var(--accent-success);">🤝 Workplace Self-Introduction Simulator (自己紹介 - Jikoshoukai)</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">First impressions matter! Practice the standard professional self-introduction speech for your first day at a Japanese company (<strong style="color:#fff;">しんにゅうしゃいん</strong> - new employee)! Customize your name, origin, and profession below!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Your Name (お名前)</label>
+                        <select id="in-name">
+                            <option value="ラジェシュ|Rajeshu|Rajesh" selected>ラジェシュ (Rajesh)</option>
+                            <option value="アミト|Amito|Amit">アミト (Amit)</option>
+                            <option value="スニタ|Sunita|Sunita">スニタ (Sunita)</option>
+                            <option value="プージャー|Puujaa|Pooja">プージャー (Pooja)</option>
+                            <option value="ラーフル|Raafuru|Rahul">ラーフル (Rahul)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Your Country (出身)</label>
+                        <select id="in-country">
+                            <option value="インド|Indo|India|India se" selected>インド (India 🇮🇳)</option>
+                            <option value="ネパール|Nepaaru|Nepal|Nepal se">ネパール (Nepal 🇳🇵)</option>
+                            <option value="バングラデシュ|Banguradeshu|Bangladesh|Bangladesh se">バングラデシュ (Bangladesh 🇧🇩)</option>
+                            <option value="スリランカ|Suriranka|Sri Lanka|Sri Lanka se">スリランカ (Sri Lanka 🇱🇰)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Previous Profession / Background</label>
+                        <select id="in-job">
+                            <option value="エンジニア|enjinia|engineer" selected>エンジニア (Engineer 💻)</option>
+                            <option value="プログラマー|puroguramaa|programmer">プログラマー (Programmer ⌨️)</option>
+                            <option value="せんせい|sensei|teacher">せんせい (Teacher 👩‍🏫)</option>
+                            <option value="てんいん|tenin|shop staff">てんいん (Shop staff 🏬)</option>
+                            <option value="かいごし|kaigoshi|care worker">かいごし (Care worker 🏥)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel" style="background: #0d1117; border: 2px solid var(--accent-success);">
+                    <div id="in-jp" style="font-family: var(--font-jp); font-size: 1.35rem; font-weight: 700; color: #fff; line-height: 2.2; margin-bottom: 1rem;">
+                        はじめまして。きょう から こちら で はたらきます <span style="color:var(--accent-info);">ラジェシュ</span> です。<br>
+                        <span style="color:var(--accent-info);">インド</span> から きました。まえ は <span style="color:var(--accent-info);">インド</span> で <span style="color:var(--accent-info);">エンジニア</span> を していました。<br>
+                        にほんご は まだ じょうず じゃないですが、がんばります。<br>
+                        どうぞ よろしく おねがいします。
+                    </div>
+                    <div id="in-rom" style="color: var(--accent-success); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; font-style: italic; border-top: 1px solid #30363d; padding-top: 1rem;">
+                        (Hajimemashite. Kyou kara kochira de hatarakimasu Rajeshu desu. Indo kara kimashita. Mae wa Indo de enjinia wo shiteimashita. Nihongo wa mada jouzu janai desu ga, ganbarimasu. Douzo yoroshiku onegaishimasu.)
+                    </div>
+                    <div id="in-meaning" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                        Hindi Translation: Pehli baar mil rahe hain. Aaj se yahaan kaam karunga, Rajesh hoon. India se aaya hoon. Pehle India mein engineer tha. Japanese abhi acchi nahi hai, lekin koshish karunga. Please acche se rehna / I look forward to working with you.
+                    </div>
+                    <button class="btn-action" style="background: var(--gradient-tertiary); margin-top: 1.2rem;" onclick="speakIntro()">🔊 Speak Professional Self-Introduction</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: 70+ Occupations, Workplace & Hierarchy Cards -->
+        <div id="tab-vocab" class="tab-content">
+            <div class="section-header">
+                <h3>Job & Occupation Vocabulary (しごと / Shigoto - 21 Words)</h3>
+                <p>Click any card to hear its pronunciation in Japanese!</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('しごと')"><div class="card-top"><div class="jp-text">しごと (仕事)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shigoto</div><div class="meaning-text">Kaam / Job / Work 💼</div></div>
+                <div class="card" onclick="speakText('かいしゃいん')"><div class="card-top"><div class="jp-text">かいしゃいん (会社員)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaishain</div><div class="meaning-text">Company employee / Office worker 👔</div></div>
+                <div class="card" onclick="speakText('こうじょう')"><div class="card-top"><div class="jp-text">こうじょう (工場)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Koujou</div><div class="meaning-text">Factory / Karkhana 🏭</div></div>
+                <div class="card" onclick="speakText('みせ')"><div class="card-top"><div class="jp-text">みせ (店)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Mise</div><div class="meaning-text">Shop / Dukaan 🏬</div></div>
+                <div class="card" onclick="speakText('レストラン')"><div class="card-top"><div class="jp-text">レストラン</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Resutoran</div><div class="meaning-text">Restaurant 🍽️</div></div>
+                <div class="card" onclick="speakText('ホテル')"><div class="card-top"><div class="jp-text">ホテル</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hoteru</div><div class="meaning-text">Hotel 🏨</div></div>
+                <div class="card" onclick="speakText('びょういん')"><div class="card-top"><div class="jp-text">びょういん (病院)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Byouin</div><div class="meaning-text">Hospital 🏥</div></div>
+                <div class="card" onclick="speakText('がっこう')"><div class="card-top"><div class="jp-text">がっこう (学校)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Gakkou</div><div class="meaning-text">School / Vidyalaya 🏫</div></div>
+                <div class="card" onclick="speakText('コンビニ')"><div class="card-top"><div class="jp-text">コンビニ</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Konbini</div><div class="meaning-text">Convenience store (24x7 shop) 🏪</div></div>
+                <div class="card" onclick="speakText('のうか')"><div class="card-top"><div class="jp-text">のうか (農家)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Nouka</div><div class="meaning-text">Farmer / Kisaan 🌾</div></div>
+                <div class="card" onclick="speakText('エンジニア')"><div class="card-top"><div class="jp-text">エンジニア</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Enjinia</div><div class="meaning-text">Engineer 💻</div></div>
+                <div class="card" onclick="speakText('プログラマー')"><div class="card-top"><div class="jp-text">プログラマー</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Puroguramaa</div><div class="meaning-text">Programmer / Developer ⌨️</div></div>
+                <div class="card" onclick="speakText('かいごし')"><div class="card-top"><div class="jp-text">かいごし (介護士)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaigoshi</div><div class="meaning-text">Care worker / Nursing staff 🦽</div></div>
+                <div class="card" onclick="speakText('せんせい')"><div class="card-top"><div class="jp-text">せんせい (先生)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sensei</div><div class="meaning-text">Teacher / Adhyapak 👩‍🏫</div></div>
+                <div class="card" onclick="speakText('てんいん')"><div class="card-top"><div class="jp-text">てんいん (店員)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tenin</div><div class="meaning-text">Shop staff / Dukaan ka karmachari 💁</div></div>
+                <div class="card" onclick="speakText('うんてんしゅ')"><div class="card-top"><div class="jp-text">うんてんしゅ (運転手)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Untenshu</div><div class="meaning-text">Driver / Gaadi chalane wala 🚌</div></div>
+                <div class="card" onclick="speakText('コック')"><div class="card-top"><div class="jp-text">コック</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kokku</div><div class="meaning-text">Cook / Chef / Bawarchi 🍳</div></div>
+                <div class="card" onclick="speakText('けんちくか')"><div class="card-top"><div class="jp-text">けんちくか (建築家)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kenchikuka</div><div class="meaning-text">Architect / Building designer 🏛️</div></div>
+                <div class="card" onclick="speakText('つうやく')"><div class="card-top"><div class="jp-text">つうやく (通訳)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tsuuyaku</div><div class="meaning-text">Interpreter / Anuvadak 🗣️</div></div>
+                <div class="card" onclick="speakText('アルバイト')"><div class="card-top"><div class="jp-text">アルバイト</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Arubaito</div><div class="meaning-text">Part-time job ⏱️</div></div>
+                <div class="card" onclick="speakText('せいしゃいん')"><div class="card-top"><div class="jp-text">せいしゃいん (正社員)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Seishain</div><div class="meaning-text">Full-time regular employee 🎖️</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>Workplace Office & Hierarchy Vocabulary (21 Words)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('かいしゃ')"><div class="card-top"><div class="jp-text">かいしゃ (会社)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaisha</div><div class="meaning-text">Company / Office 🏢</div></div>
+                <div class="card" onclick="speakText('じむしょ')"><div class="card-top"><div class="jp-text">じむしょ (事務所)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Jimusho</div><div class="meaning-text">Office / Administrative room 🖥️</div></div>
+                <div class="card" onclick="speakText('かいぎしつ')"><div class="card-top"><div class="jp-text">かいぎしつ (会議室)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaigishitsu</div><div class="meaning-text">Meeting room / Conference room 🗣️</div></div>
+                <div class="card" onclick="speakText('しょくどう')"><div class="card-top"><div class="jp-text">しょくどう (食堂)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shokudou</div><div class="meaning-text">Cafeteria / Canteen / Dining hall 🍱</div></div>
+                <div class="card" onclick="speakText('きゅうけいしつ')"><div class="card-top"><div class="jp-text">きゅうけいしつ (休憩室)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyuukeishitsu</div><div class="meaning-text">Rest room / Staff break room ☕</div></div>
+                <div class="card" onclick="speakText('ロッカー')"><div class="card-top"><div class="jp-text">ロッカー</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Rokkaa</div><div class="meaning-text">Locker 🔐</div></div>
+                <div class="card" onclick="speakText('しゃちょう')"><div class="card-top"><div class="jp-text">しゃちょう (社長)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shachou</div><div class="meaning-text">CEO / President / Company head 👑</div></div>
+                <div class="card" onclick="speakText('ぶちょう')"><div class="card-top"><div class="jp-text">ぶちょう (部長)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Buchou</div><div class="meaning-text">Department head / General manager 👔</div></div>
+                <div class="card" onclick="speakText('かちょう')"><div class="card-top"><div class="jp-text">かちょう (課長)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kachou</div><div class="meaning-text">Section chief / Manager 👔</div></div>
+                <div class="card" onclick="speakText('じょうし')"><div class="card-top"><div class="jp-text">じょうし (上司)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Joushi</div><div class="meaning-text">Boss / Senior executive 👔</div></div>
+                <div class="card" onclick="speakText('どうりょう')"><div class="card-top"><div class="jp-text">どうりょう (同僚)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Douryou</div><div class="meaning-text">Colleague / Saath mein kaam karne wala 🤝</div></div>
+                <div class="card" onclick="speakText('ぶか')"><div class="card-top"><div class="jp-text">ぶか (部下)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Buka</div><div class="meaning-text">Subordinate / Junior staff member 🙇‍♂️</div></div>
+                <div class="card" onclick="speakText('せんぱい')"><div class="card-top"><div class="jp-text">せんぱい (先輩)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Senpai</div><div class="meaning-text">Senior (Experience mein bada) 🎖️</div></div>
+                <div class="card" onclick="speakText('こうはい')"><div class="card-top"><div class="jp-text">こうはい (後輩)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kouhai</div><div class="meaning-text">Junior (Experience mein chhota) 🔰</div></div>
+                <div class="card" onclick="speakText('しんにゅうしゃいん')"><div class="card-top"><div class="jp-text">しんにゅうしゃいん (新入社員)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinnyuu shain</div><div class="meaning-text">New employee / Naya karmachari 🌟</div></div>
+                <div class="card" onclick="speakText('きゅうりょう')"><div class="card-top"><div class="jp-text">きゅうりょう (給料)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyuuryou</div><div class="meaning-text">Salary / Tankhwah 💰</div></div>
+                <div class="card" onclick="speakText('ざんぎょう')"><div class="card-top"><div class="jp-text">ざんぎょう (残業)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Zangyou</div><div class="meaning-text">Overtime work / Extra kaam ⌛</div></div>
+                <div class="card" onclick="speakText('しゅっちょう')"><div class="card-top"><div class="jp-text">しゅっちょう (出張)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shucchou</div><div class="meaning-text">Business trip / Kaam ke liye yatra 🚄</div></div>
+                <div class="card" onclick="speakText('かいぎ')"><div class="card-top"><div class="jp-text">かいぎ (会議)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaigi</div><div class="meaning-text">Meeting / Sabha 📋</div></div>
+                <div class="card" onclick="speakText('きゅうけい')"><div class="card-top"><div class="jp-text">きゅうけい (休憩)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyuukei</div><div class="meaning-text">Break / Rest / Aaram ka waqt ☕</div></div>
+                <div class="card" onclick="speakText('ひるやすみ')"><div class="card-top"><div class="jp-text">ひるやすみ (昼休み)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hiruyasumi</div><div class="meaning-text">Lunch break / Dopahar ka aaram 🍱</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>Work Actions & Duties Vocabulary (13 Words)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('はたらきます')"><div class="card-top"><div class="jp-text">はたらきます (働きます)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hatarakimasu</div><div class="meaning-text">Kaam karna / To work 💼</div></div>
+                <div class="card" onclick="speakText('てつだいます')"><div class="card-top"><div class="jp-text">てつだいます (手伝います)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tetsudaimasu</div><div class="meaning-text">Madad karna / To help / Assist 🤝</div></div>
+                <div class="card" onclick="speakText('そうだんします')"><div class="card-top"><div class="jp-text">そうだんします (相談します)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Soudan shimasu</div><div class="meaning-text">Salah karna / To consult / Discuss 🗣️</div></div>
+                <div class="card" onclick="speakText('れんらくします')"><div class="card-top"><div class="jp-text">れんらくします (連絡します)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Renraku shimasu</div><div class="meaning-text">Contact karna / To get in touch 📞</div></div>
+                <div class="card" onclick="speakText('ほうこくします')"><div class="card-top"><div class="jp-text">ほうこくします (報告します)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Houkoku shimasu</div><div class="meaning-text">Report karna / To report progress 📝</div></div>
+                <div class="card" onclick="speakText('かくにんします')"><div class="card-top"><div class="jp-text">かくにんします (確認します)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kakunin shimasu</div><div class="meaning-text">Confirm karna / To verify / Check ✔️</div></div>
+                <div class="card" onclick="speakText('せつめいします')"><div class="card-top"><div class="jp-text">せつめいします (説明します)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Setsumei shimasu</div><div class="meaning-text">Explain karna / To explain 👨‍🏫</div></div>
+                <div class="card" onclick="speakText('コピーします')"><div class="card-top"><div class="jp-text">コピーします</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kopii shimasu</div><div class="meaning-text">Copy karna / To photocopy / Duplicating 📄</div></div>
+                <div class="card" onclick="speakText('メールをおくります')"><div class="card-top"><div class="jp-text">メール を おくります (送ります)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Meeru wo okurimasu</div><div class="meaning-text">Mail bhejna / To send an email 📤</div></div>
+                <div class="card" onclick="speakText('メールをもらいます')"><div class="card-top"><div class="jp-text">メール を もらいます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Meeru wo moraimasu</div><div class="meaning-text">Mail milna / To receive an email 📥</div></div>
+                <div class="card" onclick="speakText('でんわをかけます')"><div class="card-top"><div class="jp-text">でんわ を かけます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Denwa wo kakemasu</div><div class="meaning-text">Phone karna / To make a phone call 📱</div></div>
+                <div class="card" onclick="speakText('でんわにでます')"><div class="card-top"><div class="jp-text">でんわ に でます (出ます)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Denwa ni demasu</div><div class="meaning-text">Phone uthana / To answer the phone ☎️</div></div>
+                <div class="card" onclick="speakText('うちあわせします')"><div class="card-top"><div class="jp-text">うちあわせします (打ち合わせ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Uchiawase shimasu</div><div class="meaning-text">Meeting karna / Briefing / Informal discussion 🤝</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 5: Workplace Greetings & Etiquette Phrases -->
+        <div id="tab-phrases" class="tab-content">
+            <div class="section-header">
+                <h3>🙇 Essential Workplace Greetings & Communication Phrases (14 Phrases)</h3>
+                <p>Master Japanese workplace etiquette! These phrases are vital for office harmony and smooth teamwork.</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('おはようございます')"><div class="card-top"><div class="jp-text">おはようございます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ohayou gozaimasu</div><div class="meaning-text">Good morning (Said when entering office anytime!) ☀️</div></div>
+                <div class="card" onclick="speakText('おつかれさまです')"><div class="card-top"><div class="jp-text">おつかれさまです (お疲れ様です)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Otsukaresama desu</div><div class="meaning-text">Aap thak gaye honge (Universal workplace greeting & acknowledgment) 🤝</div></div>
+                <div class="card" onclick="speakText('おつかれさまでした')"><div class="card-top"><div class="jp-text">おつかれさまでした</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Otsukaresama deshita</div><div class="meaning-text">Kaam khatam hone pe (Said at the end of the workday - past) 🏁</div></div>
+                <div class="card" onclick="speakText('おさきにしつれいします')"><div class="card-top"><div class="jp-text">おさきにしつれいします (お先に失礼します)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Osaki ni shitsurei shimasu</div><div class="meaning-text">Main pehle jaa raha hoon (Said when leaving the office before others) 🙇‍♂️</div></div>
+                <div class="card" onclick="speakText('いってきます')"><div class="card-top"><div class="jp-text">いってきます (行ってきます)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ittekimasu</div><div class="meaning-text">Jaa raha hoon (Said when leaving for an errand/trip and returning) 🏃</div></div>
+                <div class="card" onclick="speakText('いってらっしゃい')"><div class="card-top"><div class="jp-text">いってらっしゃい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Itterasshai</div><div class="meaning-text">Jaake aaiye (Response to someone leaving temporarily) 👋</div></div>
+                <div class="card" onclick="speakText('ただいま')"><div class="card-top"><div class="jp-text">ただいま</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tadaima</div><div class="meaning-text">Aa gaya / I'm back (Said when returning to the office/home) 🚪</div></div>
+                <div class="card" onclick="speakText('おかえりなさい')"><div class="card-top"><div class="jp-text">おかえりなさい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Okaerinasai</div><div class="meaning-text">Wapas aaye? Welcome back (Response to Tadaima) 😊</div></div>
+                <div class="card" onclick="speakText('よろしくおねがいします')"><div class="card-top"><div class="jp-text">よろしく おねがいします</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Yoroshiku onegaishimasu</div><div class="meaning-text">Please take care of it / Aapke hawale / Nice to work with you 🙏</div></div>
+                <div class="card" onclick="speakText('かしこまりました')"><div class="card-top"><div class="jp-text">かしこまりました</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kashikomarimashita</div><div class="meaning-text">Samajh gaya (Very formal / respectful "Understood / Certainly") ✔️</div></div>
+                <div class="card" onclick="speakText('しょうちしました')"><div class="card-top"><div class="jp-text">しょうちしました (承知しました)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shouchi shimashita</div><div class="meaning-text">Samajh gaya (Formal business "Understood / Acknowledged") ✔️</div></div>
+                <div class="card" onclick="speakText('すみませんちょっといいですか')"><div class="card-top"><div class="jp-text">すみません、ちょっと いいですか？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sumimasen, chotto ii desu ka?</div><div class="meaning-text">Excuse me, thoda waqt hai? (Do you have a moment?) ❓</div></div>
+                <div class="card" onclick="speakText('おねがいしてもいいですか')"><div class="card-top"><div class="jp-text">おねがいしても いいですか？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Onegai shitemo ii desu ka?</div><div class="meaning-text">Ek request kar sakta hoon? (May I ask a favor?) 🙏</div></div>
+                <div class="card" onclick="speakText('すみませんもういちどおねがいします')"><div class="card-top"><div class="jp-text">すみません、もう いちど おねがいします</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sumimasen, mou ichido onegaishimasu</div><div class="meaning-text">Sorry, ek baar aur boliye (Could you say that once more please?) 🔁</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Kanji Mastery -->
+        <div id="tab-kanji" class="tab-content">
+            <div class="section-header">
+                <h3>🈹 Chapter 12 Kanji Mastery (漢字 - 24 Workplace & Business Kanjis)</h3>
+                <p>Master 24 vital Kanjis for companies, occupations, hierarchy, meetings, and salaries!</p>
+            </div>
+
+            <div class="kanji-grid">
+                <!-- Kanji 1: 仕 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">仕</div><div class="kanji-info"><h5>Serve / Work (Shi)</h5><div class="kanji-readings">Kun: <span>つか・える</span><br>On: <span>シ / ジ (shi)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('しごととしがた')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">仕事 (しごと) / 仕方 (しかた)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shigoto (Work) / Shikata (Method/way)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 2: 事 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">事</div><div class="kanji-info"><h5>Matter / Thing (Koto/Ji)</h5><div class="kanji-readings">Kun: <span>こと / ごと</span><br>On: <span>ジ / ズ (ji)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('しごととじむしょ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">仕事 (しごと) / 事務所 (じむしょ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shigoto (Work) / Jimusho (Office)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 3: 会 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">会</div><div class="kanji-info"><h5>Meet / Society (Kai/A.u)</h5><div class="kanji-readings">Kun: <span>あ・う (au)</span><br>On: <span>カイ / エ (kai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かいしゃとかいぎ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">会社 (かいしゃ) / 会議 (かいぎ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kaisha (Company) / Kaigi (Meeting)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 4: 社 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">社</div><div class="kanji-info"><h5>Company / Shrine (Sha)</h5><div class="kanji-readings">Kun: <span>やしろ</span><br>On: <span>シャ / ジャ (sha)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かいしゃとしゃちょう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">会社 (かいしゃ) / 社長 (しゃちょう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kaisha (Company) / Shachou (CEO)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 5: 員 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">員</div><div class="kanji-info"><h5>Member / Employee (In)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>イン (in)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かいしゃいんとてんいん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">会社員 (かいしゃいん) / 店員</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kaishain (Company worker) / Tenin (Clerk)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 6: 工 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">工</div><div class="kanji-info"><h5>Craft / Construction (Kou/Ku)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>コウ / ク (kou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('こうじょうとこうじ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">工場 (こうじょう) / 工事 (こうじ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Koujou (Factory) / Kouji (Construction)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 7: 場 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">場</div><div class="kanji-info"><h5>Place / Location (Ba/Jou)</h5><div class="kanji-readings">Kun: <span>ば (ba)</span><br>On: <span>ジョウ (jou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('こうじょうとばしょ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">工場 (こうじょう) / 場所 (ばしょ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Koujou (Factory) / Basho (Place)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 8: 店 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">店</div><div class="kanji-info"><h5>Shop / Store (Mise/Ten)</h5><div class="kanji-readings">Kun: <span>みせ (mise)</span><br>On: <span>テン (ten)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('みせとてんいん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">店 (みせ) / 店員 (てんいん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Mise (Shop) / Tenin (Shop staff)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 9: 動 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">動</div><div class="kanji-info"><h5>Move / Motion (Dou/Ugo.ku)</h5><div class="kanji-readings">Kun: <span>うご・く / うご・かす</span><br>On: <span>ドウ (dou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('うんてんしゅとうんどう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">運転手 (うんてんしゅ) / 運動</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Untenshu (Driver) / Undou (Exercise)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 10: 働 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">働</div><div class="kanji-info"><h5>Work / Labor (Hata.raku)</h5><div class="kanji-readings">Kun: <span>はたら・く</span><br>On: <span>ドウ (dou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かいしゃではたらきます')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">働きます (はたらきます)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Hatarakimasu → Kaam karna / To work</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 11: 長 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">長</div><div class="kanji-info"><h5>Chief / Long (Chou/Naga.i)</h5><div class="kanji-readings">Kun: <span>なが・い (nagai)</span><br>On: <span>チョウ (chou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('しゃちょうとぶちょうとかちょう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">社長 (しゃちょう) / 部長 (ぶちょう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shachou (CEO) / Buchou (Dept Head)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 12: 部 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">部</div><div class="kanji-info"><h5>Department / Section (Bu)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ブ (bu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ぶちょうとぶかとへや')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">部長 (ぶちょう) / 部下 (ぶか)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Buchou (Manager) / Buka (Subordinate)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 13: 上 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">上</div><div class="kanji-info"><h5>Up / Superior (Ue/Jou)</h5><div class="kanji-readings">Kun: <span>うえ / あ・がる / かみ</span><br>On: <span>ジョウ (jou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('じょうしとじょうず')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">上司 (じょうし) / 上手 (じょうず)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Joushi (Boss) / Jouzu (Skillful)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 14: 下 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">下</div><div class="kanji-info"><h5>Down / Below (Shita/Ka/Buka)</h5><div class="kanji-readings">Kun: <span>した / さ・がる</span><br>On: <span>カ / ゲ (ka/ge)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ぶかとへた')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">部下 (ぶか) / 下手 (へた)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Buka (Subordinate) / Heta (Unskillful)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 15: 先 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">先</div><div class="kanji-info"><h5>Ahead / Previous (Saki/Sen)</h5><div class="kanji-readings">Kun: <span>さき (saki)</span><br>On: <span>セン (sen)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('せんぱいとせんせい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">先輩 (せんぱい) / お先に</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Senpai (Senior) / Osaki ni (Leaving ahead)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 16: 輩 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">輩</div><div class="kanji-info"><h5>Comrade / Fellow (Hai)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ハイ (hai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('せんぱいとこうはい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">先輩 (せんぱい) / 後輩 (こうはい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Senpai (Senior) / Kouhai (Junior)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 17: 後 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">後</div><div class="kanji-info"><h5>Behind / After / Junior (Ato)</h5><div class="kanji-readings">Kun: <span>あと / うし・ろ</span><br>On: <span>コウ / ゴ (kou/go)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('こうはいとごご')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">後輩 (こうはい) / 午後 (ごご)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kouhai (Junior colleague) / Gogo (PM)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 18: 休 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">休</div><div class="kanji-info"><h5>Rest / Break (Yasu.mi/Kyuu)</h5><div class="kanji-readings">Kun: <span>やす・む / やす・み</span><br>On: <span>キュウ (kyuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きゅうけいとひるやすみ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">休憩 (きゅうけい) / 昼休み</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kyuukei (Break) / Hiruyasumi (Lunch rest)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 19: 給 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">給</div><div class="kanji-info"><h5>Supply / Salary (Kyuu)</h5><div class="kanji-readings">Kun: <span>たま・う</span><br>On: <span>キュウ (kyuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きゅうりょう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">給料 (きゅうりょう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kyuuryou → Salary / Tankhwah / Pay</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 20: 料 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">料</div><div class="kanji-info"><h5>Fee / Materials (Ryou)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>リョウ (ryou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きゅうりょうとりょうり')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">給料 (きゅうりょう) / 料理</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kyuuryou (Salary) / Ryouri (Cooking)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 21: 議 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">議</div><div class="kanji-info"><h5>Debate / Consultation (Gi)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ギ (gi)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かいぎとかいぎしつ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">会議 (かいぎ) / 会議室 (かいぎしつ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kaigi (Meeting) / Kaigishitsu (Meeting room)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 22: 室 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">室</div><div class="kanji-info"><h5>Room / Chamber (Shitsu)</h5><div class="kanji-readings">Kun: <span>むろ</span><br>On: <span>シツ (shitsu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かいぎしつときはゅうけいしつ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">会議室 / 休憩室 (きゅうけいしつ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kaigishitsu (Meeting room) / Break room</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 23: 電 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">電</div><div class="kanji-info"><h5>Electricity (Den)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>デン (den)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('でんわとでんしゃ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">電話 (でんわ) / 電車 (でんしゃ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Denwa (Telephone) / Densha (Train)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 24: 話 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">話</div><div class="kanji-info"><h5>Talk / Story (Hana.su/Wa)</h5><div class="kanji-readings">Kun: <span>はな・す / はなし</span><br>On: <span>ワ (wa)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('でんわとはなします')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">電話 (でんわ) / 話します (はなします)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Denwa (Telephone) / Hanashimasu (Speak)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 7: Practice Quiz (10 Questions) -->
+        <div id="tab-quiz" class="tab-content">
+            <div class="quiz-container">
+                <div class="section-header" style="text-align: center;">
+                    <h3>🎯 Chapter 12 Workplace & Business Mastery Quiz (10 Questions)</h3>
+                    <p>Test your occupations, office hierarchy, ability expressions, timing rules, obligations, and Kanjis!</p>
+                </div>
+
+                <div id="quiz-area">
+                    <!-- Quiz dynamically rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 8: Verbatim Original Text (100% Complete) -->
+        <div id="tab-verbatim" class="tab-content">
+            <div class="verbatim-box">
+                <div class="verbatim-header">
+                    <span style="font-weight: 700; color: #6366f1;">📄 Original irodori.txt Content (Lines 2434 to 2662 - Chapter 12 Complete)</span>
+                    <span class="badge-100">✔ 100% Zero Character Loss Guarantee</span>
+                </div>
+                <pre># 📘 Chapter 12: しごと (Shigoto) - Work / Kaam
+
+## 🎯 Goal: Apne kaam ke baare mein batana, workplace mein communication, job related vocabulary
+
+---
+
+### **Job/Occupation Vocabulary (しごと / Shigoto):**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| しごと (仕事) | Shigoto | Kaam/Job |
+| かいしゃいん (会社員) | Kaishain | Company employee |
+| こうじょう (工場) | Koujou | Factory |
+| みせ (店) | Mise | Shop/Dukaan |
+| レストラン | Resutoran | Restaurant |
+| ホテル | Hoteru | Hotel |
+| びょういん (病院) | Byouin | Hospital |
+| がっこう (学校) | Gakkou | School |
+| コンビニ | Konbini | Convenience store |
+| のうか (農家) | Nouka | Farmer |
+| エンジニア | Enjinia | Engineer |
+| プログラマー | Puroguramaa | Programmer |
+| かいごし (介護士) | Kaigoshi | Care worker |
+| せんせい (先生) | Sensei | Teacher |
+| てんいん (店員) | Tenin | Shop staff |
+| うんてんしゅ (運転手) | Untenshu | Driver |
+| コック | Kokku | Cook/Chef |
+| けんちくか (建築家) | Kenchikuka | Architect |
+| つうやく (通訳) | Tsuuyaku | Interpreter |
+| アルバイト | Arubaito | Part-time job |
+| せいしゃいん (正社員) | Seishain | Full-time employee |
+
+---
+
+### **Workplace Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| かいしゃ (会社) | Kaisha | Company |
+| じむしょ (事務所) | Jimusho | Office |
+| かいぎしつ (会議室) | Kaigishitsu | Meeting room |
+| しょくどう (食堂) | Shokudou | Cafeteria/Canteen |
+| きゅうけいしつ (休憩室) | Kyuukeishitsu | Rest room/Break room |
+| ロッカー | Rokkaa | Locker |
+| しゃちょう (社長) | Shachou | CEO/President |
+| ぶちょう (部長) | Buchou | Department head |
+| かちょう (課長) | Kachou | Section chief |
+| じょうし (上司) | Joushi | Boss/Senior |
+| どうりょう (同僚) | Douryou | Colleague |
+| ぶか (部下) | Buka | Subordinate |
+| せんぱい (先輩) | Senpai | Senior (experience mein) |
+| こうはい (後輩) | Kouhai | Junior |
+| しんにゅうしゃいん (新入社員) | Shinnyuu shain | New employee |
+| きゅうりょう (給料) | Kyuuryou | Salary |
+| ざんぎょう (残業) | Zangyou | Overtime |
+| しゅっちょう (出張) | Shucchou | Business trip |
+| かいぎ (会議) | Kaigi | Meeting |
+| きゅうけい (休憩) | Kyuukei | Break/Rest |
+| ひるやすみ (昼休み) | Hiruyasumi | Lunch break |
+
+---
+
+### **Work Actions:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| はたらきます (働きます) | Hatarakimasu | Kaam karna |
+| てつだいます (手伝います) | Tetsudaimasu | Madad karna / Help |
+| そうだんします (相談します) | Soudan shimasu | Salah karna / Consult |
+| れんらくします (連絡します) | Renraku shimasu | Contact karna |
+| ほうこくします (報告します) | Houkoku shimasu | Report karna |
+| かくにんします (確認します) | Kakunin shimasu | Confirm karna |
+| せつめいします (説明します) | Setsumei shimasu | Explain karna |
+| コピーします | Kopii shimasu | Copy karna |
+| メールを おくります (送ります) | Meeru wo okurimasu | Mail bhejna |
+| メールを もらいます | Meeru wo moraimasu | Mail milna |
+| でんわを かけます | Denwa wo kakemasu | Phone karna |
+| でんわに でます (出ます) | Denwa ni demasu | Phone uthana |
+| うちあわせします (打ち合わせ) | Uchiawase shimasu | Meeting karna (informal) |
+
+---
+
+### **Grammar Point 40: ～こと が できます (Can do / Ability)**
+
+**Verb (dictionary form) + ことが できます = _____ kar sakta hoon**
+
+| ます form | Dictionary form | ことが できます | Meaning |
+|---|---|---|---|
+| はなします | はなす | はなす ことが できます | Bol sakta hoon |
+| よみます | よむ | よむ ことが できます | Padh sakta hoon |
+| かきます | かく | かく ことが できます | Likh sakta hoon |
+| うんてんします | うんてんする | うんてんする ことが できます | Gaadi chala sakta hoon |
+| りょうりします | りょうりする | りょうりする ことが できます | Khana bana sakta hoon |
+| つかいます | つかう | つかう ことが できます | Use kar sakta hoon |
+
+**Examples:**
+- にほんご を はなす ことが できます。
+  → Japanese bol sakta hoon.
+
+- くるま を うんてんする ことが できます。
+  → Gaadi chala sakta hoon.
+
+- パソコン を つかう ことが できます。
+  → Computer use kar sakta hoon.
+
+**Negative:** できます → できません
+- にほんご を かく ことが できません。
+  → Japanese likh nahi sakta.
+
+**Question:**
+- にほんご を はなす ことが できますか？
+  → Japanese bol sakte ho?
+  - はい、すこし できます。 → Haan, thoda sakta hoon.
+  - いいえ、できません。 → Nahi, nahi sakta.
+
+---
+
+### **Grammar Point 41: _____ の とき (When _____ / Jab _____)**
+
+**とき (時 - toki)** = Waqt / Jab
+
+**Structure:**
+- Noun + の とき
+- い-adj + とき
+- な-adj + な とき
+- Verb (dictionary/た form) + とき
+
+**Examples:**
+- こまった (困った) **とき**、そうだんして ください。
+  → Jab mushkil ho, toh salah kijiye.
+
+- わからない **とき**、きいて ください。
+  → Jab samajh na aaye, toh poochiye.
+
+- ひるやすみ **の** **とき**、しょくどう で たべます。
+  → Lunch break **ke waqt**, canteen mein khata hoon.
+
+- びょうき **の** **とき**、やすんで ください。
+  → Bimaar **hone pe**, aaram kijiye.
+
+---
+
+### **Workplace Communication Phrases:**
+
+| Japanese | Meaning |
+|---|---|
+| おはようございます | Good morning (office mein aane pe) |
+| おつかれさまです (お疲れ様です) | Aap thak gaye honge (greeting/acknowledgment) |
+| おつかれさまでした | Kaam khatam hone pe (aap thak gaye honge - past) |
+| おさきにしつれいします (お先に失礼します) | Main pehle jaa raha hoon (leaving before others) |
+| いってきます (行ってきます) | Jaa raha hoon (aur wapas aaunga) |
+| いってらっしゃい | Jaake aaiye (response) |
+| ただいま | Aa gaya (wapas aane pe) |
+| おかえりなさい | Wapas aaye? Welcome back |
+| よろしく おねがいします | Please take care of it / Aapke hawale |
+| かしこまりました | Samajh gaya (very formal - understood) |
+| しょうちしました (承知しました) | Samajh gaya (formal - understood) |
+| すみません、ちょっと いいですか？ | Excuse me, thoda waqt hai? |
+| おねがいしても いいですか？ | Ek request kar sakta hoon? |
+| すみません、もう いちど おねがいします | Sorry, ek baar aur boliye |
+
+---
+
+### **Grammar Point 42: ～なければ なりません / ～なきゃ (Must do / Karna zaruri hai)**
+
+**ない form se ない hatao + なければ なりません = Karna zaruri hai / Must do**
+
+| ます form | ない form | なければなりません | Meaning |
+|---|---|---|---|
+| いきます | いかない | いか**なければ なりません** | Jaana zaruri hai |
+| します | しない | し**なければ なりません** | Karna zaruri hai |
+| だします (出します) | ださない | ださ**なければ なりません** | Submit karna zaruri hai |
+| れんらくします | れんらくしない | れんらくし**なければ なりません** | Contact karna zaruri hai |
+| かくにんします | かくにんしない | かくにんし**なければ なりません** | Confirm karna zaruri hai |
+
+**Examples:**
+- あした かいぎ に でなければ なりません。
+  → Kal meeting mein jaana zaruri hai.
+
+- まいにち ほうこく しなければ なりません。
+  → Har roz report karna zaruri hai.
+
+- 5じ まで に メール を ださなければ なりません。
+  → 5 baje tak mail bhejna zaruri hai.
+
+**Casual form (bolchal mein):**
+- いかなきゃ (いけない)。 → Jaana padega.
+- しなきゃ。 → Karna padega.
+
+---
+
+### **Grammar Point 43: ～なくても いいです (Don't have to / Zaruri nahi)**
+
+**ない form se ない → なくても いいです = Karna zaruri nahi**
+
+**Examples:**
+- あした は こなくても いいです。 → Kal aana zaruri nahi hai.
+- ネクタイ を しなくても いいです。 → Tie lagana zaruri nahi hai.
+- ざんぎょう しなくても いいです。 → Overtime karna zaruri nahi hai.
+
+---
+
+### **Self-Introduction at Work:**
+
+```
+はじめまして。
+きょう から こちら で はたらきます ラジェシュ です。
+インド から きました。
+まえ は インド で エンジニア を していました。
+にほんご は まだ じょうず じゃないですが、がんばります。
+どうぞ よろしく おねがいします。
+
+(Hajimemashite.
+Kyou kara kochira de hatarakimasu Rajeshu desu.
+Indo kara kimashita.
+Mae wa Indo de enjinia wo shiteimashita.
+Nihongo wa mada jouzu janai desu ga, ganbarimasu.
+Douzo yoroshiku onegaishimasu.)
+
+Pehli baar mil rahe hain.
+Aaj se yahaan kaam karunga, Rajesh hoon.
+India se aaya hoon.
+Pehle India mein engineer tha.
+Japanese abhi acchi nahi hai, lekin koshish karunga.
+Please acche se rehna.
+```</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>🎌 Built with precision for Irodori Elementary 1 Course • Chapter 12 Work & Workplace Interactive Module</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">100% Content Preservation Guaranteed • Developed for Hindi & Roman Urdu Learners</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.innerText = '☀️';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerText = '🌙';
+            }
+        }
+
+        // Web Speech API - Japanese TTS
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Speech synthesis is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.95;
+            
+            const voices = window.speechSynthesis.getVoices();
+            const jpVoice = voices.find(v => v.lang.includes('ja') || v.lang.includes('JP'));
+            if (jpVoice) utterance.voice = jpVoice;
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Ability & Timing Generator Logic
+        const abTiming = document.getElementById('ab-timing');
+        const abSkill = document.getElementById('ab-skill');
+        const abAdvice = document.getElementById('ab-advice');
+
+        function updateAbility() {
+            const timing = abTiming.value.split('|');
+            const skill = abSkill.value.split('|');
+            const advice = abAdvice.value.split('|');
+
+            const fullJp = `${timing[0]} ${advice[0]} ${skill[0]}`;
+            const fullRomaji = `${timing[1]} ${advice[1]} ${skill[1]}`;
+            const fullMeaning = `Matlab: ${timing[2]} ${advice[2]}. ${skill[2]}`;
+
+            document.getElementById('ab-jp').innerText = fullJp;
+            document.getElementById('ab-romaji').innerText = fullRomaji;
+            document.getElementById('ab-meaning').innerText = fullMeaning;
+        }
+
+        abTiming.addEventListener('change', updateAbility);
+        abSkill.addEventListener('change', updateAbility);
+        abAdvice.addEventListener('change', updateAbility);
+
+        function speakGeneratedAbility() {
+            const timingJp = abTiming.value.split('|')[0];
+            const adviceJp = abAdvice.value.split('|')[0];
+            const skillJp = abSkill.value.split('|')[0];
+            speakText(`${timingJp} ${adviceJp} ${skillJp}`);
+        }
+
+        // Obligation vs Freedom Simulator Logic
+        const obMust = document.getElementById('ob-must');
+        const obFree = document.getElementById('ob-free');
+        const obCasual = document.getElementById('ob-casual');
+
+        function updateObligation() {
+            const must = obMust.value.split('|');
+            const free = obFree.value.split('|');
+            const casual = obCasual.value.split('|');
+
+            const targetJp = `${must[0]} ${free[0]} ${casual[0]}`;
+            const targetRom = `(${must[1]} ${free[1]} ${casual[1]})`;
+
+            document.getElementById('ob-output').innerHTML = `${targetJp} <span style="font-size:0.95rem; color:var(--accent-info); font-weight:500; display:block; margin-top:0.5rem; font-style:italic;">${targetRom}</span>`;
+            speakText(targetJp.replace(/。|！/g, ' '));
+        }
+
+        obMust.addEventListener('change', updateObligation);
+        obFree.addEventListener('change', updateObligation);
+        obCasual.addEventListener('change', updateObligation);
+
+        // Self-Introduction Simulator Logic
+        const inName = document.getElementById('in-name');
+        const inCountry = document.getElementById('in-country');
+        const inJob = document.getElementById('in-job');
+
+        function updateIntro() {
+            const name = inName.value.split('|');
+            const country = inCountry.value.split('|');
+            const job = inJob.value.split('|');
+
+            const jpText = `はじめまして。きょう から こちら で はたらきます <span style="color:var(--accent-info);">${name[0]}</span> です。<br><span style="color:var(--accent-info);">${country[0]}</span> から きました。まえ は <span style="color:var(--accent-info);">${country[0]}</span> で <span style="color:var(--accent-info);">${job[0]}</span> を していました。<br>にほんご は まだ じょうず じゃないですが、がんばります。<br>どうぞ よろしく おねがいします。`;
+            const romText = `(Hajimemashite. Kyou kara kochira de hatarakimasu ${name[1]} desu. ${country[1]} kara kimashita. Mae wa ${country[1]} de ${job[1]} wo shiteimashita. Nihongo wa mada jouzu janai desu ga, ganbarimasu. Douzo yoroshiku onegaishimasu.)`;
+            const meanText = `Hindi Translation: Pehli baar mil rahe hain. Aaj se yahaan kaam karunga, ${name[2]} hoon. ${country[2]} aaya hoon. Pehle ${country[2]} ${job[2]} tha. Japanese abhi acchi nahi hai, lekin koshish karunga. Please acche se rehna / I look forward to working with you.`;
+
+            document.getElementById('in-jp').innerHTML = jpText;
+            document.getElementById('in-rom').innerText = romText;
+            document.getElementById('in-meaning').innerText = meanText;
+        }
+
+        inName.addEventListener('change', updateIntro);
+        inCountry.addEventListener('change', updateIntro);
+        inJob.addEventListener('change', updateIntro);
+
+        function speakIntro() {
+            const name = inName.value.split('|')[0];
+            const country = inCountry.value.split('|')[0];
+            const job = inJob.value.split('|')[0];
+            const speech = `はじめまして。きょうからこちらではたらきます、${name}です。${country}からきました。まえは${country}で${job}をしていました。にほんごはまだじょうずじゃないですが、がんばります。どうぞよろしくおねがいします。`;
+            speakText(speech);
+        }
+
+        // Quiz Module Logic (10 Comprehensive Questions)
+        const quizQuestions = [
+            {
+                q: "1. How do you form the ability expression 'I can speak Japanese' (Grammar Pt 40)?",
+                options: [
+                    "にほんご を はなす ことが できます (Nihongo wo hanasu koto ga dekimasu) ✔️",
+                    "にほんご で はなします です (Nihongo de hanashimasu desu)",
+                    "にほんご を はなしたい あります (Nihongo wo hanashitai arimasu)",
+                    "にほんご が はなして ください (Nihongo ga hanashite kudasai)"
+                ],
+                correct: 0
+            },
+            {
+                q: "2. What is the Japanese word for 'Colleague / Saath mein kaam karne wala'?",
+                options: [
+                    "じょうし (Joushi - boss)",
+                    "どうりょう (同僚 - Douryou) ✔️",
+                    "ぶか (Buka - subordinate)",
+                    "しゃちょう (Shachou - president)"
+                ],
+                correct: 1
+            },
+            {
+                q: "3. How do you connect a Noun to the timing word 'とき' (When / Jab): e.g., 'During lunch break'?",
+                options: [
+                    "ひるやすみ が とき (Hiruyasumi ga toki)",
+                    "ひるやすみ の とき (Hiruyasumi no toki) ✔️",
+                    "ひるやすみ な とき (Hiruyasumi na toki)",
+                    "ひるやすみ と とき (Hiruyasumi to toki)"
+                ],
+                correct: 1
+            },
+            {
+                q: "4. What does the mandatory expression 'あした かいぎ に でなければ なりません' mean?",
+                options: [
+                    "Kal meeting mein jaana zaruri nahi hai (Don't have to attend)",
+                    "Kal meeting mein jaana zaruri hai (Must attend meeting tomorrow) ✔️",
+                    "Kal meeting cancel ho gayi hai",
+                    "Please hold a meeting tomorrow"
+                ],
+                correct: 1
+            },
+            {
+                q: "5. What is the casual spoken form (bolchal) of 'いかなければ なりません' (Must go)?",
+                options: [
+                    "いかなきゃ！ (Ikanakya!) ✔️",
+                    "いかなくて！ (Ikanakute!)",
+                    "いかないで！ (Ikanaide!)",
+                    "いけないよ！ (Ikenaiyo!)"
+                ],
+                correct: 0
+            },
+            {
+                q: "6. How do you say 'You don't have to do overtime today' (Grammar Pt 43)?",
+                options: [
+                    "きょう は ざんぎょう しなければ なりません (Must do overtime)",
+                    "きょう は ざんぎょう しなくても いいです (Zangyou shinakutemo ii desu) ✔️",
+                    "きょう は ざんぎょう しないで ください (Please don't do overtime)",
+                    "きょう は ざんぎょう して は いけません (Overtime is prohibited)"
+                ],
+                correct: 1
+            },
+            {
+                q: "7. Which phrase should you say when leaving the office before your colleagues?",
+                options: [
+                    "ただいま (Tadaima)",
+                    "いってきます (Ittekimasu)",
+                    "おさきに しつれいします (Osaki ni shitsurei shimasu) ✔️",
+                    "おかえりなさい (Okaerinasai)"
+                ],
+                correct: 2
+            },
+            {
+                q: "8. What is the difference between '先輩 (せんぱい - Senpai)' and '後輩 (こうはい - Kouhai)'?",
+                options: [
+                    "Senpai is a senior in experience/age, while Kouhai is a junior colleague ✔️",
+                    "Senpai works in a factory, while Kouhai works in a shop",
+                    "They both mean 'Customer'",
+                    "Senpai is part-time staff, while Kouhai is CEO"
+                ],
+                correct: 0
+            },
+            {
+                q: "9. What does the formal business acknowledgment 'かしこまりました (Kashikomarimashita)' mean?",
+                options: [
+                    "I am very tired today",
+                    "Samajh gaya / Certainly / Understood (Very respectful agreement) ✔️",
+                    "Please repeat what you said",
+                    "Where is the meeting room?"
+                ],
+                correct: 1
+            },
+            {
+                q: "10. In a workplace self-introduction, how do you say 'I will do my best / Koshish karunga'?",
+                options: [
+                    "がんばります (Ganbarimasu) ✔️",
+                    "やすみます (Yasumimasu)",
+                    "かえります (Kaerimasu)",
+                    "そうざんします (Soudan shimasu)"
+                ],
+                correct: 0
+            }
+        ];
+
+        function renderQuiz() {
+            const quizArea = document.getElementById('quiz-area');
+            let html = '';
+            quizQuestions.forEach((item, index) => {
+                html += `
+                    <div class="question-box" id="q-${index}">
+                        <div class="question-text"><span>${item.q}</span></div>
+                        <div class="options-grid">
+                            ${item.options.map((opt, optIndex) => `
+                                <button class="option-btn" onclick="checkAnswer(${index}, ${optIndex})">
+                                    <span>${opt}</span>
+                                    <span class="status-icon"></span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            quizArea.innerHTML = html;
+        }
+
+        let score = 0;
+        let answered = new Array(quizQuestions.length).fill(false);
+
+        function checkAnswer(qIndex, optIndex) {
+            if (answered[qIndex]) return;
+            answered[qIndex] = true;
+
+            const qBox = document.getElementById(`q-${qIndex}`);
+            const buttons = qBox.querySelectorAll('.option-btn');
+            const correctIndex = quizQuestions[qIndex].correct;
+
+            if (optIndex === correctIndex) {
+                buttons[optIndex].classList.add('correct');
+                buttons[optIndex].querySelector('.status-icon').innerText = '🎉 Correct!';
+                score++;
+                speakText('せいかい！');
+            } else {
+                buttons[optIndex].classList.add('wrong');
+                buttons[optIndex].querySelector('.status-icon').innerText = '❌ Incorrect';
+                buttons[correctIndex].classList.add('correct');
+                buttons[correctIndex].querySelector('.status-icon').innerText = '✔ Correct Answer';
+            }
+
+            if (answered.every(val => val === true)) {
+                const quizArea = document.getElementById('quiz-area');
+                const scoreDiv = document.createElement('div');
+                scoreDiv.className = 'quiz-score';
+                scoreDiv.innerHTML = `🏆 Chapter 12 Work & Workplace Quiz Completed!<br><span style="font-size:2rem; color:#fff; display:block; margin:0.5rem 0;">Your Score: ${score} / ${quizQuestions.length}</span><span style="font-size:1rem; color:var(--text-main); font-weight:500;">Excellent job! You are now ready to communicate smoothly in any Japanese company or workplace!</span>`;
+                quizArea.appendChild(scoreDiv);
+            }
+        }
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        });
+    </script>
+<script src="nav.js"></script>
+</body>
+</html>

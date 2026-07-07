@@ -1,0 +1,1033 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 15: にほんご と わたし (Japanese & Me)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 15: にほんごとわたし. Covers learning strategies, language progress, grammar (~ようになりました, ~ようにしています, ~てきました, ~のがとくい/にがて, ~ことにしました), and Ch 13-15 summary.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">📚 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 15: にほんご と わたし (Japanese & Me) • Study Strategies & Progress</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('すこしずつ にほんご が わかる よう に なって きました。まいにち れんしゅう する よう に して います。かんじ を おぼえる の が にがて です。ＪＬＰＴの Ｎ３ を うける こと に しました。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>🌟 にほんご と わたし (Nihongo to Watashi) - Japanese & Me</h2>
+        <p>Master expressing language learning progress (<strong>勉強・練習・覚える・理解する</strong>), study strategies (<strong>辞書・文法・語彙・発音・JLPT・合格</strong>), and key grammar for ability changes and study habits (<strong>～ようになりました / ～ようにしています / ～てきました / ～たり～たりしています / ～のが得意・苦手です / ～ことにしました</strong>)! Includes the <strong>Complete Ch 13–15 & Elem 2 Grammar Summary</strong>!</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 5178–5676</span>
+            <span class="meta-pill">💬 Grammar Points 74–79</span>
+            <span class="meta-pill">📚 35+ Study & Exam Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">🏆 Elem 2 Course Summary</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('simulator',this)"><span>🌟</span> Japanese Study Strategy Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Progress & Habits (Pt 74–79)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 35+ Audio Study & Exam Flashcards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 15 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>🚀</span> Learning Journey Roleplay & Writing</button>
+        <button class="tab-btn" onclick="switchTab('summary',this)"><span>🏆</span> Ch 13–15 & Elem 2 Course Summary</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Japanese Study Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Study Strategy Simulator -->
+    <div id="tab-simulator" class="tab-content active">
+        <div class="interactive-box">
+            <h4>🌟 Interactive Japanese Study & Progress Simulator (日本語学習・成長シミュレーター)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Select your Japanese study goal or skill area and a grammar pattern to generate authentic language learning progress statements and study tips!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Study Goal / Language Skill (学習目標とスキル)</label>
+                    <select id="sim-scene" onchange="updateStudySim()">
+                        <option value="jlpt">📚 JLPT N3/N2 Exam Mastery (JLPT試験・合格のための勉強 / Exam prep)</option>
+                        <option value="kaiwa">🗣️ Conversational Speaking Fluency (日本人との会話練習 / Speaking practice)</option>
+                        <option value="kanji">🈹 Reading Kanji & Japanese News (漢字と日本語ニュースの読解 / Reading skills)</option>
+                        <option value="listening">🎧 Listening to Anime & Podcasts (アニメやポッドキャストのリスニング / Ear training)</option>
+                        <option value="keigo">👔 Business Japanese & Keigo (職場での敬語・丁寧な発音 / Business communication)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updateStudySim()">
+                        <option value="you-narimashita">🌟 Ability Change (～ようになりました - Ab _____ kar sakta hoon / Became able to)</option>
+                        <option value="you-shiteimasu">🎯 Conscious Study Habit (～ようにしています - Koshish karta hoon / Make effort to)</option>
+                        <option value="tekimashita">📈 Gradual Progress (～てきました - Dheere dheere ho aaya / Has been gradually)</option>
+                        <option value="taritari">🔄 Multiple Study Methods (～たり～たりしています - ...ya ... jaisi cheezein)</option>
+                        <option value="tokui-nigate">⚖️ Strong vs Weak Points (～のが得意 / 苦手です - Strong / weak point hai)</option>
+                        <option value="kotonishimashita">💪 Firm Study Decision (～ことにしました - Decide kiya ki _____ karoon)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">毎日（まいにち）新（あたら）しい 単語（たんご）を １０個（じゅっこ）覚（おぼ）える ように して います。</div>
+                <div class="output-rom" id="sim-rom">Mainichi atarashii tango wo 10 ko oboeru you ni shite imasu.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Har roz 10 naye words yaad karne ki koshish karta hoon (daily study habit).</div>
+                <button class="btn-speak" onclick="speakStudySim()">🔊 Speak Study Strategy in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🚀 Language Learning Tips & Golden Habits (上達のためのアドバイス)</h3>
+            <p>Click any card to listen to the native pronunciation of essential Japanese study strategies!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">まいにち れんしゅう する こと</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mainichi renshuu suru koto • Practicing every single day</div><div class="meaning-text">Har roz practice karna sabse zaroori hai! "毎日練習することが一番大切だと思います。"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">まちがい を こわがらない で</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Machigai wo kowagara naide • Do not fear making mistakes</div><div class="meaning-text">Galti se mat daro! "間違いを怖がらないで、どんどん話したほうがいいですよ！"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">すぐ じしょ で しらべる</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sugu jisho de shiraberu • Look up in dictionary immediately</div><div class="meaning-text">Turant dictionary mein dhundho! "わからない言葉はすぐ調べるようにすると、早く覚えられます。"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">にほんじん の ともだち を つくる</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nihonjin no tomodachi wo tsukuru • Make Japanese friends</div><div class="meaning-text">Japanese dost banao! "日本人の友達を作れば作るほど、日本語が上手になります！"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">アニメ を みたり、まんが を よんだり</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Anime wo mitari, manga wo yondari • Watching anime & reading manga</div><div class="meaning-text">Anime dekhna ya manga padhna! Immersion is the key to natural Japanese comprehension.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">あきらめない で つづけて いこう</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Akiramenaide tsuzukete ikou • Let's continue without giving up</div><div class="meaning-text">Haar na maan ke jaari rakhein! "これからも諦めないで勉強を続けていこうと思っています。"</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Ability Change & Conscious Habits: Became able to / Make effort to</span><span class="particle-badge">Pt 74 & 75</span></div>
+            <div class="grammar-formula">Dict / ない form + ようになりました (Change in ability) / ようにしています (Conscious habit)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ようになりました</strong> to show you can do something now that you couldn't do before ("Ab kar sakta hoon"). Use <strong>～ようにしています</strong> for conscious daily study habits and routines ("Koshish karta hoon")!</p>
+            <ul class="example-list">
+                <li onclick="speakText('いまでは かんじ が すこし よめる よう に なりました。')">
+                    <span class="ex-jp">今では 漢字 が 少し 読（よ）める よう に なりました。</span>
+                    <span class="ex-rom">Ima dewa kanji ga sukoshi yomeru you ni narimashita. (Ab kanji thoda padh sakta hoon!)</span>
+                </li>
+                <li onclick="speakText('にほんご で でんわ が できる よう に なりました。')">
+                    <span class="ex-jp">日本語 で 電話 が できる よう に なりました。</span>
+                    <span class="ex-rom">Nihongo de denwa ga dekiru you ni narimashita. (Ab Japanese mein phone kar sakta hoon.)</span>
+                </li>
+                <li onclick="speakText('まいにち にほんご の ニュース を よむ よう に して います。')">
+                    <span class="ex-jp">毎日 日本語 の ニュース を 読（よ）む よう に して います。</span>
+                    <span class="ex-rom">Mainichi nihongo no nyuusu wo yomu you ni shite imasu. (Roz Japanese news padhne ki koshish karta hoon.)</span>
+                </li>
+                <li onclick="speakText('わからない たんご は すぐ じしょ で しらべる よう に して います。')">
+                    <span class="ex-jp">わからない 単語 は すぐ 辞書（じしょ）で 調（しら）べる よう に して います。</span>
+                    <span class="ex-rom">Wakaranai tango wa sugu jisho de shiraberu you ni shite imasu. (Anjaan words turant dictionary mein dhundhne ki koshish karta hoon.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Gradual Progress & Multiple Activities: Has been gradually / Doing things like A & B</span><span class="particle-badge" style="background:var(--accent-success);">Pt 76 & 77</span></div>
+            <div class="grammar-formula">て-form + きました (Gradual progress over time) / た-form + り、た-form + り しています (Representative actions)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～てきました</strong> to describe gradual improvement over time ("Dheere dheere ho aaya"). Use <strong>～たり～たりしています</strong> to list representative study methods ("...ya ... jaisi cheezein karta hoon")!</p>
+            <ul class="example-list">
+                <li onclick="speakText('すこしずつ にほんご が わかる よう に なって きました。')">
+                    <span class="ex-jp">少しずつ 日本語 が わかる よう に なって きました。</span>
+                    <span class="ex-rom">Sukoshizutsu nihongo ga wakaru you ni natte kimashita. (Dheere dheere Japanese samajh aane lagi hai!)</span>
+                </li>
+                <li onclick="speakText('きんちょう しないで にほんご が はなせる よう に なって きました。')">
+                    <span class="ex-jp">緊張（きんちょう）しないで 日本語 が 話せる よう に なって きました。</span>
+                    <span class="ex-rom">Kinchou shinaide nihongo ga hanaseru you ni natte kimashita. (Bina tension ke Japanese bolne laga hoon.)</span>
+                </li>
+                <li onclick="speakText('アニメ を みたり、まんが を よんだり して います。')">
+                    <span class="ex-jp">アニメ を 見たり、漫画（まんが）を 読んだり して います。</span>
+                    <span class="ex-rom">Anime wo mitari, manga wo yondari shite imasu. (Anime dekhna ya manga padhna jaisi cheezein karta hoon.)</span>
+                </li>
+                <li onclick="speakText('ポッドキャスト を きいたり、にほんじん と はなしたり して います。')">
+                    <span class="ex-jp">ポッドキャスト を 聞いたり、日本人 と 話したり して います。</span>
+                    <span class="ex-rom">Poddokyasuto wo kiitari, nihonjin to hanashitari shite imasu. (Podcast sunna ya Japanese logon se bolna jaisi cheezein karta hoon.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Strong/Weak Points & Firm Decisions: Strong at / Weak at / Decided to</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 78 & 79</span></div>
+            <div class="grammar-formula">Verb Dict + のが とくい / にがて です (Strong/weak point) / Verb Dict / ない + ことにしました (Decided to do)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～のが得意（とくい）/ 苦手（にがて）です</strong> to evaluate your language skills ("Strong / weak point hai"). Use <strong>～ことにしました</strong> to state your personal resolutions and study decisions ("Decide kiya ki...")!</p>
+            <ul class="example-list">
+                <li onclick="speakText('きく の は とくい です が、はなす の が にがて です。')">
+                    <span class="ex-jp">聞（き）く の は 得意（とくい）です が、話（はな）す の が 苦手（にがて）です。</span>
+                    <span class="ex-rom">Kiku no wa tokui desu ga, hanasu no ga nigate desu. (Sunna strong point hai, lekin bolna weak point hai.)</span>
+                </li>
+                <li onclick="speakText('わたし は かんじ を おぼえる の が にがて です。')">
+                    <span class="ex-jp">私 は 漢字 を 覚（おぼ）える の が 苦手 です。</span>
+                    <span class="ex-rom">Watashi wa kanji wo oboeru no ga nigate desu. (Mera kanji yaad karna weak point hai.)</span>
+                </li>
+                <li onclick="speakText('らいねん、ＪＬＰＴの Ｎ３ を うける こと に しました。')">
+                    <span class="ex-jp">来年、JLPT の N3 を 受（う）ける こと に しました。</span>
+                    <span class="ex-rom">Rainen, JLPT no N3 wo ukeru koto ni shimashita. (Agle saal JLPT N3 dene ka decide kiya!)</span>
+                </li>
+                <li onclick="speakText('まいにち にっき を にほんご で かく こと に しました。')">
+                    <span class="ex-jp">毎日 日記（にっき）を 日本語 で 書（か）く こと に しました。</span>
+                    <span class="ex-rom">Mainichi nikki wo nihongo de kaku koto ni shimashita. (Roz diary Japanese mein likhne ka decide kiya!)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 15 Japanese Study & Proficiency Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize study vocabulary and language terms.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">日本語（にほんご）/ 勉強（べんきょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nihongo / Benkyou</div><div class="meaning-text">Japanese language / Study (padhai)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">練習（れんしゅう）/ 覚（おぼ）える</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Renshuu / Oboeru</div><div class="meaning-text">Practice (abhyas) / To memorize / remember</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">忘（わす）れる / 理解（りかい）する</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Wasureru / Rikai suru</div><div class="meaning-text">To forget (bhoolna) / To understand (samajhna)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">話（はな）せる / 読（よ）める</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hanaseru / Yomeru</div><div class="meaning-text">Can speak / Can read (potential form)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">書（か）ける / 聞（き）ける</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kakeru / Kikeru</div><div class="meaning-text">Can write / Can listen / hear (potential)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">上手（じょうず）/ 下手（へた）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Jouzu / Heta</div><div class="meaning-text">Skilled / good at (mahir) / Bad at / unskilled</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">得意（とくい）/ 苦手（にがて）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tokui / Nigate</div><div class="meaning-text">Strong point (forte) / Weak point / difficulty</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">辞書（じしょ）/ 文法（ぶんぽう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Jisho / Bunpou</div><div class="meaning-text">Dictionary (shabdkosh) / Grammar</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">語彙（ごい）/ 発音（はつおん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Goi / Hatsuon</div><div class="meaning-text">Vocabulary (shabd-samuh) / Pronunciation</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">アクセント / 敬語（けいご）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Akusento / Keigo</div><div class="meaning-text">Pitch accent / Honorific polite language</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">方言（ほうげん）/ ＪＬＰＴ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hougen / JLPT</div><div class="meaning-text">Regional dialect / Japanese Proficiency Test</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">試験（しけん）/ 合格（ごうかく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shiken / Goukaku</div><div class="meaning-text">Exam / Test / Passing an exam (kamyabi)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">不合格（ふごうかく）/ 自己評価（じこひょうか）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Fugoukaku / Jiko hyouka</div><div class="meaning-text">Failing an exam / Self-evaluation report</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～よう に なりました</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~you ni narimashita</div><div class="meaning-text">Became able to do / Started doing (change)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～よう に して います</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~you ni shite imasu</div><div class="meaning-text">I make a conscious effort / routine to do...</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～て きました</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~te kimashita</div><div class="meaning-text">Has gradually become... (progress up to now)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～たり ～たり して います</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~tari ~tari shite imasu</div><div class="meaning-text">Doing things such as A and B (examples)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～の が とくい です / にがて です</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~no ga tokui / nigate desu</div><div class="meaning-text">I am strong at / weak at doing [verb]</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～こと に しました</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~koto ni shimashita</div><div class="meaning-text">I have decided to do... (personal resolution)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">すこしずつ / なるべく</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sukoshizutsu / Narubeku</div><div class="meaning-text">Little by little (dheere dheere) / As much as possible</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">どんどん / これからも</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Dondon / Korekaramo</div><div class="meaning-text">Rapidly / steadily / From now on as well</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">さいしょ は / いま は</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Saisho wa / Ima wa</div><div class="meaning-text">In the beginning / But now (comparing past/present)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">まちがい を こわがらないで</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Machigai wo kowagara naide</div><div class="meaning-text">Without fearing mistakes / Speak courageously!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">つくれば つくる ほど</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tsukureba tsukuru hodo</div><div class="meaning-text">The more you make [friends], the better it gets!</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 15 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for Japanese language, study, practice, memory, reading, writing, listening, speaking, exams, and vocabulary.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">語</div><div class="kanji-info"><h5>Word / Speech / Language</h5><div class="kanji-readings">Onyomi: <span>ゴ (go)</span><br>Kunyomi: かた-る</div></div></div><div class="kanji-example" onclick="speakText('日本語、語彙、言語')"><span>日本語（にほんご）- Japanese<br>語彙（ごい）- vocabulary</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">勉</div><div class="kanji-info"><h5>Exertion / Endeavor / Effort</h5><div class="kanji-readings">Onyomi: <span>ベン (ben)</span><br>Kunyomi: つと-める</div></div></div><div class="kanji-example" onclick="speakText('勉強、勤勉')"><span>勉強（べんきょう）- study<br>勤勉（きんべん）- diligent / hard-working</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">強</div><div class="kanji-info"><h5>Strong / Force / Study</h5><div class="kanji-readings">Onyomi: <span>キョウ、ゴウ (kyou)</span><br>Kunyomi: つよ-い</div></div></div><div class="kanji-example" onclick="speakText('勉強、強い、強力')"><span>勉強（べんきょう）- study<br>強い（つよい）- strong / powerful</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">練</div><div class="kanji-info"><h5>Practice / Gloss / Train</h5><div class="kanji-readings">Onyomi: <span>レン (ren)</span><br>Kunyomi: ね-る</div></div></div><div class="kanji-example" onclick="speakText('練習、訓練、洗練')"><span>練習（れんしゅう）- practice<br>訓練（くんれん）- training / drill</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">習</div><div class="kanji-info"><h5>Learn / Custom / Practice</h5><div class="kanji-readings">Onyomi: <span>シュウ (shuu)</span><br>Kunyomi: なら-う</div></div></div><div class="kanji-example" onclick="speakText('練習、習う、習慣')"><span>練習（れんしゅう）- practice<br>習う（ならう）- to learn from someone</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">覚</div><div class="kanji-info"><h5>Memorize / Awake / Remember</h5><div class="kanji-readings">Onyomi: <span>カク (kaku)</span><br>Kunyomi: おぼ-える、さ-める</div></div></div><div class="kanji-example" onclick="speakText('覚える、感覚、目が覚める')"><span>覚える（おぼえる）- to remember<br>感覚（かんかく）- sense / feeling</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">忘</div><div class="kanji-info"><h5>Forget / Neglect / Oblivion</h5><div class="kanji-readings">Onyomi: <span>ボウ (bou)</span><br>Kunyomi: わす-れる</div></div></div><div class="kanji-example" onclick="speakText('忘れる、忘れ物、忘年会')"><span>忘れる（わすれる）- to forget<br>忘れ物（わすれもの）- lost / left item</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">理</div><div class="kanji-info"><h5>Logic / Reason / Arrangement</h5><div class="kanji-readings">Onyomi: <span>リ (ri)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('理解、理由、料理')"><span>理解（りかい）- understanding<br>理由（りゆう）- reason / cause</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">解</div><div class="kanji-info"><h5>Untie / Solve / Understand</h5><div class="kanji-readings">Onyomi: <span>カイ、ゲ (kai)</span><br>Kunyomi: と-く、と-ける</div></div></div><div class="kanji-example" onclick="speakText('理解、解決、解く')"><span>理解（りかい）- comprehension<br>解決（かいけつ）- resolution / solving</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">読</div><div class="kanji-info"><h5>Read / Recite / Pronounce</h5><div class="kanji-readings">Onyomi: <span>ドク、トク (doku)</span><br>Kunyomi: よ-む</div></div></div><div class="kanji-example" onclick="speakText('読む、読解、読書')"><span>読む（よむ）- to read<br>読解（どっかい）- reading comprehension</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">書</div><div class="kanji-info"><h5>Write / Book / Document</h5><div class="kanji-readings">Onyomi: <span>ショ (sho)</span><br>Kunyomi: か-く</div></div></div><div class="kanji-example" onclick="speakText('書く、辞書、書類')"><span>書く（かく）- to write<br>辞書（じしょ）- dictionary / lexicon</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">聞</div><div class="kanji-info"><h5>Hear / Ask / Listen</h5><div class="kanji-readings">Onyomi: <span>ブン、モン (bun)</span><br>Kunyomi: き-く、き-こえる</div></div></div><div class="kanji-example" onclick="speakText('聞く、新聞、聞こえる')"><span>聞く（きく）- to hear / listen<br>新聞（しんぶん）- newspaper</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">話</div><div class="kanji-info"><h5>Speak / Talk / Tale</h5><div class="kanji-readings">Onyomi: <span>ワ (wa)</span><br>Kunyomi: はな-す、はなし</div></div></div><div class="kanji-example" onclick="speakText('話す、会話、電話')"><span>話す（はなす）- to speak / talk<br>会話（かいわ）- conversation</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">得</div><div class="kanji-info"><h5>Gain / Acquire / Find</h5><div class="kanji-readings">Onyomi: <span>トク (toku)</span><br>Kunyomi: え-る、う-る</div></div></div><div class="kanji-example" onclick="speakText('得意、得する、納得')"><span>得意（とくい）- strong point / good at<br>納得（なっとく）- consent / grasp</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">意</div><div class="kanji-info"><h5>Idea / Mind / Heart / Taste</h5><div class="kanji-readings">Onyomi: <span>イ (i)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('得意、意見、意味')"><span>得意（とくい）- strong point<br>意味（いみ）- meaning / significance</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">苦</div><div class="kanji-info"><h5>Suffering / Bitter / Hardship</h5><div class="kanji-readings">Onyomi: <span>ク (ku)</span><br>Kunyomi: にが-い、くる-しい</div></div></div><div class="kanji-example" onclick="speakText('苦手、苦い、苦労')"><span>苦手（にがて）- weak point / bad at<br>苦い（にがい）- bitter in taste</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">辞</div><div class="kanji-info"><h5>Resign / Word / Refuse</h5><div class="kanji-readings">Onyomi: <span>ジ (ji)</span><br>Kunyomi: や-める</div></div></div><div class="kanji-example" onclick="speakText('辞書、辞める、お辞儀')"><span>辞書（じしょ）- dictionary<br>辞める（やめる）- to resign / quit</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">試</div><div class="kanji-info"><h5>Test / Try / Attempt</h5><div class="kanji-readings">Onyomi: <span>シ (shi)</span><br>Kunyomi: ため-す、こころ-みる</div></div></div><div class="kanji-example" onclick="speakText('試験、試す、試合')"><span>試験（しけん）- exam / test<br>試す（ためす）- to try / test out</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">験</div><div class="kanji-info"><h5>Verify / Test / Inspect</h5><div class="kanji-readings">Onyomi: <span>ケン、ゲン (ken)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('試験、経験、受験')"><span>試験（しけん）- exam<br>経験（けいけん）- experience</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">合</div><div class="kanji-info"><h5>Fit / Suit / Join / Agree</h5><div class="kanji-readings">Onyomi: <span>ゴウ、ガッ (gou)</span><br>Kunyomi: あ-う、あ-わせる</div></div></div><div class="kanji-example" onclick="speakText('合格、試合、間に合う')"><span>合格（ごうかく）- passing an exam<br>試合（しあい）- sports match / game</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">格</div><div class="kanji-info"><h5>Status / Rank / Capacity</h5><div class="kanji-readings">Onyomi: <span>カク、コウ (kaku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('合格、性格、価格')"><span>合格（ごうかく）- passing / success<br>性格（せいかく）- personality / character</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">彙</div><div class="kanji-info"><h5>Same kind / Collect / Gather</h5><div class="kanji-readings">Onyomi: <span>イ (i)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('語彙、語彙力')"><span>語彙（ごい）- vocabulary / lexicon<br>語彙力（ごいりょく）- vocabulary breadth</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">法</div><div class="kanji-info"><h5>Method / Law / Rule / System</h5><div class="kanji-readings">Onyomi: <span>ホウ、はっ (hou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('文法、方法、法律')"><span>文法（ぶんぽう）- grammar<br>方法（ほうほう）- method / way</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">評</div><div class="kanji-info"><h5>Evaluate / Criticism / Comment</h5><div class="kanji-readings">Onyomi: <span>ヒョウ (hyou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('自己評価、評価、評判')"><span>自己評価（じこひょうか）- self-evaluation<br>評判（ひょうばん）- reputation / fame</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay & Writing -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>🚀 Japanese Learning Experience Roleplay & Writing Practice</h3>
+            <p>Master presenting your language learning progress and practice mini writing exercises for Travel, Future, and Study!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-primary);">
+            <h4>💬 Scene 1: Sharing My 3-Year Japanese Journey (日本語学習の経験を話す)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('わたし が にほんご を はじめて べんきょう した の は ３ねん まえ です。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 私（わたし）が 日本語（にほんご）を 初（はじ）めて 勉強（べんきょう）した のは ３年前（さんねんまえ）です。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Watashi ga nihongo wo hajimete benkyou shita no wa 3 nen mae desu. (It was 3 years ago when I first studied Japanese.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('さいしょ は ひらがな も かけなくて、とても むずかしかった です。')">
+                    <strong style="color:var(--accent-primary);">あなた (You):</strong> 最初（さいしょ）は ひらがなも 書（か）けなくて、とても 難（むずか）しかったです。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Saisho wa hiragana mo kakenakute, totemo muzukashikatta desu. (At first, I couldn't even write Hiragana, and it was very difficult!)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('でも、すこしずつ れんしゅう して、いま は にほんご で かいわ が できる よう に なりました。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> でも、少（すこ）しずつ 練習（れんしゅう）して、今（いま）は 日本語 で 会話（かいわ）が できる ように なりました。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Demo, sukoshizutsu renshuu shite, ima wa nihongo de kaiwa ga dekiru you ni narimashita. (But by practicing little by little, now I have become able to converse in Japanese!)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('まだ にがて は たくさん あります が、とくに かんじ が むずかしい です。')">
+                    <strong style="color:var(--accent-primary);">あなた (You):</strong> まだ 苦手（にがて）は たくさん ありますが、とくに 漢字（かんじ）が 難（むずか）しいです。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Mada nigate wa takusan arimasu ga, toku ni kanji ga muzukashii desu. (There are still many weak points, and especially Kanji is difficult.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('これから も あきらめないで べんきょう を つづけて いこう と おもって います！')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> これからも 諦（あきら）めないで 勉強（べんきょう）を 続（つづ）けていこうと 思（おも）っています！<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Korekara mo akiramenaide benkyou wo tsuzukete ikou to omotte imasu! (From now on as well, I intend to continue studying without giving up!)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-success);">
+            <h4>✍️ Mini Writing Practice Templates (ミニ作文テンプレート)</h4>
+            <div style="margin-top:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1ft));gap:1.5rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:12px;">
+                    <h5 style="color:var(--accent-success);margin-bottom:0.5rem;">1. Travel Experience (旅行の思い出)</h5>
+                    <p style="font-size:0.95rem;font-family:monospace;line-height:1.8;color:var(--text-main);">
+                        京都（きょうと）に行きました。<br>
+                        金閣寺（きんかくじ）が とても 綺麗（きれい）で、感動（かんどう）しました。<br>
+                        とくに 紅葉（こうよう）が よかったです。<br>
+                        また 行きたいと 思っています。
+                    </p>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:12px;">
+                    <h5 style="color:var(--accent-warning);margin-bottom:0.5rem;">2. Future Plans (将来の夢)</h5>
+                    <p style="font-size:0.95rem;font-family:monospace;line-height:1.8;color:var(--text-main);">
+                        私の夢は 自分で会社を作ることです。<br>
+                        そのために、今 経営を勉強しています。<br>
+                        来年、独立する つもりです。<br>
+                        きっと 成功すると 思っています。
+                    </p>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:12px;">
+                    <h5 style="color:var(--accent-info);margin-bottom:0.5rem;">3. Japanese Learning (日本語学習)</h5>
+                    <p style="font-size:0.95rem;font-family:monospace;line-height:1.8;color:var(--text-main);">
+                        日本語を 勉強して ２年に なります。<br>
+                        聞くのが 得意ですが、漢字が 苦手です。<br>
+                        これからは 毎日辞書を使う ようにしたいです。<br>
+                        目標は JLPT N3に 合格することです！
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Course Summary -->
+    <div id="tab-summary" class="tab-content">
+        <div class="section-header" style="text-align:center;">
+            <h3>🏆 Irodori Elementary 2 (A2-2) • Complete Course Summary</h3>
+            <p>Congratulations on reaching Chapter 15! Here is the complete breakdown of Chapters 13–15 and the entire Elementary 2 curriculum.</p>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-primary);">
+            <h4>📝 Grammar Summary (Chapter 13–15)</h4>
+            <div class="table-container" style="margin-top:1rem;">
+                <table>
+                    <thead>
+                        <tr><th>#</th><th>Grammar Pattern</th><th>Japanese Meaning & Usage</th><th>Hinglish / English Meaning</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>62</td><td><strong>～ばよかった</strong></td><td>後悔（こうかい - Regret review）</td><td>Kash _____ kiya hota / Should have done</td></tr>
+                        <tr><td>63</td><td><strong>～ておけばよかった</strong></td><td>事前の準備の後悔（Advance prep regret）</td><td>Kash pehle se karke rakhta / Should have prepared in advance</td></tr>
+                        <tr><td>64</td><td><strong>～たらどうでしたか</strong></td><td>経験の感想を聞く（Asking experience feedback）</td><td>Kiya toh kaisa raha? / How was it when you did it?</td></tr>
+                        <tr><td>65</td><td><strong>～てみたら</strong></td><td>試した結果の発見（Trial discovery）</td><td>Try kiya toh... / Once I tried it, I found that...</td></tr>
+                        <tr><td>66</td><td><strong>～らしい</strong></td><td>伝聞・評判（Hearsay & reviews）</td><td>Apparently / Lagta hai / I heard that it is...</td></tr>
+                        <tr><td>67</td><td><strong>～なら</strong></td><td>話題限定のアドバイス（Topical advice）</td><td>Agar _____ ho toh / If that's the topic, then I recommend...</td></tr>
+                        <tr><td>68</td><td><strong>～つもりです</strong> (Adv.)</td><td>強い計画・決意（Firm plan & intention）</td><td>Plan / irada hai / I firmly intend to do...</td></tr>
+                        <tr><td>69</td><td><strong>～とおもっています</strong> (Adv.)</td><td>継続的な意志・検討（Ongoing volitional thought）</td><td>Soch raha hoon / I am thinking of doing...</td></tr>
+                        <tr><td>70</td><td><strong>～ために～ています</strong></td><td>目的と現在の努力（Purpose and daily effort）</td><td>_____ ke liye _____ kar raha hoon / Working hard for [goal]</td></tr>
+                        <tr><td>71</td><td><strong>～かもしれません</strong></td><td>不確実な推測（~50% uncertainty prediction）</td><td>Shayad _____ hoga / Might / May happen</td></tr>
+                        <tr><td>72</td><td><strong>～でしょう</strong></td><td>確信度の高い推測（~80% confident prediction）</td><td>Probably _____ hoga / Will likely happen</td></tr>
+                        <tr><td>73</td><td><strong>～ていけば</strong></td><td>継続の条件（Continuous effort conditional）</td><td>Jaari rakha toh... / If you keep continuing to do...</td></tr>
+                        <tr><td>74</td><td><strong>～ようになりました</strong> (Adv.)</td><td>能力や習慣の変化（Change in ability / state）</td><td>_____ karne laga / Became able to do / Ab kar sakta hoon</td></tr>
+                        <tr><td>75</td><td><strong>～ようにしています</strong> (Adv.)</td><td>意識的な習慣（Conscious daily effort / routine）</td><td>Koshish karta hoon / Make a conscious effort to do...</td></tr>
+                        <tr><td>76</td><td><strong>～てきました</strong></td><td>過去からの漸進的変化（Gradual change over time）</td><td>Dheere dheere ho aaya / Has been gradually becoming...</td></tr>
+                        <tr><td>77</td><td><strong>～たり～たりしています</strong></td><td>複数の活動の例示（Listing representative actions）</td><td>...ya ... jaisi cheezein karta hoon / Doing things like A and B</td></tr>
+                        <tr><td>78</td><td><strong>～のがとくい / にがて</strong></td><td>得意・不得意の評価（Evaluating strong/weak points）</td><td>_____ karna strong / weak point hai / Good at vs bad at</td></tr>
+                        <tr><td>79</td><td><strong>～ことにしました</strong></td><td>個人的な決断（Firm personal resolution）</td><td>Decide kiya ki _____ karoon / I have decided to do...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <h4>🏆 All Grammar Points Learned in Elementary 2 (Chapters 1 to 15)</h4>
+            <div class="table-container" style="margin-top:1rem;">
+                <table>
+                    <thead>
+                        <tr><th>Chapter</th><th>Key Grammar Patterns & Focus</th><th>Core Communicative Goal</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Ch 1</strong></td><td>～んです、～たら、～ても</td><td>Explaining reasons, conditional results, and contrastive concessions</td></tr>
+                        <tr><td><strong>Ch 2</strong></td><td>～すぎます、～やすい/にくい、～そう(appearance)、～がる</td><td>Expressing excess, ease/difficulty, visual impressions, and third-party desires</td></tr>
+                        <tr><td><strong>Ch 3</strong></td><td>～より、～ほど～ない、～のように、～によって、～そうです(hearsay)、～らしい</td><td>Comparisons, metaphors, dependence, hearsay reports, and apparent traits</td></tr>
+                        <tr><td><strong>Ch 4</strong></td><td>～てから、～まえに、～ておく、～ながら</td><td>Sequential actions, advance preparations, and simultaneous activities</td></tr>
+                        <tr><td><strong>Ch 5</strong></td><td>かかる、Duration+に+frequency、～あいだ、～までに、～ところ、～てしまう</td><td>Time required, frequency, duration intervals, deadlines, time points, and completion/regret</td></tr>
+                        <tr><td><strong>Ch 6</strong></td><td>～ことにする、～ことになる、～ようにする、～ようになる、～てある</td><td>Decisions, external arrangements, effort habits, ability changes, and intentional states</td></tr>
+                        <tr><td><strong>Ch 7</strong></td><td>～について、～そうです、～かどうか、～よていです</td><td>About a topic, weather/news hearsay, embedded yes/no questions, and formal schedules</td></tr>
+                        <tr><td><strong>Ch 8</strong></td><td>Casual form、～よう/おう、～ない?、～ましょうか、～し～し、～んだ/の</td><td>Casual speech, invitations, volunteering help, listing reasons, and informal explanations</td></tr>
+                        <tr><td><strong>Ch 9</strong></td><td>～てあげる/もらう/くれる、～てくれませんか、～てしまいました</td><td>Giving/receiving favors, asking for assistance, and expressing accidental completion/regret</td></tr>
+                        <tr><td><strong>Ch 10</strong></td><td>～ために、～ばよかった、～といいです、～ようにいいます</td><td>Health purpose, past regret, wishing health for others, and reporting medical advice</td></tr>
+                        <tr><td><strong>Ch 11</strong></td><td>～ていただけますか、Keigo basics (尊敬語・謙譲語)、～ていただく</td><td>Polite workplace requests, basic honorific/humble verbs, and receiving favors politely</td></tr>
+                        <tr><td><strong>Ch 12</strong></td><td>～ば～ほど、～によって、～たらどうですか、～ので、～し～し</td><td>Proportional change (the more... the more), geographic variance, advice, and descriptive reasons</td></tr>
+                        <tr><td><strong>Ch 13</strong></td><td>～ておけばよかった、～てみたら、～らしい、～なら</td><td>Advance travel regret, trial discovery, hotel/restaurant hearsay, and topical recommendations</td></tr>
+                        <tr><td><strong>Ch 14</strong></td><td>～かもしれません、～でしょう、～ていけば</td><td>Uncertain future predictions, confident probability, and continuous effort conditionals</td></tr>
+                        <tr><td><strong>Ch 15</strong></td><td>～てきました、～たり～たり、～のがとくい/にがて、～ことにしました</td><td>Gradual progress, listing study methods, evaluating strong/weak points, and study resolutions</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 15 Japanese Study & Proficiency Quiz</h3>
+                <p>Test your mastery of ability changes, study habits, gradual progress, strong/weak points, and exam vocabulary!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 8: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 5178–5676)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 15: にほんご と わたし (Nihongo to Watashi) - Japanese & Me
+
+## 🎯 Goal:
+- Japanese learning experience share karna
+- Progress batana
+- Difficulties express karna
+- Language learning tips discuss karna
+
+---
+
+## 1) Language Learning Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| にほんご (日本語) | にほんご | Japanese language |
+| べんきょう (勉強) | べんきょう | Padhai / Study |
+| れんしゅう (練習) | れんしゅう | Practice |
+| おぼえる (覚える) | おぼえる | Yaad karna |
+| わすれる (忘れる) | わすれる | Bhoolna |
+| りかいする (理解する) | りかいする | Samajhna |
+| はなせる (話せる) | はなせる | Bol sakna |
+| よめる (読める) | よめる | Padh sakna |
+| かける (書ける) | かける | Likh sakna |
+| きける (聞ける) | きける | Sun sakna |
+| じょうず (上手) | じょうず | Mahir / Good at |
+| へた (下手) | へた | Kamzor / Bad at |
+| とくい (得意) | とくい | Strong point |
+| にがて (苦手) | にがて | Weak point |
+| じしょ (辞書) | じしょ | Dictionary |
+| ぶんぽう (文法) | ぶんぽう | Grammar |
+| ごい (語彙) | ごい | Vocabulary |
+| はつおん (発音) | はつおん | Pronunciation |
+| アクセント | あくせんと | Accent |
+| けいご (敬語) | けいご | Polite language |
+| ほうげん (方言) | ほうげん | Dialect |
+| JLPT | じぇいえるぴいてい | Japanese proficiency test |
+| しけん (試験) | しけん | Exam / Test |
+| ごうかく (合格) | ごうかく | Pass karna |
+| ふごうかく (不合格) | ふごうかく | Fail karna |
+
+---
+
+## 2) Grammar Point 74: ～ようになりました - Review & Advanced
+## Meaning: "_____ karne laga / Ab _____ kar sakta hoon"
+
+**Dictionary form + ようになりました**
+**ない form + ようになりました**
+
+Change in ability ya habit:
+
+### Examples:
+
+```
+にほんに きてから、にほんごで かんがえる
+ようになりました。
+(Nihon ni kite kara, nihongo de kangaeru
+you ni narimashita.)
+Japan aane ke baad, Japanese mein sochne laga.
+
+むかしは かんじが よめなかったですが、
+いまは すこし よめるようになりました。
+(Mukashi wa kanji ga yomenakatta desu ga,
+ima wa sukoshi yomeru you ni narimashita.)
+Pehle kanji padh nahi sakta tha, lekin
+ab thoda padh sakta hoon.
+
+1ねんまえは にほんごで でんわが できませんでしたが、
+いまは できるようになりました。
+(1 nen mae wa nihongo de denwa ga dekimasen deshita ga,
+ima wa dekiru you ni narimashita.)
+1 saal pehle Japanese mein phone nahi kar sakta tha,
+ab kar sakta hoon.
+
+にほんの ニュースが すこし わかるように なってきました。
+(Nihon no nyuusu ga sukoshi wakaru you ni natte kimashita.)
+Japan ka news thoda samajh aane laga.
+```
+
+---
+
+## 3) Grammar Point 75: ～ようにしています - Review & Advanced
+## Meaning: "Koshish karta hoon / Make effort to"
+
+**Dictionary / ない form + ようにしています**
+
+Conscious effort ya habit:
+
+### Examples:
+
+```
+まいにち にほんご の ニュースを よむように して います。
+(Mainichi nihongo no nyuusu wo yomu you ni shite imasu.)
+Har roz Japanese news padhne ki koshish karta hoon.
+
+わからない たんごは すぐ じしょで しらべる ように して います。
+(Wakaranai tango wa sugu jisho de shiraberu you ni shite imasu.)
+Jo words nahi pata, turant dictionary mein dhundhne ki koshish karta hoon.
+
+にほんじんの ともだちと なるべく にほんごで はなす ように して います。
+(Nihonjin no tomodachi to narubeku nihongo de hanasu you ni shite imasu.)
+Japanese doston ke saath jahan tak ho sake Japanese mein bolne ki koshish karta hoon.
+
+えいごを つかわない ように して います。
+(Eigo wo tsukawanai you ni shite imasu.)
+English use na karne ki koshish karta hoon.
+
+まいにち あたらしい たんごを 10こ おぼえる ように して います。
+(Mainichi atarashii tango wo 10 ko oboeru you ni shite imasu.)
+Har roz 10 naye words yaad karne ki koshish karta hoon.
+```
+
+---
+
+## 4) Grammar Point 76: ～てきました
+## Meaning: "Dheere dheere _____ ho aaya / Has been gradually"
+
+**て-form + きました**
+
+Change over time:
+
+### Examples:
+
+```
+すこしずつ にほんごが わかるように なってきました。
+(Sukoshizutsu nihongo ga wakaru you ni natte kimashita.)
+Dheere dheere Japanese samajh aane lagi.
+
+にほんの せいかつに なれてきました。
+(Nihon no seikatsu ni narete kimashita.)
+Japan ki zindagi ki aadat padne lagi.
+
+ともだちが ふえてきました。
+(Tomodachi ga fuete kimashita.)
+Dost badhne lage.
+
+きんちょうしないで にほんごが はなせるように なってきました。
+(Kinchou shinaide nihongo ga hanaseru you ni natte kimashita.)
+Bina tension ke Japanese bolne laga.
+
+むずかしかった かんじも よめるように なってきました。
+(Muzukashikatta kanji mo yomeru you ni natte kimashita.)
+Mushkil kanji bhi padhne laga.
+```
+
+---
+
+## 5) Grammar Point 77: ～たり ～たり しています
+## Meaning: "...ya ... jaisi cheezein karta hoon"
+
+**た form + り、た form + り しています**
+
+Multiple activities batane ke liye (incomplete list):
+
+### Examples:
+
+```
+Japanese ko improve karne ke liye:
+
+アニメを みたり、まんがを よんだり して います。
+(Anime wo mitari, manga wo yondari shite imasu.)
+Anime dekhna ya manga padhna jaisi cheezein karta hoon.
+
+にほんごの ポッドキャストを きいたり、
+にほんじんと はなしたり して います。
+(Nihongo no poddokyasuto wo kiitari,
+nihonjin to hanashitari shite imasu.)
+Japanese podcast sunna ya Japanese log ke saath bolna jaisi cheezein karta hoon.
+
+たんごを おぼえたり、ぶんぽうを べんきょうしたり して います。
+(Tango wo oboe tari, bunpou wo benkyou shitari shite imasu.)
+Vocabulary yaad karna ya grammar padhna jaisi cheezein karta hoon.
+```
+
+---
+
+## 6) Grammar Point 78: ～のが とくいです / にがてです
+## Meaning: "_____ karna strong point / weak point hai"
+
+**Dictionary form + のが とくい / にがて です**
+
+### Examples:
+
+```
+わたしは かんじを おぼえるのが にがてです。
+(Watashi wa kanji wo oboeru no ga nigate desu.)
+Mera kanji yaad karna weak point hai.
+
+にほんごで はなすのが まだ にがてです。
+(Nihongo de hanasu no ga mada nigate desu.)
+Japanese mein bolna abhi bhi weak point hai.
+
+きくのは とくいですが、はなすのが にがてです。
+(Kiku no wa tokui desu ga, hanasu no ga nigate desu.)
+Sunna strong point hai, lekin bolna weak point hai.
+
+かんじを よむのは すこし できますが、
+かくのは まだ むずかしいです。
+(Kanji wo yomu no wa sukoshi dekimasu ga,
+kaku no wa mada muzukashii desu.)
+Kanji padhna thoda ho sakta hai, lekin
+likhna abhi bhi mushkil hai.
+```
+
+---
+
+## 7) Grammar Point 79: ～ことにしました
+## Meaning: "Decide kiya ki _____ karoon"
+
+**Dictionary / ない form + ことにしました**
+
+Apna strong decision:
+
+### Examples:
+
+```
+JLPT N3を うけることにしました。
+(JLPT N3 wo ukeru koto ni shimashita.)
+JLPT N3 dene ka decide kiya.
+
+まいにち にっきを にほんごで かくことにしました。
+(Mainichi nikki wo nihongo de kaku koto ni shimashita.)
+Har roz diary Japanese mein likhne ka decide kiya.
+
+にほんじんの ともだちを つくることにしました。
+(Nihonjin no tomodachi wo tsukuru koto ni shimashita.)
+Japanese dost banana ka decide kiya.
+
+えいごを つかうのを やめることにしました。
+(Eigo wo tsukau no wo yameru koto ni shimashita.)
+English use karna band karne ka decide kiya.
+```
+
+---
+
+## 8) Talking about Japanese learning experience
+
+### Sample paragraph:
+
+```
+わたしが にほんごを はじめて べんきょうしたのは
+3ねんまえです。
+(Watashi ga nihongo wo hajimete benkyou shita no wa
+3 nen mae desu.)
+Maine Japanese pehli baar 3 saal pehle padhi.
+
+さいしょは ひらがなも かけなくて、とても むずかしかったです。
+(Saisho wa hiragana mo kakenakute, totemo muzukashikatta desu.)
+Shuru mein hiragana bhi nahi likh sakta tha, bahut mushkil tha.
+
+でも、すこしずつ れんしゅうして、
+いまは にほんごで かいわが できるように なりました。
+(Demo, sukoshizutsu renshuu shite,
+ima wa nihongo de kaiwa ga dekiru you ni narimashita.)
+Lekin, dheere dheere practice karke,
+ab Japanese mein conversation ho sakta hai.
+
+まだ にがては たくさん ありますが、
+とくに かんじが むずかしいです。
+(Mada nigate wa takusan arimasu ga,
+toku ni kanji ga muzukashii desu.)
+Abhi bhi bahut weak points hain,
+khaaskar kanji mushkil hai.
+
+これからも あきらめないで べんきょうを
+つづけていこうと おもっています。
+(Korekara mo akiramenaide benkyou wo
+tsuzukete ikou to omotteimasu.)
+Aage bhi haar na maan ke padhai jaari rakhne
+ka soch raha hoon.
+```
+
+---
+
+## 9) Language learning tips
+
+### Useful expressions:
+
+```
+にほんごを じょうずに なるためには、
+まいにち れんしゅうする ことが いちばん たいせつだと おもいます。
+(Nihongo wo jouzu ni naru tame ni wa,
+mainichi renshuu suru koto ga ichiban taisetsu da to omoimasu.)
+Japanese acchi karne ke liye,
+har roz practice karna sabse zaroori lagta hai.
+
+まちがいを こわがらないで、
+どんどん はなした ほうが いいですよ。
+(Machigai wo kowagara naide,
+dondon hanashita hou ga ii desu yo.)
+Galti se mat daro,
+zyada se zyada bolo yeh accha hai.
+
+わからない ことば は すぐ しらべる ようにすると、
+はやく おぼえられますよ。
+(Wakaranai kotoba wa sugu shiraberu you ni suru to,
+hayaku oboeraremasu yo.)
+Jo word nahi pata, turant dhundho toh,
+jaldi yaad ho jaata hai.
+
+にほんじんの ともだちを つくれば つくるほど、
+にほんごが じょうずに なります。
+(Nihonjin no tomodachi wo tsukureba tsukuru hodo,
+nihongo ga jouzu ni narimasu.)
+Jitne Japanese dost banao, utni Japanese acchi hoti hai.
+```
+
+---
+
+## 10) Japanese learning self-evaluation
+
+```
+【にほんご の じこひょうか】
+(Nihongo no jiko hyouka)
+Japanese self-evaluation
+
+はなすこと: すこし できます。まだ きんちょうします。
+(Hanasu koto: Sukoshi dekimasu. Mada kinchou shimasu.)
+Speaking: Thoda ho sakta hai. Abhi bhi nervous hota hoon.
+
+きくこと: みじかい かいわは わかりますが、
+はやいと むずかしいです。
+(Kiku koto: Mijikai kaiwa wa wakarimasu ga,
+hayai to muzukashii desu.)
+Listening: Chhoti baat samajhta hoon, lekin
+jaldi bola toh mushkil hai.
+
+よむこと: ひらがなと カタカナは よめます。
+かんじは まだ にがてです。
+(Yomu koto: Hiragana to Katakana wa yomemasu.
+Kanji wa mada nigate desu.)
+Reading: Hiragana aur Katakana padh sakta hoon.
+Kanji abhi bhi weak point hai.
+
+かくこと: かんたんな ぶんは かけます。
+むずかしい ひょうげんは まだ むずかしいです。
+(Kaku koto: Kantan na bun wa kakemasu.
+Muzukashii hyougen wa mada muzukashii desu.)
+Writing: Simple sentences likh sakta hoon.
+Mushkil expressions abhi bhi hard hain.
+
+もくひょう: らいねん N3に ごうかくする こと。
+(Mokuhyou: Rainen N3 ni goukaku suru koto.)
+Goal: Agle saal N3 pass karna.
+```
+
+---
+
+# 📝 Grammar Summary (Chapter 13-15)
+
+| # | Pattern | Meaning |
+|---|---|---|
+| 62 | ～ばよかった (travel) | kash _____ kiya hota |
+| 63 | ～ておけばよかった | kash pehle se karke rakhta |
+| 64 | ～たらどうでしたか | kiya toh kaisa raha? |
+| 65 | ～てみたら | try kiya toh |
+| 66 | ～らしい | apparently / lagta hai |
+| 67 | ～なら | agar _____ ho toh |
+| 68 | ～つもりです (adv.) | plan / irada hai |
+| 69 | ～とおもっています (adv.) | soch raha hoon |
+| 70 | ～ためにしています | ke liye kar raha hoon |
+| 71 | ～かもしれません | shayad _____ hoga |
+| 72 | ～でしょう | probably _____ hoga |
+| 73 | ～ていけば | jaari rakha toh |
+| 74 | ～ようになりました (adv.) | karne laga |
+| 75 | ～ようにしています (adv.) | koshish karta hoon |
+| 76 | ～てきました | dheere dheere ho aaya |
+| 77 | ～たり～たりしています | ...ya ... jaisi cheezein |
+| 78 | ～のがとくい/にがて | strong / weak point hai |
+| 79 | ～ことにしました | decide kiya ki karoon |
+
+---
+
+# 📝 Vocabulary Summary (Ch 13-15)
+
+### Travel (りょこう):
+```
+しんかんせん、のりかえ、かたみち、おうふく
+じゆうせき、していせき
+めいしょ、かんこうち、おんせん
+おみやげ、りょうがえ、パスポート
+```
+
+### Future (しょうらい):
+```
+ゆめ、もくひょう、けいかく、どりょく
+ちょうせん、あきらめる、がんばる
+しゅうしょく、てんしょく、けっこん
+```
+
+### Japanese (にほんご):
+```
+べんきょう、れんしゅう、おぼえる、わすれる
+じょうず、へた、とくい、にがて
+ぶんぽう、ごい、はつおん
+JLPT、ごうかく、ふごうかく
+```
+
+---
+
+# 🎯 Quick Practice Sentences
+
+## Chapter 13
+1. もっとはやく よやくすれば よかった。
+2. きょうとに いくなら、きんかくじは おすすめです。
+3. たべてみたら、おもったより おいしかったです。
+4. あの りょかんは しょくじが おいしいらしいです。
+
+## Chapter 14
+1. らいねん、にほんごのしけんを うけるつもりです。
+2. このまま がんばって いけば、きっとできます。
+3. てんしょくしようと おもっています。
+4. しょうらいは じぶんで かいしゃを つくるかもしれません。
+
+## Chapter 15
+1. すこしずつ にほんごが わかるようになってきました。
+2. まいにち れんしゅうするようにしています。
+3. かんじをおぼえるのが にがてです。
+4. JLPT N3を うけることにしました。
+
+---
+
+# 🎯 Mini Writing Practice
+
+## 1. Travel experience:
+```
+_____ に いきました。
+_____ が とても _____ で、かんどうしました。
+とくに _____ が よかったです。
+また いきたいと おもっています。
+```
+
+## 2. Future plans:
+```
+わたしの ゆめは _____ ことです。
+そのために、いま _____ ています。
+_____ つもりです。
+きっと _____ と おもっています。
+```
+
+## 3. Japanese learning:
+```
+にほんごを べんきょうして _____ ねんに なります。
+_____ のが とくいですが、_____ のが にがてです。
+これからは _____ ようにしたいと おもっています。
+もくひょうは _____ ことです。
+```
+
+---
+
+# 🏆 Irodori Elementary 2 Complete Summary
+
+## All grammar points learned (Elementary 2):
+
+| Chapter | Key Grammar |
+|---|---|
+| Ch 1 | んです、～たら、～ても |
+| Ch 2 | ～すぎます、～やすい/にくい、～そう(appearance)、～がる |
+| Ch 3 | ～より、～ほど～ない、～のように、～によって、～そうです(hearsay)、～らしい |
+| Ch 4 | ～てから、～まえに、～ておく、～ながら |
+| Ch 5 | かかる、Duration+に+frequency、～あいだ、～までに、～ところ、～てしまう |
+| Ch 6 | ～ことにする、～ことになる、～ようにする、～ようになる、～てある |
+| Ch 7 | ～について、～そうです、～かどうか、～よていです |
+| Ch 8 | Casual form、～よう/おう、～ない?、～ましょうか、～し～し、～んだ/の |
+| Ch 9 | ～てあげる/もらう/くれる、～てくれませんか、～てしまいました |
+| Ch 10 | ～ために、～ばよかった、～といいです、～ようにいいます |
+| Ch 11 | ～ていただけますか、Keigo basics、～ていただく |
+| Ch 12 | ～ば～ほど、～によって、～たらどうですか、～ので、～し～し |
+| Ch 13 | ～ておけばよかった、～てみたら、～らしい、～なら |
+| Ch 14 | ～かもしれません、～でしょう、～ていけば |
+| Ch 15 | ～てきました、～たり～たり、～のがとくい/にがて、～ことにしました |
+
+---
+
+**おめでとうございます！🎉**
+**Irodori Elementary 2 poora ho gaya!**
+
+**これで JLPT N4 level ke kaafi close ho gaye ho!**
+
+**つぎは なに を べんきょうしますか？** 😊
+
+Agar **Pre-Intermediate** ya koi aur content chahiye toh bata do!
+
+**にほんごの べんきょう、たのしかったですね！** 🎌
+
+**これからも がんばって ください！** 💪
+
+===============================================
+
+================================================
+
+Bilkul — ab **Irodori (いろどり) Elementary 2 ke last 3 chapters, yani Chapter 16 to 18** karte hain.  
+Main same style follow karunga: **Hinglish explanation + kanji ke saath ひらがな reading**.</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 15: にほんごとわたし • Built with 100% Verbatim Fidelity & Complete Elem 2 Summary</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const studyData = {
+        jlpt: {
+            "you-narimashita": { jp: "１年間（いちねんかん）勉強（べんきょう）して、いまでは ＪＬＰＴの 問題（もんだい）が 解（と）ける ように なりました！", rom: "1 nenkan benkyou shite, ima dewa JLPT no mondai ga tokeru you ni narimashita!", hi: "Hindi Translation: 1 saal padhai karke, ab JLPT ke questions solve kar sakta hoon (ability change)!" },
+            "you-shiteimasu": { jp: "試験（しけん）に 合格（ごうかく）する ために、毎日（まいにち）過去問（かこもん）を 解（と）く ように して います。", rom: "Shiken ni goukaku suru tame ni, mainichi kakomon wo toku you ni shite imasu.", hi: "Hindi Translation: Exam pass karne ke liye, roz past papers solve karne ki koshish karta hoon (daily habit)." },
+            "tekimashita": { jp: "コツコツ 練習（れんしゅう）して、少しずつ（すこしずつ）試験（しけん）に 自信（じしん）が ついて きました。", rom: "Kotsukotsu renshuu shite, sukoshizutsu shiken ni jishin ga tsuite kimashita.", hi: "Hindi Translation: Thoda-thoda practice karke, dheere dheere exam mein confidence aane laga hai (gradual progress)." },
+            "taritari": { jp: "単語（たんご）帳（ちょう）を 読（よ）んだり、模擬（もぎ）試験（しけん）を 受（う）けたり して います。", rom: "Tango chou wo yondari, mogi shiken wo uketari shite imasu.", hi: "Hindi Translation: Vocab book padhna ya mock tests dena jaisi cheezein kar raha hoon (multiple study methods)." },
+            "tokui-nigate": { jp: "文法（ぶんぽう）の問題（もんだい）は 得意（とくい）ですが、長文（ちょうぶん）読解（どっかい）が 苦手（にがて）です。", rom: "Bunpou no mondai wa tokui desu ga, choubun dokkai ga nigate desu.", hi: "Hindi Translation: Grammar questions strong point hai, lekin long passage reading weak point hai." },
+            "kotonishimashita": { jp: "来年（らいねん）の ７月（しちがつ）に、ＪＬＰＴの Ｎ２を 受（う）ける ことに しました！", rom: "Rainen no shichigatsu ni, JLPT no N2 wo ukeru koto ni shimashita!", hi: "Hindi Translation: Agle saal July mein JLPT N2 dene ka firm decision liya hai!" }
+        },
+        kaiwa: {
+            "you-narimashita": { jp: "日本人（にほんじん）の 友達（ともだち）と 自然（しぜん）に 会話（かいわ）が できる ように なりました。", rom: "Nihonjin no tomodachi to shizen ni kaiwa ga dekiru you ni narimashita.", hi: "Hindi Translation: Japanese doston ke saath naturally conversation kar sakta hoon (ability improvement)!" },
+            "you-shiteimasu": { jp: "間違い（まちがい）を 恐（おそ）れないで、なるべく 日本語（にほんご）で 話（はな）す ように して います。", rom: "Machigai wo osorenaide, narubeku nihongo de hanasu you ni shite imasu.", hi: "Hindi Translation: Galti se dare bina, jahan tak ho sake Japanese mein bolne ki koshish karta hoon." },
+            "tekimashita": { jp: "毎日（まいにち）話（はな）して、緊張（きんちょう）しないで 意見（いけん）が 言（い）える ように なって きました。", rom: "Mainichi hanashite, kinchou shinaide iken ga ieru you ni natte kimashita.", hi: "Hindi Translation: Roz bol kar, bina nervous hue apna opinion bolne laga hoon (gradual progress)." },
+            "taritari": { jp: "友達（ともだち）と カフェで おしゃべり したり、ランゲッジ・エクスチェンジに 参加（さんか）したり して います。", rom: "Tomodachi to kafe de oshaberi shitari, rangejji ekusuchenji ni sanka shitari shite imasu.", hi: "Hindi Translation: Doston ke saath cafe mein gapshap karna ya language exchange mein join karna jaisi cheezein karta hoon." },
+            "tokui-nigate": { jp: "日常（にちじょう）の 挨拶（あいさつ）は 得意（とくい）ですが、長（なが）い 説明（せつめい）が まだ 苦手（にがて）です。", rom: "Nichijou no aisatsu wa tokui desu ga, nagai setsumei ga mada nigate desu.", hi: "Hindi Translation: Daily greetings strong point hai, lekin lamba explanation abhi bhi weak point hai." },
+            "kotonishimashita": { jp: "もっと 話（はな）せる ように、毎日（まいにち）オンライン 日本語（にほんご）レッスンを 受（う）ける ことに しました。", rom: "Motto hanaseru you ni, mainichi onrain nihongo ressun wo ukeru koto ni shimashita.", hi: "Hindi Translation: Aur accha bol sakne ke liye, roz online Japanese lesson lene ka decide kiya!" }
+        },
+        kanji: {
+            "you-narimashita": { jp: "昔（むかし）は 全く（まったく）読（よ）めなかったが、いまでは 新聞（しんぶん）の 漢字（かんじ）が 少し（すこし）読（よ）める ように なりました。", rom: "Mukashi wa mattaku yomenakatta ga, ima dewa shinbun no kanji ga sukoshi yomeru you ni narimashita.", hi: "Hindi Translation: Pehle bilkul padh nahi sakta tha, lekin ab newspaper ke Kanji thoda padh sakta hoon!" },
+            "you-shiteimasu": { jp: "わからない 漢字（かんじ）は すぐに スマホの 辞書（じしょ）で 調（しら）べる ように して います。", rom: "Wakaranai kanji wa sugu ni sumaho no jisho de shiraberu you ni shite imasu.", hi: "Hindi Translation: Anjaan Kanji turant smartphone dictionary mein dhundhne ki koshish karta hoon." },
+            "tekimashita": { jp: "街（まち）の 看板（かんばん）や メニューの 漢字（かんじ）が 自然（しぜん）と 読（よ）める ように なって きました。", rom: "Machi no kanban ya menyuu no kanji ga shizen to yomeru you ni natte kimashita.", hi: "Hindi Translation: Sheher ke signboards aur menu ke Kanji naturally padhne laga hoon (gradual change)." },
+            "taritari": { jp: "漢字（かんじ）アプリで 練習（れんしゅう）したり、日本語（にほんご）の 小説（しょうせつ）を 読（よ）んだり して います。", rom: "Kanji apuri de renshuu shitari, nihongo no shousetsu wo yondari shite imasu.", hi: "Hindi Translation: Kanji app pe practice karna ya Japanese novel padhna jaisi cheezein karta hoon." },
+            "tokui-nigate": { jp: "ひらがな と カタカナは 得意（とくい）ですが、画数（かくすう）が 多（おお）い 漢字（かんじ）が まだ 苦手（にがて）です。", rom: "Hiragana to katakana wa tokui desu ga, kakusuu ga ooi kanji ga mada nigate desu.", hi: "Hindi Translation: Hiragana aur Katakana strong point hai, lekin zyada strokes wale Kanji weak point hain." },
+            "kotonishimashita": { jp: "毎日（まいにち）朝（あさ）の １５分間（じゅうごふんかん）、漢字（かんじ）の 書き取り（かきとり）を 練習（れんしゅう）する ことに しました。", rom: "Mainichi asa no 15 funkan, kanji no kakitori wo renshuu suru koto ni shimashita.", hi: "Hindi Translation: Roz subah 15 minute Kanji writing practice karne ka decide kiya!" }
+        },
+        listening: {
+            "you-narimashita": { jp: "字幕（じまく）なしでも、アニメの 台詞（せりふ）が だいぶ 理解（りかい）できる ように なりました！", rom: "Jimaku nashidemo, anime no serifu ga daibu rikai dekiru you ni narimashita!", hi: "Hindi Translation: Bina subtitles ke bhi, anime ke dialogues kaafi had tak samajh aane lage hain!" },
+            "you-shiteimasu": { jp: "通勤（つうきん）の 電車（でんしゃ）の 中（なか）で、毎日（まいにち）日本語（にほんご）の ポッドキャストを 聞（き）く ように して います。", rom: "Tsuukin no densha no naka de, mainichi nihongo no poddokyasuto wo kiku you ni shite imasu.", hi: "Hindi Translation: Office commute train mein roz Japanese podcast sunne ki koshish karta hoon." },
+            "tekimashita": { jp: "毎日（まいにち）聞（き）いていたら、日本（にほん）の ニュースの 早（はや）い スピードにも 慣（な）れて きました。", rom: "Mainichi kiite itara, nihon no nyuusu no hayai supiido ni mo narete kimashita.", hi: "Hindi Translation: Roz sunte-sunte Japan ke news ki fast speed ki aadat padne lagi hai (gradual progress)." },
+            "taritari": { jp: "日本の 音楽（おんがく）を 聞（き）いて 歌（うた）ったり、ニュースを シャドーイング したり して います。", rom: "Nihon no ongaku wo kiite utattari, nyuusu wo shadoingu shitari shite imasu.", hi: "Hindi Translation: Japanese gaane sun kar gaana ya news shadowing karna jaisi cheezein karta hoon." },
+            "tokui-nigate": { jp: "ゆっくりな 会話（かいわ）の リスニングは 得意（とくい）ですが、早（はや）い 方言（ほうげん）の 聞き取り（ききとり）が 苦手（にがて）です。", rom: "Yukkuri na kaiwa no risuningu wa tokui desu ga, hayai hougen no kikitori ga nigate desu.", hi: "Hindi Translation: Slow conversation listening strong point hai, lekin fast dialects sunna weak point hai." },
+            "kotonishimashita": { jp: "耳（みみ）を 鍛（きた）える ために、毎日（まいにち）寝（ね）る 前（まえ）に 日本語（にほんご）の ラジオを 聞（き）く ことに しました。", rom: "Mimi wo kitaeru tame ni, mainichi neru mae ni nihongo no rajio wo kiku koto ni shimashita.", hi: "Hindi Translation: Ear training ke liye, roz sone se pehle Japanese radio sunne ka decide kiya!" }
+        },
+        keigo: {
+            "you-narimashita": { jp: "職場（しょくば）で、お客様（きゃくさま）に対して 正しい（ただしい）敬語（けいご）が 使（つか）える ように なりました。", rom: "Shokuba de, okyakusama ni taishite tadashii keigo ga tsukaeru you ni narimashita.", hi: "Hindi Translation: Workplace mein customers ke saath sahi Keigo polite language use kar sakta hoon!" },
+            "you-shiteimasu": { jp: "会社（かいしゃ）では、丁寧（ていねい）な 発音（はつおん）と 美（うつく）しい アクセントを 意識（いしき）する ように して います。", rom: "Kaisha de wa, teinei na hatsuon to utsukushii akusento wo ishiki suru you ni shite imasu.", hi: "Hindi Translation: Company mein polite pronunciation aur beautiful accent dhyan mein rakhne ki koshish karta hoon." },
+            "tekimashita": { jp: "先輩（せんぱい）の 話し方（はなしかた）を 真似（まね）して、ビジネス 日本語（にほんご）が 自然（しぜん）と 出（で）てくる ように なって きました。", rom: "Senpai no hanashikata wo mane shite, bijinesu nihongo ga shizen to detekuru you ni natte kimashita.", hi: "Hindi Translation: Seniors ki speech copy karke, business Japanese naturally nikalne lagi hai (gradual progress)." },
+            "taritari": { jp: "敬語（けいご）の本（ほん）を 読（よ）んだり、職場（しょくば）で 日本人（にほんじん）の 同僚（どうりょう）に 質問（しつもん）したり して います。", rom: "Keigo no hon wo yondari, shokuba de nihonjin no douryou ni shitsumon shitari shite imasu.", hi: "Hindi Translation: Keigo book padhna ya workplace mein Japanese colleagues se sawaal karna jaisi cheezein karta hoon." },
+            "tokui-nigate": { jp: "丁寧語（ていねいご - です/ます）は 得意（とくい）ですが、尊敬語（そんけいご）と 謙譲語（けんじょうご）の 使い分けが まだ 苦手（にがて）です。", rom: "Teineigo wa tokui desu ga, sonkeigo to kenjougo no tsukaiwake ga mada nigate desu.", hi: "Hindi Translation: Teineigo strong point hai, lekin Sonkeigo aur Kenjougo ka difference abhi bhi weak point hai." },
+            "kotonishimashita": { jp: "将来（しょうらい）の 昇進（しょうしん）の ために、ビジネス 日本語（にほんご）の コースに 通（かよ）う ことに しました。", rom: "Shourai no shoushin no tame ni, bijinesu nihongo no koosu ni kayou koto ni shimashita.", hi: "Hindi Translation: Future promotion ke liye, business Japanese course join karne ka decide kiya!" }
+        }
+    };
+
+    function updateStudySim() {
+        const s = document.getElementById('sim-scene').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = studyData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakStudySim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 「日本に 来てから、日本語で 考える _______に なりました。」\n(Since coming to Japan, I HAVE BECOME ABLE TO think in Japanese - ability change)", opt: ["よう (you)", "ため (tame)", "そう (sou)", "らしい (rashii)"], ans: 0 },
+        { q: "2. 「わからない 単語は すぐに 辞書で 調べる _______に しています。」\n(I MAKE A CONSCIOUS EFFORT / HABIT to immediately look up unknown words in a dictionary)", opt: ["よう (you)", "ところ (tokoro)", "はず (hazu)", "こと (koto)"], ans: 0 },
+        { q: "3. 「少しずつ 日本語の ニュースが わかる ように _______。」\n(Gradually over time up to now, I HAVE COME TO UNDERSTAND Japanese news - gradual progress)", opt: ["なってきました (natte kimashita)", "なってありました (natte arimashita)", "なっておきました (natte okimashita)", "なってしまいました (natte shimaimashita)"], ans: 0 },
+        { q: "4. 「アニメを みたり、まんがを よんだり _______。」\n(I DO THINGS SUCH AS watching anime and reading manga - representative activities)", opt: ["しています (shite imasu)", "あります (arimasu)", "いいます (iimasu)", "なります (narimasu)"], ans: 0 },
+        { q: "5. 「聞くのは _______ですが、話すのが _______です。」\n(Listening is my STRONG POINT / FORTE, but speaking is my WEAK POINT / DIFFICULTY)", opt: ["得意 (tokui) / 苦手 (nigate)", "上手 (jouzu) / 下手 (heta)", "好き (suki) / 嫌い (kirai)", "高い (takai) / 安い (yasui)"], ans: 0 },
+        { q: "6. 「来年、ＪＬＰＴの Ｎ３を 受ける _______に しました！」\n(I HAVE DECIDED TO take JLPT N3 next year - firm personal resolution)", opt: ["こと (koto)", "もの (mono)", "ため (tame)", "よう (you)"], ans: 0 },
+        { q: "7. 「～ように する」と 「～ように なる」の 正しい 意味の 違いは どれですか？\n(What is the difference between ~you ni suru and ~you ni naru?)", opt: ["~you ni suru expresses conscious human effort / habit; ~you ni naru expresses a state or ability change that happened over time", "~you ni suru means impossible; ~you ni naru means easy", "~you ni suru is only for past tense; ~you ni naru is only for future tense", "There is no difference at all between them"], ans: 0 },
+        { q: "8. 「日本人の 友達を つくれば つくる ほど、日本語が 上手に なります。」\n(What does this golden language advice mean?)", opt: ["THE MORE Japanese friends you make, THE BETTER your Japanese will become!", "You should never make friends while studying for an exam", "Making friends is much more expensive than buying textbooks", "You must speak English with your Japanese friends"], ans: 0 },
+        { q: "9. 「～ておけば よかった」 (Ch 13) と 「～ば よかった」 (Ch 13) の 共通する 気持ちは どれですか？\n(What emotional feeling is expressed by both of these Chapter 13 patterns?)", opt: ["Regret or wishing you had done something differently in the past (Kash _____ kiya hota)", "Extreme happiness and joy about winning a lottery", "Asking a polite question to a corporate manager", "Giving a strict order to a younger sibling"], ans: 0 },
+        { q: "10. 初級２（Elementary 2）を 修了すると、およそ どの JLPT レベルに 近づきますか？\n(Upon completing Irodori Elementary 2, which JLPT proficiency level are you close to reaching?)", opt: ["JLPT N4 Level (Elementary A2 completion)", "JLPT N1 Level (Native fluency)", "JLPT N5 Level (Absolute beginner)", "JLPT N0 Level (Supreme language deity)"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Phenomenal! You have mastered all study strategies and reached JLPT N4 / A2-2 level competency!':'💪 Keep going! Review ability changes (~ようになりました) and study habits (~ようにしています)!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

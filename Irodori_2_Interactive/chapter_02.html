@@ -1,0 +1,716 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 02: きもち (Feelings & Emotions)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 2: きもち - Feelings and Emotions. Covers ～し～し, ～すぎます, ～やすい/にくい, ～そう, ～がる with audio, quizzes and kanji.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">&#x1F49C; &#x521D;&#x7D1A; 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) &bull; Enriched Edition</h1>
+            <p>Chapter 02: &#x304D;&#x3082;&#x3061; (Feelings &amp; Emotions) &bull; Expressing, Empathizing &amp; Reading Moods</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('&#x304D;&#x3082;&#x3061;&#x3092; &#x3064;&#x305F;&#x3048;&#x308B; &#x3053;&#x3068;&#x306F; &#x3068;&#x3066;&#x3082; &#x5927;&#x4E8B;&#x3067;&#x3059;&#x3002; &#x3042;&#x306A;&#x305F;&#x306E; &#x304D;&#x3082;&#x3061;&#x306F; &#x3069;&#x3046;&#x3067;&#x3059;&#x304B;&#xFF1F; &#x3044;&#x3063;&#x3057;&#x3087;&#x306B; &#x307E;&#x306A;&#x3073;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF01;')"><span>&#x1F50A;</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">&#x1F319; Theme</button>
+    </div>
+</header>
+
+<div class="banner">
+    <h2>&#x1F49C; &#x304D;&#x3082;&#x3061; (Kimochi) - Feelings &amp; Emotions</h2>
+    <p>Master expressing your own feelings and understanding others'! Learn <strong>&#x301C;&#x3057;&#x301C;&#x3057;</strong> (multiple reasons), <strong>&#x301C;&#x3059;&#x304E;&#x307E;&#x3059;</strong> (too much), <strong>&#x301C;&#x3084;&#x3059;&#x3044;/&#x306B;&#x304F;&#x3044;</strong> (easy/hard to), <strong>&#x301C;&#x305D;&#x3046;</strong> (appearance), and <strong>&#x301C;&#x304C;&#x308B;</strong> (3rd person feelings). Deep empathy conversations covered!</p>
+    <div class="banner-meta">
+        <span class="meta-pill">&#x1F4CD; Lines 386&#x2013;826</span>
+        <span class="meta-pill">&#x1F4AC; Grammar Points 6&#x2013;11</span>
+        <span class="meta-pill">&#x1F4DA; 22+ Vocabulary Words</span>
+        <span class="meta-pill">&#x1F50A; Native TTS Audio</span>
+        <span class="meta-pill">&#x1F239; 20 Kanjis</span>
+        <span class="meta-pill">&#x1F3AE; 10-Q Quiz</span>
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('feelings',this)"><span>&#x1F49C;</span> Feelings Expression Builder</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>&#x26A1;</span> Grammar: &#x301C;&#x3057;&#x301C;&#x3057; &amp; &#x301C;&#x3059;&#x304E;&#x307E;&#x3059;</button>
+        <button class="tab-btn" onclick="switchTab('appearance',this)"><span>&#x1F441;&#xFE0F;</span> Appearance Conjugator (&#x305D;&#x3046; / &#x304C;&#x308B; / &#x3084;&#x3059;&#x3044;&middot;&#x306B;&#x304F;&#x3044;)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>&#x1F5E3;&#xFE0F;</span> 22+ Audio Feeling Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>&#x1F239;</span> Kanji Mastery (20 Ch 02 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>&#x1F3AE;</span> 10-Question Feelings Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>&#x1F4D6;</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Feelings Builder -->
+    <div id="tab-feelings" class="tab-content active">
+        <div class="interactive-box">
+            <h4>&#x1F49C; Feelings Expression Builder (Grammar Point 6)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Build natural Japanese feeling sentences using &#x3066;/&#x304F;&#x3066;/&#x3067; connectors!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Reason / Situation</label>
+                    <select id="fe-reason" onchange="updateFeelings()">
+                        <option value="train">&#x1F686; &#x3067;&#x3093;&#x3057;&#x3083; &#x304C; &#x304A;&#x304F;&#x308C;&#x3066; (Train was late)</option>
+                        <option value="busy">&#x1F4BC; &#x3057;&#x3054;&#x3068; &#x304C; &#x3044;&#x305D;&#x304C;&#x3057;&#x304F;&#x3066; (Work was busy)</option>
+                        <option value="rain">&#x1F327;&#xFE0F; &#x3042;&#x3081;&#x3067; (Because of rain)</option>
+                        <option value="sick">&#x1F912; &#x3073;&#x3087;&#x3046;&#x304D;&#x3067; (Because of sickness)</option>
+                        <option value="pass">&#x1F3C6; &#x3057;&#x3051;&#x3093;&#x306B; &#x3046;&#x304B;&#x3063;&#x3066; (Passed the exam)</option>
+                        <option value="friend">&#x1F44B; &#x3068;&#x3082;&#x3060;&#x3061;&#x304C; &#x304F;&#x306B;&#x306B; &#x304B;&#x3048;&#x3063;&#x3066; (Friend went home)</option>
+                        <option value="gift">&#x1F381; &#x30D7;&#x30EC;&#x30BC;&#x30F3;&#x30C8;&#x3092; &#x3082;&#x3089;&#x3063;&#x3066; (Received a gift)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Feeling / Emotion</label>
+                    <select id="fe-emotion" onchange="updateFeelings()">
+                        <option value="ureshii">&#x1F60A; &#x3046;&#x308C;&#x3057;&#x3044; &#x3067;&#x3059;&#x3002; (Happy)</option>
+                        <option value="sabishii">&#x1F614; &#x3055;&#x3073;&#x3057;&#x3044; &#x3067;&#x3059;&#x3002; (Lonely)</option>
+                        <option value="komatta">&#x1F630; &#x3053;&#x307E;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002; (Troubled)</option>
+                        <option value="bikkuri">&#x1F632; &#x3073;&#x3063;&#x304F;&#x308A;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002; (Surprised)</option>
+                        <option value="hotto">&#x1F60C; &#x307B;&#x3063;&#x3068;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002; (Relieved)</option>
+                        <option value="tsukareta">&#x1F62E;&#x200D;&#x1F4A8; &#x3064;&#x304B;&#x308C;&#x307E;&#x3057;&#x305F;&#x3002; (Tired)</option>
+                    </select>
+                </div>
+            </div>
+            <div id="fe-output" class="output-panel">
+                <div class="output-jp" id="fe-jp"></div>
+                <div class="output-rom" id="fe-rom"></div>
+                <div class="output-meaning" id="fe-meaning"></div>
+                <button class="btn-speak" onclick="speakOutput('fe-jp')">&#x1F50A; Speak</button>
+            </div>
+        </div>
+
+        <!-- ～し～し Builder -->
+        <div class="interactive-box" style="border-color:var(--accent-secondary);">
+            <h4>&#x26A1; Multiple Reasons Builder &#x301C;&#x3057;&#x3001;&#x301C;&#x3057; (Grammar Point 7)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Give multiple reasons naturally! Select a topic to build a &#x301C;&#x3057;&#x301C;&#x3057; sentence.</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Topic</label>
+                    <select id="sh-topic" onchange="updateShi()">
+                        <option value="nihon">&#x1F5FE; Japan (&#x306B;&#x307B;&#x3093;) &#x304C; &#x3059;&#x304D;&#x306A; &#x308A;&#x3086;&#x3046;</option>
+                        <option value="restaurant">&#x1F35C; This Restaurant (&#x3053;&#x306E; &#x30EC;&#x30B9;&#x30C8;&#x30E9;&#x30F3;)</option>
+                        <option value="today">&#x1F637; Today's Condition (&#x304D;&#x3087;&#x3046; &#x306E; &#x3088;&#x3046;&#x3059;)</option>
+                        <option value="person">&#x1F60A; A Person (&#x304B;&#x308C; / &#x304B;&#x306E;&#x3058;&#x3087;)</option>
+                    </select>
+                </div>
+            </div>
+            <div id="sh-output" class="output-panel">
+                <div class="output-jp" id="sh-jp"></div>
+                <div class="output-rom" id="sh-rom"></div>
+                <div class="output-meaning" id="sh-meaning"></div>
+                <button class="btn-speak" onclick="speakOutput('sh-jp')">&#x1F50A; Speak</button>
+            </div>
+        </div>
+
+        <!-- Empathy Phrases -->
+        <div class="section-header"><h3>&#x1F91D; Empathy Phrases</h3><p>Click any card to hear it pronounced!</p></div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakText('&#x305D;&#x308C;&#x306F; &#x305F;&#x3044;&#x3078;&#x3093;&#x3067;&#x3057;&#x305F;&#x306D;')"><div class="card-top"><div class="jp-text">&#x305D;&#x308C;&#x306F; &#x305F;&#x3044;&#x3078;&#x3093;&#x3067;&#x3057;&#x305F;&#x306D;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Sore wa taihen deshita ne</div><div class="meaning-text">That must have been tough &#x1F614;</div></div>
+            <div class="card" onclick="speakText('&#x3064;&#x3089;&#x304B;&#x3063;&#x305F;&#x3067;&#x3057;&#x3087;&#x3046;')"><div class="card-top"><div class="jp-text">&#x3064;&#x3089;&#x304B;&#x3063;&#x305F;&#x3067;&#x3057;&#x3087;&#x3046;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Tsurakatta deshou</div><div class="meaning-text">Must have been painful &#x1F499;</div></div>
+            <div class="card" onclick="speakText('&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002; &#x308F;&#x305F;&#x3057;&#x3082; &#x304A;&#x306A;&#x3058; &#x3051;&#x3044;&#x3051;&#x3093; &#x304C; &#x3042;&#x308A;&#x307E;&#x3059;')"><div class="card-top"><div class="jp-text">&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Wakarimasu</div><div class="meaning-text">I understand &#x1F64F;</div></div>
+            <div class="card" onclick="speakText('&#x306A;&#x306B;&#x304B; &#x3066;&#x3064;&#x3060;&#x3048;&#x308B; &#x3053;&#x3068; &#x304C; &#x3042;&#x3063;&#x305F;&#x3089;&#x3001; &#x3044;&#x3063;&#x3066; &#x304F;&#x3060;&#x3055;&#x3044;')"><div class="card-top"><div class="jp-text">&#x3066;&#x3064;&#x3060;&#x3048;&#x308B; &#x3053;&#x3068; &#x304C; &#x3042;&#x308C;&#x3070;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Tetsudaeru koto ga areba</div><div class="meaning-text">If I can help, let me know &#x1F91D;</div></div>
+            <div class="card" onclick="speakText('&#x3080;&#x308A; &#x3057;&#x306A;&#x3044;&#x3067; &#x304F;&#x3060;&#x3055;&#x3044;&#x306D;')"><div class="card-top"><div class="jp-text">&#x3080;&#x308A; &#x3057;&#x306A;&#x3044;&#x3067; &#x304F;&#x3060;&#x3055;&#x3044;&#x306D;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Muri shinaide kudasai ne</div><div class="meaning-text">Don't push yourself too hard &#x1F49C;</div></div>
+            <div class="card" onclick="speakText('&#x3086;&#x3063;&#x304F;&#x308A; &#x3084;&#x3059;&#x3093;&#x3067; &#x304F;&#x3060;&#x3055;&#x3044;')"><div class="card-top"><div class="jp-text">&#x3086;&#x3063;&#x304F;&#x308A; &#x3084;&#x3059;&#x3093;&#x3067; &#x304F;&#x3060;&#x3055;&#x3044;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Yukkuri yasunde kudasai</div><div class="meaning-text">Please rest well &#x1F319;</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="section-header">
+            <h3>&#x26A1; Grammar Points 6, 7 &amp; 8</h3>
+            <p>Deep dive into te-form connectors, multiple reasons, and expressing excess. Click examples to hear!</p>
+        </div>
+        <div class="grammar-card" style="border-color:var(--accent-tertiary);">
+            <div class="grammar-title"><span>Te-form Connectors (Reason)</span><span class="particle-badge" style="background:var(--accent-tertiary);">Pt 6</span></div>
+            <div class="grammar-formula">Verb &#x3066; / &#x3044;-adj &#x304F;&#x3066; / &#x306A;-adj &#x3067; / Noun &#x3067;</div>
+            <ul class="example-list">
+                <li onclick="speakText('&#x3067;&#x3093;&#x3057;&#x3083;&#x304C;&#x304A;&#x304F;&#x308C;&#x3066;&#x3001;&#x3061;&#x3053;&#x304F;&#x3057;&#x307E;&#x3057;&#x305F;')"><div class="ex-jp">&#x3067;&#x3093;&#x3057;&#x3083; &#x304C; &#x304A;&#x304F;&#x308C;&#x3066;&#x3001;&#x3061;&#x3053;&#x304F; &#x3057;&#x307E;&#x3057;&#x305F;&#x3002;</div><div class="ex-rom">Densha ga okurete, chikoku shimashita.</div><div class="ex-hi">Train late thi, isliye late hua. (Verb &#x3066;)</div></li>
+                <li onclick="speakText('&#x3053;&#x306E;&#x308A;&#x3087;&#x3046;&#x308A;&#x306F;&#x304B;&#x3089;&#x304F;&#x3066;&#x3001;&#x305F;&#x3079;&#x3089;&#x308C;&#x307E;&#x305B;&#x3093;')"><div class="ex-jp">&#x3053;&#x306E; &#x308A;&#x3087;&#x3046;&#x308A; &#x306F; &#x304B;&#x3089;&#x304F;&#x3066;&#x3001;&#x305F;&#x3079;&#x3089;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;</div><div class="ex-rom">Kono ryouri wa karakute, taberaremasen.</div><div class="ex-hi">Khana teekha hai, kha nahi sakta. (&#x3044;-adj &#x304F;&#x3066;)</div></li>
+                <li onclick="speakText('&#x3053;&#x306E;&#x307E;&#x3061;&#x306F;&#x3057;&#x305A;&#x304B;&#x3067;&#x3001;&#x3059;&#x304D;&#x3067;&#x3059;')"><div class="ex-jp">&#x3053;&#x306E; &#x307E;&#x3061; &#x306F; &#x3057;&#x305A;&#x304B;&#x3067;&#x3001;&#x3059;&#x304D; &#x3067;&#x3059;&#x3002;</div><div class="ex-rom">Kono machi wa shizuka de, suki desu.</div><div class="ex-hi">Yeh sheher shaant hai, pasand hai. (&#x306A;-adj &#x3067;)</div></li>
+                <li onclick="speakText('&#x3073;&#x3087;&#x3046;&#x304D;&#x3067;&#x3001;&#x304C;&#x3063;&#x3053;&#x3046;&#x3092;&#x3084;&#x3059;&#x307F;&#x307E;&#x3057;&#x305F;')"><div class="ex-jp">&#x3073;&#x3087;&#x3046;&#x304D;&#x3067;&#x3001;&#x304C;&#x3063;&#x3053;&#x3046; &#x3092; &#x3084;&#x3059;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;</div><div class="ex-rom">Byouki de, gakkou wo yasumimashita.</div><div class="ex-hi">Bimari ki wajah se, school chutti ki. (Noun &#x3067;)</div></li>
+            </ul>
+        </div>
+        <div class="grammar-card">
+            <div class="grammar-title"><span>Multiple Reasons</span><span class="particle-badge">Pt 7</span></div>
+            <div class="grammar-formula">Plain form + &#x3057;&#x3001;Plain form + &#x3057;</div>
+            <ul class="example-list">
+                <li onclick="speakText('&#x304D;&#x3087;&#x3046;&#x306F;&#x3042;&#x305F;&#x307E;&#x304C;&#x3044;&#x305F;&#x3044;&#x3057;&#x3001;&#x306D;&#x3064;&#x3082;&#x3042;&#x308B;&#x3057;&#x3001;&#x3084;&#x3059;&#x307F;&#x305F;&#x3044;')"><div class="ex-jp">&#x304D;&#x3087;&#x3046; &#x306F; &#x3042;&#x305F;&#x307E; &#x304C; &#x3044;&#x305F;&#x3044;&#x3057;&#x3001;&#x306D;&#x3064; &#x3082; &#x3042;&#x308B;&#x3057;&#x3001;&#x3084;&#x3059;&#x307F;&#x305F;&#x3044;&#x3002;</div><div class="ex-rom">Kyou wa atama ga itai shi, netsu mo aru shi, yasumitai.</div><div class="ex-hi">Aaj sir dard bhi hai, bukhar bhi hai, aaram chahiye.</div></li>
+                <li onclick="speakText('&#x306B;&#x307B;&#x3093;&#x306F;&#x3042;&#x3093;&#x305C;&#x3093;&#x3060;&#x3057;&#x3001;&#x304D;&#x308C;&#x3044;&#x3060;&#x3057;&#x3001;&#x3059;&#x304D;&#x3067;&#x3059;')"><div class="ex-jp">&#x306B;&#x307B;&#x3093; &#x306F; &#x3042;&#x3093;&#x305C;&#x3093; &#x3060;&#x3057;&#x3001;&#x304D;&#x308C;&#x3044; &#x3060;&#x3057;&#x3001;&#x3059;&#x304D; &#x3067;&#x3059;&#x3002;</div><div class="ex-rom">Nihon wa anzen da shi, kirei da shi, suki desu.</div><div class="ex-hi">Japan safe bhi hai, sundar bhi hai, pasand hai.</div></li>
+                <li onclick="speakText('&#x304B;&#x308C;&#x306F;&#x3084;&#x3055;&#x3057;&#x3044;&#x3057;&#x3001;&#x304A;&#x3082;&#x3057;&#x308D;&#x3044;&#x3057;&#x3001;&#x3059;&#x3066;&#x304D;&#x3067;&#x3059;')"><div class="ex-jp">&#x304B;&#x308C; &#x306F; &#x3084;&#x3055;&#x3057;&#x3044;&#x3057;&#x3001;&#x304A;&#x3082;&#x3057;&#x308D;&#x3044;&#x3057;&#x3001;&#x3059;&#x3066;&#x304D; &#x3067;&#x3059;&#x3002;</div><div class="ex-rom">Kare wa yasashii shi, omoshiroi shi, suteki desu.</div><div class="ex-hi">Woh accha bhi hai, funny bhi hai, kamaal hai.</div></li>
+            </ul>
+        </div>
+        <div class="grammar-card" style="border-color:var(--accent-rose);">
+            <div class="grammar-title"><span>Too Much! &#x300C;&#x3059;&#x304E;&#x307E;&#x3059;&#x300D;</span><span class="particle-badge" style="background:var(--accent-rose);">Pt 8</span></div>
+            <div class="grammar-formula">&#x307E;&#x3059;-stem / &#x3044;-adj(&#x3044;&#x306F;&#x305A;&#x3059;) + &#x3059;&#x304E;&#x307E;&#x3059;</div>
+            <ul class="example-list">
+                <li onclick="speakText('&#x304D;&#x306E;&#x3046;&#x3001;&#x306E;&#x307F;&#x3059;&#x304E;&#x307E;&#x3057;&#x305F;&#x3002;&#x3042;&#x305F;&#x307E;&#x304C;&#x3044;&#x305F;&#x3044;&#x3067;&#x3059;')"><div class="ex-jp">&#x304D;&#x306E;&#x3046;&#x3001;&#x306E;&#x307F;&#x3059;&#x304E;&#x307E;&#x3057;&#x305F;&#x3002;&#x3042;&#x305F;&#x307E; &#x304C; &#x3044;&#x305F;&#x3044; &#x3067;&#x3059;&#x3002;</div><div class="ex-rom">Kinou, nomisugimashita. Atama ga itai desu.</div><div class="ex-hi">Kal bahut zyada pee liya. Sir dard hai.</div></li>
+                <li onclick="speakText('&#x305F;&#x3079;&#x3059;&#x304E;&#x3066;&#x3001;&#x304A;&#x306A;&#x304B;&#x304C;&#x3044;&#x305F;&#x3044;&#x3067;&#x3059;')"><div class="ex-jp">&#x305F;&#x3079;&#x3059;&#x304E;&#x3066;&#x3001;&#x304A;&#x306A;&#x304B; &#x304C; &#x3044;&#x305F;&#x3044; &#x3067;&#x3059;&#x3002;</div><div class="ex-rom">Tabesugite, onaka ga itai desu.</div><div class="ex-hi">Bahut zyada khaake, pet dard hai.</div></li>
+                <li onclick="speakText('&#x3053;&#x306E;&#x304B;&#x3070;&#x3093;&#x306F;&#x305F;&#x304B;&#x3059;&#x304E;&#x307E;&#x3059;')"><div class="ex-jp">&#x3053;&#x306E; &#x304B;&#x3070;&#x3093; &#x306F; &#x305F;&#x304B;&#x3059;&#x304E;&#x307E;&#x3059;&#x3002;</div><div class="ex-rom">Kono kaban wa takasugimasu.</div><div class="ex-hi">Yeh bag bahut mehenga hai.</div></li>
+                <li onclick="speakText('&#x3057;&#x3054;&#x3068;&#x304C;&#x3044;&#x305D;&#x304C;&#x3057;&#x3059;&#x304E;&#x3066;&#x3001;&#x3086;&#x3063;&#x304F;&#x308A;&#x3084;&#x3059;&#x3081;&#x307E;&#x305B;&#x3093;')"><div class="ex-jp">&#x3057;&#x3054;&#x3068; &#x304C; &#x3044;&#x305D;&#x304C;&#x3057;&#x3059;&#x304E;&#x3066;&#x3001;&#x3086;&#x3063;&#x304F;&#x308A; &#x3084;&#x3059;&#x3081;&#x307E;&#x305B;&#x3093;&#x3002;</div><div class="ex-rom">Shigoto ga isogashisugite, yukkuri yasumemasen.</div><div class="ex-hi">Kaam bahut busy hai, acche se aaram nahi mil raha.</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Appearance Conjugator -->
+    <div id="tab-appearance" class="tab-content">
+        <div class="section-header">
+            <h3>&#x1F441;&#xFE0F; Grammar Points 9, 10 &amp; 11</h3>
+            <p>Interactive conjugator for &#x301C;&#x3084;&#x3059;&#x3044;/&#x306B;&#x304F;&#x3044;, &#x301C;&#x305D;&#x3046;, and &#x301C;&#x304C;&#x308B;. Select a word below!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-info);">
+            <h4>&#x1F504; Appearance / Ease Conjugator</h4>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Verb or Adjective</label>
+                    <select id="app-word" onchange="updateAppearance()">
+                        <option value="taberu">&#x305F;&#x3079;&#x308B; (eat)</option>
+                        <option value="yomu">&#x3088;&#x3080; (read)</option>
+                        <option value="hanasu">&#x306F;&#x306A;&#x3059; (speak)</option>
+                        <option value="aruku">&#x3042;&#x308B;&#x304F; (walk)</option>
+                        <option value="oishii">&#x304A;&#x3044;&#x3057;&#x3044; (delicious)</option>
+                        <option value="takai">&#x305F;&#x304B;&#x3044; (expensive)</option>
+                        <option value="genki">&#x3052;&#x3093;&#x304D; (energetic)</option>
+                        <option value="taihen">&#x305F;&#x3044;&#x3078;&#x3093; (tough)</option>
+                    </select>
+                </div>
+            </div>
+            <div id="app-output" class="output-panel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;"></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-bottom:2rem;">
+            <div class="grammar-card" style="margin:0;border-color:var(--accent-warning);">
+                <div class="grammar-title"><span>3rd Person &#x301C;&#x304C;&#x308B;</span><span class="particle-badge" style="background:var(--accent-warning);color:#000;">Pt 11</span></div>
+                <div class="grammar-formula">&#x3044;-adj (&#x3044;&#x306F;&#x305A;&#x3059;) + &#x304C;&#x308B; / &#x307B;&#x3057; + &#x304C;&#x308B;</div>
+                <ul class="example-list" style="gap:0.5rem;">
+                    <li onclick="speakText('&#x3053;&#x3069;&#x3082;&#x306F;&#x304A;&#x3082;&#x3061;&#x3083;&#x3092;&#x307B;&#x3057;&#x304C;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;')"><div class="ex-jp">&#x3053;&#x3069;&#x3082; &#x306F; &#x304A;&#x3082;&#x3061;&#x3083; &#x3092; &#x307B;&#x3057;&#x304C;&#x3063;&#x3066; &#x3044;&#x307E;&#x3059;&#x3002;</div><div class="ex-hi">Bachcha naya toy chahta hai (lagta hai).</div></li>
+                    <li onclick="speakText('&#x3044;&#x306C;&#x306F;&#x3055;&#x3093;&#x307D;&#x306B;&#x3044;&#x304D;&#x305F;&#x304C;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;')"><div class="ex-jp">&#x3044;&#x306C; &#x306F; &#x3055;&#x3093;&#x307D; &#x306B; &#x3044;&#x304D;&#x305F;&#x304C;&#x3063;&#x3066; &#x3044;&#x307E;&#x3059;&#x3002;</div><div class="ex-hi">Kutta walk pe jaana chahta hai (lagta hai).</div></li>
+                    <li onclick="speakText('&#x304B;&#x306E;&#x3058;&#x3087;&#x306F;&#x305D;&#x306E;&#x30CB;&#x30E5;&#x30FC;&#x30B9;&#x3092;&#x304D;&#x3044;&#x3066;&#x3001;&#x304B;&#x306A;&#x3057;&#x304C;&#x3063;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;')"><div class="ex-jp">&#x304B;&#x306E;&#x3058;&#x3087; &#x306F; &#x305D;&#x306E;&#x30CB;&#x30E5;&#x30FC;&#x30B9;&#x3092; &#x304D;&#x3044;&#x3066;&#x3001;&#x304B;&#x306A;&#x3057;&#x304C;&#x3063;&#x3066; &#x3044;&#x307E;&#x3057;&#x305F;&#x3002;</div><div class="ex-hi">Woh news sunke dukhi lag rahi thi.</div></li>
+                </ul>
+            </div>
+            <div class="grammar-card" style="margin:0;border-color:var(--accent-primary);">
+                <div class="grammar-title"><span>Looks Like &#x301C;&#x305D;&#x3046;</span><span class="particle-badge">Pt 10</span></div>
+                <div class="grammar-formula">&#x307E;&#x3059;-stem / adj(&#x3044;&#x306F;&#x305A;&#x3059;) + &#x305D;&#x3046;</div>
+                <ul class="example-list" style="gap:0.5rem;">
+                    <li onclick="speakText('&#x3042;&#x3081;&#x304C;&#x3075;&#x308A;&#x305D;&#x3046;&#x3067;&#x3059;')"><div class="ex-jp">&#x3042;&#x3081; &#x304C; &#x3075;&#x308A;&#x305D;&#x3046; &#x3067;&#x3059;&#x3002;</div><div class="ex-hi">Baarish hone wali lagti hai.</div></li>
+                    <li onclick="speakText('&#x3053;&#x306E;&#x30B1;&#x30FC;&#x30AD;&#x306F;&#x304A;&#x3044;&#x3057;&#x305D;&#x3046;&#x3067;&#x3059;')"><div class="ex-jp">&#x3053;&#x306E; &#x30B1;&#x30FC;&#x30AD; &#x306F; &#x304A;&#x3044;&#x3057;&#x305D;&#x3046; &#x3067;&#x3059;&#x3002;</div><div class="ex-hi">Yeh cake tasty lagta hai.</div></li>
+                    <li onclick="speakText('&#x304B;&#x308C;&#x306F;&#x3052;&#x3093;&#x304D;&#x305D;&#x3046;&#x3067;&#x3059;')"><div class="ex-jp">&#x304B;&#x308C; &#x306F; &#x3052;&#x3093;&#x304D;&#x305D;&#x3046; &#x3067;&#x3059;&#x3002;</div><div class="ex-hi">Woh healthy lagta hai.</div></li>
+                    <li onclick="speakText('&#x3044;&#x3044; &#x2192; &#x3088;&#x3055;&#x305D;&#x3046;&#x3001; &#x306A;&#x3044; &#x2192; &#x306A;&#x3055;&#x305D;&#x3046;')"><div class="ex-jp">&#x26A0;&#xFE0F; &#x3044;&#x3044; &#x2192; <strong style="color:var(--accent-warning);">&#x3088;&#x3055;&#x305D;&#x3046;</strong>&#x3001; &#x306A;&#x3044; &#x2192; <strong style="color:var(--accent-warning);">&#x306A;&#x3055;&#x305D;&#x3046;</strong></div><div class="ex-hi">Exception patterns! (Not &#x3044;&#x305D;&#x3046; or &#x306A;&#x3044;&#x305D;&#x3046;)</div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header"><h3>&#x1F49C; Feelings &amp; Mental State Vocabulary</h3><p>Click any card to hear native Japanese TTS!</p></div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakText('&#x304D;&#x3082;&#x3061; &#x304D;&#x3076;&#x3093;')"><div class="card-top"><div class="jp-text">&#x6C17;&#x6301;&#x3061;/&#x6C17;&#x5206;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Kimochi / Kibun</div><div class="meaning-text">Feeling / Mood &#x1F49C;</div></div>
+            <div class="card" onclick="speakText('&#x3053;&#x3053;&#x308D; &#x304B;&#x3093;&#x3058;&#x3087;&#x3046;')"><div class="card-top"><div class="jp-text">&#x5FC3;/&#x611F;&#x60C5;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Kokoro / Kanjou</div><div class="meaning-text">Heart &amp; Emotion &#x1F499;</div></div>
+            <div class="card" onclick="speakText('&#x3057;&#x3042;&#x308F;&#x305B;')"><div class="card-top"><div class="jp-text">&#x5E78;&#x305B; (&#x3057;&#x3042;&#x308F;&#x305B;)</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Shiawase</div><div class="meaning-text">Happiness / Khushi &#x1F60A;</div></div>
+            <div class="card" onclick="speakText('&#x3075;&#x3042;&#x3093; &#x30B9;&#x30C8;&#x30EC;&#x30B9;')"><div class="card-top"><div class="jp-text">&#x4E0D;&#x5B89;/&#x30B9;&#x30C8;&#x30EC;&#x30B9;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Fuan / Sutoresu</div><div class="meaning-text">Anxiety &amp; Stress &#x1F630;</div></div>
+            <div class="card" onclick="speakText('&#x304D;&#x3093;&#x3061;&#x3087;&#x3046; &#x30EA;&#x30E9;&#x30C3;&#x30AF;&#x30B9;')"><div class="card-top"><div class="jp-text">&#x7DCA;&#x5F35;/&#x30EA;&#x30E9;&#x30C3;&#x30AF;&#x30B9;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Kinchou / Rirakkusu</div><div class="meaning-text">Nervous &amp; Relax &#x1F30A;</div></div>
+            <div class="card" onclick="speakText('&#x3086;&#x3046;&#x3046;&#x3064; &#x3052;&#x3093;&#x304D;')"><div class="card-top"><div class="jp-text">&#x6182;&#x9B31;/&#x5143;&#x6C17;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Yuuutsu / Genki</div><div class="meaning-text">Depressed &amp; Energetic &#x1F60A;</div></div>
+            <div class="card" onclick="speakText('&#x3084;&#x308B;&#x304D; &#x3058;&#x3057;&#x3093;')"><div class="card-top"><div class="jp-text">&#x3084;&#x308B;&#x6C17;/&#x81EA;&#x4FE1;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Yaruki / Jishin</div><div class="meaning-text">Motivation &amp; Confidence &#x1F4AA;</div></div>
+            <div class="card" onclick="speakText('&#x304D;&#x305F;&#x3044; &#x307E;&#x3093;&#x305E;&#x304F;')"><div class="card-top"><div class="jp-text">&#x671F;&#x5F85;/&#x6E80;&#x8DB3;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Kitai / Manzoku</div><div class="meaning-text">Expectation &amp; Satisfaction &#x1F31F;</div></div>
+            <div class="card" onclick="speakText('&#x3075;&#x307E;&#x3093; &#x3053;&#x3046;&#x304B;&#x3044;')"><div class="card-top"><div class="jp-text">&#x4E0D;&#x6E80;/&#x5F8C;&#x6094;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Fuman / Koukai</div><div class="meaning-text">Dissatisfaction &amp; Regret &#x1F614;</div></div>
+            <div class="card" onclick="speakText('&#x304B;&#x3093;&#x3057;&#x3083; &#x305D;&#x3093;&#x3051;&#x3044;')"><div class="card-top"><div class="jp-text">&#x611F;&#x8B1D;/&#x5C0A;&#x656C;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Kansha / Sonkei</div><div class="meaning-text">Gratitude &amp; Respect &#x1F64F;</div></div>
+            <div class="card" onclick="speakText('&#x305B;&#x3044;&#x3053;&#x3046; &#x3057;&#x3063;&#x3071;&#x3044;')"><div class="card-top"><div class="jp-text">&#x6210;&#x529F;/&#x5931;&#x6557;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Seikou / Shippai</div><div class="meaning-text">Success &amp; Failure &#x1F3C6;&#x1F622;</div></div>
+            <div class="card" onclick="speakText('&#x3055;&#x3044;&#x304D;&#x3093;&#x3001;&#x30B9;&#x30C8;&#x30EC;&#x30B9;&#x304C;&#x305F;&#x307E;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;')"><div class="card-top"><div class="jp-text">&#x30B9;&#x30C8;&#x30EC;&#x30B9;&#x304C; &#x305F;&#x307E;&#x3063;&#x3066;&#x3044;&#x308B;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Sutoresu ga tamatte iru</div><div class="meaning-text">Stress is building up &#x1F613;</div></div>
+            <div class="card" onclick="speakText('&#x3084;&#x3063;&#x3068;&#x304A;&#x308F;&#x3063;&#x3066;&#x3001;&#x307B;&#x3063;&#x3068;&#x3057;&#x307E;&#x3057;&#x305F;')"><div class="card-top"><div class="jp-text">&#x3084;&#x3063;&#x3068; &#x304A;&#x308F;&#x3063;&#x3066; &#x307B;&#x3063;&#x3068;&#x3057;&#x305F;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Yatto owatte hotto shita</div><div class="meaning-text">Finally done, relieved! &#x1F60C;</div></div>
+            <div class="card" onclick="speakText('&#x305A;&#x3063;&#x3068;&#x3053;&#x308C;&#x3092;&#x305F;&#x306E;&#x3057;&#x307F;&#x306B;&#x3057;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;')"><div class="card-top"><div class="jp-text">&#x305F;&#x306E;&#x3057;&#x307F;&#x306B; &#x3057;&#x3066;&#x3044;&#x305F;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Tanoshimi ni shite ita</div><div class="meaning-text">Was looking forward to it &#x1F389;</div></div>
+            <div class="card" onclick="speakText('&#x306E;&#x307F;&#x3059;&#x304E;&#x307E;&#x3057;&#x305F; &#x305F;&#x3079;&#x3059;&#x304E;&#x307E;&#x3057;&#x305F;')"><div class="card-top"><div class="jp-text">&#x301C;&#x3059;&#x304E;&#x307E;&#x3057;&#x305F; (overdo)</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Nomisugimashita / Tabesugimashita</div><div class="meaning-text">Drank / Ate too much &#x1F37A;&#x1F35C;</div></div>
+            <div class="card" onclick="speakText('&#x3088;&#x307F;&#x3084;&#x3059;&#x3044; &#x304A;&#x307C;&#x3048;&#x306B;&#x304F;&#x3044;')"><div class="card-top"><div class="jp-text">&#x3088;&#x307F;&#x3084;&#x3059;&#x3044;/&#x304A;&#x307C;&#x3048;&#x306B;&#x304F;&#x3044;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Yomiyasui / Oboeniukui</div><div class="meaning-text">Easy to read / Hard to memorize &#x1F4D6;</div></div>
+            <div class="card" onclick="speakText('&#x3075;&#x308A;&#x305D;&#x3046; &#x304A;&#x3044;&#x3057;&#x305D;&#x3046;')"><div class="card-top"><div class="jp-text">&#x3075;&#x308A;&#x305D;&#x3046;/&#x304A;&#x3044;&#x3057;&#x305D;&#x3046;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Furisou / Oishisou</div><div class="meaning-text">Looks like rain / Looks tasty &#x1F327;&#xFE0F;&#x1F370;</div></div>
+            <div class="card" onclick="speakText('&#x307B;&#x3057;&#x304C;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059; &#x3044;&#x304D;&#x305F;&#x304C;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;')"><div class="card-top"><div class="jp-text">&#x307B;&#x3057;&#x304C;&#x308B;/&#x3044;&#x304D;&#x305F;&#x304C;&#x308B;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Hoshigaru / Ikitagaru</div><div class="meaning-text">Seems to want / go (3rd person) &#x1F440;</div></div>
+            <div class="card" onclick="speakText('&#x304F;&#x3084;&#x3057;&#x3044; &#x306F;&#x305A;&#x304B;&#x3057;&#x3044; &#x3053;&#x308F;&#x3044;')"><div class="card-top"><div class="jp-text">&#x304F;&#x3084;&#x3057;&#x3044;/&#x306F;&#x305A;&#x304B;&#x3057;&#x3044;/&#x3053;&#x308F;&#x3044;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Kuyashii / Hazukashii / Kowai</div><div class="meaning-text">Frustrated / Embarrassed / Scary &#x1F621;&#x1F633;&#x1F631;</div></div>
+            <div class="card" onclick="speakText('&#x306A;&#x3093;&#x3060;&#x304B;&#x3055;&#x3073;&#x3057;&#x3044;&#x304D;&#x3082;&#x3061;&#x3067;&#x3059;')"><div class="card-top"><div class="jp-text">&#x306A;&#x3093;&#x3060;&#x304B; &#x3055;&#x3073;&#x3057;&#x3044; &#x304D;&#x3082;&#x3061;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Nandaka sabishii kimochi desu</div><div class="meaning-text">Somehow feeling lonely &#x1F614;</div></div>
+            <div class="card" onclick="speakText('&#x3069;&#x3046;&#x3057;&#x305F;&#x3093;&#x3067;&#x3059;&#x304B;&#xFF1F;&#x304D;&#x3076;&#x3093;&#x304C;&#x308F;&#x308B;&#x305D;&#x3046;&#x3067;&#x3059;&#x306D;')"><div class="card-top"><div class="jp-text">&#x304D;&#x3076;&#x3093; &#x304C; &#x308F;&#x308B;&#x305D;&#x3046;&#x3067;&#x3059;&#x306D;</div><button class="btn-audio">&#x1F50A;</button></div><div class="romaji-text">Kibun ga warusou desu ne</div><div class="meaning-text">You look like you're not feeling well &#x1F914;</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header"><h3>&#x1F239; Chapter 02 Kanji Mastery (20 Kanjis)</h3><p>Learn the 20 foundational Kanjis for Chapter 2 feelings and emotions! Click to listen.</p></div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x6C17;</div><div class="kanji-info"><h5>Spirit / Mood (Ehsaas)</h5><div class="kanji-readings">Kun: <span>&#x3044;&#x304D; (iki)</span><br>On: <span>&#x30AD; / &#x30B1; (ki / ke)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x304D;&#x3082;&#x3061; &#x304D;&#x3076;&#x3093;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x6C17;&#x6301;&#x3061; / &#x6C17;&#x5206;</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Kimochi / Kibun</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x6301;</div><div class="kanji-info"><h5>Hold / Have (Rakhna)</h5><div class="kanji-readings">Kun: <span>&#x3082;&#x30FB;&#x3064; (motsu)</span><br>On: <span>&#x30B8; (ji)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x304D;&#x3082;&#x3061;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x6C17;&#x6301;&#x3061; (&#x304D;&#x3082;&#x3061;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Kimochi &#x2192; Feeling</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x5FC3;</div><div class="kanji-info"><h5>Heart / Mind (Dil)</h5><div class="kanji-readings">Kun: <span>&#x3053;&#x3053;&#x308D; (kokoro)</span><br>On: <span>&#x30B7;&#x30F3; (shin)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x3053;&#x3053;&#x308D; &#x3057;&#x3093;&#x3071;&#x3044;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x5FC3; / &#x5FC3;&#x914D; (&#x3057;&#x3093;&#x3071;&#x3044;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Kokoro / Shinpai</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x611F;</div><div class="kanji-info"><h5>Feel / Sense (Mehsoos)</h5><div class="kanji-readings">Kun: <span>&#x304B;&#x3093;&#x30FB;&#x3058;&#x308B; (kanji)</span><br>On: <span>&#x30AB;&#x30F3; (kan)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x304B;&#x3093;&#x3058;&#x3087;&#x3046; &#x304B;&#x3093;&#x3057;&#x3083;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x611F;&#x60C5; / &#x611F;&#x8B1D;</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Kanjou / Kansha</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x60C5;</div><div class="kanji-info"><h5>Emotion / Feeling (Jazbaat)</h5><div class="kanji-readings">Kun: <span>&#x306A;&#x3055;&#x30FB;&#x3051; (nasake)</span><br>On: <span>&#x30B8;&#x30E7;&#x30A6; (jou)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x304B;&#x3093;&#x3058;&#x3087;&#x3046;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x611F;&#x60C5; (&#x304B;&#x3093;&#x3058;&#x3087;&#x3046;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Kanjou &#x2192; Emotion</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x5E78;</div><div class="kanji-info"><h5>Happiness (Khushi)</h5><div class="kanji-readings">Kun: <span>&#x3057;&#x3042;&#x308F;&#x30FB;&#x305B; (shiawa)</span><br>On: <span>&#x30B3;&#x30A6; (kou)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x3057;&#x3042;&#x308F;&#x305B;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x5E78;&#x305B; (&#x3057;&#x3042;&#x308F;&#x305B;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Shiawase &#x2192; Happiness</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x4E0D;</div><div class="kanji-info"><h5>Negative Prefix (Nahi)</h5><div class="kanji-readings">Kun: <span>&#x2014;</span><br>On: <span>&#x30D5; / &#x30D6; (fu / bu)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x3075;&#x3042;&#x3093; &#x3075;&#x307E;&#x3093;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x4E0D;&#x5B89; / &#x4E0D;&#x6E80; (&#x3075;&#x307E;&#x3093;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Fuan / Fuman</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x5B89;</div><div class="kanji-info"><h5>Ease / Safe (Sukoon)</h5><div class="kanji-readings">Kun: <span>&#x3084;&#x3059;&#x30FB;&#x3044; (yasu)</span><br>On: <span>&#x30A2;&#x30F3; (an)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x3075;&#x3042;&#x3093; &#x3042;&#x3093;&#x3057;&#x3093;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x4E0D;&#x5B89; / &#x5B89;&#x5FC3; (&#x3042;&#x3093;&#x3057;&#x3093;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Fuan / Anshin</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x7DCA;</div><div class="kanji-info"><h5>Tense / Tight (Tanao)</h5><div class="kanji-readings">Kun: <span>&#x2014;</span><br>On: <span>&#x30AD;&#x30F3; (kin)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x304D;&#x3093;&#x3061;&#x3087;&#x3046;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x7DCA;&#x5F35; (&#x304D;&#x3093;&#x3061;&#x3087;&#x3046;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Kinchou &#x2192; Nervousness</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x5F35;</div><div class="kanji-info"><h5>Stretch / Expand (Kheenchna)</h5><div class="kanji-readings">Kun: <span>&#x306F;&#x30FB;&#x308B; (haru)</span><br>On: <span>&#x30C1;&#x30E7;&#x30A6; (chou)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x304D;&#x3093;&#x3061;&#x3087;&#x3046; &#x304C;&#x3093;&#x3070;&#x308B;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x7DCA;&#x5F35; / &#x982D;&#x5F35; (&#x304C;&#x3093;&#x3070;&#x308B;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Kinchou / Ganbaru</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x5143;</div><div class="kanji-info"><h5>Origin / Energetic (Mool)</h5><div class="kanji-readings">Kun: <span>&#x3082;&#x3068; (moto)</span><br>On: <span>&#x30B2;&#x30F3; / &#x30AC;&#x30F3; (gen / gan)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x3052;&#x3093;&#x304D;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x5143;&#x6C17; (&#x3052;&#x3093;&#x304D;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Genki &#x2192; Energetic</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x671F;</div><div class="kanji-info"><h5>Period / Expect (Ummeed)</h5><div class="kanji-readings">Kun: <span>&#x2014;</span><br>On: <span>&#x30AD; / &#x30B4; (ki / go)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x304D;&#x305F;&#x3044;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x671F;&#x5F85; (&#x304D;&#x305F;&#x3044;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Kitai &#x2192; Expectation</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x5931;</div><div class="kanji-info"><h5>Lose / Miss (Khona)</h5><div class="kanji-readings">Kun: <span>&#x3046;&#x3057;&#x306A;&#x30FB;&#x3046; (ushina)</span><br>On: <span>&#x30B7;&#x30C4; (shitsu)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x3057;&#x3063;&#x3071;&#x3044;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x5931;&#x6557; (&#x3057;&#x3063;&#x3071;&#x3044;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Shippai &#x2192; Failure</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x6210;</div><div class="kanji-info"><h5>Accomplish (Pura karna)</h5><div class="kanji-readings">Kun: <span>&#x306A;&#x30FB;&#x308B; (naru)</span><br>On: <span>&#x30BB;&#x30A4; (sei)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x305B;&#x3044;&#x3053;&#x3046;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x6210;&#x529F; (&#x305B;&#x3044;&#x3053;&#x3046;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Seikou &#x2192; Success</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x529F;</div><div class="kanji-info"><h5>Achievement (Uplabdhi)</h5><div class="kanji-readings">Kun: <span>&#x3044;&#x3055;&#x304A; (isao)</span><br>On: <span>&#x30B3;&#x30A6; (kou)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x305B;&#x3044;&#x3053;&#x3046;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x6210;&#x529F; (&#x305B;&#x3044;&#x3053;&#x3046;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Seikou &#x2192; Success</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x6E80;</div><div class="kanji-info"><h5>Full / Satisfied (Santushti)</h5><div class="kanji-readings">Kun: <span>&#x307F;&#x30FB;&#x3061;&#x308B; (mi)</span><br>On: <span>&#x30DE;&#x30F3; (man)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x307E;&#x3093;&#x305E;&#x304F;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x6E80;&#x8DB3; (&#x307E;&#x3093;&#x305E;&#x304F;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Manzoku &#x2192; Satisfaction</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x5F8C;</div><div class="kanji-info"><h5>After / Behind (Baad)</h5><div class="kanji-readings">Kun: <span>&#x3042;&#x3068; / &#x306E;&#x3061; (ato)</span><br>On: <span>&#x30B4; / &#x30B3;&#x30A6; (go / kou)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x3053;&#x3046;&#x304B;&#x3044;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x5F8C;&#x6094; (&#x3053;&#x3046;&#x304B;&#x3044;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Koukai &#x2192; Regret</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x8B1D;</div><div class="kanji-info"><h5>Apologize / Thanks (Shukriya)</h5><div class="kanji-readings">Kun: <span>&#x3042;&#x3084;&#x307E;&#x30FB;&#x308B; (ayama)</span><br>On: <span>&#x30B7;&#x30E3; (sha)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x304B;&#x3093;&#x3057;&#x3083;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x611F;&#x8B1D; (&#x304B;&#x3093;&#x3057;&#x3083;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Kansha &#x2192; Gratitude</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x5C0A;</div><div class="kanji-info"><h5>Revere / Esteem (Samman)</h5><div class="kanji-readings">Kun: <span>&#x305F;&#x3063;&#x3068;&#x30FB;&#x3044; (tatto)</span><br>On: <span>&#x30BD;&#x30F3; (son)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x305D;&#x3093;&#x3051;&#x3044;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x5C0A;&#x656C; (&#x305D;&#x3093;&#x3051;&#x3044;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Sonkei &#x2192; Respect</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">&#x656C;</div><div class="kanji-info"><h5>Respect (Aadar)</h5><div class="kanji-readings">Kun: <span>&#x3046;&#x3084;&#x307E;&#x30FB;&#x3046; (uyama)</span><br>On: <span>&#x30B1;&#x30A4; (kei)</span></div></div></div><div class="kanji-example" onclick="speakText('&#x305D;&#x3093;&#x3051;&#x3044; &#x3051;&#x3044;&#x3054;')"><div><span style="font-family:var(--font-jp);font-weight:700;font-size:1.1rem;">&#x5C0A;&#x656C; / &#x656C;&#x8A9E; (&#x3051;&#x3044;&#x3054;)</span><span style="font-size:0.85rem;color:var(--text-muted);display:block;">Sonkei / Keigo</span></div><button class="btn-audio">&#x1F50A;</button></div></div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>&#x1F3AF; Irodori Elem 2 Ch 02 Feelings Quiz</h3>
+                <p>Test your knowledge of &#x301C;&#x3057;&#x301C;&#x3057;, &#x301C;&#x3059;&#x304E;&#x307E;&#x3059;, &#x301C;&#x3084;&#x3059;&#x3044;/&#x306B;&#x304F;&#x3044;, &#x301C;&#x305D;&#x3046; (appearance), &#x301C;&#x304C;&#x308B;, and empathy phrases!</p>
+            </div>
+            <div id="quiz-area"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <span style="font-weight:700;color:#a78bfa;">&#x1F4C4; Original irodori2.txt Content (Lines 386 to 826 - Chapter 02 Complete Guide)</span>
+                <span class="badge-100">&#x2714; 100% Zero Character Loss Guarantee</span>
+            </div>
+            <pre># &#x1F4D8; Chapter 2: &#x304D;&#x3082;&#x3061; (Kimochi) - Feelings / Ehsaas
+
+## &#x1F3AF; Goal: Apni feelings express karna, dusron ki feelings samajhna, empathy dikhana, deeper conversations
+
+---
+
+### **More Feelings &amp; Mental State Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| &#x304D;&#x3082;&#x3061; (&#x6C17;&#x6301;&#x3061;) | Kimochi | Feeling/Mood |
+| &#x304D;&#x3076;&#x3093; (&#x6C17;&#x5206;) | Kibun | Mood/Feel |
+| &#x3053;&#x3053;&#x308D; (&#x5FC3;) | Kokoro | Dil/Heart/Mind |
+| &#x304B;&#x3093;&#x3058;&#x3087;&#x3046; (&#x611F;&#x60C5;) | Kanjou | Emotion |
+| &#x3057;&#x3042;&#x308F;&#x305B; (&#x5E78;&#x305B;) | Shiawase | Khushi/Happiness |
+| &#x3075;&#x3042;&#x3093; (&#x4E0D;&#x5B89;) | Fuan | Chinta/Anxiety |
+| &#x30B9;&#x30C8;&#x30EC;&#x30B9; | Sutoresu | Stress |
+| &#x30D7;&#x30EC;&#x30C3;&#x30B7;&#x30E3;&#x30FC; | Puresshaa | Pressure |
+| &#x304D;&#x3093;&#x3061;&#x3087;&#x3046; (&#x7DCA;&#x5F35;) | Kinchou | Tension/Nervousness |
+| &#x30EA;&#x30E9;&#x30C3;&#x30AF;&#x30B9; | Rirakkusu | Relax |
+| &#x3086;&#x3046;&#x3046;&#x3064; (&#x6182;&#x9B31;) | Yuuutsu | Depressed/Gloomy |
+| &#x3052;&#x3093;&#x304D; (&#x5143;&#x6C17;) | Genki | Energetic/Fine |
+| &#x3084;&#x308B;&#x304D; (&#x3084;&#x308B;&#x6C17;) | Yaruki | Motivation |
+| &#x3058;&#x3057;&#x3093; (&#x81EA;&#x4FE1;) | Jishin | Confidence/Aatmvishwas |
+| &#x304D;&#x305F;&#x3044; (&#x671F;&#x5F85;) | Kitai | Expectation/Ummeed |
+| &#x3057;&#x3063;&#x3071;&#x3044; (&#x5931;&#x6557;) | Shippai | Failure/Nakamyabi |
+| &#x305B;&#x3044;&#x3053;&#x3046; (&#x6210;&#x529F;) | Seikou | Success/Kamyabi |
+| &#x307E;&#x3093;&#x305E;&#x304F; (&#x6E80;&#x8DB3;) | Manzoku | Satisfaction/Santushti |
+| &#x3075;&#x307E;&#x3093; (&#x4E0D;&#x6E80;) | Fuman | Dissatisfaction/Narazgi |
+| &#x3053;&#x3046;&#x304B;&#x3044; (&#x5F8C;&#x6094;) | Koukai | Regret/Pachtawa |
+| &#x304B;&#x3093;&#x3057;&#x3083; (&#x611F;&#x8B1D;) | Kansha | Gratitude/Shukriya |
+| &#x305D;&#x3093;&#x3051;&#x3044; (&#x5C0A;&#x656C;) | Sonkei | Respect/Samman |
+
+---
+
+### **Grammar Point 6: &#x301C;&#x3066;/&#x301C;&#x304F;&#x3066;/&#x301C;&#x3067; (Reason - Connecting sentences)**
+
+Pehle chapter mein feelings ke saath &#x3066;-form seekha. Ab aur detail:
+
+#### **Formation:**
+
+| Type | How to connect | Example |
+|------|---------------|---------|
+| Verb | &#x3066;-form | &#x3044;&#x3063;&#x3066;&#x3001;&#x305F;&#x3079;&#x3066;&#x3001;&#x3057;&#x3066; |
+| &#x3044;-adj | &#x3044; &#x2192; &#x304F;&#x3066; | &#x305F;&#x304B;&#x304F;&#x3066;&#x3001;&#x304A;&#x3044;&#x3057;&#x304F;&#x3066; |
+| &#x306A;-adj | &#x306A;-adj + &#x3067; | &#x3057;&#x305A;&#x304B;&#x3067;&#x3001;&#x3079;&#x3093;&#x308A;&#x3067; |
+| Noun | Noun + &#x3067; | &#x3042;&#x3081;&#x3067;&#x3001;&#x3073;&#x3087;&#x3046;&#x304D;&#x3067; |
+
+#### **Examples:**
+
+**Verb &#x3066;:**
+```
+&#x3067;&#x3093;&#x3057;&#x3083; &#x304C; &#x304A;&#x304F;&#x308C;&#x3066;&#x3001;&#x3061;&#x3053;&#x304F; &#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+(Densha ga okurete, chikoku shimashita.)
+Train late thi, isliye late hua.
+```
+
+**&#x3044;-adjective &#x304F;&#x3066;:**
+```
+&#x3053;&#x306E; &#x308A;&#x3087;&#x3046;&#x308A; &#x306F; &#x304B;&#x3089;&#x304F;&#x3066;&#x3001;&#x305F;&#x3079;&#x3089;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;
+(Kono ryouri wa karakute, taberaremasen.)
+Yeh khana teekha hai, isliye kha nahi sakta.
+
+&#x3057;&#x3054;&#x3068; &#x304C; &#x3044;&#x305D;&#x304C;&#x3057;&#x304F;&#x3066;&#x3001;&#x3084;&#x3059;&#x3081;&#x307E;&#x305B;&#x3093;&#x3002;
+(Shigoto ga isogashikute, yasumemasen.)
+Kaam busy hai, isliye aaram nahi mil raha.
+```
+
+**&#x306A;-adjective &#x3067;:**
+```
+&#x3053;&#x306E; &#x307E;&#x3061; &#x306F; &#x3057;&#x305A;&#x304B;&#x3067;&#x3001;&#x3059;&#x304D; &#x3067;&#x3059;&#x3002;
+(Kono machi wa shizuka de, suki desu.)
+Yeh sheher shaant hai, isliye pasand hai.
+
+&#x304B;&#x308C; &#x306F; &#x3057;&#x3093;&#x305B;&#x3064;&#x3067;&#x3001;&#x306B;&#x3093;&#x304D; (&#x4EBA;&#x6C17;) &#x304C; &#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+(Kare wa shinsetsu de, ninki ga arimasu.)
+Woh친절 hai, isliye popular hai.
+```
+
+**Noun &#x3067;:**
+```
+&#x3042;&#x3081;&#x3067;&#x3001;&#x3067;&#x304B;&#x3051;&#x3089;&#x308C;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;&#x3002;
+(Ame de, dekakeraremasen deshita.)
+Baarish ki wajah se, bahar nahi ja saka.
+
+&#x3073;&#x3087;&#x3046;&#x304D;&#x3067;&#x3001;&#x304C;&#x3063;&#x3053;&#x3046; &#x3092; &#x3084;&#x3059;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;
+(Byouki de, gakkou wo yasumimashita.)
+Bimari ki wajah se, school chutti ki.
+```
+
+---
+
+### **Grammar Point 7: &#x301C;&#x3057;&#x3001;&#x301C;&#x3057; (Multiple Reasons)**
+
+**Plain form + &#x3057;&#x3001;Plain form + &#x3057; = _____ bhi hai aur _____ bhi hai**
+
+Multiple reasons dene ke liye - incomplete list (aur bhi reasons ho sakte hain):
+
+#### **Examples:**
+
+```
+&#x304D;&#x3087;&#x3046; &#x306F; &#x3042;&#x305F;&#x307E; &#x304C; &#x3044;&#x305F;&#x3044;&#x3057;&#x3001;&#x306D;&#x3064; &#x3082; &#x3042;&#x308B;&#x3057;&#x3001;&#x3084;&#x3059;&#x307F;&#x305F;&#x3044;&#x3002;
+(Kyou wa atama ga itai shi, netsu mo aru shi, yasumitai.)
+Aaj sir dard bhi hai, bukhar bhi hai, aaram karna chahta hoon.
+
+&#x3053;&#x306E; &#x30EC;&#x30B9;&#x30C8;&#x30E9;&#x30F3; &#x306F; &#x304A;&#x3044;&#x3057;&#x3044;&#x3057;&#x3001;&#x3084;&#x3059;&#x3044;&#x3057;&#x3001;&#x3088;&#x304F; &#x3044;&#x304D;&#x307E;&#x3059;&#x3002;
+(Kono resutoran wa oishii shi, yasui shi, yoku ikimasu.)
+Yeh restaurant tasty bhi hai, sasta bhi hai, aksar jaata hoon.
+
+&#x306B;&#x307B;&#x3093; &#x306F; &#x3042;&#x3093;&#x305C;&#x3093; (&#x5B89;&#x5168;) &#x3060;&#x3057;&#x3001;&#x304D;&#x308C;&#x3044; &#x3060;&#x3057;&#x3001;&#x3059;&#x304D; &#x3067;&#x3059;&#x3002;
+(Nihon wa anzen da shi, kirei da shi, suki desu.)
+Japan safe bhi hai, sundar bhi hai, pasand hai.
+
+&#x304B;&#x308C; &#x306F; &#x3084;&#x3055;&#x3057;&#x3044;&#x3057;&#x3001;&#x304A;&#x3082;&#x3057;&#x308D;&#x3044;&#x3057;&#x3001;&#x3042;&#x305F;&#x307E; &#x3082; &#x3044;&#x3044;&#x3057;&#x3001;&#x3059;&#x3066;&#x304D; &#x3067;&#x3059;&#x3002;
+(Kare wa yasashii shi, omoshiroi shi, atama mo ii shi, suteki desu.)
+Woh accha bhi hai, funny bhi hai, smart bhi hai, kamaal hai.
+
+&#x3053;&#x306E; &#x30A2;&#x30D1;&#x30FC;&#x30C8; &#x306F; &#x3048;&#x304D; &#x304B;&#x3089; &#x3061;&#x304B;&#x3044;&#x3057;&#x3001;&#x3084;&#x3061;&#x3093; (&#x5BB6;&#x8CFC;) &#x3082; &#x3084;&#x3059;&#x3044;&#x3057;&#x3001;
+&#x304D;&#x3081;&#x307E;&#x3057;&#x305F;&#x3002;
+(Kono apaato wa eki kara chikai shi, yachin mo yasui shi, kimemashita.)
+Yeh apartment station se paas bhi hai, kiraya bhi sasta hai, isliye decide kiya.
+```
+
+#### **Casual conversation mein:**
+
+```
+A: &#x3069;&#x3046;&#x3057;&#x3066; &#x306B;&#x307B;&#x3093; &#x304C; &#x3059;&#x304D;&#x306A;&#x306E;&#xFF1F;
+(Doushite nihon ga suki nano?)
+Kyun Japan pasand hai?
+
+B: &#x3046;&#x30FC;&#x3093;&#x3001;&#x305F;&#x3079;&#x3082;&#x306E; &#x304C; &#x304A;&#x3044;&#x3057;&#x3044;&#x3057;&#x3001;&#x3072;&#x3068; &#x304C; &#x3084;&#x3055;&#x3057;&#x3044;&#x3057;&#x3001;
+&#x3042;&#x3093;&#x305C;&#x3093; &#x3060;&#x3057;... &#x3044;&#x308D;&#x3044;&#x308D; &#x3042;&#x308B;&#x3088;&#x3002;
+(Uun, tabemono ga oishii shi, hito ga yasashii shi,
+anzen da shi... iroiro aru yo.)
+Hmm, khana tasty bhi hai, log acche bhi hain, safe bhi hai... bahut reasons hain.
+```
+
+---
+
+### **Grammar Point 8: &#x301C;&#x3059;&#x304E;&#x307E;&#x3059; (Too much / Bahut zyada)**
+
+**Verb &#x307E;&#x3059;-stem + &#x3059;&#x304E;&#x307E;&#x3059; = Bahut zyada _____ karna**
+**&#x3044;-adj (&#x3044; hatao) + &#x3059;&#x304E;&#x307E;&#x3059; = Bahut zyada _____**
+**&#x306A;-adj + &#x3059;&#x304E;&#x307E;&#x3059; = Bahut zyada _____**
+
+#### **Examples:**
+
+**Verb + &#x3059;&#x304E;&#x307E;&#x3059;:**
+```
+&#x304D;&#x306E;&#x3046;&#x3001;&#x306E;&#x307F;&#x3059;&#x304E;&#x307E;&#x3057;&#x305F;&#x3002;&#x3042;&#x305F;&#x307E; &#x304C; &#x3044;&#x305F;&#x3044; &#x3067;&#x3059;&#x3002;
+(Kinou, nomisugimashita. Atama ga itai desu.)
+Kal bahut zyada pee liya. Sir dard hai.
+
+&#x305F;&#x3079;&#x3059;&#x304E;&#x3066;&#x3001;&#x304A;&#x306A;&#x304B; &#x304C; &#x3044;&#x305F;&#x3044; &#x3067;&#x3059;&#x3002;
+(Tabesugite, onaka ga itai desu.)
+Bahut zyada khaake, pet dard hai.
+
+&#x306F;&#x305F;&#x3089;&#x304D;&#x3059;&#x304E;&#x3066;&#x3001;&#x3064;&#x304B;&#x308C;&#x307E;&#x3057;&#x305F;&#x3002;
+(Hatarakisugite, tsukaremashita.)
+Bahut zyada kaam karke, thak gaya.
+
+&#x30B2;&#x30FC;&#x30E0; &#x3092; &#x3057;&#x3059;&#x304E;&#x3066;&#x3001;&#x3081;&#x304C; &#x3064;&#x304B;&#x308C;&#x307E;&#x3057;&#x305F;&#x3002;
+(Geemu wo shisugite, me ga tsukaremashita.)
+Bahut zyada game khelke, aankh thak gayi.
+```
+
+**Adjective + &#x3059;&#x304E;&#x307E;&#x3059;:**
+```
+&#x3053;&#x306E; &#x304B;&#x3070;&#x3093; &#x306F; &#x305F;&#x304B;&#x3059;&#x304E;&#x307E;&#x3059;&#x3002;
+(Kono kaban wa takasugimasu.)
+Yeh bag bahut mehenga hai.
+
+&#x3053;&#x306E; &#x3078;&#x3084; &#x306F; &#x305B;&#x307E;&#x3059;&#x304E;&#x307E;&#x3059; (&#x72ED;&#x3044;)&#x3002;
+(Kono heya wa semasugimasu.)
+Yeh kamra bahut chhota hai.
+
+&#x3053;&#x306E; &#x308A;&#x3087;&#x3046;&#x308A; &#x306F; &#x304B;&#x3089;&#x3059;&#x304E;&#x307E;&#x3059;&#x3002;
+(Kono ryouri wa karasugimasu.)
+Yeh khana bahut teekha hai.
+
+&#x3053;&#x3053; &#x306F; &#x3057;&#x305A;&#x304B;&#x3059;&#x304E;&#x3066;&#x3001;&#x3061;&#x3087;&#x3063;&#x3068; &#x3053;&#x308F;&#x3044; &#x3067;&#x3059;&#x3002;
+(Koko wa shizukasugite, chotto kowai desu.)
+Yahaan bahut shaant hai, thoda darawna hai.
+```
+
+---
+
+### **Grammar Point 9: &#x301C;&#x3084;&#x3059;&#x3044; / &#x301C;&#x306B;&#x304F;&#x3044; (Easy to / Hard to)**
+
+**Verb &#x307E;&#x3059;-stem + &#x3084;&#x3059;&#x3044; = _____ karna aasaan**
+**Verb &#x307E;&#x3059;-stem + &#x306B;&#x304F;&#x3044; = _____ karna mushkil**
+
+#### **Examples:**
+
+```
+&#x3053;&#x306E; &#x307B;&#x3093; &#x306F; &#x3088;&#x307F;&#x3084;&#x3059;&#x3044; &#x3067;&#x3059;&#x3002;
+(Kono hon wa yomiyasui desu.)
+Yeh kitaab padhne mein aasaan hai.
+
+&#x3053;&#x306E; &#x304B;&#x3093;&#x3058; &#x306F; &#x304A;&#x307C;&#x3048;&#x306B;&#x304F;&#x3044; &#x3067;&#x3059;&#x3002;(&#x899A;&#x3048;&#x308B;)
+(Kono kanji wa oboeniukui desu.)
+Yeh kanji yaad karna mushkil hai.
+
+&#x3053;&#x306E; &#x304F;&#x3064; &#x306F; &#x3042;&#x308B;&#x304D;&#x3084;&#x3059;&#x3044; &#x3067;&#x3059;&#x3002;
+(Kono kutsu wa arukiyasui desu.)
+Yeh joote chalne mein comfortable hain.
+
+&#x304B;&#x306E;&#x3058;&#x3087; &#x306F; &#x306F;&#x306A;&#x3057;&#x3084;&#x3059;&#x3044; &#x3072;&#x3068; &#x3067;&#x3059;&#x3002;
+(Kanojo wa hanashiyasui hito desu.)
+Woh baat karne mein aasaan/friendly insaan hai.
+```
+
+---
+
+### **Grammar Point 10: &#x301C;&#x305D;&#x3046; (Looks like / Lagta hai - Appearance)**
+
+&#x26A0;&#xFE0F; Yeh **appearance/observation** ke basis pe opinion hai (hearsay wala &#x305D;&#x3046;&#x3067;&#x3059; se alag!)
+
+&#x26A0;&#xFE0F; **Exceptions:**
+- &#x3044;&#x3044; &#x2192; **&#x3088;&#x3055;&#x305D;&#x3046;** (NOT &#x3044;&#x305D;&#x3046;)
+- &#x306A;&#x3044; &#x2192; **&#x306A;&#x3055;&#x305D;&#x3046;** (NOT &#x306A;&#x3044;&#x305D;&#x3046;)
+
+#### **Examples:**
+
+```
+&#x3042;&#x3081; &#x304C; &#x3075;&#x308A;&#x305D;&#x3046; &#x3067;&#x3059;&#x3002;
+(Ame ga furisou desu.)
+Baarish hone wali lagti hai.
+
+&#x3053;&#x306E; &#x30B1;&#x30FC;&#x30AD; &#x306F; &#x304A;&#x3044;&#x3057;&#x305D;&#x3046; &#x3067;&#x3059;&#x3002;
+(Kono keeki wa oishisou desu.)
+Yeh cake tasty lagta hai.
+
+&#x305D;&#x306E; &#x3057;&#x3054;&#x3068; &#x306F; &#x305F;&#x3044;&#x3078;&#x3093;&#x305D;&#x3046; &#x3067;&#x3059;&#x306D;&#x3002;
+(Sono shigoto wa taihensou desu ne.)
+Woh kaam mushkil lagta hai na.
+
+&#x304B;&#x308C; &#x306F; &#x3052;&#x3093;&#x304D;&#x305D;&#x3046; &#x3067;&#x3059;&#x3002;
+(Kare wa genkisou desu.)
+Woh healthy/energetic lagta hai.
+
+&#x3042;&#x306E; &#x3072;&#x3068; &#x306F; &#x3057;&#x3042;&#x308F;&#x305B;&#x305D;&#x3046; &#x3067;&#x3059;&#x306D;&#x3002;
+(Ano hito wa shiawasesou desu ne.)
+Woh aadmi khush lagta hai na.
+```
+
+---
+
+### **Grammar Point 11: &#x301C;&#x304C;&#x308B; (Third person feelings/wants)**
+
+&#x26A0;&#xFE0F; Japanese mein direct feelings (&#x307B;&#x3057;&#x3044;&#x3001;&#x301C;&#x305F;&#x3044;&#x3001;&#x304B;&#x306A;&#x3057;&#x3044; etc.) sirf **khud ke liye** use karte hain. **Dusron ke feelings** ke liye **&#x301C;&#x304C;&#x308B;** use hota hai.
+
+**Formation:**
+- &#x3044;-adj (&#x3044; hatao) + &#x304C;&#x308B;: &#x3055;&#x3073;&#x3057;&#x304C;&#x308B;&#x3001;&#x3046;&#x308C;&#x3057;&#x304C;&#x308B;
+- &#x307B;&#x3057;&#x3044; &#x2192; &#x307B;&#x3057;&#x304C;&#x308B;
+- &#x301C;&#x305F;&#x3044; &#x2192; &#x301C;&#x305F;&#x304C;&#x308B;
+
+#### **Examples:**
+
+**Wrong:** &#x274C; &#x304B;&#x308C; &#x306F; &#x3055;&#x3073;&#x3057;&#x3044; &#x3067;&#x3059;&#x3002; (He is lonely - direct)
+**Correct:** &#x2713; &#x304B;&#x308C; &#x306F; &#x3055;&#x3073;&#x3057;&#x304C;&#x3063;&#x3066; &#x3044;&#x307E;&#x3059;&#x3002; (He seems/acts lonely)
+
+```
+&#x3053;&#x3069;&#x3082; &#x306F; &#x3042;&#x305F;&#x3089;&#x3057;&#x3044; &#x304A;&#x3082;&#x3061;&#x3083; &#x3092; &#x307B;&#x3057;&#x304C;&#x3063;&#x3066; &#x3044;&#x307E;&#x3059;&#x3002;
+(Kodomo wa atarashii omocha wo hoshigatte imasu.)
+Bachcha naya toy chahta hai (aisa lag raha hai).
+
+&#x3044;&#x306C; &#x306F; &#x3055;&#x3093;&#x307D; &#x306B; &#x3044;&#x304D;&#x305F;&#x304C;&#x3063;&#x3066; &#x3044;&#x307E;&#x3059;&#x3002;
+(Inu wa sanpo ni ikitagatte imasu.)
+Kutta walk pe jaana chahta hai.
+
+&#x304B;&#x306E;&#x3058;&#x3087; &#x306F; &#x305D;&#x306E; &#x30CB;&#x30E5;&#x30FC;&#x30B9; &#x3092; &#x304D;&#x3044;&#x3066;&#x3001;&#x304B;&#x306A;&#x3057;&#x304C;&#x3063;&#x3066; &#x3044;&#x307E;&#x3057;&#x305F;&#x3002;
+(Kanojo wa sono nyuusu wo kiite, kanashigatte imashita.)
+Woh news sunke dukhi lag rahi thi.
+
+&#x3068;&#x3082;&#x3060;&#x3061; &#x306F; &#x306B;&#x307B;&#x3093; &#x306B; &#x3044;&#x304D;&#x305F;&#x304C;&#x3063;&#x3066; &#x3044;&#x307E;&#x3059;&#x304C;&#x3001;
+&#x304A;&#x304B;&#x306D; &#x304C; &#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
+(Tomodachi wa nihon ni ikitagatte imasu ga, okane ga arimasen.)
+Dost Japan jaana chahta hai (lagta hai), lekin paise nahi hain.
+```
+
+---
+
+### **Expressing &amp; Asking About Feelings:**
+
+**Asking about feelings:**
+```
+&#x3069;&#x3046; &#x3057;&#x305F;&#x3093;&#x3067;&#x3059;&#x304B;&#xFF1F;&#x304D;&#x3076;&#x3093; &#x304C; &#x308F;&#x308B;&#x305D;&#x3046; &#x3067;&#x3059;&#x306D;&#x3002;
+(Dou shitan desu ka? Kibun ga warusou desu ne.)
+Kya hua? Tabiyat kharab lagti hai.
+
+&#x306A;&#x306B; &#x304B; &#x3042;&#x3063;&#x305F;&#x3093;&#x3067;&#x3059;&#x304B;&#xFF1F;
+(Nanika attan desu ka?)
+Kuch hua kya?
+
+&#x3060;&#x3044;&#x3058;&#x3087;&#x3046;&#x3076; &#x3067;&#x3059;&#x304B;&#xFF1F;
+(Daijoubu desu ka?)
+Theek ho?
+
+&#x3055;&#x3044;&#x304D;&#x3093;&#x3001;&#x3069;&#x3046;&#xFF1F;(&#x6700;&#x8FD1;)
+(Saikin, dou?)
+Aajkal kaisa hai?
+```
+
+**Expressing feelings:**
+```
+&#x3055;&#x3044;&#x304D;&#x3093;&#x3001;&#x30B9;&#x30C8;&#x30EC;&#x30B9; &#x304C; &#x305F;&#x307E;&#x3063;&#x3066; &#x3044;&#x307E;&#x3059;&#x3002;
+(Saikin, sutoresu ga tamatte imasu.)
+Aajkal stress build up ho raha hai.
+
+&#x3057;&#x3054;&#x3068; &#x304C; &#x3044;&#x305D;&#x304C;&#x3057;&#x3059;&#x304E;&#x3066;&#x3001;&#x3086;&#x3063;&#x304F;&#x308A; &#x3084;&#x3059;&#x3081;&#x307E;&#x305B;&#x3093;&#x3002;
+(Shigoto ga isogashisugite, yukkuri yasumemasen.)
+Kaam bahut busy hai, acche se aaram nahi mil raha.
+
+&#x306A;&#x3093;&#x3060;&#x304B; &#x3055;&#x3073;&#x3057;&#x3044; &#x304D;&#x3082;&#x3061; &#x3067;&#x3059;&#x3002;
+(Nandaka sabishii kimochi desu.)
+Kuch akela sa feel ho raha hai.
+
+&#x3084;&#x3063;&#x3068; &#x304A;&#x308F;&#x3063;&#x3066;&#x3001;&#x307B;&#x3063;&#x3068;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+(Yatto owatte, hotto shimashita.)
+Finally khatam hua, sukoon mila.
+
+&#x305A;&#x3063;&#x3068; &#x3053;&#x308C; &#x3092; &#x305F;&#x306E;&#x3057;&#x307F;&#x306B; &#x3057;&#x3066; &#x3044;&#x307E;&#x3057;&#x305F;&#xFF01;
+(Zutto kore wo tanoshimi ni shite imashita!)
+Bahut der se iska intezaar kar raha tha!
+```
+
+**Showing empathy:**
+```
+&#x305D;&#x308C;&#x306F; &#x305F;&#x3044;&#x3078;&#x3093; &#x3067;&#x3057;&#x305F;&#x306D;&#x3002;
+(Sore wa taihen deshita ne.)
+Woh mushkil tha na.
+
+&#x305D;&#x3093;&#x306A; &#x3053;&#x3068; &#x3042;&#x3063;&#x305F;&#x3093;&#x3067;&#x3059;&#x304B;&#x3002;&#x3064;&#x3089;&#x304B;&#x3063;&#x305F; &#x3067;&#x3057;&#x3087;&#x3046;&#x3002;
+(Sonna koto attan desu ka. Tsurakatta deshou.)
+Aisa hua? Mushkil raha hoga.
+
+&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;&#x308F;&#x305F;&#x3057; &#x3082; &#x304A;&#x306A;&#x3058; &#x3051;&#x3044;&#x3051;&#x3093; &#x304C; &#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+(Wakarimasu. Watashi mo onaji keiken ga arimasu.)
+Samajhta hoon. Mera bhi same experience hai.
+
+&#x306A;&#x306B;&#x304B; &#x3066;&#x3064;&#x3060;&#x3048;&#x308B; &#x3053;&#x3068; &#x304C; &#x3042;&#x3063;&#x305F;&#x3089;&#x3001;&#x3044;&#x3063;&#x3066; &#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+(Nanika tetsudaeru koto ga attara, itte kudasai.)
+Koi madad chahiye toh batao.
+
+&#x3080;&#x308A; &#x3057;&#x306A;&#x3044;&#x3067; &#x304F;&#x3060;&#x3055;&#x3044;&#x306D;&#x3002;
+(Muri shinaide kudasai ne.)
+Zyada strain mat lo.
+```
+
+---</pre>
+        </div>
+    </div>
+
+</div><!-- end main-container -->
+
+<footer>
+    <p>&#x1F338; <strong>Irodori Elementary 2 (A2-2)</strong> — Chapter 02: &#x304D;&#x3082;&#x3061; (Feelings &amp; Emotions)</p>
+    <p style="margin-top:0.5rem;font-size:0.85rem;">Source: irodori2.txt Lines 386&#x2013;826 &bull; Grammar Points 6&#x2013;11 &bull; Web Speech API ja-JP</p>
+</footer>
+
+<script>
+function toggleTheme(){const b=document.body;b.setAttribute('data-theme',b.getAttribute('data-theme')==='light'?'':'light');}
+function switchTab(name,btn){document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('tab-'+name).classList.add('active');if(btn)btn.classList.add('active');}
+function speakText(t){if('speechSynthesis'in window){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=0.9;u.pitch=1.0;window.speechSynthesis.speak(u);}}
+function speakOutput(id){speakText(document.getElementById(id).innerText);}
+
+const feData={
+    train:{te:'でんしゃ が おくれて',rom:'Densha ga okurete'},
+    busy:{te:'しごと が いそがしくて',rom:'Shigoto ga isogashikute'},
+    rain:{te:'あめで',rom:'Ame de'},
+    sick:{te:'びょうきで',rom:'Byouki de'},
+    pass:{te:'しけんに うかって',rom:'Shiken ni ukatte'},
+    friend:{te:'ともだちが くにに かえって',rom:'Tomodachi ga kuni ni kaette'},
+    gift:{te:'プレゼントを もらって',rom:'Purezento wo moratte'},
+};
+const feEm={
+    ureshii:{jp:'うれしい です。',rom:'ureshii desu.',hi:'khush hoon.'},
+    sabishii:{jp:'さびしい です。',rom:'sabishii desu.',hi:'akela feel ho raha hoon.'},
+    komatta:{jp:'こまりました。',rom:'komarimashita.',hi:'pareshan ho gaya.'},
+    bikkuri:{jp:'びっくりしました。',rom:'bikkuri shimashita.',hi:'hairan ho gaya.'},
+    hotto:{jp:'ほっとしました。',rom:'hotto shimashita.',hi:'sukoon mila.'},
+    tsukareta:{jp:'つかれました。',rom:'tsukaremashita.',hi:'thak gaya.'},
+};
+function updateFeelings(){const r=feData[document.getElementById('fe-reason').value];const e=feEm[document.getElementById('fe-emotion').value];document.getElementById('fe-jp').innerText=r.te+'、'+e.jp;document.getElementById('fe-rom').innerText=r.rom+', '+e.rom;document.getElementById('fe-meaning').innerText=r.rom+' → '+e.hi;}
+
+const shiData={
+    nihon:{jp:'にほん は たべもの が おいしいし、ひと が やさしいし、あんぜん だし、すき です。',rom:'Nihon wa tabemono ga oishii shi, hito ga yasashii shi, anzen da shi, suki desu.',hi:'Japan ka khana tasty bhi hai, log acche bhi hain, safe bhi hai, isliye pasand hai.'},
+    restaurant:{jp:'この レストラン は おいしいし、やすいし、サービスも いいし、よく きます。',rom:'Kono resutoran wa oishii shi, yasui shi, saabisu mo ii shi, yoku kimasu.',hi:'Yeh restaurant tasty bhi hai, sasta bhi hai, service bhi accha hai.'},
+    today:{jp:'きょう は あたま が いたいし、ねつ も あるし、からだ が おもいし、やすみたい。',rom:'Kyou wa atama ga itai shi, netsu mo aru shi, karada ga omoi shi, yasumitai.',hi:'Aaj sir dard bhi hai, bukhar bhi hai, body bhari bhi hai, aaram chahiye.'},
+    person:{jp:'かれ は やさしいし、おもしろいし、あたま も いいし、すてき です。',rom:'Kare wa yasashii shi, omoshiroi shi, atama mo ii shi, suteki desu.',hi:'Woh accha bhi hai, funny bhi hai, smart bhi hai, kamaal hai.'},
+};
+function updateShi(){const d=shiData[document.getElementById('sh-topic').value];document.getElementById('sh-jp').innerText=d.jp;document.getElementById('sh-rom').innerText=d.rom;document.getElementById('sh-meaning').innerText=d.hi;}
+
+const appData={
+    taberu:{base:'たべる',masu:'たべ',adj:false,yasui:'たべやすい',niukui:'たべにくい',sou:'たべそう',hi:'eat / khana'},
+    yomu:{base:'よむ',masu:'よみ',adj:false,yasui:'よみやすい',niukui:'よみにくい',sou:'よみそう',hi:'read / padhna'},
+    hanasu:{base:'はなす',masu:'はなし',adj:false,yasui:'はなしやすい',niukui:'はなしにくい',sou:'はなしそう',hi:'speak / bolna'},
+    aruku:{base:'あるく',masu:'あるき',adj:false,yasui:'あるきやすい',niukui:'あるきにくい',sou:'あるきそう',hi:'walk / chalna'},
+    oishii:{base:'おいしい',adj:true,type:'i',yasui:'—',niukui:'—',sou:'おいしそう',hi:'delicious'},
+    takai:{base:'たかい',adj:true,type:'i',yasui:'—',niukui:'—',sou:'たかそう',hi:'expensive/high'},
+    genki:{base:'げんき',adj:true,type:'na',yasui:'—',niukui:'—',sou:'げんきそう',hi:'energetic'},
+    taihen:{base:'たいへん',adj:true,type:'na',yasui:'—',niukui:'—',sou:'たいへんそう',hi:'tough'},
+};
+function updateAppearance(){const d=appData[document.getElementById('app-word').value];const out=document.getElementById('app-output');const items=[
+    {label:'📖 Dictionary Form',jp:d.base,note:d.hi},
+    {label:'⚖️ ～そう (Looks like)',jp:d.sou,note:'Appearance-based impression'},
+    {label:'✅ ～やすい (Easy to)',jp:d.yasui!=='—'?d.yasui:'(N/A for adjectives)',note:d.yasui!=='—'?'Karna aasaan':'Use ～そう for adjectives'},
+    {label:'❌ ～にくい (Hard to)',jp:d.niukui!=='—'?d.niukui:'(N/A for adjectives)',note:d.niukui!=='—'?'Karna mushkil':'Use ～そう for adjectives'},
+];
+out.innerHTML=items.map(it=>`<div style="background:var(--bg-secondary);border-radius:12px;padding:1rem;border:1px solid var(--border-color);cursor:pointer;" onclick="speakText('${it.jp}')"><div style="font-size:0.8rem;color:var(--text-muted);font-weight:700;margin-bottom:0.4rem;">${it.label}</div><div style="font-family:var(--font-jp);font-size:1.3rem;font-weight:700;color:var(--accent-primary);margin-bottom:0.3rem;">${it.jp}</div><div style="font-size:0.85rem;color:var(--text-muted);">${it.note}</div></div>`).join('');}
+
+const quizQuestions=[
+    {q:'この レストラン は おいしい___、やすい___、よく いきます。',opts:['し、し','て、て','から、から','のに、のに'],ans:0},
+    {q:'What does ～すぎます mean?',opts:['Too much / Bahut zyada','Easy to do','Looks like','Hard to do'],ans:0},
+    {q:'のみます + すぎます =',opts:['のみすぎます','のむすぎます','のんすぎます','のみすぎ'],ans:0},
+    {q:'この ほん は よみ___。(Easy to read)',opts:['やすい','にくい','そう','すぎる'],ans:0},
+    {q:'この かんじ は おぼえ___。(Hard to memorize)',opts:['にくい','やすい','すぎます','がる'],ans:0},
+    {q:'あめ が ふり___。(Looks like it will rain)',opts:['そう です','らしい です','のです','がる'],ans:0},
+    {q:'⚠️ Which is CORRECT for 3rd person feeling?',opts:['かれ は さびしがっています','かれ は さびしいです','かれ は さびしです','かれは さびしくてです'],ans:0},
+    {q:'こども は おもちゃ を___。(Child seems to want toy)',opts:['ほしがっています','ほしいです','ほしみます','ほしがります'],ans:0},
+    {q:'いい → ～そう form is...?',opts:['よさそう','いそう','いいそう','よくそう'],ans:0},
+    {q:'Select the empathy phrase for "That must have been tough":',opts:['たいへんでしたね','おめでとうございます','むりしないで','よかったです'],ans:0},
+];
+let score=0;const answered=new Array(quizQuestions.length).fill(false);
+function renderQuiz(){const area=document.getElementById('quiz-area');area.innerHTML=quizQuestions.map((q,i)=>`<div class="quiz-question"><div class="q-number">Question ${i+1} of ${quizQuestions.length}</div><div class="q-text">${q.q}</div><div class="q-options" id="opts-${i}">${q.opts.map((o,j)=>`<button class="q-opt" id="opt-${i}-${j}" onclick="checkAnswer(${i},${j})">${o} <span class="status-icon"></span></button>`).join('')}</div></div>`).join('');}
+function checkAnswer(qIdx,optIdx){if(answered[qIdx])return;answered[qIdx]=true;const correct=quizQuestions[qIdx].ans;const buttons=Array.from(document.getElementById('opts-'+qIdx).querySelectorAll('.q-opt'));buttons.forEach(b=>b.disabled=true);if(optIdx===correct){score++;buttons[optIdx].classList.add('correct');buttons[optIdx].querySelector('.status-icon').innerText='✔ Correct!';speakText('せいかい！すばらしい！');}else{buttons[optIdx].classList.add('wrong');buttons[optIdx].querySelector('.status-icon').innerText='❌ Incorrect';buttons[correct].classList.add('correct');buttons[correct].querySelector('.status-icon').innerText='✔ Correct Answer';}if(answered.every(v=>v===true)){const area=document.getElementById('quiz-area');const div=document.createElement('div');div.className='quiz-score';div.innerHTML=`🌟 きもち Quiz Completed!<br><span style="font-size:2.2rem;color:#fff;display:block;margin:0.5rem 0;">Score: ${score} / ${quizQuestions.length}</span><span style="font-size:1.15rem;color:#fbbf24;font-weight:700;display:block;margin-bottom:0.5rem;">おめでとう ございます！🎉</span><span style="font-size:1rem;color:var(--text-main);font-weight:500;">You mastered ～し～し, ～すぎます, ～やすい/にくい, ～そう, ～がる and empathy! Ready for Chapter 3! 🎌</span>`;area.appendChild(div);speakText('おめでとうございます！きもちクイズがすべてしゅうりょうしました！とてもすばらしいです！');}}
+
+window.addEventListener('DOMContentLoaded',()=>{renderQuiz();updateFeelings();updateShi();updateAppearance();if('speechSynthesis'in window)window.speechSynthesis.getVoices();});
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

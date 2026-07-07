@@ -1,0 +1,671 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 16: こまった とき (When You Have Trouble)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 16: こまったとき. Covers asking for help, emergencies, lost items, and grammar (~てほしいです, ~ないでほしいです, ~てくれてありがとう, ~てたすかりました).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🆘 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 16: こまった とき (When You Have Trouble) • Emergencies & Help</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('はやく なおして ほしい です。よる おそく おおきい おと を ださないで ほしい です。てつだって くれて ありがとう ございます。かさ を かして くれて たすかりました。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>🌟 こまった とき (Komatta Toki) - When You Have Trouble</h2>
+        <p>Master asking for help and resolving everyday problems (<strong>困る・助ける・相談・質問・連絡</strong>), handling emergencies and lost items (<strong>故障・直す・落とし物・忘れ物・財布・鍵</strong>), and polite request & gratitude grammar (<strong>～てほしいです / ～ないでほしいです / ～てくれてありがとう / ～ていただいてありがとうございます / ～てたすかりました</strong>)!</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 5677–5878</span>
+            <span class="meta-pill">💬 Grammar Points 80–83</span>
+            <span class="meta-pill">📚 35+ Trouble & Help Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">🚀 Repair & Lost Wallet Roleplays</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('simulator',this)"><span>🌟</span> Trouble & Help Request Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Requests & Gratitude (Pt 80–83)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 35+ Audio Trouble & Help Flashcards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 16 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>🚀</span> Apartment AC Repair & Lost Wallet Roleplays</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Trouble & Emergency Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Trouble & Help Request Simulator -->
+    <div id="tab-simulator" class="tab-content active">
+        <div class="interactive-box">
+            <h4>🌟 Interactive Trouble Solving & Help Request Simulator (トラブル解決・依頼シミュレーター)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Select an emergency or household trouble situation and a grammar pattern to generate authentic Japanese help requests and gratitude statements!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Trouble Situation (困っていること)</label>
+                    <select id="sim-scene" onchange="updateTroubleSim()">
+                        <option value="ac">❄️ AC Malfunction in Apartment (エアコンの故障・早く直してほしい / Broken AC)</option>
+                        <option value="wallet">👛 Lost Wallet at Station (財布をなくした・交番での相談 / Lost wallet)</option>
+                        <option value="noisy">📢 Noisy Neighbor at Night (隣の部屋がうるさい・静かにしてほしい / Noise complaint)</option>
+                        <option value="doc">📄 Japanese Document Translation (書類の書き方・翻訳していただいて助かる / Document help)</option>
+                        <option value="water">🚰 Water Leak / Gas Emergency (水道やガスのトラブル・業者を呼ぶ / Utility failure)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updateTroubleSim()">
+                        <option value="tehoshii">🙏 Requesting Action (～てほしいです - I want you / someone to do _____ for me)</option>
+                        <option value="naidehoshii">🚫 Negative Request (～ないでほしいです - I want you NOT to do _____ / Please stop)</option>
+                        <option value="arigatou-casual">💬 Casual Gratitude (～てくれてありがとう - Thanks for doing _____ / Help ke liye thanks)</option>
+                        <option value="arigatou-formal">👔 Polite Formal Gratitude (～ていただいてありがとうございます - Thank you very much for doing)</option>
+                        <option value="tasukarimashita">💖 Expressing Relief / Help (～てたすかりました - Was saved / helped by your kindness)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">へや の エアコン が こしょう して いる ので、はやく なおして ほしい です。</div>
+                <div class="output-rom" id="sim-rom">Heya no eakon ga koshou shite iru node, hayaku naoshite hoshii desu.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Room ka AC kharab hai isliye, main chahta hoon ki jaldi theek kiya jaye!</div>
+                <button class="btn-speak" onclick="speakTroubleSim()">🔊 Speak Help Request in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🚀 Essential Trouble & Problem Keywords (困ったときのキーワード)</h3>
+            <p>Click any card to listen to the native pronunciation and learn how to report problems and seek assistance!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">こしょう (故障) と なおす (直す)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Koshish to Naosu • Malfunction and repair</div><div class="meaning-text">Kharabi (故障) aur Theek karna (直す). "エアコンが故障しているので直してほしいです。"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">おとしもの (落とし物) / わすれもの (忘れ物)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Otoshimono / Wasuremono • Lost item / Left behind item</div><div class="meaning-text">Dropped/lost item (落とし物) vs Forgotten item (忘れ物). Always report to the Koban (交番 - police box)!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">そうだん (相談) と しつもん (質問)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Soudan to Shitsumon • Consultation and question</div><div class="meaning-text">Salah (相談) aur Sawaal (質問). "すみません、ちょっと相談したいことがあるんですが..."</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">たすける (助ける) と たすかる (助かる)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tasukeru to Tasukaru • To help vs To be saved/helped</div><div class="meaning-text">Madad karna (助ける - transitive) vs Madad milna (助かる - intransitive). "手伝ってくれて助かりました！"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">めいわく (迷惑) を かけない</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Meiwaku wo kakenai • Not causing inconvenience</div><div class="meaning-text">Pareshani (迷惑) na dena. A fundamental Japanese rule of apartment and community living!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ざいりゅうカード (在留カード)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Zairyuu kaado • Residence card (for foreign residents)</div><div class="meaning-text">Your most important ID card in Japan! "在留カードとパスポートをなくさないでほしいです。"</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Requesting Others to Act: Want someone to do / NOT to do</span><span class="particle-badge">Pt 80 & 81</span></div>
+            <div class="grammar-formula">Verb て-form + ほしいです (Want you to do) / ない-form + でほしいです (Want you NOT to do)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～てほしいです</strong> when you want **someone else** to perform an action for you ("Mujhe chahiye ki koi _____ kare"). Use <strong>～ないでほしいです</strong> when asking someone to refrain from an annoying or dangerous behavior ("_____ na kare")!</p>
+            <ul class="example-list">
+                <li onclick="speakText('もう すこし ゆっくり はなして ほしい です。')">
+                    <span class="ex-jp">もう 少し ゆっくり 話（はな）して ほしい です。</span>
+                    <span class="ex-rom">Mou sukoshi yukkuri hanashite hoshii desu. (Main chahta hoon ki aap thoda dheere bolen.)</span>
+                </li>
+                <li onclick="speakText('しょるい を はやく なおして ほしい です。')">
+                    <span class="ex-jp">書類（しょるい）を 早（はや）く 直（なお）して ほしい です。</span>
+                    <span class="ex-rom">Shorui wo hayaku naoshite hoshii desu. (Main chahta hoon ki document jaldi theek kiya jaye.)</span>
+                </li>
+                <li onclick="speakText('ここ に ゴミ を すてないで ほしい です。')">
+                    <span class="ex-jp">ここ に ゴミ を 捨（す）てないで ほしい です。</span>
+                    <span class="ex-rom">Koko ni gomi wo sutenaide hoshii desu. (Main chahta hoon ki yahaan kachra na phenka jaye.)</span>
+                </li>
+                <li onclick="speakText('よる おそく、おおきい おと を ださないで ほしい です。')">
+                    <span class="ex-jp">夜（よる）遅（おそ）く、大（おお）きい 音（おと）を 出（だ）さないで ほしい です。</span>
+                    <span class="ex-rom">Yoru osoku, ookii oto wo dasanaide hoshii desu. (Main chahta hoon raat der tak loud sound na ho!)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Expressing Gratitude for Help: Thank you for doing _____</span><span class="particle-badge" style="background:var(--accent-success);">Pt 82</span></div>
+            <div class="grammar-formula">て-form + くれて ありがとう (Casual) / いただいて ありがとうございます (Polite/Formal)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～てくれてありがとう</strong> with friends and peers ("_____ karne ke liye thanks"). Use <strong>～ていただいてありがとうございます</strong> with superiors, teachers, landlords, and staff for polite formal gratitude!</p>
+            <ul class="example-list">
+                <li onclick="speakText('てつだって くれて ありがとう。')">
+                    <span class="ex-jp">手伝（てつだ）って くれて ありがとう！</span>
+                    <span class="ex-rom">Tetsudatte kurete arigatou. (Help karne ke liye thanks - casual with friends.)</span>
+                </li>
+                <li onclick="speakText('みち を おしえて くれて ありがとう。')">
+                    <span class="ex-jp">道（みち）を 教（おし）えて くれて ありがとう。</span>
+                    <span class="ex-rom">Michi wo oshiete kurete arigatou. (Rasta batane ke liye thank you!)</span>
+                </li>
+                <li onclick="speakText('おしえて いただいて ありがとう ございます。')">
+                    <span class="ex-jp">教（おし）えて いただいて ありがとう ございます。</span>
+                    <span class="ex-rom">Oshiete itadaite arigatou gozaimasu. (Samjhane ke liye dhanyavaad - formal polite.)</span>
+                </li>
+                <li onclick="speakText('てつづき を てつだって いただいて ありがとう ございます。')">
+                    <span class="ex-jp">手続き（てつづき）を 手伝って いただいて ありがとう ございます。</span>
+                    <span class="ex-rom">Tetsuzuki wo tetsudatte itadaite arigatou gozaimasu. (Procedure mein help karne ke liye bahut shukriya!)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Expressing Relief & Helpfulness: Was helped / saved by _____</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 83</span></div>
+            <div class="grammar-formula">Verb て-form + たすかりました (That really helped me out / I was saved!)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～てたすかりました</strong> to show deep appreciation when someone's action solved a problem or relieved your distress ("_____ se bahut help mili / main bach gaya")!</p>
+            <ul class="example-list">
+                <li onclick="speakText('にほんご に ほんやく して もらって、たすかりました。')">
+                    <span class="ex-jp">日本語 に 翻訳（ほんやく）して もらって、助（たす）かりました。</span>
+                    <span class="ex-rom">Nihongo ni honyaku shite moratte, tasukarimashita. (Japanese mein translate kar diya, bahut help mili!)</span>
+                </li>
+                <li onclick="speakText('かさ を かして くれて、たすかりました。')">
+                    <span class="ex-jp">傘（かさ）を 貸（か）して くれて、助かりました。</span>
+                    <span class="ex-rom">Kasa wo kashite kurete, tasukarimashita. (Chhata udhaar diya, bahut help mili!)</span>
+                </li>
+                <li onclick="speakText('えき まで おくって もらって、たすかりました。')">
+                    <span class="ex-jp">駅（えき）まで 送（おく）って もらって、助かりました。</span>
+                    <span class="ex-rom">Eki made okutte moratte, tasukarimashita. (Station tak chhod diya, bahut help mili!)</span>
+                </li>
+                <li onclick="speakText('しょるい の かきかた を おしえて もらって、たすかりました。')">
+                    <span class="ex-jp">書類（しょるい）の 書（か）き方（かた）を 教（おし）えて もらって、助かりました。</span>
+                    <span class="ex-rom">Shorui no kakikata wo oshiete moratte, tasukarimashita. (Form kaise bharna hai bata diya, bahut help mili!)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 16 Trouble, Help & Emergency Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize trouble and emergency words.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">困（こま）る / 困（こま）って います</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Komaru / Komatte imasu</div><div class="meaning-text">To be in trouble / I am in distress (pareshan)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">助（たす）ける / 助（たす）かる</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tasukeru / Tasukaru</div><div class="meaning-text">To help someone / To be helped / saved</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">相談（そうだん）/ 質問（しつもん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Soudan / Shitsumon</div><div class="meaning-text">Consultation (salah) / Question (sawaal)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">説明（せつめい）/ 連絡（れんらく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Setsumei / Renraku</div><div class="meaning-text">Explanation / Contact (inform / connect)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">故障（こしょう）/ 直（なお）す</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Koshish / Naosu</div><div class="meaning-text">Malfunction (kharabi) / To fix / repair</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">直（なお）る / なくす</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Naoru / Nakusu</div><div class="meaning-text">To be fixed / cured / To lose an item</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">見（み）つける / 見（み）つかる</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mitsukeru / Mitsukaru</div><div class="meaning-text">To find an item / To be found (mil jana)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">落（お）とし物（もの）/ 忘（わす）れ物（もの）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Otoshimono / Wasuremono</div><div class="meaning-text">Lost / dropped item / Forgotten item</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">住所（じゅうしょ）/ 書類（しょるい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Juusho / Shorui</div><div class="meaning-text">Address (pata) / Documents (kagazat)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">必要（ひつよう）/ 迷惑（めいわく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hitsuyou / Meiwaku</div><div class="meaning-text">Necessary (zaroori) / Nuisance / trouble</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">鍵（かぎ）/ 財布（さいふ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kagi / Saifu</div><div class="meaning-text">Key (chabi) / Wallet / purse</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">スマホ / パスポート</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sumaho / Pasupooto</div><div class="meaning-text">Smartphone / Passport (essential IDs)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">在留（ざいりゅう）カード</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Zairyuu kaado</div><div class="meaning-text">Residence card (for foreign nationals)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">電気（でんき）/ 水（みず）/ ガス</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Denki / Mizu / Gasu</div><div class="meaning-text">Electricity / Water / Gas utilities</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">エアコン / ドア</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Eakon / Doa</div><div class="meaning-text">Air conditioner / Door / entrance</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">うるさい / 臭（くさ）い</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Urusai / Kusai</div><div class="meaning-text">Noisy / loud / Bad smelling / stinky</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">汚（きたな）い / 危（あぶ）ない</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kitanai / Abunai</div><div class="meaning-text">Dirty / messy / Dangerous / hazardous</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～て ほしい です</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~te hoshii desu</div><div class="meaning-text">I want someone to do _____ for me</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～ないで ほしい です</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~naide hoshii desu</div><div class="meaning-text">I want someone NOT to do _____ / stop</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～て くれて ありがとう</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~te kurete arigatou</div><div class="meaning-text">Thank you for doing _____ (casual)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～て いただいて ありがとう ございます</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~te itadaite arigatou gozaimasu</div><div class="meaning-text">Thank you very much for doing (polite formal)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～て たすかりました</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~te tasukarimashita</div><div class="meaning-text">That really saved / helped me out!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">どうしたら いい です か</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Doushitara ii desu ka</div><div class="meaning-text">What should I do? (asking for advice)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">こうばん（交番）/ ぎょうしゃ（業者）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Koban / Gyousha</div><div class="meaning-text">Police box / Repair technician company</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 16 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for trouble, assistance, consultation, questions, explanations, lost items, documents, and housing.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">困</div><div class="kanji-info"><h5>Quagmire / Become distressed</h5><div class="kanji-readings">Onyomi: <span>コン (kon)</span><br>Kunyomi: こま-る</div></div></div><div class="kanji-example" onclick="speakText('困る、困難、貧困')"><span>困る（こまる）- in trouble<br>困難（こんなん）- difficulty</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">助</div><div class="kanji-info"><h5>Help / Rescue / Assist</h5><div class="kanji-readings">Onyomi: <span>ジョ (jo)</span><br>Kunyomi: たす-ける、たす-かる</div></div></div><div class="kanji-example" onclick="speakText('助ける、助かる、助手')"><span>助ける（たすける）- to help<br>助かる（たすかる）- to be saved</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">談</div><div class="kanji-info"><h5>Discuss / Talk / Consult</h5><div class="kanji-readings">Onyomi: <span>ダン (dan)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('相談、対談、会談')"><span>相談（そうだん）- consult<br>対談（たいだん）- dialogue</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">質</div><div class="kanji-info"><h5>Substance / Quality / Question</h5><div class="kanji-readings">Onyomi: <span>シツ、シチ (shitsu)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('質問、品質、性質')"><span>質問（しつもん）- question<br>品質（ひんしつ）- quality</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">問</div><div class="kanji-info"><h5>Question / Ask / Problem</h5><div class="kanji-readings">Onyomi: <span>モン (mon)</span><br>Kunyomi: と-う、とい</div></div></div><div class="kanji-example" onclick="speakText('質問、問題、問い合わせ')"><span>質問（しつもん）- question<br>問題（もんだい）- problem</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">説</div><div class="kanji-info"><h5>Explain / Opinion / Theory</h5><div class="kanji-readings">Onyomi: <span>セツ (setsu)</span><br>Kunyomi: と-く</div></div></div><div class="kanji-example" onclick="speakText('説明、小説、説得')"><span>説明（せつめい）- explanation<br>小説（しょうせつ）- novel</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">明</div><div class="kanji-info"><h5>Bright / Clear / Explain</h5><div class="kanji-readings">Onyomi: <span>メイ、ミョウ (mei)</span><br>Kunyomi: あか-るい、あ-ける</div></div></div><div class="kanji-example" onclick="speakText('説明、明るい、明日')"><span>説明（せつめい）- explanation<br>明るい（あかるい）- bright</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">連</div><div class="kanji-info"><h5>Take along / Connect / Series</h5><div class="kanji-readings">Onyomi: <span>レン (ren)</span><br>Kunyomi: つら-なる、つ-れる</div></div></div><div class="kanji-example" onclick="speakText('連絡、連れていく、連続')"><span>連絡（れんらく）- contact<br>連れていく（つれていく）- take along</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">絡</div><div class="kanji-info"><h5>Entwine / Coil around / Get caught</h5><div class="kanji-readings">Onyomi: <span>ラク (raku)</span><br>Kunyomi: から-む</div></div></div><div class="kanji-example" onclick="speakText('連絡、絡む')"><span>連絡（れんらく）- contact / inform<br>連絡先（れんらくさき）- contact info</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">故</div><div class="kanji-info"><h5>Happenstance / Old / Reason</h5><div class="kanji-readings">Onyomi: <span>コ (ko)</span><br>Kunyomi: ゆえ</div></div></div><div class="kanji-example" onclick="speakText('故障、事故、故郷')"><span>故障（こしょう）- malfunction<br>事故（じこ）- traffic accident</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">障</div><div class="kanji-info"><h5>Hinder / Hurt / Obstacle</h5><div class="kanji-readings">Onyomi: <span>ショウ (shou)</span><br>Kunyomi: さわ-る</div></div></div><div class="kanji-example" onclick="speakText('故障、障害、支障')"><span>故障（こしょう）- malfunction<br>障害（しょうがい）- obstacle / disability</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">直</div><div class="kanji-info"><h5>Straight / Fix / Repair</h5><div class="kanji-readings">Onyomi: <span>チョク、ジキ (choku)</span><br>Kunyomi: なお-す、なお-る</div></div></div><div class="kanji-example" onclick="speakText('直す、直る、直接')"><span>直す（なおす）- to repair / fix<br>直接（ちょくせつ）- direct</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">落</div><div class="kanji-info"><h5>Fall / Drop / Fall behind</h5><div class="kanji-readings">Onyomi: <span>ラク (raku)</span><br>Kunyomi: お-ちる、お-とす</div></div></div><div class="kanji-example" onclick="speakText('落とし物、落ちる、落とす')"><span>落とし物（おとしもの）- lost item<br>落とす（おとす）- to drop</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">忘</div><div class="kanji-info"><h5>Forget / Neglect / Oblivion</h5><div class="kanji-readings">Onyomi: <span>ボウ (bou)</span><br>Kunyomi: わす-れる</div></div></div><div class="kanji-example" onclick="speakText('忘れ物、忘れる、忘年会')"><span>忘れ物（わすれもの）- left item<br>忘れる（わすれる）- to forget</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">物</div><div class="kanji-info"><h5>Thing / Object / Matter</h5><div class="kanji-readings">Onyomi: <span>ブツ、モツ (butsu)</span><br>Kunyomi: もの</div></div></div><div class="kanji-example" onclick="speakText('落とし物、忘れ物、荷物')"><span>落とし物（おとしもの）- lost item<br>荷物（にもつ）- baggage / luggage</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">住</div><div class="kanji-info"><h5>Dwell / Reside / Live</h5><div class="kanji-readings">Onyomi: <span>ジュウ (juu)</span><br>Kunyomi: す-む、す-まう</div></div></div><div class="kanji-example" onclick="speakText('住所、住む、住宅')"><span>住所（じゅうしょ）- address<br>住む（すむ）- to reside / live</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">所</div><div class="kanji-info"><h5>Place / Location / Spot</h5><div class="kanji-readings">Onyomi: <span>ショ (sho)</span><br>Kunyomi: ところ</div></div></div><div class="kanji-example" onclick="speakText('住所、場所、近所')"><span>住所（じゅうしょ）- address<br>場所（ばしょ）- place / spot</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">書</div><div class="kanji-info"><h5>Write / Document / Book</h5><div class="kanji-readings">Onyomi: <span>ショ (sho)</span><br>Kunyomi: か-く</div></div></div><div class="kanji-example" onclick="speakText('書類、書く、辞書')"><span>書類（しょるい）- official documents<br>書く（かく）- to write</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">類</div><div class="kanji-info"><h5>Kind / Sort / Class / Genus</h5><div class="kanji-readings">Onyomi: <span>ルイ (rui)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('書類、種類、分類')"><span>書類（しょるい）- documents<br>種類（しゅるい）- kind / variety</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">必</div><div class="kanji-info"><h5>Invariably / Certain / Must</h5><div class="kanji-readings">Onyomi: <span>ヒツ (hitsu)</span><br>Kunyomi: かなら-ず</div></div></div><div class="kanji-example" onclick="speakText('必要、必ず、必死')"><span>必要（ひつよう）- necessary<br>必ず（かならず）- certainly / always</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">要</div><div class="kanji-info"><h5>Need / Require / Main point</h5><div class="kanji-readings">Onyomi: <span>ヨウ (you)</span><br>Kunyomi: い-る</div></div></div><div class="kanji-example" onclick="speakText('必要、要る、重要')"><span>必要（ひつよう）- essential<br>要る（いる）- to need / require</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">迷</div><div class="kanji-info"><h5>Astray / Be perplexed / Err</h5><div class="kanji-readings">Onyomi: <span>メイ (mei)</span><br>Kunyomi: まよ-う</div></div></div><div class="kanji-example" onclick="speakText('迷惑、迷う、迷子')"><span>迷惑（めいわく）- trouble / annoyance<br>迷う（まよう）- get lost / hesitate</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">惑</div><div class="kanji-info"><h5>Beguile / Delusion / Perplexity</h5><div class="kanji-readings">Onyomi: <span>ワク (waku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('迷惑、戸惑う、誘惑')"><span>迷惑（めいわく）- nuisance / bother<br>迷惑をかける（めいわくをかける）- cause trouble</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">危</div><div class="kanji-info"><h5>Dangerous / Fear / Uneasy</h5><div class="kanji-readings">Onyomi: <span>キ (ki)</span><br>Kunyomi: あぶ-ない、あや-うい</div></div></div><div class="kanji-example" onclick="speakText('危ない、危険、危機')"><span>危ない（あぶない）- dangerous<br>危険（きけん）- hazard / peril</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay Module -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>🚀 Trouble Solving Roleplays (アパートの修理と落とし物の相談)</h3>
+            <p>Master reporting broken appliances to your landlord and consulting with police officers about lost items!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-primary);">
+            <h4>💬 Scene 1: Apartment AC Malfunction (アパートのエアコン故障)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('すみません、ちょっと そうだん したい こと が あるんです が。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> すみません、ちょっと 相談（そうだん）したい ことが あるんですが。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sumimasen, chotto soudan shitai koto ga arun desu ga. (Excuse me, I have something I would like to consult with you about...)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('はい、どう しました か。')">
+                    <strong style="color:var(--accent-primary);">管理人 (Manager):</strong> はい、どうしましたか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hai, dou shimashita ka. (Yes, what is the matter?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('へや の エアコン が こしょう して いるんです。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 部屋（へや）の エアコンが 故障（こしょう）して いるんです。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Heya no eakon ga koshou shite irun desu. (My room's air conditioner is malfunctioning.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('そう です か。いつ から です か。')">
+                    <strong style="color:var(--accent-primary);">管理人 (Manager):</strong> そうですか。いつからですか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sou desu ka. Itsu kara desu ka. (Is that so? Since when?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('きのう から です。はやく なおして ほしいんです が…。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 昨日（きのう）からです。早（はや）く 直（なお）して ほしいんですが…。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kinou kara desu. Hayaku naoshite hoshiin desu ga... (Since yesterday. I would like it fixed quickly, but...)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('わかりました。あした ぎょうしゃ に きて もらいます。')">
+                    <strong style="color:var(--accent-primary);">管理人 (Manager):</strong> わかりました。あした 業者（ぎょうしゃ）に 来（き）てもらいます。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Wakarimashita. Ashita gyousha ni kite moraimasu. (I understand. I will have a repair technician come tomorrow.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('ありがとう ございます。たすかります。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> ありがとうございます。助（たす）かります！<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Arigatou gozaimasu. Tasukarimasu. (Thank you very much. That is a huge help!)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-warning);">
+            <h4>👛 Scene 2: Lost Wallet at Train Station / Koban (財布の紛失・交番での相談)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('すみません、さいふ を なくして しまいました。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> すみません、財布（さいふ）を なくして しまいました。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sumimasen, saifu wo nakushite shimaimashita. (Excuse me, I have accidentally lost my wallet.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('どこ で なくしました か。')">
+                    <strong style="color:var(--accent-primary);">駅員 / 警察 (Officer):</strong> どこで なくしましたか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Doko de nakushimashita ka. (Where did you lose it?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('たぶん えき だと おもいます。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> たぶん 駅（えき）だと 思（おも）います。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Tabun eki da to omoimasu. (I think it was probably at the station.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('こうばん に いった ほうが いい です ね。')">
+                    <strong style="color:var(--accent-primary);">駅員 / 警察 (Officer):</strong> 交番（こうばん）に 行（い）った ほうが いいですね。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Koban ni itta hou ga ii desu ne. (You should go to the police box, that would be best.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('そう です ね。いろいろ おしえて くれて ありがとう ございます。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> そうですね。いろいろ 教（おし）えて くれて ありがとうございます。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sou desu ne. Iroiro oshiete kurete arigatou gozaimasu. (That's right. Thank you very much for telling me various things.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('いいえ。みつかる と いい です ね。')">
+                    <strong style="color:var(--accent-primary);">駅員 / 警察 (Officer):</strong> いいえ。見（み）つかると いいですね。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Iie. Mitsukaru to ii desu ne. (Not at all. I hope you find it!)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 16 Trouble & Emergency Request Quiz</h3>
+                <p>Test your understanding of third-party desires, negative requests, gratitude endings, and emergency vocabulary!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 5677–5878)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 16: こまった とき (困った とき) - When You Have Trouble
+
+## 🎯 Goal:
+- kisi se help maangna  
+- problem explain karna  
+- politely request karna  
+- kisi ki madad ke liye thanks bolna  
+
+---
+
+## 1) Important Vocabulary
+
+### **Trouble / Help words**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| こまる (困る) | こまる | Pareshan hona |
+| こまって います | こまって います | Main pareshan hoon |
+| たすける (助ける) | たすける | Madad karna |
+| たすかる (助かる) | たすかる | Madad milna / bach jana |
+| そうだん (相談) | そうだん | Salah / consult |
+| しつもん (質問) | しつもん | Sawaal |
+| せつめい (説明) | せつめい | Samjhana / explanation |
+| れんらく (連絡) | れんらく | Contact / inform |
+| こしょう (故障) | こしょう | Kharabi / malfunction |
+| なおす (直す) | なおす | Theek karna |
+| なおる (直る) | なおる | Theek ho jana |
+| なくす | なくす | Kho dena |
+| みつける (見つける) | みつける | Dhoondh lena / find |
+| みつかる (見つかる) | みつかる | Mil jana |
+| おとしもの (落とし物) | おとしもの | Lost item |
+| わすれもの (忘れ物) | わすれもの | Bhooli hui cheez |
+| じゅうしょ (住所) | じゅうしょ | Address |
+| しょるい (書類) | しょるい | Documents |
+| ひつよう (必要) | ひつよう | Zaroori |
+| めいわく (迷惑) | めいわく | Pareshani / inconvenience |
+
+---
+
+### **Common daily problems**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| かぎ (鍵) | かぎ | Key |
+| さいふ (財布) | さいふ | Wallet |
+| けいたい / スマホ | けいたい / すまほ | Mobile |
+| パスポート | ぱすぽおと | Passport |
+| ざいりゅうカード (在留カード) | ざいりゅうかあど | Residence card |
+| でんき (電気) | でんき | Electricity |
+| みず (水) | みず | Water |
+| ガス | がす | Gas |
+| ドア | どあ | Door |
+| エアコン | えあこん | AC |
+| うるさい | うるさい | Noisy |
+| くさい (臭い) | くさい | Bad smell |
+| きたない (汚い) | きたない | Dirty |
+| あぶない (危ない) | あぶない | Dangerous |
+
+---
+
+## 2) Grammar Point 80: ～てほしいです  
+## Meaning: “Mujhe chahiye ki koi _____ kare”
+
+**Verb て-form + ほしいです**
+
+Ye tab use hota hai jab tum chahte ho **koi aur** kuch kare.
+
+### Examples:
+- もう すこし ゆっくり はなして **ほしいです**。  
+  → Main chahta hoon ki aap thoda dheere bolen.
+
+- この ぶぶん (部分) を もう いちど せつめいして **ほしいです**。  
+  → Main chahta hoon ki yeh part ek baar aur samjhaya jaye.
+
+- しょるい を はやく なおして **ほしいです**。  
+  → Main chahta hoon ki document jaldi theek kiya jaye.
+
+- となり の へや の ひと に、もう すこし しずかに して **ほしいです**。  
+  → Main chahta hoon bagal wale room ka aadmi thoda shaant rahe.
+
+---
+
+## 3) Grammar Point 81: ～ないでほしいです  
+## Meaning: “Main chahta hoon ki koi _____ na kare”
+
+**ない-form + でほしいです**
+
+### Examples:
+- ここ に ゴミ を すてないで **ほしいです**。  
+  → Main chahta hoon yahaan kachra na phenka jaye.
+
+- よる おそく、おおきい おと を ださないで **ほしいです**。  
+  → Main chahta hoon raat der tak loud sound na ho.
+
+- かってに わたし の もの を つかわないで **ほしいです**。  
+  → Main chahta hoon meri cheezein bina poochhe use na ki jayein.
+
+- しんぱい しないで **ほしいです**。  
+  → Main chahta hoon tum chinta mat karo.
+
+---
+
+## 4) Grammar Point 82: ～てくれて ありがとう / ～ていただいて ありがとう ございます  
+## Meaning: “_____ karne ke liye thanks”
+
+### Casual / normal:
+**て-form + くれて ありがとう**
+
+- てつだって **くれて ありがとう**。  
+  → Help karne ke liye thanks.
+
+- みち を おしえて **くれて ありがとう**。  
+  → Rasta batane ke liye thank you.
+
+### Formal:
+**て-form + いただいて ありがとう ございます**
+
+- おしえて **いただいて ありがとう ございます**。  
+  → Samjhane ke liye dhanyavaad.
+
+- てつづき を てつだって **いただいて ありがとう ございます**。  
+  → Procedure mein help karne ke liye bahut shukriya.
+
+- ごれんらく **いただいて ありがとう ございます**。  
+  → Contact karne ke liye dhanyavaad.
+
+---
+
+## 5) Grammar Point 83: ～て たすかりました  
+## Meaning: “_____ se bahut help mili”
+
+**て-form + たすかりました**
+
+### Examples:
+- にほんご に ほんやくして もらって、たすかりました。  
+  → Japanese mein translate kar diya, bahut help mili.
+
+- かさ を かして くれて、たすかりました。  
+  → Chhata udhaar diya, bahut help mili.
+
+- えき まで おくって もらって、たすかりました。  
+  → Station tak chhod diya, bahut help mili.
+
+- しょるい の かきかた を おしえて もらって、たすかりました。  
+  → Form kaise bharna hai yeh bata diya, bahut help mili.
+
+---
+
+## 6) Asking for help politely
+
+### Useful phrases:
+- すみません、ちょっと こまって いるんですが…。  
+  → Excuse me, thodi problem hai...
+
+- ちょっと おしえて もらえますか。  
+  → Thoda bata sakte hain?
+
+- てつだって いただけますか。  
+  → Kya madad kar sakte hain?
+
+- この ぶん (文) を にほんご に なおして もらえますか。  
+  → Is sentence ko Japanese mein correct kar sakte hain?
+
+- どうしたら いいですか。  
+  → Mujhe kya karna chahiye?
+
+---
+
+## 7) Sample Conversation - Apartment problem
+
+**A:** すみません、ちょっと そうだんしたい こと が あるんですが。  
+**B:** はい、どうしましたか。  
+**A:** へや の エアコン が こしょうして いるんです。  
+**B:** そうですか。いつ から ですか。  
+**A:** きのう からです。はやく なおして ほしいんですが…。  
+**B:** わかりました。あした ぎょうしゃ (業者) に きてもらいます。  
+**A:** ありがとうございます。たすかります。  
+
+### Hinglish meaning:
+A: Excuse me, ek baat consult karni thi.  
+B: Haan, kya hua?  
+A: Room ka AC kharab hai.  
+B: Achha. Kab se?  
+A: Kal se. Main chahta hoon jaldi theek ho jaye.  
+B: Theek hai. Kal repair wala bulaate hain.  
+A: Thank you, bahut help hogi.
+
+---
+
+## 8) Sample Conversation - Lost item
+
+**A:** すみません、さいふ を なくして しまいました。  
+**B:** どこで なくしましたか。  
+**A:** たぶん えき だと おもいます。  
+**B:** こうばん (交番) に いった ほうが いいですね。  
+**A:** そうですか。いろいろ おしえて くれて ありがとう ございます。  
+**B:** いいえ。みつかる と いいですね。  
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 16: こまったとき • Built with 100% Verbatim Fidelity & Emergency Audio Simulators</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const troubleData = {
+        ac: {
+            tehoshii: { jp: "暑（あつ）くて 眠（ねむ）れない ので、エアコンを 早（はや）く 直（なお）して ほしい です。", rom: "Atsukute nemurenai node, eakon wo hayaku naoshite hoshii desu.", hi: "Hindi Translation: Garmi hai aur neend nahi aa rahi, main chahta hoon AC jaldi theek kiya jaye!" },
+            naidehoshii: { jp: "修理（しゅうり）の 業者（ぎょうしゃ）に、夜（よる）遅（おそ）い 時間（じかん）に 来（き）ないで ほしい です。", rom: "Shuuri no gyousha ni, yoru osoi jikan ni kinaide hoshii desu.", hi: "Hindi Translation: Main chahta hoon repair technician raat der ke time pe na aaye!" },
+            "arigatou-casual": { jp: "エアコンの リモコンの 使い方（つかいかた）を 教（おし）えて くれて ありがとう！", rom: "Eakon no rimokon no tsukaikata wo oshiete kurete arigatou!", hi: "Hindi Translation: AC remote use karne ka tarika batane ke liye thanks (casual)!" },
+            "arigatou-formal": { jp: "すぐに 修理（しゅうり）の 業者（ぎょうしゃ）を 呼（よ）んで いただいて ありがとうございます。", rom: "Sugu ni shuuri no gyousha wo yonde itadaite arigatou gozaimasu.", hi: "Hindi Translation: Turant repair company bulane ke liye bahut shukriya (polite formal)!" },
+            tasukarimashita: { jp: "エアコンが 直（なお）って、本当（ほんとう）に 助（たす）かりました！涼（すず）しいです。", rom: "Eakon ga naotte, hontou ni tasukarimashita! Suzushii desu.", hi: "Hindi Translation: AC theek ho gaya, sach mein bahut relief mili! Ab thanda hai." }
+        },
+        wallet: {
+            tehoshii: { jp: "駅（えき）の ホームで 財布（さいふ）を 探（さが）す のを 手伝（てつだ）って ほしい です。", rom: "Eki no hoomu de saifu wo sagasu no wo tetsudatte hoshii desu.", hi: "Hindi Translation: Main chahta hoon ki station platform pe wallet dhoondhne mein meri help ki jaye." },
+            naidehoshii: { jp: "財布（さいふ）の 中（なか）の 在留（ざいりゅう）カードと お金（かね）を 盗（ぬす）まないで ほしい です。", rom: "Saifu no naka no zairyuu kaado to okane wo nusumanaide hoshii desu.", hi: "Hindi Translation: Main chahta hoon ki wallet ke andar ka residence card aur paise chori na hon!" },
+            "arigatou-casual": { jp: "交番（こうばん）の 場所（ばしょ）を 教（おし）えて くれて ありがとう！行（い）ってみるね。", rom: "Koban no basho wo oshiete kurete arigatou! Itte miru ne.", hi: "Hindi Translation: Police box ka rasta batane ke liye thanks! Ja kar dekhta hoon." },
+            "arigatou-formal": { jp: "落（お）とし物（もの）の 届（とど）け出（で）を 手伝（てつだ）って いただいて ありがとうございます。", rom: "Otoshimono no todokede wo tetsudatte itadaite arigatou gozaimasu.", hi: "Hindi Translation: Lost item report bharna sikhaane aur help karne ke liye bahut dhanyavaad." },
+            tasukarimashita: { jp: "親切（しんせつ）な 人（ひと）が 交番（こうばん）に 届（とど）けて くれて、本当（ほんとう）に 助（たす）かりました！", rom: "Shinsetsu na hito ga koban ni todokete kurete, hontou ni tasukarimashita!", hi: "Hindi Translation: Kisi nek insaan ne police box mein jama kar diya, main sach mein bach gaya!" }
+        },
+        noisy: {
+            tehoshii: { jp: "隣（となり）の 部屋（へや）の 人（ひと）に、夜（よる）は もう 少し（すこし）静（しず）かに して ほしい です。", rom: "Tonari no heya no hito ni, yoru wa mou sukoshi shizuka ni shite hoshii desu.", hi: "Hindi Translation: Main chahta hoon ki bagal wale room ka aadmi raat mein thoda shaant rahe!" },
+            naidehoshii: { jp: "深夜（しんや）に 大（おお）きい 音（おと）で 音楽（おんがく）を 聞（き）かないで ほしい です。", rom: "Shinya ni ookii oto de ongaku wo kikanaide hoshii desu.", hi: "Hindi Translation: Main chahta hoon ki der raat loud sound mein music na suna jaye!" },
+            "arigatou-casual": { jp: "隣（となり）の 人（ひと）に 注意（ちゅうい）して くれて ありがとう！静（しず）かに なったよ。", rom: "Tonari no hito ni chuui shite kurete arigatou! Shizuka ni natta yo.", hi: "Hindi Translation: Bagal wale ko warn karne ke liye thanks! Ab shaant ho gaya hai." },
+            "arigatou-formal": { jp: "騒音（そうおん）の 問題（もんだい）に 対応（たいおう）して いただいて ありがとうございます。", rom: "Souon no mondai ni taiou shite itadaite arigatou gozaimasu.", hi: "Hindi Translation: Noise complaint problem handle karne ke liye bahut shukriya (formal)." },
+            tasukarimashita: { jp: "管理人（かんりにん）さんが 注意（ちゅうい）して くれて、よく 眠（ねむ）れる ように なって 助（たす）かりました。", rom: "Kanrinin-san ga chuui shite kurete, yoku nemureru you ni natte tasukarimashita.", hi: "Hindi Translation: Manager ne warn kar diya, ab achhi neend aa rahi hai aur bahut relief mili!" }
+        },
+        doc: {
+            tehoshii: { jp: "役所（やくしょ）の 書類（しょるい）の 漢字（かんじ）の 読（よ）み方（かた）を 教（おし）えて ほしい です。", rom: "Yakusho no shorui no kanji no yomikata wo oshiete hoshii desu.", hi: "Hindi Translation: Main chahta hoon ki city office ke papers ke Kanji padhne ka tarika sikhaya jaye." },
+            naidehoshii: { jp: "難（むずか）しい 専門（せんもん）用語（ようご）ばかり 使（つか）わないで ほしい です。", rom: "Muzukashii senmon yougo bakari tsukawanaide hoshii desu.", hi: "Hindi Translation: Main chahta hoon ki sirf mushkil technical terms use na kiye jayein!" },
+            "arigatou-casual": { jp: "日本語（にほんご）を 簡単（かんたん）な 英語（えいご）に 翻訳（ほんやく）して くれて ありがとう！", rom: "Nihongo wo kantan na eigo ni honyaku shite kurete arigatou!", hi: "Hindi Translation: Japanese ko simple English mein translate karne ke liye thanks!" },
+            "arigatou-formal": { jp: "書類（しょるい）の 書き方（かきかた）を 丁寧（ていねい）に 説明（せつめい）して いただいて ありがとうございます。", rom: "Shorui no kakikata wo teinei ni setsumei shite itadaite arigatou gozaimasu.", hi: "Hindi Translation: Document bharna polite tarike se samjhane ke liye bahut dhanyavaad." },
+            tasukarimashita: { jp: "手伝（てつだ）って もらった おかげで、締切（しめきり）までに 提出（ていしゅつ）できて 助（たす）かりました！", rom: "Tetsudatte moratta okagede, shimekiri made ni teishutsu dekite tasukarimashita!", hi: "Hindi Translation: Aapki help se deadline tak submit ho gaya, main sach mein bach gaya!" }
+        },
+        water: {
+            tehoshii: { jp: "台所（だいどころ）の 水道（すいどう）から 水（みず）が 漏（も）れている ので、直（なお）して ほしい です。", rom: "Daidokoro no suidou kara mizu ga morete iru node, naoshite hoshii desu.", hi: "Hindi Translation: Kitchen ke tap se pani leak ho raha hai, main chahta hoon isse fix kiya jaye!" },
+            naidehoshii: { jp: "水道（すいどう）や ガスの 修理（しゅうり）の 間（あいだ）、部屋（へや）を 汚（きたな）く しないで ほしい です。", rom: "Suidou ya gasu no shuuri no aida, heya wo kitanaku shinaide hoshii desu.", hi: "Hindi Translation: Main chahta hoon ki water/gas repair ke dauran room ganda na ho!" },
+            "arigatou-casual": { jp: "水道（すいどう）の 会社（かいしゃ）の 電話（でんわ）番号（ばんごう）を 教（おし）えて くれて ありがとう！", rom: "Suidou no kaisha no denwa bangou wo oshiete kurete arigatou!", hi: "Hindi Translation: Water department company ka phone number batane ke liye thanks!" },
+            "arigatou-formal": { jp: "日曜日（にちようび）なのに すぐに 来（き）て いただいて ありがとうございます。", rom: "Nichiyoubi nanoni sugu ni kite itadaite arigatou gozaimasu.", hi: "Hindi Translation: Sunday hone ke bawajood turant aane ke liye bahut shukriya!" },
+            tasukarimashita: { jp: "お湯（ゆ）が 使（つか）える ように なって、お風呂（ふろ）に入（はい）れて 本当（ほんとう）に 助（たす）かりました！", rom: "Oyu ga tsukaeru you ni natte, ofuro ni hairete hontou ni tasukarimashita!", hi: "Hindi Translation: Garam pani chalu ho gaya aur naha saka, sach mein bahut help mili!" }
+        }
+    };
+
+    function updateTroubleSim() {
+        const s = document.getElementById('sim-scene').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = troubleData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakTroubleSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 「書類を 早く 直して _______です。」\n(I WANT YOU / SOMEONE ELSE to fix the document quickly - third-party request)", opt: ["ほしい (hoshii)", "たい (tai)", "つもり (tsumori)", "ように (you ni)"], ans: 0 },
+        { q: "2. 「夜 遅くまで、大きい 音を 出さないで _______です。」\n(I WANT YOU NOT TO make loud noises late at night - negative desire)", opt: ["ほしい (hoshii)", "ほしいくない (hoshiikunai)", "たい (tai)", "たくない (takunai)"], ans: 0 },
+        { q: "3. 「手伝って _______ありがとう ございます。」\n(Thank you very much FOR HELPING ME - formal polite gratitude to a superior/manager)", opt: ["いただいて (itadaite)", "くれて (kurete)", "あげて (agete)", "もらう (morau)"], ans: 0 },
+        { q: "4. 「傘を 貸して くれて、_______！」\n(You lent me an umbrella, and THAT REALLY HELPED ME OUT / SAVED ME!)", opt: ["助かりました (tasukarimashita)", "困りました (komarimashita)", "故障しました (koshou shimashita)", "なくしました (nakushimashita)"], ans: 0 },
+        { q: "5. 「部屋の エアコンが _______いるんです。」\n(My room's AC is MALFUNCTIONING / BROKEN)", opt: ["故障して (koshou shite)", "相談して (soudan shite)", "連絡して (renraku shite)", "説明して (setsumei shite)"], ans: 0 },
+        { q: "6. 「財布を _______しまいました。」\n(I accidentally LOST my wallet)", opt: ["なくして (nakushite)", "見つけて (mitsukete)", "直して (naoshite)", "助けて (tasukete)"], ans: 0 },
+        { q: "7. 「落とし物（おとしもの）」と 「忘れ物（わすれもの）」の 正しい 違いは どれですか？\n(What is the difference between otoshimono and wasuremono?)", opt: ["Otoshimono is an item dropped / lost somewhere; Wasuremono is an item accidentally forgotten / left behind (e.g. on a train)", "Otoshimono is a stolen car; Wasuremono is a rented bicycle", "Otoshimono is a birthday gift; Wasuremono is a souvenir", "There is no difference at all between them"], ans: 0 },
+        { q: "8. 「直す（なおす）」と 「直る（なおる）」の 正しい 違いは どれですか？\n(What is the difference between naosu and naoru?)", opt: ["Naosu is transitive (to repair/fix something yourself); Naoru is intransitive (something gets repaired/cured on its own)", "Naosu is for food; Naoru is for drinks", "Naosu is past tense; Naoru is future tense", "Naosu means to break; Naoru means to sell"], ans: 0 },
+        { q: "9. 「～たいです」と 「～てほしいです」の 主語（しゅご - subject/actor）の 違いは どれですか？\n(Who performs the action in ~tai vs ~te hoshii?)", opt: ["In ~tai, YOU (the speaker) perform the action; in ~te hoshii, SOMEONE ELSE performs the action for you!", "In ~tai, someone else does it; in ~te hoshii, you do it yourself", "Both patterns mean that a robot performs the action", "Both patterns mean that nobody performs the action"], ans: 0 },
+        { q: "10. 日本で 財布や パスポートを なくしたとき、まず どこに 行く・相談する のが 一番 いいですか？\n(Where is the best place to go first when you lose your wallet or passport in Japan?)", opt: ["交番（こうばん - Koban / police box or station staff）", "映画館（えいがかん - movie theater）", "動物園（どうぶつえん - zoo）", "居酒屋（いざかや - Japanese pub）"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Superb! You can now confidently ask for help and resolve emergencies in Japanese!':'💪 Keep trying! Review request patterns (~てほしい / ~ないでほしい) and gratitude expressions!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

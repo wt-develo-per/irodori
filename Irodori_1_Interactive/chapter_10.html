@@ -1,0 +1,1910 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Ch 10: いえ (House / Ghar) & Part 2 Grand Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0b0f17;
+            --bg-secondary: #131926;
+            --bg-tertiary: #1e273b;
+            --bg-card: rgba(30, 39, 59, 0.7);
+            --bg-glass: rgba(19, 25, 38, 0.85);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(56, 189, 248, 0.5);
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #818cf8;
+            --accent-tertiary: #4ade80;
+            --accent-info: #f43f5e;
+            --accent-warning: #fbbf24;
+            --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            --gradient-secondary: linear-gradient(135deg, #f43f5e 0%, #fbbf24 100%);
+            --gradient-tertiary: linear-gradient(135deg, #4ade80 0%, #2dd4bf 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(56, 189, 248, 0.25);
+            --font-main: 'Outfit', sans-serif;
+            --font-jp: 'Noto Sans JP', sans-serif;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f5f9;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(2, 132, 199, 0.5);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #94a3b8;
+            --accent-primary: #0284c7;
+            --accent-secondary: #4f46e5;
+            --accent-tertiary: #16a34a;
+            --accent-info: #e11d48;
+            --accent-warning: #d97706;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 20px rgba(2, 132, 199, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.08) 0%, transparent 40%);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-badge {
+            background: var(--gradient-primary);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-glow);
+            letter-spacing: 1px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-theme, .btn-audio-global {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme:hover, .btn-audio-global:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Welcome Banner */
+        .banner {
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .banner::after {
+            content: "いえ";
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-family: var(--font-jp);
+            font-size: 8rem;
+            font-weight: 900;
+            opacity: 0.15;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .banner h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+        }
+
+        .banner p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .banner-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.75rem 1.4rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Tab Content Panels */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Flashcards Grid */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .jp-text {
+            font-family: var(--font-jp);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1.3;
+        }
+
+        .btn-audio {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card:hover .btn-audio {
+            background: var(--accent-primary);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .romaji-text {
+            font-size: 0.95rem;
+            color: var(--accent-secondary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .meaning-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 500;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--bg-tertiary);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-bottom-left-radius: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Interactive Tools Box */
+        .interactive-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .interactive-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .output-panel {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .output-jp {
+            font-family: var(--font-jp);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .output-romaji {
+            color: var(--accent-warning);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .output-meaning {
+            color: var(--accent-tertiary);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .btn-action {
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Grammar Cards */
+        .grammar-card {
+            background: var(--bg-secondary);
+            border-left: 5px solid var(--accent-primary);
+            border-radius: 0 20px 20px 0;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .grammar-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grammar-formula {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-family: var(--font-jp);
+            font-size: 1.25rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            border: 1px dashed var(--border-color);
+            display: inline-block;
+        }
+
+        .particle-badge {
+            background: var(--accent-primary);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin: 0 0.3rem;
+            display: inline-block;
+        }
+
+        /* Review Master Tables */
+        .review-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .review-table th {
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .review-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .review-table tr:hover {
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .review-table .jp-col {
+            font-family: var(--font-jp);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--accent-tertiary);
+        }
+
+        /* Kanji Section Grid */
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kanji-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kanji-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .kanji-top {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .kanji-char {
+            font-family: var(--font-jp);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-primary);
+            line-height: 1;
+            background: var(--bg-tertiary);
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .kanji-info h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        .kanji-readings {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .kanji-readings span {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .kanji-example {
+            background: var(--bg-primary);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .kanji-example:hover {
+            border-color: var(--accent-tertiary);
+        }
+
+        /* Quiz Module */
+        .quiz-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .question-box {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .option-btn {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent-primary);
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        .option-btn.correct {
+            background: rgba(74, 222, 128, 0.2);
+            border-color: var(--accent-tertiary);
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            background: rgba(244, 63, 94, 0.2);
+            border-color: var(--accent-info);
+            color: #fff;
+        }
+
+        .quiz-score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 2rem;
+            color: var(--accent-tertiary);
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            border: 2px solid var(--accent-tertiary);
+        }
+
+        /* Verbatim Text Reference Box */
+        .verbatim-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 2rem;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #e6edf3;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .verbatim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .badge-100 {
+            background: #238636;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner h2 { font-size: 1.8rem; }
+            .grid-cards, .kanji-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 1rem; }
+            .tabs-nav { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">第 10 課</div>
+            <div class="logo-text">
+                <h1>Irodori (いろどり) Elementary 1</h1>
+                <p>Chapter 10: いえ (Ie) - House / Ghar & Part 2 Grand Review</p>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button class="btn-audio-global" onclick="speakText('わたしのへやにベッドがひとつあります。しずかでべんりです。まどをあけてもいいですか？')">
+                <span>🔊</span> Speak Ch 10 Key Phrases
+            </button>
+            <button class="btn-theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> Theme
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Welcome Banner -->
+        <div class="banner">
+            <h2>いえ (Ie) - House / Ghar & Part 2 Finale Review</h2>
+            <p>Welcome to the milestone completion of Part 2! Master house descriptions with <strong style="color:#fff; background:#0284c7; padding:0 6px; border-radius:4px;">あります / います</strong>, express what you want using <strong style="color:#fff; background:#e11d48; padding:0 6px; border-radius:4px;">～が ほしい です</strong>, ask for permission with <strong style="color:#fff; background:#16a34a; padding:0 6px; border-radius:4px;">～てもいいですか</strong>, know prohibitions with <strong style="color:#fff; background:#d97706; padding:0 6px; border-radius:4px;">～ては いけません</strong>, and master our Grand Review of Chapters 1 to 10!</p>
+            <div class="banner-tags">
+                <div class="tag">🎯 Goal: Ghar ke baare mein batana, rooms describe karna, Ch 1-10 Mastery</div>
+                <div class="tag">🏆 Part 2 Grand Finale (Chapters 1 to 10 Complete)</div>
+                <div class="tag">⚡ 100% Verbatim Complete Content (Lines 1727 to 2063)</div>
+                <div class="tag">🈹 24 Housing Kanjis & 10-Q Master Quiz</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('house')">
+                <span>🏠</span> House Layout & Existence Locator (あります / います)
+            </button>
+            <button class="tab-btn" onclick="switchTab('perm')">
+                <span>🔑</span> House Hunting, Permission & Prohibitions Engine
+            </button>
+            <button class="tab-btn" onclick="switchTab('review')">
+                <span>🏆</span> Part 2 Grand Review Hub (Ch 1–10 Master Tables)
+            </button>
+            <button class="tab-btn" onclick="switchTab('vocab')">
+                <span>🗣️</span> 34 Housing & Furniture Vocab Cards
+            </button>
+            <button class="tab-btn" onclick="switchTab('kanji')">
+                <span>🈹</span> Kanji Mastery (24 Ch 10 Kanjis)
+            </button>
+            <button class="tab-btn" onclick="switchTab('quiz')">
+                <span>🎮</span> Practice Quiz (10 Qs)
+            </button>
+            <button class="tab-btn" onclick="switchTab('verbatim')">
+                <span>📖</span> Verbatim Original Text (100% Complete)
+            </button>
+        </div>
+
+        <!-- TAB 1: House Layout & Existence Locator -->
+        <div id="tab-house" class="tab-content active">
+            <!-- Interactive House Layout & Existence Locator -->
+            <div class="interactive-box">
+                <h4>🏠 Interactive House Layout & Existence Locator</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Construct natural Japanese existence sentences! Remember: use <strong style="color:#fff;">あります</strong> for inanimate objects (beds, TVs, mountains) and <strong style="color:#fff;">います</strong> for living creatures (pets, people)! Notice the difference between <strong style="color:var(--accent-primary);">[Place] に [Thing] が あります</strong> and <strong style="color:var(--accent-tertiary);">[Thing] は [Place] に あります</strong>!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="hs-pattern">Sentence Grammar Pattern</label>
+                        <select id="hs-pattern">
+                            <option value="p_first" selected>Grammar Pt 28: [Place] に [Item] が あります/います (Place first)</option>
+                            <option value="i_first">Grammar Pt 29: [Item] は [Place] に あります/います (Item first)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="hs-place">Location / Place</label>
+                        <select id="hs-place">
+                            <option value="わたし の へや|watashi no heya|Mere kamre mein (In my room 🛏️)" selected>わたし の へや (My Room 🛏️)</option>
+                            <option value="だいどころ (キッチン)|daidokoro (kitchin)|Kitchen mein (In the kitchen 🍳)">だいどころ / キッチン (Kitchen 🍳)</option>
+                            <option value="リビング|ribingu|Living room mein (In living room 🛋️)">リビング (Living Room 🛋️)</option>
+                            <option value="にわ|niwa|Bageeche mein (In the garden 🌳)">にわ (Garden 🌳)</option>
+                            <option value="アパート の ちかく|apaato no chikaku|Apartment ke paas (Near apartment 🏢)">アパート の ちかく (Near apartment 🏢)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="hs-item">Item / Person / Animal</label>
+                        <select id="hs-item">
+                            <option value="ベッド と つくえ|beddo to tsukue|bed aur desk|あります|arimasu|hai (Inanimate)" selected>ベッド と つくえ (Bed & Desk 🛏️ - あります)</option>
+                            <option value="おおきい れいぞうこ|ookii reizouko|bada fridge|あります|arimasu|hai (Inanimate)">おおきい れいぞうこ (Big Fridge 🧊 - あります)</option>
+                            <option value="テレビ と ソファー|terebi to sofaa|TV aur sofa|あります|arimasu|hai (Inanimate)">テレビ と ソファー (TV & Sofa 📺 - あります)</option>
+                            <option value="かわいい ねこ|kawaii neko|pyaari billi|います|imasu|hai (Living animal! 🐱)">かわいい ねこ (Cute Cat 🐱 - います ⚠️)</option>
+                            <option value="えき|eki|station|あります|arimasu|hai (Inanimate place)">えき (Station 🚉 - あります)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="hs-jp">わたし の へや に ベッド と つくえ が あります。</div>
+                    <div class="output-romaji" id="hs-romaji" style="margin-top:0.8rem;">Watashi no heya ni beddo to tsukue ga arimasu.</div>
+                    <div class="output-meaning" id="hs-meaning">Matlab: Mere kamre mein bed aur desk hai.</div>
+                    <button class="btn-action" onclick="speakGeneratedHouse()">🔊 Speak House Sentence</button>
+                </div>
+            </div>
+
+            <!-- Complete Apartment Description Example Box -->
+            <div class="interactive-box" style="border-color: var(--accent-tertiary);">
+                <h4 style="color: var(--accent-tertiary);">🏢 Complete Apartment Description Example (1LDK)</h4>
+                <p style="margin-bottom: 1rem; color: var(--text-muted);">See how a complete Japanese apartment tour description is structured from location (<strong style="color:#fff;">えき から あるいて 5ふん</strong>) to layout (<strong style="color:#fff;">1LDK</strong>) to view (<strong style="color:#fff;">ベランダ から やま が みえます</strong>)!</p>
+                
+                <div style="background:var(--bg-primary); padding:1.5rem; border-radius:16px; border:1px solid var(--border-color); font-family:var(--font-jp); font-size:1.15rem; line-height:2; margin-bottom:1rem;">
+                    わたし の アパート は えき から あるいて 5ふん です。<br>
+                    1LDK (ワンエルディーケー) です。へや は ひとつ あります。<br>
+                    へや は あまり ひろくない ですが、あかるい です。<br>
+                    キッチン に れいぞうこ と でんしレンジ が あります。<br>
+                    しんしつ (寝室) に ベッド と つくえ (机) が あります。<br>
+                    ベランダ から やま が みえます (見えます)。<br>
+                    しずか で べんり です。とても すき です。
+                </div>
+                <button class="btn-action" style="background:var(--accent-tertiary); color:#000;" onclick="speakText('わたしのアパートはえきからあるいてごふんです。ワンエルディーケーです。へやはひとつあります。へやはあまりひろくないですが、あかるいです。キッチンにれいぞうことでんしレンジがあります。しんしつにベッドとつくえがあります。ベランダからやまがみえます。しずかでべんりです。とてもすきです。')">🔊 Speak Full Apartment Tour Description</button>
+            </div>
+        </div>
+
+        <!-- TAB 2: Permission & Prohibitions Engine -->
+        <div id="tab-perm" class="tab-content">
+            <!-- Grammar Point 30, 31, 32, 33 Card -->
+            <div class="grammar-card">
+                <div class="grammar-title">
+                    <span>Permissions, Prohibitions & Desires</span>
+                    <span class="particle-badge">てもいい / てはいけない / ほしい</span>
+                </div>
+                <div class="grammar-formula">て-form + も いいですか (May I?) / ては いけません (Must not!)</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    Master Japanese rules, manners, and house hunting requests:<br>
+                    • <strong style="color:var(--accent-primary);">～ても いいですか？</strong> = Permission E.g. <strong style="color:#fff;">まど を あけても いいですか？</strong> (Khidki khol sakta hoon? / May I open?). Answer: <strong style="color:var(--accent-tertiary);">はい、いいですよ</strong> / <strong style="color:var(--accent-tertiary);">どうぞ</strong>.<br>
+                    • <strong style="color:var(--accent-info);">～ては いけません</strong> = Prohibition E.g. <strong style="color:#fff;">たばこ を すっては いけません</strong> (Cigarette peena mana hai / Smoking forbidden!).<br>
+                    • <strong style="color:var(--accent-warning);">～ないで ください</strong> = Request not to do E.g. <strong style="color:#fff;">しゃしん を とらないで ください</strong> (Photo mat lijiye / Please don't take photos).<br>
+                    • <strong style="color:var(--accent-tertiary);">～が ほしい です</strong> = Want a noun E.g. <strong style="color:#fff;">ひろい へや が ほしい です</strong> (Bada kamra chahiye / Want a spacious room). Note: use <strong style="color:#fff;">～たい</strong> for verbs!
+                </p>
+
+                <!-- Interactive Permission & Prohibition Conjugator -->
+                <div style="background:var(--bg-tertiary); padding:1.5rem; border-radius:16px; margin-bottom:1.5rem; border:1px solid var(--border-color);">
+                    <h5 style="color:var(--accent-warning); margin-bottom:1rem; font-size:1.1rem;">✨ Interactive Permission & Prohibition Engine</h5>
+                    <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center; margin-bottom:1rem;">
+                        <select id="pm-act" style="padding:0.6rem 1rem; border-radius:10px; background:var(--bg-primary); color:var(--text-main); border:1px solid var(--border-color); font-size:1rem;">
+                            <option value="しゃしん を とっ|しゃしん を とら|Shashin wo tot|Shashin wo tora|Photo lena (Take photo)|verb" selected>しゃしん を とります (Take photo → とって / とらない)</option>
+                            <option value="まど を あけ|まど を あけ|Mado wo ake|Mado wo ake|Khidki kholna (Open window)|verb">まど を あけます (Open window → あけて / あけない)</option>
+                            <option value="エアコン を つけ|エアコン を つけ|Eakon wo tsuke|Eakon wo tsuke|AC chalu karna (Turn on AC)|verb">エアコン を つけます (Turn on AC → つけて / つけない)</option>
+                            <option value="ここ に すわっ|ここ に すわら|Koko ni suwat|Koko ni suwara|Yahaan baithna (Sit here)|verb">ここ に すわります (Sit here → すわって / すわらない)</option>
+                            <option value="たばこ を すっ|たばこ を すわ|Tabako wo sut|Tabako wo suwa|Cigarette peena (Smoke)|verb">たばこ を すいます (Smoke → すって / すわない)</option>
+                            <option value="くつ を ぬいで|くつ を ぬが|Kutsu wo nuide|Kutsu wo nuga|Joote utaarna (Take off shoes)|verb">くつ を ぬぎます (Take off shoes → ぬいで)</option>
+                            <option value="ひろい へや|ひろい へや|Hiroi heya|Hiroi heya|Bada kamra (Spacious room)|noun">ひろい へや (Spacious room [Noun] → ほしい)</option>
+                            <option value="あたらしい パソコン|あたらしい パソコン|Atarashii pasokon|Atarashii pasokon|Naya PC (New PC)|noun">あたらしい パソコン (New PC [Noun] → ほしい)</option>
+                        </select>
+                        <select id="pm-mode" style="padding:0.6rem 1rem; border-radius:10px; background:var(--bg-primary); color:var(--text-main); border:1px solid var(--border-color); font-size:1rem;">
+                            <option value="ても いいですか？|temo ii desu ka?|kar sakta hoon? (May I do?)|perm" selected>～ても いいですか？ (Permission / Allowed?)</option>
+                            <option value="ては いけません。|tewa ikemasen.|karna mana hai (Forbidden!)|prohib">～ては いけません (Prohibition / Must not! 🚫)</option>
+                            <option value="ないで ください。|naide kudasai.|mat kijiye (Please don't!)|negreq">～ないで ください (Please don't do! ⚠️)</option>
+                            <option value="が ほしい です。|ga hoshii desu.|chahiye (I want this noun!)|want">～が ほしい です (Want noun / Chahiye! ⭐)</option>
+                        </select>
+                        <button class="btn-action" style="margin-top:0;" onclick="testPermEngine()">🔊 Conjugate & Speak</button>
+                    </div>
+                    <div id="pm-output" style="font-family:var(--font-jp); font-size:1.4rem; font-weight:700; color:var(--accent-tertiary);">しゃしん を とっても いいですか？ <span style="font-size:1rem; color:var(--text-main); font-weight:500; display:block;">(Shashin wo tottemo ii desu ka? → Photo le sakta hoon?)</span></div>
+                </div>
+
+                <h5 style="color:var(--text-main); margin-bottom:1rem;">📋 Japanese Living Manners & Garbage Rules Reference:</h5>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+                    <div style="background:var(--bg-primary); padding:1rem; border-radius:12px; border-left:4px solid var(--accent-tertiary); cursor:pointer;" onclick="speakText('くつをぬいでください')">
+                        <span style="font-family:var(--font-jp); font-weight:700; color:var(--accent-tertiary); display:block;">くつ を ぬいで ください 🔊</span>
+                        <span style="font-size:0.85rem; color:var(--text-muted);">Joote utaariye (Take off shoes at entrance / げんかん).</span>
+                    </div>
+                    <div style="background:var(--bg-primary); padding:1rem; border-radius:12px; border-left:4px solid var(--accent-primary); cursor:pointer;" onclick="speakText('ごみをわけてください。もえるごみともえないごみがあります。')">
+                        <span style="font-family:var(--font-jp); font-weight:700; color:var(--accent-primary); display:block;">ゴミ を わけて ください 🔊</span>
+                        <span style="font-size:0.85rem; color:var(--text-muted);">Kachra alag kariye (<strong style="color:#fff;">もえるゴミ</strong> = burnable, <strong style="color:#fff;">もえないゴミ</strong> = non-burnable).</span>
+                    </div>
+                    <div style="background:var(--bg-primary); padding:1rem; border-radius:12px; border-left:4px solid var(--accent-info); cursor:pointer;" onclick="speakText('よるはしずかにしてください')">
+                        <span style="font-family:var(--font-jp); font-weight:700; color:var(--accent-info); display:block;">よる は しずかに して ください 🔊</span>
+                        <span style="font-size:0.85rem; color:var(--text-muted);">Raat ko shaant rehiye (Please be quiet at night).</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Part 2 Grand Review Hub (Chapters 1–10 Master Tables) -->
+        <div id="tab-review" class="tab-content">
+            <div class="section-header" style="text-align:center;">
+                <h3 style="justify-content:center;">🏆 Part 2 Grand Finale Review Hub (Chapters 1–10 Master Tables)</h3>
+                <p>Congratulations on completing Chapters 1 through 10! Here is your definitive reference for all 14 Particles, 10 Verb Conjugation forms, Adjectives, and 17 Question Words! Click any row to hear audio!</p>
+            </div>
+
+            <!-- Particles Master Table -->
+            <h4 style="color:var(--accent-primary); margin:1.5rem 0 1rem 0;">1️⃣ Complete Particle Summary (14 Particles • Chapters 1–10)</h4>
+            <table class="review-table">
+                <thead><tr><th>Particle</th><th>Reading</th><th>Use / Function</th><th>Example Sentence (Click to Speak)</th></tr></thead>
+                <tbody>
+                    <tr onclick="speakText('わたしはがくせいです')"><td class="jp-col">は</td><td>wa</td><td>Topic marker (As for...)</td><td>わたし<strong style="color:#fff;">は</strong> がくせい です (I am a student) 🔊</td></tr>
+                    <tr onclick="speakText('ねこがいます')"><td class="jp-col">が</td><td>ga</td><td>Subject marker / New info / Existence</td><td>ねこ<strong style="color:#fff;">が</strong> います (There is a cat) 🔊</td></tr>
+                    <tr onclick="speakText('コーヒーをのみます')"><td class="jp-col">を</td><td>wo / o</td><td>Object marker (Action target)</td><td>コーヒー<strong style="color:#fff;">を</strong> のみます (Drink coffee) 🔊</td></tr>
+                    <tr onclick="speakText('しちじにえきにいきます')"><td class="jp-col">に</td><td>ni</td><td>Time / Place of existence / Direction</td><td>7じ<strong style="color:#fff;">に</strong> / えき<strong style="color:#fff;">に</strong> (At 7 / At station) 🔊</td></tr>
+                    <tr onclick="speakText('にほんへいきます')"><td class="jp-col">へ</td><td>e</td><td>Direction (Towards destination)</td><td>にほん<strong style="color:#fff;">へ</strong> いきます (Go towards Japan) 🔊</td></tr>
+                    <tr onclick="speakText('うちででんしゃで')"><td class="jp-col">で</td><td>de</td><td>Place of action / Means & tool</td><td>うち<strong style="color:#fff;">で</strong> / でんしゃ<strong style="color:#fff;">で</strong> (At home / By train) 🔊</td></tr>
+                    <tr onclick="speakText('インドから')"><td class="jp-col">から</td><td>kara</td><td>From (Starting point in time/space)</td><td>インド<strong style="color:#fff;">から</strong> (From India) 🔊</td></tr>
+                    <tr onclick="speakText('ごじまで')"><td class="jp-col">まで</td><td>made</td><td>Until (Ending point)</td><td>5じ<strong style="color:#fff;">まで</strong> (Until 5 o'clock) 🔊</td></tr>
+                    <tr onclick="speakText('わたしのほん')"><td class="jp-col">の</td><td>no</td><td>Possessive (ka/ki/ke / noun modifier)</td><td>わたし<strong style="color:#fff;">の</strong> ほん (My book) 🔊</td></tr>
+                    <tr onclick="speakText('ともだちと')"><td class="jp-col">と</td><td>to</td><td>With / And (Connecting nouns)</td><td>ともだち<strong style="color:#fff;">と</strong> (With friend) 🔊</td></tr>
+                    <tr onclick="speakText('わたしも')"><td class="jp-col">も</td><td>mo</td><td>Also / Too (Bhi)</td><td>わたし<strong style="color:#fff;">も</strong> (Me too / Main bhi) 🔊</td></tr>
+                    <tr onclick="speakText('なんですか')"><td class="jp-col">か</td><td>ka</td><td>Question marker (at sentence end)</td><td>なんです<strong style="color:#fff;">か</strong> (What is it?) 🔊</td></tr>
+                    <tr onclick="speakText('いいてんきですね')"><td class="jp-col">ね</td><td>ne</td><td>Confirmation / Agreement (Hai na?)</td><td>いいてんき です<strong style="color:#fff;">ね</strong> (Nice weather, isn't it?) 🔊</td></tr>
+                    <tr onclick="speakText('おいしいですよ')"><td class="jp-col">よ</td><td>yo</td><td>Emphasis / Asserting info (I tell you!)</td><td>おいしい です<strong style="color:#fff;">よ</strong> (It's delicious, you know!) 🔊</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Verb Conjugations Master Table -->
+            <h4 style="color:var(--accent-tertiary); margin:2rem 0 1rem 0;">2️⃣ Complete Verb Conjugation Summary (10 Forms • Example: たべます)</h4>
+            <table class="review-table">
+                <thead><tr><th>Form Name</th><th>Example (たべます)</th><th>Meaning in Hindi/English</th><th>Usage Scenario</th></tr></thead>
+                <tbody>
+                    <tr onclick="speakText('たべます')"><td class="jp-col">ます (Present/Future +)</td><td>たべます (tabemasu)</td><td>Khata hoon / Khaega (Eat / Will eat)</td><td>Standard polite daily habit or future action 🔊</td></tr>
+                    <tr onclick="speakText('たべません')"><td class="jp-col">ません (Present/Future -)</td><td>たべません (tabemasen)</td><td>Nahi khata / Nahi khaega (Don't eat)</td><td>Polite negative statement 🔊</td></tr>
+                    <tr onclick="speakText('たべました')"><td class="jp-col">ました (Past +)</td><td>たべました (tabemashita)</td><td>Khaya (Ate)</td><td>Polite past action 🔊</td></tr>
+                    <tr onclick="speakText('たべませんでした')"><td class="jp-col">ませんでした (Past -)</td><td>たべませんでした (tabemasen deshita)</td><td>Nahi khaya (Did not eat)</td><td>Polite negative past action 🔊</td></tr>
+                    <tr onclick="speakText('たべましょう')"><td class="jp-col">ましょう (Let's!)</td><td>たべましょう (tabemashou)</td><td>Chaliye khaate hain (Let's eat!)</td><td>Friendly suggestion / invitation 🔊</td></tr>
+                    <tr onclick="speakText('たべませんか')"><td class="jp-col">ませんか (Invitation?)</td><td>たべませんか (tabemasen ka)</td><td>Khaayein kya? (Won't you eat?)</td><td>Polite invitation to someone 🔊</td></tr>
+                    <tr onclick="speakText('たべたいです')"><td class="jp-col">たい です (Want to)</td><td>たべたい です (tabetai desu)</td><td>Khana chahta hoon (Want to eat)</td><td>Expressing personal desire to do action 🔊</td></tr>
+                    <tr onclick="speakText('たべてください')"><td class="jp-col">て ください (Please do)</td><td>たべて ください (tabete kudasai)</td><td>Khaiye please (Please eat)</td><td>Polite request or instruction 🔊</td></tr>
+                    <tr onclick="speakText('たべてもいいですか')"><td class="jp-col">ても いいですか (May I?)</td><td>たべても いいですか (tabetemo ii desu ka)</td><td>Kha sakta hoon? (May I eat?)</td><td>Asking for permission 🔊</td></tr>
+                    <tr onclick="speakText('たべないでください')"><td class="jp-col">ないで ください (Don't!)</td><td>たべないで ください (tabenaide kudasai)</td><td>Mat khaiye (Please don't eat)</td><td>Polite negative request / prohibition 🔊</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Question Words Master Table -->
+            <h4 style="color:var(--accent-warning); margin:2rem 0 1rem 0;">3️⃣ Complete Question Words Master List (17 Question Words • Chapters 1–10)</h4>
+            <table class="review-table">
+                <thead><tr><th>Question Word</th><th>Reading</th><th>Meaning in Hindi/English</th><th>Example Question</th></tr></thead>
+                <tbody>
+                    <tr onclick="speakText('なにとなん')"><td class="jp-col">なに / なん (何)</td><td>Nani / Nan</td><td>Kya? (What?)</td><td>これは <strong style="color:#fff;">なん</strong> ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('だれ')"><td class="jp-col">だれ (誰)</td><td>Dare</td><td>Kaun? (Who?)</td><td>あのかたは <strong style="color:#fff;">だれ</strong> ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('いつ')"><td class="jp-col">いつ</td><td>Itsu</td><td>Kab? (When?)</td><td>たんじょうびは <strong style="color:#fff;">いつ</strong> ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('どこ')"><td class="jp-col">どこ</td><td>Doko</td><td>Kahaan? (Where?)</td><td>トイレは <strong style="color:#fff;">どこ</strong> ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('どれ')"><td class="jp-col">どれ</td><td>Dore</td><td>Kaunsa? (Which one out of 3+?)</td><td>あなたの かばんは <strong style="color:#fff;">どれ</strong> ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('どの')"><td class="jp-col">どの</td><td>Dono</td><td>Kaunsa? (Which + Noun?)</td><td><strong style="color:#fff;">どの</strong> ひと ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('どう')"><td class="jp-col">どう</td><td>Dou</td><td>Kaisa? (How / What about?)</td><td>りょこうは <strong style="color:#fff;">どう</strong> でしたか？ 🔊</td></tr>
+                    <tr onclick="speakText('どんな')"><td class="jp-col">どんな</td><td>Donna</td><td>Kis tarah ka? (What kind of + Noun?)</td><td><strong style="color:#fff;">どんな</strong> へや が いいですか？ 🔊</td></tr>
+                    <tr onclick="speakText('なんじ')"><td class="jp-col">なんじ (何時)</td><td>Nanji</td><td>Kitne baje? (What time?)</td><td>いま <strong style="color:#fff;">なんじ</strong> ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('なんにち')"><td class="jp-col">なんにち (何日)</td><td>Nan-nichi</td><td>Kitni taareekh? (What date / how many days?)</td><td>きょうは <strong style="color:#fff;">なんにち</strong> ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('なんがつ')"><td class="jp-col">なんがつ (何月)</td><td>Nan-gatsu</td><td>Kaunsa mahina? (What month?)</td><td><strong style="color:#fff;">なんがつ</strong> うまれ ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('なんようび')"><td class="jp-col">なんようび (何曜日)</td><td>Nan-youbi</td><td>Kaunsa din? (What day of week?)</td><td>あしたは <strong style="color:#fff;">なんようび</strong> ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('いくら')"><td class="jp-col">いくら</td><td>Ikura</td><td>Kitne ka? (How much price?)</td><td>これは <strong style="color:#fff;">いくら</strong> ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('いくつ')"><td class="jp-col">いくつ</td><td>Ikutsu</td><td>Kitne? (How many quantity / How old?)</td><td>りんごを <strong style="color:#fff;">いくつ</strong> かいましたか？ 🔊</td></tr>
+                    <tr onclick="speakText('なんがい')"><td class="jp-col">なんがい (何階)</td><td>Nangai</td><td>Kaunsa floor? (What floor?)</td><td>レストランは <strong style="color:#fff;">なんがい</strong> ですか？ 🔊</td></tr>
+                    <tr onclick="speakText('どのくらいとどれくらい')"><td class="jp-col">どのくらい / どれくらい</td><td>Donokurai</td><td>Kitna time/distance? (How long / how much?)</td><td>えきまで <strong style="color:#fff;">どのくらい</strong> かかりますか？ 🔊</td></tr>
+                    <tr onclick="speakText('なぜとどうして')"><td class="jp-col">なぜ / どうして</td><td>Naze / Doushite</td><td>Kyun? (Why?)</td><td><strong style="color:#fff;">どうして</strong> こなかったんですか？ 🔊</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 4: 34 Housing & Furniture Vocab Cards -->
+        <div id="tab-vocab" class="tab-content">
+            <div class="section-header">
+                <h3>Housing & Rooms Vocabulary (いえ と へや - 17 Words)</h3>
+                <p>Click any card to hear its pronunciation in Japanese!</p>
+            </div>
+
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('いえとうち')"><div class="card-top"><div class="jp-text">いえ / うち (家)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ie / Uchi</div><div class="meaning-text">Ghar / House / Home 🏠</div></div>
+                <div class="card" onclick="speakText('へや')"><div class="card-top"><div class="jp-text">へや (部屋)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Heya</div><div class="meaning-text">Kamra / Room 🛏️</div></div>
+                <div class="card" onclick="speakText('アパート')"><div class="card-top"><div class="jp-text">アパート</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Apaato</div><div class="meaning-text">Apartment 🏢</div></div>
+                <div class="card" onclick="speakText('マンション')"><div class="card-top"><div class="jp-text">マンション</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Manshon</div><div class="meaning-text">Mansion / High-end Condominium 🏙️</div></div>
+                <div class="card" onclick="speakText('いっこだて')"><div class="card-top"><div class="jp-text">いっこだて (一戸建て)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ikkodate</div><div class="meaning-text">Independent detached house 🏡</div></div>
+                <div class="card" onclick="speakText('げんかん')"><div class="card-top"><div class="jp-text">げんかん (玄関)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Genkan</div><div class="meaning-text">Entrance / Porch / Joote utaarne ki jagah 🚪</div></div>
+                <div class="card" onclick="speakText('リビング')"><div class="card-top"><div class="jp-text">リビング</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ribingu</div><div class="meaning-text">Living room 🛋️</div></div>
+                <div class="card" onclick="speakText('だいどころとキッチン')"><div class="card-top"><div class="jp-text">だいどころ / キッチン (台所)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Daidokoro / Kitchin</div><div class="meaning-text">Kitchen / Rasoi 🍳</div></div>
+                <div class="card" onclick="speakText('しんしつ')"><div class="card-top"><div class="jp-text">しんしつ (寝室)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinshitsu</div><div class="meaning-text">Bedroom / Sone ka kamra 🛌</div></div>
+                <div class="card" onclick="speakText('トイレとおてあらい')"><div class="card-top"><div class="jp-text">トイレ / おてあらい (お手洗い)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Toire / Otearai</div><div class="meaning-text">Toilet / Bathroom / Restroom 🚽</div></div>
+                <div class="card" onclick="speakText('おふろ')"><div class="card-top"><div class="jp-text">おふろ (お風呂)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ofuro</div><div class="meaning-text">Bathtub / Nahane ki jagah 🛁</div></div>
+                <div class="card" onclick="speakText('にわ')"><div class="card-top"><div class="jp-text">にわ (庭)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Niwa</div><div class="meaning-text">Bageecha / Garden 🌳</div></div>
+                <div class="card" onclick="speakText('ベランダとバルコニー')"><div class="card-top"><div class="jp-text">ベランダ / バルコニー</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Beranda / Barukonii</div><div class="meaning-text">Balcony 🌞</div></div>
+                <div class="card" onclick="speakText('かいだん')"><div class="card-top"><div class="jp-text">かいだん (階段)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaidan</div><div class="meaning-text">Seedhi / Stairs 🪜</div></div>
+                <div class="card" onclick="speakText('ろうか')"><div class="card-top"><div class="jp-text">ろうか (廊下)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Rouka</div><div class="meaning-text">Corridor / Galiara / Hallway 🚶</div></div>
+                <div class="card" onclick="speakText('おしいれ')"><div class="card-top"><div class="jp-text">おしいれ (押入れ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Oshiire</div><div class="meaning-text">Japanese-style sliding closet 🚪</div></div>
+                <div class="card" onclick="speakText('クローゼット')"><div class="card-top"><div class="jp-text">クローゼット</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kuroozetto</div><div class="meaning-text">Western-style closet / Wardrobe 👔</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>Furniture & Home Appliances Vocabulary (17 Words)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('テーブル')"><div class="card-top"><div class="jp-text">テーブル</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Teeburu</div><div class="meaning-text">Table / Mez 🍽️</div></div>
+                <div class="card" onclick="speakText('いす')"><div class="card-top"><div class="jp-text">いす (椅子)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Isu</div><div class="meaning-text">Kursi / Chair 🪑</div></div>
+                <div class="card" onclick="speakText('ベッド')"><div class="card-top"><div class="jp-text">ベッド</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Beddo</div><div class="meaning-text">Bed / Palang 🛏️</div></div>
+                <div class="card" onclick="speakText('ふとん')"><div class="card-top"><div class="jp-text">ふとん (布団)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Futon</div><div class="meaning-text">Futon (Japanese traditional mattress) 🛌</div></div>
+                <div class="card" onclick="speakText('ソファー')"><div class="card-top"><div class="jp-text">ソファー</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sofaa</div><div class="meaning-text">Sofa / Couch 🛋️</div></div>
+                <div class="card" onclick="speakText('テレビ')"><div class="card-top"><div class="jp-text">テレビ</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Terebi</div><div class="meaning-text">TV / Television 📺</div></div>
+                <div class="card" onclick="speakText('れいぞうこ')"><div class="card-top"><div class="jp-text">れいぞうこ (冷蔵庫)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Reizouko</div><div class="meaning-text">Fridge / Refrigerator 🧊</div></div>
+                <div class="card" onclick="speakText('せんたくき')"><div class="card-top"><div class="jp-text">せんたくき (洗濯機)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sentakuki</div><div class="meaning-text">Washing machine 🧺</div></div>
+                <div class="card" onclick="speakText('エアコン')"><div class="card-top"><div class="jp-text">エアコン</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Eakon</div><div class="meaning-text">AC / Air conditioner ❄️</div></div>
+                <div class="card" onclick="speakText('でんしレンジ')"><div class="card-top"><div class="jp-text">でんしレンジ (電子レンジ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Denshi renji</div><div class="meaning-text">Microwave oven 🍕</div></div>
+                <div class="card" onclick="speakText('でんき')"><div class="card-top"><div class="jp-text">でんき (電気)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Denki</div><div class="meaning-text">Light / Bijli / Electricity 💡</div></div>
+                <div class="card" onclick="speakText('まど')"><div class="card-top"><div class="jp-text">まど (窓)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Mado</div><div class="meaning-text">Khidki / Window 🪟</div></div>
+                <div class="card" onclick="speakText('ドア')"><div class="card-top"><div class="jp-text">ドア</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Doa</div><div class="meaning-text">Darwaza / Door 🚪</div></div>
+                <div class="card" onclick="speakText('かぎ')"><div class="card-top"><div class="jp-text">かぎ (鍵)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kagi</div><div class="meaning-text">Chaabi / Key 🔑</div></div>
+                <div class="card" onclick="speakText('カーテン')"><div class="card-top"><div class="jp-text">カーテン</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaaten</div><div class="meaning-text">Curtain / Parda 🪟</div></div>
+                <div class="card" onclick="speakText('たな')"><div class="card-top"><div class="jp-text">たな (棚)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tana</div><div class="meaning-text">Shelf / Rack / Bookshelf 📚</div></div>
+                <div class="card" onclick="speakText('かがみ')"><div class="card-top"><div class="jp-text">かがみ (鏡)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kagami</div><div class="meaning-text">Aaina / Mirror 🪞</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 5: Kanji Mastery -->
+        <div id="tab-kanji" class="tab-content">
+            <div class="section-header">
+                <h3>🈹 Chapter 10 Kanji Mastery (漢字 - 24 Housing Kanjis)</h3>
+                <p>Master 24 vital Kanjis for houses, apartments, rooms, entranceways, kitchens, and stairs!</p>
+            </div>
+
+            <div class="kanji-grid">
+                <!-- Kanji 1: 家 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">家</div><div class="kanji-info"><h5>House / Family (Ie/Ka)</h5><div class="kanji-readings">Kun: <span>いえ / うち / や</span><br>On: <span>カ / ケ (ka/ke)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('いえとかぞく')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">家 (いえ) / 家族 (かぞく)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ie (House) / Kazoku (Family)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 2: 部 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">部</div><div class="kanji-info"><h5>Part / Section (Bu/He)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ブ / ヘ (bu/he)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('へやとぶちょう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">部屋 (へや) / 部長 (ぶちょう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Heya (Room) / Buchou (Manager)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 3: 屋 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">屋</div><div class="kanji-info"><h5>Roof / Shop (Ya)</h5><div class="kanji-readings">Kun: <span>や (ya)</span><br>On: <span>オク (oku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('へやとほんや')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">部屋 (へや) / 本屋 (ほんや)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Heya (Room) / Honya (Bookstore)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 4: 戸 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">戸</div><div class="kanji-info"><h5>Door / House counter (To/Ko)</h5><div class="kanji-readings">Kun: <span>と (to)</span><br>On: <span>コ (ko)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('いっこだて')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">一戸建て (いっこだて)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ikkodate → Independent detached house</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 5: 建 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">建</div><div class="kanji-info"><h5>Build (Tate/Ken)</h5><div class="kanji-readings">Kun: <span>た・てる / た・つ</span><br>On: <span>ケン / コン (ken)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('いっこだてとたてもの')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">一戸建て / 建物 (たてもの)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ikkodate / Tatemono (Building)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 6: 玄 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">玄</div><div class="kanji-info"><h5>Mysterious / Entrance (Gen)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ゲン (gen)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('げんかん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">玄関 (げんかん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Genkan → Entrance / Joote utaarne ki jagah</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 7: 関 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">関</div><div class="kanji-info"><h5>Barrier / Connection (Kan)</h5><div class="kanji-readings">Kun: <span>せき / かか・わる</span><br>On: <span>カン (kan)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('げんかんとかんけい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">玄関 (げんかん) / 関係</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Genkan (Entrance) / Kankei (Relation)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 8: 台 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">台</div><div class="kanji-info"><h5>Stand / Pedestal (Dai)</h5><div class="kanji-readings">Kun: <span>うてな (utena)</span><br>On: <span>ダイ / タイ (dai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('だいどころとふうふ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">台所 (だいどころ) / 台ふう</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Daidokoro (Kitchen) / Taifuu (Typhoon)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 9: 所 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">所</div><div class="kanji-info"><h5>Place (Tokoro/Sho)</h5><div class="kanji-readings">Kun: <span>ところ / -どころ</span><br>On: <span>ショ / ジョ (sho)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('だいどころとばしょ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">台所 / 場所 (ばしょ) / 住所</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Daidokoro (Kitchen) / Basho / Juusho</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 10: 寝 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">寝</div><div class="kanji-info"><h5>Sleep (Ne/Shin)</h5><div class="kanji-readings">Kun: <span>ね・る (neru)</span><br>On: <span>シン (shin)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('しんしつとねます')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">寝室 (しんしつ) / 寝ます</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shinshitsu (Bedroom) / Nemasu (Sleep)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 11: 室 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">室</div><div class="kanji-info"><h5>Room (Shitsu)</h5><div class="kanji-readings">Kun: <span>むろ (muro)</span><br>On: <span>シツ (shitsu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('しんしつときょうしつ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">寝室 / 教室 (きょうしつ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shinshitsu (Bedroom) / Kyoushitsu (Class)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 12: 手 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">手</div><div class="kanji-info"><h5>Hand (Te/Shu)</h5><div class="kanji-readings">Kun: <span>て (te)</span><br>On: <span>シュ (shu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おてあらいとて')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">お手洗い (おてあらい) / 手</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Otearai (Bathroom / Restroom) / Te (Hand)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 13: 洗 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">洗</div><div class="kanji-info"><h5>Wash (Ara/Sen)</h5><div class="kanji-readings">Kun: <span>あら・う (arau)</span><br>On: <span>セン (sen)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おてあらいとせんたくき')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">お手洗い / 洗濯機 (せんたくき)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Otearai (Toilet) / Sentakuki (Washer)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 14: 風 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">風</div><div class="kanji-info"><h5>Wind / Style / Bath (Fuu)</h5><div class="kanji-readings">Kun: <span>かぜ (kaze)</span><br>On: <span>フウ / フ (fuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おふろとかぜ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">お風呂 (おふろ) / 風 (かぜ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ofuro (Bathtub) / Kaze (Wind / Cold)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 15: 庭 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">庭</div><div class="kanji-info"><h5>Garden (Niwa/Tei)</h5><div class="kanji-readings">Kun: <span>にわ (niwa)</span><br>On: <span>テイ (tei)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('にわ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">庭 (にわ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Niwa → Bageecha / Garden / Yard</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 16: 階 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">階</div><div class="kanji-info"><h5>Floor / Storey (Kai/Gai)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>カイ / ガイ (kai/gai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かいなんとさんがい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">階段 (かいだん) / 三階 (さんがい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kaidan (Stairs) / Sangai (3rd Floor)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 17: 段 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">段</div><div class="kanji-info"><h5>Step / Grade (Dan)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ダン (dan)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かいだんとねだん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">階段 (かいだん) / 値段 (ねだん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kaidan (Stairs) / Nedan (Price)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 18: 廊 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">廊</div><div class="kanji-info"><h5>Corridor (Rou)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ロウ (rou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ろうか')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">廊下 (ろうか)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Rouka → Corridor / Galiara / Hallway</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 19: 押 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">押</div><div class="kanji-info"><h5>Push (Oshi/Osu)</h5><div class="kanji-readings">Kun: <span>お・す / お・し</span><br>On: <span>オウ (ou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おしいれとおします')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">押入れ (おしいれ) / 押します</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Oshiire (Closet) / Oshimasu (Push button)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 20: 入 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">入</div><div class="kanji-info"><h5>Enter / Put in (Iri/Nyuu)</h5><div class="kanji-readings">Kun: <span>は・いる / い・れる</span><br>On: <span>ニュウ (nyuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おしいれといりぐち')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">押入れ / 入口 (いりぐち)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Oshiire (Closet) / Iriguchi (Entrance)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 21: 椅 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">椅</div><div class="kanji-info"><h5>Chair (I)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>イ (i)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('いす')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">椅子 (いす)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Isu → Kursi / Chair</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 22: 子 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">子</div><div class="kanji-info"><h5>Child / Object (Ko/Shi)</h5><div class="kanji-readings">Kun: <span>こ (ko)</span><br>On: <span>シ / ス (shi)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('いすとこども')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">椅子 (いす) / 子ども (こども)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Isu (Chair) / Kodomo (Child / Bachha)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 23: 賃 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">賃</div><div class="kanji-info"><h5>Rent / Fare (Chin)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>チン (chin)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('やちんとうんちん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">家賃 (やちん) / 運賃</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Yachin (House rent) / Unchin (Fare)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 24: 畳 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">畳</div><div class="kanji-info"><h5>Tatami Mat / Fold (Tatami/Jou)</h5><div class="kanji-readings">Kun: <span>たたみ (tatami)</span><br>On: <span>ジョウ (jou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ろくじょうとたたみ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">六畳 (ろくじょう) / 畳 (たたみ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Roku-jou (6-mat room size) / Tatami</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Practice Quiz (10 Questions) -->
+        <div id="tab-quiz" class="tab-content">
+            <div class="quiz-container">
+                <div class="section-header" style="text-align: center;">
+                    <h3>🎯 Chapter 10 Housing, Permissions & Part 2 Mastery Quiz (10 Questions)</h3>
+                    <p>Test your housing existence sentences (あります vs います), desires (ほしい vs たい), permissions (てもいいですか), prohibitions (てはいけません), layout sizes, and Part 2 grammar!</p>
+                </div>
+
+                <div id="quiz-area">
+                    <!-- Quiz dynamically rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 7: Verbatim Original Text (100% Complete) -->
+        <div id="tab-verbatim" class="tab-content">
+            <div class="verbatim-box">
+                <div class="verbatim-header">
+                    <span style="font-weight: 700; color: #38bdf8;">📄 Original irodori.txt Content (Lines 1727 to 2063 - Chapter 10 & Part 2 Complete)</span>
+                    <span class="badge-100">✔ 100% Zero Character Loss Guarantee</span>
+                </div>
+                <pre># 📘 Chapter 10: いえ (Ie) - House / Ghar
+
+## 🎯 Goal: Ghar ke baare mein batana, ghar dhundhna, rooms describe karna
+
+---
+
+### **House/Room Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| いえ / うち (家) | Ie / Uchi | Ghar |
+| へや (部屋) | Heya | Kamra/Room |
+| アパート | Apaato | Apartment |
+| マンション | Manshon | Mansion/Apartment (accha wala) |
+| いっこだて (一戸建て) | Ikkodate | Independent house |
+| げんかん (玄関) | Genkan | Entrance/Darwaza |
+| リビング | Ribingu | Living room |
+| だいどころ / キッチン (台所) | Daidokoro / Kitchin | Kitchen/Rasoi |
+| しんしつ (寝室) | Shinshitsu | Bedroom/Sone ka kamra |
+| トイレ / おてあらい (お手洗い) | Toire / Otearai | Toilet/Bathroom |
+| おふろ (お風呂) | Ofuro | Bathtub/Nahane ki jagah |
+| にわ (庭) | Niwa | Bageecha/Garden |
+| ベランダ / バルコニー | Beranda / Barukonii | Balcony |
+| かいだん (階段) | Kaidan | Seedhi/Stairs |
+| ろうか (廊下) | Rouka | Corridor/Galiara |
+| おしいれ (押入れ) | Oshiire | Closet (Japanese style) |
+| クローゼット | Kuroozetto | Closet (Western style) |
+
+---
+
+### **Furniture & Home Items:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| テーブル | Teeburu | Table/Mez |
+| いす (椅子) | Isu | Kursi/Chair |
+| ベッド | Beddo | Bed/Palang |
+| ふとん (布団) | Futon | Futon (Japanese mattress) |
+| ソファー | Sofaa | Sofa |
+| テレビ | Terebi | TV |
+| れいぞうこ (冷蔵庫) | Reizouko | Fridge |
+| せんたくき (洗濯機) | Sentakuki | Washing machine |
+| エアコン | Eakon | AC |
+| でんしレンジ (電子レンジ) | Denshi renji | Microwave |
+| でんき (電気) | Denki | Light/Bijli |
+| まど (窓) | Mado | Khidki/Window |
+| ドア | Doa | Darwaza/Door |
+| かぎ (鍵) | Kagi | Chaabi/Key |
+| カーテン | Kaaten | Curtain/Parda |
+| たな (棚) | Tana | Shelf/Rack |
+| かがみ (鏡) | Kagami | Aaina/Mirror |
+
+---
+
+### **Grammar Point 28: _____ に _____ が あります/います (Describing what's in a place)**
+
+**Structure:** [Place] に [Thing/Person] が あります/います
+
+**Examples:**
+- へや に ベッド が あります。 → Kamre mein bed hai.
+- だいどころ に れいぞうこ が あります。 → Kitchen mein fridge hai.
+- にわ に ねこ が います。 → Bageche mein billi hai.
+- リビング に テレビ と ソファー が あります。 → Living room mein TV aur sofa hai.
+
+**Negative:**
+- へや に エアコン が ありません。 → Kamre mein AC nahi hai.
+
+---
+
+### **Grammar Point 29: _____ は _____ に あります/います (Telling location of something)**
+
+**Structure:** [Thing/Person] は [Place] に あります/います
+
+Yeh upar wale se ulta hai - pehle cheez batao, phir jagah:
+
+**Examples:**
+- かぎ は テーブル の うえ に あります。 → Chaabi table ke upar hai.
+- ねこ は ベッド の した に います。 → Billi bed ke neeche hai.
+- リモコン は ソファー の よこ に あります。 → Remote sofa ke bagal mein hai.
+
+---
+
+### **House Hunting / Ghar dhundhna:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| やちん (家賃) | Yachin | Kiraya/Rent |
+| しききん (敷金) | Shikikin | Security deposit |
+| れいきん (礼金) | Reikin | Key money (Japan special) |
+| まどり (間取り) | Madori | Floor plan/Layout |
+| ひろい (広い) | Hiroi | Spacious/Bada |
+| せまい (狭い) | Semai | Chhota/Cramped |
+| あかるい (明るい) | Akarui | Ujala/Bright |
+| くらい (暗い) | Kurai | Andhera/Dark |
+| しずか (静か) | Shizuka | Shaant/Quiet |
+| うるさい | Urusai | Shor/Noisy |
+| べんり (便利) | Benri | Convenient/Suvidha |
+| ふべん (不便) | Fuben | Inconvenient |
+| ペット OK | Petto OK | Pets allowed |
+| えき から ちかい (駅から近い) | Eki kara chikai | Station se paas |
+| えき から とおい (駅から遠い) | Eki kara tooi | Station se door |
+
+---
+
+### **Room Size in Japan:**
+
+Japanese mein kamre ka size **じょう (畳 - jou)** mein batate hain:
+
+| Japanese | Meaning |
+|---|---|
+| 1K | 1 room + Kitchen |
+| 1DK | 1 room + Dining Kitchen |
+| 1LDK | 1 room + Living Dining Kitchen |
+| 2LDK | 2 rooms + Living Dining Kitchen |
+| 6じょう (六畳) | 6 tatami mat size (~10 sq meter) |
+
+---
+
+### **Grammar Point 30: _____ が ほしい です (Want something)**
+
+**ほしい (hoshii)** = Chahiye/Want (noun ke liye)
+
+⚠️ **Difference:**
+- **～たい です** = Karna chahta hoon (verb/action ke liye)
+- **～が ほしい です** = Chahiye (noun/thing ke liye)
+
+**Examples:**
+- あたらしい パソコン が ほしい です。 → Naya computer chahiye.
+- ひろい へや が ほしい です。 → Bada kamra chahiye.
+- エアコン が ほしい です。 → AC chahiye.
+
+**Negative:** ほしくない です (nahi chahiye)
+- あまり おおきい いえ は ほしくない です。 → Zyada bada ghar nahi chahiye.
+
+**Question:**
+- なに が ほしい ですか？ → Kya chahiye?
+- どんな へや が ほしい ですか？ → Kaisa kamra chahiye?
+
+---
+
+### **Grammar Point 31: どんな (Kaisa/Kis tarah ka)**
+
+**どんな (donna)** = Kaisa/Kis type ka + Noun
+
+**Examples:**
+- どんな へや が いいですか？ → Kaisa kamra accha hai?
+- どんな りょうり が すきですか？ → Kis tarah ka khana pasand hai?
+- どんな おんがく を ききますか？ → Kaisa music sunte ho?
+
+**Answers:**
+- しずかな へや が いいです。 → Shaant kamra accha hai.
+- からい りょうり が すきです。 → Teekha khana pasand hai.
+
+---
+
+### **Grammar Point 32: ～てもいいですか？ (Permission lena)**
+
+**て-form + も いいですか？ = _____ kar sakta hoon? / _____ karna allowed hai?**
+
+| Japanese | Meaning |
+|---|---|
+| ここ で しゃしん を とっても いいですか？ | Yahaan photo le sakta hoon? |
+| ここ に すわっても いいですか？ | Yahaan baith sakta hoon? |
+| まど を あけても いいですか？ | Khidki khol sakta hoon? |
+| エアコン を つけても いいですか？ | AC chalu kar sakta hoon? |
+| でんわ を つかっても いいですか？ | Phone use kar sakta hoon? |
+
+**Answers:**
+- はい、いいですよ。 → Haan, kar sakte ho.
+- はい、どうぞ。 → Haan, please karo.
+- すみません、ちょっと… → Sorry, thoda mushkil hai...
+
+---
+
+### **Grammar Point 33: ～ては いけません / ～ないで ください (Mana hai / Mat karo)**
+
+| Japanese | Meaning |
+|---|---|
+| ここ で たばこ を すっては いけません。 | Yahaan cigarette peena mana hai. |
+| しゃしん を とらないで ください。 | Photo mat lijiye. |
+| ここ に はいらないで ください。 | Yahaan andar mat aaiye. |
+| さわらないで ください (触らないで) | Mat chhuiye / Don't touch |
+
+---
+
+### **Living in Japan - Useful rules/manners:**
+
+| Japanese | Meaning |
+|---|---|
+| くつ を ぬいで ください (靴を脱いで) | Joote utaariye (ghar mein ghuste waqt) |
+| ゴミ を わけて ください (ごみを分けて) | Kachra alag alag kariye (separate garbage) |
+| よる は しずかに して ください (夜は静かにして) | Raat ko shaant rehiye |
+| もえるゴミ (燃えるごみ) | Jalne wala kachra (burnable) |
+| もえないゴミ (燃えないごみ) | Na jalne wala kachra (non-burnable) |
+| そだいゴミ (粗大ごみ) | Bada kachra (oversized garbage) |
+
+---
+
+### **House Description Example:**
+
+```
+わたし の アパート は えき から あるいて 5ふん です。
+(Watashi no apaato wa eki kara aruite go-fun desu.)
+Mera apartment station se paidal 5 minute hai.
+
+1LDK です。へや は ひとつ あります。
+(Wan-eru-dii-kee desu. Heya wa hitotsu arimasu.)
+1LDK hai. Ek kamra hai.
+
+へや は あまり ひろくない ですが、あかるい です。
+(Heya wa amari hirokunai desu ga, akarui desu.)
+Kamra zyada bada nahi hai, lekin ujala hai.
+
+キッチン に れいぞうこ と でんしレンジ が あります。
+(Kitchin ni reizouko to denshi renji ga arimasu.)
+Kitchen mein fridge aur microwave hai.
+
+しんしつ に ベッド と つくえ (机) が あります。
+(Shinshitsu ni beddo to tsukue ga arimasu.)
+Bedroom mein bed aur desk hai.
+
+ベランダ から やま が みえます。
+(Beranda kara yama ga miemasu.)
+Balcony se pahaad dikhta hai.
+
+しずか で べんり です。とても すき です。
+(Shizuka de benri desu. Totemo suki desu.)
+Shaant aur convenient hai. Bahut pasand hai.
+```
+
+---
+
+# 📝 Complete Particle Summary (Chapter 1-10):
+
+| Particle | Reading | Use | Example |
+|---|---|---|---|
+| は | wa | Topic marker | わたし**は** がくせい です |
+| が | ga | Subject marker / New info | ねこ**が** います |
+| を | wo/o | Object marker | コーヒー**を** のみます |
+| に | ni | Time / Place / Direction | 7じ**に** / えき**に** |
+| へ | e | Direction (towards) | にほん**へ** いきます |
+| で | de | Place of action / Means | うち**で** / でんしゃ**で** |
+| から | kara | From | インド**から** |
+| まで | made | Until | 5じ**まで** |
+| の | no | Possessive (ka/ki/ke) | わたし**の** ほん |
+| と | to | With / And | ともだち**と** |
+| も | mo | Also | わたし**も** |
+| か | ka | Question | なんです**か** |
+| ね | ne | Confirmation (na?) | いいてんき です**ね** |
+| よ | yo | Emphasis (hai na!) | おいしい です**よ** |
+
+---
+
+# 📝 Complete Verb Conjugation Summary:
+
+| Form | Example (たべます) | Meaning |
+|---|---|---|
+| ます (present/future +) | たべます | Khata hoon / Khaega |
+| ません (present/future -) | たべません | Nahi khata |
+| ました (past +) | たべました | Khaya |
+| ませんでした (past -) | たべませんでした | Nahi khaya |
+| ましょう (let's) | たべましょう | Chaliye khaate hain |
+| ませんか (invitation) | たべませんか | Khaayein kya? |
+| たい です (want to) | たべたい です | Khana chahta hoon |
+| て ください (please do) | たべて ください | Khaiye please |
+| ても いいですか (may I?) | たべても いいですか | Kha sakta hoon? |
+| ないで ください (don't) | たべないで ください | Mat khaiye |
+
+---
+
+# 📝 Complete Adjective Conjugation Summary:
+
+### い-Adjective (Example: たかい - mehenga):
+
+| Form | Pattern | Example |
+|---|---|---|
+| Present + | たかい です | Mehenga hai |
+| Present - | たかくない です | Mehenga nahi hai |
+| Past + | たかかった です | Mehenga tha |
+| Past - | たかくなかった です | Mehenga nahi tha |
+
+⚠️ いい → よくない / よかった / よくなかった
+
+### な-Adjective (Example: しずか - shaant):
+
+| Form | Pattern | Example |
+|---|---|---|
+| Present + | しずか です | Shaant hai |
+| Present - | しずか じゃないです | Shaant nahi hai |
+| Past + | しずか でした | Shaant tha |
+| Past - | しずか じゃなかったです | Shaant nahi tha |
+
+---
+
+# 📝 Question Words Master List (Ch 1-10):
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| なに / なん (何) | Nani/Nan | Kya? |
+| だれ (誰) | Dare | Kaun? |
+| いつ | Itsu | Kab? |
+| どこ | Doko | Kahaan? |
+| どれ | Dore | Kaunsa? (3+) |
+| どの | Dono | Kaunsa? (+noun) |
+| どう | Dou | Kaisa? |
+| どんな | Donna | Kis tarah ka? (+noun) |
+| なんじ (何時) | Nanji | Kitne baje? |
+| なんにち (何日) | Nannichi | Kitni taareekh? |
+| なんがつ (何月) | Nangatsu | Kaunsa mahina? |
+| なんようび (何曜日) | Nan-youbi | Kaunsa din? |
+| いくら | Ikura | Kitne ka? (price) |
+| いくつ | Ikutsu | Kitne? (quantity/age) |
+| なんがい (何階) | Nangai | Kauns floor? |
+| どのくらい / どれくらい | Donokurai | Kitna (time/distance)? |
+| なぜ / どうして | Naze/Doushite | Kyun? |
+
+---
+
+# ⚡ Final Tips for Irodori Elementary 1:
+
+1. **Har roz thoda thoda practice karo** - まいにち すこし べんきょう しましょう！
+2. **Audio suno** - Irodori ki website pe free audio hai: https://irodori.jpf.go.jp/
+3. **Shadowing karo** - Audio sunke saath mein bolo
+4. **Hiragana/Katakana pehle mazboot karo** - Yeh foundation hai
+5. **Grammar pattern ko sentences mein practice karo** - Sirf yaad karna kaafi nahi
+6. **Japanese mein sochne ki koshish karo** - Hindi translate mat karo zyada
+7. **Mistakes se daro mat** - まちがっても だいじょうぶ です！(Galti ho toh bhi theek hai!)
+8. **Particle practice** - Particles Japanese ka sabse important part hai
+9. **Polite form (ます/です) se shuru karo** - Yeh safe hai har jagah
+10. **Enjoy karo!** - にほんご は たのしい です！ (Japanese mazedaar hai!)
+
+---
+
+**がんばって ください！ (Ganbatte kudasai!)** 💪🎌
+
+Agar kisi specific topic pe aur detail chahiye, practice questions chahiye, ya Chapter 11+ chahiye toh bata do!</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>🎌 Built with precision for Irodori Elementary 1 Course • Chapter 10 & Part 2 Grand Finale Interactive Module</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">100% Content Preservation Guaranteed • Developed for Hindi & Roman Urdu Learners</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.innerText = '☀️';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerText = '🌙';
+            }
+        }
+
+        // Web Speech API - Japanese TTS
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Speech synthesis is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.95;
+            
+            const voices = window.speechSynthesis.getVoices();
+            const jpVoice = voices.find(v => v.lang.includes('ja') || v.lang.includes('JP'));
+            if (jpVoice) utterance.voice = jpVoice;
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // House Existence Locator Logic
+        const hsPattern = document.getElementById('hs-pattern');
+        const hsPlace = document.getElementById('hs-place');
+        const hsItem = document.getElementById('hs-item');
+
+        function updateHouse() {
+            const pattern = hsPattern.value;
+            const place = hsPlace.value.split('|'); // [jp, romaji, mean]
+            const item = hsItem.value.split('|');   // [jp, romaji, mean, existJp, existRom, existMean]
+
+            let fullJp = '';
+            let fullRomaji = '';
+            let fullMeaning = '';
+
+            if (pattern === 'p_first') {
+                fullJp = `${place[0]} に ${item[0]} が ${item[3]}。`;
+                fullRomaji = `${place[1]} ni ${item[1]} ga ${item[4]}.`;
+                fullMeaning = `Matlab: ${place[2]} ${item[2]} ${item[5]}.`;
+            } else {
+                fullJp = `${item[0]} は ${place[0]} に ${item[3]}。`;
+                fullRomaji = `${item[1]} wa ${place[1]} ni ${item[4]}.`;
+                fullMeaning = `Matlab: ${item[2]} ${place[2]} ${item[5]}.`;
+            }
+
+            document.getElementById('hs-jp').innerHTML = fullJp;
+            document.getElementById('hs-romaji').innerHTML = fullRomaji;
+            document.getElementById('hs-meaning').innerHTML = fullMeaning;
+        }
+
+        hsPattern.addEventListener('change', updateHouse);
+        hsPlace.addEventListener('change', updateHouse);
+        hsItem.addEventListener('change', updateHouse);
+
+        function speakGeneratedHouse() {
+            const pattern = hsPattern.value;
+            const placeJp = hsPlace.value.split('|')[0];
+            const itemJp = hsItem.value.split('|')[0];
+            const existJp = hsItem.value.split('|')[3];
+            
+            if (pattern === 'p_first') {
+                speakText(`${placeJp} に ${itemJp} が ${existJp}。`);
+            } else {
+                speakText(`${itemJp} は ${placeJp} に ${existJp}。`);
+            }
+        }
+
+        // Permission & Prohibition Engine Logic
+        const pmAct = document.getElementById('pm-act');
+        const pmMode = document.getElementById('pm-mode');
+
+        function testPermEngine() {
+            const act = pmAct.value.split('|'); // [teForm, naiStem, romTe, romNai, mean, type]
+            const mode = pmMode.value.split('|'); // [suffixJp, romaji, mean, type]
+
+            let targetJp = '';
+            let targetRom = '';
+            let targetMean = '';
+
+            if (mode[3] === 'perm') {
+                targetJp = `${act[0]}ても いいですか？`;
+                targetRom = `${act[2]}temo ii desu ka?`;
+                targetMean = `${act[4]} kar sakta hoon? (May I?)`;
+            } else if (mode[3] === 'prohib') {
+                targetJp = `${act[0]}ては いけません。`;
+                targetRom = `${act[2]}tewa ikemasen.`;
+                targetMean = `${act[4]} mana hai! (Must not!)`;
+            } else if (mode[3] === 'negreq') {
+                targetJp = `${act[1]}ないで ください。`;
+                targetRom = `${act[3]}naide kudasai.`;
+                targetMean = `${act[4]} mat kijiye (Please don't!)`;
+            } else {
+                targetJp = `${act[0].replace(' を とっ', '').replace(' を あけ', '').replace(' を つけ', '')} が ほしい です。`;
+                targetRom = `${act[2]} ga hoshii desu.`;
+                targetMean = `${act[4]} chahiye! (I want this!)`;
+            }
+
+            document.getElementById('pm-output').innerHTML = `${targetJp} <span style="font-size:1rem; color:var(--text-main); font-weight:500; display:block;">(${targetRom} → ${targetMean})</span>`;
+            speakText(targetJp.replace('？', '').replace('。', ''));
+        }
+
+        pmAct.addEventListener('change', testPermEngine);
+        pmMode.addEventListener('change', testPermEngine);
+
+        // Quiz Module Logic (10 Comprehensive Questions)
+        const quizQuestions = [
+            {
+                q: "1. Which verb is used for inanimate objects: 'There is a bed in my room'?",
+                options: [
+                    "います (imasu - living things)",
+                    "あります (arimasu - inanimate objects) ✔️",
+                    "します (shimasu)",
+                    "いきます (ikimasu)"
+                ],
+                correct: 1
+            },
+            {
+                q: "2. What is the difference between '～たい です' and '～が ほしい です'?",
+                options: [
+                    "They mean the exact same thing in all situations",
+                    "たい is for actions (want to do), ほしい is for nouns (want a thing) ✔️",
+                    "ほしい is for actions, たい is for nouns",
+                    "Neither expresses desire"
+                ],
+                correct: 1
+            },
+            {
+                q: "3. How do you politely ask for permission: 'May I open the window?' (Grammar Pt 32)",
+                options: [
+                    "まど を あけて ください (Mado wo akete kudasai)",
+                    "まど を あけても いいですか？ (Mado wo aketemo ii desu ka?) ✔️",
+                    "まど を あけないで ください (Mado wo akenaide kudasai)",
+                    "まど を あけたい です (Mado wo aketai desu)"
+                ],
+                correct: 1
+            },
+            {
+                q: "4. Which expression means strong prohibition: 'Smoking is forbidden here!' (Grammar Pt 33)",
+                options: [
+                    "たばこ を すって ください (Tabako wo sutte kudasai)",
+                    "たばこ を すっては いけません (Tabako wo suttewa ikemasen) ✔️",
+                    "たばこ を すっても いいです (Tabako wo suttemo ii desu)",
+                    "たばこ を すいたくない です (Tabako wo suitakunai desu)"
+                ],
+                correct: 1
+            },
+            {
+                q: "5. What does the Japanese room layout code '1LDK' stand for?",
+                options: [
+                    "1 Loft, Door, Kitchen",
+                    "1 room + Living, Dining, Kitchen ✔️",
+                    "1 Large Double Kitchen",
+                    "1 Living room without Kitchen"
+                ],
+                correct: 1
+            },
+            {
+                q: "6. How is room size traditionally measured in Japan?",
+                options: [
+                    "In square kilometers only",
+                    "In 'じょう (畳 - jou / tatami mat units)' ✔️",
+                    "In number of windows",
+                    "In height of ceiling"
+                ],
+                correct: 1
+            },
+            {
+                q: "7. Which Japanese word means 'Entrance / Darwaza' where shoes are removed?",
+                options: [
+                    "ベランダ (Beranda)",
+                    "げんかん (玄関 - Genkan) ✔️",
+                    "おしいれ (Oshiire)",
+                    "ろうか (Rouka)"
+                ],
+                correct: 1
+            },
+            {
+                q: "8. In our Part 2 Grand Review, which particle marks the direction/destination (towards)?",
+                options: [
+                    "を (wo/o)",
+                    "へ (e / he - towards destination) ✔️",
+                    "が (ga)",
+                    "の (no)"
+                ],
+                correct: 1
+            },
+            {
+                q: "9. How do you say 'Please don't take photos' using Grammar Pt 33?",
+                options: [
+                    "しゃしん を とらないで ください (Shashin wo toranaide kudasai) ✔️",
+                    "しゃしん を とりましょう (Shashin wo torimashou)",
+                    "しゃしん を とりました (Shashin wo torimashita)",
+                    "しゃしん を とりたい です (Shashin wo toritai desu)"
+                ],
+                correct: 0
+            },
+            {
+                q: "10. Which Japanese word means 'House rent (Kiraya)'?",
+                options: [
+                    "しききん (Shikikin - deposit)",
+                    "やちん (家賃 - Yachin) ✔️",
+                    "まどり (Madori - layout)",
+                    "れいきん (Reikin - key money)"
+                ],
+                correct: 1
+            }
+        ];
+
+        function renderQuiz() {
+            const quizArea = document.getElementById('quiz-area');
+            let html = '';
+            quizQuestions.forEach((item, index) => {
+                html += `
+                    <div class="question-box" id="q-${index}">
+                        <div class="question-text"><span>${item.q}</span></div>
+                        <div class="options-grid">
+                            ${item.options.map((opt, optIndex) => `
+                                <button class="option-btn" onclick="checkAnswer(${index}, ${optIndex})">
+                                    <span>${opt}</span>
+                                    <span class="status-icon"></span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            quizArea.innerHTML = html;
+        }
+
+        let score = 0;
+        let answered = new Array(quizQuestions.length).fill(false);
+
+        function checkAnswer(qIndex, optIndex) {
+            if (answered[qIndex]) return;
+            answered[qIndex] = true;
+
+            const qBox = document.getElementById(`q-${qIndex}`);
+            const buttons = qBox.querySelectorAll('.option-btn');
+            const correctIndex = quizQuestions[qIndex].correct;
+
+            if (optIndex === correctIndex) {
+                buttons[optIndex].classList.add('correct');
+                buttons[optIndex].querySelector('.status-icon').innerText = '🎉 Correct!';
+                score++;
+                speakText('せいかい！');
+            } else {
+                buttons[optIndex].classList.add('wrong');
+                buttons[optIndex].querySelector('.status-icon').innerText = '❌ Incorrect';
+                buttons[correctIndex].classList.add('correct');
+                buttons[correctIndex].querySelector('.status-icon').innerText = '✔ Correct Answer';
+            }
+
+            if (answered.every(val => val === true)) {
+                const quizArea = document.getElementById('quiz-area');
+                const scoreDiv = document.createElement('div');
+                scoreDiv.className = 'quiz-score';
+                scoreDiv.innerHTML = `🏆 Part 2 Grand Finale Quiz Completed!<br><span style="font-size:2rem; color:#fff; display:block; margin:0.5rem 0;">Your Score: ${score} / ${quizQuestions.length}</span><span style="font-size:1rem; color:var(--text-main); font-weight:500;">Incredible achievement! You have mastered Chapter 10 Housing & Existence, plus all 10 Chapters of Irodori Part 2!</span>`;
+                quizArea.appendChild(scoreDiv);
+            }
+        }
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        });
+    </script>
+<script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume 3: Kanji 081-120 (Lessons 9-11) - Interactive Learning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kanji.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-hero">
+            <h1>Volume 3: Kanji 081 - 120</h1>
+            <p class="subtitle">Master time, schedules, town features, buying/selling, traditional folktales, movies, and communication across Lessons 9, 10, and 11 with interactive cards and structured workbook practice.</p>
+        </div>
+        
+        <div class="controls-bar">
+            <input type="text" class="search-input" id="kanjiSearch" placeholder="🔍 Search Kanji by character, meaning, reading, or vocabulary word...">
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="switchTab('cards', 'all', this)">All Cards (45)</button>
+                <button class="filter-btn" onclick="switchTab('cards', '9', this)">Lesson 9 (Time/Friends)</button>
+                <button class="filter-btn" onclick="switchTab('cards', '10', this)">Lesson 10 (Town/Folktale)</button>
+                <button class="filter-btn" onclick="switchTab('cards', '11', this)">Lesson 11 (Communication/Hobbies)</button>
+                <button class="filter-btn" onclick="switchTab('practice', null, this)">✍️ Workbook Practice</button>
+                <button class="filter-btn" onclick="switchTab('verbatim', null, this)">📜 Verbatim PDF Transcript</button>
+            </div>
+        </div>
+
+        <!-- Section 1: Kanji Flashcard Grid -->
+        <div id="view-cards" class="view-section active">
+            <div class="kanji-grid" id="kanjiGrid">
+                
+    <div class="kanji-card" data-lesson="9" data-search="午 noon ゴ - 午前 ごぜん A.M. / morning 午後 ごご P.M. / afternoon 午前中 ごぜんちゅう in the morning">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#085</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">午</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">noon</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ゴ</span>
+                    <span class="r-pill kun">KUN: -</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">午前</span><span class="v-read">(ごぜん)</span></div>
+                <div class="v-eng">A.M. / morning</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">午後</span><span class="v-read">(ごご)</span></div>
+                <div class="v-eng">P.M. / afternoon</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">午前中</span><span class="v-read">(ごぜんちゅう)</span></div>
+                <div class="v-eng">in the morning</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="後 after / behind ゴ, コウ あと, うし 午後 ごご P.M. / afternoon ~の後 ~のあと after ~ 後で あとで later 後ろ うしろ back / behind 最後に さいごに lastly">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#086</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">後</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">after / behind</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ゴ, コウ</span>
+                    <span class="r-pill kun">KUN: あと, うし</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">午後</span><span class="v-read">(ごご)</span></div>
+                <div class="v-eng">P.M. / afternoon</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">~の後</span><span class="v-read">(~のあと)</span></div>
+                <div class="v-eng">after ~</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">後で</span><span class="v-read">(あとで)</span></div>
+                <div class="v-eng">later</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">後ろ</span><span class="v-read">(うしろ)</span></div>
+                <div class="v-eng">back / behind</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">最後に</span><span class="v-read">(さいごに)</span></div>
+                <div class="v-eng">lastly</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="前 before / front ゼン まえ 前 まえ before / front 午前 ごぜん A.M. 名前 なまえ name">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#087</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">前</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">before / front</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ゼン</span>
+                    <span class="r-pill kun">KUN: まえ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">前</span><span class="v-read">(まえ)</span></div>
+                <div class="v-eng">before / front</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">午前</span><span class="v-read">(ごぜん)</span></div>
+                <div class="v-eng">A.M.</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">名前</span><span class="v-read">(なまえ)</span></div>
+                <div class="v-eng">name</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="名 name / famous メイ, ミョウ な 名前 なまえ name 有名な ゆうめいな famous 名刺 めいし name card / business card">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#088</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">名</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">name / famous</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: メイ, ミョウ</span>
+                    <span class="r-pill kun">KUN: な</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">名前</span><span class="v-read">(なまえ)</span></div>
+                <div class="v-eng">name</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">有名な</span><span class="v-read">(ゆうめいな)</span></div>
+                <div class="v-eng">famous</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">名刺</span><span class="v-read">(めいし)</span></div>
+                <div class="v-eng">name card / business card</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="白 white ハク, ビャク しろ 白い しろい white 白紙 はくし blank sheet">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#089</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">白</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">white</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ハク, ビャク</span>
+                    <span class="r-pill kun">KUN: しろ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">白い</span><span class="v-read">(しろい)</span></div>
+                <div class="v-eng">white</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">白紙</span><span class="v-read">(はくし)</span></div>
+                <div class="v-eng">blank sheet</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="雨 rain ウ あめ 雨 あめ rain 雨期 うき rainy season">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#090</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">雨</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">rain</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ウ</span>
+                    <span class="r-pill kun">KUN: あめ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">雨</span><span class="v-read">(あめ)</span></div>
+                <div class="v-eng">rain</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">雨期</span><span class="v-read">(うき)</span></div>
+                <div class="v-eng">rainy season</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="書 to write ショ か 書く かく to write 辞書 じしょ dictionary 教科書 きょうかしょ textbook 図書館 としょかん library">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#091</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">書</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to write</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ショ</span>
+                    <span class="r-pill kun">KUN: か</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">書く</span><span class="v-read">(かく)</span></div>
+                <div class="v-eng">to write</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">辞書</span><span class="v-read">(じしょ)</span></div>
+                <div class="v-eng">dictionary</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">教科書</span><span class="v-read">(きょうかしょ)</span></div>
+                <div class="v-eng">textbook</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">図書館</span><span class="v-read">(としょかん)</span></div>
+                <div class="v-eng">library</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="友 friend ユウ とも 友だち ともだち friend 親友 しんゆう best friend 友人 ゆうじん friend (formal)">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#092</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">友</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">friend</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ユウ</span>
+                    <span class="r-pill kun">KUN: とも</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">友だち</span><span class="v-read">(ともだち)</span></div>
+                <div class="v-eng">friend</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">親友</span><span class="v-read">(しんゆう)</span></div>
+                <div class="v-eng">best friend</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">友人</span><span class="v-read">(ゆうじん)</span></div>
+                <div class="v-eng">friend (formal)</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="間 between / interval カン, ゲン あいだ 間 あいだ between 時間 じかん time 二時間 にじかん two hours 人間 にんげん human being 一週間 いっしゅうかん one week">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#093</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">間</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">between / interval</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: カン, ゲン</span>
+                    <span class="r-pill kun">KUN: あいだ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">間</span><span class="v-read">(あいだ)</span></div>
+                <div class="v-eng">between</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">時間</span><span class="v-read">(じかん)</span></div>
+                <div class="v-eng">time</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">二時間</span><span class="v-read">(にじかん)</span></div>
+                <div class="v-eng">two hours</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">人間</span><span class="v-read">(にんげん)</span></div>
+                <div class="v-eng">human being</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">一週間</span><span class="v-read">(いっしゅうかん)</span></div>
+                <div class="v-eng">one week</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="家 house / home カ, ケ いえ, うち 家 いえ / うち house / home 家族 かぞく family 作家 さっか author / writer">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#094</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">家</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">house / home</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: カ, ケ</span>
+                    <span class="r-pill kun">KUN: いえ, うち</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">家</span><span class="v-read">(いえ / うち)</span></div>
+                <div class="v-eng">house / home</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">家族</span><span class="v-read">(かぞく)</span></div>
+                <div class="v-eng">family</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">作家</span><span class="v-read">(さっか)</span></div>
+                <div class="v-eng">author / writer</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="話 to speak / story ワ はな, はなし 話す はなす to speak / talk 話 はなし talk / story / conversation 電話 でんわ telephone 会話 かいわ conversation">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#095</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">話</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to speak / story</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ワ</span>
+                    <span class="r-pill kun">KUN: はな, はなし</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">話す</span><span class="v-read">(はなす)</span></div>
+                <div class="v-eng">to speak / talk</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">話</span><span class="v-read">(はなし)</span></div>
+                <div class="v-eng">talk / story / conversation</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">電話</span><span class="v-read">(でんわ)</span></div>
+                <div class="v-eng">telephone</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">会話</span><span class="v-read">(かいわ)</span></div>
+                <div class="v-eng">conversation</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="少 little / few ショウ すこ, すく 少し すこし a little / few 少ない すくない few / scarce 少々 しょうしょう a little / a moment">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#096</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">少</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">little / few</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ショウ</span>
+                    <span class="r-pill kun">KUN: すこ, すく</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">少し</span><span class="v-read">(すこし)</span></div>
+                <div class="v-eng">a little / few</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">少ない</span><span class="v-read">(すくない)</span></div>
+                <div class="v-eng">few / scarce</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">少々</span><span class="v-read">(しょうしょう)</span></div>
+                <div class="v-eng">a little / a moment</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="古 old コ ふる 古い ふるい old (for things) 中古 ちゅうこ secondhand / used">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#097</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">古</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">old</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: コ</span>
+                    <span class="r-pill kun">KUN: ふる</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">古い</span><span class="v-read">(ふるい)</span></div>
+                <div class="v-eng">old (for things)</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">中古</span><span class="v-read">(ちゅうこ)</span></div>
+                <div class="v-eng">secondhand / used</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="知 to know チ し 知る しる to know 知人 ちじん acquaintance 知り合い しりあい acquaintance">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#098</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">知</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to know</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: チ</span>
+                    <span class="r-pill kun">KUN: し</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">知る</span><span class="v-read">(しる)</span></div>
+                <div class="v-eng">to know</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">知人</span><span class="v-read">(ちじん)</span></div>
+                <div class="v-eng">acquaintance</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">知り合い</span><span class="v-read">(しりあい)</span></div>
+                <div class="v-eng">acquaintance</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="9" data-search="来 to come ライ く, き, こ 来る くる to come 来ます きます to come (polite) 来ない こない not to come 来週 らいしゅう next week 来年 らいねん next year">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#099</span>
+            <span class="lesson-badge">Lesson 9</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">来</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to come</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ライ</span>
+                    <span class="r-pill kun">KUN: く, き, こ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">来る</span><span class="v-read">(くる)</span></div>
+                <div class="v-eng">to come</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">来ます</span><span class="v-read">(きます)</span></div>
+                <div class="v-eng">to come (polite)</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">来ない</span><span class="v-read">(こない)</span></div>
+                <div class="v-eng">not to come</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">来週</span><span class="v-read">(らいしゅう)</span></div>
+                <div class="v-eng">next week</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">来年</span><span class="v-read">(らいねん)</span></div>
+                <div class="v-eng">next year</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="住 to live ジュウ す 住む すむ to live / reside 住所 じゅうしょ address">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#100</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">住</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to live</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ジュウ</span>
+                    <span class="r-pill kun">KUN: す</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">住む</span><span class="v-read">(すむ)</span></div>
+                <div class="v-eng">to live / reside</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">住所</span><span class="v-read">(じゅうしょ)</span></div>
+                <div class="v-eng">address</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="正 right / correct ショウ, セイ ただ お正月 おしょうがつ New Year 正しい ただしい right / correct 正午 しょうご noon / midday">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#101</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">正</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">right / correct</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ショウ, セイ</span>
+                    <span class="r-pill kun">KUN: ただ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">お正月</span><span class="v-read">(おしょうがつ)</span></div>
+                <div class="v-eng">New Year</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">正しい</span><span class="v-read">(ただしい)</span></div>
+                <div class="v-eng">right / correct</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">正午</span><span class="v-read">(しょうご)</span></div>
+                <div class="v-eng">noon / midday</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="年 year ネン とし 年 とし year / age 三年生 さんねんせい third-year student 来年 らいねん next year 今年 ことし this year 毎年 まいとし / まいねん every year">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#102</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">年</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">year</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ネン</span>
+                    <span class="r-pill kun">KUN: とし</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">年</span><span class="v-read">(とし)</span></div>
+                <div class="v-eng">year / age</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">三年生</span><span class="v-read">(さんねんせい)</span></div>
+                <div class="v-eng">third-year student</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">来年</span><span class="v-read">(らいねん)</span></div>
+                <div class="v-eng">next year</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">今年</span><span class="v-read">(ことし)</span></div>
+                <div class="v-eng">this year</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">毎年</span><span class="v-read">(まいとし / まいねん)</span></div>
+                <div class="v-eng">every year</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="売 to sell バイ う 売る うる to sell 売店 ばいてん stand / kiosk / stall 売り場 うりば sales counter / department">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#103</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">売</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to sell</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: バイ</span>
+                    <span class="r-pill kun">KUN: う</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">売る</span><span class="v-read">(うる)</span></div>
+                <div class="v-eng">to sell</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">売店</span><span class="v-read">(ばいてん)</span></div>
+                <div class="v-eng">stand / kiosk / stall</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">売り場</span><span class="v-read">(うりば)</span></div>
+                <div class="v-eng">sales counter / department</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="買 to buy バイ か 買う かう to buy 買い物 かいもの shopping">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#104</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">買</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to buy</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: バイ</span>
+                    <span class="r-pill kun">KUN: か</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">買う</span><span class="v-read">(かう)</span></div>
+                <div class="v-eng">to buy</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">買い物</span><span class="v-read">(かいもの)</span></div>
+                <div class="v-eng">shopping</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="町 town チョウ まち 町 まち town 北山町 きたやまちょう Kitayama town 町長 ちょうちょう mayor of a town">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#105</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">町</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">town</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: チョウ</span>
+                    <span class="r-pill kun">KUN: まち</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">町</span><span class="v-read">(まち)</span></div>
+                <div class="v-eng">town</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">北山町</span><span class="v-read">(きたやまちょう)</span></div>
+                <div class="v-eng">Kitayama town</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">町長</span><span class="v-read">(ちょうちょう)</span></div>
+                <div class="v-eng">mayor of a town</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="長 long / leader チョウ なが 長い ながい long 長男 ちょうなん eldest son 市長 しちょう mayor of a city 社長 しゃちょう company president">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#106</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">長</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">long / leader</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: チョウ</span>
+                    <span class="r-pill kun">KUN: なが</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">長い</span><span class="v-read">(ながい)</span></div>
+                <div class="v-eng">long</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">長男</span><span class="v-read">(ちょうなん)</span></div>
+                <div class="v-eng">eldest son</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">市長</span><span class="v-read">(しちょう)</span></div>
+                <div class="v-eng">mayor of a city</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">社長</span><span class="v-read">(しゃちょう)</span></div>
+                <div class="v-eng">company president</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="道 way / road ドウ みち 道 みち way / road / street 書道 しょどう calligraphy 柔道 じゅうどう judo 北海道 ほっかいどう Hokkaido">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#107</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">道</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">way / road</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ドウ</span>
+                    <span class="r-pill kun">KUN: みち</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">道</span><span class="v-read">(みち)</span></div>
+                <div class="v-eng">way / road / street</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">書道</span><span class="v-read">(しょどう)</span></div>
+                <div class="v-eng">calligraphy</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">柔道</span><span class="v-read">(じゅうどう)</span></div>
+                <div class="v-eng">judo</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">北海道</span><span class="v-read">(ほっかいどう)</span></div>
+                <div class="v-eng">Hokkaido</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="雪 snow セツ ゆき 雪 ゆき snow 新雪 しんせつ new snow / fresh snow 大雪 おおゆき heavy snow">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#108</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">雪</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">snow</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: セツ</span>
+                    <span class="r-pill kun">KUN: ゆき</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">雪</span><span class="v-read">(ゆき)</span></div>
+                <div class="v-eng">snow</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">新雪</span><span class="v-read">(しんせつ)</span></div>
+                <div class="v-eng">new snow / fresh snow</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">大雪</span><span class="v-read">(おおゆき)</span></div>
+                <div class="v-eng">heavy snow</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="立 to stand リツ, リッ た 立つ たつ to stand 国立大学 こくりつだいがく national university 私立高校 しりつこうこう private high school">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#109</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">立</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to stand</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: リツ, リッ</span>
+                    <span class="r-pill kun">KUN: た</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">立つ</span><span class="v-read">(たつ)</span></div>
+                <div class="v-eng">to stand</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">国立大学</span><span class="v-read">(こくりつだいがく)</span></div>
+                <div class="v-eng">national university</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">私立高校</span><span class="v-read">(しりつこうこう)</span></div>
+                <div class="v-eng">private high school</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="自 self ジ, シ - 自分 じぶん oneself 自動車 じどうしゃ automobile 自転車 じてんしゃ bicycle 自由 じゆう freedom">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#110</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">自</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">self</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ジ, シ</span>
+                    <span class="r-pill kun">KUN: -</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">自分</span><span class="v-read">(じぶん)</span></div>
+                <div class="v-eng">oneself</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">自動車</span><span class="v-read">(じどうしゃ)</span></div>
+                <div class="v-eng">automobile</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">自転車</span><span class="v-read">(じてんしゃ)</span></div>
+                <div class="v-eng">bicycle</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">自由</span><span class="v-read">(じゆう)</span></div>
+                <div class="v-eng">freedom</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="夜 night ヤ よる, よ 夜 よる night 夜中 よなか midnight / dead of night 今夜 こんや tonight">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#111</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">夜</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">night</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ヤ</span>
+                    <span class="r-pill kun">KUN: よる, よ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">夜</span><span class="v-read">(よる)</span></div>
+                <div class="v-eng">night</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">夜中</span><span class="v-read">(よなか)</span></div>
+                <div class="v-eng">midnight / dead of night</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">今夜</span><span class="v-read">(こんや)</span></div>
+                <div class="v-eng">tonight</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="朝 morning チョウ あさ 朝 あさ morning 今朝 けさ this morning 朝食 ちょうしょく breakfast 毎朝 まいあさ every morning">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#112</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">朝</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">morning</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: チョウ</span>
+                    <span class="r-pill kun">KUN: あさ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">朝</span><span class="v-read">(あさ)</span></div>
+                <div class="v-eng">morning</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">今朝</span><span class="v-read">(けさ)</span></div>
+                <div class="v-eng">this morning</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">朝食</span><span class="v-read">(ちょうしょく)</span></div>
+                <div class="v-eng">breakfast</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">毎朝</span><span class="v-read">(まいあさ)</span></div>
+                <div class="v-eng">every morning</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="10" data-search="持 to hold ジ も 持つ もつ to hold / carry / own 持って来る もってくる to bring (something) 所持品 しょじひん belongings / personal effects 気持ち きもち feeling / mood">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#113</span>
+            <span class="lesson-badge">Lesson 10</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">持</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to hold</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ジ</span>
+                    <span class="r-pill kun">KUN: も</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">持つ</span><span class="v-read">(もつ)</span></div>
+                <div class="v-eng">to hold / carry / own</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">持って来る</span><span class="v-read">(もってくる)</span></div>
+                <div class="v-eng">to bring (something)</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">所持品</span><span class="v-read">(しょじひん)</span></div>
+                <div class="v-eng">belongings / personal effects</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">気持ち</span><span class="v-read">(きもち)</span></div>
+                <div class="v-eng">feeling / mood</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="手 hand シュ て, た 手 て hand 手紙 てがみ letter 歌手 かしゅ singer 手話 しゅわ sign language 上手な じょうずな good at / skillful">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#114</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">手</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">hand</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: シュ</span>
+                    <span class="r-pill kun">KUN: て, た</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">手</span><span class="v-read">(て)</span></div>
+                <div class="v-eng">hand</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">手紙</span><span class="v-read">(てがみ)</span></div>
+                <div class="v-eng">letter</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">歌手</span><span class="v-read">(かしゅ)</span></div>
+                <div class="v-eng">singer</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">手話</span><span class="v-read">(しゅわ)</span></div>
+                <div class="v-eng">sign language</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">上手な</span><span class="v-read">(じょうずな)</span></div>
+                <div class="v-eng">good at / skillful</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="紙 paper シ かみ, がみ 紙 かみ paper 手紙 てがみ letter 和紙 わし Japanese traditional paper 折り紙 おりがみ origami">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#115</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">紙</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">paper</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: シ</span>
+                    <span class="r-pill kun">KUN: かみ, がみ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">紙</span><span class="v-read">(かみ)</span></div>
+                <div class="v-eng">paper</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">手紙</span><span class="v-read">(てがみ)</span></div>
+                <div class="v-eng">letter</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">和紙</span><span class="v-read">(わし)</span></div>
+                <div class="v-eng">Japanese traditional paper</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">折り紙</span><span class="v-read">(おりがみ)</span></div>
+                <div class="v-eng">origami</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="好 to like / fond コウ す, この 好きな すきな to like / fond of 好意 こうい goodwill / favor 好み このみ liking / taste / preference 大好きな だいすきな to love / very fond of">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#116</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">好</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to like / fond</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: コウ</span>
+                    <span class="r-pill kun">KUN: す, この</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">好きな</span><span class="v-read">(すきな)</span></div>
+                <div class="v-eng">to like / fond of</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">好意</span><span class="v-read">(こうい)</span></div>
+                <div class="v-eng">goodwill / favor</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">好み</span><span class="v-read">(このみ)</span></div>
+                <div class="v-eng">liking / taste / preference</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">大好きな</span><span class="v-read">(だいすきな)</span></div>
+                <div class="v-eng">to love / very fond of</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="近 near / close キン ちか 近い ちかい near / close 近く ちかく nearby / vicinity 近所 きんじょ neighborhood 最近 さいきん recently / lately 中近東 ちゅうきんとう the Middle and Near East">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#117</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">近</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">near / close</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: キン</span>
+                    <span class="r-pill kun">KUN: ちか</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">近い</span><span class="v-read">(ちかい)</span></div>
+                <div class="v-eng">near / close</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">近く</span><span class="v-read">(ちかく)</span></div>
+                <div class="v-eng">nearby / vicinity</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">近所</span><span class="v-read">(きんじょ)</span></div>
+                <div class="v-eng">neighborhood</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">最近</span><span class="v-read">(さいきん)</span></div>
+                <div class="v-eng">recently / lately</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">中近東</span><span class="v-read">(ちゅうきんとう)</span></div>
+                <div class="v-eng">the Middle and Near East</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="明 bright メイ, ミョウ あか, あ 明るい あかるい cheerful / bright 明日 あした / あす tomorrow 説明 せつめい explanation">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#118</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">明</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">bright</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: メイ, ミョウ</span>
+                    <span class="r-pill kun">KUN: あか, あ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">明るい</span><span class="v-read">(あかるい)</span></div>
+                <div class="v-eng">cheerful / bright</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">明日</span><span class="v-read">(あした / あす)</span></div>
+                <div class="v-eng">tomorrow</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">説明</span><span class="v-read">(せつめい)</span></div>
+                <div class="v-eng">explanation</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="病 ill / sick ビョウ やまい 病院 びょういん hospital 病気 びょうき illness / sickness 重病 じゅうびょう serious illness 急病 きゅうびょう sudden illness">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#119</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">病</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">ill / sick</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ビョウ</span>
+                    <span class="r-pill kun">KUN: やまい</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">病院</span><span class="v-read">(びょういん)</span></div>
+                <div class="v-eng">hospital</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">病気</span><span class="v-read">(びょうき)</span></div>
+                <div class="v-eng">illness / sickness</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">重病</span><span class="v-read">(じゅうびょう)</span></div>
+                <div class="v-eng">serious illness</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">急病</span><span class="v-read">(きゅうびょう)</span></div>
+                <div class="v-eng">sudden illness</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="院 institution イン - 病院 びょういん hospital 大学院 だいがくいん graduate school 美容院 びよういん beauty parlor / salon">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#120</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">院</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">institution</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: イン</span>
+                    <span class="r-pill kun">KUN: -</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">病院</span><span class="v-read">(びょういん)</span></div>
+                <div class="v-eng">hospital</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">大学院</span><span class="v-read">(だいがくいん)</span></div>
+                <div class="v-eng">graduate school</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">美容院</span><span class="v-read">(びよういん)</span></div>
+                <div class="v-eng">beauty parlor / salon</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="映 to reflect / project エイ うつ 映画 えいが movie / film 映画館 えいがかん movie theater 映る うつる to be reflected / projected">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#121</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">映</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to reflect / project</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: エイ</span>
+                    <span class="r-pill kun">KUN: うつ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">映画</span><span class="v-read">(えいが)</span></div>
+                <div class="v-eng">movie / film</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">映画館</span><span class="v-read">(えいがかん)</span></div>
+                <div class="v-eng">movie theater</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">映る</span><span class="v-read">(うつる)</span></div>
+                <div class="v-eng">to be reflected / projected</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="画 picture / drawing ガ, カク - 映画 えいが movie 画家 がか painter / artist 計画 けいかく plan / project 漫画 まんが manga / comic">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#122</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">画</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">picture / drawing</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ガ, カク</span>
+                    <span class="r-pill kun">KUN: -</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">映画</span><span class="v-read">(えいが)</span></div>
+                <div class="v-eng">movie</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">画家</span><span class="v-read">(がか)</span></div>
+                <div class="v-eng">painter / artist</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">計画</span><span class="v-read">(けいかく)</span></div>
+                <div class="v-eng">plan / project</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">漫画</span><span class="v-read">(まんが)</span></div>
+                <div class="v-eng">manga / comic</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="歌 song / to sing カ うた 歌う うたう to sing 歌 うた song 歌手 かしゅ singer 国歌 こっか national anthem">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#123</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">歌</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">song / to sing</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: カ</span>
+                    <span class="r-pill kun">KUN: うた</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">歌う</span><span class="v-read">(うたう)</span></div>
+                <div class="v-eng">to sing</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">歌</span><span class="v-read">(うた)</span></div>
+                <div class="v-eng">song</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">歌手</span><span class="v-read">(かしゅ)</span></div>
+                <div class="v-eng">singer</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">国歌</span><span class="v-read">(こっか)</span></div>
+                <div class="v-eng">national anthem</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="市 city / market シ いち 川口市 かわぐちし Kawaguchi City 市役所 しやくしょ city hall 市長 しちょう mayor 市場 いちば market">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#124</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">市</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">city / market</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: シ</span>
+                    <span class="r-pill kun">KUN: いち</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">川口市</span><span class="v-read">(かわぐちし)</span></div>
+                <div class="v-eng">Kawaguchi City</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">市役所</span><span class="v-read">(しやくしょ)</span></div>
+                <div class="v-eng">city hall</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">市長</span><span class="v-read">(しちょう)</span></div>
+                <div class="v-eng">mayor</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">市場</span><span class="v-read">(いちば)</span></div>
+                <div class="v-eng">market</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="所 place ショ ところ, どころ ところ ところ place / spot いろいろな所 いろいろなところ various places 近所 きんじょ neighborhood 台所 だいどころ kitchen 住所 じゅうしょ address">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#125</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">所</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">place</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ショ</span>
+                    <span class="r-pill kun">KUN: ところ, どころ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">ところ</span><span class="v-read">(ところ)</span></div>
+                <div class="v-eng">place / spot</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">いろいろな所</span><span class="v-read">(いろいろなところ)</span></div>
+                <div class="v-eng">various places</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">近所</span><span class="v-read">(きんじょ)</span></div>
+                <div class="v-eng">neighborhood</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">台所</span><span class="v-read">(だいどころ)</span></div>
+                <div class="v-eng">kitchen</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">住所</span><span class="v-read">(じゅうしょ)</span></div>
+                <div class="v-eng">address</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="勉 to make effort ベン つと 勉強する べんきょうする to study 勉める つとめる to try hard / endeavor 勤勉な きんべんな diligent / industrious">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#126</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">勉</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to make effort</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ベン</span>
+                    <span class="r-pill kun">KUN: つと</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">勉強する</span><span class="v-read">(べんきょうする)</span></div>
+                <div class="v-eng">to study</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">勉める</span><span class="v-read">(つとめる)</span></div>
+                <div class="v-eng">to try hard / endeavor</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">勤勉な</span><span class="v-read">(きんべんな)</span></div>
+                <div class="v-eng">diligent / industrious</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="強 strong キョウ, ゴウ つよ 勉強する べんきょうする to study 強い つよい strong / powerful 強情な ごうじょうな obstinate / stubborn">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#127</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">強</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">strong</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: キョウ, ゴウ</span>
+                    <span class="r-pill kun">KUN: つよ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">勉強する</span><span class="v-read">(べんきょうする)</span></div>
+                <div class="v-eng">to study</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">強い</span><span class="v-read">(つよい)</span></div>
+                <div class="v-eng">strong / powerful</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">強情な</span><span class="v-read">(ごうじょうな)</span></div>
+                <div class="v-eng">obstinate / stubborn</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="有 to exist / possess ユウ, ウ あ 有名な ゆうめいな famous 有料 ゆうりょう toll / fee / pay 有る ある to exist (inanimate)">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#128</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">有</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">to exist / possess</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: ユウ, ウ</span>
+                    <span class="r-pill kun">KUN: あ</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">有名な</span><span class="v-read">(ゆうめいな)</span></div>
+                <div class="v-eng">famous</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">有料</span><span class="v-read">(ゆうりょう)</span></div>
+                <div class="v-eng">toll / fee / pay</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">有る</span><span class="v-read">(ある)</span></div>
+                <div class="v-eng">to exist (inanimate)</div>
+            </div>
+        </div>
+    </div>
+    <div class="kanji-card" data-lesson="11" data-search="旅 travel / trip リョ たび 旅行 りょこう travel / trip 旅館 りょかん Japanese traditional inn 一人旅 ひとりたび traveling alone / solo trip">
+        <div class="kanji-card-header">
+            <span class="kanji-num-badge">#129</span>
+            <span class="lesson-badge">Lesson 11</span>
+        </div>
+        <div class="kanji-hero-row">
+            <div class="kanji-char-hero">旅</div>
+            <div class="kanji-hero-text">
+                <div class="kanji-eng-title">travel / trip</div>
+                <div class="reading-pills">
+                    <span class="r-pill on">ON: リョ</span>
+                    <span class="r-pill kun">KUN: たび</span>
+                </div>
+            </div>
+        </div>
+        <div class="vocab-box">
+            <div class="vocab-box-title">Compound Vocabulary</div>
+            
+            <div class="vocab-item">
+                <div><span class="v-jp">旅行</span><span class="v-read">(りょこう)</span></div>
+                <div class="v-eng">travel / trip</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">旅館</span><span class="v-read">(りょかん)</span></div>
+                <div class="v-eng">Japanese traditional inn</div>
+            </div>
+            <div class="vocab-item">
+                <div><span class="v-jp">一人旅</span><span class="v-read">(ひとりたび)</span></div>
+                <div class="v-eng">traveling alone / solo trip</div>
+            </div>
+        </div>
+    </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Workbook Practice -->
+        <div id="view-practice" class="view-section">
+            
+<div class="practice-section">
+    <div class="lesson-header-box">
+        <h3>📖 Lesson 9 Reading & Writing Practice (第9課 読み書き練習)</h3>
+        <p>Apply vocabulary regarding time, schedules, weather, reading, and friendship.</p>
+    </div>
+    
+    <div class="exercise-card">
+        <h4>A. Time & Daily Activities (時間と生活):</h4>
+        <div class="grid-2col">
+            <div class="practice-item"><span class="q-badge">1</span> 午前十時に 大学へ 行きます。 <strong>10:00 A.M.</strong> <span class="ans-pill">ごぜん (午前)</span></div>
+            <div class="practice-item"><span class="q-badge">2</span> 午後から 雨が 降りました。 <strong>Afternoon Rain</strong> <span class="ans-pill">ごご / あめ (午後 / 雨)</span></div>
+            <div class="practice-item"><span class="q-badge">3</span> 新しい 辞書で 勉強します。 <strong>New Dictionary</strong> <span class="ans-pill">じしょ (辞書)</span></div>
+            <div class="practice-item"><span class="q-badge">4</span> 友だちと 電話で 話しました。 <strong>Friend & Phone</strong> <span class="ans-pill">ともだち / でんわ</span></div>
+            <div class="practice-item"><span class="q-badge">5</span> 日本語を 少し 知っています。 <strong>Know a little</strong> <span class="ans-pill">すこし / しって (少し/知って)</span></div>
+            <div class="practice-item"><span class="q-badge">6</span> 来週の 日曜日に 家に 来てください。 <strong>Next Week Home</strong> <span class="ans-pill">らいしゅう / いえ / きて</span></div>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h4>B. Reading Passage: スーさんの日記 (Sue's Diary)</h4>
+        <div class="reading-story-box">
+            <p><strong>五月十一日 雨。今日は 朝から 雨が 降っていました。</strong></p>
+            <p class="eng-sub">May 11th, Rainy. Today it was raining since the morning.</p>
+            
+            <p><strong>午前中は 家で 日本語の 教科書を 読みました。</strong></p>
+            <p class="eng-sub">In the morning, I read my Japanese textbook at home.</p>
+            
+            <p><strong>午後は 友だちの メアリーさんと 電話で 一時間ぐらい 話しました。</strong></p>
+            <p class="eng-sub">In the afternoon, I talked with my friend Mary on the phone for about an hour.</p>
+            
+            <p><strong>来週の 金曜日に 二人で 有名な 映画を 見に 行きます。とても 楽しみです。</strong></p>
+            <p class="eng-sub">Next Friday, the two of us are going to see a famous movie. I am looking forward to it.</p>
+        </div>
+    </div>
+
+    <div class="lesson-header-box" style="margin-top: 3rem;">
+        <h3>📖 Lesson 10 Reading & Writing Practice (第10課 読み書き練習)</h3>
+        <p>Master town features, buying/selling, weather phenomena, and traditional folktales.</p>
+    </div>
+
+    <div class="exercise-card">
+        <h4>A. Fill in the Antonyms & Verbs (反対語と動詞):</h4>
+        <div class="grid-3col">
+            <div class="match-card"><span class="kanji-target">売る (To sell)</span> ➔ <span class="reading-result">買う (かう - To buy)</span></div>
+            <div class="match-card"><span class="kanji-target">長い (Long)</span> ➔ <span class="reading-result">短い (みじかい - Short)</span></div>
+            <div class="match-card"><span class="kanji-target">夜 (Night)</span> ➔ <span class="reading-result">朝 / 昼 (あさ/ひる - Morning/Day)</span></div>
+            <div class="match-card"><span class="kanji-target">立つ (To stand)</span> ➔ <span class="reading-result">座る (すわる - To sit)</span></div>
+            <div class="match-card"><span class="kanji-target">来る (To come)</span> ➔ <span class="reading-result">行く (いく - To go)</span></div>
+            <div class="match-card"><span class="kanji-target">古い (Old)</span> ➔ <span class="reading-result">新しい (あたらしい - New)</span></div>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <h4>B. Reading Passage: かさじぞう (The Folktale Kasajizo)</h4>
+        <div class="reading-story-box">
+            <p><strong>昔々、ある 町に 貧しいけれど まじめな おじいさんと おばあさんが 住んでいました。</strong></p>
+            <p class="eng-sub">Once upon a time, in a certain town, lived a poor but honest old man and old woman.</p>
+            
+            <p><strong>お正月の 前の 日、おじいさんは 町へ 傘を 売りに行きましたが、一つも 売れませんでした。</strong></p>
+            <p class="eng-sub">On the day before New Year's, the old man went to town to sell umbrellas, but couldn't sell a single one.</p>
+            
+            <p><strong>帰り道、雪が たくさん 降ってきました。おじいさんは 道に 立つ お地蔵様に 傘を かぶせました。</strong></p>
+            <p class="eng-sub">On the way home, it started snowing heavily. The old man placed his umbrellas on the Jizo statues standing on the road.</p>
+            
+            <p><strong>その 夜中、お地蔵様たちは おじいさんの 家の 前に たくさんの お米や 食べ物を 持って来てくれました。</strong></p>
+            <p class="eng-sub">That midnight, the Jizo statues brought a lot of rice and food to the front of the old man's house.</p>
+        </div>
+    </div>
+
+    <div class="lesson-header-box" style="margin-top: 3rem;">
+        <h3>📖 Lesson 11 Reading & Writing Practice (第11課 読み書き練習)</h3>
+        <p>Explore communication, movies, hobbies, letter writing, and making friends.</p>
+    </div>
+
+    <div class="exercise-card">
+        <h4>A. Reading Passage: 友だち募集 (Looking for Friends - Magazine Ad)</h4>
+        <div class="reading-story-box">
+            <p><strong>川口市に 住んでいます。会社員です。友だちに なってください！</strong></p>
+            <p class="eng-sub">I live in Kawaguchi City. I am an office worker. Please become my friend!</p>
+            
+            <p><strong>アウトドアが 好きで、休みの 日は 車で 山に 登山に 行きます。</strong></p>
+            <p class="eng-sub">I love the outdoors, and on my days off I go mountain climbing by car.</p>
+            
+            <p><strong>近所の 公園で テニスを したり、映画館で 映画を 見たりするのも 大好きです。</strong></p>
+            <p class="eng-sub">I also love playing tennis at a neighborhood park and watching movies at the movie theater.</p>
+            
+            <p><strong>音楽も 好きで、よく 友だちと カラオケに 歌を 歌いに 行きます。手紙を ください！</strong></p>
+            <p class="eng-sub">I also like music, and often go to karaoke with friends to sing songs. Please send me a letter!</p>
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <!-- Section 3: Verbatim Transcript -->
+        <div id="view-verbatim" class="view-section">
+            <div class="verbatim-container">
+                <div class="verbatim-notice">⚠️ AUDIT COMPLETE: Below is the 100% verbatim raw text extracted from Pages 31 to 48 of kanji-1_kanji-2_merged.pdf, preserving every character and table row.</div>
+                <pre class="verbatim-pre">--- PAGE 31 ---
+31 ---
+========================================
+81 砂読み書き編 f 第9 課 ILES スーさんの日記  S   0 Sue ' sDiary  コ   午 前( ゴゼン) . ' - ' 1   午後   ( ゴゴ) P . ' ' ' ; i nt h ea fternoon  午   午 前 中   ( ゴゼンチュウ) i nt h em orning ( noon )   w   ノ   ル a  = = - 午 ネ 灸  コ e   あ と   う L   午 2 長 ( ゴゴ) P . " . ; i nt h ea fternoon  ~ の 後 ( の あ と) after   後 L で . ( あ と で ) later 4 孟ろ ( うしろ) back ; behind   最後 に( サイゴに) lastly ( after )   1 9 1 '   ク   fl '   1 " 4 必   ifit 干 支 、 ，   ま え ゼ ン   前   (まえ ) before ; front   午前 ( ゴ ゼ ン ) λM 前   名 前(なまえ) na me ( before )   ( 9 1   、 .   』 ー 1 比   ず   ず   ず   官 十   前 名   な   名 前( なまえ) na me  メ イ   有 名 な ( ユウメイ な) fa mo us   名 刺   ( メイシ) na me card ( name )   ( 6 ) ノ   ク   タ   . f   名   名 白   しろ   白、 、( しろ¥ ≫   wh ite  ノ 、ク   白紙   ( ハ夕刊   blan ks heet ( white )   1 5 1 '   ff 1 向   白 あめ   雨   ( あめ) rain  雨   ウ   雨 期 ( ウ キ ) rain ys eason ( rain )   1 8 1   『 寸   市   雨   雨   雨   雨 室田 、 占 ミ   書 く ( か く )   t ow rite  ン ヨ   辞 書( ジショ) dictionary ( to 、 ¥ Tite )   仰   ~   品   争   宅 呈ト   室主   堂   支   書   書   書 友   ど も   友 だ ち(ともだち)   friend  ユ ウ   親 友 ( シ ン ユウ)   bestfriend   友 人( ユウジン) friend ( friend )   w 一 ナ   方   友  0 8 8 0 9 0 0 8 7 0 8 9 0 9 1 0 9 2 0 9 3 0 9 4
+
+
+
+--- PAGE 32 ---
+32 ---
+========================================
+第   9 制 | ⑪ カ ン   あ い だ   時 間( ジカン)   time   二 時 間   ( ニジカン) tw oh ours  ロ ra 日 I ~ ・   問   ( あいだ) between   人 間 ( ニ ン ゲン)   huma nb eing  一 週 間   ( イッシュウカン) on ew eek ( bet 、 、 een )   「   「   門 門 門問   問   問   問 い え   家(いえ) house  家   カ   家族(カゾク) famih  家   ( う ち )   house ;h om e ( house )   目 白   a ・   戸 、   信 金 ・   世 ・ 一 「   ~   雪 「   宥 ~   家 話 す ( は な す) t os peak は な   は な し   話   ( はなし) talk ; story  話   ワ   電話(デンワ) telephone  会 話( カイワ) conversation ( t os peak )   U 3 1   」 品   ず   ヨ Z  "言   吾~   す 子 言 手 言 f 詩 話 す こ   少 し(すこし)   little  少   す く   シ ョ ウ   少ない(すくない)   few   少 々 ( ショウショウ ) al ittleOittle )   ( 4 ) )   ， )   ， ) 、  少 ふ る   古 い   ( ふ るい) old ( forthings )  古   コ   中 古( チュウコ ) secondhand ( old )   ( 5 ) 一   ー ト   → ; r 合   古 し   知 る (しる ) t ok n ow  失 ロ  チ   書 ロ メ 、 ( チジン) acquaintance ( t ok now )   ( S ) ，   ル   ~   ヂ   主   主 1   長 n   空 ロ さ 主   一事 来る(くる) t oc ome   来ます(きます)   t oc o me 」 来   ライ   来 な い ( こ な い ) no tt oc o me  来 週 ( ライシュウ ) nex tw eek ( t oc o me )   ( 7 )   γτ   エ ヱ   キ   五 F 来  0 9 6  1 0 1 1 00  0 9 5 0 9 8 0 9 7 0 9 9  ( I nt hischart . l . : a / okan oi ndicatesth eo n ' yom ia n dh iragall oi ndicatesth ek U1 l ' yomi . )
+
+
+
+--- PAGE 33 ---
+33 ---
+========================================
+⑪   | 砂読み書き編 ① 漢字の練賀 か ん じ   れ ん レ ゆ コ A .   Fil li nt h eb lank sw it ht h ea ppropriat ek anji  1 . こ の   い T シャツは 五   円でした 。   百   台  2 .   さいケ ー キ を   し食べました 。   少  3 . 一時   テープを   きまLた 。   聞   問  4 . 日本   を   します。   言 香   語 B . Choos et h em ostappropria t ew or df oreac hb lank .  I はじめまLて。手 ム の  2   毎 日たいてい はキムです 。 七時ごろおきます。 名前 午後 午 前 午 前  3 . このきものは古、 、 か ら、   きものをかいます 。 大 き い 新 し い  4   今 日 立 、 、 ぃ   だっ た 。 で も 、 あしたは   がふ ると思 う 。  5   メア リーのお父さんを ① ス ーさんの目 号 | 元 気   天 気 いますか 。   戸 石 て 白 雨 空 ロ っ て 十 一 月 二 十 五 日 (土 )   雨 今 日 は あ さ か ら 雨 が ふ っ て い た 。 午 前 中 は 友 だ ち に手 紙 を 書 い て 、 一 時 間 ぐらい音 楽 を聞 い た 。 昼 ごろメ ア リ ー の家へ行 っ た。 白くて、 必ん が 〈 ひ る 大 き い 家 だ っ た 。 メ ア リー の ホ ス ト フ ァ ミ リー の 山 本 さ ん に 会 っ た 。 お 父 さ ん は せ が 高 く て 、 や せ て い る 人 だ っ た。 家 で 晩 ご は ん を 食 べ If ん た。 お母 さん は 「 何 もあ りませ んが J ど 言 っ てい たが、 た くさん ご
+
+
+
+--- PAGE 34 ---
+34 ---
+========================================
+第 日 制 | ⑨ お母さんは少し古いと言っていた お 母 さ ん は と て そ し L、 ろい ろな話 を した。 晩ごはんはとてもおいしかった 。 ば ん も料理が上手だと思う。晩ごはんの後、 りょっ q   じ よ ヴ   fIi ん て e   きれいなきものをもらった 。 ちそう市£あった 。 が、 ど て も き れ い だ 。 メアリーのホストファミリーはとてもしんせ つ で 楽 L か った。 た の 日 記(に つ き ) 午 前 中 ホ ストファミリー ご ち そ う diaryi nt h em orninghostfa milyexcellen tf ood い ろ い ろ な 話 を す る そ し て vanoust oh av ea talkandA . Pu tt h ef ollowin gp ictur 巴 si nt h er igh to rde ra ccordin gt oS ue ' sd iary . 一一〉   一 - J ・   一. . .   一一 歩 ( a )   ( b )   ( c )  ( d )   ( e )
+
+
+
+--- PAGE 35 ---
+35 ---
+========================================
+⑨   | 砂 読み書き編 B .Ma rk丁 目th ef ollo wi n gs tatement sa r et rue .Mar kFi fno tt rue .  4 .( 6 .(  ) スー さん は古 い きも の をも ら っ た。  た 田 山 ゐ・ 6 前 る   ︒   名 いだの て 弘 ︑   一 せ   好す   リ やが   ミ ︒ 理qT て た 料 叩 フ く つ の   ︒ ト く   か ん   た ス ひ な さ っ   ホ が   も 母 か の せ   何   お な ん は は は   く   さ ん ん ん よ   一 さ は さ   が リ 父   ご   一 気   ア お   晩臥ス 天   メ  C   スーさんはメアリーさんのホストファミリーに手紙を書きました。 て か ゐ Rea dt h 巴 follo wi n gl etter . 山手ざま  先日   lZ   6 tう も め   IJ   1J \ ' t う   こY\   lま   Lr ~   。  k て も れのし 台 、 大て い 否 。 IJ ょ う τ は あま リ 日 7 f の I ) ょ うI ) を 食 パ 、 よ セんが、 、 お母ざ ん の り の I ) l 正と 1t JJ づ いし 力 、 つ 了 て ずす 。 それから、き もの を め リ〆とうこでい ま し 「 ご o  ヒ 1もきれい江きもの 1 ' 1作。 ヒ 、 、 う そ い 力 、 ん こ くl て 来τ く 「 ご ざ L¥ 払 1 立 ソウルのお t し ろ L 、と ミ ろ を f か つ て L、 ます 刀 、 ら 、あんないします a  寸 一 周 ニ ナ ノ¥日 ス ー・キム 先日 (せんじつ ) q ょ う あんないする  th eo therda ) ' do 口 nitont os ho ws omeon ea round
+
+
+
+--- PAGE 36 ---
+36 ---
+========================================
+第 日 制1 8 ① 書く 鰐農 A . Wha td i dy o ud oy esterday ?Writ eaj ournalB . Wr it eat hank - yo uI e 社ert os omeone . UsefulExpres sion sf o rL etter sa n dC ards : いろいろおせわになりました 。( Than ky o uf o re verythinl ' ( . ) 体 に 気 をつ け て 〈ださ L、 。( Pleasetakeca reofyou 四 elf . ) ' ' ' ' 巳 お 会 い で き る の を 楽 L み に してい ます。 ( Ia ml ookinl ' (forwar dt os 田 ingyou . ) た の ~ お め で と う(ござ い ます) 0   ( Congratulati onson. . . ) お た ん じよ うぴおめでとう 。( HappyBirthda y )
+
+
+
+--- PAGE 37 ---
+37 ---
+========================================
+⑨   | 砂読み書き編 伊 1 0 課 ILESSON . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 0 1  かさじぞう Th eF olktal eK asaj 位。  2  す   f 主む   ( すむ) t ol iye  住   ジ ュ ウ   f 主戸 庁 ( ジュウシ ョ) address ( t ol iye )   ( 7 ) ノ   itf 牛   f 主  3  お 正 月 ( おシ ョウガツ) Ne wY ear シ ョ ウ 正   た だ   正 し い   ( ただ しい) right ( right )   ( 5 1 ー   T   下   汗   正  4  年   ネ ン   ど し   三 年 生( サ ンネンセイ) third - yearstudent  来 年(ライネン)   nextyear   今 年 ( ことし)   thisyear  年   ( とし) year ( year )   ( 6 1   F   戸   と =   F   主 三   年  5  ま=   つ   売 る け る) t os ell  ノ   f イ   売 庖( パ イテン) stand ;stall  ツ じ   ( t os em   ( 7 )   ー ャ ' "   a tk   ， 主   ヂ = 売  s   か   買 う ( か う) t ob uyJ 貝   買い物(かいもの)   shopping ( t ob uy )   q 盟 、   [ 戸 町 田?   ? 守 宵 育 官 芦 買 まち   町   ( まち) town  田 丁  チ ョウ   北 山 町   ( きたや まチ ョウ) Kitaya ma to wn  町 長( チ ョウチ ョウ) ma yo ro fat own ( town )   1 7 1 1   nm   同   田   田ー   町 長   な が   長い(ながい)   long  チ ョ ウ   長 男 ( チ ョウナ ン)叩 山   firstson  ( long )   lSI 1   「   FF   主主   子   f 予   長 道   み ち   道   ( み ち) way ;road  ド ウ   書 道   ( シ ョドウ) calligraph )   柔 道   ( ジュウ ドウ)   judo  北海 道( ホ ッ カイ ドウ) Ho kkaido ( way )   1 1 2 1   、 ，   且   品 声 子   首   肯   首   首 、 首 J 首 道  1 0 9 1 0 8 1 0 7 1 0 1 0 1 0 1 0 1 0 6
+
+
+
+--- PAGE 38 ---
+38 ---
+========================================
+第1 附   1 8  ゆき   雪 ( ゆ き ) sn ow  府ヨ -   セツ   新 雪( シンセツ) ne ws now ( snow)   ( 1 0   a   戸   汗 も   岸 も   ， 手 ，   ， 手 ・   ， 語 ・ ， 号 - . 、  雪   雪 た   立 つ( たつ) t os tand  立   リ ツ   国 立 大 学   ( コク リツダイガク) nationa lu niver ョ it )  私 立 高 校 ( シリツコウコ ウ) privat eh i 耳 hs chool ( t os tand )   ( 5 1   •   ~  r - Tr   立 ユ /   自 分( ジプン) oneself  自   自 動 車( ジ ドウシャ) automobile  自転 車   ( ジテンシャ) bicycle ( self )   ( 6 ) ，   内   内   向   自 よ る   夜 ( よ る )   night  子 会 こ   よ   ヤ   夜 中 ( よ な か)   mi dnight   今 夜( コンヤ) tonight ( night >   ( 8 1   占 rrf デ   干 歩   f 予   夜 事 月  あ さ   車 月( あさ) morning   今 朝(けさ) thi sm orning  チ ョウ   朝 食( チ ョウショク) breakfast ( mo rning )   日 目 一   斗 ト ず   者   商   書   査   事   車 } 車月車月 草 月 持   も   持 つ ( もつ) tohold   持 っ て く る ( も ってくる ) tobring  ン   所持 品   ( シヨジヒン)   belongings ( t oh old )   ( 9 ) ー   4   ず   P   4 圭   持   持  1 1 0 1 1 5 1 1 4 1 1 3 1 1 2 1 11  ( I nt hi sc hart ， lia / ulian oi ndicatesth eo n ' yomian dh iragall oi ndicatesth el illn ' ) '
+
+
+
+--- PAGE 39 ---
+39 ---
+========================================
+⑭   | 砂読み書き編 ①霧 守 の 鰐 農 A . Ad ds troke st ot h ek anj ib elo wa n dt ur nt he mi nt on ewkanj if ro mt hi sl esson . Example : ニ   →   立 I 上   →   2 . 田   →   3 . 雨   →   4 . 月   一 一 歩  5 . 白   一 一 歩   6 . 土   →   7 .   員   →   8   白   一→ B .Writ ee ac ha ntony mi nk anji .  3 . み じかい   骨 1 . 買 う   e 今   2 . す わ る よ 夜  ¢ ; > C 争 c .Fil li nt h 巴blanksw it ht h ea ppropriat ek anj if ro mt h el ist ， an da d dh iragan aw herenecessar y . 7 tKE   戸 ヨ 主 f 主   買   長   立   持 1 . 町 で   を し ま し た 。   2 .   か さを   てい ますか。 shoppinghave  3 . 本屋 で は本 を   て い ます。   4   よ く   が ふ り ま す 。 ぜ ' ( are )seHOng )   sno 、 v  5 . お じい さんの話 は   。   6   アノ f ー トに   で い ま す 。 waslongIi 、 e  7 . 私 の後 ろに女 の人 が   。 wasstanding
+
+
+
+--- PAGE 40 ---
+40 ---
+========================================
+第 1 酬| ⑪ ① かさじ ぞう A .Answe rt h ef ollowin gq uestions 1 . 日本 ではお正 月に何 をす るど思 い ますか。 2 . ( Pictur e1 ) これ はお じぞ うきんです。何 だ と 思 い ま す か 。 どんな人だと思いますか 。 す。 3 . ( Picture 2 )このお じい さん とおば あ さんが この誌 の主人 公(ma i nc haracters )で L櫓 U ん よ う ど ん な 生 活 をLていると思いますか 。 ゆ っ  2  B .Rea dt h eJ apanes ef olktale“ かさじぞう"o np p .3 0 2 - 3 . C .Pu tt h ef ollowin gp icture si nt h er igh to rder . →   →   →   →   → ( a )   ( b )   ( c )  団 設 ( d )   ( e )   ( f )
+
+
+
+--- PAGE 41 ---
+41 ---
+========================================
+⑨   | 砂読み書き編  ま し た︒ っちに帰って︑ おじいさんはおばあさんにおじぞうきんの話を し ま し た ︒ おばあさんは﹁おじいさん︑いいことを し まし た ね ︒ ﹂ ど -言いま し た ︒ ニえ その夜おそく︑おじいさんはだれかの声を聞 き まし た ︒ ﹁ おじ いさん︑おじ いさん︒ ﹂ あ おじいさんは 戸を開けて︑びっくり し まし た ︒ 大人のおじぞうきん が立っていま し た ︒おじぞうきんはお正月のおもちをたくさん持って いました ︒ お正月の朝になりました ︒ さん食べました ︒ おじいさんとおばあさんはおもちをたく ニ人はとてもしあわせで し た︒  onc eu po nat i me guardiandeit yofchildrenb 叩 lboohatsad mo untai nr oad  : LS " ewYear ' sric ec aket os ell  、 ear  む 7 右 ・ しむ ; 占 、 L 古毛さ お 正 月 年 お も ち 売 る か な L い 山 道 じ ぞ う m ; . ヨ   sno 、 、  t op u tt ah at )o na VOIceperson ' sheadt ob es urprisedt ot ak eo ffgoo dd eedoneselfha pmdoor  ~に~をかぶせる と る 、 、 、 、 こ と 声   ( こえ) 戸   ( ど ) ひ ー っ くり す る L あわせな 自 分  D.Mar kT i ft h ef ollowin gs tate me nt sa r et rue .Mar kF i fn o tt ru 巴  ︒ た   ︒ っ た だ つ ち か 持 な 金山 わ お 買 は を ん さ さ か あ の は ん お さ と   い ん じ さ お い も じ れ お だ ) ) ) ( ( ( 1ょ   ヮ “ qo  お じ い さ ん は お じ ぞ う きん に か さ を 売 っ た 。 雪 の 中 で お じ い さ ん は お じ ぞ う き ん を 大 つ え た 。 お じ い さ ん は 新 し い か さ を 大 つ 持 っ て い た 。 か なLく な っ た 。  た つ B力 ︒   ト品 ふ に み む き て て と つ は 持 月 ん 正 - さ   μ お ︿ の た ん 岳 ﹂   ‘ さ 金山 あ お ば は お ん ど さ ん ︑ っ   ‘ さ ぞ   い ド し ド し お お  お ば あ さ ん は お じ い さ ん の 話 を 聞 い て 、  ) ) ) ) ) ( ( ( ( (  •••• •  4 AFbG υ 7 ・ 0 6
+
+
+
+--- PAGE 42 ---
+42 ---
+========================================
+第l 附| ⑨  か さ じ ぞ う むかしむかし︑山の中におじいさんとおばあさんが住んでいました ︒ おじいさんとおばあさんはうちでかきを作っていました ︒ あ し た は お 正 月 で す ︒ 新 し い 年 が は じ ま り ま す ︒ で も ︑ お じ い さ ん ど お ば あ さ ん ル ね はお金がなかったから︑お正月のおもちもありませんでした ︒ ニ 人 は かさを売って︑おもちを買うつもりでした ︒ おじいさんはかさを持って︑町に売りに行きました ︒ で も ︑ だ れ も か さ を 買 い ま せ ん で し た ︒おじいさんはかなしくなりました︒ あ る おじいさんは長い山道を歩いて帰りました︒雪がたくさんふってい ま し た ︒ ﹁ あ っ ! お じ ぞ う さ ん だ l ﹂ 雪の中におじぞうきん︑が大つ立っていました︒ おじいさんは﹁おじぞうきん︑さむくありませんか ︒ ﹂ど聞きました︒ お じ ぞ う き ん は 何 も 言 い ま せ ん で し た ︒ ﹁どうぞかさを使ってください ︒ ﹂ おじいさんはおじぞうきんのあたまの上にかさをかぶせました ︒ ﹁一つ︑ ニ つ︑ = 一 つ︑ 四 つ︑ 五 つ ︒ ﹂ か さ は 五 つ で し た ︒一人のおじぞうさんはかさがありませんでした ︒ お じ い さ ん は 自 分 の か さ を と り ま し た ︒ ﹁このかさは古いですが︑どうぞ ︒ ﹂ ど言って︑おじぞうきんにかぶせ  •  ④ 書く 穣璽 Choos eo n 巴topicf ro mt h el is tb elo wa n dw rit eas tor ya bou ti t .Fo re xample :Whatd op 巴opled oo nt hes ed ays ?D oy o uh av eg oo dm 巴mories? D oy o uk no wu nusualtale sa bou tt hes ed ays ワ 誕生日(Bi rthday ) た ん じ 幻 ぴ ハ ロ ウ ィ ー ン 1 3 日の金 曜 日 お 正 月 感 謝 祭( Thanksgivin gD ay ) 。 ん Lや さい ク リ ス マ ス
+
+
+
+--- PAGE 43 ---
+43 ---
+========================================
+⑪   | 砂読み書き編  E 集ω 募ぼ UUち lr だ 劃 友  SS   0  Lookin gf o rF riends  1 1 6  て   シ ュ   手 紙   ( てがみ) letter   歌 手(カシュ ) singer  手   手   ( て) hand   手 話   ( シュワ) signlan ~ age  上 手 な ( ジョウズな)l ( oo da t ( hand )   ( 4 1 -   ー ，   一 ー ，   手 紙   が み   手 紙   ( てがみ) letter   紙   (かみ ) paper  か み   こ /   和 紙( ワシ) Japanes ep aper ( paper )   。 日  ，   主   t   キ   車   車   ~>   キ f 車 チ   京 氏 す   生 子きな(すきな)   t ol ike  女 子  コ ウ   この   好 意 ( コ ウイ) goo dw ill   生子み( こ の み ) liking ;taste ( favorite ;t ol ike )   ( 6 1   ~   k   生   長 '   灯   量 子 ち か キ ン   近 < ( ち か く )   nearby   近 所( キ ン ジ ョ) neighborhood  近   最 近   (サイキン ) recently  中近 東 ( チュウキン ト ウ) th eM iddl ea nd! ¥ ' earEast ( near )   ( 7 )   >   fF   斤   ‘ 斤   J 斤   近 あか   日 月る、 、( あかるい) cheerful ; bright  明   メ イ   R 明日 ( あした) to mo rrow  説 明(セツメ イ) explanation ( bright )   ( 8 1 IH   日   日   町   明   日 月   明 ビ ョウ   病 院(ビョウイン) hospital   病気(ピョウキ)   ill 即 日 病   重 病( ジュウピョウ) seriou si llne 回 急 病(キュウピョウ) sudde ni ll 町   田 ( ill ; sick )   0 0 1   ー   frf   戸   訴 と   病   病   病 イ ン   病 院( ビョウ イ ン ) hospital  院   大 学 院   ( ダイガクイン) graduat es chool  美 容 院(ビヨウ イン) beaut yp arlor  ( institution )   。 0 '   司   τ   F "   F ' " F 士   Ff ' 院 エ イ   映 画(エイガ) mo 、 Ie  日 夫  づ っ   映 函館(エイガカン) mo vi et heater  映 る ( う つる)   t ob er eflected ( t or eflect )   1 9 1 IHH   日   目 、   B 円   Bn 砂   映  1 1 7 1 1 8 1 1 9 1 2 0 1 2 1 1 2 2 1 2 3
+
+
+
+--- PAGE 44 ---
+44 ---
+========================================
+第   1 1 嗣 | ⑨ カ 、   映画(エイガ)   movie  画   カ ク   画 家( ガ カ )   painter   計画(ケイカク)   plan ( picture )   1 8 1   ー   1   円   而   育   百   直   画  3  う た   カ   歌う(うたう)   t os ing   歌(うた) song  歌   歌手(カシュ)   singer  国歌   ( コッカ) nationalanth em ( t os ing )   1 1 4 1   、   y ・   。   事 T   翠   戸   害   手   奇 寄 P   守 歌 歌  3  ン   川 口 市   ( かわ ぐちシ) Ka wa guchicity  市   L 、 ち   市役所(シヤクショ)口 t yh all   市長(シチョウ)   ma yor  市場(いちば)   ma rket ( city )   1 5 1   ー 」 - 3   ー ， - ，   市 F 、 、ろ、、ろな Fオ(いろいろなところ) variou sp laces と こ ろ   ン ヨ 所   ど こ ろ   ン ヨ   近所(キンジョ) neighborhood  台 F 庁 ( ダイどころ) kitchenf 主 F 庁 ( ジュウシ ョ) address ( place )   1 8 1 ー   マ   ，   FFy ; fy ; f 所  3  べ ン   勉強する(ペンキョウする) t os tudy  勉   っ と   勉める(つとめる)   t ot r yh ard  勤勉な(キンベンな)   diligent ( t om ak ee fforts )   日同ノ   ノ ラ   ず '   得   4 為 " '  芦   売 一 危   勉  P  キ ョ ウ   つ よ   勉強する(ベンキョウする) t os tudy  強   コ ウ   7 皇、 、( つよい) strong  強↑青な(ゴウジョウな)   obstinate ( strong )   。 D   守   ヨ デ   5 中   F き   5 主 有   ユ ウ   有 名 な ( ユ ウメイな) famous  あ   有料(ユウリョウ)   toll ;fee  有る(ある)   t oe xist ( t oe xistJ   1 6 1 /   チ ー  オ   有   有   有 リョ   旅行(リョコウ) travel  旅   た ぴ   旅館(リョカン)   inn  一 人 旅   ( ひとりたび) travelin ga lone ( travel )   日 目 .   ~  ]   方   ず   γ   京 ケ  き 「 方 F   旅  1 3 1 1 3 0 1 2 9 1 2 7 1 2 6 1 2 5 1 2 4 1 2 8  ( I nt hischart ， katakallf li ndicate st h eo n ' : romian dl liragall ai ndicatesth eh Ull ' yomi . )
+
+
+
+--- PAGE 45 ---
+45 ---
+========================================
+⑪   | 砂読み書き編 ①警 守 の 鰐 震 A . Combin et h ep art sb elo wt of or mt h en e wk anj if ro mt hi sl esson . ? ミ 女 寄 方   日 月 h 主 完 dh へ 氏 子 墜J 会 ' " ヌ L  ( 4 )  B . Pu to n ek anjii ne ac hb o xt om ak ec o mp unds .  EW 一  所  ( 2 )  紙 ( 1 ) 1   歌 ①友 だ ち 警 集 A 堅田に葦えてください。( Answe rt h ef ollowin gq uestions . ) 1.あなたの国には友だち募集の雑誌がありますか 。  2 . あなたは雑誌 で友 だ ち を募集 L た ことが あ りますか。 友 だち を募集 L てい る人 に 手 紙 を書 い た こ ど が あ ります か 。 B 雑誌の 「 友だち募集 J を読みましょう。 さっ l . o   " し ゅ う 手紙ください! 川口 市 に 住 ん で い ます。 会社 員 で す 。 友 だ ち に な っ て く だ さ い  学   に 文 日 ス の ン み ラ   休 フ   で + Ja 引ん き 旨lt 手 d 専叫 一 対 寸hu パ ι 山   ︑ 一 1 2 ポ 年   F︑ = 一 U 学   す 大   で  アウ ト ド ア が 好 き で 、 休 み の 日 は 阜 で  国 ' ha ' 々 ︐ ︐   ︒ 今﹂︒︑ 来 ︒ す き 将M ま   だ す て 紙 ま っ   手 ︑ 宅︑ 冒 叫 行 と 人 に い   f 川   た   き で q 好 中 登   叫 が の   に   の く   山 る 近 の 登 山  は、テ ニスをしたり、サ ッ カ ー をL た り 山 に カラ オ ケ に も よ 〈 行 き ま Lてい ます。 明   ( 2 3 歳/ 男) 松 本 ( 2 0 歳/女) す。 今 度 い っ Lょ に 遊 ぴ ませ ん か 。 こん ど   あ そ 水 野 裕 子
+
+
+
+--- PAGE 46 ---
+46 ---
+========================================
+第 1 1 訓 | ⑥  L ' っしょにバンド をやりませんか ロ ックが 好 きな 女 の 子 です。 鍔 芸 誓 皐 1  2 0 歳 か ら2 5 歳 ぐ らい で、 己 " 二 % さ しく て 、 た l ; f こ ギ タ ー を  た   パ り に な   ょ に し 手   つ 歌   い ふ4   y ﹂ 来 い 私 マ   よ 4 1 0 ︑ す で 宇   品 当 ︑ い 好 て が   つ の 回 心 f︑ y ﹂ ひ い  それ か ら コン ン ド を や り ませ ん か。  が   め   ﹄ l 髪 M 小 型 十 ん 即 油 ︑   九 い 病 一J一   よ な は 円 し わ   く   ぺ   ま 吸すぽ   HL を   ︒ じ   話 す い 山 ろ て E   引 n 小 川 :   趣いリ 一 好   ︒ ︑ が す 人 ま 長   て  苛 9 四 月る くて、 サ ー ト に も、 、 っ Lょに行 き ま Lょ う! E 岡田 香 お . だ . ぉ q  ( 1 8 歳/女) ひ ろ し 中 村  ( 2 6 歳/ 男) 会 っ て 、  n ¥ ' erIIIlooking for. . . ~ 募集(Ifしゅう)  girlfriend 彼 女(かのじ よ) 、 、 oman 女   (お ん な)  cheerful 明 る 、 、 man ( おとこ ) 男  hobbyband  趣 味( Lゆみ ) ノ ぐ ン ド  outdooractiv itiesnearpla ce  ア ウ ト ド ア 近 〈  C   次の人 はだれですか。その人の名前を書 いてください。 さん 1 . Th ep erso nw h oi s1 8y ear so ld  さ ん 2 . Th ep erso nw h oi s ac olleg es tudent  さ ん 3 .Th ep erso nw h ol ikes mo vies  さん さ ん  4 . Th ep erso nw h ol ikesclimbin gm ountains 5 .Th ep erso nw h oi sl ookin gf o rag irlfriendD . 質問に答えてください。 しつ も ん   こた 1 . 水聖 子さんは どん なスポー ツ を し ますか。 み ず の  2 . 水野 さんの専門 は何 ですか。 み ず の せ ん も ん  3 . 中村 さんは どん な人 が好 きですか。 ' o . ' b む 勺  4 . 松本 さんは車 を運転 Lますか。 ， つ も ど う ん て え
+
+
+
+--- PAGE 47 ---
+47 ---
+========================================
+⑨   | 砂 読み 書 き 編  5 . 岡田さんは何 にな りたいと思っていますか。 "，うた  6 . あなたはどの人に手紙 を書 きたいですか。 どうL てですか。  E   警亨を見て、カレンさん l 立 整歪さんに 手紙を 書きまし た。手紙を読んで、言自に 葦えてくだ さい。 松 本 明 様 £ つι と   あき 勺 は じ め ま し て 。 雑 誌 を 見 ま し た 。 私 も 川 口市に住んでヘ、ます 。 近 所 で す ね 。 私 は カ ナ ダ 人 の 留 学 生 で す 。一 月 に 日 本 に 来 まし た 。 今 、 日本 語や 日 本 文化 を勉 強 してい ます。私 もアウ トドアが 大好 きて い 、  a ん 治 山 に登 った り、 つ りを し たりす るのが好 きです。旅 行 も好 きで す。 タ ト 国 は 、 シ ン ガ ポ ールや ニ ュ ー ジ ー ラ ン ド に 行 っ たこ と が あ り ま す 。 日本 で は、 ま だ あ ま り 旅 行 し てい ま せ んが、 こ れ か らい ろ い ろ な所 に行 く つ も り で す 。 古 い お 寺 や 神 社 を え たい ど 思 っ て い ま す 。 日 本 て勺 じ ん じ ゃ の 有 名 な 祭 り も え た い で す 。 ス ポ ー ツ は バ ス ケ ッ ト が 好 き で す 。 日 本人の友だちをたくさん作って、 日 本 語 で い ろ い ろ なこ と を 話 し た い と 思 っ て い ま す 。 よ か っ た ら 、 お 返 事 く だ さ い 。 へ ん じ  日 十 日川  カ レ ン・ ミ ラ ー 近 所   n 目   ghborhood  文 化( ぷ ん か )   culture  つ り   fishing  神社   (じんじゃ )   shrine  祭   ~   ( ま っ   ~   )   f 田   th ' 百   l  お 返 事 (お へん じ)   reph
+
+
+
+--- PAGE 48 ---
+48 ---
+========================================
+第   1 1 嗣 | ⑭ L カ レンさんはいつ 日本 に来 ま L たか。  2 .   カ レンさんは何 をす るのが好 きですか。  3 .   カ レンさんは 日本 で ど こに行 きたい と思 ってい ますか。 ll - B のどの人と友だちになりたいですか。その人に手紙を書きましょう。  - つ よ し ま き 書 を 紙 手 の 習 ニ 一 ︙ 練 川 出 く   友 室田   A ④  B 目
+
+
+
+</pre>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Irodori & Genki Interactive Kanji Study System &copy; 2026. Designed for maximum readability and zero content omission.</p>
+        </div>
+    </div>
+    
+    <script src="nav.js"></script>
+    <script>
+        function switchTab(viewType, lessonNum, btnElem) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btnElem) btnElem.classList.add('active');
+            
+            document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
+            document.getElementById('view-' + viewType).classList.add('active');
+            
+            if (viewType === 'cards') {
+                const cards = document.querySelectorAll('.kanji-card');
+                cards.forEach(card => {
+                    if (lessonNum === 'all' || card.getAttribute('data-lesson') === lessonNum) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        document.getElementById('kanjiSearch').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            if (query.length > 0) {
+                document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
+                document.getElementById('view-cards').classList.add('active');
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('.filter-btn').classList.add('active');
+            }
+            const cards = document.querySelectorAll('.kanji-card');
+            cards.forEach(card => {
+                const searchData = card.getAttribute('data-search').toLowerCase();
+                if (searchData.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,790 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 10: けんこう (Health, Symptoms & Doctor Advice)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 10: けんこう - Health. Covers medical checkups, symptoms, lifestyle advice, and grammar (~ために, ~ばよかった, ~といいです, ~ようにいいます, ~すぎます).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 10: けんこう (Health) • Symptoms, Medical Advice & Lifestyle</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('けんこう の ために、まいにち うんどう します。もっと はやく びょういん に いけば よかった。はやく よくなると いいですね。いしゃ に やすむ ように いわれました。はたらきすぎて、たいちょう が わるく なりました。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>🏥 けんこう (Kenkou) - Health / Sehat</h2>
+        <p>Master medical vocabulary (<strong>診察・血圧・アレルギー</strong>), describing symptoms (<strong>熱・咳・めまい・吐き気・だるい</strong>), talking to doctors, and advanced health grammar (<strong>～ために / ～ばよかった / ～といいです / ～ように言われました / ～すぎます</strong>)!</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 3503–3829</span>
+            <span class="meta-pill">💬 Grammar Points 48–52</span>
+            <span class="meta-pill">📚 35+ Health & Symptom Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">🩺 Doctor Consultation Roleplay</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('simulator',this)"><span>🏥</span> Doctor Symptom & Advice Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Health & Advice (Pt 48–52)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 35+ Audio Vocab & Symptom Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 10 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>🩺</span> Doctor Exam & Healthy Life Roleplay</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Health & Medical Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Doctor Symptom & Advice Simulator -->
+    <div id="tab-simulator" class="tab-content active">
+        <div class="interactive-box">
+            <h4>🏥 Interactive Doctor Symptom & Health Advice Simulator (病院・健康相談シミュレーター)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Select your health condition or symptoms and a grammar function to generate authentic Japanese doctor consultations, patient regrets, and healthy lifestyle advice!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Condition / Symptom (体調・症状)</label>
+                    <select id="sim-scene" onchange="updateHealthSim()">
+                        <option value="fever">🤒 Fever & Cough (熱と咳がある - 風邪の症状・病院に行く)</option>
+                        <option value="dizzy">💫 Dizziness & Nausea (めまいと吐き気する - 貧血・体調不良)</option>
+                        <option value="fatigue">😫 Heavy Body & Insomnia (体がだるい・不眠 - 過労・ストレス)</option>
+                        <option value="bp">💓 High Blood Pressure (血圧が高い - 生活習慣病の予防)</option>
+                        <option value="diet">🥗 Weight Gain & Dieting (体重が増えた - 運動不足・野菜の摂取)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updateHealthSim()">
+                        <option value="tame">🎯 Purpose / In order to (～ために - For the sake of health / Ke liye)</option>
+                        <option value="yokatta">😭 Regret / Should have (～ばよかった - I should have done / Kash kiya hota)</option>
+                        <option value="toii">🙏 Wish / Hope so (～といいですね - Hope you get well soon / Accha hoga)</option>
+                        <option value="youni">📢 Doctor Instruction (～ように言われました - Doctor told me to... / Kaha gaya)</option>
+                        <option value="sugi">⚠️ Excessive Action (～すぎます - Doing too much / Bahut zyada karna)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">熱（ねつ）を下（さ）げる ために、薬（くすり）を 飲（の）んで 暖（あたた）かく します。</div>
+                <div class="output-rom" id="sim-rom">Netsu wo sageru tame ni, kusuri wo nonde atatakaku shimasu.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Bukhar kam karne ke liye, dawai kha kar garam blanket mein rahunga.</div>
+                <button class="btn-speak" onclick="speakHealthSim()">🔊 Speak Sentence in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🗣️ Essential Health Habits & Expressions (健康の習慣・気をつけること)</h3>
+            <p>Click any card to listen to the Japanese pronunciation and remember how to maintain a healthy lifestyle!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">気（き）をつける</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ki wo tsukeru • To take care / pay attention</div><div class="meaning-text">Sehat ka dhyaan rakhna. "最近、健康に気をつけていますか" is a common way to ask about health habits!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">無理（むり）をしない</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Muri wo shinai • Don't overdo it / Don't strain</div><div class="meaning-text">Zyada strain ya tension na lena. Doctors always tell overworked patients: "あまり無理をしないでください".</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">睡眠（すいみん）をとる</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Suimin wo toru • To get enough sleep</div><div class="meaning-text">Poori neend lena. Essential for recovery (回復) and boosting immunity (免疫)!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">バランスよく食（た）べる</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Baransu yoku taberu • To eat a balanced diet</div><div class="meaning-text">Balance se khana. Combining vegetables (野菜), protein, and proper nutrition (栄養).</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">早寝早起（はやねはやお）き</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hayane hayaoki • Early to bed, early to rise</div><div class="meaning-text">Jaldi sona jaldi uthna. The golden rule of Japanese healthy living and disease prevention (予防)!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">定期健診（ていきけんしん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Teiki kenshin • Regular health checkup</div><div class="meaning-text">Regular checkup karana. Annual medical examinations to detect lifestyle diseases (生活習慣病) early!</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Purpose & Regret: In order to / Should have done</span><span class="particle-badge">Pt 48 & 49</span></div>
+            <div class="grammar-formula">Verb dict / Noun + の + ために (For the sake of) / Verb conditional ば + よかった (Should have)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ために</strong> to express your goal or purpose ("...ke liye / in order to"). Use <strong>～ばよかった</strong> to express regret about something you wish you had done ("Kash... kiya hota").</p>
+            <ul class="example-list">
+                <li onclick="speakText('けんこう の ために、まいにち うんどう します。')">
+                    <span class="ex-jp">健康 の ために、毎日 運動 します。</span>
+                    <span class="ex-rom">Kenkou no tame ni, mainichi undou shimasu. (Sehat ke liye, har roz exercise karta hoon.)</span>
+                </li>
+                <li onclick="speakText('やせる ために、かるい しょくじ に して います。')">
+                    <span class="ex-jp">やせる ために、軽い 食事 に して います。</span>
+                    <span class="ex-rom">Yaseru tame ni, karui shokuji ni shite imasu. (Patla hone ke liye, halka khana kha raha hoon.)</span>
+                </li>
+                <li onclick="speakText('もっと はやく びょういん に いけば よかった。')">
+                    <span class="ex-jp">もっと 早く 病院 に 行けば よかった。</span>
+                    <span class="ex-rom">Motto hayaku byouin ni ikeba yokatta. (Kash pehle hi hospital chala jaata - regret.)</span>
+                </li>
+                <li onclick="speakText('もっと すいみん を とれば よかった。')">
+                    <span class="ex-jp">もっと 睡眠 を とれば よかった。</span>
+                    <span class="ex-rom">Motto suimin wo toreba yokatta. (Kash zyada neend leta / I should have slept more.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Wishes & Reported Advice: I hope / Doctor told me to</span><span class="particle-badge" style="background:var(--accent-success);">Pt 50 & 51</span></div>
+            <div class="grammar-formula">Plain form + といいですね / といいんですが (Hope so) / Verb dict / ない + ように + 言われます (Told to do)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～といいですね</strong> when wishing someone well ("Hope you get well soon"). Use <strong>～といいんですが</strong> when wishing for yourself. Use <strong>～ように言われました</strong> to report instructions given by doctors or teachers!</p>
+            <ul class="example-list">
+                <li onclick="speakText('はやく よくなる と いいですね。')">
+                    <span class="ex-jp">早く よくなると いいですね。</span>
+                    <span class="ex-rom">Hayaku yoku naru to ii desu ne. (Jaldi theek ho jaao toh accha hai - wishing well for someone.)</span>
+                </li>
+                <li onclick="speakText('この くすり が きけば と いいんですが。')">
+                    <span class="ex-jp">この 薬 が 効けばと いいんですが。</span>
+                    <span class="ex-rom">Kono kusuri ga kikeba to iin desu ga. (Yeh dawai kaam kare toh accha hoga - hoping for myself.)</span>
+                </li>
+                <li onclick="speakText('いしゃ に やすむ ように いわれました。')">
+                    <span class="ex-jp">医者 に 休む ように 言われました。</span>
+                    <span class="ex-rom">Isha ni yasumu you ni iwaremashita. (Doctor ne aaram karne ke liye kaha.)</span>
+                </li>
+                <li onclick="speakText('いしゃ に おさけ を のまない ように いわれました。')">
+                    <span class="ex-jp">医者 に お酒 を 飲まない ように 言われました。</span>
+                    <span class="ex-rom">Isha ni osake wo nomanai you ni iwaremashita. (Doctor ne sharab na peene ke liye kaha.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Excessive Action: Doing too much of something</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 52</span></div>
+            <div class="grammar-formula">Verb ます-stem / い-Adj (drop い) / な-Adj + すぎます (Too much / Excessive)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Attach <strong>すぎます</strong> (casual: すぎる / すぎ) to express that an action or state is excessive and usually leads to negative health consequences ("Bahut zyada _____ karna / hona").</p>
+            <ul class="example-list">
+                <li onclick="speakText('はたらきすぎて、たいちょう が わるく なりました。')">
+                    <span class="ex-jp">働きすぎて、体調 が 悪く なりました。</span>
+                    <span class="ex-rom">Hatarakisugite, taichou ga waruku narimashita. (Bahut zyada kaam karke, tabiyat kharab ho gayi.)</span>
+                </li>
+                <li onclick="speakText('のみすぎない ように して ください。')">
+                    <span class="ex-jp">飲みすぎない ように して ください。</span>
+                    <span class="ex-rom">Nomisuginai you ni shite kudasai. (Bahut zyada na peena / please don't drink too much.)</span>
+                </li>
+                <li onclick="speakText('たべすぎる と、ふとります。')">
+                    <span class="ex-jp">食べすぎる と、太ります。</span>
+                    <span class="ex-rom">Tabesugiru to, futorimasu. (Bahut zyada khao toh mota ho jaoge.)</span>
+                </li>
+                <li onclick="speakText('ストレス を ためすぎる と、びょうき に なります。')">
+                    <span class="ex-jp">ストレス を ためすぎる と、病気 に なります。</span>
+                    <span class="ex-rom">Sutoresu wo tamesugiru to, byouki ni narimasu. (Bahut zyada stress rakhoge toh bimaar ho jaoge.)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 10 Health, Symptoms & Lifestyle Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize medical vocabulary.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">健康（けんこう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kenkou</div><div class="meaning-text">Health / Sehat / Sound body</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">体調（たいちょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Taichou</div><div class="meaning-text">Physical condition / State of health</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">体重（たいじゅう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Taijuu</div><div class="meaning-text">Body weight / Vajan</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">身長（しんちょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinchou</div><div class="meaning-text">Body height / Lambai</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">血圧（けつあつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ketsuatsu</div><div class="meaning-text">Blood pressure</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">血液（けつえき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ketsueki</div><div class="meaning-text">Blood / Khoon</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">検査（けんさ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kensa</div><div class="meaning-text">Medical test / Inspection / Jaanch</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">診察（しんさつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinsatsu</div><div class="meaning-text">Medical checkup / Doctor consultation</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">入院（にゅういん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nyuuin</div><div class="meaning-text">Hospitalization / Getting admitted</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">退院（たいいん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Taiin</div><div class="meaning-text">Discharge from hospital</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">手術（しゅじゅつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shujutsu</div><div class="meaning-text">Surgical operation / Surgery</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">回復（かいふく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaifuku</div><div class="meaning-text">Recovery / Getting better</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">熱（ねつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Netsu</div><div class="meaning-text">Fever / High temperature / Bukhar</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">咳（せき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Seki</div><div class="meaning-text">Coughing / Khansi</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">鼻水（はなみず）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hanamizu</div><div class="meaning-text">Runny nose / Nasal mucus</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">くしゃみ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kushami</div><div class="meaning-text">Sneeze / Chheenk</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">めまい</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Memai</div><div class="meaning-text">Dizziness / Vertigo / Chakkar</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">吐き気（はきけ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hakike</div><div class="meaning-text">Nausea / Feeling sick to stomach</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">下痢（げり）/ 便秘（べんぴ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Geri / Benpi</div><div class="meaning-text">Diarrhea / Constipation</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">痛み（いたみ）/ 腫れ（はれ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Itami / Hare</div><div class="meaning-text">Pain (dard) / Swelling (sujan)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">だるい / 不眠（ふみん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Darui / Fumin</div><div class="meaning-text">Sluggish heavy body / Insomnia</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">運動（うんどう）/ 睡眠（すいみん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Undou / Suimin</div><div class="meaning-text">Exercise (workout) / Sleep (neend)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">栄養（えいよう）/ 水分（すいぶん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Eiyou / Suibun</div><div class="meaning-text">Nutrition / Water hydration intake</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ストレス / 休養（きゅうよう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sutoresu / Kyuuyou</div><div class="meaning-text">Mental stress / Rest & recuperation</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 10 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for health, body parts, illnesses, checkups, hospitals, medicines, and exercise.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">健</div><div class="kanji-info"><h5>Healthy / Robust / Strength</h5><div class="kanji-readings">Onyomi: <span>ケン (ken)</span><br>Kunyomi: すこ-やか</div></div></div><div class="kanji-example" onclick="speakText('健康、健診')"><span>健康（けんこう）- health<br>健診（けんしん）- health check</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">康</div><div class="kanji-info"><h5>Ease / Peace / Healthy</h5><div class="kanji-readings">Onyomi: <span>コウ (kou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('健康、小康')"><span>健康（けんこう）- health<br>小康（しょうこう）- remission</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">体</div><div class="kanji-info"><h5>Body / Object / Substance</h5><div class="kanji-readings">Onyomi: <span>タイ、テイ (tai)</span><br>Kunyomi: からだ</div></div></div><div class="kanji-example" onclick="speakText('体調、体重、身体')"><span>体調（たいちょう）- condition<br>体重（たいじゅう）- weight</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">重</div><div class="kanji-info"><h5>Heavy / Heap / Important</h5><div class="kanji-readings">Onyomi: <span>ジュウ、チョウ (juu)</span><br>Kunyomi: おも-い、かさ-ねる</div></div></div><div class="kanji-example" onclick="speakText('体重、重い、重要')"><span>体重（たいじゅう）- body weight<br>重い（おもい）- heavy</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">身</div><div class="kanji-info"><h5>Somebody / Person / Body</h5><div class="kanji-readings">Onyomi: <span>シン (shin)</span><br>Kunyomi: み</div></div></div><div class="kanji-example" onclick="speakText('身長、身体、出身')"><span>身長（しんちょう）- height<br>出身（しゅっしん）- hometown</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">長</div><div class="kanji-info"><h5>Long / Leader / Superior</h5><div class="kanji-readings">Onyomi: <span>チョウ (chou)</span><br>Kunyomi: なが-い</div></div></div><div class="kanji-example" onclick="speakText('身長、長い、社長')"><span>身長（しんちょう）- height<br>長い（ながい）- long</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">血</div><div class="kanji-info"><h5>Blood</h5><div class="kanji-readings">Onyomi: <span>ケツ (ketsu)</span><br>Kunyomi: ち</div></div></div><div class="kanji-example" onclick="speakText('血圧、血液、出血')"><span>血圧（けつあつ）- blood pressure<br>血液（けつえき）- blood</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">圧</div><div class="kanji-info"><h5>Pressure / Push / Overwhelm</h5><div class="kanji-readings">Onyomi: <span>アツ (atsu)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('血圧、気圧、圧力')"><span>血圧（けつあつ）- blood pressure<br>気圧（きあつ）- air pressure</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">診</div><div class="kanji-info"><h5>Diagnose / Examine</h5><div class="kanji-readings">Onyomi: <span>シン (shin)</span><br>Kunyomi: み-る</div></div></div><div class="kanji-example" onclick="speakText('診察、健診、診断')"><span>診察（しんさつ）- checkup<br>診断（しんだん）- diagnosis</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">察</div><div class="kanji-info"><h5>Guess / Judge / Inspect</h5><div class="kanji-readings">Onyomi: <span>サツ (satsu)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('診察、警察、観察')"><span>診察（しんさつ）- examination<br>警察（けいさつ）- police</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">院</div><div class="kanji-info"><h5>Institution / Temple / Hospital</h5><div class="kanji-readings">Onyomi: <span>イン (in)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('病院、入院、退院')"><span>病院（びょういん）- hospital<br>入院（にゅういん）- admit</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">病</div><div class="kanji-info"><h5>Illness / Sickness / Disease</h5><div class="kanji-readings">Onyomi: <span>ビョウ、へい (byou)</span><br>Kunyomi: やまい、や-む</div></div></div><div class="kanji-example" onclick="speakText('病院、病気、慢性病')"><span>病気（びょうき）- sickness<br>病院（びょういん）- hospital</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">熱</div><div class="kanji-info"><h5>Heat / Fever / Passion</h5><div class="kanji-readings">Onyomi: <span>ネツ (netsu)</span><br>Kunyomi: あつ-い</div></div></div><div class="kanji-example" onclick="speakText('熱、熱い、発熱')"><span>熱（ねつ）- fever / bukhar<br>熱い（あつい）- hot (touch)</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">咳</div><div class="kanji-info"><h5>Cough / Clear throat</h5><div class="kanji-readings">Onyomi: <span>ガイ、カイ (gai)</span><br>Kunyomi: せき、しわぶき</div></div></div><div class="kanji-example" onclick="speakText('咳、咳止め')"><span>咳（せき）- cough / khansi<br>咳止め（せきどめ）- cough medicine</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">痛</div><div class="kanji-info"><h5>Pain / Hurt / Damage</h5><div class="kanji-readings">Onyomi: <span>ツウ (tsuu)</span><br>Kunyomi: いた-い、いた-む</span></div></div></div><div class="kanji-example" onclick="speakText('痛み、痛い、頭痛')"><span>痛み（いたみ）- pain / dard<br>頭痛（ずつう）- headache</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">眠</div><div class="kanji-info"><h5>Sleep / Die / Sleepy</h5><div class="kanji-readings">Onyomi: <span>ミン (min)</span><br>Kunyomi: ねむ-る、ねむ-い</div></div></div><div class="kanji-example" onclick="speakText('睡眠、不眠、眠い')"><span>睡眠（すいみん）- sleep<br>不眠（ふみん）- insomnia</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">疲</div><div class="kanji-info"><h5>Exhausted / Tired</h5><div class="kanji-readings">Onyomi: <span>ヒ (hi)</span><br>Kunyomi: つか-れる</div></div></div><div class="kanji-example" onclick="speakText('疲れる、お疲れ様')"><span>疲れる（つかれる）- to get tired<br>お疲れ様（おつかれさま）- good job</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">薬</div><div class="kanji-info"><h5>Medicine / Chemical</h5><div class="kanji-readings">Onyomi: <span>ヤク (yaku)</span><br>Kunyomi: くすり</div></div></div><div class="kanji-example" onclick="speakText('薬、薬局、目薬')"><span>薬（くすり）- medicine / dawai<br>薬局（やっきょく）- pharmacy</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">医</div><div class="kanji-info"><h5>Doctor / Medicine / Heal</h5><div class="kanji-readings">Onyomi: <span>イ (i)</span><br>Kunyomi: い-やす</div></div></div><div class="kanji-example" onclick="speakText('医者、医学、歯医者')"><span>医者（いしゃ）- doctor<br>歯医者（はいしゃ）- dentist</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">者</div><div class="kanji-info"><h5>Someone / Person</h5><div class="kanji-readings">Onyomi: <span>シャ (sha)</span><br>Kunyomi: もの</div></div></div><div class="kanji-example" onclick="speakText('医者、患者、学者')"><span>医者（いしゃ）- doctor<br>患者（かんじゃ）- patient</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">養</div><div class="kanji-info"><h5>Foster / Bring up / Rear</h5><div class="kanji-readings">Onyomi: <span>ヨウ (you)</span><br>Kunyomi: やしな-う</div></div></div><div class="kanji-example" onclick="speakText('栄養、休養、教養')"><span>栄養（えいよう）- nutrition<br>休養（きゅうよう）- recuperation</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">運</div><div class="kanji-info"><h5>Carry / Luck / Destiny</h5><div class="kanji-readings">Onyomi: <span>ウン (un)</span><br>Kunyomi: はこ-ぶ</div></div></div><div class="kanji-example" onclick="speakText('運動、運転、運ぶ')"><span>運動（うんどう）- exercise<br>運転（うんてん）- driving</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">動</div><div class="kanji-info"><h5>Move / Motion / Change</h5><div class="kanji-readings">Onyomi: <span>ドウ (dou)</span><br>Kunyomi: うご-く、うご-かす</div></div></div><div class="kanji-example" onclick="speakText('運動、動物、動く')"><span>運動（うんどう）- exercise<br>動物（どうぶつ）- animal</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">早</div><div class="kanji-info"><h5>Early / Fast</h5><div class="kanji-readings">Onyomi: <span>ソウ、サッ (sou)</span><br>Kunyomi: はや-い、はや-まる</div></div></div><div class="kanji-example" onclick="speakText('早寝早起き、早い')"><span>早寝早起き（はやねはやおき）- early sleep/rise<br>早い（はやい）- early</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay Module -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>🩺 Doctor Examination & Healthy Lifestyle Roleplay (医師の診察と健康管理)</h3>
+            <p>Master describing continuous pain at a hospital consultation and discussing exercise habits with a friend!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-info);">
+            <h4>🏥 Scene 1: At the Doctor's Office - Advanced Consultation (医師の診察)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('いつごろ から ですか。どんな いたみ ですか。')">
+                    <strong style="color:var(--accent-primary);">医者 (Doctor):</strong> いつごろ から ですか。どんな 痛（いた）み ですか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Itsugoro kara desu ka. Donna itami desu ka. (Since about when? What kind of pain is it?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('きのう の よる から ずっと いたい です。ときどき めまい も します。')">
+                    <strong style="color:var(--accent-secondary);">患者 (Patient):</strong> 昨日（きのう）の 夜（よる）から ずっと 痛（いた）いです。時々（ときどき）めまいも します。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kinou no yoru kara zutto itai desu. Tokidoki memai mo shimasu. (It has been hurting continuously since last night. Sometimes I also feel dizzy.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('ほかに しょうじょう は ありますか。')">
+                    <strong style="color:var(--accent-primary);">医者 (Doctor):</strong> 他（ほか）に 症状（しょうじょう）は ありますか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hoka ni shoujou wa arimasu ka. (Are there any other symptoms?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('ねつ は ありませんが、からだ が だるい です。')">
+                    <strong style="color:var(--accent-secondary);">患者 (Patient):</strong> 熱（ねつ）は ありませんが、体（からだ）が だるいです。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Netsu wa arimasen ga, karada ga darui desu. (I don't have a fever, but my body feels sluggish/heavy.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('過労ですね。しばらく うんどう を やめた ほうが いいです。ゆっくり やすんで ください。')">
+                    <strong style="color:var(--accent-primary);">医者 (Doctor):</strong> 過労（かろう）ですね。しばらく 運動（うんどう）を やめた ほう が いいです。ゆっくり 休（やす）んで ください。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">It's overwork. It is better to stop exercising for a while. Please rest well.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-success);">
+            <h4>🥗 Scene 2: Healthy Lifestyle Discussion Between Friends (健康生活の会話)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('さいきん、けんこう に きを つけて いますか。')">
+                    <strong style="color:var(--accent-secondary);">Aさん:</strong> 最近（さいきん）、健康（けんこう）に 気（き）を つけて いますか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Saikin, kenkou ni ki wo tsukete imasu ka. (Lately, have you been paying attention to your health?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('うーん、あまり うんどう して いないんです。')">
+                    <strong style="color:var(--accent-primary);">Bさん:</strong> うーん、あまり 運動（うんどう）して いないんです。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Uun, amari undou shite inain desu. (Hmm, I haven't really been exercising much actually.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('それは よくない ですよ。なにか した ほう が いいですね。')">
+                    <strong style="color:var(--accent-secondary);">Aさん:</strong> それは よくない ですよ。何（なに）か した ほう が いいですね。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sore wa yokunai desu yo. Nanika shita hou ga ii desu ne. (That's not good! You should probably do something.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('そうですね。まず、あるく ように しようかな。')">
+                    <strong style="color:var(--accent-primary);">Bさん:</strong> そうですね。まず、歩（ある）く ように しようかな。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sou desu ne. Mazu, aruku you ni shiyou kana. (That's true. First, maybe I'll try to start walking.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('いいですね。わたし も いっしょに やりませんか。')">
+                    <strong style="color:var(--accent-secondary);">Aさん:</strong> いいですね。私（わたし）も 一緒（いっしょ）に やりませんか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ii desu ne. Watashi mo issho ni yarimasen ka. (Sounds great! Shall I join you and do it together?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('ぜひ！たのしみです。')">
+                    <strong style="color:var(--accent-primary);">Bさん:</strong> ぜひ！楽（たの）しみです。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Zehi! Tanoshimi desu. (By all means / Definitely! I'm looking forward to it!)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 10 Health & Medical Consultation Quiz</h3>
+                <p>Test your understanding of symptoms, doctor instructions, purpose grammar, and excessive action forms!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 3503–3829)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 10: けんこう (Kenkou) - Health / Sehat
+
+## 🎯 Goal:
+- apni sehat ke baare mein batana
+- doctor se baat karna
+- healthy lifestyle discuss karna
+- advice dena / lena
+
+---
+
+## 1) Health Vocabulary
+
+### **Body & Condition:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| けんこう (健康) | けんこう | Sehat / Health |
+| たいちょう (体調) | たいちょう | Physical condition |
+| たいじゅう (体重) | たいじゅう | Vajan / Weight |
+| しんちょう (身長) | しんちょう | Lambai / Height |
+| けつあつ (血圧) | けつあつ | Blood pressure |
+| けつえき (血液) | けつえき | Khoon / Blood |
+| けんさ (検査) | けんさ | Test / Jaanch |
+| しんさつ (診察) | しんさつ | Medical checkup |
+| にゅういん (入院) | にゅういん | Hospital mein admit hona |
+| たいいん (退院) | たいいん | Hospital se discharged hona |
+| しゅじゅつ (手術) | しゅじゅつ | Operation / Surgery |
+| かいふく (回復) | かいふく | Recovery / Theek hona |
+| よぼう (予防) | よぼう | Prevention |
+| めんえき (免疫) | めんえき | Immunity |
+| アレルギー | あれるぎー | Allergy |
+| まんせいびょう (慢性病) | まんせいびょう | Chronic illness |
+| せいかつしゅうかんびょう (生活習慣病) | せいかつしゅうかんびょう | Lifestyle disease |
+
+---
+
+### **Symptoms (しょうじょう / Shoujou):**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ねつ (熱) | ねつ | Bukhar / Fever |
+| せき (咳) | せき | Khansi / Cough |
+| はなみず (鼻水) | はなみず | Naak behna |
+| くしゃみ | くしゃみ | Chheenk / Sneeze |
+| めまい | めまい | Chakkar |
+| はきけ (吐き気) | はきけ | Nausea |
+| げり (下痢) | げり | Loose motion |
+| べんぴ (便秘) | べんぴ | Constipation |
+| いたみ (痛み) | いたみ | Dard / Pain |
+| はれ (腫れ) | はれ | Sujan / Swelling |
+| かゆみ | かゆみ | Khujli / Itching |
+| だるい | だるい | Body heavy / Thakaan |
+| むくみ | むくみ | Puffiness / Water retention |
+| ふみん (不眠) | ふみん | Neend na aana / Insomnia |
+| しょくよくがない (食欲がない) | しょくよくがない | Bhook nahi |
+
+---
+
+### **Healthy Life vocabulary:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| うんどう (運動) | うんどう | Exercise |
+| すいみん (睡眠) | すいみん | Neend / Sleep |
+| えいよう (栄養) | えいよう | Nutrition |
+| バランス | ばらんす | Balance |
+| やさい (野菜) | やさい | Sabzi |
+| くだもの (果物) | くだもの | Phal / Fruit |
+| すいぶん (水分) | すいぶん | Paani / Water intake |
+| たばこ | たばこ | Cigarette |
+| おさけ (お酒) | おさけ | Sharab / Alcohol |
+| ストレス | すとれす | Stress |
+| リラックス | りらっくす | Relax |
+| きゅうよう (休養) | きゅうよう | Rest / Recovery time |
+| ていき けんしん (定期健診) | ていきけんしん | Regular health checkup |
+
+---
+
+## 2) Grammar Point 48: ～ために  
+## Meaning: "_____ ke liye / in order to"
+
+**Dictionary form + ために**  
+**Noun + の + ために**
+
+### Examples:
+
+```
+けんこう の ために、まいにち うんどう します。
+(Kenkou no tame ni, mainichi undou shimasu.)
+Sehat ke liye, har roz exercise karta hoon.
+
+やせる ために、かるい しょくじ (食事) に して います。
+(Yaseru tame ni, karui shokuji ni shite imasu.)
+Patla hone ke liye, halka khana kha raha hoon.
+
+にほんご が うまく なる ために、まいにち れんしゅう します。
+(Nihongo ga umaku naru tame ni, mainichi renshuu shimasu.)
+Japanese acchi karne ke liye, har roz practice karta hoon.
+
+しごと の ために、はやく ねます。
+(Shigoto no tame ni, hayaku nemasu.)
+Kaam ke liye, jaldi sota hoon.
+
+かぞく の ために、はたらいて います。
+(Kazoku no tame ni, hataraite imasu.)
+Family ke liye kaam kar raha hoon.
+```
+
+---
+
+## 3) Grammar Point 49: ～ばよかった  
+## Meaning: "Kash _____ kiya hota / Should have done"
+
+**Verb conditional ば form + よかった**
+
+### ば form making:
+
+| ます form | Dictionary | ば form |
+|---|---|---|
+| いきます | いく | いけば |
+| たべます | たべる | たべれば |
+| のみます | のむ | のめば |
+| します | する | すれば |
+| きます | くる | くれば |
+
+### Examples:
+
+```
+もっと はやく びょういん に いけば よかった。
+(Motto hayaku byouin ni ikeba yokatta.)
+Kash pehle hi hospital chala jaata.
+
+くすり を のめば よかった。
+(Kusuri wo nomeba yokatta.)
+Kash dawai khaata.
+
+もっと やさい を たべれば よかった。
+(Motto yasai wo tabereba yokatta.)
+Kash zyada sabzi khaata.
+
+うんどう を つづければ よかった。
+(Undou wo tsuzukereba yokatta.)
+Kash exercise jaari rakhta.
+
+もっと すいみん を とれば よかった。
+(Motto suimin wo toreba yokatta.)
+Kash zyada neend leta.
+```
+
+⚠️ Ye **regret** express karta hai.
+
+---
+
+## 4) Grammar Point 50: ～といいです  
+## Meaning: "_____ hota toh accha / I hope _____ "
+
+**Plain form + といいですね / といいですが**
+
+### Types:
+
+| Pattern | Meaning |
+|---|---|
+| ～といいですね | Accha hoga / Hope so (for someone else) |
+| ～といいんですが | Accha hoga mujhe / I hope (for myself) |
+
+### Examples:
+
+```
+はやく よくなる といいですね。
+(Hayaku yoku naru to ii desu ne.)
+Jaldi theek ho jaao toh accha hai. (aap ke liye)
+
+てんき が よければ といいですね。
+(Tenki ga yokereba to ii desu ne.)
+Mausam accha ho toh accha hai.
+
+この くすり が きけば (効けば) といいんですが。
+(Kono kusuri ga kikeba to iin desu ga.)
+Yeh dawai kaam kare toh accha hoga (mujhe).
+
+しごと が はやく おわると いいんですが。
+(Shigoto ga hayaku owaru to iin desu ga.)
+Kaam jaldi khatam ho toh accha hoga.
+```
+
+---
+
+## 5) Grammar Point 51: ～ように いいます  
+## Meaning: "Kisi ko _____ karne ke liye kahna"
+
+**Dictionary / ない form + ように + いいます**
+
+### Examples:
+
+```
+いしゃ に やすむ ように いわれました。
+(Isha ni yasumu you ni iwaremashita.)
+Doctor ne aaram karne ke liye kaha.
+
+せんせい に まいにち れんしゅうする ように いわれました。
+(Sensei ni mainichi renshuu suru you ni iwaremashita.)
+Teacher ne har roz practice karne ke liye kaha.
+
+いしゃ に おさけ を のまない ように いわれました。
+(Isha ni osake wo nomanai you ni iwaremashita.)
+Doctor ne sharab na peene ke liye kaha.
+
+おかあさん に はやく ねる ように いわれました。
+(Okaasan ni hayaku neru you ni iwaremashita.)
+Maa ne jaldi sone ke liye kaha.
+```
+
+---
+
+## 6) Grammar Point 52: ～すぎます - Review + Advanced use  
+## Meaning: "Bahut zyada _____ karna"
+
+### Formation:
+- Verb ます stem + すぎます
+- い adj (い hatao) + すぎます
+- な adj + すぎます
+
+### Examples:
+
+```
+はたらきすぎて、たいちょう が わるく なりました。
+(Hatarakisugite, taichou ga waruku narimashita.)
+Bahut zyada kaam karke, tabiyat kharab ho gayi.
+
+のみすぎない ように して ください。
+(Nomisugina you ni shite kudasai.)
+Bahut zyada na peena.
+
+たべすぎる と、ふとります。(太る)
+(Tabesugiru to, futorimasu.)
+Bahut zyada khao toh mota ho jaoge.
+
+ストレス を ためすぎる と、びょうき に なります。
+(Sutoresu wo tamesugiru to, byouki ni narimasu.)
+Bahut zyada stress rakhoge toh bimaar ho jaoge.
+
+かんがえすぎ ですよ。(考えすぎ)
+(Kangaesugidesu yo.)
+Bahut zyada soch rahe ho.
+```
+
+---
+
+## 7) At the Doctor - Advanced
+
+### Asking about symptoms:
+- いつ ごろ から ですか。  
+  → Kab se hai?
+- どんな いたみ ですか。  
+  → Kaisa dard hai?
+- ずっと ですか、それとも たまに ですか。  
+  → Hamesha hai ya kabhi kabhi?
+- ほかに しょうじょう は ありますか。  
+  → Aur koi symptoms hain?
+
+### Patient responses:
+- きのう の よる から ずっと いたい です。  
+  → Kal raat se lagaataar dard hai.
+- ときどき めまい も します。  
+  → Kabhi kabhi chakkar bhi aata hai.
+- ねつ は ありませんが、だるい です。  
+  → Bukhar nahi hai, lekin body heavy hai.
+
+### Doctor advice patterns:
+- ゆっくり やすんで ください。  
+  → Acche se aaram kijiye.
+- しばらく うんどう を やめた ほうが いいです。  
+  → Kuch din exercise band karna accha hai.
+- みず を たくさん のむ ように して ください。  
+  → Bahut paani peene ki koshish kijiye.
+- にゅういん が ひつよう かも しれません。  
+  → Admit hona zaroori ho sakta hai.
+
+---
+
+## 8) Healthy lifestyle discussion
+
+### Sample conversation:
+```
+A: さいきん、けんこう に き を つけて いますか。
+(Saikin, kenkou ni ki wo tsukete imasu ka.)
+Aajkal sehat ka dhyaan rakh rahe ho?
+
+B: うーん、あまり うんどう して いないんです。
+(Uun, amari undou shite inan desu.)
+Hmm, zyada exercise nahi kar raha hoon actually.
+
+A: それは よくない ですよ。なにか した ほうが いいですね。
+(Sore wa yokunai desu yo. Nanika shita hou ga ii desu ne.)
+Woh accha nahi hai. Kuch karna chahiye.
+
+B: そうですね。まず、あるく ように しようかな。
+(Sou desu ne. Mazu, aruku you ni shiyou kana.)
+Haan sach. Pehle, chalne ki koshish karun shayad.
+
+A: いいですね。わたし も いっしょに やりませんか。
+(Ii desu ne. Watashi mo issho ni yarimasen ka.)
+Accha hai. Main bhi saath karoon?
+
+B: ぜひ！たのしみです。
+(Zehi! Tanoshimi desu.)
+Zaroor! Looking forward!
+```
+
+---
+
+## 9) Useful health expressions
+
+| Japanese | Meaning |
+|---|---|
+| きを つける (気をつける) | Dhyaan rakhna |
+| むり を しない (無理をしない) | Zyada strain na lena |
+| ゆっくり やすむ | Acche se aaram karna |
+| すいみん を とる | Poori neend lena |
+| ストレス を ためない | Stress jama na karna |
+| バランスよく たべる | Balance se khana |
+| てい き けんしん を うける | Regular checkup karana |
+| はやね はやおき (早寝早起き) | Jaldi sona jaldi uthna |
+| みず を たくさん のむ | Bahut paani peena |
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 10: けんこう (Health) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const healthData = {
+        fever: {
+            tame: { jp: "熱（ねつ）を下（さ）げる ために、薬（くすり）を 飲（の）んで 暖（あたた）かく します。", rom: "Netsu wo sageru tame ni, kusuri wo nonde atatakaku shimasu.", hi: "Hindi Translation: Bukhar kam karne ke liye, dawai kha kar garam blanket mein rahunga." },
+            yokatta: { jp: "風邪（かぜ）を ひく 前（まえ）に、予防（よぼう）接種（せっしゅ）を 受（う）ければ よかった。", rom: "Kaze wo hiku mae ni, yobousesshu wo ukereba yokatta.", hi: "Hindi Translation: Kash sardi lagne se pehle vaccine le liya hota (regret)." },
+            toii: { jp: "温（あたた）かい お粥（かゆ）を 食（た）べて、早（はや）く 熱（ねつ）が 下（さ）がると いいですね。", rom: "Atatakai okayu wo tabete, hayaku netsu ga sagaru to ii desu ne.", hi: "Hindi Translation: Garam porridge khake, jaldi bukhar utar jaye toh accha hai na!" },
+            youni: { jp: "医者（いしゃ）に ３日間（みっかかん）学校（がっこう）を 休（やす）む ように 言（い）われました。", rom: "Isha ni mikkakan gakkou wo yasumu you ni iwaremashita.", hi: "Hindi Translation: Doctor ne 3 din school se chhutti lene ke liye kaha hai." },
+            sugi: { jp: "昨日（きのう）雨（あめ）の 中（なか）で 歩（ある）きすぎて、風邪（かぜ）を ひいて しまいました。", rom: "Kinou ame no naka de arukisugite, kaze wo hiite shimaimashita.", hi: "Hindi Translation: Kal baarish mein bahut zyada chalne ke kaaran sardi lag gayi." }
+        },
+        dizzy: {
+            tame: { jp: "めまいを 治（なお）す ために、病院（びょういん）で 血液（けつえき）検査（けんさ）を 受（う）けます。", rom: "Memai wo naosu tame ni, byouin de ketsueki kensa wo ukemasu.", hi: "Hindi Translation: Chakkar theek karne ke liye, hospital mein blood test karwaunga." },
+            yokatta: { jp: "朝（あさ）ごはんを ちゃんと 食（た）べれば よかった。貧血（ひんけつ）が ひどいです。", rom: "Asagohan wo chanto tabereba yokatta. Hinketsu ga hidoi desu.", hi: "Hindi Translation: Kash subah ka nashta acche se kiya hota. Anemia bahut tez hai." },
+            toii: { jp: "少し（すこし）横（よこ）になって 休（やす）めば、気分（きぶん）が 良（よ）くなると いいですね。", rom: "Sukoshi yoko ni natte yasumeba, kibun ga yoku naru to ii desu ne.", hi: "Hindi Translation: Thodi देर let kar aaram karein, tabiyat theek ho jaye toh accha hai!" },
+            youni: { jp: "医者（いしゃ）に 毎日（まいにち）鉄分（てつぶん）の 多い（おおい）野菜（やさい）を 食べる ように 言われました。", rom: "Isha ni mainichi tetsubun no ooi yasai wo taberu you ni iwaremashita.", hi: "Hindi Translation: Doctor ne roz iron-rich sabziya khaane ke liye kaha." },
+            sugi: { jp: "パソコンの 画面（がめん）を 見（み）すぎて、目（め）が 疲（つか）れて めまいが します。", rom: "Pasokon no gamen wo misugite, me ga tsukarete memai ga shimasu.", hi: "Hindi Translation: Computer screen bahut zyada dekhne se aankhen thak gayi aur chakkar aa raha hai." }
+        },
+        fatigue: {
+            tame: { jp: "体調（たいちょう）を 回復（かいふく）する ために、今週末（こんしゅうまつ）は ゆっくり 睡眠（すいみん）を取（と）ります。", rom: "Taichou wo kaifuku suru tame ni, konshuumatsu wa yukkuri suimin wo torimasu.", hi: "Hindi Translation: Sehat recover karne ke liye, is weekend araam se poori neend lunga." },
+            yokatta: { jp: "夜（よる）遅（おそ）くまで スマホを 見（み）なければ よかった。全然（ぜんぜん）寝（ね）られません。", rom: "Yoru osoku made sumaho wo minakereba yokatta. Zenzen neraremasen.", hi: "Hindi Translation: Kash raat late tak smartphone na dekha hota. Bilkul neend nahi aa rahi." },
+            toii: { jp: "お風呂（ふろ）に ゆっくり 入（はい）って、今夜（こんや）は ぐっすり 眠（ねむ）れると いいですね。", rom: "Ofuro ni yukkuri haitte, konya wa gussuri nemureru to ii desu ne.", hi: "Hindi Translation: Garam pani se nahake, aaj raat gehri neend aaye toh accha hai na." },
+            youni: { jp: "先生（せんせい）に ストレスを ためない ように 言（い）われました。", rom: "Sensei ni sutoresu wo tamenai you ni iwaremashita.", hi: "Hindi Translation: Doctor sahab ne stress jama na karne ke liye kaha hai." },
+            sugi: { jp: "今週（こんしゅう）は 毎日（まいにち）残業（ざんぎょう）しすぎて、体（からだ）が だるいです。", rom: "Konshuu wa mainichi zangyou shisugite, karada ga darui desu.", hi: "Hindi Translation: Is hafte har roz bahut zyada overtime kaam karke body heavy ho gayi hai." }
+        },
+        bp: {
+            tame: { jp: "血圧（けつあつ）を下（さ）げる ために、塩分（えんぶん）を 控（ひか）えた 食事（しょくじ）に しています。", rom: "Ketsuatsu wo sageru tame ni, enbun wo hikaeta shokuji ni shite imasu.", hi: "Hindi Translation: Blood pressure kam karne ke liye, kam namak wala khana kha raha hoon." },
+            yokatta: { jp: "若い（わかい）頃（ころ）から 定期（ていき）健診（けんしん）を 受（う）ければ よかった。", rom: "Wakai koro kara teiki kenshin wo ukereba yokatta.", hi: "Hindi Translation: Kash jawani ke dinon se hi regular health checkup karwaya hota." },
+            toii: { jp: "毎日（まいにち）散歩（さんぽ）を 続（つづ）けて、血圧（けつあつ）が 正常（せいじょう）になると いいんですが。", rom: "Mainichi sanpo wo tsuzukete, ketsuatsu ga seijou ni naru to iin desu ga.", hi: "Hindi Translation: Roz walking jaari rakhke, BP normal ho jaye toh mere liye accha hoga." },
+            youni: { jp: "医者（いしゃ）に タバコを やめる ように 厳（きび）しく 言（い）われました。", rom: "Isha ni tabako wo yameru you ni kibishiku iwaremashita.", hi: "Hindi Translation: Doctor ne sakhti se cigarette chhodne ke liye kaha hai." },
+            sugi: { jp: "お酒（さけ）を 飲（の）みすぎて、血圧（けつあつ）の 薬（くすり）が 効（き）かなく なりました。", rom: "Osake wo nomisugite, ketsuatsu no kusuri ga kikanaku narimashita.", hi: "Hindi Translation: Bahut zyada sharab peene se, BP ki dawai kaam nahi kar rahi." }
+        },
+        diet: {
+            tame: { jp: "体重（たいじゅう）を 減（へ）らす ために、ジムで 有酸素（ゆうさんそ）運動（うんどう）を 始めました。", rom: "Taijuu wo herasu tame ni, jimu de yuusanso undou wo hajimemashita.", hi: "Hindi Translation: Vajan kam karne ke liye, gym mein cardio workout shuru kiya hai." },
+            yokatta: { jp: "昨日（きのう）の 夜（よる）、ラーメンと デザートを 食べなければ よかった。", rom: "Kinou no yoru, raamen to dezaato wo tabenakereba yokatta.", hi: "Hindi Translation: Kash kal raat ramen aur dessert na khaya hota." },
+            toii: { jp: "野菜（やさい）と 果物（くだもの）を たくさん 食（た）べて、健康的に（けんこうてきに）痩（や）せられると いいですね。", rom: "Yasai to kudamono wo takusan tabete, kenkouteki ni yaserareru to ii desu ne.", hi: "Hindi Translation: Bahut saari sabziya aur phal khake, healthy tarike se patle ho jayein toh accha hai!" },
+            youni: { jp: "トレーナーに 毎日（まいにち）水（みず）を ２リットル 飲（の）む ように 言（い）われました。", rom: "Toreenaa ni mainichi mizu wo ni rittoru nomu you ni iwaremashita.", hi: "Hindi Translation: Trainer ne roz 2 liter paani peene ke liye kaha hai." },
+            sugi: { jp: "甘（あま）い お菓子（かし）を 食（た）べすぎて、１ヶ月（いっかげつ）で ３キロも 太（ふと）って しまいました。", rom: "Amai okashi wo tabesugite, ikkagetsu de san kiro mo futotte shimaimashita.", hi: "Hindi Translation: Bahut zyada meetha snacks khake, 1 mahine mein 3 kilo mota ho gaya!" }
+        }
+    };
+
+    function updateHealthSim() {
+        const s = document.getElementById('sim-scene').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = healthData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakHealthSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 「健康（けんこう）の _______、毎日（まいにち）運動（うんどう）します。」\n(I exercise every day FOR THE SAKE OF / IN ORDER TO maintain my health - Purpose particle)", opt: ["ために (tame ni)", "ように (you ni)", "せいで (sei de)", "うちに (uchi ni)"], ans: 0 },
+        { q: "2. 「もっと 早（はや）く 病院（びょういん）に _______ よかった。」\n(I SHOULD HAVE gone to the hospital earlier - Regret conditional ば form of 行く)", opt: ["行けば (ikeba)", "行って (itte)", "行ったら (ittara)", "行こう (ikou)"], ans: 0 },
+        { q: "3. 「早（はや）く よく_______ いいですね。」\n(I HOPE you get well soon! - wishing well pattern)", opt: ["なると (naru to)", "なって (natte)", "なるから (naru kara)", "なるし (naru shi)"], ans: 0 },
+        { q: "4. 「医者（いしゃ）に お酒（さけ）を 飲（の）まない _______ 言（い）われました。」\n(I was TOLD BY THE DOCTOR not to drink alcohol - Reported instruction particle)", opt: ["ように (you ni)", "ために (tame ni)", "といて (toite)", "ようにして (you ni shite)"], ans: 0 },
+        { q: "5. 「働（はたら）き_______、体調（たいちょう）が 悪（わる）く なりました。」\n(I worked TOO MUCH / EXCESSIVELY, so I became sick - Excessive verb suffix)", opt: ["すぎて (sugite)", "たびに (tabi ni)", "がちで (gachi de)", "すぎてから (sugite kara)"], ans: 0 },
+        { q: "6. 「吐き気（はきけ）」の 正しい 意味（いみ）と 症状（しょうじょう）は どれですか？\n(What symptom is represented by the Japanese word 吐き気 - hakike?)", opt: ["Nausea / feeling sick to your stomach (wanting to vomit)", "A high fever above 39 degrees", "A runny nose and sneezing", "A sharp pain in the lower back"], ans: 0 },
+        { q: "7. 「めまいが します」の 正しい 英語・ヒンディー語の 意味（いみ）は どれですか？\n(What does めまいがします - memai ga shimasu mean?)", opt: ["Dizziness / vertigo / chakkar aana", "I have loose motions", "I cannot sleep at all", "My eyes are itching"], ans: 0 },
+        { q: "8. 医師の診察（しんさつ）で 「いつごろ から ですか」と 聞かれた時、どう 答えますか？\n(When a doctor asks 'Itsugoro kara desu ka?', what is an appropriate response?)", opt: ["昨日（きのう）の 夜（よる）から ずっと 痛（いた）いです。(It has been hurting continuously since last night)", "薬（くすり）を ３錠（さんじょう）飲（の）んで ください。(Please take 3 pills)", "病院（びょういん）は 駅（えき）の 前（まえ）に あります。(The hospital is in front of the station)", "明日（あした）の １０時（じゅっじ）に 予約（よやく）を します。(I will make a reservation for tomorrow at 10)"], ans: 0 },
+        { q: "9. 「早寝早起き（はやねはやおき）」の 意味（いみ）は 何（なん）ですか？\n(What is the meaning of the healthy lifestyle slogan 早寝早起き?)", opt: ["Early to bed, early to rise (jaldi sona jaldi uthna)", "Eating three heavy meals a day without exercise", "Taking medicine twice a day after breakfast and dinner", "Visiting the hospital every week for a blood test"], ans: 0 },
+        { q: "10. 「無理（むり）を しないで ください」の 意味（いみ）は どれですか？\n(What does a doctor mean when they say 'Muri wo shinaide kudasai'?)", opt: ["Please don't overdo it / don't strain yourself too much (take it easy)", "Please pay the medical bill at the front reception desk", "Please do not eat anything for 12 hours before the surgery", "Please run 10 kilometers every morning to lose weight"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Amazing! You are a master of Japanese health & medical communication!':'💪 Keep practicing! Review the symptoms (めまい vs 吐き気) and grammar particles!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

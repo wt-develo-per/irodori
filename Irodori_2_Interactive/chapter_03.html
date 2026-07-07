@@ -1,0 +1,953 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 03: せいかつとでんとう (Life & Tradition)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 3: せいかつとでんとう - Life & Tradition. Covers culture comparisons (~より, ~ほど~ない, ~とおなじ/ちがう, ~のように/みたいに, ~によって) and hearsay (~そうです, ~らしい).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 03: せいかつとでんとう (Life & Tradition) • Culture Comparisons & Hearsay</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('にほん と インド の ぶんか を くらべると、いろいろな ちがい が あります。にほん では くつ を ぬいで いえ に はいります。インド でも おなじ です。ちがう ぶんか を しる こと は おもしろい と おもいます。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>👘 せいかつとでんとう (Seikatsu to Dentou) - Life & Tradition</h2>
+        <p>Master understanding Japanese culture and traditions, comparing customs between countries, and expressing hearsay/opinions! Learn comparison patterns (<strong>～より / ～ほど～ない / ～とおなじ・ちがう / ～のように・みたいに / ～によって</strong>) and hearsay vs appearance (<strong>～そうです / ～らしい</strong>).</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 827–1320</span>
+            <span class="meta-pill">💬 Grammar Points 12–18</span>
+            <span class="meta-pill">📚 30+ Vocabulary Words</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">🎮 10-Q Quiz</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('culture',this)"><span>👘</span> Culture Comparison Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Comparisons & Hearsay (Pt 12–18)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 30+ Audio Vocab Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 03 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('summary',this)"><span>📊</span> Ch 1–3 Complete Summary</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Culture Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Culture Comparison Simulator -->
+    <div id="tab-culture" class="tab-content active">
+        <div class="interactive-box">
+            <h4>👘 Interactive Culture & Tradition Comparison Builder</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Compare customs between Japan and your home country using natural comparison patterns like <strong>～より</strong>, <strong>～とおなじ/ちがう</strong>, and <strong>～によって</strong>!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Comparison Topic (くらべるテーマ)</label>
+                    <select id="sim-topic" onchange="updateCultureSim()">
+                        <option value="shoes">🏠 Entering House (家に入るとき - Taking off shoes)</option>
+                        <option value="food">🍱 Eating Style (食べ方 - Chopsticks vs Hands / Sweetness)</option>
+                        <option value="newyear">🎍 New Year Celebration (お正月 - Family gatherings & prayers)</option>
+                        <option value="weather">☀️ Weather & Seasons (気候 - Summer & Winter temperatures)</option>
+                        <option value="language">📝 Language Writing (ことば - Hiragana vs Kanji difficulty)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Pattern to Apply</label>
+                    <select id="sim-pattern" onchange="updateCultureSim()">
+                        <option value="same">🤝 Same Custom (～と同じです - Same as)</option>
+                        <option value="diff">⚖️ Different Custom (～と違います / ～より - Different / More than)</option>
+                        <option value="depend">🌍 Depends on Country/Area (～によって違います - Depending on)</option>
+                        <option value="hearsay">👂 Hearsay / News Report (～そうです / ～らしい - Suna hai / Apparently)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">日本（にほん）では 靴（くつ）を 脱（ぬ）いで 家（いえ）に 入（はい）ります。インドでも 同じ（おなじ）です。これは 共通（きょうつう）の 習慣（しゅうかん）ですね。</div>
+                <div class="output-rom" id="sim-rom">Nihon de wa kutsu wo nuide ie ni hairimasu. Indo demo onaji desu. Kore wa kyoutsuu no shuukan desu ne.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Japan mein joote utaar ke ghar mein ghuste hain. India mein bhi same hai. Yeh common custom hai na.</div>
+                <button class="btn-speak" onclick="speakCultureSim()">🔊 Speak Sentence in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>⛩️ Key Japanese Traditions & Events Reference</h3>
+            <p>Click any card to hear the pronunciation and explanation of major traditional events!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)">
+                <div class="card-top"><span class="jp-text">お正月（おしょうがつ）</span><button class="btn-audio">🔊</button></div>
+                <div class="romaji-text">Oshougatsu • Japanese New Year</div>
+                <div class="meaning-text">Japan's most important event. Families gather to eat Osechi ryouri, visit shrines (Hatsumoude), and give kids Otoshidama money.</div>
+            </div>
+            <div class="card" onclick="speakCard(this)">
+                <div class="card-top"><span class="jp-text">お盆（おぼん）</span><button class="btn-audio">🔊</button></div>
+                <div class="romaji-text">Obon • Ancestor Festival (August)</div>
+                <div class="meaning-text">Honoring ancestors (先祖 - senzo). People visit graves (お墓参り), light lanterns (提灯), and dance Bon Odori.</div>
+            </div>
+            <div class="card" onclick="speakCard(this)">
+                <div class="card-top"><span class="jp-text">成人の日（せいじんのひ）</span><button class="btn-audio">🔊</button></div>
+                <div class="romaji-text">Seijin no Hi • Coming of Age Day</div>
+                <div class="meaning-text">Celebrated on the 2nd Monday of January for young people turning 20 years old.</div>
+            </div>
+            <div class="card" onclick="speakCard(this)">
+                <div class="card-top"><span class="jp-text">七五三（しちごさん）</span><button class="btn-audio">🔊</button></div>
+                <div class="romaji-text">Shichigosan • 7-5-3 Festival</div>
+                <div class="meaning-text">Celebrated on November 15th for children aged 7, 5, and 3 to pray for healthy growth at shrines.</div>
+            </div>
+            <div class="card" onclick="speakCard(this)">
+                <div class="card-top"><span class="jp-text">お月見（おつきみ）</span><button class="btn-audio">🔊</button></div>
+                <div class="romaji-text">Otsukimi • Autumn Moon Viewing</div>
+                <div class="meaning-text">Celebrated in September-October by viewing the full moon while eating dango (rice cakes).</div>
+            </div>
+            <div class="card" onclick="speakCard(this)">
+                <div class="card-top"><span class="jp-text">七夕（たなばた）</span><button class="btn-audio">🔊</button></div>
+                <div class="romaji-text">Tanabata • Star Festival</div>
+                <div class="meaning-text">Celebrated on July 7th. People write wishes on colorful paper strips and hang them on bamboo branches.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Comparison: More than / Less than</span><span class="particle-badge">Pt 12 & 13</span></div>
+            <div class="grammar-formula">A より B のほうが [Adj] / A ほど B は [Neg Adj]</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>より...ほうが</strong> to say "B is more [Adj] than A", and <strong>ほど...ない</strong> to say "B is not as [Adj] as A".</p>
+            <ul class="example-list">
+                <li onclick="speakText('にほん より インド のほうが あつい です。')">
+                    <span class="ex-jp">日本 より インド のほうが 暑い です。</span>
+                    <span class="ex-rom">Nihon yori Indo no hou ga atsui desu.</span>
+                    <span class="ex-hi">Japan se India zyada garam hai.</span>
+                </li>
+                <li onclick="speakText('ひらがな より かんじ のほうが むずかしい です。')">
+                    <span class="ex-jp">ひらがな より 漢字 のほうが 難しい です。</span>
+                    <span class="ex-rom">Hiragana yori kanji no hou ga muzukashii desu.</span>
+                    <span class="ex-hi">Hiragana se kanji zyada mushkil hai.</span>
+                </li>
+                <li onclick="speakText('きょう は きのう ほど さむくない です。')">
+                    <span class="ex-jp">今日 は 昨日 ほど 寒くない です。</span>
+                    <span class="ex-rom">Kyou wa kinou hodo samukunai desu.</span>
+                    <span class="ex-hi">Aaj utna thanda nahi hai jitna kal tha.</span>
+                </li>
+                <li onclick="speakText('この しけん は おもった ほど むずかしくなかった です。')">
+                    <span class="ex-jp">この 試験 は 思った ほど 難しくなかった です。</span>
+                    <span class="ex-rom">Kono shiken wa omotta hodo muzukashikunakatta desu.</span>
+                    <span class="ex-hi">Yeh exam utna mushkil nahi tha jitna socha tha.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Same as / Different from / Like / Depending on</span><span class="particle-badge" style="background:var(--accent-success);">Pt 14, 15, 16</span></div>
+            <div class="grammar-formula">～と同じ / ～と違う / ～のように・みたいに / ～によって</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Expressing similarities, differences, similes, and conditional variations across cultures or people.</p>
+            <ul class="example-list">
+                <li onclick="speakText('にほん と インド は ぶんか が ちがいます。')">
+                    <span class="ex-jp">日本 と インド は 文化 が 違います。</span>
+                    <span class="ex-rom">Nihon to Indo wa bunka ga chigaimasu. (Japan aur India ki culture alag hai.)</span>
+                </li>
+                <li onclick="speakText('わたし の いけん は あなた と おなじ です。')">
+                    <span class="ex-jp">私 の 意見 は あなた と 同じ です。</span>
+                    <span class="ex-rom">Watashi no iken wa anata to onaji desu. (Meri opinion aapki jaisi hai.)</span>
+                </li>
+                <li onclick="speakText('ゆき のように しろい はな です。')">
+                    <span class="ex-jp">雪 のように 白い 花 です。</span>
+                    <span class="ex-rom">Yuki no you ni shiroi hana desu. (Barf jaisi safed phool hai.)</span>
+                </li>
+                <li onclick="speakText('くに によって、しゅうかん が ちがいます。')">
+                    <span class="ex-jp">国 によって、習慣 が 違います。</span>
+                    <span class="ex-rom">Kuni ni yotte, shuukan ga chigaimasu. (Desh ke hisab se, customs alag hain.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Hearsay vs Conjecture: Suna hai / Apparently</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 17 & 18</span></div>
+            <div class="grammar-formula">Plain form + そうです (Hearsay) / Plain form + らしい (Seems like)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">⚠️ <strong>Hearsay そうです</strong> (Suna hai ki) attaches to PLAIN FORMS (e.g., おいしいそうです - I heard it's tasty). This is DIFFERENT from <strong>Appearance そうです</strong> from Ch 02 (e.g., おいしそうです - Looks tasty)! <strong>らしい</strong> means "apparently / seems like" based on evidence or information.</p>
+            <ul class="example-list">
+                <li onclick="speakText('あした は あめ が ふる そうです。')">
+                    <span class="ex-jp">明日 は 雨 が 降る そうです。</span>
+                    <span class="ex-rom">Ashita wa ame ga furu sou desu. (Kal baarish hogi suna hai.)</span>
+                </li>
+                <li onclick="speakText('あの レストラン は おいしい そうです。')">
+                    <span class="ex-jp">あの レストラン は 美味しい そうです。</span>
+                    <span class="ex-rom">Ano resutoran wa oishii sou desu. (Woh restaurant tasty hai suna hai.)</span>
+                </li>
+                <li onclick="speakText('かれ は びょうき らしい です。')">
+                    <span class="ex-jp">彼 は 病気 らしい です。</span>
+                    <span class="ex-rom">Kare wa byouki rashii desu. (Woh bimaar lagta hai - based on signs/info.)</span>
+                </li>
+                <li onclick="speakText('この みせ は にんき が ある らしい です。')">
+                    <span class="ex-jp">この 店 は 人気 が ある らしい です。</span>
+                    <span class="ex-rom">Kono mise wa ninki ga aru rashii desu. (Yeh dukaan popular lagti hai.)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 3 Audio Vocabulary Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize essential vocabulary.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">伝統（でんとう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Dentou</div><div class="meaning-text">Parampara / Tradition</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">文化（ぶんか）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Bunka</div><div class="meaning-text">Sanskriti / Culture</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">習慣（しゅうかん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shuukan</div><div class="meaning-text">Aadat / Custom / Habit</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">行事（ぎょうじ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Gyouji</div><div class="meaning-text">Event / Function</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">祭り（まつり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Matsuri</div><div class="meaning-text">Festival / Tyohaar</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">歴史（れきし）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Rekishi</div><div class="meaning-text">Itihaas / History</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">宗教（しゅうきょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shuukyou</div><div class="meaning-text">Dharm / Religion</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">神社（じんじゃ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Jinja</div><div class="meaning-text">Shrine (Shinto)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お寺（おてら）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Otera</div><div class="meaning-text">Mandir / Temple (Buddhist)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">教会（きょうかい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyoukai</div><div class="meaning-text">Church</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">モスク</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mosuku</div><div class="meaning-text">Masjid / Mosque</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お祈り（おいのり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Oinori</div><div class="meaning-text">Prarthana / Prayer</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">新年（しんねん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinnen</div><div class="meaning-text">Naya saal / New Year</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お正月（おしょうがつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Oshougatsu</div><div class="meaning-text">Japanese New Year</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お盆（おぼん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Obon</div><div class="meaning-text">Obon (ancestral festival)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">結婚式（けっこんしき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kekkonshiki</div><div class="meaning-text">Shaadi / Wedding ceremony</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">葬式（そうしき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Soushiki</div><div class="meaning-text">Antim sanskar / Funeral</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">祝う（いわう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Iwau</div><div class="meaning-text">Celebrate karna</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">守る（まもる）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mamoru</div><div class="meaning-text">Protect / Follow karna</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">似ている（にている）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Niteiru</div><div class="meaning-text">Milta julta / Similar</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">違う（ちがう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Chigau</div><div class="meaning-text">Alag / Different</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">同じ（おなじ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Onaji</div><div class="meaning-text">Same / Ek jaisa</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">反対（はんたい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hantai</div><div class="meaning-text">Opposite / Ulta</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">比べる（くらべる）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kuraberu</div><div class="meaning-text">Compare karna</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">違い（ちがい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Chigai</div><div class="meaning-text">Fark / Difference</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">共通（きょうつう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyoutsuu</div><div class="meaning-text">Common / Saamanya</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">特別（とくべつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tokubetsu</div><div class="meaning-text">Khaas / Special</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">普通（ふつう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Futsuu</div><div class="meaning-text">Saamaanya / Normal / Usual</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">珍しい（めずらしい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mezurashii</div><div class="meaning-text">Anokha / Rare / Unusual</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">不思議（ふしぎ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Fushigi</div><div class="meaning-text">Ajeeb / Strange / Mysterious</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 3 Kanji Mastery (24 Kanjis)</h3>
+            <p>Master the essential Kanji for culture, tradition, religion, events, and comparisons.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">伝</div><div class="kanji-info"><h5>Transmit / Report</h5><div class="kanji-readings">Onyomi: <span>デン (den)</span><br>Kunyomi: つた-える</div></div></div><div class="kanji-example" onclick="speakText('伝統、手伝う')"><span>伝統（でんとう）- tradition<br>手伝う（てつだう）- help</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">統</div><div class="kanji-info"><h5>Unite / Lineage</h5><div class="kanji-readings">Onyomi: <span>トウ (tou)</span><br>Kunyomi: す-べる</div></div></div><div class="kanji-example" onclick="speakText('伝統、大統領')"><span>伝統（でんとう）- tradition<br>大統領（だいとうりょう）- president</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">文</div><div class="kanji-info"><h5>Literature / Writing</h5><div class="kanji-readings">Onyomi: <span>ブン、モン (bun, mon)</span><br>Kunyomi: ふみ</div></div></div><div class="kanji-example" onclick="speakText('文化、文学')"><span>文化（ぶんか）- culture<br>文学（ぶんがく）- literature</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">化</div><div class="kanji-info"><h5>Change / Become</h5><div class="kanji-readings">Onyomi: <span>カ、ケ (ka, ke)</span><br>Kunyomi: ば-ける</div></div></div><div class="kanji-example" onclick="speakText('文化、化学')"><span>文化（ぶんか）- culture<br>化学（かがく）- chemistry</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">習</div><div class="kanji-info"><h5>Learn / Custom</h5><div class="kanji-readings">Onyomi: <span>シュウ (shuu)</span><br>Kunyomi: なら-う</div></div></div><div class="kanji-example" onclick="speakText('習慣、練習')"><span>習慣（しゅうかん）- custom<br>練習（れんしゅう）- practice</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">慣</div><div class="kanji-info"><h5>Accustomed / Habit</h5><div class="kanji-readings">Onyomi: <span>カン (kan)</span><br>Kunyomi: な-れる</div></div></div><div class="kanji-example" onclick="speakText('習慣、慣れる')"><span>習慣（しゅうかん）- custom<br>慣れる（なれる）- get used to</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">行</div><div class="kanji-info"><h5>Go / Conduct / Event</h5><div class="kanji-readings">Onyomi: <span>コウ、ギョウ (kou, gyou)</span><br>Kunyomi: い-く、おこな-う</div></div></div><div class="kanji-example" onclick="speakText('行事、旅行')"><span>行事（ぎょうじ）- event<br>旅行（りょこう）- travel</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">事</div><div class="kanji-info"><h5>Matter / Fact / Action</h5><div class="kanji-readings">Onyomi: <span>ジ (ji)</span><br>Kunyomi: こと</div></div></div><div class="kanji-example" onclick="speakText('行事、仕事')"><span>行事（ぎょうじ）- event<br>仕事（しごと）- work</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">祭</div><div class="kanji-info"><h5>Festival / Ritual</h5><div class="kanji-readings">Onyomi: <span>サイ (sai)</span><br>Kunyomi: まつ-り</div></div></div><div class="kanji-example" onclick="speakText('お祭り、文化祭')"><span>お祭り（おまつり）- festival<br>文化祭（ぶんかさい）- culture festival</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">歴</div><div class="kanji-info"><h5>Curriculum / History</h5><div class="kanji-readings">Onyomi: <span>レキ (reki)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('歴史、履歴書')"><span>歴史（れきし）- history<br>履歴書（りれきしょ）- resume</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">史</div><div class="kanji-info"><h5>Chronicle / History</h5><div class="kanji-readings">Onyomi: <span>シ (shi)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('歴史、日本史')"><span>歴史（れきし）- history<br>日本史（にほんし）- Japanese history</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">宗</div><div class="kanji-info"><h5>Religion / Sect</h5><div class="kanji-readings">Onyomi: <span>シュウ、ソウ (shuu, sou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('宗教')"><span>宗教（しゅうきょう）- religion</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">教</div><div class="kanji-info"><h5>Teach / Religion</h5><div class="kanji-readings">Onyomi: <span>キョウ (kyou)</span><br>Kunyomi: おし-える</div></div></div><div class="kanji-example" onclick="speakText('宗教、教会')"><span>宗教（しゅうきょう）- religion<br>教会（きょうかい）- church</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">神</div><div class="kanji-info"><h5>God / Deity / Mind</h5><div class="kanji-readings">Onyomi: <span>シン、ジン (shin, jin)</span><br>Kunyomi: かみ</div></div></div><div class="kanji-example" onclick="speakText('神社、神様')"><span>神社（じんじゃ）- shrine<br>神様（かみさま）- God / deity</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">社</div><div class="kanji-info"><h5>Shrine / Company</h5><div class="kanji-readings">Onyomi: <span>シャ、ジャ (sha, ja)</span><br>Kunyomi: やしろ</div></div></div><div class="kanji-example" onclick="speakText('神社、会社')"><span>神社（じんじゃ）- shrine<br>会社（かいしゃ）- company</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">寺</div><div class="kanji-info"><h5>Buddhist Temple</h5><div class="kanji-readings">Onyomi: <span>ジ (ji)</span><br>Kunyomi: てら</div></div></div><div class="kanji-example" onclick="speakText('お寺、寺院')"><span>お寺（おてら）- temple<br>寺院（じいん）- temple institution</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">祈</div><div class="kanji-info"><h5>Pray / Wish</h5><div class="kanji-readings">Onyomi: <span>キ (ki)</span><br>Kunyomi: いの-る</div></div></div><div class="kanji-example" onclick="speakText('お祈り、祈願')"><span>お祈り（おいのり）- prayer<br>祈願（きがん）- supplication</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">祝</div><div class="kanji-info"><h5>Celebrate / Congratulate</h5><div class="kanji-readings">Onyomi: <span>シュク (shuku)</span><br>Kunyomi: いわ-う</div></div></div><div class="kanji-example" onclick="speakText('祝う、お祝い')"><span>祝う（いわう）- celebrate<br>お祝い（おいわい）- celebration gift</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">守</div><div class="kanji-info"><h5>Protect / Follow</h5><div class="kanji-readings">Onyomi: <span>シュ、ス (shu, su)</span><br>Kunyomi: まも-る</div></div></div><div class="kanji-example" onclick="speakText('守る、お守り')"><span>守る（まもる）- protect / obey<br>お守り（おまもり）- amulet</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">似</div><div class="kanji-info"><h5>Resemble / Similar</h5><div class="kanji-readings">Onyomi: <span>ジ (ji)</span><br>Kunyomi: に-る</div></div></div><div class="kanji-example" onclick="speakText('似ている、似顔絵')"><span>似ている（にている）- similar<br>似顔絵（にがおえ）- portrait</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">違</div><div class="kanji-info"><h5>Differ / Wrong</h5><div class="kanji-readings">Onyomi: <span>イ (i)</span><br>Kunyomi: ちが-う</div></div></div><div class="kanji-example" onclick="speakText('違う、間違い')"><span>違う（ちがう）- differ / wrong<br>間違い（まちがい）- mistake</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">同</div><div class="kanji-info"><h5>Same / Equal</h5><div class="kanji-readings">Onyomi: <span>ドウ (dou)</span><br>Kunyomi: おな-じ</div></div></div><div class="kanji-example" onclick="speakText('同じ、同時に')"><span>同じ（おなじ）- same<br>同時に（どうじに）- at the same time</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">比</div><div class="kanji-info"><h5>Compare / Ratio</h5><div class="kanji-readings">Onyomi: <span>ヒ (hi)</span><br>Kunyomi: くら-べる</div></div></div><div class="kanji-example" onclick="speakText('比べる、比例')"><span>比べる（くらべる）- compare<br>比例（ひれい）- proportion</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">祖</div><div class="kanji-info"><h5>Ancestor / Founder</h5><div class="kanji-readings">Onyomi: <span>ソ (so)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('先祖、祖父')"><span>先祖（せんぞ）- ancestor<br>祖父（そふ）- grandfather</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Complete Grammar & Vocab Summary -->
+    <div id="tab-summary" class="tab-content">
+        <div class="section-header">
+            <h3>📊 Irodori Elementary 2 (Ch 1–3) Complete Summary</h3>
+            <p>Comprehensive review of all 18 grammar patterns and core vocabulary categories mastered so far!</p>
+        </div>
+        <div class="grammar-card" style="border-color:var(--accent-info);">
+            <div class="grammar-title"><span>📝 Grammar Summary Table (Points 1–18)</span></div>
+            <div style="overflow-x:auto;">
+                <table style="width:100%;border-collapse:collapse;margin-top:1rem;color:var(--text-main);">
+                    <thead>
+                        <tr style="background:var(--bg-tertiary);text-align:left;border-bottom:2px solid var(--border-color);">
+                            <th style="padding:0.8rem;">#</th><th style="padding:0.8rem;">Pattern</th><th style="padding:0.8rem;">Meaning</th><th style="padding:0.8rem;">Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">1</td><td style="padding:0.8rem;">Plain form review</td><td style="padding:0.8rem;">Casual speech base</td><td style="padding:0.8rem;">いく、いった、いかない</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">2</td><td style="padding:0.8rem;">～んです</td><td style="padding:0.8rem;">Explanation / Reason</td><td style="padding:0.8rem;">あたま が いたいんです</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">3</td><td style="padding:0.8rem;">て-form + Emotion</td><td style="padding:0.8rem;">Reason for feeling</td><td style="padding:0.8rem;">うかって、うれしい</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">4</td><td style="padding:0.8rem;">～たら</td><td style="padding:0.8rem;">If / When (conditional)</td><td style="padding:0.8rem;">あめ が ふったら</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">5</td><td style="padding:0.8rem;">～ても</td><td style="padding:0.8rem;">Even if</td><td style="padding:0.8rem;">あめ が ふっても</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">6</td><td style="padding:0.8rem;">～て/くて/で (reason)</td><td style="padding:0.8rem;">Connecting sentences</td><td style="padding:0.8rem;">たかくて、かえません</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">7</td><td style="padding:0.8rem;">～し、～し</td><td style="padding:0.8rem;">Multiple reasons</td><td style="padding:0.8rem;">おいしいし、やすいし</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">8</td><td style="padding:0.8rem;">～すぎます</td><td style="padding:0.8rem;">Too much</td><td style="padding:0.8rem;">たべすぎました</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">9</td><td style="padding:0.8rem;">～やすい/にくい</td><td style="padding:0.8rem;">Easy / Hard to</td><td style="padding:0.8rem;">よみやすい、おぼえにくい</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">10</td><td style="padding:0.8rem;">～そう (appearance)</td><td style="padding:0.8rem;">Looks like (dekhke)</td><td style="padding:0.8rem;">おいしそう</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">11</td><td style="padding:0.8rem;">～がる</td><td style="padding:0.8rem;">3rd person feelings</td><td style="padding:0.8rem;">ほしがっている</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">12</td><td style="padding:0.8rem;">～より</td><td style="padding:0.8rem;">Than (comparison)</td><td style="padding:0.8rem;">にほんより あつい</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">13</td><td style="padding:0.8rem;">～ほど～ない</td><td style="padding:0.8rem;">Not as...as</td><td style="padding:0.8rem;">きのうほど さむくない</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">14</td><td style="padding:0.8rem;">～とおなじ/ちがう</td><td style="padding:0.8rem;">Same as / Different from</td><td style="padding:0.8rem;">インドと ちがう</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">15</td><td style="padding:0.8rem;">～のように/みたいに</td><td style="padding:0.8rem;">Like / _____ jaisa</td><td style="padding:0.8rem;">にほんじんのように</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">16</td><td style="padding:0.8rem;">～によって</td><td style="padding:0.8rem;">Depending on</td><td style="padding:0.8rem;">くに によって</td></tr>
+                        <tr style="border-bottom:1px solid var(--border-color);"><td style="padding:0.8rem;">17</td><td style="padding:0.8rem;">～そうです (hearsay)</td><td style="padding:0.8rem;">I heard that (sunke)</td><td style="padding:0.8rem;">あめだそうです</td></tr>
+                        <tr><td style="padding:0.8rem;">18</td><td style="padding:0.8rem;">～らしい</td><td style="padding:0.8rem;">Apparently / Seems</td><td style="padding:0.8rem;">びょうきらしい</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 3 Culture & Comparison Quiz</h3>
+                <p>Test your understanding of comparison grammar, culture vocabulary, and hearsay!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 827–1320)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 3: せいかつとでんとう (Seikatsu to Dentou) - Life & Tradition
+
+## 🎯 Goal: Japan ki culture aur traditions samajhna, comparison karna, customs explain karna, opinions dena
+
+---
+
+### **Culture & Tradition Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| でんとう (伝統) | Dentou | Parampara/Tradition |
+| ぶんか (文化) | Bunka | Sanskriti/Culture |
+| しゅうかん (習慣) | Shuukan | Aadat/Custom/Habit |
+| ぎょうじ (行事) | Gyouji | Event/Function |
+| まつり (祭り) | Matsuri | Festival/Tyohaar |
+| れきし (歴史) | Rekishi | Itihaas/History |
+| しゅうきょう (宗教) | Shuukyou | Dharm/Religion |
+| じんじゃ (神社) | Jinja | Shrine (Shinto) |
+| おてら (お寺) | Otera | Mandir/Temple (Buddhist) |
+| きょうかい (教会) | Kyoukai | Church |
+| モスク | Mosuku | Masjid/Mosque |
+| おいのり (お祈り) | Oinori | Prarthana/Prayer |
+| しんねん (新年) | Shinnen | Naya saal/New Year |
+| おしょうがつ (お正月) | Oshougatsu | Japanese New Year |
+| おぼん (お盆) | Obon | Obon (ancestor festival) |
+| けっこんしき (結婚式) | Kekkonshiki | Shaadi/Wedding ceremony |
+| そうしき (葬式) | Soushiki | Antim sanskar/Funeral |
+| いわう (祝う) | Iwau | Celebrate karna |
+| まもる (守る) | Mamoru | Protect/Follow karna |
+
+---
+
+### **Comparison Words:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| にている (似ている) | Niteiru | Milta julta/Similar |
+| ちがう (違う) | Chigau | Alag/Different |
+| おなじ (同じ) | Onaji | Same/Ek jaisa |
+| はんたい (反対) | Hantai | Opposite/Ulta |
+| くらべる (比べる) | Kuraberu | Compare karna |
+| ちがい (違い) | Chigai | Fark/Difference |
+| きょうつう (共通) | Kyoutsuu | Common/Saamanya |
+| とくべつ (特別) | Tokubetsu | Khaas/Special |
+| ふつう (普通) | Futsuu | Saamaanya/Normal/Usual |
+| めずらしい (珍しい) | Mezurashii | Anokha/Rare/Unusual |
+| ふしぎ (不思議) | Fushigi | Ajeeb/Strange/Mysterious |
+
+---
+
+### **Grammar Point 12: ～より (Than / _____ se)**
+
+**A より B のほうが [adjective] = A se B zyada [adjective]**
+
+#### **Examples:**
+
+```
+にほん より インド のほうが あつい です。
+(Nihon yori Indo no hou ga atsui desu.)
+Japan se India zyada garam hai.
+
+でんしゃ より バス のほうが やすい です。
+(Densha yori basu no hou ga yasui desu.)
+Train se bus zyada sasti hai.
+
+ひらがな より かんじ のほうが むずかしい です。
+(Hiragana yori kanji no hou ga muzukashii desu.)
+Hiragana se kanji zyada mushkil hai.
+
+インド の りょうり より にほん の りょうり のほうが あまい です。
+(Indo no ryouri yori nihon no ryouri no hou ga amai desu.)
+India ke khane se Japan ka khana zyada meetha hai.
+```
+
+**Simple より:**
+```
+きのう より きょう のほうが さむい です。
+(Kinou yori kyou no hou ga samui desu.)
+Kal se aaj zyada thanda hai.
+
+よそう (予想) より かんたん でした。
+(Yosou yori kantan deshita.)
+Expectation se aasaan tha.
+```
+
+---
+
+### **Grammar Point 13: ～ほど ～ない (Not as _____ as)**
+
+**A ほど B は [negative adjective] = B utna [adjective] nahi hai jitna A**
+
+#### **Examples:**
+
+```
+きょう は きのう ほど さむくない です。
+(Kyou wa kinou hodo samukunai desu.)
+Aaj utna thanda nahi hai jitna kal tha.
+
+この しけん は おもった ほど むずかしくなかった です。
+(Kono shiken wa omotta hodo muzukashikunakatta desu.)
+Yeh exam utna mushkil nahi tha jitna socha tha.
+
+にほんご は ちゅうごくご ほど むずかしくない と おもいます。
+(Nihongo wa chuugokugo hodo muzukashikunai to omoimasu.)
+Japanese utni mushkil nahi hai jitni Chinese, aisa lagta hai.
+
+とうきょう は おおさか ほど ひと が おおくない です。
+(Toukyou wa Oosaka hodo hito ga ookunai desu.)
+Tokyo mein utne log nahi hain jitne Osaka mein. (Actually yeh galat hai, example ke liye)
+```
+
+---
+
+### **Grammar Point 14: ～と おなじ / ～と ちがう (Same as / Different from)**
+
+**A と B は おなじ = A aur B same hain**
+**A と B は ちがう = A aur B alag hain**
+**A と おなじ [noun] = A jaisa [noun]**
+
+#### **Examples:**
+
+```
+にほん と インド は ぶんか が ちがいます。
+(Nihon to Indo wa bunka ga chigaimasu.)
+Japan aur India ki culture alag hai.
+
+この かばん と その かばん は おなじ いろ ですね。
+(Kono kaban to sono kaban wa onaji iro desu ne.)
+Yeh bag aur woh bag same color hain na.
+
+わたし の いけん (意見) は あなた と おなじ です。
+(Watashi no iken wa anata to onaji desu.)
+Meri opinion aapki jaisi hai.
+
+この しゅうかん は わたし の くに と にています。
+(Kono shuukan wa watashi no kuni to niteimasu.)
+Yeh custom mere desh jaisi hai.
+
+にほん の おしょうがつ は インド の おしょうがつ と ぜんぜん ちがいます。
+(Nihon no oshougatsu wa Indo no oshougatsu to zenzen chigaimasu.)
+Japan ka New Year India ke New Year se bilkul alag hai.
+```
+
+---
+
+### **Grammar Point 15: ～のように / ～みたいに (Like _____ / _____ jaisa)**
+
+**Noun + のように / みたいに = _____ ki tarah / _____ jaisa**
+**Verb plain + ように = _____ jaisa / _____ ki tarah**
+
+⚠️ **みたいに** is more casual than **のように**
+
+#### **Examples:**
+
+```
+ゆき (雪) のように しろい はな です。
+(Yuki no you ni shiroi hana desu.)
+Barf jaisi safed phool hai.
+
+にほんじん のように にほんご を はなしたい です。
+(Nihonjin no you ni nihongo wo hanashitai desu.)
+Japanese logon ki tarah Japanese bolna chahta hoon.
+
+かれ は ロボット みたいに はたらきます。
+(Kare wa robotto mitai ni hatarakimasu.)
+Woh robot ki tarah kaam karta hai.
+
+おかあさん が つくった ように、りょうり を つくりたい です。
+(Okaasan ga tsukutta you ni, ryouri wo tsukuritai desu.)
+Maa ne banaya jaisa, khana banana chahta hoon.
+
+ゆめ みたいな けいけん でした。
+(Yume mitai na keiken deshita.)
+Sapne jaisa experience tha.
+```
+
+**"Like this/that":**
+```
+こんなふうに / こういうふうに = Is tarah se
+そんなふうに / そういうふうに = Us tarah se
+```
+
+---
+
+### **Grammar Point 16: ～によって (Depending on / According to)**
+
+**Noun + によって = _____ ke anusar / _____ pe depend karta hai**
+
+#### **Examples:**
+
+```
+くに によって、しゅうかん が ちがいます。
+(Kuni ni yotte, shuukan ga chigaimasu.)
+Desh ke hisab se, customs alag hain.
+
+ひと によって、いけん が ちがいます。
+(Hito ni yotte, iken ga chigaimasu.)
+Aadmi ke hisab se, opinions alag hain.
+
+きせつ (季節) によって、たべもの が ちがいます。
+(Kisetsu ni yotte, tabemono ga chigaimasu.)
+Mausam ke hisab se, khana alag hota hai.
+
+ちいき (地域) によって、おまつり の やりかた が ちがいます。
+(Chiiki ni yotte, omatsuri no yarikata ga chigaimasu.)
+Area ke hisab se, festival karne ka tareeka alag hai.
+```
+
+---
+
+### **Japanese Traditions & Events:**
+
+#### **おしょうがつ (お正月) - New Year:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| ねんがじょう (年賀状) | Nengajou | New Year card |
+| おせちりょうり (おせち料理) | Osechi ryouri | New Year food |
+| おとしだま (お年玉) | Otoshidama | New Year money (for kids) |
+| はつもうで (初詣) | Hatsumoude | First shrine visit |
+| おもち (お餅) | Omochi | Rice cake |
+| かがみもち (鏡餅) | Kagami mochi | Decorative rice cake |
+| しめかざり (しめ飾り) | Shimekazari | New Year decoration |
+| かどまつ (門松) | Kadomatsu | Pine decoration |
+
+**Explaining New Year:**
+```
+にほん では、おしょうがつ は いちばん たいせつな ぎょうじ です。
+(Nihon de wa, oshougatsu wa ichiban taisetsu na gyouji desu.)
+Japan mein, New Year sabse important event hai.
+
+かぞく と いっしょに おせちりょうり を たべたり、
+はつもうで に いったり します。
+(Kazoku to issho ni osechi ryouri wo tabetari,
+hatsumoude ni ittari shimasu.)
+Family ke saath osechi khana khaana ya shrine visit karna karte hain.
+
+こども は おとしだま を もらって、うれしそう です。
+(Kodomo wa otoshidama wo moratte, ureshisou desu.)
+Bachche otoshidama pake khush lagte hain.
+
+インド では、ディワリ が おなじ ような ぎょうじ だ と おもいます。
+(Indo de wa, Diwali ga onaji you na gyouji da to omoimasu.)
+India mein Diwali same jaisa event hai, aisa lagta hai.
+```
+
+---
+
+#### **おぼん (お盆) - Obon Festival:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| せんぞ (先祖) | Senzo | Ancestors/Purvaj |
+| おはか (お墓) | Ohaka | Kabar/Grave |
+| おはかまいり (お墓参り) | Ohakamairi | Grave visit |
+| ちょうちん (提灯) | Chouchin | Lantern |
+| ぼんおどり (盆踊り) | Bon odori | Bon dance |
+
+---
+
+#### **Other Traditions:**
+
+| Event | Japanese | When | What |
+|-------|----------|------|------|
+| Coming of Age | せいじんのひ (成人の日) | January 2nd Monday | 20 saal ke log celebrate |
+| Girls' Day | ひなまつり (雛祭り) | March 3 | Doll festival for girls |
+| Boys' Day | こどものひ (子供の日) | May 5 | Children's day (originally boys) |
+| Star Festival | たなばた (七夕) | July 7 | Write wishes on paper |
+| Autumn Moon | おつきみ (お月見) | September-October | Moon viewing |
+| 7-5-3 | しちごさん (七五三) | November 15 | Kids age 7, 5, 3 celebrate |
+
+---
+
+### **Grammar Point 17: ～そうです (Hearsay / Suna hai ki)**
+
+⚠️ Yeh pehle wale appearance そう se ALAG hai!
+
+**Plain form + そうです = _____ suna hai / According to _____**
+
+#### **Formation:**
+
+| Type | Pattern | Example |
+|------|---------|---------|
+| Verb | Plain + そうです | いく**そうです** |
+| い-adj | い-adj + そうです | たかい**そうです** |
+| な-adj | な-adj + **だ** + そうです | しずか**だそうです** |
+| Noun | Noun + **だ** + そうです | あめ**だそうです** |
+
+#### **Examples:**
+
+```
+あした は あめ が ふる そうです。
+(Ashita wa ame ga furu sou desu.)
+Kal baarish hogi suna hai.
+
+あの レストラン は おいしい そうです。
+(Ano resutoran wa oishii sou desu.)
+Woh restaurant tasty hai suna hai.
+
+かれ は らいげつ けっこんする そうです。
+(Kare wa raigetsu kekkon suru sou desu.)
+Woh agle mahine shaadi karega suna hai.
+
+にほん の ふゆ は さむい そうです。
+(Nihon no fuyu wa samui sou desu.)
+Japan ki sardi thandi hoti hai suna hai.
+
+ニュース によると、あした ゆき が ふる そうです。
+(Nyuusu ni yoru to, ashita yuki ga furu sou desu.)
+News ke mutabiq, kal barf giregi.
+```
+
+#### **Difference: Appearance そう vs Hearsay そう:**
+
+| Type | Formation | Meaning | Example |
+|------|-----------|---------|---------|
+| **Appearance** | Adj-stem + そう | Lagta hai (dekhke) | おいし**そう** (Tasty lagta hai) |
+| **Hearsay** | Plain + そうです | Suna hai | おいしい**そうです** (Tasty hai suna hai) |
+
+```
+この ケーキ は おいしそう です。 (looks delicious - dekhke)
+この ケーキ は おいしい そうです。 (I heard it's delicious - sunke)
+```
+
+---
+
+### **Grammar Point 18: ～らしい (Seems like / Apparently)**
+
+**Plain form + らしい = Apparently _____ / _____ lagta hai (based on information)**
+
+Similar to hearsay そうです but more based on reasoning/evidence:
+
+#### **Examples:**
+
+```
+かれ は びょうき らしい です。
+(Kare wa byouki rashii desu.)
+Woh bimaar lagta hai. (kisi ne bataya ya signs hain)
+
+あした は あめ らしい です。
+(Ashita wa ame rashii desu.)
+Kal baarish lagti hai. (news ya baadal dekh ke)
+
+この みせ は にんき が ある らしい です。
+(Kono mise wa ninki ga aru rashii desu.)
+Yeh dukaan popular lagti hai. (line dekh ke)
+
+その えいが は おもしろい らしい ですよ。
+(Sono eiga wa omoshiroi rashii desu yo.)
+Woh movie interesting lagti hai. (reviews padhke)
+```
+
+---
+
+### **Comparing Cultures - Example:**
+
+```
+にほん と インド の ぶんか を くらべると、
+いろいろな ちがい が あります。
+(Nihon to Indo no bunka wo kuraberu to,
+iroirona chigai ga arimasu.)
+Japan aur India ki culture compare karein toh, bahut fark hain.
+
+たとえば、にほん では くつ を ぬいで いえ に はいります。
+インド でも おなじ です。これ は きょうつう の しゅうかん ですね。
+(Tatoeba, nihon de wa kutsu wo nuide ie ni hairimasu.
+Indo demo onaji desu. Kore wa kyoutsuu no shuukan desu ne.)
+For example, Japan mein joote utaar ke ghar mein ghuste hain.
+India mein bhi same hai. Yeh common custom hai na.
+
+でも、たべかた は ちがいます。
+にほんじん は はし (箸) を つかいますが、
+インドじん は て で たべる ひと も おおい です。
+(Demo, tabekata wa chigaimasu.
+Nihonjin wa hashi wo tsukaimasu ga,
+Indojin wa te de taberu hito mo ooi desu.)
+Lekin, khaane ka tareeka alag hai.
+Japanese log chopsticks use karte hain, lekin
+Indians mein haath se khaane wale bhi bahut hain.
+
+にほん の おしょうがつ は インド の ディワリ に
+にている と おもいます。
+どちら も かぞく で あつまって、
+とくべつな りょうり を たべたり、
+おいのり を したり します。
+(Nihon no oshougatsu wa Indo no Diwali ni
+niteiru to omoimasu.
+Dochira mo kazoku de atsumatte,
+tokubetsu na ryouri wo tabetari,
+oinori wo shitari shimasu.)
+Japan ka New Year India ke Diwali jaisa lagta hai.
+Dono mein bhi family milke, special khana khana ya pray karna karte hain.
+
+にほん に きて、いろいろな ぶんか の ちがい を
+けいけん しました。さいしょ は びっくりする こと も
+ありましたが、いま は なれました。
+(Nihon ni kite, iroirona bunka no chigai wo
+keiken shimashita. Saisho wa bikkuri suru koto mo
+arimashita ga, ima wa naremashita.)
+Japan aake, bahut cultural differences experience kiye.
+Shuru mein surprising bhi tha, lekin ab aadat pad gayi.
+
+ちがう ぶんか を しる こと は おもしろい と おもいます。
+(Chigau bunka wo shiru koto wa omoshiroi to omoimasu.)
+Alag culture jaanna interesting hai aisa lagta hai.
+```
+
+---
+
+# 📝 GRAMMAR SUMMARY (Chapter 1-3):
+
+| # | Pattern | Meaning | Example |
+|---|---------|---------|---------|
+| 1 | Plain form review | Casual speech base | いく、いった、いかない |
+| 2 | ～んです | Explanation/Reason | あたま が いたいんです |
+| 3 | て-form + Emotion | Reason for feeling | うかって、うれしい |
+| 4 | ～たら | If/When (conditional) | あめ が ふったら |
+| 5 | ～ても | Even if | あめ が ふっても |
+| 6 | ～て/くて/で (reason) | Connecting sentences | たかくて、かえません |
+| 7 | ～し、～し | Multiple reasons | おいしいし、やすいし |
+| 8 | ～すぎます | Too much | たべすぎました |
+| 9 | ～やすい/にくい | Easy/Hard to | よみやすい、おぼえにくい |
+| 10 | ～そう (appearance) | Looks like | おいしそう |
+| 11 | ～がる | Third person feelings | ほしがっている |
+| 12 | ～より | Than (comparison) | にほんより あつい |
+| 13 | ～ほど～ない | Not as...as | きのうほど さむくない |
+| 14 | ～とおなじ/ちがう | Same as/Different from | インドと ちがう |
+| 15 | ～のように/みたいに | Like | にほんじんのように |
+| 16 | ～によって | Depending on | くに によって |
+| 17 | ～そうです (hearsay) | I heard that | あめだそうです |
+| 18 | ～らしい | Apparently/Seems | びょうきらしい |
+
+---
+
+# 📝 VOCABULARY CATEGORIES (Ch 1-3):
+
+### **Emotions (きもち):**
+```
+うれしい、かなしい、さびしい、たのしい、こわい、
+はずかしい、くやしい、いやだ
+びっくりした、がっかりした、ほっとした、
+どきどきした、わくわくした、いらいらした
+しんぱいした、あんしんした、こまった、つかれた
+```
+
+### **Reactions (リアクション):**
+```
+えー！、うそ！、まじ？、ほんとう？、
+すごい！、やばい！、かわいそう、
+よかったね、たいへんだったね、
+なるほど、そうなんだ、へー
+```
+
+### **Culture (ぶんか):**
+```
+でんとう、ぶんか、しゅうかん、ぎょうじ、
+まつり、れきし、しゅうきょう
+にている、ちがう、おなじ、めずらしい
+```
+
+### **Comparison (ひかく):**
+```
+より、ほど、おなじ、ちがう、
+のように、みたいに、によって
+```
+
+---
+
+# ⚡ Quick Practice Tips:
+
+1. **Plain form** master karo - Elementary 2 ka foundation hai
+2. **んです** har conversation mein use karo - Natural lagta hai
+3. **Emotions** vocabulary badhao - Feelings express karna important hai
+4. **Comparison** patterns practice karo - Culture discussion ke liye zaruri
+5. **そう** ke do types yaad rakho - Appearance vs Hearsay
+6. **Casual vs Polite** dono practice karo - Situation ke hisab se use karo
+
+---
+
+**Chapter 4-6 chahiye toh bata do!** 💪🎌
+
+**がんばって ください！**
+(Ganbatte kudasai!)
+All the best!</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 03: せいかつとでんとう (Life & Tradition) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const cultureData = {
+        shoes: {
+            same: { jp: "日本（にほん）では 靴（くつ）を 脱（ぬ）いで 家（いえ）に入（はい）ります。インドでも 同じ（おなじ）です。", rom: "Nihon de wa kutsu wo nuide ie ni hairimasu. Indo demo onaji desu.", hi: "Hindi Translation: Japan mein joote utaar ke ghar mein ghuste hain. India mein bhi same hai." },
+            diff: { jp: "日本（にほん）の 玄関（げんかん）は アメリカより 狭（せま）いです。", rom: "Nihon no genkan wa Amerika yori semai desu.", hi: "Hindi Translation: Japan ka entrance America se chhota/narrow hota hai." },
+            depend: { jp: "国（くに）によって、家（いえ）に入（はい）る 習慣（しゅうかん）が 違（ちが）います。", rom: "Kuni ni yotte, ie ni hairu shuukan ga chigaimasu.", hi: "Hindi Translation: Desh ke hisab se, ghar mein ghusne ki aadat alag hoti hai." },
+            hearsay: { jp: "日本（にほん）の 家（いえ）は とても きれいだ そうです。", rom: "Nihon no ie wa totemo kirei da sou desu.", hi: "Hindi Translation: Japan ke ghar bahut saaf-suthre hote hain, suna hai." }
+        },
+        food: {
+            same: { jp: "お米（こめ）を 毎日（まいにち）食べる のは、アジア の 国（くに）と 同じ（おなじ）です。", rom: "Okome wo mainichi taberu no wa, Ajia no kuni to onaji desu.", hi: "Hindi Translation: Roz chawal khana, Asia ke deshon jaisa same hai." },
+            diff: { jp: "インド料理（りょうり）より 日本料理（りょうり）のほうが 甘（あま）い です。", rom: "Indo ryouri yori nihon ryouri no hou ga amai desu.", hi: "Hindi Translation: India ke khane se Japan ka khana zyada meetha hai." },
+            depend: { jp: "地域（ちいき）によって、味（あじ）の 濃（こ）さが 違（ちが）います。", rom: "Chiiki ni yotte, aji no kosa ga chigaimasu.", hi: "Hindi Translation: Area ke hisab se, swaad/flavor ki strongness alag hoti hai." },
+            hearsay: { jp: "あの 店（みせ）の お寿司（すし）は とても 新鮮（しんせん）らしい です。", rom: "Ano mise no osushi wa totemo shinsen rashii desu.", hi: "Hindi Translation: Us dukaan ki sushi bahut fresh lagti hai (apparently)." }
+        },
+        newyear: {
+            same: { jp: "日本（にほん）の お正月（しょうがつ）は インドの ディワリに 似（に）ていると 思（おも）います。", rom: "Nihon no oshougatsu wa Indo no Diwali ni niteiru to omoimasu.", hi: "Hindi Translation: Japan ka New Year India ke Diwali jaisa milta-julta lagta hai." },
+            diff: { jp: "日本（にほん）のお正月（しょうがつ）は アメリカより 静（しず）か です。", rom: "Nihon no oshougatsu wa Amerika yori shizuka desu.", hi: "Hindi Translation: Japan ka New Year America se zyada shaant (quiet) hota hai." },
+            depend: { jp: "家庭（かてい）によって、おせち料理（りょうり）の 種類（しゅるい）が 違（ちが）います。", rom: "Katei ni yotte, osechi ryouri no shurui ga chigaimasu.", hi: "Hindi Translation: Parivaar/family ke hisab se, osechi khane ke types alag hote hain." },
+            hearsay: { jp: "子供（こども）は お年玉（としだま）を もらって 嬉（うれ）しい そうです。", rom: "Kodomo wa otoshidama wo moratte ureshii sou desu.", hi: "Hindi Translation: Bachche otoshidama (money) pake khush hote hain, suna hai." }
+        },
+        weather: {
+            same: { jp: "日本（にほん）の 夏（なつ）は インドと 同じ（おなじ）ように 暑（あつ）いです。", rom: "Nihon no natsu wa Indo to onaji you ni atsui desu.", hi: "Hindi Translation: Japan ki garmi India jaisi hi garam hoti hai." },
+            diff: { jp: "今日（きょう）は 昨日（きのう）ほど 寒（さむ）くない です。", rom: "Kyou wa kinou hodo samukunai desu.", hi: "Hindi Translation: Aaj utna thanda nahi hai jitna kal tha." },
+            depend: { jp: "季節（きせつ）によって、見（み）える 景色（けしき）が 違（ちが）います。", rom: "Kisetsu ni yotte, mieru keshiki ga chigaimasu.", hi: "Hindi Translation: Mausam (season) ke hisab se, dikhne wala scenery alag hota hai." },
+            hearsay: { jp: "ニュースによると、明日（あした）は 雪（ゆき）が 降（ふ）る そうです。", rom: "Nyuusu ni yoru to, ashita wa yuki ga furu sou desu.", hi: "Hindi Translation: News ke mutabiq, kal barf giregi suna hai." }
+        },
+        language: {
+            same: { jp: "文法（ぶんぽう）の 順番（じゅんばん）は 日本語（にほんご）と ヒンディー語（ご）で 同じ（おなじ）です。", rom: "Bunpou no junban wa nihongo to hindii-go de onaji desu.", hi: "Hindi Translation: Grammar ka sentence order Japanese aur Hindi mein same (SOV) hai." },
+            diff: { jp: "ひらがな より 漢字（かんじ）のほうが 難（むずか）しい です。", rom: "Hiragana yori kanji no hou ga muzukashii desu.", hi: "Hindi Translation: Hiragana se kanji zyada mushkil hai." },
+            depend: { jp: "人（ひと）によって、勉強（べんきょう）の やり方（かた）が 違（ちが）います。", rom: "Hito ni yotte, benkyou no yarikata ga chigaimasu.", hi: "Hindi Translation: Insaan ke hisab se, padhai karne ka tareeka alag hota hai." },
+            hearsay: { jp: "あの 先生（せんせい）の 授業（じゅぎょう）は とても 分（わ）かりやすい らしい です。", rom: "Ano sensei no jugyou wa totemo wakariyasui rashii desu.", hi: "Hindi Translation: Us teacher ki class samajhne mein bahut aasaan lagti hai (apparently)." }
+        }
+    };
+
+    function updateCultureSim() {
+        const t = document.getElementById('sim-topic').value;
+        const p = document.getElementById('sim-pattern').value;
+        const d = cultureData[t][p];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakCultureSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 日本 より インド のほうが _______ です。\n(India is hotter than Japan.)", opt: ["あつい (atsui)", "あつくない (atsukunai)", "あつかった (atsukatta)", "あつそう (atsusou)"], ans: 0 },
+        { q: "2. 今日 は 昨日 _______ 寒くない です。\n(Today is NOT as cold as yesterday.)", opt: ["より (yori)", "ほど (hodo)", "から (kara)", "まで (made)"], ans: 1 },
+        { q: "3. 日本 と インド は 文化 が _______。\n(Japan and India have different cultures.)", opt: ["おなじです (onaji desu)", "ちがいます (chigaimasu)", "にています (niteimasu)", "ようです (you desu)"], ans: 1 },
+        { q: "4. 国 _______、習慣 が 違います。\n(Depending on the country, customs differ.)", opt: ["について (ni tsuite)", "によって (ni yotte)", "にとって (ni totte)", "にたいして (ni taishite)"], ans: 1 },
+        { q: "5. 明日 は 雨 が 降る _______。\n(I heard / It is said that it will rain tomorrow - Hearsay)", opt: ["そうです (sou desu)", "そう (sou)", "すぎます (sugimasu)", "やすいです (yasui desu)"], ans: 0 },
+        { q: "6. 彼 は 病気 _______ です。\n(He apparently / seems to be sick - based on information)", opt: ["らしい (rashii)", "すぎ (sugi)", "にく (niku)", "した (shita)"], ans: 0 },
+        { q: "7. 日本 の お正月 は インド の ディワリ に _______ と 思います。\n(I think Japanese New Year is similar to India's Diwali.)", opt: ["ちがう (chigau)", "にている (niteiru)", "はんたい (hantai)", "ふつう (futsuu)"], ans: 1 },
+        { q: "8. 雪 _______ 白い 花 です。\n(A flower as white LIKE snow.)", opt: ["のように (no you ni)", "について (ni tsuite)", "により (ni yori)", "のほど (no hodo)"], ans: 0 },
+        { q: "9. 「伝統」の 正しい 読み方 は どれですか？\n(What is the reading for 伝統 - Tradition?)", opt: ["でんとう (dentou)", "ぶんか (bunka)", "しゅうかん (shuukan)", "れきし (rekishi)"], ans: 0 },
+        { q: "10. 「神社」の 正しい 読み方 は どれですか？\n(What is the reading for 神社 - Shinto Shrine?)", opt: ["おてら (otera)", "じんじゃ (jinja)", "きょうかい (kyoukai)", "まつり (matsuri)"], ans: 1 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Amazing! You mastered Chapter 3 culture & comparison grammar!':'💪 Keep practicing! Review the grammar cards and try again!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

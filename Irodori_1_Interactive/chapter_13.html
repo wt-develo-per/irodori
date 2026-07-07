@@ -1,0 +1,1782 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Ch 13: おしえてください (Please Teach Me / Bataaiye)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f18;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --bg-card: rgba(31, 41, 55, 0.75);
+            --bg-glass: rgba(17, 24, 39, 0.85);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(56, 189, 248, 0.5);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #0ea5e9;
+            --accent-tertiary: #6366f1;
+            --accent-info: #fbbf24;
+            --accent-success: #34d399;
+            --accent-danger: #f43f5e;
+            --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+            --gradient-secondary: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+            --gradient-tertiary: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.25);
+            --font-main: 'Outfit', sans-serif;
+            --font-jp: 'Noto Sans JP', sans-serif;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f5f9;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(14, 165, 233, 0.5);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #94a3b8;
+            --accent-primary: #0284c7;
+            --accent-secondary: #0369a1;
+            --accent-tertiary: #4f46e5;
+            --accent-info: #d97706;
+            --accent-success: #059669;
+            --accent-danger: #e11d48;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 20px rgba(2, 132, 199, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 40%);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-badge {
+            background: var(--gradient-primary);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-glow);
+            letter-spacing: 1px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-theme, .btn-audio-global {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme:hover, .btn-audio-global:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Welcome Banner */
+        .banner {
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .banner::after {
+            content: "使い方";
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-family: var(--font-jp);
+            font-size: 8.5rem;
+            font-weight: 900;
+            opacity: 0.15;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .banner h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+        }
+
+        .banner p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .banner-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.75rem 1.4rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Tab Content Panels */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Flashcards Grid */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .jp-text {
+            font-family: var(--font-jp);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1.3;
+        }
+
+        .btn-audio {
+            background: rgba(14, 165, 233, 0.15);
+            color: var(--accent-primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card:hover .btn-audio {
+            background: var(--accent-primary);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .romaji-text {
+            font-size: 0.95rem;
+            color: var(--accent-tertiary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .meaning-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 500;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        /* Interactive Tools Box */
+        .interactive-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .interactive-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .output-panel {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .output-jp {
+            font-family: var(--font-jp);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .output-romaji {
+            color: var(--accent-info);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .output-meaning {
+            color: var(--accent-success);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .btn-action {
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+        }
+
+        /* Grammar Cards */
+        .grammar-card {
+            background: var(--bg-secondary);
+            border-left: 5px solid var(--accent-primary);
+            border-radius: 0 20px 20px 0;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .grammar-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grammar-formula {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-family: var(--font-jp);
+            font-size: 1.25rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            border: 1px dashed var(--border-color);
+            display: inline-block;
+        }
+
+        .particle-badge {
+            background: var(--accent-primary);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin: 0 0.3rem;
+            display: inline-block;
+        }
+
+        /* Review Master Tables */
+        .review-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .review-table th {
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .review-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .review-table tr:hover {
+            background: rgba(14, 165, 233, 0.05);
+        }
+
+        .review-table .jp-col {
+            font-family: var(--font-jp);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--accent-tertiary);
+        }
+
+        /* Kanji Section Grid */
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kanji-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kanji-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .kanji-top {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .kanji-char {
+            font-family: var(--font-jp);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-primary);
+            line-height: 1;
+            background: var(--bg-tertiary);
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .kanji-info h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        .kanji-readings {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .kanji-readings span {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .kanji-example {
+            background: var(--bg-primary);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .kanji-example:hover {
+            border-color: var(--accent-success);
+        }
+
+        /* Quiz Module */
+        .quiz-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .question-box {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .option-btn {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent-primary);
+            background: rgba(14, 165, 233, 0.1);
+        }
+
+        .option-btn.correct {
+            background: rgba(52, 211, 153, 0.2);
+            border-color: var(--accent-success);
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            background: rgba(244, 63, 94, 0.2);
+            border-color: var(--accent-danger);
+            color: #fff;
+        }
+
+        .quiz-score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 2rem;
+            color: var(--accent-success);
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            border: 2px solid var(--accent-success);
+        }
+
+        /* Verbatim Text Reference Box */
+        .verbatim-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 2rem;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #e6edf3;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .verbatim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .badge-100 {
+            background: #238636;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner h2 { font-size: 1.8rem; }
+            .grid-cards, .kanji-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 1rem; }
+            .tabs-nav { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">第 13 課</div>
+            <div class="logo-text">
+                <h1>Irodori (いろどり) Elementary 1</h1>
+                <p>Chapter 13: おしえてください (Please Teach Me / Bataaiye)</p>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button class="btn-audio-global" onclick="speakText('このきかいのつかいかたをおしえてください。まずおかねをいれて、つぎにボタンをおします。')">
+                <span>🔊</span> Speak Ch 13 Key Phrases
+            </button>
+            <button class="btn-theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> Theme
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Welcome Banner -->
+        <div class="banner">
+            <h2>おしえてください (Please Teach Me / Bataaiye)</h2>
+            <p>Master how to ask for and give step-by-step instructions for any machine or task in Japanese! Learn how-to expressions (<strong style="color:#fff; background:#0284c7; padding:0 6px; border-radius:4px;">～かた</strong>), sequential て-form chaining (<strong style="color:#fff; background:#4f46e5; padding:0 6px; border-radius:4px;">～て、～て、～ます</strong>), sequence connectors (<strong style="color:#fff; background:#d97706; padding:0 6px; border-radius:4px;">まず / つぎに / さいごに</strong>), conditional rules (<strong style="color:#fff; background:#059669; padding:0 6px; border-radius:4px;">～たら / ～と</strong>), and trying new things (<strong style="color:#fff; background:#9333ea; padding:0 6px; border-radius:4px;">～てみます</strong>)!</p>
+            <div class="banner-tags">
+                <div class="tag">🎯 Goal: Instructions samajhna, kaam ka tareeka poochna, step by step batana</div>
+                <div class="tag">⚙️ 13 Machines, 16 Operation Verbs & 10 Help Phrases</div>
+                <div class="tag">⚡ 100% Verbatim Complete Content (Lines 2663 to 2904)</div>
+                <div class="tag">🈹 24 Instruction Kanjis & 10-Q Master Quiz</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('steps')">
+                <span>⚙️</span> Machine Step-by-Step Simulator (まず / つぎに / さいごに)
+            </button>
+            <button class="tab-btn" onclick="switchTab('conditions')">
+                <span>🎛️</span> Condition & Try-Doing Generator (～たら / ～と / ～かた / ～てみます)
+            </button>
+            <button class="tab-btn" onclick="switchTab('teform')">
+                <span>🔗</span> Te-form Chaining Rules (～て、～て、～ます)
+            </button>
+            <button class="tab-btn" onclick="switchTab('vocab')">
+                <span>🗣️</span> 70+ Clickable Machines, Operations & Help Cards
+            </button>
+            <button class="tab-btn" onclick="switchTab('kanji')">
+                <span>🈹</span> Kanji Mastery (24 Ch 13 Kanjis)
+            </button>
+            <button class="tab-btn" onclick="switchTab('quiz')">
+                <span>🎮</span> Practice Quiz (10 Qs)
+            </button>
+            <button class="tab-btn" onclick="switchTab('verbatim')">
+                <span>📖</span> Verbatim Original Text (100% Complete)
+            </button>
+        </div>
+
+        <!-- TAB 1: Machine Step-by-Step Simulator -->
+        <div id="tab-steps" class="tab-content active">
+            <!-- Interactive Machine Instructions Simulator -->
+            <div class="interactive-box">
+                <h4>⚙️ Interactive Machine & Step-by-Step Instruction Simulator</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Select a machine or daily task below to see how Japanese instructions are organized using sequence connectors (<strong style="color:#fff;">まず / つぎに / それから / さいごに</strong>) and sequential <strong style="color:var(--accent-primary);">て-form chaining</strong>!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Select Equipment or Task (きかい / しごと)</label>
+                        <select id="sim-machine" onchange="updateMachineSim()">
+                            <option value="vending" selected>🧃 じどうはんばいき (Vending Machine Drink Purchase)</option>
+                            <option value="atm">🏧 ATM (Cash Withdrawal from ATM)</option>
+                            <option value="microwave">🍱 でんしレンジ (Microwave Heating Food)</option>
+                            <option value="washer">👔 せんたくき (Washing Machine Laundry)</option>
+                            <option value="coffee">☕ コーヒーき (Coffee Maker Brewing)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Instruction Style</label>
+                        <select id="sim-style" onchange="updateMachineSim()">
+                            <option value="sequence" selected>1️⃣ Sequential Connectors (まず、つぎに、さいごに...)</option>
+                            <option value="chain">2️⃣ Te-form Chaining (～て、～て、～ます - One flowing sentence!)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="sim-jp">まず、おかね を いれます。つぎに、のみもの の ボタン を おします。さいごに、のみもの と おつり を とります。</div>
+                    <div class="output-romaji" id="sim-romaji" style="margin-top:0.8rem;">Mazu, okane wo iremasu. Tsugi ni, nomimono no botan wo oshimasu. Saigo ni, nomimono to otsuri wo torimasu.</div>
+                    <div class="output-meaning" id="sim-meaning">Hindi Translation: Sabse pehle, paise daalo. Uske baad, drink ka button dabao. Ant mein, drink aur chhutta (change) lo.</div>
+                    <button class="btn-action" onclick="speakMachineSim()">🔊 Speak Instructions in Japanese</button>
+                </div>
+            </div>
+
+            <!-- Grammar Point 46 Card -->
+            <div class="grammar-card">
+                <div class="grammar-title">
+                    <span>Sequence Connectors Grammar</span>
+                    <span class="particle-badge">まず / つぎに / さいごに</span>
+                </div>
+                <div class="grammar-formula">まず (First) → つぎに (Next) → それから (Then) → さいごに (Finally)</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    When explaining a process or giving step-by-step guidance in a Japanese factory, office, or train station, use these sequence adverbs:<br>
+                    • <strong style="color:var(--accent-primary);">まず (Mazu)</strong> = Sabse pehle / First of all.<br>
+                    • <strong style="color:var(--accent-secondary);">つぎに (次に - Tsugi ni)</strong> = Uske baad / Next step.<br>
+                    • <strong style="color:var(--accent-tertiary);">それから (Sorekara) / そのあと (その後 - Sono ato)</strong> = Phir / After that.<br>
+                    • <strong style="color:var(--accent-success);">さいごに (最後に - Saigo ni)</strong> = Ant mein / Finally / Last step.
+                </p>
+            </div>
+        </div>
+
+        <!-- TAB 2: Condition & Try-Doing Generator -->
+        <div id="tab-conditions" class="tab-content">
+            <!-- Grammar Point 44, 47, 48, 49 Card -->
+            <div class="grammar-card">
+                <div class="grammar-title">
+                    <span>How-to, Conditionals & Trying New Things</span>
+                    <span class="particle-badge">～かた / ～たら / ～と / ～てみます</span>
+                </div>
+                <div class="grammar-formula">ます-stem + かた / た-form + ら (If/When) / Dict-form + と (Automatic result) / て-form + みます</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    • <strong style="color:var(--accent-primary);">～かた (Grammar Pt 44)</strong> = Karne ka tareeka / How to do. Remove <strong style="color:#fff;">ます</strong> from any verb and add <strong style="color:#fff;">かた (方)</strong>! Notice that the object particle <strong style="color:#fff;">を</strong> changes to <strong style="color:#fff;">の</strong> (e.g. <strong style="color:#fff;">きかい の つかいかた</strong> - machine use method, <strong style="color:#fff;">かんじ の よみかた</strong> - kanji reading method).<br>
+                    • <strong style="color:var(--accent-tertiary);">～たら (Grammar Pt 47)</strong> = Agar/Jab _____ ho (Conditional "If/When"). Formed by taking the past tense <strong style="color:#fff;">た form + ら</strong> (e.g. <strong style="color:#fff;">ボタン を おしたら</strong> - button dabane pe, <strong style="color:#fff;">わからなかったら</strong> - samajh na aaye toh).<br>
+                    • <strong style="color:var(--accent-info);">～と (Grammar Pt 48)</strong> = Automatic natural result ("When A happens, B automatically happens"). Use Verb dictionary form + <strong style="color:#fff;">と</strong> (e.g. <strong style="color:#fff;">ボタン を おすと、でんき が つきます</strong> - when you press button, light turns on). ⚠️ Do NOT use <strong style="color:#fff;">と</strong> for requests or suggestions!<br>
+                    • <strong style="color:var(--accent-success);">～てみます (Grammar Pt 49)</strong> = Karke dekhna / To try doing something to see what happens! Formed by <strong style="color:#fff;">て-form + みます</strong> (e.g. <strong style="color:#fff;">この りょうり を たべてみます</strong> - I'll try eating this dish).
+                </p>
+
+                <!-- Interactive Conditionals & How-To Builder -->
+                <div style="background:var(--bg-tertiary); padding:1.5rem; border-radius:16px; margin-bottom:1.5rem; border:1px solid var(--border-color);">
+                    <h5 style="color:var(--accent-primary); margin-bottom:1rem; font-size:1.1rem;">🎛️ Interactive How-To & Conditional Conjugator</h5>
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-bottom:1rem;">
+                        <div class="input-group">
+                            <label>Question / Condition (かた / たら / と)</label>
+                            <select id="cond-q" onchange="updateCondSim()">
+                                <option value="この きかい の つかいかた を おしえて ください。|Kono kikai no tsukaikata wo oshiete kudasai.|Is machine ka use karne ka tareeka bataaiye please (Teach me how to use this machine 🙏)" selected>つかいかた を おしえて ください (How to use? 🙏)</option>
+                                <option value="この かんじ の よみかた が わかりません。|Kono kanji no yomikata ga wakarimasen.|Is kanji ko padhne ka tareeka nahi pata (Don't know how to read this kanji 🈹)">よみかた が わかりません (Don't know how to read 🈹)</option>
+                                <option value="ボタン を おすと、どう なりますか？|Botan wo osu to, dou narimasu ka?|Button dabane pe automatic kya hota hai? (What happens when pressed? 🔘)">ボタン を おすと、どう なりますか？ (What happens automatically? 🔘)</option>
+                                <option value="つかいかた が わからなかったら、どう しますか？|Tsukaikata ga wakaranakattara, dou shimasu ka?|Use karne ka tareeka samajh na aaye toh kya karun? (If I don't understand, what should I do? ❓)">わからなかったら、どう しますか？ (If I don't understand? ❓)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Action / Answer (と / たら / てみます)</label>
+                            <select id="cond-ans" onchange="updateCondSim()">
+                                <option value="まず、この あおい ボタン を おして みて ください。|Mazu, kono aoi botan wo oshite mite kudasai.|Sabse pehle, yeh neela button dabake dekhiye (First, try pressing this blue button 🔵)" selected>ボタン を おして みて ください (Try pressing button 🔵)</option>
+                                <option value="この ボタン を おすと、でんき が つきます。|Kono botan wo osu to, denki ga tsukimasu.|Yeh button dabane pe automatic light chalu hoti hai (When pressed, light turns on 💡)">おすと、でんき が つきます (Light turns on automatically 💡)</option>
+                                <option value="わからなかったら、いつでも せんぱい に きいて ください。|Wakaranakattara, itsudemo senpai ni kiite kudasai.|Samajh na aaye toh, kabhi bhi senior se pooch lijiye (If you don't understand, ask senior 🙋‍♂️)">わからなかったら、きいて ください (If unsure, ask senior 🙋‍♂️)</option>
+                                <option value="この アプリ を つかって みて も いいですか？|Kono apuri wo tsukatte mitemo ii desu ka?|Yeh app use karke dekhun kya? (May I try using this app? 📱)">アプリ を つかって みます (I'll try using this app 📱)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-action" style="margin-top:0; width:100%; justify-content:center;" onclick="speakCondSim()">🔊 Speak Conditional Dialogue</button>
+                    <div id="cond-output" style="font-family:var(--font-jp); font-size:1.3rem; font-weight:700; color:var(--text-main); margin-top:1.2rem; padding:1rem; background:var(--bg-primary); border-radius:12px; border:1px solid var(--border-color);">この きかい の つかいかた を おしえて ください。まず、この あおい ボタン を おして みて ください。<span style="font-size:0.95rem; color:var(--accent-info); font-weight:500; display:block; margin-top:0.5rem; font-style:italic;">(Kono kikai no tsukaikata wo oshiete kudasai. Mazu, kono aoi botan wo oshite mite kudasai.)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Te-form Chaining Rules -->
+        <div id="tab-teform" class="tab-content">
+            <div class="section-header">
+                <h3>🔗 Te-form Conjugation & Sequential Chaining (Grammar Pt 45)</h3>
+                <p>Master connecting actions sequentially: <strong style="color:#fff;">～て、～て、～ます</strong> = Pehle yeh karo, phir yeh karo!</p>
+            </div>
+
+            <div class="grammar-card">
+                <div class="grammar-title">
+                    <span>Sequential Action Chaining</span>
+                    <span class="particle-badge">Verb て-form + Verb て-form + Verbます</span>
+                </div>
+                <div class="grammar-formula">ボタン を おして、おかね を いれて、きっぷ を とります。</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    Instead of saying separate sentences like <strong style="color:#fff;">おかねをいれます。ボタンをおします。きっぷをとります。</strong>, Japanese speakers link verbs into one flowing sentence using the <strong style="color:var(--accent-primary);">て-form</strong>! The tense of the entire sentence is decided by the VERY LAST verb!
+                </p>
+
+                <!-- Review Table for Te-form Rules -->
+                <h5 style="color:var(--accent-primary); margin:1.5rem 0 1rem; font-size:1.2rem;">Complete Te-form Rules Table (From irodori.txt Lines 2715–2743)</h5>
+                <table class="review-table">
+                    <thead>
+                        <tr>
+                            <th>Verb Group</th>
+                            <th>Dictionary Ending</th>
+                            <th>Conjugation Change</th>
+                            <th>Dictionary → て-form</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick="speakText('かって、まって、かえって')">
+                            <td rowspan="3"><strong style="color:var(--accent-info);">Group 1 (う-verbs)</strong></td>
+                            <td>う、つ、る</td>
+                            <td><span class="particle-badge">って</span></td>
+                            <td class="jp-col">かう → かって<br>まつ → まって<br>かえる → かえって</td>
+                            <td>Buy → Buying<br>Wait → Waiting<br>Return → Returning</td>
+                        </tr>
+                        <tr onclick="speakText('よんで、あそんで、しんで')">
+                            <td>む、ぶ、ぬ</td>
+                            <td><span class="particle-badge" style="background:var(--accent-success);">んで</span></td>
+                            <td class="jp-col">よむ → よんで<br>あそぶ → あそんで<br>しぬ → しんで</td>
+                            <td>Read → Reading<br>Play → Playing<br>Die → Dying</td>
+                        </tr>
+                        <tr onclick="speakText('かいて、およいで、はなして、いって')">
+                            <td>く → いて<br>ぐ → いで<br>す → して</td>
+                            <td><span class="particle-badge" style="background:var(--accent-tertiary);">いて / いで / して</span></td>
+                            <td class="jp-col">かく → かいて<br>およぐ → およいで<br>はなす → はなして<br><strong style="color:var(--accent-danger);">⚠️ いく → いって*</strong></td>
+                            <td>Write → Writing<br>Swim → Swimming<br>Speak → Speaking<br><strong style="color:var(--accent-danger);">Go → Going (Exception!)</strong></td>
+                        </tr>
+                        <tr onclick="speakText('たべて、みて、おきて、でて')">
+                            <td><strong style="color:var(--accent-success);">Group 2 (る-verbs)</strong></td>
+                            <td>る (with e/i sound)</td>
+                            <td><span class="particle-badge" style="background:#d97706;">る hatao + て</span></td>
+                            <td class="jp-col">たべる → たべて<br>みる → みて<br>おきる → おきて<br>でる → でて</td>
+                            <td>Eat → Eating<br>See → Seeing<br>Wake → Waking<br>Exit → Exiting</td>
+                        </tr>
+                        <tr onclick="speakText('して、きて')">
+                            <td><strong style="color:var(--accent-danger);">Group 3 (Irregular)</strong></td>
+                            <td>する / くる</td>
+                            <td><span class="particle-badge" style="background:var(--accent-danger);">Irregular</span></td>
+                            <td class="jp-col">する → して<br>くる → きて</td>
+                            <td>Do → Doing<br>Come → Coming</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 4: 70+ Clickable Machines, Operations & Help Cards -->
+        <div id="tab-vocab" class="tab-content">
+            <div class="section-header">
+                <h3>Machines & Equipment Vocabulary (きかい / Kikai - 13 Words)</h3>
+                <p>Click any card to hear its pronunciation in Japanese!</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('きかい')"><div class="card-top"><div class="jp-text">きかい (機械)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kikai</div><div class="meaning-text">Machine / Yantra / Equipment ⚙️</div></div>
+                <div class="card" onclick="speakText('パソコン')"><div class="card-top"><div class="jp-text">パソコン</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Pasokon</div><div class="meaning-text">Computer / Personal Computer (PC) 💻</div></div>
+                <div class="card" onclick="speakText('スマホ')"><div class="card-top"><div class="jp-text">スマホ</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sumaho</div><div class="meaning-text">Smartphone / Mobile phone 📱</div></div>
+                <div class="card" onclick="speakText('プリンター')"><div class="card-top"><div class="jp-text">プリンター</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Purintaa</div><div class="meaning-text">Printer / Chhapne ki machine 🖨️</div></div>
+                <div class="card" onclick="speakText('コピーき')"><div class="card-top"><div class="jp-text">コピーき (コピー機)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kopiiki</div><div class="meaning-text">Copier / Photocopy machine 📄</div></div>
+                <div class="card" onclick="speakText('じどうはんばいき')"><div class="card-top"><div class="jp-text">じどうはんばいき (自動販売機)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Jidouhanbaiki</div><div class="meaning-text">Vending machine / Automatic selling machine 🧃</div></div>
+                <div class="card" onclick="speakText('えーてぃーえむ')"><div class="card-top"><div class="jp-text">ATM (エーティーエム)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Eetiiemu</div><div class="meaning-text">ATM cash dispenser 🏧</div></div>
+                <div class="card" onclick="speakText('せんたくき')"><div class="card-top"><div class="jp-text">せんたくき (洗濯機)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sentakuki</div><div class="meaning-text">Washing machine / Kapde dhone ki machine 👔</div></div>
+                <div class="card" onclick="speakText('でんしれんじ')"><div class="card-top"><div class="jp-text">でんしレンジ (電子レンジ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Denshi renji</div><div class="meaning-text">Microwave oven 🍱</div></div>
+                <div class="card" onclick="speakText('そうじき')"><div class="card-top"><div class="jp-text">そうじき (掃除機)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Soujiki</div><div class="meaning-text">Vacuum cleaner / Safai karne ki machine 🧹</div></div>
+                <div class="card" onclick="speakText('えあこん')"><div class="card-top"><div class="jp-text">エアコン</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Eakon</div><div class="meaning-text">Air Conditioner (AC) ❄️</div></div>
+                <div class="card" onclick="speakText('でんき')"><div class="card-top"><div class="jp-text">でんき (電気)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Denki</div><div class="meaning-text">Electric light / Electricity 💡</div></div>
+                <div class="card" onclick="speakText('わいふぁい')"><div class="card-top"><div class="jp-text">Wi-Fi (ワイファイ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Waifai</div><div class="meaning-text">Wireless internet (WiFi) 📶</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>Operation & Instruction Verbs Vocabulary (16 Words)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('おします')"><div class="card-top"><div class="jp-text">おします (押します)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Oshimasu</div><div class="meaning-text">Dabana / To press (a button) / To push 🔘</div></div>
+                <div class="card" onclick="speakText('いれます')"><div class="card-top"><div class="jp-text">いれます (入れます)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Iremasu</div><div class="meaning-text">Daalna / To insert / To put in 📥</div></div>
+                <div class="card" onclick="speakText('だします')"><div class="card-top"><div class="jp-text">だします (出します)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Dashimasu</div><div class="meaning-text">Nikalna / To take out / Withdraw 📤</div></div>
+                <div class="card" onclick="speakText('つけます')"><div class="card-top"><div class="jp-text">つけます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tsukemasu</div><div class="meaning-text">Chalu karna / To turn on (light/power) 💡</div></div>
+                <div class="card" onclick="speakText('けします')"><div class="card-top"><div class="jp-text">けします (消します)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Keshimasu</div><div class="meaning-text">Band karna / To turn off / To erase 🌑</div></div>
+                <div class="card" onclick="speakText('あけます')"><div class="card-top"><div class="jp-text">あけます (開けます)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Akemasu</div><div class="meaning-text">Kholna / To open (door/lid/box) 📂</div></div>
+                <div class="card" onclick="speakText('しめます')"><div class="card-top"><div class="jp-text">しめます (閉めます)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shimemasu</div><div class="meaning-text">Band karna / To close (door/lid) 🚪</div></div>
+                <div class="card" onclick="speakText('まわします')"><div class="card-top"><div class="jp-text">まわします (回します)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Mawashimasu</div><div class="meaning-text">Ghumana / To turn (a dial/knob) / Rotate 🔄</div></div>
+                <div class="card" onclick="speakText('ひきます')"><div class="card-top"><div class="jp-text">ひきます (引きます)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hikimasu</div><div class="meaning-text">Kheenchna / To pull / Draw towards 👈</div></div>
+                <div class="card" onclick="speakText('えらびます')"><div class="card-top"><div class="jp-text">えらびます (選びます)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Erabimasu</div><div class="meaning-text">Chunna / To select / Choose 👆</div></div>
+                <div class="card" onclick="speakText('とります')"><div class="card-top"><div class="jp-text">とります (取ります)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Torimasu</div><div class="meaning-text">Lena / To take / To pick up ✋</div></div>
+                <div class="card" onclick="speakText('おかねをいれます')"><div class="card-top"><div class="jp-text">おかね を いれます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Okane wo iremasu</div><div class="meaning-text">Paise daalna / To insert money 💰</div></div>
+                <div class="card" onclick="speakText('ぼたぬをおします')"><div class="card-top"><div class="jp-text">ボタン を おします</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Botan wo oshimasu</div><div class="meaning-text">Button dabana / To press the button 🔘</div></div>
+                <div class="card" onclick="speakText('かーどをいれます')"><div class="card-top"><div class="jp-text">カード を いれます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaado wo iremasu</div><div class="meaning-text">Card daalna / To insert card 💳</div></div>
+                <div class="card" onclick="speakText('あんしょうばんごうをいれます')"><div class="card-top"><div class="jp-text">あんしょうばんごう を いれます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Anshoubangou wo iremasu</div><div class="meaning-text">PIN number daalna / To enter secret PIN 🔐</div></div>
+                <div class="card" onclick="speakText('きんがくをいれます')"><div class="card-top"><div class="jp-text">きんがく を いれます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kingaku wo iremasu</div><div class="meaning-text">Amount daalna / To enter money amount 💵</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>Asking for Help & Clarification Phrases (10 Phrases)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('すみませんおしえてください')"><div class="card-top"><div class="jp-text">すみません、おしえて ください。</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sumimasen, oshiete kudasai.</div><div class="meaning-text">Excuse me, bataaiye please (Teach me please) 🙏</div></div>
+                <div class="card" onclick="speakText('これはどうやってつかいますか')"><div class="card-top"><div class="jp-text">これ は どう やって つかいますか？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kore wa dou yatte tsukaimasu ka?</div><div class="meaning-text">Yeh kaise use karte hain? (How do I use this?) ❓</div></div>
+                <div class="card" onclick="speakText('つかいかたがわかりません')"><div class="card-top"><div class="jp-text">つかいかた が わかりません。</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tsukaikata ga wakarimasen.</div><div class="meaning-text">Use karne ka tareeka nahi pata (I don't know how to use it) 🆘</div></div>
+                <div class="card" onclick="speakText('もういちどおねがいします')"><div class="card-top"><div class="jp-text">もう いちど おねがいします。</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Mou ichido onegaishimasu.</div><div class="meaning-text">Ek baar aur please (Once more please) 🔁</div></div>
+                <div class="card" onclick="speakText('もうすこしゆっくりおねがいします')"><div class="card-top"><div class="jp-text">もう すこし ゆっくり おねがいします。</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Mou sukoshi yukkuri onegaishimasu.</div><div class="meaning-text">Thoda dheere please (A little more slowly please) 🐢</div></div>
+                <div class="card" onclick="speakText('これはどうしますか')"><div class="card-top"><div class="jp-text">ここ は どう しますか？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Koko wa dou shimasu ka?</div><div class="meaning-text">Yahaan kya karna hai? (What should I do here?) ❓</div></div>
+                <div class="card" onclick="speakText('これでいいですか')"><div class="card-top"><div class="jp-text">これ で いいですか？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kore de ii desu ka?</div><div class="meaning-text">Yeh theek hai? (Is this correct/okay?) ✔️</div></div>
+                <div class="card" onclick="speakText('あっわかりました')"><div class="card-top"><div class="jp-text">あっ、わかりました！</div><button class="btn-audio">🔊</button></div><div class="romaji-text">A', wakarimashita!</div><div class="meaning-text">Accha, samajh gaya! (Oh, I understand now!) 💡</div></div>
+                <div class="card" onclick="speakText('まだわかりません')"><div class="card-top"><div class="jp-text">まだ わかりません。</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Mada wakarimasen.</div><div class="meaning-text">Abhi bhi nahi samjha (I still don't understand) ❓</div></div>
+                <div class="card" onclick="speakText('やってみてもいいですか')"><div class="card-top"><div class="jp-text">やって みて も いいですか？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Yatte mitemo ii desu ka?</div><div class="meaning-text">Karke dekhun kya? (May I try doing it?) 🙋‍♂️</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 5: Kanji Mastery -->
+        <div id="tab-kanji" class="tab-content">
+            <div class="section-header">
+                <h3>🈹 Chapter 13 Kanji Mastery (漢字 - 24 Instruction & Machine Kanjis)</h3>
+                <p>Master 24 vital Kanjis for machines, operations, directions, and methods!</p>
+            </div>
+
+            <div class="kanji-grid">
+                <!-- Kanji 1: 方 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">方</div><div class="kanji-info"><h5>Method / Direction (Kata)</h5><div class="kanji-readings">Kun: <span>かた (kata)</span><br>On: <span>ホウ (hou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('つかいかたとよみかた')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">使い方 (つかいかた) / 読み方</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Tsukaikata (How to use) / Yomikata</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 2: 教 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">教</div><div class="kanji-info"><h5>Teach (Oshi.eru/Kyou)</h5><div class="kanji-readings">Kun: <span>おし・える / おそ・わる</span><br>On: <span>キョウ (kyou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おしえてくださいときょうしつ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">教えて (おしえて) / 教室</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Oshiete kudasai (Teach me) / Kyoushitsu</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 3: 機 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">機</div><div class="kanji-info"><h5>Machine / Mechanism (Ki)</h5><div class="kanji-readings">Kun: <span>はた</span><br>On: <span>キ (ki)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きかいとこぴーき')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">機械 (きかい) / コピー機</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kikai (Machine) / Kopiiki (Copier)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 4: 械 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">械</div><div class="kanji-info"><h5>Contraption / Machine (Kai)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>カイ (kai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きかい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">機械 (きかい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kikai → Machine / Yantra</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 5: 押 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">押</div><div class="kanji-info"><h5>Push / Press (O.su)</h5><div class="kanji-readings">Kun: <span>お・す / お・さえる</span><br>On: <span>オウ (ou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ぼたんをおします')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">押します (おします) / 押し入れ</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Oshimasu → To press/push (a button)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 6: 引 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">引</div><div class="kanji-info"><h5>Pull (Hi.ku/In)</h5><div class="kanji-readings">Kun: <span>ひ・く / ひ・ける</span><br>On: <span>イン (in)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ひきますとひきだし')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">引きます (ひきます) / 引き出し</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Hikimasu (To pull) / Hikidashi (Drawer)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 7: 入 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">入</div><div class="kanji-info"><h5>Insert / Enter (I.reru/Hai.ru)</h5><div class="kanji-readings">Kun: <span>い・れる / はい・る</span><br>On: <span>ニュウ (nyuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おかねをいれますとはいります')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">入れます (いれます) / 入ります</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Iremasu (To insert) / Hairimasu (To enter)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 8: 出 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">出</div><div class="kanji-info"><h5>Take out / Exit (Da.su/De.ru)</h5><div class="kanji-readings">Kun: <span>だ・す / で・る</span><br>On: <span>シュツ (shutsu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('だしますとでぐち')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">出します (だします) / 出口</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Dashimasu (To take out) / Deguchi (Exit)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 9: 開 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">開</div><div class="kanji-info"><h5>Open (A.keru/Kai)</h5><div class="kanji-readings">Kun: <span>あ・ける / あ・く</span><br>On: <span>カイ (kai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('あけますとあきます')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">開けます (あけます) / 開会</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Akemasu → To open / Kholna</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 10: 閉 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">閉</div><div class="kanji-info"><h5>Close (Shi.meru/Hei)</h5><div class="kanji-readings">Kun: <span>し・める / し・まる</span><br>On: <span>ヘイ (hei)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('しめますとしまります')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">閉めます (しめます) / 閉会</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shimemasu → To close / Band karna</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 11: 消 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">消</div><div class="kanji-info"><h5>Erase / Turn off (Ke.su)</h5><div class="kanji-readings">Kun: <span>け・す / き・える</span><br>On: <span>ショウ (shou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('でんきをけします')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">消します (けします) / 消しゴム</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Keshimasu (Turn off) / Keshigomu (Eraser)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 12: 回 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">回</div><div class="kanji-info"><h5>Turn / Times (Mawa.su/Kai)</h5><div class="kanji-readings">Kun: <span>まわ・す / まわ・る</span><br>On: <span>カイ / エ (kai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('まわしますといっかい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">回します (まわします) / 一回</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Mawashimasu (Rotate) / Ikkai (1 time)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 13: 選 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">選</div><div class="kanji-info"><h5>Choose / Select (Era.bu)</h5><div class="kanji-readings">Kun: <span>えら・ぶ</span><br>On: <span>セン (sen)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ぼたんをえらびますとせんしゅ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">選びます (えらびます) / 選手</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Erabimasu → To select / Chunna</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 14: 取 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">取</div><div class="kanji-info"><h5>Take / Pick up (To.ru)</h5><div class="kanji-readings">Kun: <span>と・る</span><br>On: <span>シュ (shu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きっぷをとります')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">取ります (とります)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Torimasu → To take / Lena / Pick up</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 15: 洗 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">洗</div><div class="kanji-info"><h5>Wash (Ara.u/Sen)</h5><div class="kanji-readings">Kun: <span>あら・う (arau)</span><br>On: <span>セン (sen)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('せんたくきとてをあらう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">洗濯機 (せんたくき) / 手を洗う</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Sentakuki (Washer) / Te wo arau (Wash hands)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 16: 濯 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">濯</div><div class="kanji-info"><h5>Laundry / Wash (Taku)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>タク (taku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('せんたくき')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">洗濯機 (せんたくき)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Sentakuki → Washing machine</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 17: 自 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">自</div><div class="kanji-info"><h5>Self (Ji/Mizu.kara)</h5><div class="kanji-readings">Kun: <span>みずか・ら</span><br>On: <span>ジ / シ (ji/shi)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('じどうはんばいきとじぶん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">自動販売機 / 自分 (じぶん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Jidouhanbaiki (Vending) / Jibun (Self)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 18: 動 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">動</div><div class="kanji-info"><h5>Move / Motion (Dou/Ugo.ku)</h5><div class="kanji-readings">Kun: <span>うご・く / うご・かす</span><br>On: <span>ドウ (dou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('じどうはんばいきとうごきます')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">自動販売機 / 動きます</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Jidouhanbaiki / Ugokimasu (Moves)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 19: 販 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">販</div><div class="kanji-info"><h5>Marketing / Sell (Han)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ハン (han)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('じどうはんばいきとはんばい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">自動販売機 (じどうはんばいき)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Jidouhanbaiki → Vending machine</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 20: 売 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">売</div><div class="kanji-info"><h5>Sell (U.ru/Bai)</h5><div class="kanji-readings">Kun: <span>う・る / う・れる</span><br>On: <span>バイ (bai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('うりますとはんばいき')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">売ります (うります) / 販売機</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Urimasu (To sell) / Hanbaiki (Vending machine)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 21: 暗 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">暗</div><div class="kanji-info"><h5>Dark / Secret (An/Kura.i)</h5><div class="kanji-readings">Kun: <span>くら・い (kurai)</span><br>On: <span>アン (an)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('あんしょうばんごうとくらい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">暗証番号 (あんしょうばんごう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Anshoubangou (Secret PIN number)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 22: 証 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">証</div><div class="kanji-info"><h5>Proof / Evidence (Shou)</h5><div class="kanji-readings">Kun: <span>あかし</span><br>On: <span>ショウ (shou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('あんしょうばんごうとしょうめい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">暗証番号 / 証明 (しょうめい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Anshoubangou (PIN) / Shoumei (Proof)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 23: 番 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">番</div><div class="kanji-info"><h5>Turn / Number (Ban)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>バン (ban)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('あんしょうばんごうといちばん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">番号 (ばんごう) / 一番 (いちばん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Bangou (Number) / Ichiban (Number one)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 24: 号 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">号</div><div class="kanji-info"><h5>Number / Symbol (Gou)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ゴウ (gou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ばんごうとしんごう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">番号 (ばんごう) / 信号 (しんごう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Bangou (Number) / Shingou (Traffic signal)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Practice Quiz (10 Questions) -->
+        <div id="tab-quiz" class="tab-content">
+            <div class="quiz-container">
+                <div class="section-header" style="text-align: center;">
+                    <h3>🎯 Chapter 13 Machine & Instruction Mastery Quiz (10 Questions)</h3>
+                    <p>Test your step-by-step instructions, how-to expressions, て-form chaining, conditional rules, and Kanjis!</p>
+                </div>
+
+                <div id="quiz-area">
+                    <!-- Quiz dynamically rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 7: Verbatim Original Text (100% Complete) -->
+        <div id="tab-verbatim" class="tab-content">
+            <div class="verbatim-box">
+                <div class="verbatim-header">
+                    <span style="font-weight: 700; color: #38bdf8;">📄 Original irodori.txt Content (Lines 2663 to 2904 - Chapter 13 Complete)</span>
+                    <span class="badge-100">✔ 100% Zero Character Loss Guarantee</span>
+                </div>
+                <pre># 📘 Chapter 13: おしえてください (Oshiete Kudasai) - Please Teach Me / Bataaiye
+
+## 🎯 Goal: Instructions samajhna, kaam ka tareeka poochna, step by step batana
+
+---
+
+### **Grammar Point 44: ～かた (How to do / Karne ka tareeka)**
+
+**ます form se ます hatao + かた (方) = Karne ka tareeka**
+
+| ます form | かた form | Meaning |
+|---|---|---|
+| つかいます | つかい**かた** | Use karne ka tareeka |
+| たべます | たべ**かた** | Khane ka tareeka |
+| かきます | かき**かた** | Likhne ka tareeka |
+| よみます | よみ**かた** | Padhne ka tareeka |
+| のみます | のみ**かた** | Peene ka tareeka |
+| つくります | つくり**かた** | Banane ka tareeka |
+| いきます | いき**かた** | Jaane ka tareeka |
+| します | し**かた** | Karne ka tareeka |
+
+**Examples:**
+- この きかい (機械) の つかいかた を おしえて ください。
+  → Is machine ka use karne ka tareeka bataaiye.
+
+- この かんじ (漢字) の よみかた を おしえて ください。
+  → Is kanji ko padhne ka tareeka bataaiye.
+
+- きっぷ の かいかた (買い方) が わかりません。
+  → Ticket khareedne ka tareeka nahi pata.
+
+- この りょうり の つくりかた を おしえて ください。
+  → Is dish banane ka tareeka bataaiye.
+
+---
+
+### **Grammar Point 45: ～て, ～て, ～ます (Sequential actions / Ek ke baad ek)**
+
+**て-form se actions ko connect karna = Pehle yeh karo, phir yeh karo**
+
+**Examples:**
+- ボタン を おし**て**、おかね を いれ**て**、きっぷ を とります。
+  → Button daba**ke**, paise daal**ke**, ticket nikalo.
+
+- みぎ に まがっ**て**、まっすぐ いっ**て**、ひだり に あります。
+  → Daayein mud**ke**, seedha jaa**ke**, baayein mein hai.
+
+- て を あらっ**て**、エプロン を つけ**て**、りょうり を します。
+  → Haath dho**ke**, apron lagaa**ke**, khana banate hain.
+
+---
+
+### **Te-form Rules (Important!):**
+
+**Group 1 Verbs (う-verbs):**
+
+| Ending | Change | Example | て-form |
+|---|---|---|---|
+| う、つ、る | って | かう → かって | Buy → Buying |
+| | | まつ → まって | Wait → Waiting |
+| | | かえる → かえって* | Return → Returning |
+| む、ぶ、ぬ | んで | よむ → よんで | Read → Reading |
+| | | あそぶ → あそんで | Play → Playing |
+| | | しぬ → しんで | Die → Dying |
+| く | いて | かく → かいて | Write → Writing |
+| ぐ | いで | およぐ → およいで | Swim → Swimming |
+| す | して | はなす → はなして | Speak → Speaking |
+
+⚠️ Exception: いく → い**って** (NOT いいて)
+
+**Group 2 Verbs (る-verbs):**
+- る hatao + て
+- たべる → たべて
+- みる → みて
+- おきる → おきて
+- でる → でて
+
+**Group 3 Verbs (Irregular):**
+- する → して
+- くる → きて
+
+---
+
+### **Common Machines/Equipment Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| きかい (機械) | Kikai | Machine |
+| パソコン | Pasokon | Computer/PC |
+| スマホ | Sumaho | Smartphone |
+| プリンター | Purintaa | Printer |
+| コピーき (コピー機) | Kopiiki | Copier |
+| じどうはんばいき (自動販売機) | Jidouhanbaiki | Vending machine |
+| ATM (エーティーエム) | Eetiiemu | ATM |
+| せんたくき (洗濯機) | Sentakuki | Washing machine |
+| でんしレンジ (電子レンジ) | Denshi renji | Microwave |
+| そうじき (掃除機) | Soujiki | Vacuum cleaner |
+| エアコン | Eakon | AC |
+| でんき (電気) | Denki | Light |
+| Wi-Fi (ワイファイ) | Waifai | WiFi |
+
+---
+
+### **Operation/Instruction Words:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| おします (押します) | Oshimasu | Dabana/Press |
+| いれます (入れます) | Iremasu | Daalna/Put in |
+| だします (出します) | Dashimasu | Nikalna/Take out |
+| つけます | Tsukemasu | Chalu karna/Turn on |
+| けします (消します) | Keshimasu | Band karna/Turn off |
+| あけます (開けます) | Akemasu | Kholna/Open |
+| しめます (閉めます) | Shimemasu | Band karna/Close |
+| まわします (回します) | Mawashimasu | Ghumana/Turn/Rotate |
+| ひきます (引きます) | Hikimasu | Kheenchna/Pull |
+| おします (押します) | Oshimasu | Dhakka dena/Push |
+| えらびます (選びます) | Erabimasu | Chunna/Select |
+| とります (取ります) | Torimasu | Lena/Take |
+| いれます (入れます) | Iremasu | Daalna/Insert |
+| おかね を いれます | Okane wo iremasu | Paise daalna |
+| ボタン を おします | Botan wo oshimasu | Button dabana |
+| カード を いれます | Kaado wo iremasu | Card daalna |
+
+---
+
+### **Grammar Point 46: まず / つぎに / さいごに (First / Next / Finally)**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| まず | Mazu | Sabse pehle / First |
+| つぎに (次に) | Tsugi ni | Uske baad / Next |
+| それから | Sorekara | Phir / Then |
+| そのあと (その後) | Sono ato | Uske baad / After that |
+| さいごに (最後に) | Saigo ni | Ant mein / Finally |
+
+**Example - Vending Machine se juice khareedna:**
+```
+まず、おかね を いれます。
+(Mazu, okane wo iremasu.)
+Sabse pehle, paise daalo.
+
+つぎに、のみもの の ボタン を おします。
+(Tsugi ni, nomimono no botan wo oshimasu.)
+Uske baad, drink ka button dabao.
+
+さいごに、のみもの と おつり を とります。
+(Saigo ni, nomimono to otsuri wo torimasu.)
+Ant mein, drink aur chhutta lo.
+```
+
+---
+
+### **Example - ATM ka use:**
+
+```
+まず、カード を いれて ください。
+(Mazu, kaado wo irete kudasai.)
+Sabse pehle, card daaliye.
+
+つぎに、あんしょうばんごう (暗証番号) を いれて ください。
+(Tsugi ni, anshoubangou wo irete kudasai.)
+Phir, PIN number daaliye.
+
+それから、きんがく (金額) を いれて ください。
+(Sorekara, kingaku wo irete kudasai.)
+Phir, amount daaliye.
+
+さいごに、おかね と カード を とって ください。
+(Saigo ni, okane to kaado wo totte kudasai.)
+Ant mein, paise aur card le lijiye.
+```
+
+---
+
+### **Grammar Point 47: ～たら (If / When / Jab _____)**
+
+**た form + ら = Agar/Jab _____ ho**
+
+**Examples:**
+- ボタン を おし**たら**、でんき が つきます。
+  → Button daba**ne pe**, light chalu hoti hai.
+
+- ここ を おし**たら**、きっぷ が でます。
+  → Yahaan daba**ne pe**, ticket nikalta hai.
+
+- わからなかっ**たら**、きいて ください。
+  → Samajh na aa**ye toh**, pooch lijiye.
+
+- おわっ**たら**、れんらくして ください。
+  → Khatam ho jaa**ye toh**, contact kijiye.
+
+- こまっ**たら**、わたし に そうだんして ください。
+  → Mushkil ho **toh**, mujhse salah kijiye.
+
+---
+
+### **Grammar Point 48: ～と (If/When - automatic result)**
+
+**Dictionary form + と = Jab _____ kare toh (automatic/natural result)**
+
+**Examples:**
+- この ボタン を おす**と**、でんき が つきます。
+  → Yeh button daba**ne pe**, light chalu hoti hai.
+
+- みぎ に まがる**と**、えき が あります。
+  → Daayein mud**ne pe**, station hai.
+
+- はる に なる**と**、さくら が さきます (咲きます)。
+  → Basant aa**ne pe**, cherry blossom khilte hain.
+
+⚠️ **と** automatic/natural result ke liye - request/suggestion ke saath nahi use karte.
+
+---
+
+### **Asking for Help / Instructions:**
+
+| Japanese | Meaning |
+|---|---|
+| すみません、おしえて ください。 | Excuse me, bataaiye please. |
+| これ は どう やって つかいますか？ | Yeh kaise use karte hain? |
+| つかいかた が わかりません。 | Use karne ka tareeka nahi pata. |
+| もう いちど おねがいします。 | Ek baar aur please. |
+| もう すこし ゆっくり おねがいします。 | Thoda dheere please. |
+| ここ は どう しますか？ | Yahaan kya karna hai? |
+| これ で いいですか？ | Yeh theek hai? |
+| あっ、わかりました！ | Accha, samajh gaya! |
+| まだ わかりません。 | Abhi bhi nahi samjha. |
+| やって みて も いいですか？ | Karke dekhun kya? (Try karun?) |
+
+---
+
+### **Grammar Point 49: ～てみます (Try doing / Karke dekhna)**
+
+**て-form + みます = Karke dekhna / Try karna**
+
+**Examples:**
+- この りょうり を たべ**てみます**。 → Yeh khana kha**ke dekhta hoon**.
+- にほんご で はなし**てみます**。 → Japanese mein bol**ke dekhta hoon**.
+- この アプリ を つかっ**てみます**。 → Yeh app use kar**ke dekhta hoon**.
+- やっ**てみても** いいですか？ → Kar**ke dekhun**?</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>🎌 Built with precision for Irodori Elementary 1 Course • Chapter 13 Instructions & Machines Interactive Module</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">100% Content Preservation Guaranteed • Developed for Hindi & Roman Urdu Learners</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.innerText = '☀️';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerText = '🌙';
+            }
+        }
+
+        // Web Speech API - Japanese TTS
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Speech synthesis is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.95;
+            
+            const voices = window.speechSynthesis.getVoices();
+            const jpVoice = voices.find(v => v.lang.includes('ja') || v.lang.includes('JP'));
+            if (jpVoice) utterance.voice = jpVoice;
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Machine Step-by-Step Simulator Logic
+        const machineData = {
+            vending: {
+                seqJp: "まず、おかね を いれます。つぎに、のみもの の ボタン を おします。さいごに、のみもの と おつり を とります。",
+                seqRom: "Mazu, okane wo iremasu. Tsugi ni, nomimono no botan wo oshimasu. Saigo ni, nomimono to otsuri wo torimasu.",
+                seqMean: "Sabse pehle, paise daalo. Uske baad, drink ka button dabao. Ant mein, drink aur chhutta (change) lo.",
+                chainJp: "おかね を いれて、のみもの の ボタン を おして、のみもの と おつり を とります。",
+                chainRom: "Okane wo irete, nomimono no botan wo oshite, nomimono to otsuri wo torimasu.",
+                chainMean: "Paise daalke, drink ka button dabake, drink aur chhutta le lijiye (One sequential te-form chain!)."
+            },
+            atm: {
+                seqJp: "まず、カード を いれて ください。つぎに、あんしょうばんごう を いれて ください。それから、きんがく を いれて ください。さいごに、おかね と カード を とって ください。",
+                seqRom: "Mazu, kaado wo irete kudasai. Tsugi ni, anshoubangou wo irete kudasai. Sorekara, kingaku wo irete kudasai. Saigo ni, okane to kaado wo totte kudasai.",
+                seqMean: "Sabse pehle, card daaliye. Phir, PIN number daaliye. Phir, amount daaliye. Ant mein, paise aur card le lijiye.",
+                chainJp: "カード を いれて、あんしょうばんごう と きんがく を いれて、おかね と カード を とります。",
+                chainRom: "Kaado wo irete, anshoubangou to kingaku wo irete, okane to kaado wo torimasu.",
+                chainMean: "Card daalke, PIN aur amount daalke, paise aur card nikalte hain."
+            },
+            microwave: {
+                seqJp: "まず、とびら を あけます。つぎに、りょうり を いれます。それから、じかん の ボタン を おします。さいごに、スタート ボタン を おします。",
+                seqRom: "Mazu, tobira wo akemasu. Tsugi ni, ryouri wo iremasu. Sorekara, jikan no botan wo oshimasu. Saigo ni, sutaato botan wo oshimasu.",
+                seqMean: "Sabse pehle, darwaza kholo. Uske baad, khana andar rkho. Phir, time ka button dabao. Ant mein, start button dabao.",
+                chainJp: "とびら を あけて、りょうり を いれて、じかん を えらんで、スタート します。",
+                chainRom: "Tobira wo akete, ryouri wo irete, jikan wo erande, sutaato shimasu.",
+                chainMean: "Darwaza kholke, khana rakhke, time chunke, start karte hain."
+            },
+            washer: {
+                seqJp: "まず、ふく を いれます。つぎに、せんざい を いれます。さいごに、でんげん を つけて、スタート ボタン を おします。",
+                seqRom: "Mazu, fuku wo iremasu. Tsugi ni, senzai wo iremasu. Saigo ni, dengen wo tsukete, sutaato botan wo oshimasu.",
+                seqMean: "Sabse pehle, kapde daalo. Uske baad, detergent daalo. Ant mein, power on karke, start button dabao.",
+                chainJp: "ふく と せんざい を いれて、でんげん を つけて、せんたくき を まわします。",
+                chainRom: "Fuku to senzai wo irete, dengen wo tsukete, sentakuki wo mawashimasu.",
+                chainMean: "Kapde aur detergent daalke, power chalu karke, washing machine chalate hain."
+            },
+            coffee: {
+                seqJp: "まず、みず を いれます。つぎに、コーヒー の こな を いれます。さいごに、ボタン を おして ください。",
+                seqRom: "Mazu, mizu wo iremasu. Tsugi ni, koohii no kona wo iremasu. Saigo ni, botan wo oshite kudasai.",
+                seqMean: "Sabse pehle, pani daaliye. Uske baad, coffee powder daaliye. Ant mein, button daba dijiye.",
+                chainJp: "みず と コーヒー を いれて、ボタン を おして、コーヒー を つくります。",
+                chainRom: "Mizu to koohii wo irete, botan wo oshite, koohii wo tsukurimasu.",
+                chainMean: "Pani aur coffee daalke, button dabake, coffee banate hain."
+            }
+        };
+
+        function updateMachineSim() {
+            const mKey = document.getElementById('sim-machine').value;
+            const style = document.getElementById('sim-style').value;
+            const data = machineData[mKey];
+
+            if (style === 'sequence') {
+                document.getElementById('sim-jp').innerText = data.seqJp;
+                document.getElementById('sim-romaji').innerText = data.seqRom;
+                document.getElementById('sim-meaning').innerText = `Hindi Translation: ${data.seqMean}`;
+            } else {
+                document.getElementById('sim-jp').innerText = data.chainJp;
+                document.getElementById('sim-romaji').innerText = data.chainRom;
+                document.getElementById('sim-meaning').innerText = `Hindi Translation: ${data.chainMean}`;
+            }
+        }
+
+        function speakMachineSim() {
+            const jpText = document.getElementById('sim-jp').innerText;
+            speakText(jpText.replace(/。|、/g, ' '));
+        }
+
+        // Conditional & Try-doing Simulator Logic
+        function updateCondSim() {
+            const qVal = document.getElementById('cond-q').value.split('|');
+            const ansVal = document.getElementById('cond-ans').value.split('|');
+
+            const fullJp = `${qVal[0]} ${ansVal[0]}`;
+            const fullRom = `(${qVal[1]} ${ansVal[1]})`;
+
+            document.getElementById('cond-output').innerHTML = `${fullJp} <span style="font-size:0.95rem; color:var(--accent-info); font-weight:500; display:block; margin-top:0.5rem; font-style:italic;">${fullRom}</span>`;
+        }
+
+        function speakCondSim() {
+            const qVal = document.getElementById('cond-q').value.split('|')[0];
+            const ansVal = document.getElementById('cond-ans').value.split('|')[0];
+            speakText(`${qVal} ${ansVal}`);
+        }
+
+        // Quiz Module Logic (10 Comprehensive Questions)
+        const quizQuestions = [
+            {
+                q: "1. How do you form the expression 'How to use this machine / Use karne ka tareeka' (Grammar Pt 44)?",
+                options: [
+                    "この きかい の つかいかた (Kono kikai no tsukaikata) ✔️",
+                    "この きかい を つかいます かた (Kono kikai wo tsukaimasu kata)",
+                    "この きかい が つかって かた (Kono kikai ga tsukatte kata)",
+                    "この きかい と つかいかた (Kono kikai to tsukaikata)"
+                ],
+                correct: 0
+            },
+            {
+                q: "2. What is the correct て-form of the Group 1 exception verb 'いく (To go)'?",
+                options: [
+                    "いいて (Iite)",
+                    "いって (Itte - Exception!) ✔️",
+                    "いで (Ide)",
+                    "いんで (Inde)"
+                ],
+                correct: 1
+            },
+            {
+                q: "3. In a process sequence, what do the adverbs 'まず' and 'つぎに' mean (Grammar Pt 46)?",
+                options: [
+                    "Firstly (Sabse pehle) and Next (Uske baad) ✔️",
+                    "Finally and Never",
+                    "Sometimes and Always",
+                    "Yesterday and Tomorrow"
+                ],
+                correct: 0
+            },
+            {
+                q: "4. What is the Japanese word for 'Vending machine / Automatic selling machine'?",
+                options: [
+                    "せんたくき (Sentakuki - washing machine)",
+                    "じどうはんばいき (Jidouhanbaiki - automatic vending machine) ✔️",
+                    "でんしレンジ (Denshi renji - microwave)",
+                    "そうじき (Soujiki - vacuum cleaner)"
+                ],
+                correct: 1
+            },
+            {
+                q: "5. What is the difference between conditional '～たら' and '～と' (Grammar Pt 47 & 48)?",
+                options: [
+                    "と is for automatic/natural results (push button -> light turns on), while たら is general conditional/advice ✔️",
+                    "と is only used for past tense, while たら is for future",
+                    "They mean exactly the same thing in all situations",
+                    "と is used for people, while たら is for machines"
+                ],
+                correct: 0
+            },
+            {
+                q: "6. How do you say 'I will try eating this dish / Karke dekhna' (Grammar Pt 49)?",
+                options: [
+                    "この りょうり を たべたい です (I want to eat)",
+                    "この りょうり を たべて みます (Tabete mimasu - I'll try eating it) ✔️",
+                    "この りょうり を たべないで ください (Don't eat)",
+                    "この りょうり を たべなければ なりません (Must eat)"
+                ],
+                correct: 1
+            },
+            {
+                q: "7. Which phrase should you say when you don't know how to operate a machine?",
+                options: [
+                    "つかいかた が わかりません (Tsukaikata ga wakarimasen) ✔️",
+                    "おかえりなさい (Okaerinasai)",
+                    "いってきます (Ittekimasu)",
+                    "おさきに しつれいします (Osaki ni shitsurei shimasu)"
+                ],
+                correct: 0
+            },
+            {
+                q: "8. What is the correct て-form of 'よむ (To read - Group 1 ending in む)'?",
+                options: [
+                    "よって (Yotte)",
+                    "よんで (Yonde) ✔️",
+                    "よいて (Yoite)",
+                    "よみて (Yomite)"
+                ],
+                correct: 1
+            },
+            {
+                q: "9. How do you link the actions 'Press button -> Insert money -> Take ticket' into one sentence?",
+                options: [
+                    "ボタン を おして、おかね を いれて、きっぷ を とります ✔️",
+                    "ボタン を おす、おかね を いれる、きっぷ を とる",
+                    "ボタン を おします と、おかね を いれます と、きっぷ",
+                    "ボタン が おしたら、おかね が いれたら、きっぷ"
+                ],
+                correct: 0
+            },
+            {
+                q: "10. What does 'PIN number / Secret code' translate to in Japanese?",
+                options: [
+                    "でんわばんごう (Denwabangou)",
+                    "あんしょうばんごう (暗証番号 - Anshoubangou) ✔️",
+                    "へやばんごう (Heyabangou)",
+                    "いちばん (Ichiban)"
+                ],
+                correct: 1
+            }
+        ];
+
+        function renderQuiz() {
+            const quizArea = document.getElementById('quiz-area');
+            let html = '';
+            quizQuestions.forEach((item, index) => {
+                html += `
+                    <div class="question-box" id="q-${index}">
+                        <div class="question-text"><span>${item.q}</span></div>
+                        <div class="options-grid">
+                            ${item.options.map((opt, optIndex) => `
+                                <button class="option-btn" onclick="checkAnswer(${index}, ${optIndex})">
+                                    <span>${opt}</span>
+                                    <span class="status-icon"></span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            quizArea.innerHTML = html;
+        }
+
+        let score = 0;
+        let answered = new Array(quizQuestions.length).fill(false);
+
+        function checkAnswer(qIndex, optIndex) {
+            if (answered[qIndex]) return;
+            answered[qIndex] = true;
+
+            const qBox = document.getElementById(`q-${qIndex}`);
+            const buttons = qBox.querySelectorAll('.option-btn');
+            const correctIndex = quizQuestions[qIndex].correct;
+
+            if (optIndex === correctIndex) {
+                buttons[optIndex].classList.add('correct');
+                buttons[optIndex].querySelector('.status-icon').innerText = '🎉 Correct!';
+                score++;
+                speakText('せいかい！');
+            } else {
+                buttons[optIndex].classList.add('wrong');
+                buttons[optIndex].querySelector('.status-icon').innerText = '❌ Incorrect';
+                buttons[correctIndex].classList.add('correct');
+                buttons[correctIndex].querySelector('.status-icon').innerText = '✔ Correct Answer';
+            }
+
+            if (answered.every(val => val === true)) {
+                const quizArea = document.getElementById('quiz-area');
+                const scoreDiv = document.createElement('div');
+                scoreDiv.className = 'quiz-score';
+                scoreDiv.innerHTML = `🏆 Chapter 13 Machines & Instructions Quiz Completed!<br><span style="font-size:2rem; color:#fff; display:block; margin:0.5rem 0;">Your Score: ${score} / ${quizQuestions.length}</span><span style="font-size:1rem; color:var(--text-main); font-weight:500;">Amazing! You can now operate machines, give step-by-step guidance, and ask for help in Japanese!</span>`;
+                quizArea.appendChild(scoreDiv);
+            }
+        }
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        });
+    </script>
+<script src="nav.js"></script>
+</body>
+</html>

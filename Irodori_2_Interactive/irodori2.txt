@@ -1,0 +1,6415 @@
+# Irodori (いろどり) Elementary 2 - Chapter 1 to 3 Complete Guide
+
+---
+
+# 📘 Chapter 1: きょうのできごと (Kyou no Dekigoto) - Today's Happenings
+
+## 🎯 Goal: Din bhar ki baatein share karna, recent events batana, reactions dena, casual conversation
+
+---
+
+### **Daily Events Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| できごと (出来事) | Dekigoto | Ghatna/Event/Happening |
+| ニュース | Nyuusu | News/Khabar |
+| じけん (事件) | Jiken | Incident/Case |
+| じこ (事故) | Jiko | Accident |
+| はなし (話) | Hanashi | Baat/Story/Talk |
+| うわさ (噂) | Uwasa | Afwah/Rumor |
+| きょうみ (興味) | Kyoumi | Interest/Dilchaspi |
+| かんしん (関心) | Kanshin | Concern/Interest |
+| けいけん (経験) | Keiken | Experience/Anubhav |
+| きおく (記憶) | Kioku | Yaad/Memory |
+| きもち (気持ち) | Kimochi | Feeling/Ehsaas |
+| りゆう (理由) | Riyuu | Reason/Wajah |
+| げんいん (原因) | Genin | Cause/Kaaran |
+| けっか (結果) | Kekka | Result/Nateeja |
+| もんだい (問題) | Mondai | Problem/Samasya |
+| かいけつ (解決) | Kaiketsu | Solution/Hal |
+
+---
+
+### **Emotions & Reactions Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| うれしい (嬉しい) | Ureshii | Khush/Happy |
+| かなしい (悲しい) | Kanashii | Dukhi/Sad |
+| たのしい (楽しい) | Tanoshii | Mazedaar/Fun |
+| さびしい (寂しい) | Sabishii | Akela/Lonely |
+| くやしい (悔しい) | Kuyashii | Frustrating/Regretful |
+| はずかしい (恥ずかしい) | Hazukashii | Sharminda/Embarrassed |
+| こわい (怖い) | Kowai | Darawna/Scary |
+| いやだ (嫌だ) | Iya da | Pasand nahi/Hate it |
+| びっくりした | Bikkuri shita | Hairan ho gaya/Surprised |
+| がっかりした | Gakkari shita | Nirash ho gaya/Disappointed |
+| ほっとした | Hotto shita | Sukoon mila/Relieved |
+| どきどきした | Dokidoki shita | Dhadkan badh gayi/Nervous-excited |
+| わくわくした | Wakuwaku shita | Excited ho gaya/Thrilled |
+| いらいらした | Iraira shita | Irritate ho gaya/Annoyed |
+| しんぱいした (心配した) | Shinpai shita | Chinta hui/Worried |
+| あんしんした (安心した) | Anshin shita | Sukoon mila/Felt relieved |
+| こまった (困った) | Komatta | Pareshan ho gaya/Troubled |
+| つかれた (疲れた) | Tsukareta | Thak gaya/Tired |
+| あきた (飽きた) | Akita | Bor ho gaya/Got bored |
+| なっとくした (納得した) | Nattoku shita | Samajh aaya/Convinced |
+
+---
+
+### **Grammar Point 1: Plain Form Review (Casual Speech Foundation)**
+
+Elementary 2 mein **plain form** bahut important hai. Pehle quick review:
+
+#### **Verb Plain Forms:**
+
+| Type | ます form | Dictionary (plain +) | ない form (plain -) | た form (past +) | なかった (past -) |
+|------|----------|---------------------|--------------------|-----------------|--------------------|
+| Group 1 | いきます | いく | いかない | いった | いかなかった |
+| Group 1 | のみます | のむ | のまない | のんだ | のまなかった |
+| Group 1 | かきます | かく | かかない | かいた | かかなかった |
+| Group 1 | はなします | はなす | はなさない | はなした | はなさなかった |
+| Group 1 | まちます | まつ | またない | まった | またなかった |
+| Group 1 | かいます | かう | かわない | かった | かわなかった |
+| Group 2 | たべます | たべる | たべない | たべた | たべなかった |
+| Group 2 | みます | みる | みない | みた | みなかった |
+| Group 3 | します | する | しない | した | しなかった |
+| Group 3 | きます | くる | こない | きた | こなかった |
+
+#### **Adjective Plain Forms:**
+
+| Type | Present + | Present - | Past + | Past - |
+|------|-----------|-----------|--------|--------|
+| い-adj | たかい | たかくない | たかかった | たかくなかった |
+| い-adj (いい) | いい | よくない | よかった | よくなかった |
+| な-adj | しずかだ | しずかじゃない | しずかだった | しずかじゃなかった |
+
+#### **Noun + です Plain Forms:**
+
+| Form | Polite | Plain |
+|------|--------|-------|
+| Present + | がくせい です | がくせい だ |
+| Present - | がくせい じゃないです | がくせい じゃない |
+| Past + | がくせい でした | がくせい だった |
+| Past - | がくせい じゃなかったです | がくせい じゃなかった |
+
+---
+
+### **Grammar Point 2: ～んです / ～のです (Explanation & Emphasis)**
+
+**Plain form + んです = Actually _____ hai / Baat yeh hai ki _____**
+
+Yeh tab use hota hai jab:
+- Koi cheez explain kar rahe ho
+- Reason bata rahe ho
+- Background de rahe ho
+- Emphasis kar rahe ho
+
+#### **Formation:**
+
+| Type | Pattern | Example |
+|------|---------|---------|
+| Verb | Plain + んです | いく**んです** |
+| い-adj | い-adj + んです | たかい**んです** |
+| な-adj | な-adj + **な** + んです | しずか**なんです** |
+| Noun | Noun + **な** + んです | びょうき**なんです** |
+
+#### **Examples:**
+
+**Explaining situation:**
+```
+A: どうしたんですか？
+(Doushitan desu ka?)
+Kya hua? (What happened?)
+
+B: あたま が いたいんです。
+(Atama ga itain desu.)
+Actually sir dard hai.
+```
+
+**Giving reason:**
+```
+A: きょう は やすみますか？
+(Kyou wa yasumimasu ka?)
+Aaj chutti loge?
+
+B: はい、ねつ が あるんです。
+(Hai, netsu ga arun desu.)
+Haan, actually bukhar hai.
+```
+
+**Asking for explanation:**
+```
+どうして おくれたんですか？
+(Doushite okuretan desu ka?)
+Kyun late hue? (What's the reason?)
+
+でんしゃ が とまったんです。
+(Densha ga tomattan desu.)
+Actually train ruk gayi thi.
+```
+
+#### **Casual form: ～んだ / ～の**
+
+| Polite | Casual (male/neutral) | Casual (female/soft) |
+|--------|----------------------|---------------------|
+| いくんです | いくんだ | いくの |
+| おいしいんです | おいしいんだ | おいしいの |
+| びょうきなんです | びょうきなんだ | びょうきなの |
+
+**Casual examples:**
+```
+A: どうしたの？ (Doushita no?) - Kya hua?
+B: ちょっと つかれたんだ。(Chotto tsukaretan da.) - Thoda thak gaya.
+```
+
+---
+
+### **Grammar Point 3: ～て + Emotion (Reason for feeling)**
+
+**て-form + [Emotion word] = _____ hone ki wajah se [emotion]**
+
+**Examples:**
+```
+しけん に うかって、うれしい です。
+(Shiken ni ukatte, ureshii desu.)
+Exam pass hokar, khush hoon.
+
+ともだち が くに に かえって、さびしい です。
+(Tomodachi ga kuni ni kaette, sabishii desu.)
+Dost desh laut gaya, isliye akela feel ho raha.
+
+でんしゃ に おくれて、こまりました。
+(Densha ni okurete, komarimashita.)
+Train late ho gayi, isliye pareshan hua.
+
+さいふ を なくして、びっくりしました。
+(Saifu wo nakushite, bikkuri shimashita.)
+Wallet kho gayi, hairan ho gaya.
+
+プレゼント を もらって、うれしかった です。
+(Purezento wo moratte, ureshikatta desu.)
+Gift milke, khush hua.
+```
+
+---
+
+### **Grammar Point 4: ～たら (If/When - Conditional)**
+
+**た form + ら = Agar _____ ho toh / Jab _____ ho tab**
+
+#### **Formation:**
+- Verb た form + ら: いった**ら**、たべた**ら**、した**ら**
+- い-adj かった + ら: たかかった**ら**、よかった**ら**
+- な-adj だった + ら: しずかだった**ら**
+- Noun だった + ら: あめだった**ら**
+
+#### **Uses:**
+
+**1. Conditional (If):**
+```
+あした あめ が ふったら、うち に います。
+(Ashita ame ga futtara, uchi ni imasu.)
+Kal baarish hui toh, ghar pe rahunga.
+
+やすかったら、かいます。
+(Yasukattara, kaimasu.)
+Sasta hua toh, khareedunga.
+
+ひまだったら、あそびに きて ください。
+(Hima dattara, asobi ni kite kudasai.)
+Free ho toh, ghumne aao.
+```
+
+**2. When (time):**
+```
+うち に かえったら、でんわ します。
+(Uchi ni kaettara, denwa shimasu.)
+Ghar pahunchke, phone karunga.
+
+しごと が おわったら、のみに いきましょう。
+(Shigoto ga owattara, nomi ni ikimashou.)
+Kaam khatam hone pe, peene chalte hain.
+```
+
+**3. Discovery (When I did, I found):**
+```
+まど を あけたら、とり が いました。
+(Mado wo aketara, tori ga imashita.)
+Khidki kholi toh, chidiya thi.
+
+かばん を あけたら、さいふ が なかった。
+(Kaban wo aketara, saifu ga nakatta.)
+Bag khola toh, wallet nahi thi.
+```
+
+---
+
+### **Grammar Point 5: ～ても (Even if / _____ ke baawajood)**
+
+**て-form + も = _____ ke baawajood bhi / Chahe _____ ho**
+
+#### **Formation:**
+- Verb て form + も: いって**も**、たべて**も**
+- い-adj くて + も: たかくて**も**
+- な-adj で + も: しずかで**も**
+- Noun で + も: あめで**も**
+
+#### **Examples:**
+```
+あめ が ふっても、いきます。
+(Ame ga futtemo, ikimasu.)
+Baarish ho ke bhi, jaunga.
+
+たかくても、ほしい です。
+(Takakutemo, hoshii desu.)
+Mehenga ho ke bhi, chahiye.
+
+いそがしくても、れんしゅう します。
+(Isogashikutemo, renshuu shimasu.)
+Busy ho ke bhi, practice karunga.
+
+にちようびでも、しごと が あります。
+(Nichiyoubi demo, shigoto ga arimasu.)
+Sunday ho ke bhi, kaam hai.
+
+なんかい よんでも、わかりません。
+(Nankai yondemo, wakarimasen.)
+Kitni baar bhi padho, samajh nahi aata.
+```
+
+---
+
+### **Talking About Your Day:**
+
+**Pattern: Today's events + Feelings**
+
+```
+きょう は たいへんな いちにち でした。
+(Kyou wa taihen na ichinichi deshita.)
+Aaj bahut mushkil din tha.
+
+あさ、でんしゃ が おくれて、かいしゃ に おくれて しまいました。
+(Asa, densha ga okurete, kaisha ni okurete shimaimashita.)
+Subah train late thi, office late pahunch gaya.
+
+それから、だいじな かいぎ が あったんですが、
+しりょう (資料) を わすれて しまって、こまりました。
+(Sorekara, daiji na kaigi ga attan desu ga,
+shiryou wo wasurete shimatte, komarimashita.)
+Phir, important meeting thi, lekin
+documents bhool gaya, bahut pareshan hua.
+
+でも、ぶちょう が やさしくて、だいじょうぶ でした。
+(Demo, buchou ga yasashikute, daijoubu deshita.)
+Lekin, boss acche the, toh theek ho gaya.
+
+ほっとしました。
+(Hotto shimashita.)
+Sukoon mila.
+
+つかれましたが、いい けいけん でした。
+(Tsukaremashita ga, ii keiken deshita.)
+Thak gaya, lekin accha experience tha.
+```
+
+---
+
+### **Reacting to News/Stories:**
+
+| Japanese | Reading | Meaning | When to use |
+|----------|---------|---------|-------------|
+| えー！ | Ee! | What! | Surprise |
+| うそ！/ うそー！ | Uso! | No way!/Jhooth! | Disbelief |
+| まじ？/ まじで？ | Maji? / Maji de? | Seriously? | Casual surprise |
+| ほんとう？/ ほんと？ | Hontou? / Honto? | Really? | Asking confirmation |
+| すごい！/ すごーい！ | Sugoi! | Amazing! | Impressed |
+| やばい！ | Yabai! | Wow!/Oh no! | Strong reaction (+/-) |
+| かわいそう (可哀想) | Kawaisou | Poor thing | Sympathy |
+| よかったね！ | Yokatta ne! | Good for you! | Happy for someone |
+| たいへんだったね | Taihen datta ne | That was tough | Sympathy |
+| それは こまりますね | Sore wa komarimasu ne | That's troubling | Understanding |
+| しんじられない (信じられない) | Shinjirarenai | Unbelievable | Strong disbelief |
+| なるほど | Naruhodo | I see / Makes sense | Understanding |
+| そうなんだ | Sou nan da | Is that so | Acknowledging |
+| へー | Hee | Hmm/Oh | Mild interest |
+
+---
+
+### **Conversation Practice:**
+
+```
+A: きのう、すごい こと が あったんだ。
+(Kinou, sugoi koto ga attan da.)
+Kal bahut amazing cheez hui.
+
+B: えー、なに なに？
+(Ee, nani nani?)
+Kya kya? Bata!
+
+A: えき で ゆうめいな サッカーせんしゅ (選手) に あったんだ！
+(Eki de yuumei na sakkaa senshu ni attan da!)
+Station pe famous football player se mila!
+
+B: うそ！まじで？
+(Uso! Maji de?)
+Jhooth! Seriously?
+
+A: ほんと ほんと。いっしょに しゃしん も とったんだ。
+(Honto honto. Issho ni shashin mo tottan da.)
+Sach sach. Saath mein photo bhi liya.
+
+B: すごーい！いいなー！みせて みせて！
+(Sugooi! Ii naa! Misete misete!)
+Amazing! Lucky! Dikha dikha!
+
+A: はい、これ。
+(Hai, kore.)
+Haan, yeh dekh.
+
+B: わー、ほんとう だ！どきどき したでしょ？
+(Waa, hontou da! Dokidoki shita desho?)
+Wow, sach mein hai! Nervous hua hoga na?
+
+A: うん、すごく きんちょう (緊張) した。でも、やさしい ひと だったよ。
+(Un, sugoku kinchou shita. Demo, yasashii hito datta yo.)
+Haan, bahut nervous hua. Lekin, accha aadmi tha.
+
+B: よかったね！
+(Yokatta ne!)
+Accha hua!
+```
+
+---
+
+# 📘 Chapter 2: きもち (Kimochi) - Feelings / Ehsaas
+
+## 🎯 Goal: Apni feelings express karna, dusron ki feelings samajhna, empathy dikhana, deeper conversations
+
+---
+
+### **More Feelings & Mental State Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| きもち (気持ち) | Kimochi | Feeling/Mood |
+| きぶん (気分) | Kibun | Mood/Feel |
+| こころ (心) | Kokoro | Dil/Heart/Mind |
+| かんじょう (感情) | Kanjou | Emotion |
+| しあわせ (幸せ) | Shiawase | Khushi/Happiness |
+| ふあん (不安) | Fuan | Chinta/Anxiety |
+| ストレス | Sutoresu | Stress |
+| プレッシャー | Puresshaa | Pressure |
+| きんちょう (緊張) | Kinchou | Tension/Nervousness |
+| リラックス | Rirakkusu | Relax |
+| ゆううつ (憂鬱) | Yuuutsu | Depressed/Gloomy |
+| げんき (元気) | Genki | Energetic/Fine |
+| やるき (やる気) | Yaruki | Motivation |
+| じしん (自信) | Jishin | Confidence/Aatmvishwas |
+| きたい (期待) | Kitai | Expectation/Ummeed |
+| しっぱい (失敗) | Shippai | Failure/Nakamyabi |
+| せいこう (成功) | Seikou | Success/Kamyabi |
+| まんぞく (満足) | Manzoku | Satisfaction/Santushti |
+| ふまん (不満) | Fuman | Dissatisfaction/Narazgi |
+| こうかい (後悔) | Koukai | Regret/Pachtawa |
+| かんしゃ (感謝) | Kansha | Gratitude/Shukriya |
+| そんけい (尊敬) | Sonkei | Respect/Samman |
+
+---
+
+### **Grammar Point 6: ～て/～くて/～で (Reason - Connecting sentences)**
+
+Pehle chapter mein feelings ke saath て-form seekha. Ab aur detail:
+
+#### **Formation:**
+
+| Type | How to connect | Example |
+|------|---------------|---------|
+| Verb | て-form | いって、たべて、して |
+| い-adj | い → くて | たかくて、おいしくて |
+| な-adj | な-adj + で | しずかで、べんりで |
+| Noun | Noun + で | あめで、びょうきで |
+
+#### **Examples:**
+
+**Verb て:**
+```
+でんしゃ が おくれて、ちこく しました。
+(Densha ga okurete, chikoku shimashita.)
+Train late thi, isliye late hua.
+```
+
+**い-adjective くて:**
+```
+この りょうり は からくて、たべられません。
+(Kono ryouri wa karakute, taberaremasen.)
+Yeh khana teekha hai, isliye kha nahi sakta.
+
+しごと が いそがしくて、やすめません。
+(Shigoto ga isogashikute, yasumemasen.)
+Kaam busy hai, isliye aaram nahi mil raha.
+```
+
+**な-adjective で:**
+```
+この まち は しずかで、すき です。
+(Kono machi wa shizuka de, suki desu.)
+Yeh sheher shaant hai, isliye pasand hai.
+
+かれ は しんせつで、にんき (人気) が あります。
+(Kare wa shinsetsu de, ninki ga arimasu.)
+Woh친절 hai, isliye popular hai.
+```
+
+**Noun で:**
+```
+あめで、でかけられませんでした。
+(Ame de, dekakeraremasen deshita.)
+Baarish ki wajah se, bahar nahi ja saka.
+
+びょうきで、がっこう を やすみました。
+(Byouki de, gakkou wo yasumimashita.)
+Bimari ki wajah se, school chutti ki.
+```
+
+---
+
+### **Grammar Point 7: ～し、～し (Multiple Reasons)**
+
+**Plain form + し、Plain form + し = _____ bhi hai aur _____ bhi hai**
+
+Multiple reasons dene ke liye - incomplete list (aur bhi reasons ho sakte hain):
+
+#### **Examples:**
+
+```
+きょう は あたま が いたいし、ねつ も あるし、やすみたい。
+(Kyou wa atama ga itai shi, netsu mo aru shi, yasumitai.)
+Aaj sir dard bhi hai, bukhar bhi hai, aaram karna chahta hoon.
+
+この レストラン は おいしいし、やすいし、よく いきます。
+(Kono resutoran wa oishii shi, yasui shi, yoku ikimasu.)
+Yeh restaurant tasty bhi hai, sasta bhi hai, aksar jaata hoon.
+
+にほん は あんぜん (安全) だし、きれい だし、すき です。
+(Nihon wa anzen da shi, kirei da shi, suki desu.)
+Japan safe bhi hai, sundar bhi hai, pasand hai.
+
+かれ は やさしいし、おもしろいし、あたま も いいし、すてき です。
+(Kare wa yasashii shi, omoshiroi shi, atama mo ii shi, suteki desu.)
+Woh accha bhi hai, funny bhi hai, smart bhi hai, kamaal hai.
+
+この アパート は えき から ちかいし、やちん (家賃) も やすいし、
+きめました。
+(Kono apaato wa eki kara chikai shi, yachin mo yasui shi, kimemashita.)
+Yeh apartment station se paas bhi hai, kiraya bhi sasta hai, isliye decide kiya.
+```
+
+#### **Casual conversation mein:**
+
+```
+A: どうして にほん が すきなの？
+(Doushite nihon ga suki nano?)
+Kyun Japan pasand hai?
+
+B: うーん、たべもの が おいしいし、ひと が やさしいし、
+あんぜん だし... いろいろ あるよ。
+(Uun, tabemono ga oishii shi, hito ga yasashii shi,
+anzen da shi... iroiro aru yo.)
+Hmm, khana tasty bhi hai, log acche bhi hain, safe bhi hai... bahut reasons hain.
+```
+
+---
+
+### **Grammar Point 8: ～すぎます (Too much / Bahut zyada)**
+
+**Verb ます-stem + すぎます = Bahut zyada _____ karna**
+**い-adj (い hatao) + すぎます = Bahut zyada _____**
+**な-adj + すぎます = Bahut zyada _____**
+
+#### **Formation:**
+
+| Type | Original | すぎます form |
+|------|----------|--------------|
+| Verb | たべます | たべ**すぎます** |
+| Verb | のみます | のみ**すぎます** |
+| Verb | はたらきます | はたらき**すぎます** |
+| Verb | します | し**すぎます** |
+| い-adj | たかい | たか**すぎます** |
+| い-adj | おおきい | おおき**すぎます** |
+| な-adj | しずか | しずか**すぎます** |
+
+#### **Examples:**
+
+**Verb + すぎます:**
+```
+きのう、のみすぎました。あたま が いたい です。
+(Kinou, nomisugimashita. Atama ga itai desu.)
+Kal bahut zyada pee liya. Sir dard hai.
+
+たべすぎて、おなか が いたい です。
+(Tabesugite, onaka ga itai desu.)
+Bahut zyada khaake, pet dard hai.
+
+はたらきすぎて、つかれました。
+(Hatarakisugite, tsukaremashita.)
+Bahut zyada kaam karke, thak gaya.
+
+ゲーム を しすぎて、めが つかれました。
+(Geemu wo shisugite, me ga tsukaremashita.)
+Bahut zyada game khelke, aankh thak gayi.
+```
+
+**Adjective + すぎます:**
+```
+この かばん は たかすぎます。
+(Kono kaban wa takasugimasu.)
+Yeh bag bahut mehenga hai.
+
+この へや は せますぎます (狭い)。
+(Kono heya wa semasugimasu.)
+Yeh kamra bahut chhota hai.
+
+この りょうり は からすぎます。
+(Kono ryouri wa karasugimasu.)
+Yeh khana bahut teekha hai.
+
+ここ は しずかすぎて、ちょっと こわい です。
+(Koko wa shizukasugite, chotto kowai desu.)
+Yahaan bahut shaant hai, thoda darawna hai.
+```
+
+---
+
+### **Grammar Point 9: ～やすい / ～にくい (Easy to / Hard to)**
+
+**Verb ます-stem + やすい = _____ karna aasaan**
+**Verb ます-stem + にくい = _____ karna mushkil**
+
+#### **Formation:**
+
+| Verb | やすい form | にくい form |
+|------|-----------|-----------|
+| たべます | たべ**やすい** | たべ**にくい** |
+| よみます | よみ**やすい** | よみ**にくい** |
+| つかいます | つかい**やすい** | つかい**にくい** |
+| わかります | わかり**やすい** | わかり**にくい** |
+| はなします | はなし**やすい** | はなし**にくい** |
+| あるきます | あるき**やすい** | あるき**にくい** |
+
+#### **Examples:**
+
+```
+この ほん は よみやすい です。
+(Kono hon wa yomiyasui desu.)
+Yeh kitaab padhne mein aasaan hai.
+
+この かんじ は おぼえにくい です。(覚える)
+(Kono kanji wa oboeniukui desu.)
+Yeh kanji yaad karna mushkil hai.
+
+この くつ は あるきやすい です。
+(Kono kutsu wa arukiyasui desu.)
+Yeh joote chalne mein comfortable hain.
+
+この スマホ は つかいやすい です。
+(Kono sumaho wa tsukaiyasui desu.)
+Yeh phone use karna aasaan hai.
+
+せんせい の せつめい は わかりやすい です。
+(Sensei no setsumei wa wakariyasui desu.)
+Teacher ki explanation samajhne mein aasaan hai.
+
+この みち は せまくて、くるま で とおりにくい です。(通る)
+(Kono michi wa semakute, kuruma de tooriniukui desu.)
+Yeh rasta chota hai, car se jaana mushkil hai.
+
+かれ は はなしにくい ひと です。
+(Kare wa hanashiniukui hito desu.)
+Woh baat karne mein mushkil aadmi hai.
+
+かのじょ は はなしやすい ひと です。
+(Kanojo wa hanashiyasui hito desu.)
+Woh baat karne mein aasaan/friendly insaan hai.
+```
+
+---
+
+### **Grammar Point 10: ～そう (Looks like / Lagta hai - Appearance)**
+
+**Verb ます-stem + そう = _____ hone wala hai**
+**い-adj (い hatao) + そう = _____ lagta hai**
+**な-adj + そう = _____ lagta hai**
+
+⚠️ Yeh **appearance/observation** ke basis pe opinion hai (hearsay wala そうです se alag!)
+
+#### **Formation:**
+
+| Type | Original | ～そう form |
+|------|----------|-----------|
+| Verb | ふります | ふり**そう** |
+| Verb | おちます (落ちる) | おち**そう** |
+| い-adj | おいしい | おいし**そう** |
+| い-adj | たかい | たか**そう** |
+| な-adj | げんき | げんき**そう** |
+| な-adj | たいへん | たいへん**そう** |
+
+⚠️ **Exceptions:**
+- いい → **よさそう** (NOT いそう)
+- ない → **なさそう** (NOT ないそう)
+
+#### **Examples:**
+
+**Verb + そう (about to happen):**
+```
+あめ が ふりそう です。
+(Ame ga furisou desu.)
+Baarish hone wali lagti hai.
+
+この はし (橋) は こわれそう です。(壊れる)
+(Kono hashi wa kowaresou desu.)
+Yeh pul tootne wala lagta hai.
+
+おなか が すいて、たおれそう です。(倒れる)
+(Onaka ga suite, taoresou desu.)
+Bhook lagi hai, girne wala hoon.
+```
+
+**Adjective + そう (looks like):**
+```
+この ケーキ は おいしそう です。
+(Kono keeki wa oishisou desu.)
+Yeh cake tasty lagta hai.
+
+その しごと は たいへんそう ですね。
+(Sono shigoto wa taihensou desu ne.)
+Woh kaam mushkil lagta hai na.
+
+かれ は げんきそう です。
+(Kare wa genkisou desu.)
+Woh healthy/energetic lagta hai.
+
+この もんだい は かんたんそう です。(簡単)
+(Kono mondai wa kantansou desu.)
+Yeh problem aasaan lagti hai.
+
+あの ひと は しあわせそう ですね。
+(Ano hito wa shiawasesou desu ne.)
+Woh aadmi khush lagta hai na.
+
+このりょうり、からそう... だいじょうぶかな。
+(Kono ryouri, karasou... daijoubu kana.)
+Yeh khana teekha lagta hai... theek hoga kya.
+```
+
+**Negative + そう:**
+```
+きょう は あめ が ふらなさそう です。
+(Kyou wa ame ga furanasasou desu.)
+Aaj baarish nahi lagti.
+
+このレストラン、あまり おいしくなさそう...
+(Kono resutoran, amari oishikunasasou...)
+Yeh restaurant zyada tasty nahi lagta...
+
+かれ は げんきじゃなさそう ですね。
+(Kare wa genkijanasasou desu ne.)
+Woh theek nahi lagta na.
+```
+
+---
+
+### **Grammar Point 11: ～がる (Third person feelings/wants)**
+
+⚠️ Japanese mein direct feelings (ほしい、～たい、かなしい etc.) sirf **khud ke liye** use karte hain. **Dusron ke feelings** ke liye **～がる** use hota hai.
+
+**Formation:**
+- い-adj (い hatao) + がる: さびし**がる**、うれし**がる**
+- ほしい → ほし**がる**
+- ～たい → ～た**がる**
+
+#### **Examples:**
+
+**Wrong:** ❌ かれ は さびしい です。 (He is lonely - direct)
+**Correct:** ✓ かれ は さびし**がって** います。 (He seems/acts lonely)
+
+```
+こども は あたらしい おもちゃ を ほしがって います。
+(Kodomo wa atarashii omocha wo hoshigatte imasu.)
+Bachcha naya toy chahta hai (aisa lag raha hai).
+
+いぬ は さんぽ に いきたがって います。
+(Inu wa sanpo ni ikitagatte imasu.)
+Kutta walk pe jaana chahta hai.
+
+かのじょ は その ニュース を きいて、かなしがって いました。
+(Kanojo wa sono nyuusu wo kiite, kanashigatte imashita.)
+Woh news sunke dukhi lag rahi thi.
+
+ともだち は にほん に いきたがって いますが、
+おかね が ありません。
+(Tomodachi wa nihon ni ikitagatte imasu ga, okane ga arimasen.)
+Dost Japan jaana chahta hai (lagta hai), lekin paise nahi hain.
+```
+
+---
+
+### **Expressing & Asking About Feelings:**
+
+**Asking about feelings:**
+```
+どう したんですか？きぶん が わるそう ですね。
+(Dou shitan desu ka? Kibun ga warusou desu ne.)
+Kya hua? Tabiyat kharab lagti hai.
+
+なに か あったんですか？
+(Nanika attan desu ka?)
+Kuch hua kya?
+
+だいじょうぶ ですか？
+(Daijoubu desu ka?)
+Theek ho?
+
+さいきん、どう？(最近)
+(Saikin, dou?)
+Aajkal kaisa hai?
+```
+
+**Expressing feelings:**
+```
+さいきん、ストレス が たまって います。
+(Saikin, sutoresu ga tamatte imasu.)
+Aajkal stress build up ho raha hai.
+
+しごと が いそがしすぎて、ゆっくり やすめません。
+(Shigoto ga isogashisugite, yukkuri yasumemasen.)
+Kaam bahut busy hai, acche se aaram nahi mil raha.
+
+なんだか さびしい きもち です。
+(Nandaka sabishii kimochi desu.)
+Kuch akela sa feel ho raha hai.
+
+やっと おわって、ほっとしました。
+(Yatto owatte, hotto shimashita.)
+Finally khatam hua, sukoon mila.
+
+ずっと これ を たのしみに して いました！
+(Zutto kore wo tanoshimi ni shite imashita!)
+Bahut der se iska intezaar kar raha tha!
+```
+
+**Showing empathy:**
+```
+それは たいへん でしたね。
+(Sore wa taihen deshita ne.)
+Woh mushkil tha na.
+
+そんな こと あったんですか。つらかった でしょう。
+(Sonna koto attan desu ka. Tsurakatta deshou.)
+Aisa hua? Mushkil raha hoga.
+
+わかります。わたし も おなじ けいけん が あります。
+(Wakarimasu. Watashi mo onaji keiken ga arimasu.)
+Samajhta hoon. Mera bhi same experience hai.
+
+なにか てつだえる こと が あったら、いって ください。
+(Nanika tetsudaeru koto ga attara, itte kudasai.)
+Koi madad chahiye toh batao.
+
+むり しないで くださいね。
+(Muri shinaide kudasai ne.)
+Zyada strain mat lo.
+```
+
+---
+
+# 📘 Chapter 3: せいかつとでんとう (Seikatsu to Dentou) - Life & Tradition
+
+## 🎯 Goal: Japan ki culture aur traditions samajhna, comparison karna, customs explain karna, opinions dena
+
+---
+
+### **Culture & Tradition Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| でんとう (伝統) | Dentou | Parampara/Tradition |
+| ぶんか (文化) | Bunka | Sanskriti/Culture |
+| しゅうかん (習慣) | Shuukan | Aadat/Custom/Habit |
+| ぎょうじ (行事) | Gyouji | Event/Function |
+| まつり (祭り) | Matsuri | Festival/Tyohaar |
+| れきし (歴史) | Rekishi | Itihaas/History |
+| しゅうきょう (宗教) | Shuukyou | Dharm/Religion |
+| じんじゃ (神社) | Jinja | Shrine (Shinto) |
+| おてら (お寺) | Otera | Mandir/Temple (Buddhist) |
+| きょうかい (教会) | Kyoukai | Church |
+| モスク | Mosuku | Masjid/Mosque |
+| おいのり (お祈り) | Oinori | Prarthana/Prayer |
+| しんねん (新年) | Shinnen | Naya saal/New Year |
+| おしょうがつ (お正月) | Oshougatsu | Japanese New Year |
+| おぼん (お盆) | Obon | Obon (ancestor festival) |
+| けっこんしき (結婚式) | Kekkonshiki | Shaadi/Wedding ceremony |
+| そうしき (葬式) | Soushiki | Antim sanskar/Funeral |
+| いわう (祝う) | Iwau | Celebrate karna |
+| まもる (守る) | Mamoru | Protect/Follow karna |
+
+---
+
+### **Comparison Words:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| にている (似ている) | Niteiru | Milta julta/Similar |
+| ちがう (違う) | Chigau | Alag/Different |
+| おなじ (同じ) | Onaji | Same/Ek jaisa |
+| はんたい (反対) | Hantai | Opposite/Ulta |
+| くらべる (比べる) | Kuraberu | Compare karna |
+| ちがい (違い) | Chigai | Fark/Difference |
+| きょうつう (共通) | Kyoutsuu | Common/Saamanya |
+| とくべつ (特別) | Tokubetsu | Khaas/Special |
+| ふつう (普通) | Futsuu | Saamaanya/Normal/Usual |
+| めずらしい (珍しい) | Mezurashii | Anokha/Rare/Unusual |
+| ふしぎ (不思議) | Fushigi | Ajeeb/Strange/Mysterious |
+
+---
+
+### **Grammar Point 12: ～より (Than / _____ se)**
+
+**A より B のほうが [adjective] = A se B zyada [adjective]**
+
+#### **Examples:**
+
+```
+にほん より インド のほうが あつい です。
+(Nihon yori Indo no hou ga atsui desu.)
+Japan se India zyada garam hai.
+
+でんしゃ より バス のほうが やすい です。
+(Densha yori basu no hou ga yasui desu.)
+Train se bus zyada sasti hai.
+
+ひらがな より かんじ のほうが むずかしい です。
+(Hiragana yori kanji no hou ga muzukashii desu.)
+Hiragana se kanji zyada mushkil hai.
+
+インド の りょうり より にほん の りょうり のほうが あまい です。
+(Indo no ryouri yori nihon no ryouri no hou ga amai desu.)
+India ke khane se Japan ka khana zyada meetha hai.
+```
+
+**Simple より:**
+```
+きのう より きょう のほうが さむい です。
+(Kinou yori kyou no hou ga samui desu.)
+Kal se aaj zyada thanda hai.
+
+よそう (予想) より かんたん でした。
+(Yosou yori kantan deshita.)
+Expectation se aasaan tha.
+```
+
+---
+
+### **Grammar Point 13: ～ほど ～ない (Not as _____ as)**
+
+**A ほど B は [negative adjective] = B utna [adjective] nahi hai jitna A**
+
+#### **Examples:**
+
+```
+きょう は きのう ほど さむくない です。
+(Kyou wa kinou hodo samukunai desu.)
+Aaj utna thanda nahi hai jitna kal tha.
+
+この しけん は おもった ほど むずかしくなかった です。
+(Kono shiken wa omotta hodo muzukashikunakatta desu.)
+Yeh exam utna mushkil nahi tha jitna socha tha.
+
+にほんご は ちゅうごくご ほど むずかしくない と おもいます。
+(Nihongo wa chuugokugo hodo muzukashikunai to omoimasu.)
+Japanese utni mushkil nahi hai jitni Chinese, aisa lagta hai.
+
+とうきょう は おおさか ほど ひと が おおくない です。
+(Toukyou wa Oosaka hodo hito ga ookunai desu.)
+Tokyo mein utne log nahi hain jitne Osaka mein. (Actually yeh galat hai, example ke liye)
+```
+
+---
+
+### **Grammar Point 14: ～と おなじ / ～と ちがう (Same as / Different from)**
+
+**A と B は おなじ = A aur B same hain**
+**A と B は ちがう = A aur B alag hain**
+**A と おなじ [noun] = A jaisa [noun]**
+
+#### **Examples:**
+
+```
+にほん と インド は ぶんか が ちがいます。
+(Nihon to Indo wa bunka ga chigaimasu.)
+Japan aur India ki culture alag hai.
+
+この かばん と その かばん は おなじ いろ ですね。
+(Kono kaban to sono kaban wa onaji iro desu ne.)
+Yeh bag aur woh bag same color hain na.
+
+わたし の いけん (意見) は あなた と おなじ です。
+(Watashi no iken wa anata to onaji desu.)
+Meri opinion aapki jaisi hai.
+
+この しゅうかん は わたし の くに と にています。
+(Kono shuukan wa watashi no kuni to niteimasu.)
+Yeh custom mere desh jaisi hai.
+
+にほん の おしょうがつ は インド の おしょうがつ と ぜんぜん ちがいます。
+(Nihon no oshougatsu wa Indo no oshougatsu to zenzen chigaimasu.)
+Japan ka New Year India ke New Year se bilkul alag hai.
+```
+
+---
+
+### **Grammar Point 15: ～のように / ～みたいに (Like _____ / _____ jaisa)**
+
+**Noun + のように / みたいに = _____ ki tarah / _____ jaisa**
+**Verb plain + ように = _____ jaisa / _____ ki tarah**
+
+⚠️ **みたいに** is more casual than **のように**
+
+#### **Examples:**
+
+```
+ゆき (雪) のように しろい はな です。
+(Yuki no you ni shiroi hana desu.)
+Barf jaisi safed phool hai.
+
+にほんじん のように にほんご を はなしたい です。
+(Nihonjin no you ni nihongo wo hanashitai desu.)
+Japanese logon ki tarah Japanese bolna chahta hoon.
+
+かれ は ロボット みたいに はたらきます。
+(Kare wa robotto mitai ni hatarakimasu.)
+Woh robot ki tarah kaam karta hai.
+
+おかあさん が つくった ように、りょうり を つくりたい です。
+(Okaasan ga tsukutta you ni, ryouri wo tsukuritai desu.)
+Maa ne banaya jaisa, khana banana chahta hoon.
+
+ゆめ みたいな けいけん でした。
+(Yume mitai na keiken deshita.)
+Sapne jaisa experience tha.
+```
+
+**"Like this/that":**
+```
+こんなふうに / こういうふうに = Is tarah se
+そんなふうに / そういうふうに = Us tarah se
+```
+
+---
+
+### **Grammar Point 16: ～によって (Depending on / According to)**
+
+**Noun + によって = _____ ke anusar / _____ pe depend karta hai**
+
+#### **Examples:**
+
+```
+くに によって、しゅうかん が ちがいます。
+(Kuni ni yotte, shuukan ga chigaimasu.)
+Desh ke hisab se, customs alag hain.
+
+ひと によって、いけん が ちがいます。
+(Hito ni yotte, iken ga chigaimasu.)
+Aadmi ke hisab se, opinions alag hain.
+
+きせつ (季節) によって、たべもの が ちがいます。
+(Kisetsu ni yotte, tabemono ga chigaimasu.)
+Mausam ke hisab se, khana alag hota hai.
+
+ちいき (地域) によって、おまつり の やりかた が ちがいます。
+(Chiiki ni yotte, omatsuri no yarikata ga chigaimasu.)
+Area ke hisab se, festival karne ka tareeka alag hai.
+```
+
+---
+
+### **Japanese Traditions & Events:**
+
+#### **おしょうがつ (お正月) - New Year:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| ねんがじょう (年賀状) | Nengajou | New Year card |
+| おせちりょうり (おせち料理) | Osechi ryouri | New Year food |
+| おとしだま (お年玉) | Otoshidama | New Year money (for kids) |
+| はつもうで (初詣) | Hatsumoude | First shrine visit |
+| おもち (お餅) | Omochi | Rice cake |
+| かがみもち (鏡餅) | Kagami mochi | Decorative rice cake |
+| しめかざり (しめ飾り) | Shimekazari | New Year decoration |
+| かどまつ (門松) | Kadomatsu | Pine decoration |
+
+**Explaining New Year:**
+```
+にほん では、おしょうがつ は いちばん たいせつな ぎょうじ です。
+(Nihon de wa, oshougatsu wa ichiban taisetsu na gyouji desu.)
+Japan mein, New Year sabse important event hai.
+
+かぞく と いっしょに おせちりょうり を たべたり、
+はつもうで に いったり します。
+(Kazoku to issho ni osechi ryouri wo tabetari,
+hatsumoude ni ittari shimasu.)
+Family ke saath osechi khana khaana ya shrine visit karna karte hain.
+
+こども は おとしだま を もらって、うれしそう です。
+(Kodomo wa otoshidama wo moratte, ureshisou desu.)
+Bachche otoshidama pake khush lagte hain.
+
+インド では、ディワリ が おなじ ような ぎょうじ だ と おもいます。
+(Indo de wa, Diwali ga onaji you na gyouji da to omoimasu.)
+India mein Diwali same jaisa event hai, aisa lagta hai.
+```
+
+---
+
+#### **おぼん (お盆) - Obon Festival:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| せんぞ (先祖) | Senzo | Ancestors/Purvaj |
+| おはか (お墓) | Ohaka | Kabar/Grave |
+| おはかまいり (お墓参り) | Ohakamairi | Grave visit |
+| ちょうちん (提灯) | Chouchin | Lantern |
+| ぼんおどり (盆踊り) | Bon odori | Bon dance |
+
+---
+
+#### **Other Traditions:**
+
+| Event | Japanese | When | What |
+|-------|----------|------|------|
+| Coming of Age | せいじんのひ (成人の日) | January 2nd Monday | 20 saal ke log celebrate |
+| Girls' Day | ひなまつり (雛祭り) | March 3 | Doll festival for girls |
+| Boys' Day | こどものひ (子供の日) | May 5 | Children's day (originally boys) |
+| Star Festival | たなばた (七夕) | July 7 | Write wishes on paper |
+| Autumn Moon | おつきみ (お月見) | September-October | Moon viewing |
+| 7-5-3 | しちごさん (七五三) | November 15 | Kids age 7, 5, 3 celebrate |
+
+---
+
+### **Grammar Point 17: ～そうです (Hearsay / Suna hai ki)**
+
+⚠️ Yeh pehle wale appearance そう se ALAG hai!
+
+**Plain form + そうです = _____ suna hai / According to _____**
+
+#### **Formation:**
+
+| Type | Pattern | Example |
+|------|---------|---------|
+| Verb | Plain + そうです | いく**そうです** |
+| い-adj | い-adj + そうです | たかい**そうです** |
+| な-adj | な-adj + **だ** + そうです | しずか**だそうです** |
+| Noun | Noun + **だ** + そうです | あめ**だそうです** |
+
+#### **Examples:**
+
+```
+あした は あめ が ふる そうです。
+(Ashita wa ame ga furu sou desu.)
+Kal baarish hogi suna hai.
+
+あの レストラン は おいしい そうです。
+(Ano resutoran wa oishii sou desu.)
+Woh restaurant tasty hai suna hai.
+
+かれ は らいげつ けっこんする そうです。
+(Kare wa raigetsu kekkon suru sou desu.)
+Woh agle mahine shaadi karega suna hai.
+
+にほん の ふゆ は さむい そうです。
+(Nihon no fuyu wa samui sou desu.)
+Japan ki sardi thandi hoti hai suna hai.
+
+ニュース によると、あした ゆき が ふる そうです。
+(Nyuusu ni yoru to, ashita yuki ga furu sou desu.)
+News ke mutabiq, kal barf giregi.
+```
+
+#### **Difference: Appearance そう vs Hearsay そう:**
+
+| Type | Formation | Meaning | Example |
+|------|-----------|---------|---------|
+| **Appearance** | Adj-stem + そう | Lagta hai (dekhke) | おいし**そう** (Tasty lagta hai) |
+| **Hearsay** | Plain + そうです | Suna hai | おいしい**そうです** (Tasty hai suna hai) |
+
+```
+この ケーキ は おいしそう です。 (looks delicious - dekhke)
+この ケーキ は おいしい そうです。 (I heard it's delicious - sunke)
+```
+
+---
+
+### **Grammar Point 18: ～らしい (Seems like / Apparently)**
+
+**Plain form + らしい = Apparently _____ / _____ lagta hai (based on information)**
+
+Similar to hearsay そうです but more based on reasoning/evidence:
+
+#### **Examples:**
+
+```
+かれ は びょうき らしい です。
+(Kare wa byouki rashii desu.)
+Woh bimaar lagta hai. (kisi ne bataya ya signs hain)
+
+あした は あめ らしい です。
+(Ashita wa ame rashii desu.)
+Kal baarish lagti hai. (news ya baadal dekh ke)
+
+この みせ は にんき が ある らしい です。
+(Kono mise wa ninki ga aru rashii desu.)
+Yeh dukaan popular lagti hai. (line dekh ke)
+
+その えいが は おもしろい らしい ですよ。
+(Sono eiga wa omoshiroi rashii desu yo.)
+Woh movie interesting lagti hai. (reviews padhke)
+```
+
+---
+
+### **Comparing Cultures - Example:**
+
+```
+にほん と インド の ぶんか を くらべると、
+いろいろな ちがい が あります。
+(Nihon to Indo no bunka wo kuraberu to,
+iroirona chigai ga arimasu.)
+Japan aur India ki culture compare karein toh, bahut fark hain.
+
+たとえば、にほん では くつ を ぬいで いえ に はいります。
+インド でも おなじ です。これ は きょうつう の しゅうかん ですね。
+(Tatoeba, nihon de wa kutsu wo nuide ie ni hairimasu.
+Indo demo onaji desu. Kore wa kyoutsuu no shuukan desu ne.)
+For example, Japan mein joote utaar ke ghar mein ghuste hain.
+India mein bhi same hai. Yeh common custom hai na.
+
+でも、たべかた は ちがいます。
+にほんじん は はし (箸) を つかいますが、
+インドじん は て で たべる ひと も おおい です。
+(Demo, tabekata wa chigaimasu.
+Nihonjin wa hashi wo tsukaimasu ga,
+Indojin wa te de taberu hito mo ooi desu.)
+Lekin, khaane ka tareeka alag hai.
+Japanese log chopsticks use karte hain, lekin
+Indians mein haath se khaane wale bhi bahut hain.
+
+にほん の おしょうがつ は インド の ディワリ に
+にている と おもいます。
+どちら も かぞく で あつまって、
+とくべつな りょうり を たべたり、
+おいのり を したり します。
+(Nihon no oshougatsu wa Indo no Diwali ni
+niteiru to omoimasu.
+Dochira mo kazoku de atsumatte,
+tokubetsu na ryouri wo tabetari,
+oinori wo shitari shimasu.)
+Japan ka New Year India ke Diwali jaisa lagta hai.
+Dono mein bhi family milke, special khana khana ya pray karna karte hain.
+
+にほん に きて、いろいろな ぶんか の ちがい を
+けいけん しました。さいしょ は びっくりする こと も
+ありましたが、いま は なれました。
+(Nihon ni kite, iroirona bunka no chigai wo
+keiken shimashita. Saisho wa bikkuri suru koto mo
+arimashita ga, ima wa naremashita.)
+Japan aake, bahut cultural differences experience kiye.
+Shuru mein surprising bhi tha, lekin ab aadat pad gayi.
+
+ちがう ぶんか を しる こと は おもしろい と おもいます。
+(Chigau bunka wo shiru koto wa omoshiroi to omoimasu.)
+Alag culture jaanna interesting hai aisa lagta hai.
+```
+
+---
+
+# 📝 GRAMMAR SUMMARY (Chapter 1-3):
+
+| # | Pattern | Meaning | Example |
+|---|---------|---------|---------|
+| 1 | Plain form review | Casual speech base | いく、いった、いかない |
+| 2 | ～んです | Explanation/Reason | あたま が いたいんです |
+| 3 | て-form + Emotion | Reason for feeling | うかって、うれしい |
+| 4 | ～たら | If/When (conditional) | あめ が ふったら |
+| 5 | ～ても | Even if | あめ が ふっても |
+| 6 | ～て/くて/で (reason) | Connecting sentences | たかくて、かえません |
+| 7 | ～し、～し | Multiple reasons | おいしいし、やすいし |
+| 8 | ～すぎます | Too much | たべすぎました |
+| 9 | ～やすい/にくい | Easy/Hard to | よみやすい、おぼえにくい |
+| 10 | ～そう (appearance) | Looks like | おいしそう |
+| 11 | ～がる | Third person feelings | ほしがっている |
+| 12 | ～より | Than (comparison) | にほんより あつい |
+| 13 | ～ほど～ない | Not as...as | きのうほど さむくない |
+| 14 | ～とおなじ/ちがう | Same as/Different from | インドと ちがう |
+| 15 | ～のように/みたいに | Like | にほんじんのように |
+| 16 | ～によって | Depending on | くに によって |
+| 17 | ～そうです (hearsay) | I heard that | あめだそうです |
+| 18 | ～らしい | Apparently/Seems | びょうきらしい |
+
+---
+
+# 📝 VOCABULARY CATEGORIES (Ch 1-3):
+
+### **Emotions (きもち):**
+```
+うれしい、かなしい、さびしい、たのしい、こわい、
+はずかしい、くやしい、いやだ
+びっくりした、がっかりした、ほっとした、
+どきどきした、わくわくした、いらいらした
+しんぱいした、あんしんした、こまった、つかれた
+```
+
+### **Reactions (リアクション):**
+```
+えー！、うそ！、まじ？、ほんとう？、
+すごい！、やばい！、かわいそう、
+よかったね、たいへんだったね、
+なるほど、そうなんだ、へー
+```
+
+### **Culture (ぶんか):**
+```
+でんとう、ぶんか、しゅうかん、ぎょうじ、
+まつり、れきし、しゅうきょう
+にている、ちがう、おなじ、めずらしい
+```
+
+### **Comparison (ひかく):**
+```
+より、ほど、おなじ、ちがう、
+のように、みたいに、によって
+```
+
+---
+
+# ⚡ Quick Practice Tips:
+
+1. **Plain form** master karo - Elementary 2 ka foundation hai
+2. **んです** har conversation mein use karo - Natural lagta hai
+3. **Emotions** vocabulary badhao - Feelings express karna important hai
+4. **Comparison** patterns practice karo - Culture discussion ke liye zaruri
+5. **そう** ke do types yaad rakho - Appearance vs Hearsay
+6. **Casual vs Polite** dono practice karo - Situation ke hisab se use karo
+
+---
+
+**Chapter 4-6 chahiye toh bata do!** 💪🎌
+
+**がんばって ください！**
+(Ganbatte kudasai!)
+All the best!
+
+
+=======================================================
+
+=======================================================
+
+# Irodori (いろどり) Elementary 2 - Chapter 4 to 6 Complete Guide
+
+---
+
+# 📘 Chapter 4: しょくじ (Shokuji) - Meals / Khana
+
+## 🎯 Goal: Khane ke baare mein detail mein baat karna, recipes explain karna, food culture discuss karna, restaurant mein advanced conversation
+
+---
+
+### **Food & Cooking Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| しょくじ (食事) | Shokuji | Bhojan/Meal |
+| りょうり (料理) | Ryouri | Khana/Cooking/Dish |
+| ざいりょう (材料) | Zairyou | Ingredients/Saamagri |
+| ちょうみりょう (調味料) | Choumiryou | Seasoning/Masala |
+| レシピ | Reshipi | Recipe |
+| つくりかた (作り方) | Tsukurikata | Banane ka tareeka |
+| ぶんりょう (分量) | Bunryou | Quantity/Matra |
+| かねつ (加熱) | Kanetsu | Heating/Garam karna |
+| した ごしらえ (下ごしらえ) | Shita goshirae | Preparation/Taiyaari |
+
+---
+
+### **Cooking Verbs (りょうり の どうし):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| つくります (作ります) | Tsukurimasu | Banana |
+| きります (切ります) | Kirimasu | Kaatna |
+| やきます (焼きます) | Yakimasu | Bhunna/Grill karna |
+| にます (煮ます) | Nimasu | Ubalna (slow cook) |
+| ゆでます (茹でます) | Yudemasu | Ubalna (boil) |
+| いためます (炒めます) | Itamemasu | Stir-fry karna |
+| あげます (揚げます) | Agemasu | Deep fry karna |
+| むします (蒸します) | Mushimasu | Steam karna |
+| まぜます (混ぜます) | Mazemasu | Milana/Mix karna |
+| いれます (入れます) | Iremasu | Daalna |
+| くわえます (加えます) | Kuwaemasu | Add karna |
+| かけます | Kakemasu | Dalna (upar se) |
+| ふります | Furimasu | Chhidakna/Sprinkle |
+| ひやします (冷やします) | Hiyashimasu | Thanda karna |
+| あたためます (温めます) | Atatamemasu | Garam karna |
+| さます (冷ます) | Samasu | Thanda hone dena |
+| むきます (剥きます) | Mukimasu | Chhilna (peel) |
+| あらいます (洗います) | Araimasu | Dhona |
+| かわかします (乾かします) | Kawakashimasu | Sukhana |
+
+---
+
+### **Cutting Styles (きりかた / Kirikata):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| うすぎり (薄切り) | Usugiri | Patla slice |
+| あつぎり (厚切り) | Atsugiri | Mota slice |
+| せんぎり (千切り) | Sengiri | Julienne/Patli strips |
+| みじんぎり (みじん切り) | Mijingiri | Fine chop/Kheema jaisa |
+| さいのめぎり (さいの目切り) | Sainomegiri | Cube cut |
+| ななめぎり (斜め切り) | Nanamegiri | Diagonal cut |
+| ひとくちだい (一口大) | Hitokuchidai | Bite-size |
+
+---
+
+### **Ingredients (ざいりょう):**
+
+#### **Vegetables (やさい / Yasai):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| たまねぎ (玉ねぎ) | Tamanegi | Pyaaz/Onion |
+| にんじん (人参) | Ninjin | Gajar/Carrot |
+| じゃがいも | Jagaimo | Aloo/Potato |
+| キャベツ | Kyabetsu | Patta gobi/Cabbage |
+| レタス | Retasu | Lettuce |
+| トマト | Tomato | Tamatar |
+| きゅうり | Kyuuri | Kheera/Cucumber |
+| なす | Nasu | Baingan/Eggplant |
+| ピーマン | Piiman | Shimla mirch/Bell pepper |
+| ほうれんそう (ほうれん草) | Hourensou | Palak/Spinach |
+| だいこん (大根) | Daikon | Mooli/Radish |
+| ねぎ (葱) | Negi | Hara pyaaz/Green onion |
+| にんにく | Ninniku | Lahsun/Garlic |
+| しょうが (生姜) | Shouga | Adrak/Ginger |
+| きのこ | Kinoko | Mushroom |
+| もやし | Moyashi | Bean sprouts |
+
+#### **Meat & Seafood (にく と シーフード):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| にく (肉) | Niku | Meat/Gosht |
+| ぎゅうにく (牛肉) | Gyuuniku | Beef |
+| ぶたにく (豚肉) | Butaniku | Pork |
+| とりにく (鶏肉) | Toriniku | Chicken |
+| ひきにく (ひき肉) | Hikiniku | Kheema/Minced meat |
+| さかな (魚) | Sakana | Machli/Fish |
+| えび (海老) | Ebi | Jheenga/Shrimp |
+| いか | Ika | Squid |
+| たこ | Tako | Octopus |
+| かい (貝) | Kai | Shellfish |
+
+#### **Seasonings (ちょうみりょう):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| しお (塩) | Shio | Namak/Salt |
+| さとう (砂糖) | Satou | Cheeni/Sugar |
+| しょうゆ (醤油) | Shouyu | Soy sauce |
+| みそ (味噌) | Miso | Miso paste |
+| す (酢) | Su | Sirka/Vinegar |
+| みりん | Mirin | Sweet cooking sake |
+| さけ (酒) | Sake | Cooking sake |
+| あぶら (油) | Abura | Tel/Oil |
+| こしょう (胡椒) | Koshou | Kali mirch/Pepper |
+| ソース | Soosu | Sauce |
+| マヨネーズ | Mayoneezu | Mayonnaise |
+| ケチャップ | Kechappu | Ketchup |
+| バター | Bataa | Makhan/Butter |
+
+---
+
+### **Grammar Point 19: ～てから (After doing / _____ karne ke baad)**
+
+**て-form + から = _____ karne ke baad**
+
+#### **Examples:**
+
+```
+て を あらってから、りょうり を します。
+(Te wo aratte kara, ryouri wo shimasu.)
+Haath dhone ke baad, khana banata hoon.
+
+やさい を きってから、いためます。
+(Yasai wo kitte kara, itamemasu.)
+Sabzi kaatne ke baad, stir-fry karta hoon.
+
+ごはん を たべてから、でかけましょう。
+(Gohan wo tabete kara, dekakemashou.)
+Khana khaane ke baad, bahar chalte hain.
+
+にほん に きてから、すし が すきに なりました。
+(Nihon ni kite kara, sushi ga suki ni narimashita.)
+Japan aane ke baad, sushi pasand ho gayi.
+
+しごと が おわってから、ジム に いきます。
+(Shigoto ga owatte kara, jimu ni ikimasu.)
+Kaam khatam hone ke baad, gym jaata hoon.
+```
+
+#### **Difference: ～てから vs ～たあと:**
+
+Both mean "after doing" but slight nuance:
+- **～てから**: Emphasizes sequence (pehle yeh, phir woh)
+- **～たあと**: Just states "after" (time reference)
+
+```
+ごはん を たべてから、すぐ でかけます。
+(Sequence emphasis - khana khaake, turant nikalta hoon)
+
+ごはん を たべたあと、テレビ を みます。
+(Time reference - khane ke baad TV dekhta hoon)
+```
+
+---
+
+### **Grammar Point 20: ～まえに (Before doing / _____ karne se pehle)**
+
+**Dictionary form + まえに = _____ karne se pehle**
+**Noun + の + まえに = _____ se pehle**
+
+#### **Examples:**
+
+```
+ねる まえに、は を みがきます。
+(Neru mae ni, ha wo migakimasu.)
+Sone se pehle, daant saaf karta hoon.
+
+りょうり を つくる まえに、ざいりょう を かいます。
+(Ryouri wo tsukuru mae ni, zairyou wo kaimasu.)
+Khana banane se pehle, ingredients khareedta hoon.
+
+しょくじ の まえに、て を あらいます。
+(Shokuji no mae ni, te wo araimasu.)
+Khane se pehle, haath dhota hoon.
+
+にほん に くる まえに、ひらがな を べんきょうしました。
+(Nihon ni kuru mae ni, hiragana wo benkyou shimashita.)
+Japan aane se pehle, hiragana padha tha.
+
+かいぎ の まえに、しりょう (資料) を よんで おいて ください。
+(Kaigi no mae ni, shiryou wo yonde oite kudasai.)
+Meeting se pehle, documents padh lijiye.
+```
+
+---
+
+### **Grammar Point 21: ～ておく (Do in advance / Pehle se kar lena)**
+
+**て-form + おく = Pehle se kar ke rakhna / Advance mein karna**
+
+Yeh tab use hota hai jab kuch preparation ya advance action ki baat ho:
+
+#### **Examples:**
+
+```
+パーティー の まえに、りょうり を つくって おきます。
+(Paatii no mae ni, ryouri wo tsukutte okimasu.)
+Party se pehle, khana bana ke rakhunga.
+
+あした の かいぎ の ために、しりょう を よんで おきます。
+(Ashita no kaigi no tame ni, shiryou wo yonde okimasu.)
+Kal ki meeting ke liye, documents padh ke rakhunga.
+
+やさい を きって おいて ください。
+(Yasai wo kitte oite kudasai.)
+Sabzi kaat ke rakh dijiye.
+
+ホテル を よやくして おきました。
+(Hoteru wo yoyaku shite okimashita.)
+Hotel book kar ke rakha hai.
+
+でかける まえに、エアコン を けして おいて ください。
+(Dekakeru mae ni, eakon wo keshite oite kudasai.)
+Bahar jaane se pehle, AC band kar dijiye.
+```
+
+#### **Casual form: ～とく**
+- つくっておく → つくっとく
+- よんでおく → よんどく
+- かっておく → かっとく
+
+```
+あとで たべる から、とっといて。
+(Ato de taberu kara, tottoite.)
+Baad mein khaunga, rakh de.
+```
+
+---
+
+### **Grammar Point 22: ～ながら (While doing / _____ karte hue)**
+
+**ます-stem + ながら = _____ karte hue / _____ ke saath saath**
+
+Two actions simultaneously:
+
+#### **Examples:**
+
+```
+おんがく を ききながら、りょうり を します。
+(Ongaku wo kikinagara, ryouri wo shimasu.)
+Music sunte hue, khana banata hoon.
+
+テレビ を みながら、ごはん を たべます。
+(Terebi wo minagara, gohan wo tabemasu.)
+TV dekhte hue, khana khata hoon.
+
+あるきながら、スマホ を つかわないで ください。
+(Arukinagara, sumaho wo tsukawanaide kudasai.)
+Chalte hue, phone use mat karo.
+
+コーヒー を のみながら、ほん を よみます。
+(Koohii wo nominagara, hon wo yomimasu.)
+Coffee peete hue, kitaab padhta hoon.
+
+はたらきながら、だいがく に かよって います。(通う)
+(Hatarakinagara, daigaku ni kayotte imasu.)
+Kaam karte hue, university jaata hoon.
+```
+
+⚠️ **Note:** Main action baad mein aata hai. Side action + ながら, Main action.
+
+---
+
+### **Recipe Example - Oyakodon (親子丼):**
+
+```
+【おやこどん の つくりかた】
+(Oyakodon no tsukurikata)
+Oyakodon Recipe
+
+【ざいりょう】(2にんぶん)
+(Zairyou - 2 nin bun)
+Ingredients (2 servings):
+
+・とりにく 200g
+・たまねぎ 1/2こ
+・たまご 3こ
+・ごはん 2はい
+
+【ちょうみりょう】
+・しょうゆ おおさじ 2 (大さじ = tablespoon)
+・みりん おおさじ 2
+・さとう おおさじ 1
+・みず 100ml
+・だし こさじ 1 (小さじ = teaspoon)
+
+【つくりかた】
+
+1. まず、とりにく を ひとくちだい に きります。
+   (Mazu, toriniku wo hitokuchidai ni kirimasu.)
+   Sabse pehle, chicken ko bite-size mein kaato.
+
+2. たまねぎ を うすぎり に きります。
+   (Tamanegi wo usugiri ni kirimasu.)
+   Pyaaz ko patla slice karo.
+
+3. たまご を わって、かるく まぜて おきます。
+   (Tamago wo watte, karuku mazete okimasu.)
+   Ande tod ke, halka mix kar ke rakho.
+
+4. フライパン に ちょうみりょう と みず を いれて、
+   ちゅうび (中火) に かけます。
+   (Furaipan ni choumiryou to mizu wo irete, chuubi ni kakemasu.)
+   Pan mein seasonings aur paani daal ke, medium flame pe rakho.
+
+5. にたったら、たまねぎ と とりにく を いれます。
+   (Nitattara, tamanegi to toriniku wo iremasu.)
+   Ubalne lage toh, pyaaz aur chicken daalo.
+
+6. とりにく に ひ が とおったら、たまご を まわしいれます。
+   (Toriniku ni hi ga toottara, tamago wo mawashi iremasu.)
+   Chicken pak jaaye toh, anda ghuma ke daalo.
+
+7. ふた を して、30びょう くらい まちます。
+   (Futa wo shite, 30 byou kurai machimasu.)
+   Dhakkan lagake, 30 second wait karo.
+
+8. さいごに、ごはん の うえに のせて、かんせい です！
+   (Saigo ni, gohan no ue ni nosete, kansei desu!)
+   Ant mein, chawal ke upar daal ke, ready hai!
+
+ポイント：たまご は はんじゅく (半熟) が おいしい です。
+(Pointo: Tamago wa hanjuku ga oishii desu.)
+Tip: Anda half-cooked zyada tasty hota hai.
+```
+
+---
+
+### **Measurement Words:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| おおさじ (大さじ) | Oosaji | Tablespoon |
+| こさじ (小さじ) | Kosaji | Teaspoon |
+| カップ | Kappu | Cup |
+| グラム (g) | Guramu | Gram |
+| ミリリットル (ml) | Miririttoru | Milliliter |
+| はい (杯) | Hai | Cup/Bowl (counter) |
+| こ (個) | Ko | Piece (counter) |
+| ぶん (分) | Bun | Portion |
+
+---
+
+### **Grammar Point 23: ～たら いい (Should / Better to)**
+
+**たら + いい = _____ karna chahiye / _____ karo toh accha**
+
+Suggestion ya advice dene ke liye:
+
+#### **Examples:**
+
+```
+A: りょうり が じょうず に なりたい です。
+   (Ryouri ga jouzu ni naritai desu.)
+   Khana banana accha karna chahta hoon.
+
+B: まいにち れんしゅうしたら いいですよ。
+   (Mainichi renshuu shitara ii desu yo.)
+   Har roz practice karo toh accha hoga.
+
+A: どんな ざいりょう を かったら いいですか？
+   (Donna zairyou wo kattara ii desu ka?)
+   Kaisa ingredients khareedna chahiye?
+
+B: しんせんな (新鮮な) やさい を かったら いいですよ。
+   (Shinsen na yasai wo kattara ii desu yo.)
+   Fresh sabzi khareedna chahiye.
+
+かぜ を ひいたら、あたたかい もの を たべたら いいですよ。
+(Kaze wo hiitara, atatakai mono wo tabetara ii desu yo.)
+Sardi lag jaye toh, garam cheez khaana chahiye.
+```
+
+---
+
+### **At Restaurant - Advanced Conversation:**
+
+```
+【よやく する】(Making reservation)
+
+A: もしもし、レストラン さくら です。
+   (Moshimoshi, resutoran Sakura desu.)
+   Hello, Restaurant Sakura hai.
+
+B: あした の よる、7じ に 4にん で よやく したいんですが...
+   (Ashita no yoru, 7ji ni 4nin de yoyaku shitain desu ga...)
+   Kal raat 7 baje 4 logon ke liye booking karna chahta hoon...
+
+A: しょうしょう おまち ください... はい、だいじょうぶ です。
+   (Shoushou omachi kudasai... Hai, daijoubu desu.)
+   Thoda wait kijiye... Haan, theek hai.
+
+B: こせき (個室) は ありますか？
+   (Koshitsu wa arimasu ka?)
+   Private room hai?
+
+A: もうしわけ ございません。こせき は いっぱい です。
+   カウンターせき なら あいて います。
+   (Moushiwake gozaimasen. Koshitsu wa ippai desu.
+   Kauntaa seki nara aite imasu.)
+   Sorry. Private room full hai.
+   Counter seat available hai.
+
+B: じゃ、カウンターせき で おねがいします。
+   (Ja, kauntaa seki de onegaishimasu.)
+   Toh, counter seat please.
+
+A: おなまえ と おでんわばんごう を おねがいします。
+   (Onamae to odenwa bangou wo onegaishimasu.)
+   Naam aur phone number please.
+
+B: ラジェシュ です。でんわばんごう は 090-1234-5678 です。
+   (Rajeshu desu. Denwa bangou wa 090-1234-5678 desu.)
+   Rajesh hai. Phone number 090-1234-5678 hai.
+
+A: かしこまりました。では、あした 7じ に おまちして おります。
+   (Kashikomarimashita. Dewa, ashita 7ji ni omachishite orimasu.)
+   Samajh gaya. Toh, kal 7 baje aapka intezaar karunga.
+```
+
+```
+【ちゅうもん する】(Ordering)
+
+てんいん: ごちゅうもん は おきまり ですか？
+(Tenin: Gochuumon wa okimari desu ka?)
+Waiter: Order decide ho gaya?
+
+きゃく: この コース りょうり は なにが ついて いますか？
+(Kyaku: Kono koosu ryouri wa nani ga tsuite imasu ka?)
+Customer: Is course mein kya kya hai?
+
+てんいん: ぜんさい (前菜)、メイン、デザート、のみもの が ついて います。
+(Tenin: Zensai, mein, dezaato, nomimono ga tsuite imasu.)
+Waiter: Starter, main, dessert, drink included hai.
+
+きゃく: アレルギー が あるんですが、えび ぬき に できますか？
+(Kyaku: Arerugii ga arun desu ga, ebi nuki ni dekimasu ka?)
+Customer: Allergy hai, toh jheenga bina ban sakta hai?
+
+てんいん: はい、えび ぬき で おつくりします。
+(Tenin: Hai, ebi nuki de otsukuri shimasu.)
+Waiter: Haan, jheenga bina banaunga.
+
+きゃく: じゃ、これ を ふたつ と、ビール を ふたつ おねがいします。
+(Kyaku: Ja, kore wo futatsu to, biiru wo futatsu onegaishimasu.)
+Customer: Toh, yeh 2 aur beer 2 please.
+
+てんいん: かしこまりました。
+(Tenin: Kashikomarimashita.)
+Waiter: Samajh gaya.
+```
+
+---
+
+### **Food Related Expressions:**
+
+| Japanese | Meaning |
+|----------|---------|
+| おなか が すいた | Bhook lagi |
+| おなか が いっぱい | Pet bhar gaya |
+| のど が かわいた | Pyaas lagi |
+| くち に あう (口に合う) | Taste suit karna |
+| くち に あわない | Taste suit nahi karna |
+| あじ が うすい (味が薄い) | Taste halka hai |
+| あじ が こい (味が濃い) | Taste strong hai |
+| ひかえめ に する (控えめ) | Kam rakhna |
+| おかわり | Refill/Ek aur serving |
+| べつばら (別腹) | Dessert ke liye jagah hai (lit. separate stomach) |
+
+---
+
+# 📘 Chapter 5: じかん (Jikan) - Time / Samay
+
+## 🎯 Goal: Time ke baare mein detail mein baat karna, schedules, duration, frequency, deadlines
+
+---
+
+### **Time Related Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| じかん (時間) | Jikan | Samay/Time |
+| とき (時) | Toki | Waqt/Occasion |
+| あいだ (間) | Aida | Duration/Beech |
+| まえ (前) | Mae | Pehle/Before |
+| あと (後) | Ato | Baad/After |
+| さいしょ (最初) | Saisho | Sabse pehle/First |
+| さいご (最後) | Saigo | Sabse aakhir/Last |
+| はじめ (始め) | Hajime | Shuruwaat |
+| おわり (終わり) | Owari | Khatam/End |
+| とちゅう (途中) | Tochuu | Beech mein/Midway |
+| まにあう (間に合う) | Maniau | Time pe pahunchna |
+| おくれる (遅れる) | Okureru | Late hona |
+| はやい (早い) | Hayai | Jaldi/Early |
+| おそい (遅い) | Osoi | Deri/Late |
+| すぐ | Sugu | Turant/Immediately |
+| もうすぐ | Mousugu | Jaldi hi/Soon |
+| まだ | Mada | Abhi bhi/Still |
+| もう | Mou | Already/Pehle hi |
+| やっと | Yatto | Finally/Aakhir mein |
+| いつも | Itsumo | Hamesha |
+| たまに | Tamani | Kabhi kabhi |
+| ときどき (時々) | Tokidoki | Kabhi kabhi |
+| めったに～ない | Mettani ~nai | Bahut kam |
+| ぜんぜん～ない | Zenzen ~nai | Bilkul nahi |
+
+---
+
+### **Duration Words (どのくらい / Donokurai):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| ～ふん/ぷん (分) | ~fun/pun | _____ minute |
+| ～じかん (時間) | ~jikan | _____ hour |
+| ～にち (日) | ~nichi | _____ day |
+| ～しゅうかん (週間) | ~shuukan | _____ week |
+| ～かげつ (か月) | ~kagetsu | _____ month |
+| ～ねん (年) | ~nen | _____ year |
+| はんとし (半年) | Hantoshi | 6 months |
+| ～はん (半) | ~han | _____ aur aadha |
+
+**Duration Counter Special Readings:**
+
+| Duration | Japanese | Reading |
+|----------|----------|---------|
+| 1 minute | いっぷん | Ippun |
+| 3 minutes | さんぷん | Sanpun |
+| 4 minutes | よんぷん | Yonpun |
+| 6 minutes | ろっぷん | Roppun |
+| 8 minutes | はっぷん | Happun |
+| 10 minutes | じゅっぷん | Juppun |
+| 1 hour | いちじかん | Ichijikan |
+| 4 hours | よじかん | Yojikan |
+| 1 day | いちにち | Ichinichi |
+| 1 week | いっしゅうかん | Isshuukan |
+| 8 weeks | はっしゅうかん | Hasshuukan |
+| 1 month | いっかげつ | Ikkagetsu |
+| 6 months | ろっかげつ | Rokkagetsu |
+| 10 months | じゅっかげつ | Jukkagetsu |
+| 1 year | いちねん | Ichinen |
+| 4 years | よねん | Yonen |
+
+---
+
+### **Grammar Point 24: Duration + かかります (Takes time)**
+
+**[Duration] かかります = _____ time lagta hai**
+
+#### **Examples:**
+
+```
+えき まで あるいて 10ぷん かかります。
+(Eki made aruite 10 pun kakarimasu.)
+Station tak paidal 10 minute lagta hai.
+
+うち から かいしゃ まで 1じかん かかります。
+(Uchi kara kaisha made 1 jikan kakarimasu.)
+Ghar se office tak 1 ghanta lagta hai.
+
+この りょうり は 30ぷん くらい かかります。
+(Kono ryouri wa 30 pun kurai kakarimasu.)
+Yeh khana 30 minute lagega.
+
+にほんご が じょうず に なる まで、なんねん かかりますか？
+(Nihongo ga jouzu ni naru made, nannen kakarimasu ka?)
+Japanese acchi hone tak, kitne saal lagenge?
+
+おもったより じかん が かかりました。
+(Omotta yori jikan ga kakarimashita.)
+Socha tha usse zyada time laga.
+```
+
+---
+
+### **Grammar Point 25: Duration + に + Frequency (_____ mein _____ baar)**
+
+**[Duration] に [Number] かい/ど = _____ mein _____ baar**
+
+#### **Examples:**
+
+```
+いっしゅうかん に 3かい、ジム に いきます。
+(Isshuukan ni 3 kai, jimu ni ikimasu.)
+Hafte mein 3 baar gym jaata hoon.
+
+いちにち に 2かい、は を みがきます。
+(Ichinichi ni 2 kai, ha wo migakimasu.)
+Din mein 2 baar daant saaf karta hoon.
+
+いちねん に 1かい、くに に かえります。
+(Ichinen ni 1 kai, kuni ni kaerimasu.)
+Saal mein 1 baar desh jaata hoon.
+
+1かげつ に なんかい、えいが を みますか？
+(Ikkagetsu ni nankai, eiga wo mimasu ka?)
+Mahine mein kitni baar movie dekhte ho?
+
+にほんじん は いちにち に さんかい、ごはん を たべます。
+(Nihonjin wa ichinichi ni sankai, gohan wo tabemasu.)
+Japanese log din mein 3 baar khana khaate hain.
+```
+
+---
+
+### **Grammar Point 26: ～あいだ / ～あいだに (During / While)**
+
+**Duration/Activity + あいだ = _____ ke dauraan (continuous)**
+**Duration/Activity + あいだに = _____ ke dauraan mein (point in time)**
+
+#### **Difference:**
+
+- **あいだ**: Poore time mein continuously
+- **あいだに**: Us time period ke andar kisi point pe
+
+#### **Examples:**
+
+**あいだ (continuous):**
+```
+なつやすみ の あいだ、ずっと うち に いました。
+(Natsuyasumi no aida, zutto uchi ni imashita.)
+Summer vacation ke dauraan, poora time ghar pe tha.
+
+かいぎ の あいだ、メモ を とります。
+(Kaigi no aida, memo wo torimasu.)
+Meeting ke dauraan, notes leta hoon.
+
+ね て いる あいだ、ゆめ を みました。
+(Nete iru aida, yume wo mimashita.)
+Sote waqt, sapna dekha.
+```
+
+**あいだに (point in time):**
+```
+なつやすみ の あいだに、りょこう に いきました。
+(Natsuyasumi no aida ni, ryokou ni ikimashita.)
+Summer vacation ke dauraan mein, travel gaya.
+
+ひるやすみ の あいだに、ぎんこう に いきたい です。
+(Hiruyasumi no aida ni, ginkou ni ikitai desu.)
+Lunch break ke dauraan mein, bank jaana chahta hoon.
+
+でんしゃ を まって いる あいだに、ほん を よみました。
+(Densha wo matte iru aida ni, hon wo yomimashita.)
+Train wait karte waqt, kitaab padhi.
+
+わかい あいだに、いろいろな けいけん を した ほうが いいです。
+(Wakai aida ni, iroirona keiken wo shita hou ga ii desu.)
+Jawaan hote waqt, bahut experiences karne chahiye.
+```
+
+---
+
+### **Grammar Point 27: ～までに (By _____ / _____ tak)**
+
+**Time/Event + までに = _____ tak / _____ se pehle**
+
+Deadline ya time limit batane ke liye:
+
+#### **Examples:**
+
+```
+5じ までに かえって きて ください。
+(5ji made ni kaette kite kudasai.)
+5 baje tak wapas aa jao.
+
+らいしゅう の きんようび までに レポート を だして ください。
+(Raishuu no kinyoubi made ni repooto wo dashite kudasai.)
+Agle Friday tak report submit karo.
+
+かいぎ が はじまる までに、しりょう を よんで おいて ください。
+(Kaigi ga hajimaru made ni, shiryou wo yonde oite kudasai.)
+Meeting shuru hone se pehle, documents padh lo.
+
+しめきり までに まにあいますか？
+(Shimekiri made ni maniaimasu ka?)
+Deadline tak time pe ho jaayega?
+
+30さい までに、けっこんしたい です。
+(30sai made ni, kekkon shitai desu.)
+30 saal tak shaadi karna chahta hoon.
+```
+
+#### **Difference: まで vs までに:**
+
+| Pattern | Meaning | Example |
+|---------|---------|---------|
+| まで | Until (continuous) | 5じ **まで** はたらきます (5 baje tak kaam karta hoon) |
+| までに | By (deadline) | 5じ **までに** おわります (5 baje tak khatam karunga) |
+
+```
+あした まで やすみ です。
+(Ashita made yasumi desu.)
+Kal tak chutti hai. (Kal bhi chutti)
+
+あした までに おわります。
+(Ashita made ni owarimasu.)
+Kal tak khatam karunga. (Deadline kal hai)
+```
+
+---
+
+### **Grammar Point 28: ～ところ (Just about to / Just did / In the middle of)**
+
+**Verb forms + ところ = _____ hi / _____ wala hai / _____ ke beech mein**
+
+Yeh action ka **exact point** batata hai:
+
+| Pattern | Meaning | Example |
+|---------|---------|---------|
+| Dictionary + ところ | About to do | いま、でかける**ところ**です (Abhi nikalne wala hoon) |
+| ている + ところ | In the middle of | いま、たべている**ところ**です (Abhi kha raha hoon) |
+| た + ところ | Just did | いま、かえってきた**ところ**です (Abhi hi wapas aaya) |
+
+#### **Examples:**
+
+**Dictionary form + ところ (about to):**
+```
+A: いま、いそがしい？
+   (Ima, isogashii?)
+   Abhi busy hai?
+
+B: うん、いま でかける ところ なんだ。あとで いい？
+   (Un, ima dekakeru tokoro nan da. Ato de ii?)
+   Haan, abhi nikalne wala hoon. Baad mein theek?
+
+いま、ごはん を たべる ところ です。
+(Ima, gohan wo taberu tokoro desu.)
+Abhi khana khaane wala hoon.
+```
+
+**ている + ところ (in the middle of):**
+```
+いま、レポート を かいている ところ です。
+(Ima, repooto wo kaite iru tokoro desu.)
+Abhi report likh raha hoon.
+
+ちょうど その はなし を している ところ でした。
+(Choudo sono hanashi wo shite iru tokoro deshita.)
+Bilkul wohi baat ho rahi thi.
+```
+
+**た + ところ (just finished):**
+```
+いま、かえってきた ところ です。
+(Ima, kaette kita tokoro desu.)
+Abhi hi wapas aaya.
+
+さっき、ごはん を たべた ところ です。
+(Sakki, gohan wo tabeta tokoro desu.)
+Abhi hi khana khaya.
+
+ちょうど あなた の こと を かんがえていた ところ です。
+(Choudo anata no koto wo kangaete ita tokoro desu.)
+Bilkul tumhare baare mein soch raha tha.
+```
+
+---
+
+### **Grammar Point 29: ～てしまう (Completely done / Unfortunately happened)**
+
+Pehle chapter mein briefly dekha. Ab detail:
+
+**て-form + しまう = Puri tarah karna / Galti se ho gaya**
+
+Two meanings:
+1. **Completion**: Puri tarah khatam kar diya
+2. **Regret**: Galti se / Unfortunately ho gaya
+
+#### **Examples:**
+
+**Completion (neutral/positive):**
+```
+この ほん を ぜんぶ よんで しまいました。
+(Kono hon wo zenbu yonde shimaimashita.)
+Yeh poori kitaab padh li.
+
+しゅくだい を もう おわって しまいました。
+(Shukudai wo mou owatte shimaimashita.)
+Homework already khatam kar diya.
+
+ケーキ を ぜんぶ たべて しまった！
+(Keeki wo zenbu tabete shimatta!)
+Poora cake kha gaya!
+```
+
+**Regret (negative feeling):**
+```
+だいじな やくそく を わすれて しまいました。
+(Daiji na yakusoku wo wasurete shimaimashita.)
+Important promise bhool gaya (sadly).
+
+さいふ を おとして しまいました。
+(Saifu wo otoshite shimaimashita.)
+Wallet gira diya (unfortunately).
+
+また、ちこくして しまった。
+(Mata, chikoku shite shimatta.)
+Phir se late ho gaya (dammit).
+
+せっかく つくった りょうり を こがして しまった。(焦がす)
+(Sekkaku tsukutta ryouri wo kogashite shimatta.)
+Mehnat se banaya khana jala diya.
+```
+
+#### **Casual form: ～ちゃう / ～じゃう**
+
+| Plain | Casual | Example |
+|-------|--------|---------|
+| てしまう | ちゃう | たべてしまう → たべちゃう |
+| でしまう | じゃう | よんでしまう → よんじゃう |
+
+```
+ぜんぶ たべちゃった！
+(Zenbu tabechatta!)
+Sab kha gaya!
+
+また わすれちゃった...
+(Mata wasurechatta...)
+Phir bhool gaya...
+```
+
+---
+
+### **Schedule & Time Conversation:**
+
+```
+A: らいしゅう の よてい、どうなってる？
+   (Raishuu no yotei, dou natteru?)
+   Agle hafte ka schedule kaisa hai?
+
+B: げつようび は ちょっと いそがしいんだ。
+   あさ から かいぎ が あって、
+   ひる も アポ が ある。
+   (Getsuyoubi wa chotto isogashiin da.
+   Asa kara kaigi ga atte,
+   hiru mo apo ga aru.)
+   Monday thoda busy hai.
+   Subah se meeting hai,
+   dopahar bhi appointment hai.
+
+A: じゃ、かようび は？
+   (Ja, kayoubi wa?)
+   Toh Tuesday?
+
+B: かようび の ごご なら あいてる。
+   3じ から 5じ の あいだ、どう？
+   (Kayoubi no gogo nara aiteru.
+   3ji kara 5ji no aida, dou?)
+   Tuesday dopahar free hai.
+   3 se 5 ke beech, kaisa?
+
+A: いいね。じゃ、3じ に えき の まえで。
+   おくれないでね！
+   (Ii ne. Ja, 3ji ni eki no mae de.
+   Okurenaide ne!)
+   Accha. Toh 3 baje station ke saamne.
+   Late mat hona!
+
+B: りょうかい！まにあうように いくよ。
+   (Ryoukai! Maniau you ni iku yo.)
+   OK! Time pe pahunchne ki koshish karunga.
+```
+
+---
+
+# 📘 Chapter 6: ひっこし (Hikkoshi) - Moving / Ghar Badalna
+
+## 🎯 Goal: Ghar dhundhna, real estate se baat karna, moving process, address change, utilities
+
+---
+
+### **Moving & Housing Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| ひっこし (引っ越し) | Hikkoshi | Shifting/Moving |
+| ひっこす (引っ越す) | Hikkosu | Shift karna |
+| ふどうさんや (不動産屋) | Fudousanya | Real estate agent |
+| ぶっけん (物件) | Bukken | Property |
+| けいやく (契約) | Keiyaku | Contract |
+| かいやく (解約) | Kaiyaku | Contract cancel |
+| しききん (敷金) | Shikikin | Security deposit |
+| れいきん (礼金) | Reikin | Key money (Japan specific) |
+| やちん (家賃) | Yachin | Rent/Kiraya |
+| きょうえきひ (共益費) | Kyouekihi | Maintenance fee |
+| かんりひ (管理費) | Kanrihi | Management fee |
+| ほしょうにん (保証人) | Hoshounin | Guarantor |
+| ほしょうかいしゃ (保証会社) | Hoshou gaisha | Guarantor company |
+| にゅうきょ (入居) | Nyuukyo | Move in |
+| たいきょ (退去) | Taikyo | Move out |
+| げんじょうかいふく (現状回復) | Genjou kaifuku | Restoring original condition |
+| ないけん (内見) | Naiken | House viewing |
+
+---
+
+### **House/Apartment Features:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| まどり (間取り) | Madori | Floor plan/Layout |
+| 1K (ワンケー) | Wan-kee | 1 room + Kitchen |
+| 1DK | Wan-dii-kee | 1 room + Dining Kitchen |
+| 1LDK | Wan-eru-dii-kee | 1 room + Living Dining Kitchen |
+| 2LDK | Nii-eru-dii-kee | 2 rooms + LDK |
+| じょう (畳) | Jou | Tatami mat (size unit) |
+| へいべい (平米/㎡) | Heibei | Square meter |
+| バストイレべつ | Basu toire betsu | Separate bath & toilet |
+| ユニットバス | Yunitto basu | Unit bath (bath+toilet together) |
+| オートロック | Ooto rokku | Auto lock |
+| エアコンつき | Eakon tsuki | AC included |
+| かぐつき (家具付き) | Kagu tsuki | Furnished |
+| ペットかのう (ペット可能) | Petto kanou | Pets allowed |
+| ちゅうしゃじょうあり (駐車場あり) | Chuushajou ari | Parking available |
+| みなみむき (南向き) | Minami muki | South facing |
+| ひあたり (日当たり) | Hiatari | Sunlight/Roshni |
+| つうき (通気) | Tsuuki | Ventilation |
+| ぼうおん (防音) | Bouon | Soundproof |
+
+---
+
+### **Utilities (ライフライン / Raifurain):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| でんき (電気) | Denki | Electricity |
+| ガス | Gasu | Gas |
+| すいどう (水道) | Suidou | Water |
+| インターネット | Intaanetto | Internet |
+| でんわ (電話) | Denwa | Telephone |
+| こうねつひ (光熱費) | Kounetsuhi | Utility bills |
+| でんきだい (電気代) | Denkidai | Electricity bill |
+| ガスだい | Gasudai | Gas bill |
+| すいどうだい (水道代) | Suidoudai | Water bill |
+| かいせん (回線) | Kaisen | Line (internet/phone) |
+| けいやく (契約) | Keiyaku | Contract |
+| かいやく (解約) | Kaiyaku | Cancellation |
+| めいぎへんこう (名義変更) | Meigi henkou | Name transfer |
+| てつづき (手続き) | Tetsuduki | Procedure |
+
+---
+
+### **Grammar Point 30: ～ことにする (Decide to)**
+
+**Dictionary form + ことにする = _____ karne ka faisla kiya**
+**ない form + ことにする = _____ na karne ka faisla kiya**
+
+Apna decision batane ke liye:
+
+#### **Examples:**
+
+```
+あたらしい アパート に ひっこす ことにしました。
+(Atarashii apaato ni hikkosu koto ni shimashita.)
+Naye apartment mein shift hone ka decide kiya.
+
+らいげつ から ジム に かよう ことにしました。
+(Raigetsu kara jimu ni kayou koto ni shimashita.)
+Agle mahine se gym jaane ka decide kiya.
+
+おさけ を やめる ことにしました。
+(Osake wo yameru koto ni shimashita.)
+Sharab chhod ne ka decide kiya.
+
+もう たばこ を すわない ことにしました。
+(Mou tabako wo suwanai koto ni shimashita.)
+Ab cigarette nahi peene ka decide kiya.
+
+まよったけど、この ぶっけん に きめる ことにしました。
+(Mayotta kedo, kono bukken ni kimeru koto ni shimashita.)
+Confused tha, lekin yeh property choose karne ka decide kiya.
+```
+
+---
+
+### **Grammar Point 31: ～ことになる (It's been decided / Turn out)**
+
+**Dictionary form + ことになる = _____ hona tay hua / _____ hoga**
+**ない form + ことになる = _____ nahi hoga (situation wise)**
+
+External decision ya situation ke result batane ke liye:
+
+#### **Examples:**
+
+```
+らいげつ、とうきょう に てんきん (転勤) する ことになりました。
+(Raigetsu, Toukyou ni tenkin suru koto ni narimashita.)
+Agle mahine, Tokyo transfer hona tay hua.
+
+かいしゃ の りょう (寮) に すむ ことになりました。
+(Kaisha no ryou ni sumu koto ni narimashita.)
+Company ke hostel mein rehna tay hua.
+
+この アパート を でる ことになりました。
+(Kono apaato wo deru koto ni narimashita.)
+Yeh apartment chhod na padega (situation).
+
+けっきょく、ひっこし しない ことになりました。
+(Kekkyoku, hikkoshi shinai koto ni narimashita.)
+Aakhir mein, shift nahi karna hua.
+
+にほん に もう 2ねん いる ことになりました。
+(Nihon ni mou 2nen iru koto ni narimashita.)
+Japan mein 2 saal aur rehna tay hua.
+```
+
+#### **Difference: ことにする vs ことになる:**
+
+| Pattern | Who decides | Example |
+|---------|-------------|---------|
+| ことにする | Main/Apna decision | ひっこす **ことにしました** (Maine decide kiya) |
+| ことになる | Situation/Others | ひっこす **ことになりました** (Situation hua) |
+
+---
+
+### **Grammar Point 32: ～ようにする (Try to / Make sure to)**
+
+**Dictionary form + ようにする = _____ karne ki koshish karna**
+**ない form + ようにする = _____ na karne ki koshish karna**
+
+Habit ya effort batane ke liye:
+
+#### **Examples:**
+
+```
+まいにち 6じ に おきる ようにしています。
+(Mainichi 6ji ni okiru you ni shite imasu.)
+Har roz 6 baje uthne ki koshish karta hoon.
+
+やちん は まいつき おくれないように はらう ようにしています。
+(Yachin wa maitsuki okurenai you ni harau you ni shite imasu.)
+Rent har mahine late na ho, aise pay karta hoon.
+
+あたらしい ぶっけん では、でんき を けす ようにします。
+(Atarashii bukken de wa, denki wo kesu you ni shimasu.)
+Naye ghar mein, light band karne ki aadat dalunga.
+
+ゴミ の ひ を わすれない ようにして ください。
+(Gomi no hi wo wasurenai you ni shite kudasai.)
+Garbage day bhoolna mat.
+
+きんじょ に めいわく (迷惑) を かけない ようにして ください。
+(Kinjo ni meiwaku wo kakenai you ni shite kudasai.)
+Padosiyon ko pareshani na do.
+```
+
+---
+
+### **Grammar Point 33: ～ようになる (Come to / Become able to)**
+
+**Dictionary form + ようになる = _____ karne laga / _____ kar paane laga**
+**ない form + ようになる = _____ nahi karne laga**
+
+Change in ability ya habit batane ke liye:
+
+#### **Examples:**
+
+```
+にほん に きて から、まいにち じてんしゃ に のる ようになりました。
+(Nihon ni kite kara, mainichi jitensha ni noru you ni narimashita.)
+Japan aake, har roz cycle use karne laga.
+
+さいきん、はやおき できる ようになりました。
+(Saikin, hayaoki dekiru you ni narimashita.)
+Aajkal, jaldi uthne laga.
+
+この まち に すんでから、にほんご が はなせる ようになりました。
+(Kono machi ni sunde kara, nihongo ga hanaseru you ni narimashita.)
+Is sheher mein rehke, Japanese bolne laga.
+
+あかちゃん が あるける ようになりました。
+(Akachan ga arukeru you ni narimashita.)
+Baby chalne laga.
+
+ねつ が さがって、たべられる ようになりました。
+(Netsu ga sagatte, taberareru you ni narimashita.)
+Bukhar kam hua, kha paane laga.
+```
+
+---
+
+### **Grammar Point 34: ～てある (Has been done / State of completion)**
+
+**Transitive verb て-form + ある = _____ kiya hua hai (kisi ne)**
+
+Koi action ka result abhi bhi hai - state batata hai:
+
+#### **Examples:**
+
+```
+まど が あけて あります。
+(Mado ga akete arimasu.)
+Khidki khuli hui hai. (kisi ne kholi)
+
+でんき が けして あります。
+(Denki ga keshite arimasu.)
+Light band ki hui hai.
+
+つくえ の うえ に メモ が かいて あります。
+(Tsukue no ue ni memo ga kaite arimasu.)
+Table pe note likha hua hai.
+
+れいぞうこ に ビール が ひやして あります。
+(Reizouko ni biiru ga hiyashite arimasu.)
+Fridge mein beer thanda kiya hua hai.
+
+へや は もう そうじして あります。
+(Heya wa mou soujishite arimasu.)
+Room already saaf kiya hua hai.
+
+ひっこし の ために、にもつ が つめて あります。(詰める)
+(Hikkoshi no tame ni, nimotsu ga tsumete arimasu.)
+Shifting ke liye, saamaan pack kiya hua hai.
+```
+
+#### **Difference: ている vs てある:**
+
+| Pattern | Meaning | Example |
+|---------|---------|---------|
+| ている | Action happening / State (natural) | まど が あいて**いる** (Khidki khuli hai - state) |
+| てある | Action done by someone (result) | まど が あけて**ある** (Kisi ne kholi hai) |
+
+⚠️ **てある** sirf transitive verbs ke saath use hota hai!
+
+---
+
+### **Real Estate Conversation:**
+
+```
+【ぶっけん を さがす】(Looking for property)
+
+きゃく: すみません、1LDK の ぶっけん を さがして いるんですが...
+(Kyaku: Sumimasen, 1LDK no bukken wo sagashite irun desu ga...)
+Customer: Excuse me, 1LDK property dhundh raha hoon...
+
+ふどうさん: はい、どの あたり で おさがし ですか？
+(Fudousan: Hai, dono atari de osagashi desu ka?)
+Agent: Haan, kaun se area mein dhundh rahe ho?
+
+きゃく: えき から あるいて 10ぷん いない が いいんですが。
+(Kyaku: Eki kara aruite 10pun inai ga iin desu ga.)
+Customer: Station se paidal 10 minute ke andar chahiye.
+
+ふどうさん: よさん (予算) は おいくら くらい ですか？
+(Fudousan: Yosan wa oikura kurai desu ka?)
+Agent: Budget kitna hai?
+
+きゃく: やちん は 8まんえん まで で かんがえて います。
+(Kyaku: Yachin wa 8man'en made de kangaete imasu.)
+Customer: Rent 80,000 yen tak soch raha hoon.
+
+ふどうさん: なにか じょうけん (条件) は ありますか？
+(Fudousan: Nanika jouken wa arimasu ka?)
+Agent: Koi conditions hain?
+
+きゃく: バストイレべつ で、2かい いじょう が いいです。
+あと、ペットかのう の ところ が いいんですが...
+(Kyaku: Basu toire betsu de, 2kai ijou ga ii desu.
+Ato, petto kanou no tokoro ga iin desu ga...)
+Customer: Bath toilet alag, 2nd floor ya upar chahiye.
+Aur, pets allowed jagah chahiye...
+
+ふどうさん: わかりました。いくつか ぶっけん が ありますので、
+ないけん されますか？
+(Fudousan: Wakarimashita. Ikutsuka bukken ga arimasu node,
+naiken saremasu ka?)
+Agent: Samajh gaya. Kuch properties hain, viewing karoge?
+
+きゃく: はい、おねがいします。
+(Kyaku: Hai, onegaishimasu.)
+Customer: Haan, please.
+```
+
+```
+【ないけん で】(During viewing)
+
+ふどうさん: こちら が リビング です。みなみむき で ひあたり が いいです。
+(Fudousan: Kochira ga ribingu desu. Minami muki de hiatari ga ii desu.)
+Agent: Yeh living room hai. South facing hai, sunlight acchi hai.
+
+きゃく: ひろくて、あかるい ですね。
+しゅうのう (収納) は どの くらい ありますか？
+(Kyaku: Hirokute, akarui desu ne. Shuunou wa dono kurai arimasu ka?)
+Customer: Bada aur ujala hai na. Storage kitna hai?
+
+ふどうさん: おしいれ が ここ と、ここ に あります。
+(Fudousan: Oshiire ga koko to, koko ni arimasu.)
+Agent: Closet yahaan aur yahaan hai.
+
+きゃく: エアコン は ついて いますか？
+(Kyaku: Eakon wa tsuite imasu ka?)
+Customer: AC laga hai?
+
+ふどうさん: はい、リビング と しんしつ に ついて います。
+(Fudousan: Hai, ribingu to shinshitsu ni tsuite imasu.)
+Agent: Haan, living aur bedroom mein laga hai.
+
+きゃく: いい ですね。インターネット は すぐ つかえますか？
+(Kyaku: Ii desu ne. Intaanetto wa sugu tsukaemasu ka?)
+Customer: Accha hai. Internet turant use kar sakta hoon?
+
+ふどうさん: はい、かいせん は もう ひいて あるので、
+プロバイダー と けいやく すれば すぐ つかえます。
+(Fudousan: Hai, kaisen wa mou hiite aru node,
+purobaidaa to keiyaku sureba sugu tsukaemasu.)
+Agent: Haan, line already lagi hai, toh provider se contract karo toh turant use kar sakte ho.
+
+きゃく: この ぶっけん、きめたいん ですが、けいやく の ながれ を おしえて もらえますか？
+(Kyaku: Kono bukken, kimetain desu ga, keiyaku no nagare wo oshiete moraemasu ka?)
+Customer: Yeh property lena chahta hoon, contract ka process bata sakte ho?
+```
+
+---
+
+### **Moving Process Checklist:**
+
+```
+【ひっこし の ながれ】(Moving process)
+
+1. ぶっけん を さがす
+   (Bukken wo sagasu)
+   Property dhundhna
+
+2. ないけん を する
+   (Naiken wo suru)
+   Viewing karna
+
+3. もうしこみ を する
+   (Moushikomi wo suru)
+   Application karna
+
+4. しんさ (審査) を まつ
+   (Shinsa wo matsu)
+   Screening ka wait karna
+
+5. けいやく を する
+   (Keiyaku wo suru)
+   Contract karna
+
+6. しききん・れいきん・やちん を はらう
+   (Shikikin, reikin, yachin wo harau)
+   Deposit, key money, rent pay karna
+
+7. かぎ を もらう
+   (Kagi wo morau)
+   Key lena
+
+8. ライフライン の てつづき を する
+   (Raifurain no tetsuduki wo suru)
+   Utilities ka procedure karna
+   - でんき、ガス、すいどう の けいやく
+   - インターネット の けいやく
+
+9. じゅうしょへんこう (住所変更) の てつづき を する
+   (Juusho henkou no tetsuduki wo suru)
+   Address change ka procedure karna
+   - くやくしょ で てんにゅうとどけ (転入届)
+   - ぎんこう、カード、かいしゃ など
+
+10. ひっこし を する
+    (Hikkoshi wo suru)
+    Shifting karna
+
+11. きんじょ に あいさつ する
+    (Kinjo ni aisatsu suru)
+    Padosiyon ko greeting karna
+```
+
+---
+
+### **Neighbor Greeting (引っ越し の あいさつ):**
+
+```
+すみません、となり に ひっこして きた [なまえ] と もうします。
+(Sumimasen, tonari ni hikkoshite kita [namae] to moushimasu.)
+Excuse me, bagal mein shift hoke aaya, [naam] hoon.
+
+これ、つまらない もの ですが、よかったら どうぞ。
+(Kore, tsumaranai mono desu ga, yokattara douzo.)
+Yeh chhoti si cheez hai, agar accha lage toh lijiye.
+
+これから おせわ に なります。よろしく おねがいします。
+(Korekara osewa ni narimasu. Yoroshiku onegaishimasu.)
+Ab se aapki care mein hoon. Please acche se rehna.
+```
+
+⚠️ Japan mein shift hone pe padosiyon ko chhota gift dena common hai - sabun, towel, sweets etc.
+
+---
+
+# 📝 GRAMMAR SUMMARY (Chapter 4-6):
+
+| # | Pattern | Meaning | Example |
+|---|---------|---------|---------|
+| 19 | ～てから | After doing | たべてから、でかけます |
+| 20 | ～まえに | Before doing | ねるまえに、はをみがきます |
+| 21 | ～ておく | Do in advance | りょうりをつくっておきます |
+| 22 | ～ながら | While doing | おんがくをききながら |
+| 23 | ～たらいい | Should (advice) | れんしゅうしたらいい |
+| 24 | Duration + かかる | Takes time | 1じかんかかります |
+| 25 | Duration に Frequency | X times per Y | 1しゅうかんに3かい |
+| 26 | ～あいだ/あいだに | During/While | なつやすみのあいだに |
+| 27 | ～までに | By (deadline) | 5じまでに |
+| 28 | ～ところ | Just about to/did | いまでかけるところ |
+| 29 | ～てしまう | Completely/Regret | わすれてしまった |
+| 30 | ～ことにする | Decide to | ひっこすことにした |
+| 31 | ～ことになる | It's been decided | てんきんすることになった |
+| 32 | ～ようにする | Try to/Make sure | はやくおきるようにする |
+| 33 | ～ようになる | Come to/Become able | はなせるようになった |
+| 34 | ～てある | Has been done | まどがあけてある |
+
+---
+
+# 📝 VOCABULARY CATEGORIES (Ch 4-6):
+
+### **Cooking (りょうり):**
+```
+きります、やきます、にます、ゆでます、いためます、
+あげます、むします、まぜます、いれます、くわえます
+うすぎり、せんぎり、みじんぎり
+```
+
+### **Ingredients (ざいりょう):**
+```
+たまねぎ、にんじん、じゃがいも、キャベツ、
+ぎゅうにく、ぶたにく、とりにく、さかな、えび
+しお、さとう、しょうゆ、みそ、あぶら
+```
+
+### **Time (じかん):**
+```
+～ふん、～じかん、～にち、～しゅうかん、～かげつ、～ねん
+まえに、あとで、あいだに、までに、ところ
+```
+
+### **Housing (すまい):**
+```
+ひっこし、ふどうさんや、ぶっけん、けいやく
+やちん、しききん、れいきん
+1K、1DK、1LDK、バストイレべつ
+でんき、ガス、すいどう
+```
+
+---
+
+# ⚡ Quick Practice Tips (Ch 4-6):
+
+1. **Cooking verbs** practice karo - Recipe dekhke samjho
+2. **Time expressions** bahut use hote hain - Routine describe karo
+3. **てから/まえに/ながら** sequence batane ke liye important
+4. **ことにする vs ことになる** - Apna decision vs Situation
+5. **ようにする vs ようになる** - Effort vs Change
+6. **てしまう** casual mein **ちゃう/じゃう** banta hai
+7. **てある** - Result state batane ke liye
+
+---
+
+**Chapter 7-9 chahiye toh bata do!** 💪🎌
+
+**つづけて がんばって ください！**
+(Tsudukete ganbatte kudasai!)
+Keep going, all the best!
+
+========================================================
+
+========================================================
+
+Bilkul — chalo ab **Irodori (いろどり) Elementary 2, Chapter 7 to 9** karte hain.  
+Main response **Hinglish** mein rakhunga, aur **kanji ke saath ひらがな reading** dunga.
+
+---
+
+# Irodori (いろどり) Elementary 2 - Chapter 7 to 9 Complete Guide
+
+---
+
+# 📘 Chapter 7: インフォメーション - Information / Jaankari lena
+
+## 🎯 Goal:
+- event ya notice samajhna  
+- poster / flyer padhna  
+- kisi cheez ke baare mein poochna  
+- schedule aur details confirm karna  
+
+---
+
+## 1) Important Vocabulary
+
+### **Event / Notice words**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| イベント | いべんと | Event |
+| おまつり (お祭り) | おまつり | Festival / Mela |
+| コンサート | こんさあと | Concert |
+| セミナー | せみなあ | Seminar |
+| てんじ (展示) | てんじ | Exhibition |
+| こうえん (講演) | こうえん | Lecture / Talk |
+| ぼしゅう (募集) | ぼしゅう | Recruitment / Application open |
+| もうしこみ (申し込み) | もうしこみ | Registration / Apply |
+| しめきり (締め切り) | しめきり | Deadline |
+| ていいん (定員) | ていいん | Capacity / Limited seats |
+| せんちゃくじゅん (先着順) | せんちゃくじゅん | First come first served |
+| さんかひ (参加費) | さんかひ | Participation fee |
+| にゅうじょうりょう (入場料) | にゅうじょうりょう | Entrance fee |
+| むりょう (無料) | むりょう | Free |
+| ゆうりょう (有料) | ゆうりょう | Paid |
+
+---
+
+### **Schedule / place words**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ひにち (日にち) | ひにち | Date |
+| じかん (時間) | じかん | Time |
+| かいじょう (会場) | かいじょう | Venue |
+| ばしょ (場所) | ばしょ | Place |
+| かいし (開始) | かいし | Start |
+| しゅうりょう (終了) | しゅうりょう | End |
+| よてい (予定) | よてい | Plan / Schedule |
+| へんこう (変更) | へんこう | Change |
+| ちゅうし (中止) | ちゅうし | Cancelled |
+| えんき (延期) | えんき | Postponed |
+| あめ の ばあい (雨の場合) | あめ の ばあい | In case of rain |
+
+---
+
+## 2) Grammar Point 35: ～について  
+## Meaning: “_____ ke baare mein”
+
+**Noun + について**
+
+### Examples:
+- この イベント **について** おしえて ください。  
+  → Is event **ke baare mein** bataiye.
+
+- にほん の ぶんか (文化) **について** べんきょうして います。  
+  → Japan ki culture **ke baare mein** padh raha hoon.
+
+- しごと **について** そうだんしたい です。  
+  → Kaam **ke baare mein** baat / consult karna chahta hoon.
+
+### Useful questions:
+- この イベント **について** しつもん が あります。  
+  → Is event ke baare mein ek sawaal hai.
+
+- くわしく (詳しく) おしえて もらえますか。  
+  → Thoda detail mein bata sakte ho?
+
+---
+
+## 3) Grammar Point 36: ～そうです  
+## Meaning: “Suna hai ki…”
+
+Ye wala **hearsay** hai. Matlab tumne khud nahi dekha, kisi se suna / notice mein padha.
+
+### Pattern:
+- Verb plain form + そうです
+- い-adjective + そうです
+- な-adjective + だそうです
+- Noun + だそうです
+
+### Examples:
+- あした は あめ が ふる **そうです**。  
+  → Kal baarish hogi **suna hai**.
+
+- あの コンサート は すごく にんき (人気) が ある **そうです**。  
+  → Woh concert bahut popular hai **suna hai**.
+
+- この イベント は むりょう **だそうです**。  
+  → Yeh event free hai **suna hai**.
+
+- らいしゅう、えき の ちかく で おまつり が ある **そうです**。  
+  → Agle hafte station ke paas festival hai **suna hai**.
+
+---
+
+## 4) Grammar Point 37: ～かどうか  
+## Meaning: “...hai ya nahi / whether or not”
+
+### Pattern:
+**Plain form + かどうか**
+
+### Examples:
+- さんかできる **かどうか**、かくにんします。  
+  → Join kar sakta hoon **ya nahi**, confirm karta hoon.
+
+- いく **かどうか**、まだ きめて いません。  
+  → Jaunga **ya nahi**, abhi decide nahi kiya.
+
+- この チケット が つかえる **かどうか** わかりません。  
+  → Yeh ticket use ho sakta hai **ya nahi**, pata nahi.
+
+- しめきり に まにあう **かどうか**、ちょっと しんぱい です。  
+  → Deadline tak ho paayega **ya nahi**, thodi chinta hai.
+
+---
+
+## 5) Grammar Point 38: ～よていです  
+## Meaning: “plan hai / scheduled hai”
+
+### Pattern:
+- Verb dictionary form + よていです
+- Noun + の + よていです
+
+### Examples:
+- こんどの どようび、イベント に さんかする **よていです**。  
+  → Is Saturday event mein join karne ka plan hai.
+
+- かいぎ は ごご 2じ から の **よていです**。  
+  → Meeting dopahar 2 baje se hone ka schedule hai.
+
+- あした は くやくしょ (区役所) に いく **よていです**。  
+  → Kal ward office jaane ka plan hai.
+
+- らいげつ、にほんご の しけん (試験) を うける **よていです**。  
+  → Agle mahine Japanese exam dene ka plan hai.
+
+---
+
+## 6) Poster / Notice padhne ke common words
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| おしらせ (お知らせ) | おしらせ | Notice |
+| しょうさい (詳細) | しょうさい | Details |
+| といあわせ (問い合わせ) | といあわせ | Inquiry / Contact |
+| うけつけ (受付) | うけつけ | Reception |
+| たいしょう (対象) | たいしょう | Target people / Eligibility |
+| どなたでも | どなたでも | Anyone can join |
+| よやく ひつよう | よやく ひつよう | Reservation needed |
+| よやく ふよう | よやく ふよう | Reservation not needed |
+
+---
+
+## 7) Example Poster Reading
+
+```
+おまつり の おしらせ
+
+ひにち: 7がつ 20にち
+じかん: ごご 4じ ～ 8じ
+ばしょ: えき まえ こうえん
+さんかひ: むりょう
+もうしこみ: ふよう
+
+※ あめ の ばあい は ちゅうし です。
+```
+
+### Hinglish meaning:
+- Date: 20 July  
+- Time: 4 PM se 8 PM  
+- Place: station ke saamne park  
+- Fee: free  
+- Registration: zaroori nahi  
+- Note: baarish hui toh cancel
+
+---
+
+## 8) Asking about an event
+
+### Useful phrases:
+- この イベント **について** おしえて ください。  
+- いつ ありますか。  
+- どこ で ありますか。  
+- なんじ から なんじ まで ですか。  
+- だれでも さんか できますか。  
+- もうしこみ は ひつよう ですか。  
+- しめきり は いつ ですか。  
+
+### Sample conversation:
+**A:** すみません、この セミナー について おしえて ください。  
+**B:** はい、どうぞ。  
+**A:** だれでも さんか できますか。  
+**B:** はい、できます。  
+**A:** さんかひ は いくら ですか。  
+**B:** むりょう です。  
+**A:** もうしこみ は ひつよう ですか。  
+**B:** はい、ひつよう です。 きんようび までに もうしこんで ください。  
+
+---
+
+# 📘 Chapter 8: ともだちと - With Friends / Doston ke saath
+
+## 🎯 Goal:
+- casual Japanese use karna  
+- friends ko invite karna  
+- plans banana  
+- short chat, messaging style samajhna  
+
+---
+
+## 1) Friendship Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ともだち (友達) | ともだち | Friend |
+| しんゆう (親友) | しんゆう | Best friend |
+| なかま (仲間) | なかま | Group mate / Companion |
+| やくそく (約束) | やくそく | Promise / Plan |
+| まちあわせ (待ち合わせ) | まちあわせ | Meeting arrangement |
+| つごう (都合) | つごう | Convenience / Schedule |
+| ひま (暇) | ひま | Free |
+| いそがしい (忙しい) | いそがしい | Busy |
+| さそう (誘う) | さそう | Invite karna |
+| あそぶ (遊ぶ) | あそぶ | Hang out / Play |
+| のみに いく | のみに いく | Drinking ke liye jaana |
+| ごはん に いく | ごはん に いく | Khana khaane jaana |
+| りょうかい (了解) | りょうかい | Got it / OK |
+| ひさしぶり (久しぶり) | ひさしぶり | Long time no see |
+
+---
+
+## 2) Grammar Point 39: Plain / Casual Form Review
+
+Doston ke saath **ます / です** ki jagah **plain form** zyada use hota hai.
+
+### Verb casual forms:
+
+| Polite | Casual | Meaning |
+|---|---|---|
+| いきます | いく | Jaata hoon |
+| たべます | たべる | Khata hoon |
+| みます | みる | Dekhta hoon |
+| します | する | Karta hoon |
+| きます | くる | Aata hoon |
+| いきません | いかない | Nahi jaata |
+| たべました | たべた | Khaya |
+| いきました | いった | Gaya |
+
+### Adjective / noun casual:
+
+| Polite | Casual | Meaning |
+|---|---|---|
+| おいしい です | おいしい | Tasty hai |
+| しずか です | しずか だ | Quiet hai |
+| がくせい です | がくせい だ | Student hai |
+| じゃない です | じゃない | Nahi hai |
+| でした | だった | Tha / thi |
+
+### Question in casual:
+- どこ いく？ → Kahaan jaa raha hai?
+- なに する？ → Kya karega?
+- たべた？ → Khaya?
+- ひま？ → Free hai?
+
+---
+
+## 3) Grammar Point 40: ～よう / ～おう  
+## Meaning: “Let’s …” casual style
+
+Ye **～ましょう** ka casual version hai.
+
+### Pattern:
+- Group 1: last sound → おう  
+  - いく → いこう  
+  - のむ → のもう  
+  - あそぶ → あそぼう  
+- Group 2: る hatao + よう  
+  - たべる → たべよう  
+  - みる → みよう  
+- Irregular:
+  - する → しよう  
+  - くる → こよう  
+
+### Examples:
+- いっしょに ごはん たべよう。  
+  → Saath mein khana khaate hain.
+
+- こんど カラオケ いこう。  
+  → Next time karaoke chalte hain.
+
+- もう かえろう。  
+  → Chalo ab ghar chalte hain.
+
+- ちょっと やすもう。  
+  → Thoda rest karein.
+
+---
+
+## 4) Grammar Point 41: ～ない？  
+## Meaning: “Karega?/Chalega?” casual invitation
+
+### Examples:
+- こんど えいが みない？  
+  → Next time movie dekhega?
+
+- きょう の よる、ごはん いかない？  
+  → Aaj raat khana khaane chalega?
+
+- いっしょに べんきょうしない？  
+  → Saath mein padhai karega?
+
+- しゅうまつ、あそばない？  
+  → Weekend pe ghumne chalega?
+
+### Responses:
+- いいね！  
+  → Nice!
+- いいよ。  
+  → Theek hai.
+- うん、いこう。  
+  → Haan, chalte hain.
+- ごめん、ちょっと むり。  
+  → Sorry, thoda mushkil hai.
+- そのひ は つごう が わるい。  
+  → Us din mera schedule theek nahi hai.
+
+---
+
+## 5) Grammar Point 42: ～ましょうか  
+## Meaning: “Main kar doon?” / “Shall I?”
+
+### Examples:
+- にもつ、もって いきましょうか。  
+  → Saamaan le jaun?
+
+- しゃしん、とりましょうか。  
+  → Photo le doon?
+
+- てつだいましょうか。  
+  → Madad kar doon?
+
+- でんわ しましょうか。  
+  → Phone kar doon?
+
+### Responses:
+- はい、おねがいします。  
+  → Haan please.
+- ありがとうございます。  
+  → Thank you.
+- いいえ、だいじょうぶです。  
+  → Nahi, theek hai.
+
+---
+
+## 6) Grammar Point 43: ～し、～し  
+## Meaning: “...bhi hai aur ...bhi hai”
+
+Multiple reasons dene ke liye.
+
+### Examples:
+- あの みせ は おいしい **し**、やすい **し**、よく いく。  
+  → Woh dukaan tasty bhi hai, sasti bhi hai, isliye aksar jaata hoon.
+
+- きょう は つかれた **し**、あした は はやい **し**、もう かえる。  
+  → Aaj thak gaya hoon aur kal subah jaldi bhi hai, isliye ghar jaa raha hoon.
+
+- かれ は やさしい **し**、おもしろい **し**、いい ともだち だ。  
+  → Woh accha bhi hai, funny bhi hai, accha dost hai.
+
+- この アパート は ひろい **し**、えき に ちかい **し**、いいね。  
+  → Yeh apartment bada bhi hai, station ke paas bhi hai, accha hai na.
+
+---
+
+## 7) Grammar Point 44: Casual use of ～んだ / ～の  
+## Meaning: explanation in casual conversation
+
+Pehle humne **～んです** seekha tha. Friends ke saath:
+- ～んだ
+- ～の
+
+### Examples:
+- どうしたの？  
+  → Kya hua?
+
+- ちょっと ねむいんだ。  
+  → Thoda neend aa rahi hai.
+
+- あした しけん が あるんだ。  
+  → Kal exam hai actually.
+
+- なんで こなかったの？  
+  → Kyun nahi aaya?
+
+- でんしゃ が おくれたんだ。  
+  → Train late ho gayi thi.
+
+---
+
+## 8) Casual expressions
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| うん | うん | Haan |
+| ううん | ううん | Nahi |
+| いいね | いいね | Nice |
+| まじ？ | まじ | Seriously? |
+| ほんと？ | ほんと | Really? |
+| そっか | そっか | Acha, samjha |
+| なるほど | なるほど | I see |
+| やばい | やばい | Oh no / Wow |
+| たのしみ | たのしみ | Looking forward |
+| りょうかい | りょうかい | Got it |
+| またね | またね | See you |
+| じゃあね | じゃあね | Bye |
+| おつかれ | おつかれ | Good job / tired greeting |
+
+---
+
+## 9) Making plans with a friend
+
+### Sample conversation:
+**A:** こんどの にちようび、ひま？  
+**B:** うん、ひまだよ。  
+**A:** じゃ、いっしょに えいが みに いかない？  
+**B:** いいね！ なんじ？  
+**A:** 2じ は どう？  
+**B:** いいよ。どこで あう？  
+**A:** えき の まえ で あおう。  
+**B:** りょうかい。たのしみ！  
+
+### Hinglish meaning:
+A: Is Sunday free hai?  
+B: Haan free hoon.  
+A: Toh saath movie dekhne chalega?  
+B: Nice! Kitne baje?  
+A: 2 baje kaisa?  
+B: Theek hai. Kahaan milte hain?  
+A: Station ke saamne milte hain.  
+B: OK. Looking forward!
+
+---
+
+## 10) Messaging style mini examples
+
+- いま ひま？  
+  → Abhi free hai?
+
+- ごはん いかない？  
+  → Khana khaane chalega?
+
+- ごめん、いま むり。  
+  → Sorry, abhi possible nahi.
+
+- じゃ、また あとで！  
+  → Theek hai, baad mein!
+
+- おけー / OK  
+  → Okay
+
+---
+
+# 📘 Chapter 9: まちで - In Town / Sheher mein
+
+## 🎯 Goal:
+- help maangna  
+- problem batana  
+- city office / public services use karna  
+- kisi se favour lena / dena  
+
+---
+
+## 1) Town / public service vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| まち (町 / 街) | まち | Town / City area |
+| ちいき (地域) | ちいき | Area / Region |
+| きんじょ (近所) | きんじょ | Neighborhood |
+| しやくしょ (市役所) | しやくしょ | City hall |
+| くやくしょ (区役所) | くやくしょ | Ward office |
+| こうみんかん (公民館) | こうみんかん | Community center |
+| けいさつしょ (警察署) | けいさつしょ | Police station |
+| しょうぼうしょ (消防署) | しょうぼうしょ | Fire station |
+| びょういん (病院) | びょういん | Hospital |
+| としょかん (図書館) | としょかん | Library |
+| じどうかん (児童館) | じどうかん | Children’s center |
+| そうだん (相談) | そうだん | Consultation |
+| てつづき (手続き) | てつづき | Procedure |
+| しんせい (申請) | しんせい | Application |
+| きにゅう (記入) | きにゅう | Fill in |
+
+---
+
+## 2) Trouble / problem vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| こまる (困る) | こまる | Pareshan hona |
+| こまって います | こまって います | Pareshan hoon |
+| トラブル | とらぶる | Trouble |
+| こしょう (故障) | こしょう | Kharabi / Malfunction |
+| こわれる (壊れる) | こわれる | Toot jana |
+| なくす | なくす | Kho dena |
+| おとす (落とす) | おとす | Gira dena |
+| ぬすまれる (盗まれる) | ぬすまれる | Chori ho jana |
+| うるさい | うるさい | Noisy |
+| くさい (臭い) | くさい | Bad smell |
+| あぶない (危ない) | あぶない | Dangerous |
+| みず が もれる (水が漏れる) | みず が もれる | Water leak |
+| でんき が つかない | でんき が つかない | Light nahi jalti |
+| ドア が あかない | どあ が あかない | Door nahi khulta |
+| エアコン が うごかない | えあこん が うごかない | AC nahi chal raha |
+
+---
+
+## 3) Grammar Point 45: ～てあげます / ～てもらいます / ～てくれます
+
+Ye Japanese ka bahut important favour pattern hai.
+
+---
+
+### A) ～てあげます  
+## Meaning: “Main kisi ke liye kar deta hoon”
+
+**[Main] + [person] に + てあげます**
+
+#### Examples:
+- ともだち に にほんご を おしえて **あげました**。  
+  → Maine dost ko Japanese sikhaya.
+
+- こども に ほん を よんで **あげます**。  
+  → Main bacche ko book padhkar sunata hoon.
+
+- おばあさん に にもつ を もって **あげました**。  
+  → Maine budhiya ke liye saamaan uthaya.
+
+---
+
+### B) ～てもらいます  
+## Meaning: “Mere liye kisi ne kiya”
+
+**[Main] は [person] に + てもらいます**
+
+#### Examples:
+- ともだち に くるま で えき まで おくって **もらいました**。  
+  → Dost ne mujhe car se station tak chhoda.
+
+- せんせい に さくぶん (作文) を みて **もらいました**。  
+  → Teacher ne mera essay check kiya.
+
+- かいしゃ の ひと に てつづき を てつだって **もらいました**。  
+  → Company ke aadmi ne procedure mein madad ki.
+
+---
+
+### C) ～てくれます  
+## Meaning: “Kisi ne mere liye kiya”
+
+**[Person] が [main/mere group] に + てくれます**
+
+#### Examples:
+- ともだち が しゅくだい を てつだって **くれました**。  
+  → Dost ne mera homework mein help ki.
+
+- きんじょ の ひと が みち を おしえて **くれました**。  
+  → Pados ke aadmi ne rasta bataya.
+
+- かのじょ が おべんとう を つくって **くれました**。  
+  → Usne mere liye lunch box banaya.
+
+---
+
+### Quick difference:
+- **あげる** = main deta hoon / main karta hoon
+- **もらう** = mujhe mila
+- **くれる** = kisi ne mujhe diya / mere liye kiya
+
+---
+
+## 4) Grammar Point 46: ～てくれませんか  
+## Meaning: “...kar denge?” / “Can you do this for me?”
+
+Polite request, lekin friendly bhi ho sakta hai.
+
+### Examples:
+- ちょっと てつだって **くれませんか**。  
+  → Thodi help kar denge?
+
+- この かんじ (漢字) の よみかた を おしえて **くれませんか**。  
+  → Is kanji ki reading bata denge?
+
+- しゃしん を とって **くれませんか**。  
+  → Photo le denge?
+
+- にほんご に ほんやくして **くれませんか**。  
+  → Japanese mein translate kar denge?
+
+### Softer / more polite:
+- ～て いただけませんか  
+  → Thoda aur formal polite
+
+---
+
+## 5) Grammar Point 47: ～てしまいました  
+## Meaning: “Galti se ho gaya / unfortunately ho gaya”
+
+### Examples:
+- さいふ を なくして **しまいました**。  
+  → Wallet kho gaya.
+
+- パスポート を おとして **しまいました**。  
+  → Passport gir gaya.
+
+- やくそく を わすれて **しまいました**。  
+  → Promise / plan bhool gaya.
+
+- でんしゃ に のりおくれて **しまいました**。  
+  → Train chhoot gayi.
+
+### Casual:
+- なくしちゃった  
+- わすれちゃった  
+- おくれちゃった  
+
+---
+
+## 6) Problem explain karna
+
+### Useful patterns:
+- ちょっと こまって いるんですが…  
+  → Thoda pareshan hoon…
+
+- ～が こわれて います。  
+  → ...toota / kharab hai.
+
+- ～を なくして しまいました。  
+  → ...kho diya.
+
+- ～が うるさくて、ねられません。  
+  → ...bahut noisy hai, so nahi pa raha.
+
+- ～して もらえますか。  
+  → ...kar sakte hain?
+
+---
+
+## 7) Example: Apartment problem
+
+**A:** すみません、ちょっと こまって いるんですが。  
+**B:** どうしましたか。  
+**A:** エアコン が うごかないんです。  
+**B:** いつ からですか。  
+**A:** きのう からです。  
+**B:** わかりました。あした みてもらいます。  
+**A:** おねがいします。  
+
+### Hinglish meaning:
+A: Excuse me, thodi problem hai.  
+B: Kya hua?  
+A: AC nahi chal raha.  
+B: Kab se?  
+A: Kal se.  
+B: Samajh gaya. Kal dekhwa dete hain.  
+A: Please.
+
+---
+
+## 8) Example: Asking for help in town
+
+**A:** すみません、しやくしょ は どこですか。  
+**B:** あの しんごう (信号) を みぎ に まがって、まっすぐです。  
+**A:** ありがとうございます。  
+**B:** いいえ。  
+
+---
+
+## 9) Example: Lost item
+
+**A:** すみません、さいふ を なくして しまいました。  
+**B:** どこで なくしましたか。  
+**A:** たぶん えき です。  
+**B:** けいさつ に いった ほうが いいですね。  
+**A:** そうします。ありがとうございます。  
+
+---
+
+## 10) Emergency words
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| じこ (事故) | じこ | Accident |
+| かじ (火事) | かじ | Fire |
+| じしん (地震) | じしん | Earthquake |
+| きんきゅう (緊急) | きんきゅう | Emergency |
+| きゅうきゅうしゃ (救急車) | きゅうきゅうしゃ | Ambulance |
+| けいさつ (警察) | けいさつ | Police |
+
+### Important numbers in Japan:
+- **110** → Police  
+- **119** → Ambulance / Fire  
+
+---
+
+## 11) Helpful public office phrases
+
+| Japanese | Meaning |
+|---|---|
+| てつづき を したいんですが。 | Mujhe procedure karna hai. |
+| これは どこに かきますか。 | Yeh kahaan likhna hai? |
+| ひつような もの は なんですか。 | Kaun kaun se documents chahiye? |
+| もういちど おねがいします。 | Ek baar aur boliye. |
+| ゆっくり はなして ください。 | Dheere boliye. |
+| わかりません。 | Samajh nahi aaya. |
+| おしえて ください。 | Bataiye please. |
+
+---
+
+# 📝 Grammar Summary (Chapter 7-9)
+
+| # | Pattern | Meaning |
+|---|---|---|
+| 35 | ～について | ...ke baare mein |
+| 36 | ～そうです | suna hai ki... |
+| 37 | ～かどうか | ...hai ya nahi |
+| 38 | ～よていです | plan hai / scheduled hai |
+| 39 | Plain / casual form | doston wali Japanese |
+| 40 | ～よう / ～おう | let’s... (casual) |
+| 41 | ～ない？ | chalega?/karega? |
+| 42 | ～ましょうか | main kar doon? |
+| 43 | ～し、～し | ...bhi aur ...bhi |
+| 44 | ～んだ / ～の | casual explanation |
+| 45 | ～てあげる / もらう / くれる | favour dena / lena |
+| 46 | ～てくれませんか | kar denge? |
+| 47 | ～てしまいました | galti se / unfortunately ho gaya |
+
+---
+
+# 📝 Quick Practice Sentences
+
+## Chapter 7
+1. この イベント **について** おしえて ください。  
+2. あした は あめ が ふる **そうです**。  
+3. いく **かどうか**、まだ きめて いません。  
+4. らいしゅう さんかする **よていです**。  
+
+## Chapter 8
+1. こんど えいが みに **いかない**？  
+2. じゃ、3じ に あおう。  
+3. しゃしん、とり**ましょうか**。  
+4. あの みせ は おいしい **し**、やすい **し**。  
+
+## Chapter 9
+1. ともだち が てつだって **くれました**。  
+2. せんせい に みて **もらいました**。  
+3. ちょっと おしえて **くれませんか**。  
+4. さいふ を わすれて **しまいました**。  
+
+---
+
+# 🎯 Mini Self-Practice
+
+Tum in patterns se khud sentence banao:
+
+### 1. ～について
+- にほん の りょうり について __________
+
+### 2. ～そうです
+- あした は __________ そうです
+
+### 3. ～ない？
+- しゅうまつ __________ ない？
+
+### 4. ～てくれませんか
+- この ぶん (文) を __________ てくれませんか
+
+### 5. ～てしまいました
+- きょう __________ てしまいました
+
+---
+
+Agar tum chaho, main ab **Chapter 10 to 12** bhi isi style mein de deta hoon.
+
+======================================================
+
+======================================================
+
+# Irodori (いろどり) Elementary 2 - Chapter 10 to 12 Complete Guide
+
+---
+
+# 📘 Chapter 10: けんこう (Kenkou) - Health / Sehat
+
+## 🎯 Goal:
+- apni sehat ke baare mein batana
+- doctor se baat karna
+- healthy lifestyle discuss karna
+- advice dena / lena
+
+---
+
+## 1) Health Vocabulary
+
+### **Body & Condition:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| けんこう (健康) | けんこう | Sehat / Health |
+| たいちょう (体調) | たいちょう | Physical condition |
+| たいじゅう (体重) | たいじゅう | Vajan / Weight |
+| しんちょう (身長) | しんちょう | Lambai / Height |
+| けつあつ (血圧) | けつあつ | Blood pressure |
+| けつえき (血液) | けつえき | Khoon / Blood |
+| けんさ (検査) | けんさ | Test / Jaanch |
+| しんさつ (診察) | しんさつ | Medical checkup |
+| にゅういん (入院) | にゅういん | Hospital mein admit hona |
+| たいいん (退院) | たいいん | Hospital se discharged hona |
+| しゅじゅつ (手術) | しゅじゅつ | Operation / Surgery |
+| かいふく (回復) | かいふく | Recovery / Theek hona |
+| よぼう (予防) | よぼう | Prevention |
+| めんえき (免疫) | めんえき | Immunity |
+| アレルギー | あれるぎー | Allergy |
+| まんせいびょう (慢性病) | まんせいびょう | Chronic illness |
+| せいかつしゅうかんびょう (生活習慣病) | せいかつしゅうかんびょう | Lifestyle disease |
+
+---
+
+### **Symptoms (しょうじょう / Shoujou):**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ねつ (熱) | ねつ | Bukhar / Fever |
+| せき (咳) | せき | Khansi / Cough |
+| はなみず (鼻水) | はなみず | Naak behna |
+| くしゃみ | くしゃみ | Chheenk / Sneeze |
+| めまい | めまい | Chakkar |
+| はきけ (吐き気) | はきけ | Nausea |
+| げり (下痢) | げり | Loose motion |
+| べんぴ (便秘) | べんぴ | Constipation |
+| いたみ (痛み) | いたみ | Dard / Pain |
+| はれ (腫れ) | はれ | Sujan / Swelling |
+| かゆみ | かゆみ | Khujli / Itching |
+| だるい | だるい | Body heavy / Thakaan |
+| むくみ | むくみ | Puffiness / Water retention |
+| ふみん (不眠) | ふみん | Neend na aana / Insomnia |
+| しょくよくがない (食欲がない) | しょくよくがない | Bhook nahi |
+
+---
+
+### **Healthy Life vocabulary:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| うんどう (運動) | うんどう | Exercise |
+| すいみん (睡眠) | すいみん | Neend / Sleep |
+| えいよう (栄養) | えいよう | Nutrition |
+| バランス | ばらんす | Balance |
+| やさい (野菜) | やさい | Sabzi |
+| くだもの (果物) | くだもの | Phal / Fruit |
+| すいぶん (水分) | すいぶん | Paani / Water intake |
+| たばこ | たばこ | Cigarette |
+| おさけ (お酒) | おさけ | Sharab / Alcohol |
+| ストレス | すとれす | Stress |
+| リラックス | りらっくす | Relax |
+| きゅうよう (休養) | きゅうよう | Rest / Recovery time |
+| ていき けんしん (定期健診) | ていきけんしん | Regular health checkup |
+
+---
+
+## 2) Grammar Point 48: ～ために  
+## Meaning: "_____ ke liye / in order to"
+
+**Dictionary form + ために**  
+**Noun + の + ために**
+
+### Examples:
+
+```
+けんこう の ために、まいにち うんどう します。
+(Kenkou no tame ni, mainichi undou shimasu.)
+Sehat ke liye, har roz exercise karta hoon.
+
+やせる ために、かるい しょくじ (食事) に して います。
+(Yaseru tame ni, karui shokuji ni shite imasu.)
+Patla hone ke liye, halka khana kha raha hoon.
+
+にほんご が うまく なる ために、まいにち れんしゅう します。
+(Nihongo ga umaku naru tame ni, mainichi renshuu shimasu.)
+Japanese acchi karne ke liye, har roz practice karta hoon.
+
+しごと の ために、はやく ねます。
+(Shigoto no tame ni, hayaku nemasu.)
+Kaam ke liye, jaldi sota hoon.
+
+かぞく の ために、はたらいて います。
+(Kazoku no tame ni, hataraite imasu.)
+Family ke liye kaam kar raha hoon.
+```
+
+---
+
+## 3) Grammar Point 49: ～ばよかった  
+## Meaning: "Kash _____ kiya hota / Should have done"
+
+**Verb conditional ば form + よかった**
+
+### ば form making:
+
+| ます form | Dictionary | ば form |
+|---|---|---|
+| いきます | いく | いけば |
+| たべます | たべる | たべれば |
+| のみます | のむ | のめば |
+| します | する | すれば |
+| きます | くる | くれば |
+
+### Examples:
+
+```
+もっと はやく びょういん に いけば よかった。
+(Motto hayaku byouin ni ikeba yokatta.)
+Kash pehle hi hospital chala jaata.
+
+くすり を のめば よかった。
+(Kusuri wo nomeba yokatta.)
+Kash dawai khaata.
+
+もっと やさい を たべれば よかった。
+(Motto yasai wo tabereba yokatta.)
+Kash zyada sabzi khaata.
+
+うんどう を つづければ よかった。
+(Undou wo tsuzukereba yokatta.)
+Kash exercise jaari rakhta.
+
+もっと すいみん を とれば よかった。
+(Motto suimin wo toreba yokatta.)
+Kash zyada neend leta.
+```
+
+⚠️ Ye **regret** express karta hai.
+
+---
+
+## 4) Grammar Point 50: ～といいです  
+## Meaning: "_____ hota toh accha / I hope _____ "
+
+**Plain form + といいですね / といいですが**
+
+### Types:
+
+| Pattern | Meaning |
+|---|---|
+| ～といいですね | Accha hoga / Hope so (for someone else) |
+| ～といいんですが | Accha hoga mujhe / I hope (for myself) |
+
+### Examples:
+
+```
+はやく よくなる といいですね。
+(Hayaku yoku naru to ii desu ne.)
+Jaldi theek ho jaao toh accha hai. (aap ke liye)
+
+てんき が よければ といいですね。
+(Tenki ga yokereba to ii desu ne.)
+Mausam accha ho toh accha hai.
+
+この くすり が きけば (効けば) といいんですが。
+(Kono kusuri ga kikeba to iin desu ga.)
+Yeh dawai kaam kare toh accha hoga (mujhe).
+
+しごと が はやく おわると いいんですが。
+(Shigoto ga hayaku owaru to iin desu ga.)
+Kaam jaldi khatam ho toh accha hoga.
+```
+
+---
+
+## 5) Grammar Point 51: ～ように いいます  
+## Meaning: "Kisi ko _____ karne ke liye kahna"
+
+**Dictionary / ない form + ように + いいます**
+
+### Examples:
+
+```
+いしゃ に やすむ ように いわれました。
+(Isha ni yasumu you ni iwaremashita.)
+Doctor ne aaram karne ke liye kaha.
+
+せんせい に まいにち れんしゅうする ように いわれました。
+(Sensei ni mainichi renshuu suru you ni iwaremashita.)
+Teacher ne har roz practice karne ke liye kaha.
+
+いしゃ に おさけ を のまない ように いわれました。
+(Isha ni osake wo nomanai you ni iwaremashita.)
+Doctor ne sharab na peene ke liye kaha.
+
+おかあさん に はやく ねる ように いわれました。
+(Okaasan ni hayaku neru you ni iwaremashita.)
+Maa ne jaldi sone ke liye kaha.
+```
+
+---
+
+## 6) Grammar Point 52: ～すぎます - Review + Advanced use  
+## Meaning: "Bahut zyada _____ karna"
+
+### Formation:
+- Verb ます stem + すぎます
+- い adj (い hatao) + すぎます
+- な adj + すぎます
+
+### Examples:
+
+```
+はたらきすぎて、たいちょう が わるく なりました。
+(Hatarakisugite, taichou ga waruku narimashita.)
+Bahut zyada kaam karke, tabiyat kharab ho gayi.
+
+のみすぎない ように して ください。
+(Nomisugina you ni shite kudasai.)
+Bahut zyada na peena.
+
+たべすぎる と、ふとります。(太る)
+(Tabesugiru to, futorimasu.)
+Bahut zyada khao toh mota ho jaoge.
+
+ストレス を ためすぎる と、びょうき に なります。
+(Sutoresu wo tamesugiru to, byouki ni narimasu.)
+Bahut zyada stress rakhoge toh bimaar ho jaoge.
+
+かんがえすぎ ですよ。(考えすぎ)
+(Kangaesugidesu yo.)
+Bahut zyada soch rahe ho.
+```
+
+---
+
+## 7) At the Doctor - Advanced
+
+### Asking about symptoms:
+- いつ ごろ から ですか。  
+  → Kab se hai?
+- どんな いたみ ですか。  
+  → Kaisa dard hai?
+- ずっと ですか、それとも たまに ですか。  
+  → Hamesha hai ya kabhi kabhi?
+- ほかに しょうじょう は ありますか。  
+  → Aur koi symptoms hain?
+
+### Patient responses:
+- きのう の よる から ずっと いたい です。  
+  → Kal raat se lagaataar dard hai.
+- ときどき めまい も します。  
+  → Kabhi kabhi chakkar bhi aata hai.
+- ねつ は ありませんが、だるい です。  
+  → Bukhar nahi hai, lekin body heavy hai.
+
+### Doctor advice patterns:
+- ゆっくり やすんで ください。  
+  → Acche se aaram kijiye.
+- しばらく うんどう を やめた ほうが いいです。  
+  → Kuch din exercise band karna accha hai.
+- みず を たくさん のむ ように して ください。  
+  → Bahut paani peene ki koshish kijiye.
+- にゅういん が ひつよう かも しれません。  
+  → Admit hona zaroori ho sakta hai.
+
+---
+
+## 8) Healthy lifestyle discussion
+
+### Sample conversation:
+```
+A: さいきん、けんこう に き を つけて いますか。
+(Saikin, kenkou ni ki wo tsukete imasu ka.)
+Aajkal sehat ka dhyaan rakh rahe ho?
+
+B: うーん、あまり うんどう して いないんです。
+(Uun, amari undou shite inan desu.)
+Hmm, zyada exercise nahi kar raha hoon actually.
+
+A: それは よくない ですよ。なにか した ほうが いいですね。
+(Sore wa yokunai desu yo. Nanika shita hou ga ii desu ne.)
+Woh accha nahi hai. Kuch karna chahiye.
+
+B: そうですね。まず、あるく ように しようかな。
+(Sou desu ne. Mazu, aruku you ni shiyou kana.)
+Haan sach. Pehle, chalne ki koshish karun shayad.
+
+A: いいですね。わたし も いっしょに やりませんか。
+(Ii desu ne. Watashi mo issho ni yarimasen ka.)
+Accha hai. Main bhi saath karoon?
+
+B: ぜひ！たのしみです。
+(Zehi! Tanoshimi desu.)
+Zaroor! Looking forward!
+```
+
+---
+
+## 9) Useful health expressions
+
+| Japanese | Meaning |
+|---|---|
+| きを つける (気をつける) | Dhyaan rakhna |
+| むり を しない (無理をしない) | Zyada strain na lena |
+| ゆっくり やすむ | Acche se aaram karna |
+| すいみん を とる | Poori neend lena |
+| ストレス を ためない | Stress jama na karna |
+| バランスよく たべる | Balance se khana |
+| てい き けんしん を うける | Regular checkup karana |
+| はやね はやおき (早寝早起き) | Jaldi sona jaldi uthna |
+| みず を たくさん のむ | Bahut paani peena |
+
+---
+
+# 📘 Chapter 11: しごと (Shigoto) - Work / Kaam
+
+## 🎯 Goal:
+- Kaam ke baare mein detail mein baat karna
+- Workplace communication
+- Keigo (polite language) ka basic use
+- Work problems discuss karna
+
+---
+
+## 1) Work Vocabulary
+
+### **Job types:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| かいしゃいん (会社員) | かいしゃいん | Company employee |
+| こうじょう (工場) | こうじょう | Factory |
+| のうか (農家) | のうか | Farmer |
+| かいごし (介護士) | かいごし | Care worker |
+| ぎんこういん (銀行員) | ぎんこういん | Bank employee |
+| エンジニア | えんじにあ | Engineer |
+| プログラマー | ぷろぐらまあ | Programmer |
+| けんちくし (建築士) | けんちくし | Architect |
+| うんてんしゅ (運転手) | うんてんしゅ | Driver |
+| コック | こっく | Cook / Chef |
+| かんごし (看護師) | かんごし | Nurse |
+| つうやく (通訳) | つうやく | Interpreter |
+| アルバイト | あるばいと | Part-time job |
+| パートタイム | ぱあとたいむ | Part-time |
+| せいしゃいん (正社員) | せいしゃいん | Full-time employee |
+| けいやくしゃいん (契約社員) | けいやくしゃいん | Contract employee |
+| はけんしゃいん (派遣社員) | はけんしゃいん | Dispatch employee |
+| フリーランス | ふりいらんす | Freelancer |
+
+---
+
+### **Workplace words:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| かいぎ (会議) | かいぎ | Meeting |
+| きゅうけい (休憩) | きゅうけい | Break / Rest |
+| ざんぎょう (残業) | ざんぎょう | Overtime |
+| しゅっちょう (出張) | しゅっちょう | Business trip |
+| てんきん (転勤) | てんきん | Transfer (job location) |
+| しょうしん (昇進) | しょうしん | Promotion |
+| きゅうりょう (給料) | きゅうりょう | Salary |
+| ボーナス | ぼおなす | Bonus |
+| ゆうきゅう (有給) | ゆうきゅう | Paid leave |
+| ほうこく (報告) | ほうこく | Report |
+| れんらく (連絡) | れんらく | Contact / Inform |
+| そうだん (相談) | そうだん | Consult |
+| しめきり (締め切り) | しめきり | Deadline |
+| にっぽう (日報) | にっぽう | Daily report |
+| しりょう (資料) | しりょう | Documents / Materials |
+| プレゼン | ぷれぜん | Presentation |
+
+---
+
+## 2) Grammar Point 53: ～ていただけますか  
+## Meaning: "_____ shite de sakte hain?" (Very polite request)
+
+**て-form + いただけますか**
+
+Yeh **てくれませんか** se zyada polite hai. Boss ya unfamiliar person ke liye.
+
+### Politeness levels:
+
+| Pattern | Level | Example |
+|---|---|---|
+| ～てください | Basic | みて ください |
+| ～てくれませんか | Polite | みて くれませんか |
+| ～ていただけますか | Very polite | みて いただけますか |
+| ～ていただけないでしょうか | Most polite | みて いただけないでしょうか |
+
+### Examples:
+
+```
+この しょるい (書類) を みて いただけますか。
+(Kono shorui wo mite itadakemasu ka.)
+Yeh document dekh sakte hain?
+
+もう すこし ゆっくり はなして いただけますか。
+(Mou sukoshi yukkuri hanashite itadakemasu ka.)
+Thoda dheere bol sakte hain?
+
+しめきり を のばして いただけますか。(延ばす)
+(Shimekiri wo nobashite itadakemasu ka.)
+Deadline aage badha sakte hain?
+
+めいしん を おしえて いただけますか。(名前)
+(Onamae wo oshiete itadakemasu ka.)
+Naam bata sakte hain?
+```
+
+---
+
+## 3) Grammar Point 54: Keigo (けいご) Basics  
+## Meaning: Polite / Respectful Language
+
+Keigo 3 types ka hota hai:
+
+| Type | Name | Use |
+|---|---|---|
+| Respectful | そんけいご (尊敬語) | Dusre ki action |
+| Humble | けんじょうご (謙譲語) | Apni action |
+| Polite | ていねいご (丁寧語) | General polite (desu/masu) |
+
+---
+
+### **Common Keigo verbs:**
+
+| Normal | Respectful (dusra) | Humble (main) | Meaning |
+|---|---|---|---|
+| いる | いらっしゃる | おる | Hona/Rehna |
+| いく | いらっしゃる | まいる | Jaana |
+| くる | いらっしゃる | まいる | Aana |
+| いう | おっしゃる | もうす | Bolna |
+| する | なさる | いたす | Karna |
+| たべる/のむ | めしあがる | いただく | Khana/Peena |
+| みる | ごらんになる | はいけんする | Dekhna |
+| しっている | ごぞんじ | ぞんじている | Jaanna |
+| もらう | - | いただく | Milna |
+| あげる | - | さしあげる | Dena |
+| くれる | くださる | - | Dena (mujhe) |
+
+### Examples:
+
+**Respectful (talking about boss/customer):**
+```
+しゃちょう は いま かいぎしつ に いらっしゃいます。
+(Shachou wa ima kaigishitsu ni irasshaimasu.)
+President abhi meeting room mein hain.
+
+お きゃく さま が いらっしゃいました。
+(Okyakusama ga irasshaimashita.)
+Customer aa gaye.
+
+ぶちょう は なんと おっしゃいましたか。
+(Buchou wa nanto osshaimashita ka.)
+Department head ne kya kaha?
+```
+
+**Humble (talking about yourself):**
+```
+わたし は やまだ と もうします。
+(Watashi wa Yamada to moushimasu.)
+Main Yamada hoon. (humble)
+
+らいしゅう そちら に まいります。
+(Raishuu sochira ni mairimasu.)
+Agle hafte wahaan aaunga. (humble)
+
+しょうしょう おまちいたします。
+(Shoushou omachi itashimasu.)
+Thoda wait karta hoon. (humble)
+```
+
+---
+
+## 4) Grammar Point 55: ～ていただく  
+## Meaning: "Kisi se humble tarike se karwana"
+
+**て-form + いただく = _____ karwa lena (humble)**
+
+Yeh **てもらう** ka humble version hai.
+
+### Examples:
+
+```
+しゃちょう に しょるい を みて いただきました。
+(Shachou ni shorui wo mite itadakimashita.)
+President ne mere liye document dekha.
+
+せんせい に そうだん して いただきました。
+(Sensei ni soudan shite itadakimashita.)
+Teacher se salah li.
+
+こちら の フォーム に きにゅうして いただけますか。
+(Kochira no foomu ni kinyuu shite itadakemasu ka.)
+Kya is form ko fill kar sakte hain?
+```
+
+---
+
+## 5) Grammar Point 56: ほうれんそう (報告・連絡・相談)
+
+Japan ke workplace mein **3 most important communication points**:
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ほうこく (報告) | ほうこく | Report karna |
+| れんらく (連絡) | れんらく | Inform / Contact karna |
+| そうだん (相談) | そうだん | Consult / Advice lena |
+
+### Workplace conversation patterns:
+
+**Reporting (ほうこく):**
+```
+ぶちょう、プロジェクト の しんちょく (進捗) を ほうこく します。
+(Buchou, purojekuto no shinchoku wo houkoku shimasu.)
+Boss, project ki progress report karta hoon.
+
+よてい どおり すすんで います。
+(Yotei doori susunde imasu.)
+Scheduled ke mutabiq chal raha hai.
+
+すこし おくれて います が、きんようび までに おわらせます。
+(Sukoshi okurete imasu ga, kinyoubi made ni owarasemasu.)
+Thoda late hai, lekin Friday tak khatam kar dunga.
+```
+
+**Informing (れんらく):**
+```
+すみません、きょう の かいぎ に おくれます。
+(Sumimasen, kyou no kaigi ni okuremasu.)
+Sorry, aaj ki meeting mein late hounga.
+
+あしたは やすませて いただきたいんですが。
+(Ashita wa yasumasete itadakitain desu ga.)
+Kal chutti lena chahta hoon.
+
+でんしゃ が とまっていて、まにあわない かもしれません。
+(Densha ga tomatte ite, maniawanai kamo shiremasen.)
+Train ruki hui hai, late ho sakta hoon.
+```
+
+**Consulting (そうだん):**
+```
+すみません、ちょっと そうだんしたい こと が あるんですが。
+(Sumimasen, chotto soudan shitai koto ga arun desu ga.)
+Excuse me, ek baat consult karna tha.
+
+この ばあい、どう したら いいでしょうか。
+(Kono baai, dou shitara ii deshou ka.)
+Is situation mein kya karna chahiye?
+
+ご いけん を きかせて いただけますか。
+(Go iken wo kikasete itadakemasu ka.)
+Aapki raay bata sakte hain?
+```
+
+---
+
+## 6) Work related email writing basics
+
+### Email opening:
+- おせわ に なって おります。  
+  → Thank you for your continued support.
+- _____ の _____ と もうします。  
+  → Main _____ company se _____ hoon.
+
+### Email closing:
+- よろしく おねがいいたします。  
+  → Please take care of this matter.
+- ご かくにん の ほど よろしく おねがいいたします。  
+  → Please confirm.
+- ご ふめい な てん が ございましたら おしらせ ください。  
+  → If anything is unclear, please let me know.
+
+---
+
+## 7) Common workplace phrases
+
+| Japanese | Meaning |
+|---|---|
+| おはようございます | Good morning |
+| おつかれさまです | Good work (colleague greeting) |
+| おさきに しつれいします | I'm leaving first |
+| いってきます | I'm heading out |
+| いってらっしゃい | Take care (response) |
+| ただいま もどりました | I'm back |
+| おかえりなさい | Welcome back |
+| よろしく おねがいします | Please take care of it |
+| かしこまりました | Understood (very formal) |
+| しょうちしました | Understood (formal) |
+| ご めいわく を おかけしました | Sorry for the inconvenience |
+| おてすうですが | Sorry to bother you but... |
+
+---
+
+# 📘 Chapter 12: わたしのまち (Watashi no Machi) - My Town
+
+## 🎯 Goal:
+- Apne sheher ke baare mein batana
+- Compare karna
+- Town ke facilities describe karna
+- Suggestions aur opinions dena
+
+---
+
+## 1) Town Vocabulary
+
+### **Town facilities:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| しせつ (施設) | しせつ | Facility |
+| びょういん (病院) | びょういん | Hospital |
+| がっこう (学校) | がっこう | School |
+| としょかん (図書館) | としょかん | Library |
+| こうえん (公園) | こうえん | Park |
+| たいいくかん (体育館) | たいいくかん | Gymnasium |
+| プール | ぷうる | Swimming pool |
+| こうみんかん (公民館) | こうみんかん | Community center |
+| スーパー | すうぱあ | Supermarket |
+| コンビニ | こんびに | Convenience store |
+| ショッピングモール | しょっぴんぐもおる | Shopping mall |
+| えいがかん (映画館) | えいがかん | Cinema |
+| レストラン | れすとらん | Restaurant |
+| ゆうびんきょく (郵便局) | ゆうびんきょく | Post office |
+| ぎんこう (銀行) | ぎんこう | Bank |
+| こうばん (交番) | こうばん | Police box |
+| バスてい (バス停) | ばすてい | Bus stop |
+| えき (駅) | えき | Station |
+
+---
+
+### **Town description adjectives:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| べんり (便利) | べんり | Convenient |
+| ふべん (不便) | ふべん | Inconvenient |
+| にぎやか | にぎやか | Lively / Bustling |
+| しずか (静か) | しずか | Quiet |
+| あんぜん (安全) | あんぜん | Safe |
+| あぶない (危ない) | あぶない | Dangerous |
+| きれい | きれい | Clean / Pretty |
+| きたない (汚い) | きたない | Dirty |
+| ひろい (広い) | ひろい | Spacious |
+| せまい (狭い) | せまい | Cramped |
+| むかしながら (昔ながら) | むかしながら | Old fashioned / Traditional |
+| モダン | もだん | Modern |
+| したまち (下町) | したまち | Old downtown area |
+| こうがい (郊外) | こうがい | Suburbs |
+| いなか (田舎) | いなか | Rural / Village |
+| とかい (都会) | とかい | Urban / City |
+
+---
+
+## 2) Grammar Point 57: ～ば ～ほど  
+## Meaning: "Jitna zyada _____ utna zyada _____"
+
+**Verb / Adjective ば form + Verb / Adjective dict. form + ほど**
+
+### ば form quick rules:
+
+| Type | Rule | Example |
+|---|---|---|
+| Group 1 verb | え sound + ば | のむ → のめば |
+| Group 2 verb | れば | たべる → たべれば |
+| する | すれば | |
+| くる | くれば | |
+| い-adj | い → ければ | たかい → たかければ |
+| な-adj | なら | しずか → しずかなら |
+
+### Examples:
+
+```
+べんきょうすれば するほど、にほんご が うまく なります。
+(Benkyou sureba suru hodo, nihongo ga umaku narimasu.)
+Jitna zyada padho, utna Japanese acchi hoti hai.
+
+まちに なれれば なれるほど、せいかつ が かんたん に なります。
+(Machi ni narereba nareru hodo, seikatsu ga kantan ni narimasu.)
+Jitna sheher se familiar hote hao, utna zindagi aasaan hoti hai.
+
+このまちは すめばすむほど、すきに なります。
+(Kono machi wa sumeba sumu hodo, suki ni narimasu.)
+Jitna yahaan raho, utna yeh sheher pasand aata hai.
+
+たかければ たかいほど、いい ものだ と おもいます。
+(Takakereba takai hodo, ii mono da to omoimasu.)
+Jitna mehenga, utna accha lagta hai.
+
+しずかであれば あるほど、すみやすいです。
+(Shizuka de areba aru hodo, sumiyasui desu.)
+Jitna shaant, utna rehne mein comfortable hai.
+```
+
+---
+
+## 3) Grammar Point 58: ～によって  
+## Meaning: "_____ ke mutabiq / depending on"
+
+**Noun + によって**
+
+### Examples:
+
+```
+まちに よって、せいかつ が ちがいます。
+(Machi ni yotte, seikatsu ga chigaimasu.)
+Sheher ke mutabiq, zindagi alag hoti hai.
+
+きせつ (季節) によって、まち の ふんいき (雰囲気) が かわります。
+(Kisetsu ni yotte, machi no fun'iki ga kawarimasu.)
+Season ke mutabiq, sheher ka mahaul badalta hai.
+
+ひと によって、まちの すきなところが ちがいます。
+(Hito ni yotte, machi no suki na tokoro ga chigaimasu.)
+Insaan ke mutabiq, sheher ki pasandida jagah alag hoti hai.
+
+くに によって、まちの つくりかたが ちがいます。
+(Kuni ni yotte, machi no tsukurikata ga chigaimasu.)
+Desh ke mutabiq, sheher ka design alag hota hai.
+```
+
+---
+
+## 4) Grammar Point 59: ～たら どうですか  
+## Meaning: "_____ karte kyun nahi / Why don't you _____ ?"
+
+Suggestion dene ke liye.
+
+### Examples:
+
+```
+びょうきなら、はやく びょういんに いったら どうですか。
+(Byouki nara, hayaku byouin ni ittara dou desu ka.)
+Bimaar ho toh, jaldi hospital kyun nahi jaate?
+
+この まち が ふべんなら、もっとべんりな ところに ひっこしたら どうですか。
+(Kono machi ga fuben nara, motto benri na tokoro ni hikkoshitara dou desu ka.)
+Yeh sheher inconvenient hai toh, zyada convenient jagah shift kyun nahi kar lete?
+
+ストレスがたまって いるなら、りょこうしたら どうですか。
+(Sutoresu ga tamatte iru nara, ryokou shitara dou desu ka.)
+Stress ho raha hai toh, travel kyun nahi kar lete?
+
+もっと にほんご を つかいたいなら、ボランティアに さんかしたら どうですか。
+(Motto nihongo wo tsukaitai nara, borantia ni sanka shitara dou desu ka.)
+Zyada Japanese use karna chahte ho toh, volunteer mein participate kyun nahi kar lete?
+```
+
+---
+
+## 5) Grammar Point 60: ～ので  
+## Meaning: "_____ ki wajah se / because (polite)"
+
+**Plain form + ので**
+
+Yeh **から** jaisa hai, lekin zyada polite aur formal.
+
+### Difference:
+
+| Pattern | Politeness | Use |
+|---|---|---|
+| ～から | Casual / Normal | doston ke saath |
+| ～ので | Polite | keigo, formal situations |
+
+### Examples:
+
+```
+このまちは えきから ちかいので、べんりです。
+(Kono machi wa eki kara chikai node, benri desu.)
+Yeh sheher station se paas hai, isliye convenient hai.
+
+しごとが あるので、はやく かえらなければ なりません。
+(Shigoto ga aru node, hayaku kaeranakerebanarimasen.)
+Kaam hai isliye, jaldi ghar jaana padega.
+
+こどもが おおいので、がっこうが ちかいほうが いいです。
+(Kodomo ga ooi node, gakkou ga chikai hou ga ii desu.)
+Bacche zyada hain isliye, school paas hona accha hai.
+
+にほんごが まだ じょうずじゃないので、ゆっくり おねがいします。
+(Nihongo ga mada jouzu janai node, yukkuri onegaishimasu.)
+Japanese abhi acchi nahi hai isliye, dheere boliye.
+```
+
+---
+
+## 6) Grammar Point 61: ～し ～し  
+## Meaning: "...bhi hai aur ...bhi hai" - Multiple good/bad points
+
+Listing multiple reasons - seen in ch.2, now reviewing in town context.
+
+### Examples:
+
+```
+このまちは しずかだし、こうえんも おおいし、すみやすい です。
+(Kono machi wa shizuka da shi, kouen mo ooi shi, sumiyasui desu.)
+Yeh sheher quiet bhi hai, parks bhi bahut hain, rehne ke liye accha hai.
+
+えきから とおいし、コンビニも ないし、このまちは ふべんです。
+(Eki kara tooi shi, konbini mo nai shi, kono machi wa fuben desu.)
+Station se door bhi hai, convenience store bhi nahi, yeh sheher inconvenient hai.
+
+このまちは やちんが やすいし、じんじゃも あるし、いい ところです。
+(Kono machi wa yachin ga yasui shi, jinja mo aru shi, ii tokoro desu.)
+Yeh sheher mein rent bhi sasta hai, shrine bhi hai, acchi jagah hai.
+```
+
+---
+
+## 7) Comparing towns - patterns
+
+### Useful phrases:
+
+```
+_____ より _____ のほうが べんりです。
+(_____ yori _____ no hou ga benri desu.)
+_____ se _____ zyada convenient hai.
+
+_____ ほど _____ くありません。
+(_____ hodo _____ ku arimasen.)
+_____ jitna _____ nahi hai.
+
+_____ は _____ に にています。
+(_____ wa _____ ni niteimasu.)
+_____ , _____ se milta julta hai.
+
+_____ と くらべると _____ のほうが _____ です。
+(_____ to kuraberu to _____ no hou ga _____ desu.)
+_____ se compare karein toh _____ zyada _____ hai.
+```
+
+### Examples:
+
+```
+とうきょうより おおさかの ほうが たべものが おいしいと おもいます。
+(Toukyou yori Oosaka no hou ga tabemono ga oishii to omoimasu.)
+Tokyo se Osaka ka khana zyada tasty lagta hai.
+
+このまちは いなかほど しずかじゃないですが、
+とかいほど うるさくもないです。
+(Kono machi wa inaka hodo shizuka janai desu ga,
+tokai hodo urusakumo nai desu.)
+Yeh sheher gaon jitna quiet nahi, lekin city jitna noisy bhi nahi.
+```
+
+---
+
+## 8) Describing your town
+
+### Model paragraph:
+
+```
+わたしが すんでいる まちは えきから あるいて 10ぷん くらい です。
+(Watashi ga sunde iru machi wa eki kara aruite 10pun kurai desu.)
+Mera sheher station se paidal 10 minute hai.
+
+スーパーや コンビニも ちかくに あるので、せいかつは とても べんりです。
+(Suupaa ya konbini mo chikaku ni aru node, seikatsu wa totemo benri desu.)
+Supermarket aur convenience store bhi paas hain isliye, zindagi bahut convenient hai.
+
+こうえんも あるし、しずかなので、すみやすいと おもいます。
+(Kouen mo aru shi, shizuka na node, sumiyasui to omoimasu.)
+Park bhi hai aur quiet bhi hai isliye, rehne ke liye accha lagta hai.
+
+ただ、えいがかんや おおきい ショッピングモールが ないので、
+そういうときは となりの まちに いきます。
+(Tada, eigakan ya ookii shopinggu mooru ga nai node,
+sou iu toki wa tonari no machi ni ikimasu.)
+Lekin, cinema ya bada mall nahi hai isliye,
+aisi jagah chahiye toh paas ke sheher jaata hoon.
+
+ぜんたいてきには、このまちが とても きにいっています。
+(Zentaiteki ni wa, kono machi ga totemo ki ni itte imasu.)
+Overall, yeh sheher bahut pasand hai.
+```
+
+---
+
+## 9) Opinion giving patterns
+
+| Japanese | Meaning |
+|---|---|
+| ～と おもいます | Mujhe lagta hai |
+| ～と かんがえます | Main sochta hoon |
+| ～のでは ないでしょうか | Shayad _____ hoga |
+| ～と いわれています | Kaha jaata hai |
+| ～らしいです | Lagta hai / suna hai |
+| わたし の けいけんでは | Mere experience mein |
+| いっぱんてきに (一般的に) | Generally |
+| たいてい | Mostly |
+
+---
+
+# 📝 Grammar Summary (Chapter 10-12)
+
+| # | Pattern | Meaning |
+|---|---|---|
+| 48 | ～ために | ke liye / in order to |
+| 49 | ～ばよかった | kash _____ kiya hota |
+| 50 | ～といいです | _____ hota toh accha |
+| 51 | ～ように いいます | kisi ko _____ kehna |
+| 52 | ～すぎます (adv.) | bahut zyada |
+| 53 | ～ていただけますか | kar sakte hain? (very polite) |
+| 54 | Keigo basics | respectful / humble language |
+| 55 | ～ていただく | karwa lena (humble) |
+| 56 | ほうれんそう | report, contact, consult |
+| 57 | ～ば～ほど | jitna...utna |
+| 58 | ～によって | ke mutabiq / depending on |
+| 59 | ～たらどうですか | kyun nahi karte? (suggestion) |
+| 60 | ～ので | isliye (polite because) |
+| 61 | ～し、～し (review) | ...bhi aur ...bhi |
+
+---
+
+# 📝 Vocabulary Summary (Ch 10-12)
+
+### Health (けんこう):
+```
+けつあつ、すいみん、えいよう、バランス
+ねつ、せき、めまい、はきけ、だるい
+うんどう する、やすむ、くすり を のむ
+```
+
+### Work (しごと):
+```
+かいぎ、ざんぎょう、しゅっちょう、てんきん
+ほうこく、れんらく、そうだん
+いらっしゃる、もうす、まいる、いたす
+おっしゃる、めしあがる、いただく
+```
+
+### Town (まち):
+```
+べんり、ふべん、にぎやか、しずか
+あんぜん、きれい、いなか、とかい
+こうえん、としょかん、たいいくかん
+えき、コンビニ、スーパー
+```
+
+---
+
+# 🎯 Quick Practice Sentences
+
+## Chapter 10
+1. けんこうの ために、まいにち さんぽ します。
+2. もっと はやく いけば よかった。
+3. はやく よく なると いいですね。
+4. いしゃに やすむように いわれました。
+
+## Chapter 11
+1. この しょるいを みて いただけますか。
+2. ぶちょうは いま かいぎしつに いらっしゃいます。
+3. わたしは やまだと もうします。
+4. ご いけんを きかせて いただけますか。
+
+## Chapter 12
+1. べんきょうすれば するほど、じょうずに なります。
+2. このまちは えきから ちかいので、べんりです。
+3. ふべんなら、ひっこしたら どうですか。
+4. こうえんも あるし、しずかだし、すみやすい です。
+
+---
+
+# 🎯 Mini Writing Practice
+
+Apne baare mein likho:
+
+**けんこうについて:**
+```
+わたしは けんこうのために、_____ します。
+まいにち _____ ように して います。
+でも、_____ すぎる ところが もんだいです。
+```
+
+**まちについて:**
+```
+わたしが すんでいる まちは _____ です。
+_____ ので、べんりです。
+でも、_____ ので、すこし ふべんな ところも あります。
+ぜんたいてきには、_____ と おもいます。
+```
+
+---
+
+**がんばって ください！** 💪🎌
+
+Agar **Chapter 13-15** chahiye toh bata do!
+
+**つづけて べんきょう しましょう！**
+(Tsudukete benkyou shimashou!)
+Chaliye padhai jaari rakhte hain!
+
+====================================================
+
+====================================================
+
+# Irodori (いろどり) Elementary 2 - Chapter 13 to 15 Complete Guide
+
+---
+
+# 📘 Chapter 13: りょこう (Ryokou) - Travel / Safar
+
+## 🎯 Goal:
+- Travel plans banana
+- Transport aur accommodation book karna
+- Travel experiences share karna
+- Recommendations dena / lena
+
+---
+
+## 1) Travel Vocabulary
+
+### **Planning & Booking:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| りょこう (旅行) | りょこう | Travel / Safar |
+| かんこう (観光) | かんこう | Sightseeing |
+| よてい (予定) | よてい | Plan / Schedule |
+| よやく (予約) | よやく | Reservation / Booking |
+| きっぷ (切符) | きっぷ | Ticket |
+| パスポート | ぱすぽおと | Passport |
+| ビザ | びざ | Visa |
+| りょかん (旅館) | りょかん | Japanese inn |
+| ホテル | ほてる | Hotel |
+| ゲストハウス | げすとはうす | Guest house |
+| みんぱく (民泊) | みんぱく | Home stay / Airbnb |
+| ツアー | つああ | Tour |
+| ガイド | がいど | Guide |
+| パンフレット | ぱんふれっと | Pamphlet / Brochure |
+| おみやげ (お土産) | おみやげ | Souvenir / Gift |
+| りょひ (旅費) | りょひ | Travel expenses |
+| がいか (外貨) | がいか | Foreign currency |
+| りょうがえ (両替) | りょうがえ | Currency exchange |
+
+---
+
+### **Transportation:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| しんかんせん (新幹線) | しんかんせん | Bullet train |
+| とっきゅう (特急) | とっきゅう | Express train |
+| きゅうこう (急行) | きゅうこう | Semi-express |
+| かくえきていしゃ (各駅停車) | かくえきていしゃ | Local train |
+| フェリー | ふぇりい | Ferry |
+| こくさいせん (国際線) | こくさいせん | International flight |
+| こくないせん (国内線) | こくないせん | Domestic flight |
+| のりかえ (乗り換え) | のりかえ | Transfer / Change |
+| じこくひょう (時刻表) | じこくひょう | Timetable |
+| かたみち (片道) | かたみち | One way |
+| おうふく (往復) | おうふく | Round trip |
+| じゆうせき (自由席) | じゆうせき | Non-reserved seat |
+| していせき (指定席) | していせき | Reserved seat |
+| グリーンしゃ (グリーン車) | ぐりいんしゃ | Green car (first class) |
+
+---
+
+### **Sightseeing:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| めいしょ (名所) | めいしょ | Famous place |
+| かんこうち (観光地) | かんこうち | Tourist spot |
+| いせき (遺跡) | いせき | Ruins / Historical site |
+| はくぶつかん (博物館) | はくぶつかん | Museum |
+| びじゅつかん (美術館) | びじゅつかん | Art museum |
+| どうぶつえん (動物園) | どうぶつえん | Zoo |
+| すいぞくかん (水族館) | すいぞくかん | Aquarium |
+| おんせん (温泉) | おんせん | Hot spring |
+| りょかん (旅館) | りょかん | Japanese inn |
+| しろ (城) | しろ | Castle |
+| じんじゃ (神社) | じんじゃ | Shrine |
+| おてら (お寺) | おてら | Temple |
+| たきびたいけん (焚き火体験) | たきびたいけん | Bonfire experience |
+| さくら (桜) | さくら | Cherry blossom |
+| こうよう (紅葉) | こうよう | Autumn leaves |
+
+---
+
+## 2) Grammar Point 62: ～ば よかった - Review
+
+Chapter 10 mein dekha tha. Travel context mein:
+
+```
+もっと はやく よやく すれば よかった。
+(Motto hayaku yoyaku sureba yokatta.)
+Kash pehle booking kar leta.
+
+あの びじゅつかん に いけば よかった。
+(Ano bijutsukan ni ikeba yokatta.)
+Kash woh art museum jaata.
+
+もっと おかね を もって くれば よかった。
+(Motto okane wo motte kureba yokatta.)
+Kash zyada paise laata.
+
+かさ を もって いけば よかった。
+(Kasa wo motte ikeba yokatta.)
+Kash chhata le jaata.
+```
+
+---
+
+## 3) Grammar Point 63: ～ておけばよかった
+## Meaning: "Kash pehle se _____ karke rakh leta"
+
+**て-form + おけば よかった**
+
+Advance preparation na karne ka regret:
+
+### Examples:
+
+```
+もっと にほんご を べんきょうして おけば よかった。
+(Motto nihongo wo benkyou shite okeba yokatta.)
+Kash pehle se Japanese aur padh ke aata.
+
+ホテル を もっとはやく よやくして おけば よかった。
+(Hoteru wo motto hayaku yoyaku shite okeba yokatta.)
+Kash hotel pehle se book karke rakhta.
+
+ちずを ダウンロードして おけば よかった。
+(Chizu wo daunroodo shite okeba yokatta.)
+Kash map download karke rakhta.
+
+パスポートを かくにんして おけば よかった。
+(Pasupooto wo kakunin shite okeba yokatta.)
+Kash passport check karke rakhta.
+```
+
+---
+
+## 4) Grammar Point 64: ～たら どうでしたか
+## Meaning: "_____ kiya toh kaisa raha? / How was it when you _____ ?"
+
+Experience poochne ke liye:
+
+### Examples:
+
+```
+にほんに いったら どうでしたか。
+(Nihon ni ittara dou deshita ka.)
+Japan gaye toh kaisa raha?
+
+おんせんに はいったら どうでしたか。
+(Onsen ni haittara dou deshita ka.)
+Onsen mein gaye toh kaisa laga?
+
+しんかんせんに のったら どうでしたか。
+(Shinkansen ni nottara dou deshita ka.)
+Bullet train mein baitha toh kaisa laga?
+```
+
+### Answers:
+
+```
+とても たのしかったです。また いきたいです。
+(Totemo tanoshikatta desu. Mata ikitai desu.)
+Bahut maza aaya. Phir jaana chahta hoon.
+
+おもったより はやかったです。
+(Omotta yori hayakatta desu.)
+Socha tha usse zyada jaldi tha.
+
+すごく きれいで、かんどうしました。(感動)
+(Sugoku kirei de, kandou shimashita.)
+Bahut sundar tha, dil bhar aaya.
+```
+
+---
+
+## 5) Grammar Point 65: ～てみたら
+## Meaning: "Try kiya toh / Once you try it..."
+
+**て-form + みたら**
+
+### Examples:
+
+```
+たべてみたら、おもったより おいしかったです。
+(Tabete mitara, omotta yori oishikatta desu.)
+Khaya toh, socha tha usse zyada tasty tha.
+
+いってみたら、とても よかったです。
+(Itte mitara, totemo yokatta desu.)
+Gaya toh, bahut accha tha.
+
+やってみたら、かんたんでした。
+(Yatte mitara, kantan deshita.)
+Kiya toh, aasaan tha.
+
+このみせ、はいってみたら どうですか。
+(Kono mise, haitte mitara dou desu ka.)
+Is dukaan mein, andar jaake dekho kyun nahi?
+```
+
+---
+
+## 6) Grammar Point 66: ～らしい
+## Meaning: "Lagta hai / Apparently (evidence based)"
+
+**Plain form + らしい**
+
+Evidence ya information ke basis pe opinion:
+
+### Examples:
+
+```
+あの おんせん は とても いい らしいです。
+(Ano onsen wa totemo ii rashii desu.)
+Woh onsen bahut accha lagta hai. (suna hai)
+
+きょうとは ことし の はるも さくら が きれい らしいです。
+(Kyouto wa kotoshi no haru mo sakura ga kirei rashii desu.)
+Kyoto mein is saal bhi spring mein cherry blossom sundar hai lagta hai.
+
+あの ホテルは サービスが いい らしいですよ。
+(Ano hoteru wa saabisu ga ii rashii desu yo.)
+Woh hotel ka service accha lagta hai.
+
+このりょかんは しょくじが おいしい らしいです。
+(Kono ryokan wa shokuji ga oishii rashii desu.)
+Is ryokan ka khana tasty lagta hai.
+```
+
+---
+
+## 7) Grammar Point 67: ～なら
+## Meaning: "Agar _____ ho toh / If that's the case..."
+
+**Noun / Verb plain + なら**
+
+Context ya topic receive karke suggestion dena:
+
+### Examples:
+
+```
+きょうとに いくなら、ふしみいなりは おすすめです。
+(Kyouto ni iku nara, Fushimi Inari wa osusume desu.)
+Kyoto jaana ho toh, Fushimi Inari recommend hai.
+
+はじめてなら、ツアーの ほうが いいかもしれません。
+(Hajimete nara, tsuaa no hou ga ii kamo shiremasen.)
+Pehli baar hai toh, tour zyada accha ho sakta hai.
+
+にほんごが わからないなら、ガイドを たのんだら どうですか。
+(Nihongo ga wakaranai nara, gaido wo tanondara dou desu ka.)
+Japanese nahi samajhte toh, guide le lete kyun nahi?
+
+おかねが すくないなら、ゲストハウスの ほうが やすいですよ。
+(Okane ga sukunai nara, gesutohausu no hou ga yasui desu yo.)
+Paise kam hain toh, guest house zyada sasta hai.
+```
+
+---
+
+## 8) Booking conversation
+
+### Shinkansen ticket:
+
+```
+A: すみません、とうきょうから おおさかまで、
+   あしたの のぞみ を 2まい おねがいします。
+(Sumimasen, Toukyou kara Oosaka made,
+ashita no Nozomi wo 2 mai onegaishimasu.)
+Excuse me, Tokyo se Osaka kal ki Nozomi 2 tickets please.
+
+B: していせき と じゆうせき、どちらに なさいますか。
+(Shitei seki to jiyuu seki, dochira ni nasaimasu ka.)
+Reserved ya non-reserved seat, kaunsa chahiye?
+
+A: していせきを おねがいします。
+   まどがわ (窓側) が いいんですが。
+(Shiteiseki wo onegaishimasu.
+Madogawa ga iin desu ga.)
+Reserved please. Window side chahiye.
+
+B: かたみち ですか、おうふく ですか。
+(Katamichi desu ka, oufuku desu ka.)
+One way ya round trip?
+
+A: おうふく で おねがいします。
+(Oufuku de onegaishimasu.)
+Round trip please.
+
+B: おふたりで 28,000えん に なります。
+(Ofutari de 28,000 en ni narimasu.)
+Do logon ke liye 28,000 yen hoga.
+```
+
+---
+
+## 9) Travel recommendations
+
+### Giving recommendations:
+
+```
+きょうとに いくなら、ぜひ きんかくじ (金閣寺) を みて ください。
+(Kyouto ni iku nara, zehi Kinkakuji wo mite kudasai.)
+Kyoto jaao toh zaroor Kinkakuji dekho.
+
+このりょかんは とても おすすめです。
+しょくじも おいしいし、おんせんも きれいですよ。
+(Kono ryokan wa totemo osusume desu.
+Shokuji mo oishii shi, onsen mo kirei desu yo.)
+Yeh ryokan bahut recommend hai.
+Khana bhi tasty hai aur onsen bhi clean hai.
+
+じかんが あれば、なしゃ (奈良) も よって みてください。
+しかが あるいていて、おもしろいですよ。
+(Jikan ga areba, Nara mo yotte mite kudasai.
+Shika ga aruite ite, omoshiroi desu yo.)
+Time ho toh Nara bhi ghoom aao.
+Hiran ghoomte hain, interesting hai.
+```
+
+---
+
+## 10) Travel experience sharing
+
+```
+せんげつ、かぞくと おきなわ (沖縄) に いきました。
+(Sengetsu, kazoku to Okinawa ni ikimashita.)
+Pichle mahine, family ke saath Okinawa gaya.
+
+うみが とてもきれいで、かんどうしました。
+(Umi ga totemo kirei de, kandou shimashita.)
+Samundar bahut sundar tha, dil bhar gaya.
+
+シュノーケリングも はじめて やってみたんですが、
+おもったより たのしかったです。
+(Shunookeringu mo hajimete yatte mitan desu ga,
+omotta yori tanoshikatta desu.)
+Snorkeling bhi pehli baar try kiya,
+socha tha usse zyada maza aaya.
+
+たべものも おいしくて、とくに ゴーヤチャンプルーが
+きにいりました。
+(Tabemono mo oishikute, toku ni Gooya chanpuruu ga
+ki ni irimashita.)
+Khana bhi tasty tha, especially Goya Champuru
+bahut pasand aaya.
+
+ぜひ また いきたいと おもっています。
+(Zehi mata ikitai to omotteimasu.)
+Zaroor phir jaana chahta hoon.
+```
+
+---
+
+# 📘 Chapter 14: しょうらい (Shourai) - Future / Bhavishya
+
+## 🎯 Goal:
+- Future plans batana
+- Dreams aur goals express karna
+- Intentions aur decisions share karna
+- Advice dena / lena
+
+---
+
+## 1) Future Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| しょうらい (将来) | しょうらい | Bhavishya / Future |
+| ゆめ (夢) | ゆめ | Sapna / Dream |
+| もくひょう (目標) | もくひょう | Lakshya / Goal |
+| けいかく (計画) | けいかく | Yojana / Plan |
+| きぼう (希望) | きぼう | Ummeed / Hope |
+| やる気 (やるき) | やるき | Motivation |
+| どりょく (努力) | どりょく | Mehnat / Effort |
+| せいこう (成功) | せいこう | Success / Kamyabi |
+| しっぱい (失敗) | しっぱい | Failure / Nakamyabi |
+| ちょうせん (挑戦) | ちょうせん | Challenge |
+| あきらめる (諦める) | あきらめる | Haarna / Give up |
+| がんばる (頑張る) | がんばる | Koshish karna |
+| そつぎょう (卒業) | そつぎょう | Graduation |
+| しゅうしょく (就職) | しゅうしょく | Getting a job |
+| てんしょく (転職) | てんしょく | Job change |
+| どくりつ (独立) | どくりつ | Independence / Own business |
+| けっこん (結婚) | けっこん | Marriage / Shaadi |
+| りこん (離婚) | りこん | Divorce |
+| こども (子供) | こども | Children |
+| いえ を かう (家を買う) | いえをかう | Ghar khareedna |
+| かいがい (海外) | かいがい | Abroad / Videsh |
+
+---
+
+## 2) Grammar Point 68: ～つもりです - Review & Advanced
+## Meaning: "Karne ka plan / irada hai"
+
+**Dictionary form + つもりです**
+**ない form + つもりです**
+
+### Examples:
+
+```
+らいねん、にほんごの しけんを うけるつもりです。
+(Rainen, nihongo no shiken wo ukeru tsumori desu.)
+Agle saal Japanese exam dene ka plan hai.
+
+30さいまでに、いえを かうつもりです。
+(30 sai made ni, ie wo kau tsumori desu.)
+30 saal tak ghar khareedne ka irada hai.
+
+しょうらいは じぶんで かいしゃを つくるつもりです。
+(Shourai wa jibun de kaisha wo tsukuru tsumori desu.)
+Future mein khud company banana ka plan hai.
+
+もう おさけを のまないつもりです。
+(Mou osake wo nomanai tsumori desu.)
+Ab sharab na peene ka irada hai.
+
+にほんに ずっと いるつもりは ありません。
+(Nihon ni zutto iru tsumori wa arimasen.)
+Japan mein hamesha rehne ka irada nahi hai.
+```
+
+---
+
+## 3) Grammar Point 69: ～と おもっています - Review & Advanced
+## Meaning: "Soch raha hoon / considering"
+
+**Plain volitional + と おもっています**
+
+Apna ongoing thought ya plan:
+
+### Examples:
+
+```
+らいねん、くにに かえろうと おもっています。
+(Rainen, kuni ni kaerou to omotteimasu.)
+Agle saal desh lautne ka soch raha hoon.
+
+てんしょくしようと おもっています。
+(Tenshoku shiyou to omotteimasu.)
+Job change karne ka soch raha hoon.
+
+にほんごの N2を とろうと おもっています。
+(Nihongo no N2 wo torou to omotteimasu.)
+Japanese N2 lene ka soch raha hoon.
+
+あたらしい しゅみを はじめようと おもっています。
+(Atarashii shumi wo hajimeyou to omotteimasu.)
+Naya hobby shuru karne ka soch raha hoon.
+```
+
+---
+
+## 4) Grammar Point 70: ～ために ～ています
+## Meaning: "_____ ke liye _____ kar raha hoon"
+
+**Goal の ために + Action ています**
+
+Effort describe karna:
+
+### Examples:
+
+```
+しょうらいの ゆめの ために、いま どりょくして います。
+(Shourai no yume no tame ni, ima doryoku shite imasu.)
+Bhavishya ke sapne ke liye, abhi mehnat kar raha hoon.
+
+JLPT N2に ごうかくする ために、まいにち 2じかん べんきょうして います。
+(JLPT N2 ni goukaku suru tame ni, mainichi 2 jikan benkyou shite imasu.)
+JLPT N2 pass karne ke liye, har roz 2 ghante padh raha hoon.
+
+けんこうに なるために、ジムに かよって います。
+(Kenkou ni naru tame ni, jimu ni kayotte imasu.)
+Sehatmand hone ke liye, gym ja raha hoon.
+
+いえを かうために、おかねを ためています。(貯める)
+(Ie wo kau tame ni, okane wo tamete imasu.)
+Ghar khareedne ke liye, paise jama kar raha hoon.
+```
+
+---
+
+## 5) Grammar Point 71: ～かもしれません
+## Meaning: "Shayad _____ hoga / Might be"
+
+**Plain form + かもしれません**
+
+Uncertainty express karna:
+
+### Examples:
+
+```
+らいねん、にほんを でるかもしれません。
+(Rainen, nihon wo deru kamo shiremasen.)
+Agle saal Japan chhod sakta hoon.
+
+てんしょくは むずかしいかもしれません。
+(Tenshoku wa muzukashii kamo shiremasen.)
+Job change mushkil ho sakta hai.
+
+このかいしゃでは しょうしんできないかもしれません。
+(Kono kaisha de wa shoushin dekinai kamo shiremasen.)
+Is company mein promotion nahi ho sakta.
+
+しょうらい、かいがいで はたらくかもしれません。
+(Shourai, kaigai de hataraku kamo shiremasen.)
+Future mein videsh mein kaam kar sakta hoon.
+
+このしけんは おもったより むずかしいかもしれません。
+(Kono shiken wa omotta yori muzukashii kamo shiremasen.)
+Yeh exam socha tha usse zyada mushkil ho sakta hai.
+```
+
+---
+
+## 6) Grammar Point 72: ～でしょう
+## Meaning: "Shayad _____ hoga / Probably"
+
+**Plain form + でしょう**
+
+かもしれません se zyada confident prediction:
+
+### Examples:
+
+```
+あしたは あめが ふるでしょう。
+(Ashita wa ame ga furu deshou.)
+Kal baarish hogi shayad.
+
+このけいかくは うまくいくでしょう。
+(Kono keikaku wa umaku iku deshou.)
+Yeh plan kaam karega probably.
+
+かれは きっと せいこうするでしょう。
+(Kare wa kitto seikou suru deshou.)
+Woh zaroor safal hoga.
+
+にほんごは もっと じょうずに なるでしょう。
+(Nihongo wa motto jouzu ni naru deshou.)
+Japanese aur acchi ho jaayegi.
+```
+
+---
+
+## 7) Grammar Point 73: ～ていけば
+## Meaning: "Jaari rakha toh / If you keep doing..."
+
+**て-form + いけば**
+
+Ongoing effort ka positive result:
+
+### Examples:
+
+```
+このまま べんきょうして いけば、
+きっと うまく なります。
+(Kono mama benkyou shite ikeba,
+kitto umaku narimasu.)
+Is tarah padhai jaari rakho toh,
+zaroor accha ho jaayega.
+
+どりょくして いけば、ゆめは かなうでしょう。(叶う)
+(Doryoku shite ikeba, yume wa kanau deshou.)
+Mehnat karte raho toh, sapna poora hoga.
+
+あきらめないで つづけて いけば、
+いつか せいこうします。
+(Akiramenaide tsuzukete ikeba,
+itsuka seikou shimasu.)
+Haare bina jaari rakho toh,
+kabhi na kabhi safal ho jaoge.
+```
+
+---
+
+## 8) Future plans discussion
+
+### Sample conversation:
+
+```
+A: しょうらい、なに を したいですか。
+(Shourai, nani wo shitai desu ka.)
+Future mein kya karna chahte ho?
+
+B: にほんで えいごの せんせいに なりたいと おもっています。
+(Nihon de eigo no sensei ni naritai to omotteimasu.)
+Japan mein English teacher banna chahta hoon.
+
+A: そのために、いま なにか して いますか。
+(Sono tame ni, ima nanika shite imasu ka.)
+Uske liye, abhi kuch kar rahe ho?
+
+B: はい、まいにち えいごを べんきょうして いますし、
+にほんごも れんしゅうして います。
+(Hai, mainichi eigo wo benkyou shite imasu shi,
+nihongo mo renshuu shite imasu.)
+Haan, har roz English padh raha hoon aur
+Japanese bhi practice kar raha hoon.
+
+A: すごいですね。きっと うまくいくと おもいますよ。
+(Sugoi desu ne. Kitto umaku iku to omoimasu yo.)
+Amazing hai. Zaroor kaam karega lagta hai.
+
+B: ありがとうございます。がんばります。
+(Arigatou gozaimasu. Ganbarimasu.)
+Thank you. Koshish karunga.
+```
+
+---
+
+## 9) Dream / Goal paragraph
+
+```
+わたしの ゆめは、しょうらい じぶんで ちいさな レストランを
+ひらくことです。(開く)
+(Watashi no yume wa, shourai jibun de chiisa na resutoran wo
+hiraku koto desu.)
+Mera sapna hai ki future mein khud ka chhota restaurant kholun.
+
+そのために、いま りょうりの がっこうに かよっています。
+(Sono tame ni, ima ryouri no gakkou ni kayotte imasu.)
+Uske liye, abhi cooking school ja raha hoon.
+
+まだ むずかしい ことも たくさん ありますが、
+あきらめないで がんばろうと おもっています。
+(Mada muzukashii koto mo takusan arimasu ga,
+akiramenaide ganbarou to omotteimasu.)
+Abhi bahut mushkil cheezein hain, lekin
+haar na manke koshish karne ka soch raha hoon.
+
+10ねん後には、ゆめを かなえたいです。
+(10 nen go ni wa, yume wo kanaetai desu.)
+10 saal baad, sapna poora karna chahta hoon.
+```
+
+---
+
+## 10) Giving advice about future
+
+```
+しょうらいの ために、いま べんきょうした ほうが いいですよ。
+(Shourai no tame ni, ima benkyou shita hou ga ii desu yo.)
+Future ke liye, abhi padhai karna accha hai.
+
+けいけんを つんだ ほうが いいと おもいます。(経験を積む)
+(Keiken wo tsunda hou ga ii to omoimasu.)
+Experience banana accha lagta hai.
+
+まず ちいさな もくひょうから はじめたら どうですか。
+(Mazu chiisa na mokuhyou kara hajimetara dou desu ka.)
+Pehle chhote goals se shuru karte kyun nahi?
+
+しっぱいを おそれないで ちょうせんして ください。
+(Shippai wo osorenaide chousen shite kudasai.)
+Failure se daro mat, challenge karo.
+
+あなたなら きっと できますよ。
+(Anata nara kitto dekimasu yo.)
+Tum zaroor kar paoge.
+```
+
+---
+
+# 📘 Chapter 15: にほんご と わたし (Nihongo to Watashi) - Japanese & Me
+
+## 🎯 Goal:
+- Japanese learning experience share karna
+- Progress batana
+- Difficulties express karna
+- Language learning tips discuss karna
+
+---
+
+## 1) Language Learning Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| にほんご (日本語) | にほんご | Japanese language |
+| べんきょう (勉強) | べんきょう | Padhai / Study |
+| れんしゅう (練習) | れんしゅう | Practice |
+| おぼえる (覚える) | おぼえる | Yaad karna |
+| わすれる (忘れる) | わすれる | Bhoolna |
+| りかいする (理解する) | りかいする | Samajhna |
+| はなせる (話せる) | はなせる | Bol sakna |
+| よめる (読める) | よめる | Padh sakna |
+| かける (書ける) | かける | Likh sakna |
+| きける (聞ける) | きける | Sun sakna |
+| じょうず (上手) | じょうず | Mahir / Good at |
+| へた (下手) | へた | Kamzor / Bad at |
+| とくい (得意) | とくい | Strong point |
+| にがて (苦手) | にがて | Weak point |
+| じしょ (辞書) | じしょ | Dictionary |
+| ぶんぽう (文法) | ぶんぽう | Grammar |
+| ごい (語彙) | ごい | Vocabulary |
+| はつおん (発音) | はつおん | Pronunciation |
+| アクセント | あくせんと | Accent |
+| けいご (敬語) | けいご | Polite language |
+| ほうげん (方言) | ほうげん | Dialect |
+| JLPT | じぇいえるぴいてい | Japanese proficiency test |
+| しけん (試験) | しけん | Exam / Test |
+| ごうかく (合格) | ごうかく | Pass karna |
+| ふごうかく (不合格) | ふごうかく | Fail karna |
+
+---
+
+## 2) Grammar Point 74: ～ようになりました - Review & Advanced
+## Meaning: "_____ karne laga / Ab _____ kar sakta hoon"
+
+**Dictionary form + ようになりました**
+**ない form + ようになりました**
+
+Change in ability ya habit:
+
+### Examples:
+
+```
+にほんに きてから、にほんごで かんがえる
+ようになりました。
+(Nihon ni kite kara, nihongo de kangaeru
+you ni narimashita.)
+Japan aane ke baad, Japanese mein sochne laga.
+
+むかしは かんじが よめなかったですが、
+いまは すこし よめるようになりました。
+(Mukashi wa kanji ga yomenakatta desu ga,
+ima wa sukoshi yomeru you ni narimashita.)
+Pehle kanji padh nahi sakta tha, lekin
+ab thoda padh sakta hoon.
+
+1ねんまえは にほんごで でんわが できませんでしたが、
+いまは できるようになりました。
+(1 nen mae wa nihongo de denwa ga dekimasen deshita ga,
+ima wa dekiru you ni narimashita.)
+1 saal pehle Japanese mein phone nahi kar sakta tha,
+ab kar sakta hoon.
+
+にほんの ニュースが すこし わかるように なってきました。
+(Nihon no nyuusu ga sukoshi wakaru you ni natte kimashita.)
+Japan ka news thoda samajh aane laga.
+```
+
+---
+
+## 3) Grammar Point 75: ～ようにしています - Review & Advanced
+## Meaning: "Koshish karta hoon / Make effort to"
+
+**Dictionary / ない form + ようにしています**
+
+Conscious effort ya habit:
+
+### Examples:
+
+```
+まいにち にほんご の ニュースを よむように して います。
+(Mainichi nihongo no nyuusu wo yomu you ni shite imasu.)
+Har roz Japanese news padhne ki koshish karta hoon.
+
+わからない たんごは すぐ じしょで しらべる ように して います。
+(Wakaranai tango wa sugu jisho de shiraberu you ni shite imasu.)
+Jo words nahi pata, turant dictionary mein dhundhne ki koshish karta hoon.
+
+にほんじんの ともだちと なるべく にほんごで はなす ように して います。
+(Nihonjin no tomodachi to narubeku nihongo de hanasu you ni shite imasu.)
+Japanese doston ke saath jahan tak ho sake Japanese mein bolne ki koshish karta hoon.
+
+えいごを つかわない ように して います。
+(Eigo wo tsukawanai you ni shite imasu.)
+English use na karne ki koshish karta hoon.
+
+まいにち あたらしい たんごを 10こ おぼえる ように して います。
+(Mainichi atarashii tango wo 10 ko oboeru you ni shite imasu.)
+Har roz 10 naye words yaad karne ki koshish karta hoon.
+```
+
+---
+
+## 4) Grammar Point 76: ～てきました
+## Meaning: "Dheere dheere _____ ho aaya / Has been gradually"
+
+**て-form + きました**
+
+Change over time:
+
+### Examples:
+
+```
+すこしずつ にほんごが わかるように なってきました。
+(Sukoshizutsu nihongo ga wakaru you ni natte kimashita.)
+Dheere dheere Japanese samajh aane lagi.
+
+にほんの せいかつに なれてきました。
+(Nihon no seikatsu ni narete kimashita.)
+Japan ki zindagi ki aadat padne lagi.
+
+ともだちが ふえてきました。
+(Tomodachi ga fuete kimashita.)
+Dost badhne lage.
+
+きんちょうしないで にほんごが はなせるように なってきました。
+(Kinchou shinaide nihongo ga hanaseru you ni natte kimashita.)
+Bina tension ke Japanese bolne laga.
+
+むずかしかった かんじも よめるように なってきました。
+(Muzukashikatta kanji mo yomeru you ni natte kimashita.)
+Mushkil kanji bhi padhne laga.
+```
+
+---
+
+## 5) Grammar Point 77: ～たり ～たり しています
+## Meaning: "...ya ... jaisi cheezein karta hoon"
+
+**た form + り、た form + り しています**
+
+Multiple activities batane ke liye (incomplete list):
+
+### Examples:
+
+```
+Japanese ko improve karne ke liye:
+
+アニメを みたり、まんがを よんだり して います。
+(Anime wo mitari, manga wo yondari shite imasu.)
+Anime dekhna ya manga padhna jaisi cheezein karta hoon.
+
+にほんごの ポッドキャストを きいたり、
+にほんじんと はなしたり して います。
+(Nihongo no poddokyasuto wo kiitari,
+nihonjin to hanashitari shite imasu.)
+Japanese podcast sunna ya Japanese log ke saath bolna jaisi cheezein karta hoon.
+
+たんごを おぼえたり、ぶんぽうを べんきょうしたり して います。
+(Tango wo oboe tari, bunpou wo benkyou shitari shite imasu.)
+Vocabulary yaad karna ya grammar padhna jaisi cheezein karta hoon.
+```
+
+---
+
+## 6) Grammar Point 78: ～のが とくいです / にがてです
+## Meaning: "_____ karna strong point / weak point hai"
+
+**Dictionary form + のが とくい / にがて です**
+
+### Examples:
+
+```
+わたしは かんじを おぼえるのが にがてです。
+(Watashi wa kanji wo oboeru no ga nigate desu.)
+Mera kanji yaad karna weak point hai.
+
+にほんごで はなすのが まだ にがてです。
+(Nihongo de hanasu no ga mada nigate desu.)
+Japanese mein bolna abhi bhi weak point hai.
+
+きくのは とくいですが、はなすのが にがてです。
+(Kiku no wa tokui desu ga, hanasu no ga nigate desu.)
+Sunna strong point hai, lekin bolna weak point hai.
+
+かんじを よむのは すこし できますが、
+かくのは まだ むずかしいです。
+(Kanji wo yomu no wa sukoshi dekimasu ga,
+kaku no wa mada muzukashii desu.)
+Kanji padhna thoda ho sakta hai, lekin
+likhna abhi bhi mushkil hai.
+```
+
+---
+
+## 7) Grammar Point 79: ～ことにしました
+## Meaning: "Decide kiya ki _____ karoon"
+
+**Dictionary / ない form + ことにしました**
+
+Apna strong decision:
+
+### Examples:
+
+```
+JLPT N3を うけることにしました。
+(JLPT N3 wo ukeru koto ni shimashita.)
+JLPT N3 dene ka decide kiya.
+
+まいにち にっきを にほんごで かくことにしました。
+(Mainichi nikki wo nihongo de kaku koto ni shimashita.)
+Har roz diary Japanese mein likhne ka decide kiya.
+
+にほんじんの ともだちを つくることにしました。
+(Nihonjin no tomodachi wo tsukuru koto ni shimashita.)
+Japanese dost banana ka decide kiya.
+
+えいごを つかうのを やめることにしました。
+(Eigo wo tsukau no wo yameru koto ni shimashita.)
+English use karna band karne ka decide kiya.
+```
+
+---
+
+## 8) Talking about Japanese learning experience
+
+### Sample paragraph:
+
+```
+わたしが にほんごを はじめて べんきょうしたのは
+3ねんまえです。
+(Watashi ga nihongo wo hajimete benkyou shita no wa
+3 nen mae desu.)
+Maine Japanese pehli baar 3 saal pehle padhi.
+
+さいしょは ひらがなも かけなくて、とても むずかしかったです。
+(Saisho wa hiragana mo kakenakute, totemo muzukashikatta desu.)
+Shuru mein hiragana bhi nahi likh sakta tha, bahut mushkil tha.
+
+でも、すこしずつ れんしゅうして、
+いまは にほんごで かいわが できるように なりました。
+(Demo, sukoshizutsu renshuu shite,
+ima wa nihongo de kaiwa ga dekiru you ni narimashita.)
+Lekin, dheere dheere practice karke,
+ab Japanese mein conversation ho sakta hai.
+
+まだ にがては たくさん ありますが、
+とくに かんじが むずかしいです。
+(Mada nigate wa takusan arimasu ga,
+toku ni kanji ga muzukashii desu.)
+Abhi bhi bahut weak points hain,
+khaaskar kanji mushkil hai.
+
+これからも あきらめないで べんきょうを
+つづけていこうと おもっています。
+(Korekara mo akiramenaide benkyou wo
+tsuzukete ikou to omotteimasu.)
+Aage bhi haar na maan ke padhai jaari rakhne
+ka soch raha hoon.
+```
+
+---
+
+## 9) Language learning tips
+
+### Useful expressions:
+
+```
+にほんごを じょうずに なるためには、
+まいにち れんしゅうする ことが いちばん たいせつだと おもいます。
+(Nihongo wo jouzu ni naru tame ni wa,
+mainichi renshuu suru koto ga ichiban taisetsu da to omoimasu.)
+Japanese acchi karne ke liye,
+har roz practice karna sabse zaroori lagta hai.
+
+まちがいを こわがらないで、
+どんどん はなした ほうが いいですよ。
+(Machigai wo kowagara naide,
+dondon hanashita hou ga ii desu yo.)
+Galti se mat daro,
+zyada se zyada bolo yeh accha hai.
+
+わからない ことば は すぐ しらべる ようにすると、
+はやく おぼえられますよ。
+(Wakaranai kotoba wa sugu shiraberu you ni suru to,
+hayaku oboeraremasu yo.)
+Jo word nahi pata, turant dhundho toh,
+jaldi yaad ho jaata hai.
+
+にほんじんの ともだちを つくれば つくるほど、
+にほんごが じょうずに なります。
+(Nihonjin no tomodachi wo tsukureba tsukuru hodo,
+nihongo ga jouzu ni narimasu.)
+Jitne Japanese dost banao, utni Japanese acchi hoti hai.
+```
+
+---
+
+## 10) Japanese learning self-evaluation
+
+```
+【にほんご の じこひょうか】
+(Nihongo no jiko hyouka)
+Japanese self-evaluation
+
+はなすこと: すこし できます。まだ きんちょうします。
+(Hanasu koto: Sukoshi dekimasu. Mada kinchou shimasu.)
+Speaking: Thoda ho sakta hai. Abhi bhi nervous hota hoon.
+
+きくこと: みじかい かいわは わかりますが、
+はやいと むずかしいです。
+(Kiku koto: Mijikai kaiwa wa wakarimasu ga,
+hayai to muzukashii desu.)
+Listening: Chhoti baat samajhta hoon, lekin
+jaldi bola toh mushkil hai.
+
+よむこと: ひらがなと カタカナは よめます。
+かんじは まだ にがてです。
+(Yomu koto: Hiragana to Katakana wa yomemasu.
+Kanji wa mada nigate desu.)
+Reading: Hiragana aur Katakana padh sakta hoon.
+Kanji abhi bhi weak point hai.
+
+かくこと: かんたんな ぶんは かけます。
+むずかしい ひょうげんは まだ むずかしいです。
+(Kaku koto: Kantan na bun wa kakemasu.
+Muzukashii hyougen wa mada muzukashii desu.)
+Writing: Simple sentences likh sakta hoon.
+Mushkil expressions abhi bhi hard hain.
+
+もくひょう: らいねん N3に ごうかくする こと。
+(Mokuhyou: Rainen N3 ni goukaku suru koto.)
+Goal: Agle saal N3 pass karna.
+```
+
+---
+
+# 📝 Grammar Summary (Chapter 13-15)
+
+| # | Pattern | Meaning |
+|---|---|---|
+| 62 | ～ばよかった (travel) | kash _____ kiya hota |
+| 63 | ～ておけばよかった | kash pehle se karke rakhta |
+| 64 | ～たらどうでしたか | kiya toh kaisa raha? |
+| 65 | ～てみたら | try kiya toh |
+| 66 | ～らしい | apparently / lagta hai |
+| 67 | ～なら | agar _____ ho toh |
+| 68 | ～つもりです (adv.) | plan / irada hai |
+| 69 | ～とおもっています (adv.) | soch raha hoon |
+| 70 | ～ためにしています | ke liye kar raha hoon |
+| 71 | ～かもしれません | shayad _____ hoga |
+| 72 | ～でしょう | probably _____ hoga |
+| 73 | ～ていけば | jaari rakha toh |
+| 74 | ～ようになりました (adv.) | karne laga |
+| 75 | ～ようにしています (adv.) | koshish karta hoon |
+| 76 | ～てきました | dheere dheere ho aaya |
+| 77 | ～たり～たりしています | ...ya ... jaisi cheezein |
+| 78 | ～のがとくい/にがて | strong / weak point hai |
+| 79 | ～ことにしました | decide kiya ki karoon |
+
+---
+
+# 📝 Vocabulary Summary (Ch 13-15)
+
+### Travel (りょこう):
+```
+しんかんせん、のりかえ、かたみち、おうふく
+じゆうせき、していせき
+めいしょ、かんこうち、おんせん
+おみやげ、りょうがえ、パスポート
+```
+
+### Future (しょうらい):
+```
+ゆめ、もくひょう、けいかく、どりょく
+ちょうせん、あきらめる、がんばる
+しゅうしょく、てんしょく、けっこん
+```
+
+### Japanese (にほんご):
+```
+べんきょう、れんしゅう、おぼえる、わすれる
+じょうず、へた、とくい、にがて
+ぶんぽう、ごい、はつおん
+JLPT、ごうかく、ふごうかく
+```
+
+---
+
+# 🎯 Quick Practice Sentences
+
+## Chapter 13
+1. もっとはやく よやくすれば よかった。
+2. きょうとに いくなら、きんかくじは おすすめです。
+3. たべてみたら、おもったより おいしかったです。
+4. あの りょかんは しょくじが おいしいらしいです。
+
+## Chapter 14
+1. らいねん、にほんごのしけんを うけるつもりです。
+2. このまま がんばって いけば、きっとできます。
+3. てんしょくしようと おもっています。
+4. しょうらいは じぶんで かいしゃを つくるかもしれません。
+
+## Chapter 15
+1. すこしずつ にほんごが わかるようになってきました。
+2. まいにち れんしゅうするようにしています。
+3. かんじをおぼえるのが にがてです。
+4. JLPT N3を うけることにしました。
+
+---
+
+# 🎯 Mini Writing Practice
+
+## 1. Travel experience:
+```
+_____ に いきました。
+_____ が とても _____ で、かんどうしました。
+とくに _____ が よかったです。
+また いきたいと おもっています。
+```
+
+## 2. Future plans:
+```
+わたしの ゆめは _____ ことです。
+そのために、いま _____ ています。
+_____ つもりです。
+きっと _____ と おもっています。
+```
+
+## 3. Japanese learning:
+```
+にほんごを べんきょうして _____ ねんに なります。
+_____ のが とくいですが、_____ のが にがてです。
+これからは _____ ようにしたいと おもっています。
+もくひょうは _____ ことです。
+```
+
+---
+
+# 🏆 Irodori Elementary 2 Complete Summary
+
+## All grammar points learned (Elementary 2):
+
+| Chapter | Key Grammar |
+|---|---|
+| Ch 1 | んです、～たら、～ても |
+| Ch 2 | ～すぎます、～やすい/にくい、～そう(appearance)、～がる |
+| Ch 3 | ～より、～ほど～ない、～のように、～によって、～そうです(hearsay)、～らしい |
+| Ch 4 | ～てから、～まえに、～ておく、～ながら |
+| Ch 5 | かかる、Duration+に+frequency、～あいだ、～までに、～ところ、～てしまう |
+| Ch 6 | ～ことにする、～ことになる、～ようにする、～ようになる、～てある |
+| Ch 7 | ～について、～そうです、～かどうか、～よていです |
+| Ch 8 | Casual form、～よう/おう、～ない?、～ましょうか、～し～し、～んだ/の |
+| Ch 9 | ～てあげる/もらう/くれる、～てくれませんか、～てしまいました |
+| Ch 10 | ～ために、～ばよかった、～といいです、～ようにいいます |
+| Ch 11 | ～ていただけますか、Keigo basics、～ていただく |
+| Ch 12 | ～ば～ほど、～によって、～たらどうですか、～ので、～し～し |
+| Ch 13 | ～ておけばよかった、～てみたら、～らしい、～なら |
+| Ch 14 | ～かもしれません、～でしょう、～ていけば |
+| Ch 15 | ～てきました、～たり～たり、～のがとくい/にがて、～ことにしました |
+
+---
+
+**おめでとうございます！🎉**
+**Irodori Elementary 2 poora ho gaya!**
+
+**これで JLPT N4 level ke kaafi close ho gaye ho!**
+
+**つぎは なに を べんきょうしますか？** 😊
+
+Agar **Pre-Intermediate** ya koi aur content chahiye toh bata do!
+
+**にほんごの べんきょう、たのしかったですね！** 🎌
+
+**これからも がんばって ください！** 💪
+
+===============================================
+
+=================================================
+
+Bilkul — ab **Irodori (いろどり) Elementary 2 ke last 3 chapters, yani Chapter 16 to 18** karte hain.  
+Main same style follow karunga: **Hinglish explanation + kanji ke saath ひらがな reading**.
+
+---
+
+# Irodori (いろどり) Elementary 2 - Chapter 16 to 18 Complete Guide
+
+---
+
+# 📘 Chapter 16: こまった とき (困った とき) - When You Have Trouble
+
+## 🎯 Goal:
+- kisi se help maangna  
+- problem explain karna  
+- politely request karna  
+- kisi ki madad ke liye thanks bolna  
+
+---
+
+## 1) Important Vocabulary
+
+### **Trouble / Help words**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| こまる (困る) | こまる | Pareshan hona |
+| こまって います | こまって います | Main pareshan hoon |
+| たすける (助ける) | たすける | Madad karna |
+| たすかる (助かる) | たすかる | Madad milna / bach jana |
+| そうだん (相談) | そうだん | Salah / consult |
+| しつもん (質問) | しつもん | Sawaal |
+| せつめい (説明) | せつめい | Samjhana / explanation |
+| れんらく (連絡) | れんらく | Contact / inform |
+| こしょう (故障) | こしょう | Kharabi / malfunction |
+| なおす (直す) | なおす | Theek karna |
+| なおる (直る) | なおる | Theek ho jana |
+| なくす | なくす | Kho dena |
+| みつける (見つける) | みつける | Dhoondh lena / find |
+| みつかる (見つかる) | みつかる | Mil jana |
+| おとしもの (落とし物) | おとしもの | Lost item |
+| わすれもの (忘れ物) | わすれもの | Bhooli hui cheez |
+| じゅうしょ (住所) | じゅうしょ | Address |
+| しょるい (書類) | しょるい | Documents |
+| ひつよう (必要) | ひつよう | Zaroori |
+| めいわく (迷惑) | めいわく | Pareshani / inconvenience |
+
+---
+
+### **Common daily problems**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| かぎ (鍵) | かぎ | Key |
+| さいふ (財布) | さいふ | Wallet |
+| けいたい / スマホ | けいたい / すまほ | Mobile |
+| パスポート | ぱすぽおと | Passport |
+| ざいりゅうカード (在留カード) | ざいりゅうかあど | Residence card |
+| でんき (電気) | でんき | Electricity |
+| みず (水) | みず | Water |
+| ガス | がす | Gas |
+| ドア | どあ | Door |
+| エアコン | えあこん | AC |
+| うるさい | うるさい | Noisy |
+| くさい (臭い) | くさい | Bad smell |
+| きたない (汚い) | きたない | Dirty |
+| あぶない (危ない) | あぶない | Dangerous |
+
+---
+
+## 2) Grammar Point 80: ～てほしいです  
+## Meaning: “Mujhe chahiye ki koi _____ kare”
+
+**Verb て-form + ほしいです**
+
+Ye tab use hota hai jab tum chahte ho **koi aur** kuch kare.
+
+### Examples:
+- もう すこし ゆっくり はなして **ほしいです**。  
+  → Main chahta hoon ki aap thoda dheere bolen.
+
+- この ぶぶん (部分) を もう いちど せつめいして **ほしいです**。  
+  → Main chahta hoon ki yeh part ek baar aur samjhaya jaye.
+
+- しょるい を はやく なおして **ほしいです**。  
+  → Main chahta hoon ki document jaldi theek kiya jaye.
+
+- となり の へや の ひと に、もう すこし しずかに して **ほしいです**。  
+  → Main chahta hoon bagal wale room ka aadmi thoda shaant rahe.
+
+---
+
+## 3) Grammar Point 81: ～ないでほしいです  
+## Meaning: “Main chahta hoon ki koi _____ na kare”
+
+**ない-form + でほしいです**
+
+### Examples:
+- ここ に ゴミ を すてないで **ほしいです**。  
+  → Main chahta hoon yahaan kachra na phenka jaye.
+
+- よる おそく、おおきい おと を ださないで **ほしいです**。  
+  → Main chahta hoon raat der tak loud sound na ho.
+
+- かってに わたし の もの を つかわないで **ほしいです**。  
+  → Main chahta hoon meri cheezein bina poochhe use na ki jayein.
+
+- しんぱい しないで **ほしいです**。  
+  → Main chahta hoon tum chinta mat karo.
+
+---
+
+## 4) Grammar Point 82: ～てくれて ありがとう / ～ていただいて ありがとう ございます  
+## Meaning: “_____ karne ke liye thanks”
+
+### Casual / normal:
+**て-form + くれて ありがとう**
+
+- てつだって **くれて ありがとう**。  
+  → Help karne ke liye thanks.
+
+- みち を おしえて **くれて ありがとう**。  
+  → Rasta batane ke liye thank you.
+
+### Formal:
+**て-form + いただいて ありがとう ございます**
+
+- おしえて **いただいて ありがとう ございます**。  
+  → Samjhane ke liye dhanyavaad.
+
+- てつづき を てつだって **いただいて ありがとう ございます**。  
+  → Procedure mein help karne ke liye bahut shukriya.
+
+- ごれんらく **いただいて ありがとう ございます**。  
+  → Contact karne ke liye dhanyavaad.
+
+---
+
+## 5) Grammar Point 83: ～て たすかりました  
+## Meaning: “_____ se bahut help mili”
+
+**て-form + たすかりました**
+
+### Examples:
+- にほんご に ほんやくして もらって、たすかりました。  
+  → Japanese mein translate kar diya, bahut help mili.
+
+- かさ を かして くれて、たすかりました。  
+  → Chhata udhaar diya, bahut help mili.
+
+- えき まで おくって もらって、たすかりました。  
+  → Station tak chhod diya, bahut help mili.
+
+- しょるい の かきかた を おしえて もらって、たすかりました。  
+  → Form kaise bharna hai yeh bata diya, bahut help mili.
+
+---
+
+## 6) Asking for help politely
+
+### Useful phrases:
+- すみません、ちょっと こまって いるんですが…。  
+  → Excuse me, thodi problem hai...
+
+- ちょっと おしえて もらえますか。  
+  → Thoda bata sakte hain?
+
+- てつだって いただけますか。  
+  → Kya madad kar sakte hain?
+
+- この ぶん (文) を にほんご に なおして もらえますか。  
+  → Is sentence ko Japanese mein correct kar sakte hain?
+
+- どうしたら いいですか。  
+  → Mujhe kya karna chahiye?
+
+---
+
+## 7) Sample Conversation - Apartment problem
+
+**A:** すみません、ちょっと そうだんしたい こと が あるんですが。  
+**B:** はい、どうしましたか。  
+**A:** へや の エアコン が こしょうして いるんです。  
+**B:** そうですか。いつ から ですか。  
+**A:** きのう からです。はやく なおして ほしいんですが…。  
+**B:** わかりました。あした ぎょうしゃ (業者) に きてもらいます。  
+**A:** ありがとうございます。たすかります。  
+
+### Hinglish meaning:
+A: Excuse me, ek baat consult karni thi.  
+B: Haan, kya hua?  
+A: Room ka AC kharab hai.  
+B: Achha. Kab se?  
+A: Kal se. Main chahta hoon jaldi theek ho jaye.  
+B: Theek hai. Kal repair wala bulaate hain.  
+A: Thank you, bahut help hogi.
+
+---
+
+## 8) Sample Conversation - Lost item
+
+**A:** すみません、さいふ を なくして しまいました。  
+**B:** どこで なくしましたか。  
+**A:** たぶん えき だと おもいます。  
+**B:** こうばん (交番) に いった ほうが いいですね。  
+**A:** そうですね。いろいろ おしえて くれて ありがとう ございます。  
+**B:** いいえ。みつかる と いいですね。  
+
+---
+
+---
+
+# 📘 Chapter 17: ルール と あんぜん (ルール と 安全) - Rules and Safety
+
+## 🎯 Goal:
+- rules samajhna  
+- safety instructions follow karna  
+- disaster / emergency situation mein kya karna hai  
+- apartment aur town ke rules samajhna  
+
+---
+
+## 1) Safety / Rules Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ルール | るうる | Rule |
+| きまり | きまり | Rule / Niyam |
+| マナー | まなあ | Manners |
+| あんぜん (安全) | あんぜん | Safety |
+| きけん (危険) | きけん | Danger |
+| ちゅうい (注意) | ちゅうい | Caution |
+| じしん (地震) | じしん | Earthquake |
+| たいふう (台風) | たいふう | Typhoon |
+| かじ (火事) | かじ | Fire |
+| ひなん (避難) | ひなん | Evacuation |
+| ひなんじょ (避難所) | ひなんじょ | Evacuation shelter |
+| ぼうさい (防災) | ぼうさい | Disaster prevention |
+| そなえる (備える) | そなえる | Prepare for |
+| じゅんび (準備) | じゅんび | Preparation |
+| けいほう (警報) | けいほう | Warning |
+| ひじょう (非常) | ひじょう | Emergency |
+| ひじょうぐち (非常口) | ひじょうぐち | Emergency exit |
+| きんし (禁止) | きんし | Prohibited |
+| きんえん (禁煙) | きんえん | No smoking |
+| たちいりきんし (立入禁止) | たちいりきんし | No entry |
+
+---
+
+## 2) Daily Life Rules Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ゴミ | ごみ | Garbage |
+| ぶんべつ (分別) | ぶんべつ | Sorting |
+| もえる ゴミ (燃えるゴミ) | もえる ごみ | Burnable garbage |
+| もえない ゴミ (燃えないゴミ) | もえない ごみ | Non-burnable garbage |
+| ペットボトル | ぺっとぼとる | PET bottle |
+| しげんゴミ (資源ゴミ) | しげんごみ | Recyclables |
+| だす (出す) | だす | Put out |
+| しまる / しめる (閉まる / 閉める) | しまる / しめる | Close |
+| とまる / とめる (止まる / 止める) | とまる / とめる | Stop |
+| あける (開ける) | あける | Open |
+| しずかに する | しずかに する | Stay quiet |
+| まもる (守る) | まもる | Follow / protect |
+| すてる (捨てる) | すてる | Throw away |
+
+---
+
+## 3) Grammar Point 84: ～ことに なって います  
+## Meaning: “Rule hai ki... / It has been decided that...”
+
+**Dictionary form + ことに なって います**  
+**ない form + ことに なって います**
+
+Bahut important pattern hai. Rules, school, office, apartment regulations mein bahut use hota hai.
+
+### Examples:
+- この アパート では、よる 10じ いこう は しずかに する **ことに なって います**。  
+  → Is apartment mein rule hai ki raat 10 baje ke baad shaant rehna hota hai.
+
+- ゴミ は げつようび と もくようび に だす **ことに なって います**。  
+  → Rule hai ki garbage Monday aur Thursday ko nikalna hota hai.
+
+- ここ では たばこ を すわない **ことに なって います**。  
+  → Yahaan smoking mana hai / rule hai ki smoke nahi karte.
+
+- かいぎ には 5ふん まえに くる **ことに なって います**。  
+  → Rule hai ki meeting mein 5 minute pehle aana hota hai.
+
+### Difference:
+- **～なければ なりません** = karna zaroori hai  
+- **～ことに なって います** = system / rule / decided arrangement
+
+---
+
+## 4) Grammar Point 85: ～ばあい は  
+## Meaning: “Agar aisi situation ho / in case of”
+
+**Noun + の ばあい は**  
+**Verb plain + ばあい は**
+
+### Examples:
+- じしん の **ばあい は**、エレベーター を つかわないで ください。  
+  → Earthquake ke case mein elevator use mat kijiye.
+
+- かじ の **ばあい は**、すぐ 119ばん に でんわ してください。  
+  → Aag lagne ke case mein turant 119 pe phone kijiye.
+
+- あめ が つよい **ばあい は**、イベント は ちゅうし です。  
+  → Agar baarish tez ho toh event cancel hai.
+
+- なにか こまった こと が あった **ばあい は**、かんりにん (管理人) に れんらく してください。  
+  → Agar koi problem ho toh manager ko contact kijiye.
+
+---
+
+## 5) Grammar Point 86: ～ようです  
+## Meaning: “Lagta hai / It seems”
+
+Ye pattern **appearance / situation dekhkar** use hota hai.
+
+### Examples:
+- そと は さむい **ようです**。  
+  → Bahar thand lagti hai.
+
+- この みち は あぶない **ようです**。  
+  → Yeh road dangerous lagti hai.
+
+- でんしゃ が とまって いる **ようです**。  
+  → Lagta hai train ruk gayi hai.
+
+- だれも いない **ようです**。  
+  → Lagta hai koi nahi hai.
+
+### Difference:
+- **～そうです** = suna hai / ya dekhkar “looks like”
+- **～ようです** = situation dekhkar “it seems”
+
+---
+
+## 6) Grammar Point 87: ～ない ように して ください  
+## Meaning: “Please make sure not to...”
+
+**ない-form + ように して ください**
+
+### Examples:
+- ここ に くるま を とめない **ように して ください**。  
+  → Please yahaan gaadi park na karein.
+
+- よる おそく、おおきい こえ で はなさない **ように して ください**。  
+  → Please raat der tak loud awaaz mein mat boliye.
+
+- じしん の とき は あわてない **ように して ください**。  
+  → Earthquake ke waqt panic mat kijiye.
+
+- ひなん するとき は エレベーター を つかわない **ように して ください**。  
+  → Evacuation ke waqt elevator use na kijiye.
+
+---
+
+## 7) Sample Rule Explanations
+
+### Apartment rules:
+```
+この アパート では、
+・ゴミは あさ 8じ までに だす ことに なって います。
+・ペットを かう ときは、かんりがいしゃ に れんらくする ことに なって います。
+・よる 10じ いこう は しずかに する ことに なって います。
+```
+
+### Hinglish meaning:
+Is apartment mein:
+- garbage subah 8 baje tak nikalna hota hai  
+- pet rakhna ho toh management company ko contact karna hota hai  
+- raat 10 ke baad shaant rehna hota hai  
+
+---
+
+## 8) Disaster Preparedness Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ひじょうぶくろ (非常袋) | ひじょうぶくろ | Emergency bag |
+| みず (水) | みず | Water |
+| かんぱん (乾パン) | かんぱん | Dry emergency biscuits |
+| かいちゅうでんとう (懐中電灯) | かいちゅうでんとう | Flashlight |
+| でんち (電池) | でんち | Battery |
+| ラジオ | らじお | Radio |
+| くすり (薬) | くすり | Medicine |
+| もうふ (毛布) | もうふ | Blanket |
+| マスク | ますく | Mask |
+| ティッシュ | てぃっしゅ | Tissue |
+
+### Useful sentences:
+- じしん に そなえて、ひじょうぶくろ を じゅんびして います。  
+  → Earthquake ke liye emergency bag ready rakha hai.
+
+- ぼうさい の ために、みず と たべもの を じゅんびして おいた ほうが いいです。  
+  → Disaster prevention ke liye paani aur khana ready rakhna accha hai.
+
+---
+
+## 9) Sample Conversation - Safety guidance
+
+**A:** この たてもの (建物) では、じしん の とき、どう したら いいですか。  
+**B:** まず、あわてないで ください。  
+**A:** はい。  
+**B:** それから、エレベーター を つかわない ように して ください。  
+**A:** ひなんじょ は どこですか。  
+**B:** ちかく の こうえん が ひなんじょ に なって います。  
+
+### Hinglish meaning:
+A: Is building mein earthquake ke waqt kya karna chahiye?  
+B: Sabse pehle panic mat kijiye.  
+A: Theek hai.  
+B: Phir elevator use mat kijiye.  
+A: Evacuation shelter kahaan hai?  
+B: Paas ka park evacuation shelter hai.
+
+---
+
+---
+
+# 📘 Chapter 18: ふりかえり と これから - Reflection and From Now On
+
+## 🎯 Goal:
+- ab tak kya seekha uske baare mein bolna  
+- apni growth batana  
+- gratitude express karna  
+- future goals aur next steps batana  
+
+---
+
+## 1) Reflection Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ふりかえり | ふりかえり | Review / Reflection |
+| せいちょう (成長) | せいちょう | Growth |
+| へんか (変化) | へんか | Change |
+| じしん (自信) | じしん | Confidence |
+| かんしゃ (感謝) | かんしゃ | Gratitude |
+| おもいで (思い出) | おもいで | Memory |
+| たいせつ (大切) | たいせつ | Important |
+| つづける (続ける) | つづける | Continue |
+| つづく (続く) | つづく | Continue (intransitive) |
+| みなおす (見直す) | みなおす | Review again |
+| じっこうする (実行する) | じっこうする | Put into action |
+| ちゃくじつに (着実に) | ちゃくじつに | Steadily |
+| すこしずつ | すこしずつ | Little by little |
+| だんだん | だんだん | Gradually |
+| これから | これから | From now on |
+| こんご (今後) | こんご | Hereafter / In future |
+
+---
+
+## 2) Grammar Point 88: ～て よかったです  
+## Meaning: “Accha hua ki... / I’m glad that...”
+
+**て-form + よかったです**
+
+### Examples:
+- にほん に きて **よかったです**。  
+  → Accha hua main Japan aaya.
+
+- にほんご を べんきょうして **よかったです**。  
+  → Accha hua maine Japanese padhi.
+
+- あの とき、あきらめなくて **よかったです**。  
+  → Accha hua us waqt maine give up nahi kiya.
+
+- せんせい に そうだんして **よかったです**。  
+  → Accha hua teacher se consult kiya.
+
+---
+
+## 3) Grammar Point 89: ～なくて よかったです  
+## Meaning: “Accha hua ki ... nahi hua / didn’t do”
+
+**ない-form + なくて よかったです**
+
+### Examples:
+- おおきな びょうき じゃなくて **よかったです**。  
+  → Accha hua koi badi bimari nahi thi.
+
+- しけん に おくれなくて **よかったです**。  
+  → Accha hua exam ke liye late nahi hua.
+
+- さいふ を なくさなくて **よかったです**。  
+  → Accha hua wallet nahi khoi.
+
+- あめ が ふらなくて **よかったです**。  
+  → Accha hua baarish nahi hui.
+
+---
+
+## 4) Grammar Point 90: ～つづけて います / ～つづけます  
+## Meaning: “Continue kar raha hoon / karunga”
+
+**ます-stem + つづけます**  
+**ます-stem + つづけて います**
+
+### Examples:
+- まいにち にほんご を べんきょうし **つづけて います**。  
+  → Main har roz Japanese padhna continue kar raha hoon.
+
+- これからも どりょくし **つづけます**。  
+  → Aage bhi mehnat continue karunga.
+
+- にっきを かき **つづけて います**。  
+  → Main diary likhna continue kar raha hoon.
+
+- もっと べんきょうし **つづけたいです**。  
+  → Main aur padhai continue karna chahta hoon.
+
+---
+
+## 5) Grammar Point 91: ～ように なって きました  
+## Meaning: “Dheere dheere ... hone laga”
+
+**Dictionary / potential form + ように なって きました**
+
+### Examples:
+- にほんご が だんだん わかる **ように なって きました**。  
+  → Dheere dheere Japanese samajh aane lagi.
+
+- ひとりで てつづき が できる **ように なって きました**。  
+  → Dheere dheere khud se procedures karne laga.
+
+- にほん の せいかつ に なれる **ように なって きました**。  
+  → Dheere dheere Japan ki life ki aadat padne lagi.
+
+- じぶん の いけん を にほんごで いえる **ように なって きました**。  
+  → Main dheere dheere Japanese mein apni opinion bolne laga.
+
+---
+
+## 6) Grammar Point 92: ～ように なりたいです  
+## Meaning: “Main ... karne layak hona chahta hoon / want to become able to”
+
+**Dictionary / potential form + ように なりたいです**
+
+### Examples:
+- もっと じょうず に はなせる **ように なりたいです**。  
+  → Main aur acchi Japanese bol paana chahta hoon.
+
+- けいご が つかえる **ように なりたいです**。  
+  → Main keigo use kar paana chahta hoon.
+
+- しんぶん (新聞) が よめる **ように なりたいです**。  
+  → Main newspaper padh paana chahta hoon.
+
+- にほんじん と しぜんに はなせる **ように なりたいです**。  
+  → Main Japanese logon se naturally baat kar paana chahta hoon.
+
+---
+
+## 7) Grammar Point 93: ～て くれて / ～て いただいて うれしかったです  
+## Meaning: “... karne se mujhe khushi hui”
+
+### Examples:
+- ともだち が てつだって **くれて うれしかったです**。  
+  → Dost ne help ki, mujhe bahut khushi hui.
+
+- せんせい が しんせつに おしえて **くださって うれしかったです**。  
+  → Teacher ne pyar se sikhaya, mujhe accha laga.
+
+- みなさん に たすけて **いただいて うれしかったです**。  
+  → Sab ne help ki, mujhe bahut khushi hui.
+
+- にほんじん の ともだち が できて、ほんとう に うれしかったです。  
+  → Japanese dost bane, mujhe sach mein bahut khushi hui.
+
+---
+
+## 8) Talking about your progress
+
+### Sample paragraph:
+```
+にほん に きた ばかり の ころ は、
+ことば も せいかつ も ぜんぜん わかりませんでした。
+(Nihon ni kita bakari no koro wa,
+kotoba mo seikatsu mo zenzen wakarimasen deshita.)
+Jab main naya naya Japan aaya tha,
+na language samajhta tha na life.
+
+でも、まいにち すこしずつ べんきょうして、
+いまは にほんご で かんたんな かいわ が できる
+ように なって きました。
+(Demo, mainichi sukoshizutsu benkyou shite,
+ima wa nihongo de kantan na kaiwa ga dekiru
+you ni natte kimashita.)
+Lekin, har roz thoda thoda padhkar,
+ab Japanese mein simple conversation karne laga hoon.
+
+まだ かんじ は にがてですが、
+これからも べんきょうを つづけたいです。
+(Mada kanji wa nigate desu ga,
+korekara mo benkyou wo tsuzuketai desu.)
+Abhi bhi kanji weak point hai,
+lekin aage bhi padhai continue karna chahta hoon.
+
+にほんご を べんきょうして よかった と おもっています。
+(Nihongo wo benkyou shite yokatta to omotte imasu.)
+Mujhe lagta hai Japanese padhkar accha hua.
+```
+
+---
+
+## 9) Speaking about gratitude
+
+### Useful expressions:
+- みなさん の おかげで、ここまで くる こと が できました。  
+  → Aap sab ke support se yahaan tak pahunch saka.
+
+- せんせい に おしえて いただいて、ほんとう に かんしゃ して います。  
+  → Teacher ne sikhaya, uske liye main bahut thankful hoon.
+
+- ともだち が いつも はげまして くれて、うれしかったです。  
+  → Dost hamesha motivate karte rahe, mujhe bahut accha laga.
+
+- ひとり じゃ できなかった と おもいます。  
+  → Mujhe lagta hai main akela yeh nahi kar pata.
+
+---
+
+## 10) Looking ahead - future goals
+
+### Example:
+```
+これからは、もっと にほんご の ごい (語彙) を ふやして、
+しんぶん や ニュース も よめる ように なりたいです。
+(Korekara wa, motto nihongo no goi wo fuyashite,
+shinbun ya nyuusu mo yomeru you ni naritai desu.)
+Ab se main Japanese vocabulary aur badhaakar,
+newspaper aur news bhi padh paana chahta hoon.
+
+それから、けいご も れんしゅうして、
+しごと で じしん を もって はなせる ように なりたいです。
+(Sorekara, keigo mo renshuu shite,
+shigoto de jishin wo motte hanaseru you ni naritai desu.)
+Aur, keigo ki practice karke,
+kaam mein confidence ke saath bol paana chahta hoon.
+
+これからも あきらめないで、べんきょうを つづけます。
+(Korekara mo akiramenaide, benkyou wo tsuzukemasu.)
+Aage bhi give up kiye bina padhai continue karunga.
+```
+
+---
+
+# 📝 Grammar Summary (Chapter 16-18)
+
+| # | Pattern | Meaning |
+|---|---|---|
+| 80 | ～てほしいです | chahte ho ki koi kare |
+| 81 | ～ないでほしいです | chahte ho ki koi na kare |
+| 82 | ～てくれて ありがとう / ～ていただいて ありがとう ございます | help ke liye thanks |
+| 83 | ～て たすかりました | isse bahut help mili |
+| 84 | ～ことに なって います | rule hai / decided rule |
+| 85 | ～ばあい は | in case of |
+| 86 | ～ようです | lagta hai / it seems |
+| 87 | ～ないように して ください | please make sure not to |
+| 88 | ～て よかったです | accha hua ki... |
+| 89 | ～なくて よかったです | accha hua ki ... nahi hua |
+| 90 | ～つづけて います / ～つづけます | continue kar raha hoon |
+| 91 | ～ように なって きました | dheere dheere hone laga |
+| 92 | ～ように なりたいです | aisa kar paana chahta hoon |
+| 93 | ～てくれて / ～ていただいて うれしかったです | kisi ne kiya aur mujhe accha laga |
+
+---
+
+# 📝 Quick Practice Sentences
+
+## Chapter 16
+1. もう すこし ゆっくり はなして ほしいです。  
+2. よる おそく さわがないで ほしいです。  
+3. てつだって くれて ありがとう。  
+4. みち を おしえて もらって、たすかりました。  
+
+## Chapter 17
+1. この アパート では ゴミ を ぶんべつする ことに なって います。  
+2. じしん の ばあい は、そと に にげて ください。  
+3. この たてもの は あぶない ようです。  
+4. エレベーター を つかわない ように して ください。  
+
+## Chapter 18
+1. にほん に きて よかったです。  
+2. あめ が ふらなくて よかったです。  
+3. これからも べんきょうを つづけます。  
+4. にほんご が だんだん わかる ように なって きました。  
+5. もっと じょうず に はなせる ように なりたいです。  
+
+---
+
+# 📝 Final Mini Writing Practice
+
+## 1. Help / trouble
+```
+きのう、_____ ので、こまりました。
+でも、_____ が _____ てくれて、たすかりました。
+```
+
+## 2. Rules
+```
+わたし の アパート では、
+_____ ことに なって います。
+_____ ない ように して ください。
+```
+
+## 3. Reflection
+```
+にほんご を べんきょうして よかったです。
+さいしょ は _____ でしたが、
+いまは _____ ように なって きました。
+これからは _____ ように なりたいです。
+```
+
+---
+
+# 🎉 Irodori Elementary 2 - All 18 Chapters Complete
+
+Ab tumne:
+- daily life
+- shopping
+- travel
+- work
+- health
+- future
+- Japanese study
+- rules
+- trouble/help
+
+sab cover kar liya hai.
+
+### Next logical step:
+- **JLPT N4 practice**
+- **reading practice**
+- **listening practice**
+- **short speaking practice**
+- **kanji revision**
+
+---
+
+Agar chaho, next main tumhare liye:
+1. **Irodori Elementary 2 full grammar list ek jagah**, ya  
+2. **JLPT N4 grammar notes**, ya  
+3. **Chapter 1-18 ka revision test** bana sakta hoon.

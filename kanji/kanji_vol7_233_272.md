@@ -1,0 +1,646 @@
+# Volume 7: Kanji 233 - 272 (Lessons 20 - 21)
+
+Master belief, experience, typhoons, dogs, heavy items, beginnings, youth, sending, happiness, clocks, lateness, distribution/worry, younger siblings, superstitions, critical Yakudoshi ages, study abroad dreams, and burglaries across Lessons 20 and 21.
+This study deck includes structured Kanji tables, compound vocabulary lists, reading and writing exercises, and the verbatim PDF transcript.
+
+---
+
+## 📚 Section 1: Kanji Study Deck (#254 – #268)
+
+### 📖 Lesson 20 Kanji
+
+#### #254 【 信 】 — to believe / trust / message
+- **On'yomi (音読み)**: シン
+- **Kun'yomi (訓読み)**: -
+- **Compound Vocabulary**:
+  - **信じる** (しんじる) — *to believe / trust*
+  - **自信** (じしん) — *confidence / self-confidence*
+  - **信号** (しんごう) — *traffic light / signal*
+  - **迷信** (めいしん) — *superstition*
+  - **信用する** (しんようする) — *to trust / rely on*
+
+---
+
+#### #255 【 経 】 — to pass through / manage / longitude
+- **On'yomi (音読み)**: ケイ, キョウ
+- **Kun'yomi (訓読み)**: -
+- **Compound Vocabulary**:
+  - **経験** (けいけん) — *experience*
+  - **経済** (けいざい) — *economy / economics*
+  - **神経質な** (しんけいしつな) — *nervous / sensitive / high-strung*
+  - **経営学** (けいえいがく) — *business administration / management*
+  - **経由** (けiyu) — *via / by way of*
+
+---
+
+#### #256 【 台 】 — stand / pedestal / machine counter
+- **On'yomi (音読み)**: タイ, ダイ
+- **Kun'yomi (訓読み)**: -
+- **Compound Vocabulary**:
+  - **台風** (たいふう) — *typhoon*
+  - **二台** (にだい) — *two machines / two vehicles*
+  - **舞台** (ぶたい) — *stage (theatre)*
+  - **台所** (だいどころ) — *kitchen*
+  - **屋台** (やたい) — *food stall / food cart*
+
+---
+
+#### #257 【 風 】 — wind / style / manner
+- **On'yomi (音読み)**: フウ, フ
+- **Kun'yomi (訓読み)**: かぜ, かざ
+- **Compound Vocabulary**:
+  - **台風** (たいふう) — *typhoon*
+  - **和風** (わふう) — *Japanese style*
+  - **風** (かぜ) — *wind / breeze*
+  - **風邪をひく** (かぜをひく) — *to catch a cold*
+  - **扇風機** (せんぷうき) — *electric fan*
+
+---
+
+#### #258 【 犬 】 — dog / hound
+- **On'yomi (音読み)**: ケン
+- **Kun'yomi (訓読み)**: いぬ
+- **Compound Vocabulary**:
+  - **犬** (いぬ) — *dog / puppy*
+  - **番犬** (ばんけん) — *watchdog / guard dog*
+  - **盲導犬** (もうどうけん) — *seeing-eye dog / guide dog*
+  - **野良犬** (のらいぬ) — *stray dog*
+
+---
+
+#### #259 【 重 】 — heavy / pile up / serious
+- **On'yomi (音読み)**: ジュウ, チョウ
+- **Kun'yomi (訓読み)**: おも, かさ
+- **Compound Vocabulary**:
+  - **重い** (おもい) — *heavy / serious (illness)*
+  - **重ねる** (かさねる) — *to pile up / layer [transitive]*
+  - **体重** (たいじゅう) — *body weight*
+  - **貴重品** (きちょうひん) — *valuables / precious items*
+  - **重要** (じゅうよう) — *important / essential*
+
+---
+
+#### #260 【 初 】 — first / beginning / new
+- **On'yomi (音読み)**: ショ
+- **Kun'yomi (訓読み)**: はじ, はつ
+- **Compound Vocabulary**:
+  - **初めは** (はじめは) — *at first / in the beginning*
+  - **初めて** (はじめて) — *for the first time*
+  - **最初** (さいしょ) — *first / beginning / outset*
+  - **初雪** (はつゆき) — *first snow of the season*
+  - **初恋** (はつこい) — *first love*
+
+---
+
+#### #261 【 若 】 — young / youth
+- **On'yomi (音読み)**: ジャク, ニャク
+- **Kun'yomi (訓読み)**: わか
+- **Compound Vocabulary**:
+  - **若い** (わかい) — *young / youthful*
+  - **若者** (わかもの) — *young person / youth*
+  - **若葉** (わかば) — *new leaves / fresh foliage*
+  - **若返る** (わかがえる) — *to be rejuvenated / feel young again*
+
+---
+
+#### #262 【 送 】 — to send / transmit / see off
+- **On'yomi (音読み)**: ソウ
+- **Kun'yomi (訓読み)**: おく
+- **Compound Vocabulary**:
+  - **送る** (おくる) — *to send / see off*
+  - **送金する** (そうきんする) — *to send money / remit*
+  - **放送** (ほうそう) — *broadcast / transmission*
+  - **回送電車** (かいそうでんしゃ) — *out-of-service train / empty train*
+  - **見送る** (みおくる) — *to see (someone) off*
+
+---
+
+#### #263 【 幸 】 — happiness / blessing / fortune
+- **On'yomi (音読み)**: コウ
+- **Kun'yomi (訓読み)**: しあわ, さいわ
+- **Compound Vocabulary**:
+  - **幸せな** (しあわせな) — *happy / blessed*
+  - **幸運** (こううん) — *good fortune / lucky*
+  - **不幸** (ふこう) — *misfortune / unhappiness / sorrow*
+  - **幸い** (さいわい) — *fortunately / luckily / blessing*
+  - **幸福** (こうふく) — *happiness / well-being*
+
+---
+
+#### #264 【 計 】 — measure / plan / compute / clock
+- **On'yomi (音読み)**: ケイ
+- **Kun'yomi (訓読み)**: はか
+- **Compound Vocabulary**:
+  - **時計** (とけい) — *clock / watch / timepiece*
+  - **合計** (ごうけい) — *sum total / total amount*
+  - **計る** (はかる) — *to measure / time / weigh*
+  - **計画** (けいかく) — *plan / project / scheme*
+  - **会計** (かいけい) — *accounting / bill / checkout*
+
+---
+
+#### #265 【 遅 】 — late / slow / delay
+- **On'yomi (音読み)**: チ
+- **Kun'yomi (訓読み)**: おく, おそ
+- **Compound Vocabulary**:
+  - **遅れる** (おくれる) — *to be late / be delayed [intransitive]*
+  - **遅い** (おそい) — *late / slow*
+  - **遅刻する** (ちこくする) — *to be late (for class/work)*
+  - **乗り遅れる** (のりおくれる) — *to miss (a train/bus)*
+  - **手遅れ** (ておくれ) — *too late / belated*
+
+---
+
+#### #266 【 配 】 — distribute / deliver / worry
+- **On'yomi (音読み)**: ハイ
+- **Kun'yomi (訓読み)**: くば
+- **Compound Vocabulary**:
+  - **心配な** (しんぱいな) — *worried / anxious / uneasy*
+  - **配る** (くばる) — *to distribute / hand out*
+  - **配達** (はいたつ) — *delivery*
+  - **心配する** (しんぱいする) — *to worry / care about*
+  - **配慮** (はいりょ) — *consideration / care / concern*
+
+---
+
+#### #267 【 弟 】 — younger brother
+- **On'yomi (音読み)**: ダイ, デ, テイ
+- **Kun'yomi (訓読み)**: おとうと
+- **Compound Vocabulary**:
+  - **弟** (おとうと) — *(my) younger brother*
+  - **兄弟** (きょうだい) — *brothers / siblings*
+  - **弟子** (でし) — *apprentice / pupil / disciple*
+  - **義理の弟** (ぎりのおとうと) — *brother-in-law (younger)*
+
+---
+
+#### #268 【 妹 】 — younger sister
+- **On'yomi (音読み)**: マイ
+- **Kun'yomi (訓読み)**: いもうと
+- **Compound Vocabulary**:
+  - **妹** (いもうと) — *(my) younger sister*
+  - **姉妹** (しまい) — *sisters*
+  - **姉妹都市** (しまいとし) — *sister city*
+  - **義理の妹** (ぎりのいもうと) — *sister-in-law (younger)*
+
+---
+
+### 📖 Lesson 21 Kanji
+
+*Note: Lesson 21 is a comprehensive reading application lesson focusing on reading comprehension, vocabulary synthesis, and real-world texts (superstitions & Yakudoshi) without introducing new Kanji table characters.*
+
+## ✍️ Section 2: Reading & Writing Workbook Practice
+
+### Lesson 20 Practice
+- **A. Word & Meaning Associations**:
+  - 迷信を信じる ➔ **めいしん を しんじる** (Believe in superstitions)
+  - 経済の経験 ➔ **けいざい の けいけん** (Economic experience)
+  - 台風と風邪 ➔ **たいふう と かぜ** (Typhoon and cold)
+  - 盲導犬と番犬 ➔ **もうどうけん と ばんけん** (Guide dog & guard dog)
+  - 重い荷物と体重 ➔ **おもい にもつ と たいじゅう** (Heavy luggage & weight)
+  - 初めてと最初 ➔ **はじめて と さいしょ** (For 1st time & beginning)
+  - 若い若者 ➔ **わかい わかもの** (Young youth)
+  - お金を送金する ➔ **おかね を そうきんする** (To remit money)
+  - 幸せで幸運な生活 ➔ **しあわせ で こううん な せいかつ** (Happy & lucky life)
+  - 時計で時間を計る ➔ **とけい で じかん を はかる** (Measure time by watch)
+  - 電車に遅れて遅刻する ➔ **でんしゃ に おくれて ちこくする** (Late to train & tardy)
+  - 手紙を配達して配る ➔ **てがみ を はいたつ して くばる** (Deliver & hand out letters)
+  - 兄弟と姉妹 ➔ **きょうだい と しまい** (Brothers and sisters)
+
+- **B. Reading Passage: 誠くんのボランティアと盲導犬 (Makoto's Volunteer Work & Guide Dogs)**:
+  - **誠くんは 経済学を 学ぶ 大学生で、週末には 初めて 盲導犬を 育てる ボランティアに参加する 貴重な 経験をしました。** (*Makoto is a university student studying economics, and on weekends he had the precious experience of participating in a guide dog training volunteer program for the first time.*)
+  - **ある台風の日、若い 盲導犬の ポチが 重い 荷物を 持った 目が 不自由な お年寄りを 安全に 駅まで 導きました。** (*On a typhoon day, the young guide dog Pochi safely guided a visually impaired elderly person carrying heavy luggage all the way to the station.*)
+  - **誠くんの 弟と 妹も、「私たちも 大きくなったら 困っている人の 心配を 減らす 活動を 続けたい」と 話しています。** (*Makoto's younger brother and sister also said, "When we grow up, we want to continue activities that reduce the worries of people in need."*)
+  - **人々と 動物が 互いに 信頼し合って 助け合う 社会こそが、最も 幸せで 幸運な 社会だと 信じています。** (*He believes that a society where people and animals trust and help each other is truly the happiest and most fortunate society.*)
+
+### Lesson 21 Practice (Comprehensive Reading Application)
+- **Reading Passage: オーストラリア留学の夢と泥棒体験 (Study Abroad Dream & Burglar Experience)**:
+  - **「厄年（やくどし）」という 言葉を 聞いたことが ありますか。厄年に 悪いことが よく 起こると、昔から 多くの 日本人は 信じています。** (*Have you ever heard the word "Yakudoshi"? Since ancient times, many Japanese people have believed that bad things often happen during Yakudoshi (unlucky critical ages).* )
+  - **男の人の 厄年は 二十五歳と 四十二歳、女の人の 厄年は 十九歳と 三十三歳です。これは ただの 迷信だと言う 人も いますが、大病で 入院したり する人も 多いそうです。** (*Men's unlucky ages are 25 and 42, while women's are 19 and 33. Some people say this is just a superstition, but apparently many people do experience things like hospitalization for serious illnesses.*)
+  - **私は オーストラリアで 勉強する 長い間の 夢が あり、日本で 一生懸命 仕事をして お金を ため、去年 ここに 来ました。** (*I had a longtime dream of studying in Australia, so I worked very hard in Japan, saved up money, and came here last year.*)
+  - **贅沢は できなくても 幸せでしたが、昨日 アパートの 鍵が 壊され、泥棒に テレビ、カメラ、時計、自転車を 取られて いました！** (*Even though I couldn't afford luxuries, I was happy; however yesterday, my apartment lock was broken, and a burglar took my TV, camera, watch, and bicycle!*)
+  - **日本の 友達に 話したら、「今年は あなたの 厄年だから、やっぱり 悪いことが 起こったんだよ。神社のお守りを 送ってあげる」と 言われました。** (*When I told a Japanese friend, they said, "This year is your Yakudoshi, so sure enough, a misfortune occurred! I'll send you a shrine amulet."*)
+
+---
+
+## 📜 Section 3: Verbatim PDF Reference Transcript (Pages 120 – 130)
+
+```
+--- PAGE 120 ---
+120 ---
+========================================
+詞 0 課 41(29a)
+ーー ーー ババ 一 デー デデデ 革 革 表
+Q①) 菩 字 の 練習
+れん
+A. 次 の 漢字 の 読み 方 を 覚え まし ょ う 。 太字 は 新しい 読み 方 で す 。
+タ ト くそ と 何 度 も サン ド も ) 最悪 サ ィ ァ ク )
+( 呈 タ (o52)_ 悪 G54)
+B. 次 の 漢字 を 読み まし ょ う 。 ( 答 は 下 に あり ます 。)
+ト 3 に 2 三
+1. 時 代 2. 始 まる 3. 旋 4. 人気
+5. 所 6. 物 7. 安い 8. 買う
+9. 入 る 10. 和 ら ない 11. 家族 12. 持っ て いく |
+① 猫 の 皿
+テテ ーー 一 --------- 一 基 こ ーー コー コー |
+単語
+落語 (らく ご ) comic monologue ⑰ 抱 " く (だ く ) tohold something in one's arm
+③ 落語 家 (らく ご か ) comic storyteller Lx-verb]」
+④ 身 ぶ ぶり ( み ぶ り ) gesture ⑰ に こ に こす る tosmile [irr. verb] |
+⑦ いな か the country ⑳ 無理 な (むり な ) impossible | |
+⑧ 値段 (ね だ ん ) price ⑳ うれ し そう に happily
+⑦ 茶店 (ちゃ みせ ) teahouse ⑳ や っ た Idid it
+⑩] えさ feed ⑳② 心 (ここ ろ ) mind: heart
+⑰ 止ま る (と まる ) tostop ⑳ 何 度 も (な ん ども ) many times
+⑫ タ する tocost [irr. verbl ⑧ 絶対 に (ぜったい に ) definitely: no matter what
+⑭ きっ と surely ⑳ 渡す (わた す ) to give: to hand /
+[uverb」 /
+⑭ 主人 (し ゅ じん ) owner ⑳② が っ か りす る tobe disappointed lirr. verb」
+⑭ あん な に _ so: such ⑳② ひっ か ? く to scratch [z-verb]
+⑮ だ ます to deceive [x-verb] ⑳ 最 患 (さい あく ) the worst
+⑳⑧⑳ あぶ な い unsafe: dangerous
+NN 癌 本 本 本 生生 本 本 本 生生 本 丁丁 丁丁 丁丁 丁丁 丁丁 症 証 本 本 本 本 生 ーー ーー
+[①-B の 竹 ] 1. じ だ い 2. はじまる 3. は な し 4. に ん き 5. と ころ 6. も の |
+ーー 7. や すい 8. かう 9. は いる 10. し ら な い 。 11. か ぞ く 。 12. も っ て いく
+
+
+
+
+--- PAGE 121 ---
+121 ---
+========================================
+(時
+A. 質問 に 答え て くだ さい 。
+1. これ は 日 本 で す 。 何 年 ぐら い 前 だ と 思い ます か 。
+R き ンコ ュー コン シ
+きき べ ぺい ンー | 回 舎人 大 叶 ヤング
+・、&、 ペ 1 テテ ーー ンー キル ーー ルクル タ クン
+SN さい へ で 埋 箇 | ルプ ンプ プロ
+Im さき Ss 」 ーー ラン シタ 間
+章 攻 mm 間 占 昌 間 シン | リー
+隊員 舌 山 」 いい る 生 着 IL ンジ デー
+ーー いい SU 、 | し レタ 上 ジニ ーー 本 上
+回 語 。 疾 洒 ーー ニー 汰 ンーー ニ ーー 導 則 | 半 り 拓 過 6 dd
+則 同 上 immiulwomii 和 Ti 史 | 山口
+に り | Lui 骨 ( 居 Li し 放 所 | WM 由 Li 1 M
+Un の ik
+作 鐘 因 多門 果 全 倫 2 0 介 誠 で 3 人 層間
+Li ルン 5 | 4 リン
+り ーー リル リー 半 いい て | 。 て 加 間
+仙 合作 りー リル 2 きり 生 7 計り
+| 2 0 5 語 グ ェ レ の る に は ロ Oo 欠 0 」 |
+ミン レク れれ ララ め て シシ
+2. これ は 何だ と 思い ます か 。 3. これ は 何だ と 思い ます か 。
+まま すれ まま よら まま を ン 。
+ルー リリ リン ンー アー ンー レン
+。 2 過 衣 mo 。
+2 ーー
+| リル 、、 | 記 ド 0
+還 症 部 。。 。 で トー
+ンー ーー グラン ルル ゝ リ ュ リー
+ーー ムペ 上
+に まき で いい TH が トー ーー
+時 DEm 蜂
+は . ーー リグ ンー
+4. この 人 は 何 を し て いる と 思い ます か 。
+ト | 乱 > 、 訂 2 に 半
+(1 半 全
+科 代 」 ト 3 8 市
+リリ 時 人 示 ( 販 人 幸 り
+, 5 / ) ナ プラ / ーー
+| 誠 IP^2 5 へ きる
+弄 [ |
+出典 1. 広重 東都 大 伝馬 街 繁 栄之 図 (東京 都立 中 央 図書 館 東京 誌 料 文庫 所 歳 )
+2. 広重 / 東 海道 五 十 三次 之 内 ” 斬 子 (東京 国立 博物 館 所 蔵 )
+3. 資料 協力 東海 銀 行 貨幣 資料 館 4. 写真 提供 ・ 共同 通 信 社
+
+
+
+
+--- PAGE 122 ---
+122 ---
+========================================
+呪 0 陸 4|(5s)
+B. 落語 「 猫 の 皿 」 を 読み まし ょ う 。
+) 落 放 は 今 か ら 三 百 年 以上 前 の 江戸 時 民 * に 始ま り ま し た 。 この 時 代 に
+た くき ん の 人 の 前 で お も し ろ い 庄 を し て 、 お 金 を も ら う 人 が いま し た 。
+この お も し ろ い 話 を 洲 話 と 言い 、 落 請 を する 人 を 落語 家 と 言い ます 。 攻
+衣 家 は 一 人 で いろ いろ な 声 や 身 ぶ り を 使っ て 、 お も し ろ い 庄 を し ます 。
+。 今 で も 洲 語 は と て も 人 気 が あ り ま す 。
+江戸 時 代 の 落語 の 一 つ 、「 猫 の 包 」 を 読ん で みろ ま し ょ う 。
+ある 所 に 一 人 の 男 が いま し た 。 男 は いな か に 行っ て 、 古 い 物 を 安く 買
+い 、 江 戸 “* で それ を 高い 値 で 売っ て いま し た 。
+ある 日 、 男 は 川 の そば に ある 茶 半 に 入り まし た 。 男 は 茶店 で お 具 を 飲
+o みな が ら 、 外 を 見 て いま し た 。 その 時 、 猫 が 歩い て き て 、 え き が 入っ た
+迎 の 前 で 止ま り まし た 。 男 は びっ くり し まし た 。 を の 迎 は と て も め ず ら
+し い 物 で 、 一 枚 三 百 両 * も する 稀 だ っ た の で す 。 |
+男 は 思い まし た 。 |
+「 き っ と 茶店 の 主人 は あの 皿 が いく ら か 知ら な いん だ 。 だ か ら あ ん な
+5 に 高い 物 を 猫 の 凶 に 使っ て いる ん だ 。 そう だ! 主人 を だ まし て 、 あ の
+迎 を いた だ こう !」
+男 は 猫 を 抱き 、 に こ に こし な が ら 主 人 に 言い まし た 。
+「 か わい い 猫 だ ね 。 私 は 猫 が 大 好き な ん だ 。 前 に 希 を 飼っ て いた けど 、
+どこ か に 行っ ちゃ っ て ……。 ご 主人 、 こ の 和希 くれ な いか 。」 |
+x 「 基 理 で ご ざい ます 。 こ の 和希 は 私 の 家族 みた いで 、 と て も か わい いん |
+で す 。] と 主人 は 言い まし た 。
+「 じ ゃ あ 、 三 両 払 うか ら 、 ど うだ 2?」 |
+三 両 と いう お 金 は と て も 大 きい お 金 で す 。 |
+「 わ か り ま し た 。 猫 を さしあげ まし ょ う 。」 茶店 の 主人 は うれ し そう に
+2 言い まし た 。 .
+「 や っ た !」
+
+
+
+
+--- PAGE 123 ---
+123 ---
+========================================
+の に 詳 症 語 語 本 語 誠 語 誠 本 本 本 本 本 本 本 本 本 本 本 御
+男 は 心 の 中 で 笑い まし た 。 そ し て 主人 に 三 両 払 っ て 、 言 いま し た 。 |
+「 こ の 猫 の 還 も いっ し ょ に 匠 っ て いく よ 。」
+「 そ れ は さき し あ げ られ ませ ん 。] 詩人 は 言い まし た 。
+ss 「 ど うし て 。 こ ん な きた な い 。 い い だ ろ う 。」
+男 は 何 度 も 頼 ろ まし た が 、 主 人 は 絶対 に を 渡し ませ ん で し た 。
+男 は が っ か り し まし た 。 そ の 時 、 釧 が 男 を ひっ か きま し た 。
+「 痛 い ! 何だ 、 こ の 猫 ! こん な 猫 、 い ら な いよ まり 」
+頑 は も ら え な いし 、 猫 は ひっ か くし 、 最 患 で す 。 男 は 主人 に 聞い て
+ss み ま し た 。
+「 ど うし て その 想 を 渡し た く な いん だ 。」
+「 こ れ は と て も めずらし い 息 で 、 一 枚 三家 両 も いた し ます 。 家 に 置い
+て お く と あぶ な い の で 、 こ ちら に 持っ て き て いる ん で す 。」
+主人 は 話 を 続け まし た 。
+ゃ 「 そ れ に 、 こ こ に 志 を 置い て お く と 、 と きど き 衝 が 三 両 で 売れ る ん で
+| す ょ よ 。」
+急 江 戸 時 代 (えど じ だ い ) _ Edo period (1603-1867)
+江戸 (えど ) former name of Tokyo
+働 両 (りょう ) aunit of currency used in the Edo period
+(1 両 三 75,000 円 ぐら い )
+C. 質問 に 答え て くだ さい 。
+1. 男 は どん な 仕事 を し て いま し た か 。
+2. 茶 直 に あっ た 皿 の 値段 は いく ら で し た か 。
+3. どう し て 男 は 猫 を は し が っ た の で すか 。
+4. 男 は いく ら で 猫 を 買い まし た か 。
+5. 男 は 息 を 将 っ て 帰り まし た か 。 ング
+6. どう し て 主人 は 皿 を 茶店 に 置い て お く < く ので すか 。
+7. 茶店 の 主人 と 、 男 と 、 ど ちら が か し こい (clever) で すか 。
+
+
+
+
+--- PAGE 124 ---
+124 ---
+========================================
+| EIC
+上 后 5 っ )、」 拓 折
+A. 下 の ま ん か が を 見 て 、 話 を 考え て 書き まし ょ う 。
+① ②)
+埋 に 中
+5 較 邊 男性
+生 上 半日
+る 6 頭 吊 上 門 持 計
+。 叶
+に 因 | 攻 因 六
+孤 婦 」 」 川 串 呈
+「 上 川 呈
+導 | | 中 回
+の や 上 山 必 名 放
+| リー ー
+朋 っ 介 5 記 川 有
+トナ 作 絞 | 目 目
+4 」 加川
+0 000 知
+B. あな た が 知っ て いる お も し ろ い 話 や 楽し い 話 を 書き まし ょ う 。
+
+
+
+
+--- PAGE 125 ---
+125 ---
+========================================
+の に
+I
+2 回 | 課 すき 呈 まき ます で で 天上 ーー と
+簡 2 時 上 ! 2 2 ア リ の バリ ロリ リリ ロリ ガ 生 用
+厄 年 Unlucky Ages
+や く ど し
+ダグ ド に | シン 信じ る (シン じゃ る ) to believe
+| トー 自信 ( ジ シ ン ) confidence 信号 (シン ゴウ ) traffic signal
+りー 】 (to trust: 半 信 (メイ シン ) superstition |
+3 lopeevem) 092 1 人 仁 仁 信 信 信 信
+細 グン 経験 (ケイ ケン ) experience
+| 経済 (ケイ ザイ ) economy 神経 質 (シン ケイ シ ツ ) over
+| の * 圭 | sensitive 経堂 学 (ケイ エイ ガク ) manageement studies
+ー : (to pass trough) 0 を あこ ネ # ネネ 紀 経 絵 経 経
+| 容 導 を 2 | 台風 (タイ フウ ) typhoon
+ン の 、 こ ご 台 (ニダ イ ) two vehicles/machins/etc.
+Mg / 葛 台 (ブタ イ ) stage 台所 (ダイ どこ ろ ) kitchen
+ーー [GO イケ で 人 人 .
+の 台風 (タイ フウ ) typhoon
+か ぜ 和風 ( ワ フ ウ ) Japanese style 風 (か ぜ ) wind
+風邪 を ひく (か ぜ を ひく ) tocatch a cold
+ーー | @) 所 玲 瓜 所 風 風 風 風
+る | いぬ 犬 (いぬ ) dog
+> ゝ ケン | 番犬 (ば ん ケン ) watch dog
+盲導犬 (モウ ドウ ケン ) seeing-eye dog
+ーー eg ーーー 時 ナチ 大 大 |
+| | お も 事 い (お も い ) heavy: serious (lness)
+か さき ジュ ウ | 重ね る (か さ ね る ) to pile up 体 定 (タイ ジュ ウ ) body
+チ ヨ アッ / | weight 貴 理 品 (キチ ョ ウ ヒ ン ) valuables |
+| . eawy: topile mp) | ~ そそ そ て 震 衣 剖 剤 更 事
+細 較 | 評 じ 初め は (は じ め は ) at 人 fnst 初め て (は じ め て ) ffrst tme |
+ショ は つ 最初 (サイ ショ ) first 初雪 (は つゆ き ) first snow
+| / / 初恋 (は つこ い ) first love
+mwD 0 ラテ ネイ ネネ 紀和 初 。
+| わか 若い (わか い ) young
+デ 若者 (わか も の ) young people
+ーー 着
+
+
+
+
+--- PAGE 126 ---
+126 ---
+========================================
+| LLSIG の
+280 ーー ーー 、、 ーー
+お く 送る (お くる ) to send
+* 天 ソウ 送金 (ソウ キン ) sending money 放送 (ホウ ソウ ) broadcast
+る | | 回送 電車 (カイ ソウ デン シャ ) out-of-service train
+こさ 、
+| to send) 0 ソー と 半 送 送 |
+出 | し あわ | 幸せ な (し あわ せな ) happy |
+| コウ さい わ 幸運 (コウ ウン ) good fortune 不幸 ( フ コ ウ ) misfortune|
+幸い (きい わい ) fortunately
+(happiness) 0@ こ ーー すす 二 志 支 云 去 幸
+282「 拓馬 0r 2 半 天 着 着 症
+| 0 ケ ネ キー 時 計 ( ト ケ イ ) a watch
+マテ は か 合計 (ゴウ ケイ ) sum 計る (は か る ) to measure
+マテ
+ゼ |
+(to measure) ⑲~ ここ ミミ ミミ 言 言 言 計 計
+時 お ヾ お そ 遅れ る (お くれ る ) to be late 遅い (お そい ) late
+* 尼 チ 遅刻 する (チコ ク す る ) to be late
+| (date) 9 イー プ アア 万 選 戸 大 屋 恒 翌 疑 舌
+5 ーー 一
+| 2 パイ | 心配 な (シン パイ な ) worried about
+本 くば ハイ 配る (くば る ) to distribute 配達 (ハイ タツ ) delivery
+|
+| |
+| odelive り 0 「 則 表 表 下 本 配 配 .
+類 、 ゝ お と どう ぐ と ダイ | 源 (お と うと ) younger brother ー
+デ 兄弟 (キョ ウ ダ イ ) brothers
+弟子 (デシ ) apprentice
+| young brothe) |(7) ン で 芝 匠 革 汗
+敵 いも うと 妹 (いも うと ) younger sister
+妹 マイ 姉妹 (シマ イ ) sisters
+|
+oungsiste り 8 ター カー 好 上 妊 牙 妹
+(n this chart, 4g4ZZZ indicates the o2 yo277 and 42Zg222Z indicates the ん ZZ ye.)
+
+
+
+
+--- PAGE 127 ---
+127 ---
+========================================
+「
+(oo 品 み 旭 き
+|
+ーー
+Q①) 漢字 の 練習
+れん
+A. 次 の 漢字 の 読み 方 を 覚え まし ょ う 。 太 字 は 新しい 読み 方 で す 。
+入院 で ュ ウィ ンジ) 食事 ショ クジ 時 計 ( ト ヶ の
+通う ぴ ひょう ) N ゝ 西 (シン パイ )
+( 入 2) 事 o7g 時 oi5 通 G93) 必 26g)
+B. 次 の 漢字 を 読み まし ょ う 。 ( 答 は 次 の ペー ジ の 下 に あり ます 。)
+1. 起 こる 2. 普 3. 二 十 五 歳 4 病気
+5. 長い 間 6. 去年 7. 親 8. 素 る
+9. 部 屋 10. 自転 車 _ 写真
+① 上 厄 年
+や く ご し
+た 7 5 ーー 問い
+単 語
+| 迷信 (めい し ん ) superstition ⑭⑯ ぜいたく を する toindulge in luxury
+起こ る (お こる ) to occur: to happen [irr. verb」
+[x-verbl ⑰ め っ た に な い 。 seldom
+② 多く の へ (お お くの一 ) many . . . ⑰ 食事 (し ょ くじ ) meal |
+② 信じ る (し ん じ る ) to believe [z-verb」 ⑳ と ころ が however: on the contrary |
+③② た だ の へ nothing more than . . . ⑳ 楽し み (た の し み ) pleasure |
+の ⑦ 入院 する (に ゅ うい ん する ) の ② 通う (か よう ) to commute to (に ) 「x-verb]
+to be hospitalized [irr. verb] ⑳@ 不便 な ( ふ べ ん な ) inconvenient
+⑦ 古い (うら な い ) fortunetelling ⑳ 心配 な (し ん ぱい な ) worried about
+⑦ 気 に す る ( き に する ) to worry lir.verbp]  ⑳⑧⑳ お 守り (お まもり ) charm (against evils):
+|
+| ⑩⑪ 長い 間 (な が いあ い だ ) long time amulet
+|
+に ー 生 片 命 (いっ し ょ うけ ん めい ) very hard
+ーー ググ
+
+
+
+
+--- PAGE 128 ---
+128 ---
+========================================
+第 51 課 | Go
+A. 質問 に 答え て くだ さい 。
+
+1. あな た の 国 に どん な 迷信 が あり ます か 。 例え ば 、 黒 い 稿 を 見 る と 、 台 い こと が
+
+起こ り ま す 。 半 宮 上 閥
+2. 今 ま で に 悪い こと が た くさ ん 起こ っ た 時 が あり まし た か 。
+
+を の 時 どう し まし た か 。
+
+B. 厄年 の 話 を 読ん で み ま し ょ う 。
+
+| 超重 くど し Critical or umlueky ages。 According 9 Japanese folk beliet at those ]
+| ages, an individualis most likely to experience calamities or misfortunes. Itis customary |
+
+in these unlucky years to visit temples and shrines. ニー
+[ 「 邑 年 」 と いう 言葉 を 聞い た こと が あり ます か 。 厄年 に 思 い こと が よ
+
+< 起こ る と 、 昔 か ら 多 < く の 日 本 人 は 信じ て いま す 。 男 の 人 の 厄年 は
+ニ 十 五 歳 と 四 十 二 歳 、 女 の 人 の 厄年 は 十 九 歳 と 三 十 三 歳 で す 。 こ れ は
+た だ の 迷 信 だ と 言う 信 も いま す が 、 厄 年 に 大 変 な こと を 経験 する 人 も
+s 多い そう で す 。 ある 友だち は 台風 で 家 が 壊れ て し まい ま し た 。 あ る 友
+だ ち は 飼 っ て いた 犬 に 死な れ ま し た 。 ま た 、 あ る 友だち は 急 に 重い 病
+気 に な っ て 入院 し な く て は いけ ませ ん で し た 。
+
+私 は 今年 が 厄年 で す 。 友だち は 気 を つけ た ほう が いい と 言い まし た
+が 、 私 は 古い や 迷信 が 大 き らい な の で 、 税 め は ぜん ぜん 気 に し て いま
+
+io せん で し た 。 で も ……
+
+私 は 今 、 オ ー ス トラ リア で 坦 絢 し て いま す 。 外国 で 且 強 する の は 長
+い 章 の 夢 で し た 。 日 本 で 学校 を 卒業 し て か ら 、 ー 生 問 金 仕事 を し て お
+金 を た め ま し た 。 そ し て 、 去 年 ここ に 来 ま し た 。
+
+ここ に は 若い 日 本 人 の 留学 生 が た くさ ん いま す 。 み ん な 親 に お 金 を
+
+[①-B の 稚 ] 1. お こる 2. む か し 3. に じゅ うごき い 4. び ょ うき 5. な が いあ い だ ーー
+6. き ょ ね ん 7. お や 8. の る 9. へ や 10. じ て ん し ゃ 11. し ゃ し ん
+
+
+
+
+--- PAGE 129 ---
+129 ---
+========================================
+(2 | > 読み 書き 編 |
+5 送っ て も ら っ て 、 い い ア パー ト に 住ん で 、 い い 車 に 乗っ て いま す 。 休み |
+に は 、 い ろ い ろ な 所 に 旅行 に 行っ た り し て いま す 。 私 は そん な ぜいたく
+が で きま せん 。 央 い ア パー ト に 住ん で 、 め っ た に 外 で 食事 を し た り 、 旅 |
+行 に 行っ た り し ませ ん 。 で も 、 夢 が か な っ た の で 、 日 が と て も 幸せ で
+し た 。 ほか の 日 本 人 が うら や まし いと 思っ た こと は あり ませ ん で し た 。
+2 。 と ころ が 、 き の う 大 変 な が こと が あり まし た 。 ア パー ト に 帰っ た 時 、 ド
+ア の か ぎ が 音 さ れ 、 部 屋 が めちゃ くち ゃ に な っ て いた の で す 。 び ぴ びっく り
+し て 何 が 起こ っ た の か わか り ま せん で し た 。 で も 、 す ぐ で 「 ど ろ ぽ うに 入
+られ た 。] と 気がつき まし た 。
+いろ いろ な 物 を 取ら れ ま し た 。 テ レビ 、 ラ ジ カ セ 、 カ メラ 、 時 計 、 そ
+2zs し て 自転 車 も 。 テ レビ を 見 た り 、 音 楽 を 聞い た りす る の は 、 私 の 楽し み
+で し た 。 カ メラ に は オー スト ラリ ア で 初め て 行っ た 旅行 の 写真 が 入っ
+て いま し た 。 自転 車 は 、 学 校 に 通う 時 使っ て いま し た 。 今日 か ら バ ス で
+通わ な く て は いけ ませ ん 。 パ バス は よく 遅れ る し 、 一 時 間 に 一 台 し か な
+いか ら 、 と て も 不便 で す 。
+% 「 ど うし て どろ ぼう は 私 の アパ ー ト に 入っ た ん だ ろう 。 ど うし て お 人 金
+将 ちの 日 本 人 の アパ ー ト に 入ら な か っ た ん だ ろう 。] と 思っ て し まい ま
+し た 。 日 本 人 の 友だち に 話し た ら 、「 厄 年 だ か ら 、 や っ ぱり 加 い こと が
+起こ っ た ん だ よ ょ 。」 と 言わ れ ま し た 。
+今 、 と て も 心配 で す 。 ま た 避 い こと が 起こ る か も し れ ま せん 。 今度 、
+55 第 か 珠 に お 守り を 送っ て も ら お うと 思い ます 。 る みな さん は 厄 年 を 信じ
+ます な か 。
+
+
+
+
+--- PAGE 130 ---
+130 ---
+========================================
+関 二 本 語 本 本 本 本 本 本 本 本 人 つら
+攻 質問 に 答え て くだ さい 。
+1. 大 年 に この 人 の 友だち は どん な こと を 経験 し まし た か 。
+時 放 間 時 導 語 和
+ツー
+回
+2. この 玄 の 人 は 今 、 何 歳 で し ょ うか 。
+3. この 人 は オー スト ラリ ア に 行く 前 、 厄 年 を 信じ て いま し た か 。
+4. この 人 の 夢 は 何で し た か 。
+5. この 人 と 若い 日 本 人 留学 生 は 、 ど ん な どこ ろ が 赴 い ます か 。
+6. きのう 何 が あり まし た か 。
+7. 何 を 取ら れ ま し た な か 。 |
+8. 今日 か ら ど う や っ て 学校 に 通い ます か 。 |
+9. 友だち は どう し て 避 い こと が 起こ っ た と 思っ て いま すか 。
+10. この 人 は 今 、 厄 年 を 信じ て いま すか 。 |
+書 < 練習
+人
+あな た の 悪い 経験 に つい て 書き まし ょ う 。
+|
+|
+
+
+
+
+
+```

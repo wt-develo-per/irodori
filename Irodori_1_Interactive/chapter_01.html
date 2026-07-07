@@ -1,0 +1,1778 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Ch 1: はじめまして (Hajimemashite) - Interactive Learning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0c10;
+            --bg-secondary: #12161f;
+            --bg-tertiary: #1b2230;
+            --bg-card: rgba(27, 34, 48, 0.7);
+            --bg-glass: rgba(18, 22, 31, 0.85);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(255, 75, 114, 0.5);
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent-primary: #ff4b72;
+            --accent-secondary: #38bdf8;
+            --accent-tertiary: #4ade80;
+            --accent-warning: #fbbf24;
+            --gradient-primary: linear-gradient(135deg, #ff4b72 0%, #ff8f70 100%);
+            --gradient-secondary: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            --gradient-tertiary: linear-gradient(135deg, #4ade80 0%, #2dd4bf 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(255, 75, 114, 0.25);
+            --font-main: 'Outfit', sans-serif;
+            --font-jp: 'Noto Sans JP', sans-serif;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f5f9;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(225, 29, 72, 0.5);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #94a3b8;
+            --accent-primary: #e11d48;
+            --accent-secondary: #0284c7;
+            --accent-tertiary: #16a34a;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 20px rgba(225, 29, 72, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(255, 75, 114, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-badge {
+            background: var(--gradient-primary);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-glow);
+            letter-spacing: 1px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-theme, .btn-audio-global {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme:hover, .btn-audio-global:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Welcome Banner */
+        .banner {
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .banner::after {
+            content: "はじめまして";
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-family: var(--font-jp);
+            font-size: 8rem;
+            font-weight: 900;
+            opacity: 0.12;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .banner h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .banner p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .banner-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.75rem 1.4rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Tab Content Panels */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Flashcards Grid */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .jp-text {
+            font-family: var(--font-jp);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1.3;
+        }
+
+        .btn-audio {
+            background: rgba(255, 75, 114, 0.15);
+            color: var(--accent-primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card:hover .btn-audio {
+            background: var(--accent-primary);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .romaji-text {
+            font-size: 0.95rem;
+            color: var(--accent-secondary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .meaning-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 500;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--bg-tertiary);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-bottom-left-radius: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Interactive Generator Box */
+        .interactive-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .interactive-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--accent-secondary);
+        }
+
+        .output-panel {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .output-jp {
+            font-family: var(--font-jp);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            white-space: pre-line;
+            line-height: 1.8;
+        }
+
+        .output-romaji {
+            color: var(--accent-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            white-space: pre-line;
+        }
+
+        .output-meaning {
+            color: var(--accent-tertiary);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .btn-action {
+            background: var(--gradient-secondary);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Grammar Points Styling */
+        .grammar-card {
+            background: var(--bg-secondary);
+            border-left: 5px solid var(--accent-primary);
+            border-radius: 0 20px 20px 0;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .grammar-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grammar-formula {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-family: var(--font-jp);
+            font-size: 1.3rem;
+            color: var(--accent-warning);
+            margin-bottom: 1.5rem;
+            border: 1px dashed var(--border-color);
+            display: inline-block;
+        }
+
+        .particle-badge {
+            background: var(--accent-primary);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin: 0 0.3rem;
+            display: inline-block;
+        }
+
+        .example-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .example-item {
+            background: var(--bg-primary);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .example-item:hover {
+            border-color: var(--accent-primary);
+        }
+
+        /* Interactive Clock / Greetings Simulator */
+        .greeting-sim {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .time-box {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .time-box:hover {
+            border-color: var(--accent-tertiary);
+            transform: translateY(-5px);
+        }
+
+        .time-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .time-name {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.2rem;
+        }
+
+        .time-jp {
+            font-family: var(--font-jp);
+            font-size: 1.2rem;
+            color: var(--accent-tertiary);
+            font-weight: 700;
+        }
+
+        .time-romaji {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Kanji Section Grid */
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kanji-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kanji-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-secondary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .kanji-top {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .kanji-char {
+            font-family: var(--font-jp);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-secondary);
+            line-height: 1;
+            background: var(--bg-tertiary);
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .kanji-info h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        .kanji-readings {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .kanji-readings span {
+            color: var(--accent-warning);
+            font-weight: 600;
+        }
+
+        .kanji-example {
+            background: var(--bg-primary);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .kanji-example:hover {
+            border-color: var(--accent-tertiary);
+        }
+
+        /* Quiz Module */
+        .quiz-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .question-box {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .option-btn {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent-secondary);
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        .option-btn.correct {
+            background: rgba(74, 222, 128, 0.2);
+            border-color: var(--accent-tertiary);
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            background: rgba(255, 75, 114, 0.2);
+            border-color: var(--accent-primary);
+            color: #fff;
+        }
+
+        .quiz-score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 2rem;
+            color: var(--accent-tertiary);
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            border: 2px solid var(--accent-tertiary);
+        }
+
+        /* Verbatim Text Reference Box */
+        .verbatim-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 2rem;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #e6edf3;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .verbatim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .badge-100 {
+            background: #238636;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Numbers Grid */
+        .num-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .num-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .num-card:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-warning);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .num-digit {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent-warning);
+        }
+
+        .num-jp {
+            font-family: var(--font-jp);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0.2rem 0;
+        }
+
+        .num-romaji {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner h2 { font-size: 1.8rem; }
+            .grid-cards, .kanji-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 1rem; }
+            .tabs-nav { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">第 1 課</div>
+            <div class="logo-text">
+                <h1>Irodori (いろどり) Elementary 1</h1>
+                <p>Chapter 1: はじめまして (Hajimemashite) - Nice to Meet You</p>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button class="btn-audio-global" onclick="speakText('はじめまして。わたしはインドからきました。どうぞよろしくおねがいします。')">
+                <span>🔊</span> Speak Sample
+            </button>
+            <button class="btn-theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> Theme
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Welcome Banner -->
+        <div class="banner">
+            <h2>はじめまして (Hajimemashite)</h2>
+            <p>Welcome to Chapter 1! Here you will master self-introductions, basic sentence structures with particles は and から, countries vocabulary, numbers 0 to 10, essential daily greetings, and fundamental Kanji characters.</p>
+            <div class="banner-tags">
+                <div class="tag">🎯 Goal: Apna introduction dena, naam batana, desh batana</div>
+                <div class="tag">📚 JLPT N5 Level</div>
+                <div class="tag">⚡ 100% Verbatim Complete Content</div>
+                <div class="tag">🈹 New: Kanji Mastery & 10-Q Quiz</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('study')">
+                <span>🎧</span> Study & Flashcards
+            </button>
+            <button class="tab-btn" onclick="switchTab('grammar')">
+                <span>🧠</span> Grammar & Patterns
+            </button>
+            <button class="tab-btn" onclick="switchTab('greetings')">
+                <span>⏰</span> Greetings & Numbers
+            </button>
+            <button class="tab-btn" onclick="switchTab('kanji')">
+                <span>🈹</span> Kanji Mastery
+            </button>
+            <button class="tab-btn" onclick="switchTab('quiz')">
+                <span>🎮</span> Practice Quiz (10 Qs)
+            </button>
+            <button class="tab-btn" onclick="switchTab('verbatim')">
+                <span>📖</span> Verbatim Original Text (100% Complete)
+            </button>
+        </div>
+
+        <!-- TAB 1: Study & Flashcards -->
+        <div id="tab-study" class="tab-content active">
+            <div class="section-header">
+                <h3>Key Phrases (はじめまして)</h3>
+                <p>Click on any card or the speaker icon to hear the native Japanese pronunciation!</p>
+            </div>
+
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('はじめまして')">
+                    <span class="card-tag">Greeting</span>
+                    <div class="card-top">
+                        <div class="jp-text">はじめまして</div>
+                        <button class="btn-audio" onclick="event.stopPropagation(); speakText('はじめまして')">🔊</button>
+                    </div>
+                    <div class="romaji-text">Hajimemashite</div>
+                    <div class="meaning-text">Pehli baar milke khushi hui (Nice to meet you)</div>
+                </div>
+
+                <div class="card" onclick="speakText('わたしはラジェシュです')">
+                    <span class="card-tag">Structure</span>
+                    <div class="card-top">
+                        <div class="jp-text">わたし は _____ です</div>
+                        <button class="btn-audio" onclick="event.stopPropagation(); speakText('わたしはラジェシュです')">🔊</button>
+                    </div>
+                    <div class="romaji-text">Watashi wa _____ desu</div>
+                    <div class="meaning-text">Main _____ hoon (I am _____)</div>
+                </div>
+
+                <div class="card" onclick="speakText('おなまえは？')">
+                    <span class="card-tag">Question</span>
+                    <div class="card-top">
+                        <div class="jp-text">おなまえ は？</div>
+                        <button class="btn-audio" onclick="event.stopPropagation(); speakText('おなまえは？')">🔊</button>
+                    </div>
+                    <div class="romaji-text">Onamae wa?</div>
+                    <div class="meaning-text">Aapka naam kya hai? (What is your name?)</div>
+                </div>
+
+                <div class="card" onclick="speakText('どうぞよろしくおねがいします')">
+                    <span class="card-tag">Essential</span>
+                    <div class="card-top">
+                        <div class="jp-text">どうぞ よろしく おねがいします</div>
+                        <button class="btn-audio" onclick="event.stopPropagation(); speakText('どうぞよろしくおねがいします')">🔊</button>
+                    </div>
+                    <div class="romaji-text">Douzo yoroshiku onegaishimasu</div>
+                    <div class="meaning-text">Please take care of me / Aapse milke accha laga</div>
+                </div>
+
+                <div class="card" onclick="speakText('ありがとうございます')">
+                    <span class="card-tag">Formal</span>
+                    <div class="card-top">
+                        <div class="jp-text">ありがとう ございます</div>
+                        <button class="btn-audio" onclick="event.stopPropagation(); speakText('ありがとうございます')">🔊</button>
+                    </div>
+                    <div class="romaji-text">Arigatou gozaimasu</div>
+                    <div class="meaning-text">Dhanyavaad (Thank you very much - formal)</div>
+                </div>
+
+                <div class="card" onclick="speakText('すみません')">
+                    <span class="card-tag">Polite</span>
+                    <div class="card-top">
+                        <div class="jp-text">すみません</div>
+                        <button class="btn-audio" onclick="event.stopPropagation(); speakText('すみません')">🔊</button>
+                    </div>
+                    <div class="romaji-text">Sumimasen</div>
+                    <div class="meaning-text">Excuse me / Sorry</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h3>Countries (くに / Kuni)</h3>
+                <p>Click to practice saying where you came from!</p>
+            </div>
+
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('インド')"><div class="card-top"><div class="jp-text">インド</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Indo</div><div class="meaning-text">India 🇮🇳</div></div>
+                <div class="card" onclick="speakText('ちゅうごく')"><div class="card-top"><div class="jp-text">ちゅうごく (中国)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Chuugoku</div><div class="meaning-text">China 🇨🇳</div></div>
+                <div class="card" onclick="speakText('ベトナム')"><div class="card-top"><div class="jp-text">ベトナム</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Betonamu</div><div class="meaning-text">Vietnam 🇻🇳</div></div>
+                <div class="card" onclick="speakText('フィリピン')"><div class="card-top"><div class="jp-text">フィリピン</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Firipin</div><div class="meaning-text">Philippines 🇵🇭</div></div>
+                <div class="card" onclick="speakText('ブラジル')"><div class="card-top"><div class="jp-text">ブラジル</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Burajiru</div><div class="meaning-text">Brazil 🇧🇷</div></div>
+                <div class="card" onclick="speakText('アメリカ')"><div class="card-top"><div class="jp-text">アメリカ</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Amerika</div><div class="meaning-text">America 🇺🇸</div></div>
+                <div class="card" onclick="speakText('にほん')"><div class="card-top"><div class="jp-text">にほん (日本)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Nihon</div><div class="meaning-text">Japan 🇯🇵</div></div>
+                <div class="card" onclick="speakText('ネパール')"><div class="card-top"><div class="jp-text">ネパール</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Nepaaru</div><div class="meaning-text">Nepal 🇳🇵</div></div>
+                <div class="card" onclick="speakText('インドネシア')"><div class="card-top"><div class="jp-text">インドネシア</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Indoneshia</div><div class="meaning-text">Indonesia 🇮🇩</div></div>
+                <div class="card" onclick="speakText('タイ')"><div class="card-top"><div class="jp-text">タイ</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tai</div><div class="meaning-text">Thailand 🇹🇭</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 2: Grammar & Patterns -->
+        <div id="tab-grammar" class="tab-content">
+            <!-- Interactive Self Intro Generator -->
+            <div class="interactive-box">
+                <h4>✨ Interactive Self-Introduction Generator</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Enter your name and choose your country to generate your personalized Japanese introduction!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="user-name">Your Name (e.g. Rajesh, Amit, Rahul)</label>
+                        <input type="text" id="user-name" value="ラジェシュ" placeholder="Enter name in Katakana or English">
+                    </div>
+                    <div class="input-group">
+                        <label for="user-country">Your Country</label>
+                        <select id="user-country">
+                            <option value="インド|Indo|India">インド (Indo - India)</option>
+                            <option value="ネパール|Nepaaru|Nepal">ネパール (Nepaaru - Nepal)</option>
+                            <option value="アメリカ|Amerika|America">アメリカ (Amerika - America)</option>
+                            <option value="にほん|Nihon|Japan">にほん (Nihon - Japan)</option>
+                            <option value="ブラジル|Burajiru|Brazil">ブラジル (Burajiru - Brazil)</option>
+                            <option value="フィリピン|Firipin|Philippines">フィリピン (Firipin - Philippines)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="intro-jp">はじめまして。<br>わたし は ラジェシュ です。<br>インド から きました。<br>どうぞ よろしく おねがいします。</div>
+                    <div class="output-romaji" id="intro-romaji">Hajimemashite. Watashi wa Rajeshu desu. Indo kara kimashita. Douzo yoroshiku onegaishimasu.</div>
+                    <div class="output-meaning" id="intro-meaning">Matlab: Pehli baar mil rahe hain. Main Rajesh hoon. India se aaya hoon. Please mujhse acche se rehna.</div>
+                    <button class="btn-action" onclick="speakGeneratedIntro()">🔊 Listen to My Introduction</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h3>Grammar Breakdowns</h3>
+                <p>Understand the core sentence structures of Chapter 1.</p>
+            </div>
+
+            <!-- Grammar Point 1 -->
+            <div class="grammar-card">
+                <div class="grammar-title">
+                    <span>Grammar Point 1: _____ は _____ です</span>
+                    <span class="particle-badge">は (wa)</span>
+                </div>
+                <div class="grammar-formula">[Subject] は [Information] です</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    • <strong style="color: var(--accent-primary);">は (wa)</strong> = Topic marker particle (yeh subject ko mark karta hai). Written as Hiragana 'ha' but pronounced 'wa' when used as a particle!<br>
+                    • <strong style="color: var(--accent-warning);">です (desu)</strong> = hai/hoon/ho (polite form placed at the very end of the sentence).
+                </p>
+                <div class="example-list">
+                    <div class="example-item" onclick="speakText('わたしはラジェシュです')">
+                        <div>
+                            <div style="font-family: var(--font-jp); font-size: 1.2rem; font-weight: 700;">わたし <span style="color: var(--accent-primary);">は</span> ラジェシュ <span style="color: var(--accent-warning);">です</span>。</div>
+                            <div style="font-size: 0.9rem; color: var(--text-muted);">Watashi wa Rajeshu desu. → Main Rajesh hoon.</div>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                    <div class="example-item" onclick="speakText('わたしはインドじんです')">
+                        <div>
+                            <div style="font-family: var(--font-jp); font-size: 1.2rem; font-weight: 700;">わたし <span style="color: var(--accent-primary);">は</span> インドじん (インド人) <span style="color: var(--accent-warning);">です</span>。</div>
+                            <div style="font-size: 0.9rem; color: var(--text-muted);">Watashi wa Indo-jin desu. → Main Indian hoon. (Country + じん = nationality)</div>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grammar Point 2 -->
+            <div class="grammar-card" style="border-left-color: var(--accent-tertiary);">
+                <div class="grammar-title">
+                    <span>Grammar Point 2: _____ から きました (Came from _____)</span>
+                    <span class="particle-badge" style="background: var(--accent-tertiary);">から (kara)</span>
+                </div>
+                <div class="grammar-formula">[Place / Country] から きました</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    • <strong style="color: var(--accent-tertiary);">から (kara)</strong> = se (from - indicates starting point or origin).<br>
+                    • <strong style="color: var(--text-main);">きました (kimashita)</strong> = aaya/aayi (came - past tense polite form of kuru).
+                </p>
+                <div class="example-list">
+                    <div class="example-item" onclick="speakText('インドからきました')">
+                        <div>
+                            <div style="font-family: var(--font-jp); font-size: 1.2rem; font-weight: 700;">インド <span style="color: var(--accent-tertiary);">から</span> きました。</div>
+                            <div style="font-size: 0.9rem; color: var(--text-muted);">Indo kara kimashita. → India se aaya hoon.</div>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                    <div class="example-item" onclick="speakText('ネパールからきました')">
+                        <div>
+                            <div style="font-family: var(--font-jp); font-size: 1.2rem; font-weight: 700;">ネパール <span style="color: var(--accent-tertiary);">から</span> きました。</div>
+                            <div style="font-size: 0.9rem; color: var(--text-muted);">Nepaaru kara kimashita. → Nepal se aaya hoon.</div>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Greetings & Numbers -->
+        <div id="tab-greetings" class="tab-content">
+            <div class="section-header">
+                <h3>Time-of-Day Greetings (あいさつ / Aisatsu)</h3>
+                <p>Click on the time box to hear the appropriate greeting!</p>
+            </div>
+
+            <div class="greeting-sim">
+                <div class="time-box" onclick="speakText('おはようございます')">
+                    <div class="time-icon">🌅</div>
+                    <div class="time-name">Morning (Subah)</div>
+                    <div class="time-jp">おはよう ございます</div>
+                    <div class="time-romaji">Ohayou gozaimasu (Formal)</div>
+                </div>
+
+                <div class="time-box" onclick="speakText('こんにちは')">
+                    <div class="time-icon">☀️</div>
+                    <div class="time-name">Afternoon (Dopahar)</div>
+                    <div class="time-jp">こんにちは</div>
+                    <div class="time-romaji">Konnichiwa (Hello)</div>
+                </div>
+
+                <div class="time-box" onclick="speakText('こんばんは')">
+                    <div class="time-icon">🌆</div>
+                    <div class="time-name">Evening (Shaam)</div>
+                    <div class="time-jp">こんばんは</div>
+                    <div class="time-romaji">Konbanwa</div>
+                </div>
+
+                <div class="time-box" onclick="speakText('おやすみなさい')">
+                    <div class="time-icon">🌙</div>
+                    <div class="time-name">Night (Sone se pehle)</div>
+                    <div class="time-jp">おやすみなさい</div>
+                    <div class="time-romaji">Oyasuminasai (Good night)</div>
+                </div>
+
+                <div class="time-box" onclick="speakText('さようなら')">
+                    <div class="time-icon">👋</div>
+                    <div class="time-name">Parting (Alvida)</div>
+                    <div class="time-jp">さようなら</div>
+                    <div class="time-romaji">Sayounara (Goodbye)</div>
+                </div>
+
+                <div class="time-box" onclick="speakText('じゃ、また')">
+                    <div class="time-icon">🤝</div>
+                    <div class="time-name">Casual Parting</div>
+                    <div class="time-jp">じゃ、また</div>
+                    <div class="time-romaji">Ja, mata (See you / Phir milte hain)</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h3>Numbers 0 to 10 (すうじ / Suuji)</h3>
+                <p>Mastering numbers is essential for daily life. Click each number to practice!</p>
+            </div>
+
+            <div class="num-grid">
+                <div class="num-card" onclick="speakText('ゼロ')"><div class="num-digit">0</div><div class="num-jp">ゼロ / れい</div><div class="num-romaji">Zero / Rei</div></div>
+                <div class="num-card" onclick="speakText('いち')"><div class="num-digit">1</div><div class="num-jp">いち</div><div class="num-romaji">Ichi</div></div>
+                <div class="num-card" onclick="speakText('に')"><div class="num-digit">2</div><div class="num-jp">に</div><div class="num-romaji">Ni</div></div>
+                <div class="num-card" onclick="speakText('さん')"><div class="num-digit">3</div><div class="num-jp">さん</div><div class="num-romaji">San</div></div>
+                <div class="num-card" onclick="speakText('し')"><div class="num-digit">4</div><div class="num-jp">し / よん</div><div class="num-romaji">Shi / Yon</div></div>
+                <div class="num-card" onclick="speakText('ご')"><div class="num-digit">5</div><div class="num-jp">ご</div><div class="num-romaji">Go</div></div>
+                <div class="num-card" onclick="speakText('ろく')"><div class="num-digit">6</div><div class="num-jp">ろく</div><div class="num-romaji">Roku</div></div>
+                <div class="num-card" onclick="speakText('なな')"><div class="num-digit">7</div><div class="num-jp">しち / なな</div><div class="num-romaji">Shichi / Nana</div></div>
+                <div class="num-card" onclick="speakText('はち')"><div class="num-digit">8</div><div class="num-jp">はち</div><div class="num-romaji">Hachi</div></div>
+                <div class="num-card" onclick="speakText('きゅう')"><div class="num-digit">9</div><div class="num-jp">きゅう / く</div><div class="num-romaji">Kyuu / Ku</div></div>
+                <div class="num-card" onclick="speakText('じゅう')"><div class="num-digit">10</div><div class="num-jp">じゅう</div><div class="num-romaji">Juu</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 4: Kanji Mastery -->
+        <div id="tab-kanji" class="tab-content">
+            <div class="section-header">
+                <h3>🈹 Chapter 1 Kanji Mastery (漢字)</h3>
+                <p>Learn the foundational Kanji symbols used in Chapter 1 vocabulary! Click example words to listen.</p>
+            </div>
+
+            <div class="kanji-grid">
+                <!-- Kanji 1: 私 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">私</div>
+                        <div class="kanji-info">
+                            <h5>I / Me (Main)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>わたし (watashi)</span><br>
+                                On: <span>シ (shi)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('わたしはがくせいです')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">私 (わたし)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Watashi → Main / I</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 2: 人 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">人</div>
+                        <div class="kanji-info">
+                            <h5>Person / Nationality</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>ひと (hito)</span><br>
+                                On: <span>ジン / ニン (jin / nin)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('インドじんです')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">インド人 (インドじん)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Indo-jin → Indian person</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 3: 日 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">日</div>
+                        <div class="kanji-info">
+                            <h5>Sun / Day / Japan</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>ひ / か (hi / ka)</span><br>
+                                On: <span>ニチ / ジツ (nichi / jitsu)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('にほん')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">日本 (にほん)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Nihon → Japan 🇯🇵</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 4: 本 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">本</div>
+                        <div class="kanji-info">
+                            <h5>Book / Origin / Root</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>もと (moto)</span><br>
+                                On: <span>ホン (hon)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('にほんご')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">日本語 (にほんご)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Nihongo → Japanese language</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 5: 中 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">中</div>
+                        <div class="kanji-info">
+                            <h5>Middle / Inside / China</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>なか (naka)</span><br>
+                                On: <span>チュウ (chuu)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('ちゅうごく')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">中国 (ちゅうごく)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Chuugoku → China 🇨🇳</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 6: 国 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">国</div>
+                        <div class="kanji-info">
+                            <h5>Country / Nation (Kuni)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>くに (kuni)</span><br>
+                                On: <span>コク (koku)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('がいこく')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">外国 (がいこく)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Gaikoku → Foreign country</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 7: 一 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">一</div>
+                        <div class="kanji-info">
+                            <h5>One (Number 1)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>ひと・つ (hitotsu)</span><br>
+                                On: <span>イチ / イツ (ichi / itsu)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('いち')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">一 (いち)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ichi → Number 1</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 8: 二 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">二</div>
+                        <div class="kanji-info">
+                            <h5>Two (Number 2)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>ふた・つ (futatsu)</span><br>
+                                On: <span>ニ (ni)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('に')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">二 (に)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ni → Number 2</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 9: 三 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">三</div>
+                        <div class="kanji-info">
+                            <h5>Three (Number 3)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>みっ・つ (mittsu)</span><br>
+                                On: <span>サン (san)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('さん')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">三 (さん)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">San → Number 3</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 10: 十 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">十</div>
+                        <div class="kanji-info">
+                            <h5>Ten (Number 10)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>とお (too)</span><br>
+                                On: <span>ジュウ / ジッ (juu / jii)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('じゅう')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">十 (じゅう)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Juu → Number 10</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: Practice Quiz (10 Questions) -->
+        <div id="tab-quiz" class="tab-content">
+            <div class="quiz-container">
+                <div class="section-header" style="text-align: center;">
+                    <h3>🎯 Chapter 1 Mastery Quiz (10 Questions)</h3>
+                    <p>Test your understanding of self-introductions, particles, vocabulary, numbers, and Kanji!</p>
+                </div>
+
+                <div id="quiz-area">
+                    <!-- Quiz dynamically rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Verbatim Original Text (100% Complete) -->
+        <div id="tab-verbatim" class="tab-content">
+            <div class="verbatim-box">
+                <div class="verbatim-header">
+                    <span style="font-weight: 700; color: #58a6ff;">📄 Original irodori.txt Content (Lines 1 to 115 - Chapter 1 Complete)</span>
+                    <span class="badge-100">✔ 100% Zero Character Loss Guarantee</span>
+                </div>
+                <pre># Irodori (いろどり) Elementary 1 - Chapter 1 to 5 Complete Guide
+
+---
+
+# 📘 Chapter 1: はじめまして (Hajimemashite) - Nice to Meet You
+
+## 🎯 Goal: Apna introduction dena, naam batana, desh batana
+
+---
+
+### **Key Phrases:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| はじめまして | Hajimemashite | Pehli baar milke khushi hui |
+| わたし は _____ です | Watashi wa _____ desu | Main _____ hoon |
+| おなまえ は？ | Onamae wa? | Aapka naam kya hai? |
+| どうぞ よろしく おねがいします | Douzo yoroshiku onegaishimasu | Please take care of me / Aapse milke accha laga |
+| ありがとう ございます | Arigatou gozaimasu | Dhanyavaad (formal) |
+| すみません | Sumimasen | Excuse me / Sorry |
+
+---
+
+### **Self Introduction Pattern:**
+
+```
+はじめまして。
+わたし は [Naam] です。
+[Desh] から きました。
+どうぞ よろしく おねがいします。
+```
+
+**Example:**
+```
+はじめまして。
+わたし は ラジェシュ です。
+インド から きました。
+どうぞ よろしく おねがいします。
+```
+(Hajimemashite. Watashi wa Rajeshu desu. Indo kara kimashita. Douzo yoroshiku onegaishimasu.)
+
+Matlab: Pehli baar mil rahe hain. Main Rajesh hoon. India se aaya hoon. Please mujhse acche se rehna.
+
+---
+
+### **Countries (くに / Kuni):**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| インド | Indo | India |
+| ちゅうごく (中国) | Chuugoku | China |
+| ベトナム | Betonamu | Vietnam |
+| フィリピン | Firipin | Philippines |
+| ブラジル | Burajiru | Brazil |
+| アメリカ | Amerika | America |
+| にほん (日本) | Nihon | Japan |
+| ネパール | Nepaaru | Nepal |
+| インドネシア | Indoneshia | Indonesia |
+| タイ | Tai | Thailand |
+
+---
+
+### **Grammar Point 1: _____ は _____ です**
+
+**Structure:** [Subject] は [Information] です
+
+- **は (wa)** = Topic marker particle (yeh subject ko mark karta hai)
+- **です (desu)** = hai/hoon/ho (polite form)
+
+**Examples:**
+- わたし は ラジェシュ です。 → Main Rajesh hoon.
+- わたし は インドじん (インド人) です。 → Main Indian hoon.
+
+---
+
+### **Grammar Point 2: _____ から きました (came from _____)**
+
+- **から (kara)** = se (from)
+- **きました (kimashita)** = aaya/aayi (came)
+
+**Example:**
+- インド から きました。 → India se aaya hoon.
+
+---
+
+### **Numbers 0-10:**
+
+| Number | Japanese | Reading |
+|---|---|---|
+| 0 | ゼロ / れい | Zero / Rei |
+| 1 | いち | Ichi |
+| 2 | に | Ni |
+| 3 | さん | San |
+| 4 | し / よん | Shi / Yon |
+| 5 | ご | Go |
+| 6 | ろく | Roku |
+| 7 | しち / なな | Shichi / Nana |
+| 8 | はち | Hachi |
+| 9 | きゅう / く | Kyuu / Ku |
+| 10 | じゅう | Juu |
+
+---
+
+### **Greetings (あいさつ / Aisatsu):**
+
+| Japanese | Reading | Meaning | Kab use kare |
+|---|---|---|---|
+| おはよう ございます | Ohayou gozaimasu | Good morning (formal) | Subah |
+| こんにちは | Konnichiwa | Good afternoon / Hello | Dopahar |
+| こんばんは | Konbanwa | Good evening | Shaam |
+| おやすみなさい | Oyasuminasai | Good night | Sone se pehle |
+| さようなら | Sayounara | Goodbye | Alvida |
+| じゃ、また | Ja, mata | See you / Phir milte hain | Casual goodbye |
+
+---</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>🎌 Built with precision for Irodori Elementary 1 Course • Chapter 1 Complete Interactive Learning Module</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">100% Content Preservation Guaranteed • Developed for Hindi & Roman Urdu Learners</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Find the button that calls this tabId and add active
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.innerText = '☀️';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerText = '🌙';
+            }
+        }
+
+        // Web Speech API - Japanese TTS
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Speech synthesis is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel(); // Stop previous speech
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.95; // Slightly slower for clear learning
+            
+            // Try to find a native Japanese female/male voice if available
+            const voices = window.speechSynthesis.getVoices();
+            const jpVoice = voices.find(v => v.lang.includes('ja') || v.lang.includes('JP'));
+            if (jpVoice) utterance.voice = jpVoice;
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Interactive Intro Generator
+        const userNameInput = document.getElementById('user-name');
+        const userCountrySelect = document.getElementById('user-country');
+        
+        function updateGeneratedIntro() {
+            const name = userNameInput.value.trim() || 'ラジェシュ';
+            const countryVal = userCountrySelect.value.split('|');
+            const countryJp = countryVal[0];
+            const countryRomaji = countryVal[1];
+            const countryEng = countryVal[2];
+
+            document.getElementById('intro-jp').innerHTML = `はじめまして。<br>わたし は ${name} です。<br>${countryJp} から きました。<br>どうぞ よろしく おねがいします。`;
+            document.getElementById('intro-romaji').innerHTML = `Hajimemashite. Watashi wa ${name} desu. ${countryRomaji} kara kimashita. Douzo yoroshiku onegaishimasu.`;
+            document.getElementById('intro-meaning').innerHTML = `Matlab: Pehli baar mil rahe hain. Main ${name} hoon. ${countryEng} se aaya hoon. Please mujhse acche se rehna.`;
+        }
+
+        userNameInput.addEventListener('input', updateGeneratedIntro);
+        userCountrySelect.addEventListener('change', updateGeneratedIntro);
+
+        function speakGeneratedIntro() {
+            const name = userNameInput.value.trim() || 'ラジェシュ';
+            const countryJp = userCountrySelect.value.split('|')[0];
+            const textToSpeak = `はじめまして。わたしは${name}です。${countryJp}からきました。どうぞよろしくおねがいします。`;
+            speakText(textToSpeak);
+        }
+
+        // Quiz Module Logic (10 Comprehensive Questions)
+        const quizQuestions = [
+            {
+                q: "1. What does 'はじめまして (Hajimemashite)' mean?",
+                options: [
+                    "Good morning",
+                    "Pehli baar milke khushi hui (Nice to meet you)",
+                    "Alvida (Goodbye)",
+                    "Aapka naam kya hai?"
+                ],
+                correct: 1
+            },
+            {
+                q: "2. Which particle is used as the topic marker in 'わたし ___ ラジェシュ です'?",
+                options: [
+                    "から (kara)",
+                    "を (wo)",
+                    "は (wa)",
+                    "に (ni)"
+                ],
+                correct: 2
+            },
+            {
+                q: "3. How do you say 'I came from India' in Japanese?",
+                options: [
+                    "インド から きました (Indo kara kimashita)",
+                    "インド は です (Indo wa desu)",
+                    "にほん から きました (Nihon kara kimashita)",
+                    "インド よろしく (Indo yoroshiku)"
+                ],
+                correct: 0
+            },
+            {
+                q: "4. What is the Japanese reading for the number 7?",
+                options: [
+                    "ろく (Roku)",
+                    "しち / なな (Shichi / Nana)",
+                    "きゅう (Kyuu)",
+                    "ご (Go)"
+                ],
+                correct: 1
+            },
+            {
+                q: "5. Which greeting is used in the morning (Subah)?",
+                options: [
+                    "こんばん は (Konbanwa)",
+                    "こんにちは (Konnichiwa)",
+                    "おはよう ございます (Ohayou gozaimasu)",
+                    "おやすみなさい (Oyasuminasai)"
+                ],
+                correct: 2
+            },
+            {
+                q: "6. What does 'どうぞ よろしく おねがいします (Douzo yoroshiku onegaishimasu)' mean?",
+                options: [
+                    "Excuse me / Sorry",
+                    "Aapka naam kya hai?",
+                    "Please take care of me / Aapse milke accha laga",
+                    "Good night (Sone se pehle)"
+                ],
+                correct: 2
+            },
+            {
+                q: "7. How do you say 'Japanese person / Japanese nationality' in Japanese?",
+                options: [
+                    "にほんご (Nihongo)",
+                    "にほんじん / 日本人 (Nihon-jin)",
+                    "にほんから (Nihon kara)",
+                    "あめりかじん (Amerika-jin)"
+                ],
+                correct: 1
+            },
+            {
+                q: "8. Which Kanji character represents 'Person / Nationality' (jin / hito)?",
+                options: [
+                    "私 (Watashi)",
+                    "日 (Nichi)",
+                    "人 (Jin / Hito)",
+                    "国 (Kuni)"
+                ],
+                correct: 2
+            },
+            {
+                q: "9. What is the Japanese word for the number 10?",
+                options: [
+                    "はち (Hachi)",
+                    "きゅう (Kyuu)",
+                    "いち (Ichi)",
+                    "じゅう / 十 (Juu)"
+                ],
+                correct: 3
+            },
+            {
+                q: "10. When saying a formal goodbye when leaving, which greeting do you use?",
+                options: [
+                    "さようなら (Sayounara)",
+                    "おはよう (Ohayou)",
+                    "すみません (Sumimasen)",
+                    "ありがとう (Arigatou)"
+                ],
+                correct: 0
+            }
+        ];
+
+        function renderQuiz() {
+            const quizArea = document.getElementById('quiz-area');
+            let html = '';
+            quizQuestions.forEach((item, index) => {
+                html += `
+                    <div class="question-box" id="q-${index}">
+                        <div class="question-text"><span>${item.q}</span></div>
+                        <div class="options-grid">
+                            ${item.options.map((opt, optIndex) => `
+                                <button class="option-btn" onclick="checkAnswer(${index}, ${optIndex})">
+                                    <span>${opt}</span>
+                                    <span class="status-icon"></span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            quizArea.innerHTML = html;
+        }
+
+        let score = 0;
+        let answered = new Array(quizQuestions.length).fill(false);
+
+        function checkAnswer(qIndex, optIndex) {
+            if (answered[qIndex]) return; // Only one attempt per question
+            answered[qIndex] = true;
+
+            const qBox = document.getElementById(`q-${qIndex}`);
+            const buttons = qBox.querySelectorAll('.option-btn');
+            const correctIndex = quizQuestions[qIndex].correct;
+
+            if (optIndex === correctIndex) {
+                buttons[optIndex].classList.add('correct');
+                buttons[optIndex].querySelector('.status-icon').innerText = '🎉 Correct!';
+                score++;
+                speakText('せいかい！'); // Say "Correct!" in Japanese
+            } else {
+                buttons[optIndex].classList.add('wrong');
+                buttons[optIndex].querySelector('.status-icon').innerText = '❌ Incorrect';
+                buttons[correctIndex].classList.add('correct');
+                buttons[correctIndex].querySelector('.status-icon').innerText = '✔ Correct Answer';
+            }
+
+            if (answered.every(val => val === true)) {
+                const quizArea = document.getElementById('quiz-area');
+                const scoreDiv = document.createElement('div');
+                scoreDiv.className = 'quiz-score';
+                scoreDiv.innerHTML = `🏆 10-Question Mastery Quiz Completed!<br><span style="font-size:2rem; color:#fff; display:block; margin:0.5rem 0;">Your Score: ${score} / ${quizQuestions.length}</span><span style="font-size:1rem; color:var(--text-main); font-weight:500;">Incredible job! You have mastered Chapter 1 Vocabulary, Grammar, Numbers, and Kanji!</span>`;
+                quizArea.appendChild(scoreDiv);
+            }
+        }
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+            // Ensure speech synthesis voices are loaded
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        });
+    </script>
+<script src="nav.js"></script>
+</body>
+</html>

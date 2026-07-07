@@ -1,0 +1,1970 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Ch 11: たいちょう (Physical Condition / Tabiyat)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f18;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --bg-card: rgba(31, 41, 55, 0.7);
+            --bg-glass: rgba(17, 24, 39, 0.85);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(244, 63, 94, 0.5);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+            --accent-primary: #f43f5e;
+            --accent-secondary: #fb7185;
+            --accent-tertiary: #38bdf8;
+            --accent-info: #fbbf24;
+            --accent-success: #34d399;
+            --gradient-primary: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%);
+            --gradient-secondary: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            --gradient-tertiary: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(244, 63, 94, 0.25);
+            --font-main: 'Outfit', sans-serif;
+            --font-jp: 'Noto Sans JP', sans-serif;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #fdf2f4;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f8fafc;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(225, 29, 72, 0.5);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #94a3b8;
+            --accent-primary: #e11d48;
+            --accent-secondary: #f43f5e;
+            --accent-tertiary: #0284c7;
+            --accent-info: #d97706;
+            --accent-success: #059669;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 20px rgba(225, 29, 72, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(244, 63, 94, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-badge {
+            background: var(--gradient-primary);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-glow);
+            letter-spacing: 1px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-theme, .btn-audio-global {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme:hover, .btn-audio-global:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Welcome Banner */
+        .banner {
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .banner::after {
+            content: "たいちょう";
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-family: var(--font-jp);
+            font-size: 7.5rem;
+            font-weight: 900;
+            opacity: 0.15;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .banner h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+        }
+
+        .banner p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .banner-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.75rem 1.4rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Tab Content Panels */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Flashcards Grid */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .jp-text {
+            font-family: var(--font-jp);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1.3;
+        }
+
+        .btn-audio {
+            background: rgba(244, 63, 94, 0.15);
+            color: var(--accent-primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card:hover .btn-audio {
+            background: var(--accent-primary);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .romaji-text {
+            font-size: 0.95rem;
+            color: var(--accent-tertiary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .meaning-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 500;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--bg-tertiary);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-bottom-left-radius: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Interactive Tools Box */
+        .interactive-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .interactive-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .output-panel {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .output-jp {
+            font-family: var(--font-jp);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .output-romaji {
+            color: var(--accent-info);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .output-meaning {
+            color: var(--accent-success);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .btn-action {
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+        }
+
+        /* Grammar Cards */
+        .grammar-card {
+            background: var(--bg-secondary);
+            border-left: 5px solid var(--accent-primary);
+            border-radius: 0 20px 20px 0;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .grammar-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grammar-formula {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-family: var(--font-jp);
+            font-size: 1.25rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            border: 1px dashed var(--border-color);
+            display: inline-block;
+        }
+
+        .particle-badge {
+            background: var(--accent-primary);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin: 0 0.3rem;
+            display: inline-block;
+        }
+
+        /* Review Master Tables */
+        .review-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .review-table th {
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .review-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .review-table tr:hover {
+            background: rgba(244, 63, 94, 0.05);
+        }
+
+        .review-table .jp-col {
+            font-family: var(--font-jp);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--accent-tertiary);
+        }
+
+        /* Kanji Section Grid */
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kanji-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kanji-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .kanji-top {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .kanji-char {
+            font-family: var(--font-jp);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-primary);
+            line-height: 1;
+            background: var(--bg-tertiary);
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .kanji-info h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        .kanji-readings {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .kanji-readings span {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .kanji-example {
+            background: var(--bg-primary);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .kanji-example:hover {
+            border-color: var(--accent-success);
+        }
+
+        /* Quiz Module */
+        .quiz-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .question-box {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .option-btn {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent-primary);
+            background: rgba(244, 63, 94, 0.1);
+        }
+
+        .option-btn.correct {
+            background: rgba(52, 211, 153, 0.2);
+            border-color: var(--accent-success);
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            background: rgba(244, 63, 94, 0.2);
+            border-color: var(--accent-primary);
+            color: #fff;
+        }
+
+        .quiz-score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 2rem;
+            color: var(--accent-success);
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            border: 2px solid var(--accent-success);
+        }
+
+        /* Verbatim Text Reference Box */
+        .verbatim-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 2rem;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #e6edf3;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .verbatim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .badge-100 {
+            background: #238636;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner h2 { font-size: 1.8rem; }
+            .grid-cards, .kanji-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 1rem; }
+            .tabs-nav { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">第 11 課</div>
+            <div class="logo-text">
+                <h1>Irodori (いろどり) Elementary 1</h1>
+                <p>Chapter 11: たいちょう (Taichou) - Physical Condition / Tabiyat</p>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button class="btn-audio-global" onclick="speakText('きのうからあたまがいたいです。ねつがあるので、きょうはびょういんにいきたいです。')">
+                <span>🔊</span> Speak Ch 11 Key Phrases
+            </button>
+            <button class="btn-theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> Theme
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Welcome Banner -->
+        <div class="banner">
+            <h2>たいちょう (Taichou) - Physical Condition / Tabiyat</h2>
+            <p>Master how to describe your health symptoms, talk to doctors, ask for sick leave, and understand pharmacy instructions! Learn body parts (<strong style="color:#fff; background:#e11d48; padding:0 6px; border-radius:4px;">からだ</strong>), pain expressions (<strong style="color:#fff; background:#0284c7; padding:0 6px; border-radius:4px;">がいたいです</strong>), causal reasons (<strong style="color:#fff; background:#d97706; padding:0 6px; border-radius:4px;">～から / ～ので</strong>), and medical warnings (<strong style="color:#fff; background:#059669; padding:0 6px; border-radius:4px;">～ないでください</strong>)!</p>
+            <div class="banner-tags">
+                <div class="tag">🎯 Goal: Apni tabiyat batana, doctor/pharmacy mein baat karna</div>
+                <div class="tag">🏥 20 Body Parts & 25 Illness/Symptom Terms</div>
+                <div class="tag">⚡ 100% Verbatim Complete Content (Lines 2068 to 2433)</div>
+                <div class="tag">🈹 24 Medical Kanjis & 10-Q Master Quiz</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('consult')">
+                <span>🏥</span> Doctor Consultation & Symptom Generator (がいたいです / ので)
+            </button>
+            <button class="tab-btn" onclick="switchTab('pharmacy')">
+                <span>💊</span> Pharmacy & Medical Advice Simulator (ないでください / ています)
+            </button>
+            <button class="tab-btn" onclick="switchTab('vocab')">
+                <span>🗣️</span> 80+ Body Parts & Medical Vocab Cards
+            </button>
+            <button class="tab-btn" onclick="switchTab('dialogue')">
+                <span>💬</span> Doctor & Pharmacy Dialogues + Health Phrases
+            </button>
+            <button class="tab-btn" onclick="switchTab('kanji')">
+                <span>🈹</span> Kanji Mastery (24 Ch 11 Kanjis)
+            </button>
+            <button class="tab-btn" onclick="switchTab('quiz')">
+                <span>🎮</span> Practice Quiz (10 Qs)
+            </button>
+            <button class="tab-btn" onclick="switchTab('verbatim')">
+                <span>📖</span> Verbatim Original Text (100% Complete)
+            </button>
+        </div>
+
+        <!-- TAB 1: Doctor Consultation & Symptom Generator -->
+        <div id="tab-consult" class="tab-content active">
+            <!-- Interactive Symptom & Leave Request Generator -->
+            <div class="interactive-box">
+                <h4>🏥 Interactive Doctor Consultation & Sick Leave Generator</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Build natural Japanese health complaint sentences! Combine duration (<strong style="color:#fff;">きのう から</strong>), body pain/symptoms (<strong style="color:#fff;">あたま が いたい</strong>), polite causal connectors (<strong style="color:var(--accent-tertiary);">ので / から</strong>), and requests (<strong style="color:var(--accent-success);">やすませて ください</strong>)!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="cs-time">Time / Duration (Kab se?)</label>
+                        <select id="cs-time">
+                            <option value="きのう から|Kinou kara|Kal se (Since yesterday 📅)" selected>きのう から (Since yesterday 📅)</option>
+                            <option value="おととい から|Ototoi kara|Parson se (Since day before yesterday 📆)">おととい から (Since 2 days ago 📆)</option>
+                            <option value="けさ から|Kesa kara|Aaj subah se (Since this morning 🌅)">けさ から (Since this morning 🌅)</option>
+                            <option value="さっき から|Sakki kara|Thodi der pehle se (Since a little while ago ⏰)">さっき から (Since a while ago ⏰)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="cs-symptom">Body Pain / Symptom (Grammar Pt 34 & 35)</label>
+                        <select id="cs-symptom">
+                            <option value="あたま が いたい|atama ga itai|sir mein dard hai|verb_adj" selected>あたま が いたい (Headache / Sir dard 🤕)</option>
+                            <option value="のど が いたくて、せき が でる|nodo ga itakute, seki ga deru|gala dard hai aur khansi aa rahi hai|verb_adj">のど が いたくて、せき が でる (Sore throat & cough 😷)</option>
+                            <option value="おなか が いたい|onaka ga itai|pet mein dard hai|verb_adj">おなか が いたい (Stomach ache / Pet dard 🤢)</option>
+                            <option value="38ど の ねつ が ある|sanjuu hachi do no netsu ga aru|38 degree bukhar hai|verb_adj">38ど の ねつ が ある (38°C Fever / Bukhar 🤒)</option>
+                            <option value="めまい が して、はきけ が する|memai ga shite, hakike ga suru|chakkar aur ulti jaisa lag raha hai|verb_adj">めまい が して、はきけ が する (Dizziness & nausea 😵‍💫)</option>
+                            <option value="たいちょう が わるい|taichou ga warui|tabiyat kharab hai|verb_adj">たいちょう が わるい (Bad physical condition / Tabiyat kharab 🏥)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="cs-conn">Reason Connector (Grammar Pt 39 & Leave Note)</label>
+                        <select id="cs-conn">
+                            <option value="ので、|node,|hai, isliye (Polite 'because' for formal requests ⭐)" selected>ので (Node - Polite/formal because ⭐)</option>
+                            <option value="から、|kara,|hai, kyunki (Standard causal 'because')">から (Kara - Standard because)</option>
+                            <option value="し、|shi,|aur saath mein (And plus...)">し (Shi - And what's more...)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="cs-result">Request / Action</label>
+                        <select id="cs-result">
+                            <option value="きょう は やすませて ください。|kyou wa yasumasete kudasai.|aaj chutti lene dijiye please (Please let me take a day off 🏡)" selected>きょう は やすませて ください (Please let me rest today 🏡)</option>
+                            <option value="はやく かえりたい です。|hayaku kaeritai desu.|jaldi ghar jaana chahta hoon (Want to go home early 🏃)">はやく かえりたい です (Want to go home early 🏃)</option>
+                            <option value="びょういん に いきたい です。|byouin ni ikitai desu.|hospital jaana chahta hoon (Want to go to hospital 🏥)">びょういん に いきたい です (Want to go to hospital 🏥)</option>
+                            <option value="なにも たべたくない です。|nanimo tabetakunai desu.|kuch bhi nahi khana chahta (Don't want to eat anything 🥣)">なにも たべたくない です (Don't want to eat anything 🥣)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="cs-jp">きのう から あたま が いたい ので、きょう は やすませて ください。</div>
+                    <div class="output-romaji" id="cs-romaji" style="margin-top:0.8rem;">Kinou kara atama ga itai node, kyou wa yasumasete kudasai.</div>
+                    <div class="output-meaning" id="cs-meaning">Matlab: Kal se sir mein dard hai, isliye aaj chutti lene dijiye please.</div>
+                    <button class="btn-action" onclick="speakGeneratedConsult()">🔊 Speak Symptom & Request</button>
+                </div>
+            </div>
+
+            <!-- Grammar Point 34, 35, 36, 38, 39 Summary Card -->
+            <div class="grammar-card">
+                <div class="grammar-title">
+                    <span>Essential Health Grammar Summary</span>
+                    <span class="particle-badge">いたい / がある / や / から</span>
+                </div>
+                <div class="grammar-formula">[Body Part] が いたい です / [Symptom] が あります/でます</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    • <strong style="color:var(--accent-primary);">～が いたい です (Grammar Pt 34)</strong>: Expressing pain. E.g. <strong style="color:#fff;">あたま / おなか / のど が いたい です</strong> (Head/stomach/throat hurts).<br>
+                    • <strong style="color:var(--accent-tertiary);">～が あります / でます / します (Grammar Pt 35)</strong>: Symptoms. E.g. <strong style="color:#fff;">ねつ が あります</strong> (Fever), <strong style="color:#fff;">せき が でます</strong> (Coughing), <strong style="color:#fff;">めまい が します</strong> (Dizzy).<br>
+                    • <strong style="color:var(--accent-info);">～や ～ (Grammar Pt 36)</strong>: Incomplete list "and/or etc.". E.g. <strong style="color:#fff;">せき や はなみず が でます</strong> (Coughing and runny nose etc.). Unlike <strong style="color:#fff;">と</strong> (complete list), <strong style="color:#fff;">や</strong> implies other things exist too!<br>
+                    • <strong style="color:var(--accent-success);">～て います (Grammar Pt 38)</strong>: Ongoing state/action. E.g. <strong style="color:#fff;">ねつ が あって、せき も でて います</strong> (Have fever and coughing is ongoing).<br>
+                    • <strong style="color:var(--accent-primary);">～から / ので (Grammar Pt 39)</strong>: Expressing cause/reason. E.g. <strong style="color:#fff;">あたま が いたい から / ので、はやく かえりたい です</strong> (Because headache, want to go home early). Notice that <strong style="color:#fff;">ので</strong> is softer and more polite!
+                </p>
+            </div>
+        </div>
+
+        <!-- TAB 2: Pharmacy & Medical Advice Simulator -->
+        <div id="tab-pharmacy" class="tab-content">
+            <!-- Grammar Point 37 Card -->
+            <div class="grammar-card">
+                <div class="grammar-title">
+                    <span>Medical Prohibitions & Pharmacy Instructions</span>
+                    <span class="particle-badge">ないで ください / まいしょくご</span>
+                </div>
+                <div class="grammar-formula">Verb ない-form + で ください (Please do NOT do...)</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    In medical settings, doctors and pharmacists often advise what <strong style="color:#fff;">NOT</strong> to do to recover quickly (<strong style="color:var(--accent-primary);">Grammar Pt 37</strong>):<br>
+                    • <strong style="color:#fff;">むり を しないで ください</strong> = Zyada strain/mushkil mat lijiye (Please don't overexert yourself).<br>
+                    • <strong style="color:#fff;">おさけ を のまないで ください</strong> = Sharab mat peejiye (Please don't drink alcohol).<br>
+                    • <strong style="color:#fff;">おふろ に はいらないで ください</strong> = Aaj nahane mat jaiye (Please don't take a bath today).<br>
+                    • <strong style="color:#fff;">くるま の うんてん は しないで ください</strong> = Gaadi mat chalaiye (Please don't drive a car).
+                </p>
+
+                <!-- Interactive Pharmacy Simulator -->
+                <div style="background:var(--bg-tertiary); padding:1.5rem; border-radius:16px; margin-bottom:1.5rem; border:1px solid var(--border-color);">
+                    <h5 style="color:var(--accent-tertiary); margin-bottom:1rem; font-size:1.1rem;">💊 Interactive Pharmacy Instruction Builder</h5>
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-bottom:1rem;">
+                        <div class="input-group">
+                            <label>Medicine Type</label>
+                            <select id="ph-med">
+                                <option value="この じょうざい (錠剤)|Kono jouzai|Yeh tablet/goli|を|wo" selected>この じょうざい (Tablet / Goli 💊)</option>
+                                <option value="この こなぐすり (粉薬)|Kono konagusuri|Yeh powder medicine|を|wo">この こなぐすり (Powder medicine 🧂)</option>
+                                <option value="この カプセル|Kono kapuseru|Yeh capsule|を|wo">この カプセル (Capsule 💊)</option>
+                                <option value="この めぐすり (目薬)|Kono megusuri|Yeh eye drops|を|wo">この めぐすり (Eye drops 👁️)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Frequency & Timing</label>
+                            <select id="ph-time">
+                                <option value="いちにち さんかい、まいしょくご (毎食後) に|ichinichi sankai, maishokugo ni|din mein 3 baar, har khane ke baad|のんで|nonde" selected>いちにち さんかい、まいしょくご に (3x day, after meals 🍽️)</option>
+                                <option value="いちにち にかい、しょくぜん (食前) に|ichinichi nikai, shokuzen ni|din mein 2 baar, khane se pehle|のんで|nonde">いちにち にかい、しょくぜん に (2x day, before meals ⌛)</option>
+                                <option value="ねる まえ (寝る前) に|neru mae ni|sone se pehle|のんで|nonde">ねる まえ に (Before sleeping 🛌)</option>
+                                <option value="いっかい にじょう (一回二錠)、みず で|ikkai nijou, mizu de|ek baar mein 2 goli, paani se|のんで|nonde">いっかい にじょう、みず で (2 tablets per dose, with water 💧)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Pharmacist Warning (ないでください)</label>
+                            <select id="ph-warn">
+                                <option value="くるま の うんてん は しないで ください。|kuruma no unten wa shinaide kudasai.|gaadi mat chalaiye (neend aa sakti hai)|driving" selected>くるま の うんてん は しないで ください (Don't drive 🚗🚫)</option>
+                                <option value="おさけ を のまないで ください。|osake wo nomanaide kudasai.|sharab mat peejiye|alcohol">おさけ を のまないで ください (Don't drink alcohol 🍺🚫)</option>
+                                <option value="きょう は おふろ に はいらないで ください。|kyou wa ofuro ni hairanaide kudasai.|aaj nahane mat jaiye|bath">おふろ に はいらないで ください (Don't take a bath 🛁🚫)</option>
+                                <option value="あまり むり を しないで ください。|amari muri wo shinaide kudasai.|zyada mushkil/strain mat lijiye|strain">むり を しないで ください (Don't overexert yourself 💪🚫)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-action" style="margin-top:0; width:100%; justify-content:center;" onclick="updatePharmacy()">🔊 Speak Pharmacist Advice</button>
+                    <div id="ph-output" style="font-family:var(--font-jp); font-size:1.3rem; font-weight:700; color:var(--text-main); margin-top:1.2rem; padding:1rem; background:var(--bg-primary); border-radius:12px; border:1px solid var(--border-color);">この じょうざい を いちにち さんかい、まいしょくご に のんで ください。くるま の うんてん は しないで ください。<span style="font-size:0.95rem; color:var(--accent-info); font-weight:500; display:block; margin-top:0.5rem; font-style:italic;">(Kono jouzai wo ichinichi sankai, maishokugo ni nonde kudasai. Kuruma no unten wa shinaide kudasai.)</span></div>
+                </div>
+
+                <h5 style="color:var(--text-main); margin-bottom:1rem;">📋 Medicine Timing Vocabulary Quick Reference:</h5>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+                    <div style="background:var(--bg-primary); padding:1rem; border-radius:12px; border-left:4px solid var(--accent-tertiary); cursor:pointer;" onclick="speakText('まいしょくご')">
+                        <span style="font-family:var(--font-jp); font-weight:700; color:var(--accent-tertiary); display:block;">まいしょくご (毎食後) 🔊</span>
+                        <span style="font-size:0.85rem; color:var(--text-muted);">Har khane ke baad (After every meal).</span>
+                    </div>
+                    <div style="background:var(--bg-primary); padding:1rem; border-radius:12px; border-left:4px solid var(--accent-primary); cursor:pointer;" onclick="speakText('しょくぜん')">
+                        <span style="font-family:var(--font-jp); font-weight:700; color:var(--accent-primary); display:block;">しょくぜん (食前) 🔊</span>
+                        <span style="font-size:0.85rem; color:var(--text-muted);">Khane se pehle (Before meal).</span>
+                    </div>
+                    <div style="background:var(--bg-primary); padding:1rem; border-radius:12px; border-left:4px solid var(--accent-info); cursor:pointer;" onclick="speakText('しょくかん')">
+                        <span style="font-family:var(--font-jp); font-weight:700; color:var(--accent-info); display:block;">しょくかん (食間) 🔊</span>
+                        <span style="font-size:0.85rem; color:var(--text-muted);">Khane ke beech mein (Between meals - 2 hrs after meal).</span>
+                    </div>
+                    <div style="background:var(--bg-primary); padding:1rem; border-radius:12px; border-left:4px solid var(--accent-success); cursor:pointer;" onclick="speakText('ねるまえ')">
+                        <span style="font-family:var(--font-jp); font-weight:700; color:var(--accent-success); display:block;">ねる まえ (寝る前) 🔊</span>
+                        <span style="font-size:0.85rem; color:var(--text-muted);">Sone se pehle (Before bedtime).</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: 80+ Body Parts & Medical Vocab Cards -->
+        <div id="tab-vocab" class="tab-content">
+            <div class="section-header">
+                <h3>Body Parts Vocabulary (からだ / Karada - 20 Words)</h3>
+                <p>Click any card to hear its pronunciation in Japanese!</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('からだ')"><div class="card-top"><div class="jp-text">からだ (体)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Karada</div><div class="meaning-text">Shareer / Body 🏃</div></div>
+                <div class="card" onclick="speakText('あたま')"><div class="card-top"><div class="jp-text">あたま (頭)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Atama</div><div class="meaning-text">Sir / Head 🧠</div></div>
+                <div class="card" onclick="speakText('かお')"><div class="card-top"><div class="jp-text">かお (顔)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kao</div><div class="meaning-text">Chehra / Face 😊</div></div>
+                <div class="card" onclick="speakText('め')"><div class="card-top"><div class="jp-text">め (目)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Me</div><div class="meaning-text">Aankh / Eye 👁️</div></div>
+                <div class="card" onclick="speakText('みみ')"><div class="card-top"><div class="jp-text">みみ (耳)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Mimi</div><div class="meaning-text">Kaan / Ear 👂</div></div>
+                <div class="card" onclick="speakText('はな')"><div class="card-top"><div class="jp-text">はな (鼻)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hana</div><div class="meaning-text">Naak / Nose 👃</div></div>
+                <div class="card" onclick="speakText('くち')"><div class="card-top"><div class="jp-text">くち (口)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kuchi</div><div class="meaning-text">Mooh / Mouth 👄</div></div>
+                <div class="card" onclick="speakText('は')"><div class="card-top"><div class="jp-text">は (歯)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ha</div><div class="meaning-text">Daant / Tooth 🦷</div></div>
+                <div class="card" onclick="speakText('のど')"><div class="card-top"><div class="jp-text">のど (喉)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Nodo</div><div class="meaning-text">Gala / Throat 🗣️</div></div>
+                <div class="card" onclick="speakText('くび')"><div class="card-top"><div class="jp-text">くび (首)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kubi</div><div class="meaning-text">Gardan / Neck 🧣</div></div>
+                <div class="card" onclick="speakText('かた')"><div class="card-top"><div class="jp-text">かた (肩)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kata</div><div class="meaning-text">Kandha / Shoulder 💪</div></div>
+                <div class="card" onclick="speakText('むね')"><div class="card-top"><div class="jp-text">むね (胸)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Mune</div><div class="meaning-text">Chhati / Chest 🫁</div></div>
+                <div class="card" onclick="speakText('おなか')"><div class="card-top"><div class="jp-text">おなか (お腹)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Onaka</div><div class="meaning-text">Pet / Stomach 🤰</div></div>
+                <div class="card" onclick="speakText('せなか')"><div class="card-top"><div class="jp-text">せなか (背中)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Senaka</div><div class="meaning-text">Peeth / Back 🧍</div></div>
+                <div class="card" onclick="speakText('こし')"><div class="card-top"><div class="jp-text">こし (腰)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Koshi</div><div class="meaning-text">Kamar / Lower back 🙇</div></div>
+                <div class="card" onclick="speakText('うで')"><div class="card-top"><div class="jp-text">うで (腕)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ude</div><div class="meaning-text">Baazu / Arm 💪</div></div>
+                <div class="card" onclick="speakText('て')"><div class="card-top"><div class="jp-text">て (手)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Te</div><div class="meaning-text">Haath / Hand ✋</div></div>
+                <div class="card" onclick="speakText('ゆび')"><div class="card-top"><div class="jp-text">ゆび (指)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Yubi</div><div class="meaning-text">Ungli / Finger ☝️</div></div>
+                <div class="card" onclick="speakText('あし')"><div class="card-top"><div class="jp-text">あし (足/脚)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ashi</div><div class="meaning-text">Pair / Leg / Foot 🦶</div></div>
+                <div class="card" onclick="speakText('ひざ')"><div class="card-top"><div class="jp-text">ひざ (膝)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hiza</div><div class="meaning-text">Ghutna / Knee 🦵</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>Symptoms & Illness Vocabulary (25 Words)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('びょうき')"><div class="card-top"><div class="jp-text">びょうき (病気)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Byouki</div><div class="meaning-text">Bimari / Sick / Illness 🤒</div></div>
+                <div class="card" onclick="speakText('たいちょうがわるい')"><div class="card-top"><div class="jp-text">たいちょう が わるい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Taichou ga warui</div><div class="meaning-text">Tabiyat kharab hai (Bad condition) 🏥</div></div>
+                <div class="card" onclick="speakText('ねつがある')"><div class="card-top"><div class="jp-text">ねつ が ある (熱)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Netsu ga aru</div><div class="meaning-text">Bukhar hai / Have fever 🌡️</div></div>
+                <div class="card" onclick="speakText('ねつがたかい')"><div class="card-top"><div class="jp-text">ねつ が たかい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Netsu ga takai</div><div class="meaning-text">Tez bukhar hai / High fever 🔥</div></div>
+                <div class="card" onclick="speakText('かぜ')"><div class="card-top"><div class="jp-text">かぜ (風邪)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaze</div><div class="meaning-text">Sardi / Jukaam / Cold 🤧</div></div>
+                <div class="card" onclick="speakText('かぜをひきました')"><div class="card-top"><div class="jp-text">かぜ を ひきました</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaze wo hikimashita</div><div class="meaning-text">Sardi lag gayi / Caught a cold 🥶</div></div>
+                <div class="card" onclick="speakText('インフルエンザ')"><div class="card-top"><div class="jp-text">インフルエンザ</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Infuruenza</div><div class="meaning-text">Flu / Influenza 🦠</div></div>
+                <div class="card" onclick="speakText('せき')"><div class="card-top"><div class="jp-text">せき (咳)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Seki</div><div class="meaning-text">Khansi / Cough 😷</div></div>
+                <div class="card" onclick="speakText('せきがでます')"><div class="card-top"><div class="jp-text">せき が でます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Seki ga demasu</div><div class="meaning-text">Khansi aa rahi hai / Coughing 😷</div></div>
+                <div class="card" onclick="speakText('はなみず')"><div class="card-top"><div class="jp-text">はなみず (鼻水)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hanamizu</div><div class="meaning-text">Naak behna / Runny nose 👃💧</div></div>
+                <div class="card" onclick="speakText('はなみずがでます')"><div class="card-top"><div class="jp-text">はなみず が でます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hanamizu ga demasu</div><div class="meaning-text">Naak beh rahi hai / Have runny nose 🤧</div></div>
+                <div class="card" onclick="speakText('くしゃみ')"><div class="card-top"><div class="jp-text">くしゃみ</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kushami</div><div class="meaning-text">Chheenk / Sneeze 🤧</div></div>
+                <div class="card" onclick="speakText('あたまがいたい')"><div class="card-top"><div class="jp-text">あたま が いたい (頭が痛い)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Atama ga itai</div><div class="meaning-text">Sir dard hai / Headache 🤕</div></div>
+                <div class="card" onclick="speakText('おなかがいたい')"><div class="card-top"><div class="jp-text">おなか が いたい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Onaka ga itai</div><div class="meaning-text">Pet dard hai / Stomachache 🤢</div></div>
+                <div class="card" onclick="speakText('のどがいたい')"><div class="card-top"><div class="jp-text">のど が いたい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Nodo ga itai</div><div class="meaning-text">Gala dard hai / Sore throat 🗣️</div></div>
+                <div class="card" onclick="speakText('はがいたい')"><div class="card-top"><div class="jp-text">は が いたい (歯が痛い)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ha ga itai</div><div class="meaning-text">Daant dard hai / Toothache 🦷</div></div>
+                <div class="card" onclick="speakText('こしがいたい')"><div class="card-top"><div class="jp-text">こし が いたい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Koshi ga itai</div><div class="meaning-text">Kamar dard hai / Back pain ⚡</div></div>
+                <div class="card" onclick="speakText('めまいがします')"><div class="card-top"><div class="jp-text">めまい が します</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Memai ga shimasu</div><div class="meaning-text">Chakkar aa rahe hain / Feel dizzy 💫</div></div>
+                <div class="card" onclick="speakText('はきけがします')"><div class="card-top"><div class="jp-text">はきけ が します (吐き気)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hakike ga shimasu</div><div class="meaning-text">Ulti jaisi feel ho rahi hai / Nausea 🤢</div></div>
+                <div class="card" onclick="speakText('げり')"><div class="card-top"><div class="jp-text">げり (下痢)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Geri</div><div class="meaning-text">Dast / Loose motion / Diarrhea 🚽</div></div>
+                <div class="card" onclick="speakText('けが')"><div class="card-top"><div class="jp-text">けが (怪我)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kega</div><div class="meaning-text">Chot / Injury / Wound 🩹</div></div>
+                <div class="card" onclick="speakText('アレルギー')"><div class="card-top"><div class="jp-text">アレルギー</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Arerugii</div><div class="meaning-text">Allergy 🌾</div></div>
+                <div class="card" onclick="speakText('かゆい')"><div class="card-top"><div class="jp-text">かゆい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kayui</div><div class="meaning-text">Khujli / Itchy 🐜</div></div>
+                <div class="card" onclick="speakText('だるい')"><div class="card-top"><div class="jp-text">だるい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Darui</div><div class="meaning-text">Thakaan / Sluggish / Heavy feeling 😩</div></div>
+                <div class="card" onclick="speakText('しょくよくがありません')"><div class="card-top"><div class="jp-text">しょくよく が ありません (食欲)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shokuyoku ga arimasen</div><div class="meaning-text">Bhook nahi hai / No appetite 🍽️🚫</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>Doctor, Hospital & Departments Vocabulary (22 Words)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('びょういん')"><div class="card-top"><div class="jp-text">びょういん (病院)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Byouin</div><div class="meaning-text">Hospital 🏥</div></div>
+                <div class="card" onclick="speakText('クリニック')"><div class="card-top"><div class="jp-text">クリニック</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kurinikku</div><div class="meaning-text">Clinic 🩺</div></div>
+                <div class="card" onclick="speakText('いしゃとおいしゃさん')"><div class="card-top"><div class="jp-text">いしゃ / おいしゃさん (医者)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Isha / Oishasan</div><div class="meaning-text">Doctor 👨‍⚕️👩‍⚕️</div></div>
+                <div class="card" onclick="speakText('かんごし')"><div class="card-top"><div class="jp-text">かんごし (看護師)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kangoshi</div><div class="meaning-text">Nurse 💉</div></div>
+                <div class="card" onclick="speakText('しんさつ')"><div class="card-top"><div class="jp-text">しんさつ (診察)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinsatsu</div><div class="meaning-text">Medical checkup / Consultation 📋</div></div>
+                <div class="card" onclick="speakText('くすり')"><div class="card-top"><div class="jp-text">くすり (薬)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kusuri</div><div class="meaning-text">Dawai / Medicine 💊</div></div>
+                <div class="card" onclick="speakText('ちゅうしゃ')"><div class="card-top"><div class="jp-text">ちゅうしゃ (注射)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Chuusha</div><div class="meaning-text">Injection / Teeka 💉</div></div>
+                <div class="card" onclick="speakText('けんさ')"><div class="card-top"><div class="jp-text">けんさ (検査)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kensa</div><div class="meaning-text">Test / Jaanch / Medical exam 🧪</div></div>
+                <div class="card" onclick="speakText('ほけんしょう')"><div class="card-top"><div class="jp-text">ほけんしょう (保険証)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hokenshou</div><div class="meaning-text">Health insurance card 🪪</div></div>
+                <div class="card" onclick="speakText('しんさつけん')"><div class="card-top"><div class="jp-text">しんさつけん (診察券)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinsatsuken</div><div class="meaning-text">Hospital patient registration card 💳</div></div>
+                <div class="card" onclick="speakText('うけつけ')"><div class="card-top"><div class="jp-text">うけつけ (受付)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Uketsuke</div><div class="meaning-text">Reception desk 💁‍♂️</div></div>
+                <div class="card" onclick="speakText('まちあいしつ')"><div class="card-top"><div class="jp-text">まちあいしつ (待合室)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Machiaishitsu</div><div class="meaning-text">Waiting room 🪑</div></div>
+                <div class="card" onclick="speakText('しょほうせん')"><div class="card-top"><div class="jp-text">しょほうせん (処方箋)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shohousen</div><div class="meaning-text">Medical prescription 📝</div></div>
+                <div class="card" onclick="speakText('やっきょく')"><div class="card-top"><div class="jp-text">やっきょく (薬局)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Yakkyoku</div><div class="meaning-text">Pharmacy / Medical shop 🏬</div></div>
+                <div class="card" onclick="speakText('ないか')"><div class="card-top"><div class="jp-text">ないか (内科)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Naika</div><div class="meaning-text">Internal medicine department 🩺</div></div>
+                <div class="card" onclick="speakText('がいか')"><div class="card-top"><div class="jp-text">がいか (外科)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Gaika</div><div class="meaning-text">Surgery department 🔪</div></div>
+                <div class="card" onclick="speakText('しか')"><div class="card-top"><div class="jp-text">しか (歯科)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shika</div><div class="meaning-text">Dental / Daant ka department 🦷</div></div>
+                <div class="card" onclick="speakText('じびか')"><div class="card-top"><div class="jp-text">じびか (耳鼻科)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Jibika</div><div class="meaning-text">ENT (Ear Nose Throat) clinic 👂👃</div></div>
+                <div class="card" onclick="speakText('がんか')"><div class="card-top"><div class="jp-text">がんか (眼科)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ganka</div><div class="meaning-text">Eye specialist / Ophthalmology 👁️</div></div>
+                <div class="card" onclick="speakText('ひふか')"><div class="card-top"><div class="jp-text">ひふか (皮膚科)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hifuka</div><div class="meaning-text">Skin specialist / Dermatology ✋</div></div>
+                <div class="card" onclick="speakText('せいけいげか')"><div class="card-top"><div class="jp-text">せいけいげか (整形外科)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Seikei geka</div><div class="meaning-text">Orthopedic surgery 🦴</div></div>
+                <div class="card" onclick="speakText('しょうにか')"><div class="card-top"><div class="jp-text">しょうにか (小児科)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shounika</div><div class="meaning-text">Pediatrics (Bachhon ka doctor) 👶</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>Medicine Types & Instructions Vocabulary (19 Words)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('じょうざい')"><div class="card-top"><div class="jp-text">じょうざい (錠剤)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Jouzai</div><div class="meaning-text">Tablet / Goli 💊</div></div>
+                <div class="card" onclick="speakText('こなぐすり')"><div class="card-top"><div class="jp-text">こなぐすり (粉薬)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Konagusuri</div><div class="meaning-text">Powder medicine 🧂</div></div>
+                <div class="card" onclick="speakText('カプセル')"><div class="card-top"><div class="jp-text">カプセル</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kapuseru</div><div class="meaning-text">Capsule 💊</div></div>
+                <div class="card" onclick="speakText('ぬりぐすり')"><div class="card-top"><div class="jp-text">ぬりぐすり (塗り薬)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Nurigusuri</div><div class="meaning-text">Cream / Ointment / Lagane wali dawai 🧴</div></div>
+                <div class="card" onclick="speakText('めぐすり')"><div class="card-top"><div class="jp-text">めぐすり (目薬)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Megusuri</div><div class="meaning-text">Eye drops 👁️💧</div></div>
+                <div class="card" onclick="speakText('ばんそうこう')"><div class="card-top"><div class="jp-text">ばんそうこう (絆創膏)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Bansoukou</div><div class="meaning-text">Band-aid / Adhesive bandage 🩹</div></div>
+                <div class="card" onclick="speakText('たいおんけい')"><div class="card-top"><div class="jp-text">たいおんけい (体温計)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Taionkei</div><div class="meaning-text">Thermometer 🌡️</div></div>
+                <div class="card" onclick="speakText('マスク')"><div class="card-top"><div class="jp-text">マスク</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Masuku</div><div class="meaning-text">Mask 😷</div></div>
+                <div class="card" onclick="speakText('くすりをのみます')"><div class="card-top"><div class="jp-text">くすり を のみます</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kusuri wo nomimasu</div><div class="meaning-text">Dawai khana / To take internal medicine 🥛</div></div>
+                <div class="card" onclick="speakText('くすりをぬります')"><div class="card-top"><div class="jp-text">くすり を ぬります (塗ります)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kusuri wo nurimasu</div><div class="meaning-text">Dawai lagana / To apply cream 🧴</div></div>
+                <div class="card" onclick="speakText('いちにちさんかい')"><div class="card-top"><div class="jp-text">いちにち さんかい (一日三回)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ichinichi sankai</div><div class="meaning-text">Din mein 3 baar (3 times a day) 🕒</div></div>
+                <div class="card" onclick="speakText('いっかいにじょう')"><div class="card-top"><div class="jp-text">いっかい にじょう (一回二錠)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ikkai nijou</div><div class="meaning-text">Ek baar mein 2 goli (2 tablets per dose) ✌️</div></div>
+                <div class="card" onclick="speakText('みずでのんでください')"><div class="card-top"><div class="jp-text">みず で のんで ください</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Mizu de nonde kudasai</div><div class="meaning-text">Paani se khaiye (Take with water) 💧</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 4: Doctor & Pharmacy Dialogues + Health Phrases -->
+        <div id="tab-dialogue" class="tab-content">
+            <div class="section-header">
+                <h3>💬 Practical Healthcare Dialogues & Phrases</h3>
+                <p>Listen and shadow these authentic hospital checkup and pharmacy conversations!</p>
+            </div>
+
+            <!-- Dialogue 1: At the Doctor -->
+            <div class="interactive-box" style="border-color: var(--accent-primary);">
+                <h4 style="color: var(--accent-primary);">🩺 Dialogue 1: At the Doctor Checkup (しんさつ)</h4>
+                <div style="background:var(--bg-primary); padding:1.5rem; border-radius:16px; border:1px solid var(--border-color); font-family:var(--font-jp); font-size:1.15rem; line-height:2.2; margin-bottom:1rem;">
+                    <span style="color:var(--accent-primary); font-weight:700;">いしゃ:</span> きょう は どう しましたか？ <span style="font-size:0.9rem; color:var(--text-muted);">(Aaj kya hua? / What is the problem?)</span><br>
+                    <span style="color:var(--accent-tertiary); font-weight:700;">かんじゃ:</span> あたま が いたい です。 <span style="font-size:0.9rem; color:var(--text-muted);">(Sir mein dard hai. / I have a headache.)</span><br>
+                    <span style="color:var(--accent-primary); font-weight:700;">いしゃ:</span> いつ から ですか？ <span style="font-size:0.9rem; color:var(--text-muted);">(Kab se hai? / Since when?)</span><br>
+                    <span style="color:var(--accent-tertiary); font-weight:700;">かんじゃ:</span> きのう から です。 <span style="font-size:0.9rem; color:var(--text-muted);">(Kal se hai. / Since yesterday.)</span><br>
+                    <span style="color:var(--accent-primary); font-weight:700;">いしゃ:</span> ねつ は ありますか？ <span style="font-size:0.9rem; color:var(--text-muted);">(Bukhar hai? / Do you have a fever?)</span><br>
+                    <span style="color:var(--accent-tertiary); font-weight:700;">かんじゃ:</span> はい、けさ 38ど (度) ありました。 <span style="font-size:0.9rem; color:var(--text-muted);">(Haan, subah 38 degree tha.)</span><br>
+                    <span style="color:var(--accent-primary); font-weight:700;">いしゃ:</span> せき や はなみず は？ <span style="font-size:0.9rem; color:var(--text-muted);">(Khansi ya naak behna? / Cough or runny nose?)</span><br>
+                    <span style="color:var(--accent-tertiary); font-weight:700;">かんじゃ:</span> せき が すこし でます。 <span style="font-size:0.9rem; color:var(--text-muted);">(Thodi khansi aa rahi hai. / Have a slight cough.)</span><br>
+                    <span style="color:var(--accent-primary); font-weight:700;">いしゃ:</span> かぜ ですね。くすり を だします。ゆっくり やすんで ください。 <span style="font-size:0.9rem; color:var(--text-muted);">(Jukaam hai. Dawai deta hoon. Acche se aaram kijiye.)</span><br>
+                    <span style="color:var(--accent-tertiary); font-weight:700;">かんじゃ:</span> ありがとう ございます。 <span style="font-size:0.9rem; color:var(--text-muted);">(Dhanyavaad. / Thank you very much.)</span>
+                </div>
+                <button class="btn-action" onclick="speakText('きょうはどうしましたか？あたまがいたいです。いつからですか？きのうからです。ねつはありますか？はい、けささんじゅうはちどありました。せきやはなみずは？せきがすこしでます。かぜですね。くすりをだします。ゆっくりやすんでください。ありがとうございます。')">🔊 Speak Full Doctor Dialogue</button>
+            </div>
+
+            <!-- Dialogue 2: At the Pharmacy -->
+            <div class="interactive-box" style="border-color: var(--accent-tertiary);">
+                <h4 style="color: var(--accent-tertiary);">🏬 Dialogue 2: At the Pharmacy (やっきょく)</h4>
+                <div style="background:var(--bg-primary); padding:1.5rem; border-radius:16px; border:1px solid var(--border-color); font-family:var(--font-jp); font-size:1.15rem; line-height:2.2; margin-bottom:1rem;">
+                    <span style="color:var(--accent-tertiary); font-weight:700;">やくざいし:</span> しょほうせん を おねがいします。 <span style="font-size:0.9rem; color:var(--text-muted);">(Prescription dijiye. / Prescription please.)</span><br>
+                    <span style="color:#fff; font-weight:700;">かんじゃ:</span> はい、これ です。 <span style="font-size:0.9rem; color:var(--text-muted);">(Haan, yeh hai. / Here it is.)</span><br>
+                    <span style="color:var(--accent-tertiary); font-weight:700;">やくざいし:</span> アレルギー は ありますか？ <span style="font-size:0.9rem; color:var(--text-muted);">(Koi allergy hai? / Do you have any allergies?)</span><br>
+                    <span style="color:#fff; font-weight:700;">かんじゃ:</span> いいえ、ありません。 <span style="font-size:0.9rem; color:var(--text-muted);">(Nahi, nahi hai. / No, I don't.)</span><br>
+                    <span style="color:var(--accent-tertiary); font-weight:700;">やくざいし:</span> この くすり は しょくご に いっかい にじょう のんで ください。 <span style="font-size:0.9rem; color:var(--text-muted);">(Yeh dawai khane ke baad ek baar mein 2 goli khaiye.)</span><br>
+                    <span style="color:var(--accent-tertiary); font-weight:700;">やくざいし:</span> ねむく なる ことが ありますから、くるま の うんてん は しないで ください。 <span style="font-size:0.9rem; color:var(--text-muted);">(Neend aa sakti hai, toh gaadi mat chalaiye.)</span>
+                </div>
+                <button class="btn-action" style="background:var(--gradient-secondary);" onclick="speakText('しょほうせんをおねがいします。はい、これです。アレルギーはありますか？いいえ、ありません。このくすりはしょくごにいつかいにじょうのんでください。ねむくなることがありますから、くるまのうんてんはしないでください。')">🔊 Speak Full Pharmacy Dialogue</button>
+            </div>
+
+            <!-- Useful Health Phrases Reference Grid -->
+            <h4 style="color:var(--accent-success); margin:2rem 0 1rem 0;">✨ Useful Health & Caring Phrases (8 Phrases)</h4>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('だいじょうぶですか')"><div class="card-top"><div class="jp-text">だいじょうぶ ですか？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Daijoubu desu ka?</div><div class="meaning-text">Theek ho? / Are you okay? ❓</div></div>
+                <div class="card" onclick="speakText('だいじょうぶです')"><div class="card-top"><div class="jp-text">だいじょうぶ です。</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Daijoubu desu.</div><div class="meaning-text">Theek hoon. / I am fine. ✔️</div></div>
+                <div class="card" onclick="speakText('だいじょうぶじゃないです')"><div class="card-top"><div class="jp-text">だいじょうぶ じゃないです。</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Daijoubu janai desu.</div><div class="meaning-text">Theek nahi hoon. / I am not okay. ❌</div></div>
+                <div class="card" onclick="speakText('おだいじに')"><div class="card-top"><div class="jp-text">おだいじに (お大事に)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Odaiji ni</div><div class="meaning-text">Jaldi theek ho jaao / Take care! 🍀</div></div>
+                <div class="card" onclick="speakText('きをつけてください')"><div class="card-top"><div class="jp-text">きをつけて ください (気をつけて)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ki wo tsukete kudasai</div><div class="meaning-text">Dhyaan rakhiye / Take care of yourself ⚠️</div></div>
+                <div class="card" onclick="speakText('げんきですか')"><div class="card-top"><div class="jp-text">げんき ですか？ (元気ですか)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Genki desu ka?</div><div class="meaning-text">Kaisa hai? / How are you? 😊</div></div>
+                <div class="card" onclick="speakText('げんきです')"><div class="card-top"><div class="jp-text">げんき です。</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Genki desu.</div><div class="meaning-text">Accha hoon. / I am well/energetic. 💪</div></div>
+                <div class="card" onclick="speakText('あまりげんきじゃないです')"><div class="card-top"><div class="jp-text">あまり げんき じゃない です。</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Amari genki janai desu.</div><div class="meaning-text">Zyada accha nahi hoon. / Not doing so well. 😔</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 5: Kanji Mastery -->
+        <div id="tab-kanji" class="tab-content">
+            <div class="section-header">
+                <h3>🈹 Chapter 11 Kanji Mastery (漢字 - 24 Medical & Body Kanjis)</h3>
+                <p>Master 24 vital Kanjis for body parts, hospitals, doctors, medicine, and pain!</p>
+            </div>
+
+            <div class="kanji-grid">
+                <!-- Kanji 1: 体 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">体</div><div class="kanji-info"><h5>Body (Karada/Tai)</h5><div class="kanji-readings">Kun: <span>からだ (karada)</span><br>On: <span>タイ / テイ (tai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('からだとたいちょう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">体 (からだ) / 体調 (たいちょう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Karada (Body) / Taichou (Condition)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 2: 頭 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">頭</div><div class="kanji-info"><h5>Head (Atama/Tou)</h5><div class="kanji-readings">Kun: <span>あたま / かしら</span><br>On: <span>トウ / ズ (tou/zu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('あたまがいたいとずつう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">頭が痛い / 頭痛 (ずつう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Atama ga itai (Headache) / Zutsuu</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 3: 顔 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">顔</div><div class="kanji-info"><h5>Face (Kao/Gan)</h5><div class="kanji-readings">Kun: <span>かお (kao)</span><br>On: <span>ガン (gan)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かお')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">顔 (かお)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kao → Chehra / Face</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 4: 目 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">目</div><div class="kanji-info"><h5>Eye (Me/Moku)</h5><div class="kanji-readings">Kun: <span>め / -め (me)</span><br>On: <span>モク / ボク (moku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('めとめぐすり')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">目 (め) / 目薬 (めぐすり)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Me (Eye) / Megusuri (Eye drops)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 5: 耳 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">耳</div><div class="kanji-info"><h5>Ear (Mimi/Ji)</h5><div class="kanji-readings">Kun: <span>みみ (mimi)</span><br>On: <span>ジ (ji)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('みみとじびか')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">耳 (みみ) / 耳鼻科 (じびか)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Mimi (Ear) / Jibika (ENT clinic)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 6: 鼻 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">鼻</div><div class="kanji-info"><h5>Nose (Hana/Bi)</h5><div class="kanji-readings">Kun: <span>はな (hana)</span><br>On: <span>ビ (bi)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('はなとはなみず')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">鼻 (はな) / 鼻水 (はなみず)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Hana (Nose) / Hanamizu (Runny nose)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 7: 口 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">口</div><div class="kanji-info"><h5>Mouth (Kuchi/Kou)</h5><div class="kanji-readings">Kun: <span>くち / -ぐち</span><br>On: <span>コウ / ク (kou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('くちといりぐち')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">口 (くち) / 入口 (いりぐち)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kuchi (Mouth) / Iriguchi (Entrance)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 8: 歯 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">歯</div><div class="kanji-info"><h5>Tooth (Ha/Shi)</h5><div class="kanji-readings">Kun: <span>は (ha)</span><br>On: <span>シ (shi)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('はがいたいのとしか')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">歯が痛い / 歯科 (しか)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ha ga itai (Toothache) / Shika (Dental)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 9: 喉 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">喉</div><div class="kanji-info"><h5>Throat (Nodo)</h5><div class="kanji-readings">Kun: <span>のど (nodo)</span><br>On: <span>コウ (kou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('のどがいたいです')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">喉が痛い (のどがいたい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Nodo ga itai → Gala dard hai / Sore throat</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 10: 首 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">首</div><div class="kanji-info"><h5>Neck (Kubi/Shu)</h5><div class="kanji-readings">Kun: <span>くび (kubi)</span><br>On: <span>シュ (shu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('くびとてくび')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">首 (くび) / 手首 (てくび)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kubi (Neck) / Tekubi (Wrist)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 11: 肩 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">肩</div><div class="kanji-info"><h5>Shoulder (Kata)</h5><div class="kanji-readings">Kun: <span>かた (kata)</span><br>On: <span>ケン (ken)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かた')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">肩 (かた)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kata → Kandha / Shoulder</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 12: 胸 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">胸</div><div class="kanji-info"><h5>Chest / Breast (Mune)</h5><div class="kanji-readings">Kun: <span>むね / むな-</span><br>On: <span>キョウ (kyou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('むね')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">胸 (むね)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Mune → Chhati / Chest</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 13: 腹 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">腹</div><div class="kanji-info"><h5>Stomach / Belly (Onaka/Fuku)</h5><div class="kanji-readings">Kun: <span>はら / (お)なか</span><br>On: <span>フク (fuku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('おなかがいたいです')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">お腹 (おなか) / 腹痛 (ふくつう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Onaka (Stomach) / Fukutsuu (Stomachache)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 14: 背 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">背</div><div class="kanji-info"><h5>Back / Height (Se/Senaka)</h5><div class="kanji-readings">Kun: <span>せ / せい / そむ・く</span><br>On: <span>ハイ (hai)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('せなかとせがたかい')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">背中 (せなか) / 背が高い</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Senaka (Back) / Se ga takai (Tall height)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 15: 腰 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">腰</div><div class="kanji-info"><h5>Lower back / Waist (Koshi)</h5><div class="kanji-readings">Kun: <span>こし (koshi)</span><br>On: <span>ヨウ (you)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('こしがいたいです')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">腰が痛い (こしがいたい)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Koshi ga itai → Kamar mein dard hai</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 16: 腕 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">腕</div><div class="kanji-info"><h5>Arm / Ability (Ude/Wan)</h5><div class="kanji-readings">Kun: <span>うで (ude)</span><br>On: <span>ワン (wan)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('うで')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">腕 (うで)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ude → Baazu / Arm / Wrist strength</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 17: 指 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">指</div><div class="kanji-info"><h5>Finger / Point (Yubi/Shi)</h5><div class="kanji-readings">Kun: <span>ゆび / さ・す</span><br>On: <span>シ (shi)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ゆびとてゆび')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">指 (ゆび) / 親指 (おやゆび)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Yubi (Finger) / Oyayubi (Thumb)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 18: 足 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">足</div><div class="kanji-info"><h5>Leg / Foot / Sufficient (Ashi)</h5><div class="kanji-readings">Kun: <span>あし / た・りる</span><br>On: <span>ソク (soku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('あしといっそく')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">足 (あし) / 足りる (たりる)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ashi (Leg/Foot) / Tariru (Be enough)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 19: 痛 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">痛</div><div class="kanji-info"><h5>Pain / Hurt (Ita/Tsuu)</h5><div class="kanji-readings">Kun: <span>いた・い / いた・む</span><br>On: <span>ツウ (tsuu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('いたいのとずつう')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">痛い (いたい) / 頭痛 (ずつう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Itai (Painful) / Zutsuu (Headache)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 20: 病 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">病</div><div class="kanji-info"><h5>Sick / Illness (Byou/Yamai)</h5><div class="kanji-readings">Kun: <span>やまい / や・む</span><br>On: <span>ビョウ (byou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('びょうきとびょういん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">病気 (びょうき) / 病院 (びょういん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Byouki (Illness) / Byouin (Hospital)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 21: 気 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">気</div><div class="kanji-info"><h5>Spirit / Energy / Mood (Ki)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>キ / ケ (ki/ke)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('びょうきとげんき')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">病気 (びょうき) / 元気 (げんき)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Byouki (Sick) / Genki (Healthy/Energetic)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 22: 院 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">院</div><div class="kanji-info"><h5>Institution / Hospital (In)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>イン (in)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('びょういんとだいがくいん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">病院 (びょういん) / 大学院</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Byouin (Hospital) / Daigakuin (Grad school)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 23: 医 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">医</div><div class="kanji-info"><h5>Doctor / Medicine (I)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>イ (i)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('いしゃとおいしゃさん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">医者 (いしゃ) / 医学 (いがく)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Isha (Doctor) / Igaku (Medical science)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 24: 薬 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">薬</div><div class="kanji-info"><h5>Medicine / Chemical (Kusuri/Yaku)</h5><div class="kanji-readings">Kun: <span>くすり (kusuri)</span><br>On: <span>ヤク (yaku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('くすりとやっきょく')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">薬 (くすり) / 薬局 (やっきょく)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kusuri (Medicine) / Yakkyoku (Pharmacy)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Practice Quiz (10 Questions) -->
+        <div id="tab-quiz" class="tab-content">
+            <div class="quiz-container">
+                <div class="section-header" style="text-align: center;">
+                    <h3>🎯 Chapter 11 Medical & Body Mastery Quiz (10 Questions)</h3>
+                    <p>Test your body parts, symptom expressions, doctor consultations, causal connectors, and Kanjis!</p>
+                </div>
+
+                <div id="quiz-area">
+                    <!-- Quiz dynamically rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 7: Verbatim Original Text (100% Complete) -->
+        <div id="tab-verbatim" class="tab-content">
+            <div class="verbatim-box">
+                <div class="verbatim-header">
+                    <span style="font-weight: 700; color: #f43f5e;">📄 Original irodori.txt Content (Lines 2068 to 2433 - Chapter 11 Complete)</span>
+                    <span class="badge-100">✔ 100% Zero Character Loss Guarantee</span>
+                </div>
+                <pre># Irodori (いろどり) Elementary 1 - Chapter 11 to 14 Complete Guide
+
+---
+
+# 📘 Chapter 11: たいちょう (Taichou) - Physical Condition / Tabiyat
+
+## 🎯 Goal: Apni tabiyat ke baare mein batana, doctor se baat karna, pharmacy mein baat karna
+
+---
+
+### **Body Parts (からだ / Karada):**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| からだ (体) | Karada | Shareer/Body |
+| あたま (頭) | Atama | Sir/Head |
+| かお (顔) | Kao | Chehra/Face |
+| め (目) | Me | Aankh/Eye |
+| みみ (耳) | Mimi | Kaan/Ear |
+| はな (鼻) | Hana | Naak/Nose |
+| くち (口) | Kuchi | Mooh/Mouth |
+| は (歯) | Ha | Daant/Tooth |
+| のど (喉) | Nodo | Gala/Throat |
+| くび (首) | Kubi | Gardan/Neck |
+| かた (肩) | Kata | Kandha/Shoulder |
+| むね (胸) | Mune | Chhati/Chest |
+| おなか (お腹) | Onaka | Pet/Stomach |
+| せなか (背中) | Senaka | Peeth/Back |
+| こし (腰) | Koshi | Kamar/Lower back |
+| うで (腕) | Ude | Baazu/Arm |
+| て (手) | Te | Haath/Hand |
+| ゆび (指) | Yubi | Ungli/Finger |
+| あし (足/脚) | Ashi | Pair/Leg/Foot |
+| ひざ (膝) | Hiza | Ghutna/Knee |
+
+---
+
+### **Symptoms & Illness Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| びょうき (病気) | Byouki | Bimari/Sick |
+| たいちょう が わるい (体調が悪い) | Taichou ga warui | Tabiyat kharab hai |
+| ねつ が ある (熱がある) | Netsu ga aru | Bukhar hai |
+| ねつ が たかい (熱が高い) | Netsu ga takai | Tez bukhar hai |
+| かぜ (風邪) | Kaze | Sardi/Jukaam/Cold |
+| かぜ を ひきました | Kaze wo hikimashita | Sardi lag gayi |
+| インフルエンザ | Infuruenza | Flu/Influenza |
+| せき (咳) | Seki | Khansi/Cough |
+| せき が でます | Seki ga demasu | Khansi aa rahi hai |
+| はなみず (鼻水) | Hanamizu | Naak behna/Runny nose |
+| はなみず が でます | Hanamizu ga demasu | Naak beh rahi hai |
+| くしゃみ | Kushami | Chheenk/Sneeze |
+| あたま が いたい (頭が痛い) | Atama ga itai | Sir dard hai |
+| おなか が いたい | Onaka ga itai | Pet dard hai |
+| のど が いたい | Nodo ga itai | Gala dard hai |
+| は が いたい (歯が痛い) | Ha ga itai | Daant dard hai |
+| こし が いたい | Koshi ga itai | Kamar dard hai |
+| めまい が します | Memai ga shimasu | Chakkar aa rahe hain |
+| はきけ が します (吐き気) | Hakike ga shimasu | Ulti jaisi feel ho rahi hai |
+| げり (下痢) | Geri | Dast/Loose motion |
+| けが (怪我) | Kega | Chot/Injury |
+| アレルギー | Arerugii | Allergy |
+| かゆい | Kayui | Khujli/Itchy |
+| だるい | Darui | Thakaan/Sluggish/Heavy feeling |
+
+---
+
+### **Grammar Point 34: _____ が いたい です (_____ dard hai)**
+
+**いたい (痛い - itai)** = Dard hai / Painful
+
+**Structure:** [Body Part] が いたい です
+
+**Examples:**
+- あたま が いたい です。 → Sir mein dard hai.
+- おなか が いたい です。 → Pet mein dard hai.
+- のど が いたい です。 → Gale mein dard hai.
+- は が いたい です。 → Daant mein dard hai.
+- こし が いたい です。 → Kamar mein dard hai.
+- め が いたい です。 → Aankh mein dard hai.
+
+**Since yesterday / 2 days ago:**
+- きのう から あたま が いたい です。 → Kal se sir dard hai.
+- おととい から のど が いたい です。 → Parson se gala dard hai.
+
+---
+
+### **Grammar Point 35: _____ が _____ (Symptom expressions)**
+
+**Pattern:** [Body part / Symptom] が + verb/adjective
+
+| Expression | Meaning |
+|---|---|
+| ねつ が あります | Bukhar hai |
+| せき が でます | Khansi aa rahi hai |
+| はなみず が でます | Naak beh rahi hai |
+| めまい が します | Chakkar aa rahe hain |
+| はきけ が します | Ulti jaisi feeling hai |
+| しょくよく が ありません (食欲) | Bhook nahi hai |
+| げんき が ありません (元気) | Energy nahi hai |
+| きぶん が わるい です (気分が悪い) | Mood/feel kharab hai |
+
+---
+
+### **Doctor / Hospital Related:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| びょういん (病院) | Byouin | Hospital |
+| クリニック | Kurinikku | Clinic |
+| いしゃ / おいしゃさん (医者/お医者さん) | Isha / Oishasan | Doctor |
+| かんごし (看護師) | Kangoshi | Nurse |
+| しんさつ (診察) | Shinsatsu | Medical checkup |
+| くすり (薬) | Kusuri | Dawai/Medicine |
+| ちゅうしゃ (注射) | Chuusha | Injection/Teeka |
+| けんさ (検査) | Kensa | Test/Jaanch |
+| ほけんしょう (保険証) | Hokenshou | Insurance card |
+| しんさつけん (診察券) | Shinsatsuken | Hospital registration card |
+| うけつけ (受付) | Uketsuke | Reception |
+| まちあいしつ (待合室) | Machiaishitsu | Waiting room |
+| しょほうせん (処方箋) | Shohousen | Prescription |
+| やっきょく (薬局) | Yakkyoku | Pharmacy |
+
+---
+
+### **Types of Hospitals/Departments:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| ないか (内科) | Naika | Internal medicine |
+| がいか (外科) | Gaika | Surgery |
+| しか (歯科) | Shika | Dental/Daant |
+| じびか (耳鼻科) | Jibika | ENT (Ear Nose Throat) |
+| がんか (眼科) | Ganka | Eye specialist |
+| ひふか (皮膚科) | Hifuka | Skin specialist |
+| せいけいげか (整形外科) | Seikei geka | Orthopedic |
+| しょうにか (小児科) | Shounika | Pediatric (bachche) |
+
+---
+
+### **At the Doctor - Conversation:**
+
+```
+いしゃ: きょう は どう しましたか？
+(Isha: Kyou wa dou shimashita ka?)
+Doctor: Aaj kya hua? / Kya takleef hai?
+
+かんじゃ (患者): あたま が いたい です。
+(Kanja: Atama ga itai desu.)
+Patient: Sir mein dard hai.
+
+いしゃ: いつ から ですか？
+(Isha: Itsu kara desu ka?)
+Doctor: Kab se hai?
+
+かんじゃ: きのう から です。
+(Kanja: Kinou kara desu.)
+Patient: Kal se hai.
+
+いしゃ: ねつ は ありますか？
+(Isha: Netsu wa arimasu ka?)
+Doctor: Bukhar hai?
+
+かんじゃ: はい、けさ 38ど (度) ありました。
+(Kanja: Hai, kesa sanjuu hachi do arimashita.)
+Patient: Haan, subah 38 degree tha.
+
+いしゃ: せき や はなみず は？
+(Isha: Seki ya hanamizu wa?)
+Doctor: Khansi ya naak behna?
+
+かんじゃ: せき が すこし でます。
+(Kanja: Seki ga sukoshi demasu.)
+Patient: Thodi khansi aa rahi hai.
+
+いしゃ: かぜ ですね。くすり を だします。
+(Isha: Kaze desu ne. Kusuri wo dashimasu.)
+Doctor: Jukaam hai. Dawai deta hoon.
+
+いしゃ: ゆっくり やすんで ください。
+(Isha: Yukkuri yasunde kudasai.)
+Doctor: Acche se aaram kijiye.
+
+かんじゃ: ありがとう ございます。
+(Kanja: Arigatou gozaimasu.)
+Patient: Dhanyavaad.
+```
+
+---
+
+### **Grammar Point 36: ～や ～ (and ~ etc.)**
+
+**や (ya)** = Aur (incomplete list - "jaise", "wagairah")
+
+⚠️ **Difference:**
+- **と (to)** = A **aur** B (complete list - sirf yahi)
+- **や (ya)** = A **ya** B **wagairah** (aur bhi ho sakte hain)
+
+**Examples:**
+- せき **や** はなみず が でます。 → Khansi **ya** naak behna wagairah ho raha hai.
+- にく **や** さかな を たべます。 → Meat **ya** machli **wagairah** khata hoon.
+- テレビ **や** えいが を みます。 → TV **ya** movie **wagairah** dekhta hoon.
+
+---
+
+### **Medicine Related Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| くすり (薬) | Kusuri | Dawai |
+| くすり を のみます | Kusuri wo nomimasu | Dawai khana/lena |
+| くすり を ぬります (塗ります) | Kusuri wo nurimasu | Dawai lagana (cream) |
+| じょうざい (錠剤) | Jouzai | Tablet/Goli |
+| こなぐすり (粉薬) | Konagusuri | Powder medicine |
+| カプセル | Kapuseru | Capsule |
+| ぬりぐすり (塗り薬) | Nurigusuri | Cream/Ointment |
+| めぐすり (目薬) | Megusuri | Eye drops |
+| ばんそうこう (絆創膏) | Bansoukou | Band-aid |
+| たいおんけい (体温計) | Taionkei | Thermometer |
+| マスク | Masuku | Mask |
+
+---
+
+### **Medicine Instructions:**
+
+| Japanese | Meaning |
+|---|---|
+| いちにち さんかい (一日三回) | Din mein 3 baar |
+| まいしょくご (毎食後) | Har khane ke baad |
+| しょくぜん (食前) | Khane se pehle |
+| しょくご (食後) | Khane ke baad |
+| しょくかん (食間) | Khaane ke beech mein |
+| ねる まえ (寝る前) | Sone se pehle |
+| いっかい にじょう (一回二錠) | Ek baar mein 2 goli |
+| みず で のんで ください (水で飲んでください) | Paani se khaiye |
+
+**Example instruction:**
+```
+この くすり を いちにち さんかい、まいしょくご に のんで ください。
+(Kono kusuri wo ichinichi sankai, maishokugo ni nonde kudasai.)
+Yeh dawai din mein 3 baar, har khane ke baad khaiye.
+```
+
+---
+
+### **Grammar Point 37: ～ないで ください (Don't do _____) - More Detail**
+
+**ない form + で ください = Mat karo please**
+
+| ます form | ない form | ないで ください | Meaning |
+|---|---|---|---|
+| たべます | たべない | たべないで ください | Mat khaiye |
+| のみます | のまない | のまないで ください | Mat peejiye |
+| おふろに はいります | はいらない | はいらないで ください | Nahane mat jaiye |
+| うんどうします | うんどうしない | うんどうしないで ください | Exercise mat kijiye |
+| むりします (無理) | むりしない | むりしないで ください | Zyada mushkil mat kijiye |
+
+**Doctor ke common instructions:**
+- むり を しないで ください。 → Zyada strain mat lo.
+- おさけ を のまないで ください。 → Sharab mat peejiye.
+- きょう は おふろ に はいらないで ください。 → Aaj nahane mat jaiye.
+- あした また きて ください。 → Kal phir aaiye.
+
+---
+
+### **Grammar Point 38: ～て います (State / Ongoing action)**
+
+**て-form + います = _____ ho raha hai / _____ ki haalat mein hai**
+
+**Examples (Symptoms ke context mein):**
+- ねつ が あって、せき も でて います。
+  → Bukhar hai aur khansi bhi aa rahi hai.
+
+- くすり を のんで います。
+  → Dawai kha raha hoon. (ongoing)
+
+- きのう から おなか が いたくて、なにも たべて いません。
+  → Kal se pet dard hai, kuch bhi nahi khaya.
+
+---
+
+### **Pharmacy Conversation:**
+
+```
+やくざいし (薬剤師): しょほうせん を おねがいします。
+(Yakuzaishi: Shohousen wo onegaishimasu.)
+Pharmacist: Prescription dijiye.
+
+かんじゃ: はい、これ です。
+(Kanja: Hai, kore desu.)
+Patient: Haan, yeh hai.
+
+やくざいし: アレルギー は ありますか？
+(Yakuzaishi: Arerugii wa arimasu ka?)
+Pharmacist: Koi allergy hai?
+
+かんじゃ: いいえ、ありません。
+(Kanja: Iie, arimasen.)
+Patient: Nahi, nahi hai.
+
+やくざいし: この くすり は しょくご に いっかい にじょう のんで ください。
+(Yakuzaishi: Kono kusuri wa shokugo ni ikkai nijou nonde kudasai.)
+Pharmacist: Yeh dawai khane ke baad ek baar mein 2 goli khaiye.
+
+やくざいし: ねむく なる ことが ありますから、くるま の うんてん (運転) は しないで ください。
+(Yakuzaishi: Nemuku naru koto ga arimasu kara, kuruma no unten wa shinaide kudasai.)
+Pharmacist: Neend aa sakti hai, toh gaadi mat chalaiye.
+```
+
+---
+
+### **Grammar Point 39: ～から (Because / Kyunki)**
+
+**Sentence 1 から、Sentence 2 = Sentence 1 isliye Sentence 2**
+
+**Examples:**
+- あたま が いたい **から**、はやく かえりたい です。
+  → Sir dard hai **isliye** jaldi ghar jaana chahta hoon.
+
+- ねつ が ある **から**、きょう は やすみます。
+  → Bukhar hai **isliye** aaj chutti lega.
+
+- おなか が いたい **から**、なにも たべたくない です。
+  → Pet dard hai **isliye** kuch nahi khana chahta.
+
+- くすり を のんだ **から**、すこし よくなりました。
+  → Dawai khayi **isliye** thoda accha hua.
+
+---
+
+### **Asking for Leave (Chutti lena):**
+
+```
+すみません、きょう は たいちょう が わるい ので、やすませて ください。
+(Sumimasen, kyou wa taichou ga warui node, yasumasete kudasai.)
+Sorry, aaj tabiyat kharab hai, toh chutti chahiye.
+
+ねつ が あるので、びょういん に いきたい です。
+(Netsu ga aru node, byouin ni ikitai desu.)
+Bukhar hai, toh hospital jaana chahta hoon.
+
+あした は だいじょうぶ だと おもいます。
+(Ashita wa daijoubu dato omoimasu.)
+Kal tak theek ho jaunga (aisa lagta hai).
+```
+
+⚠️ **ので (node)** = **から (kara)** jaisa hi - "because" - lekin zyada polite/formal
+
+---
+
+### **Useful Health Phrases:**
+
+| Japanese | Meaning |
+|---|---|
+| だいじょうぶ ですか？ (大丈夫ですか) | Theek ho? / Are you okay? |
+| だいじょうぶ です。 | Theek hoon. |
+| だいじょうぶ じゃないです。 | Theek nahi hoon. |
+| おだいじに (お大事に) | Jaldi theek ho jaao (Take care) |
+| きをつけて ください (気をつけて) | Dhyaan rakhiye / Be careful |
+| げんき ですか？ (元気ですか) | Kaisa hai? / How are you? |
+| げんき です。 | Accha hoon. |
+| あまり げんき じゃない です。 | Zyada accha nahi hoon. |</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>🎌 Built with precision for Irodori Elementary 1 Course • Chapter 11 Physical Condition Interactive Module</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">100% Content Preservation Guaranteed • Developed for Hindi & Roman Urdu Learners</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.innerText = '☀️';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerText = '🌙';
+            }
+        }
+
+        // Web Speech API - Japanese TTS
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Speech synthesis is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.95;
+            
+            const voices = window.speechSynthesis.getVoices();
+            const jpVoice = voices.find(v => v.lang.includes('ja') || v.lang.includes('JP'));
+            if (jpVoice) utterance.voice = jpVoice;
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Doctor Consultation Generator Logic
+        const csTime = document.getElementById('cs-time');
+        const csSymptom = document.getElementById('cs-symptom');
+        const csConn = document.getElementById('cs-conn');
+        const csResult = document.getElementById('cs-result');
+
+        function updateConsult() {
+            const time = csTime.value.split('|');
+            const symp = csSymptom.value.split('|');
+            const conn = csConn.value.split('|');
+            const res = csResult.value.split('|');
+
+            const fullJp = `${time[0]} ${symp[0]} ${conn[0]} ${res[0]}`;
+            const fullRomaji = `${time[1]} ${symp[1]} ${conn[1]} ${res[1]}`;
+            const fullMeaning = `Matlab: ${time[2]} ${symp[2]} ${conn[2]} ${res[2]}.`;
+
+            document.getElementById('cs-jp').innerText = fullJp;
+            document.getElementById('cs-romaji').innerText = fullRomaji;
+            document.getElementById('cs-meaning').innerText = fullMeaning;
+        }
+
+        csTime.addEventListener('change', updateConsult);
+        csSymptom.addEventListener('change', updateConsult);
+        csConn.addEventListener('change', updateConsult);
+        csResult.addEventListener('change', updateConsult);
+
+        function speakGeneratedConsult() {
+            const timeJp = csTime.value.split('|')[0];
+            const sympJp = csSymptom.value.split('|')[0];
+            const connJp = csConn.value.split('|')[0];
+            const resJp = csResult.value.split('|')[0];
+            speakText(`${timeJp} ${sympJp} ${connJp} ${resJp}`);
+        }
+
+        // Pharmacy Simulator Logic
+        const phMed = document.getElementById('ph-med');
+        const phTime = document.getElementById('ph-time');
+        const phWarn = document.getElementById('ph-warn');
+
+        function updatePharmacy() {
+            const med = phMed.value.split('|');
+            const time = phTime.value.split('|');
+            const warn = phWarn.value.split('|');
+
+            const targetJp = `${med[0]} を ${time[0]} ${time[3]} ください。${warn[0]}`;
+            const targetRom = `(${med[1]} wo ${time[1]} ${time[4]} kudasai. ${warn[1]})`;
+
+            document.getElementById('ph-output').innerHTML = `${targetJp} <span style="font-size:0.95rem; color:var(--accent-info); font-weight:500; display:block; margin-top:0.5rem; font-style:italic;">${targetRom}</span>`;
+            speakText(targetJp.replace('。', ' '));
+        }
+
+        phMed.addEventListener('change', updatePharmacy);
+        phTime.addEventListener('change', updatePharmacy);
+        phWarn.addEventListener('change', updatePharmacy);
+
+        // Quiz Module Logic (10 Comprehensive Questions)
+        const quizQuestions = [
+            {
+                q: "1. How do you say 'My head hurts / I have a headache' in polite Japanese?",
+                options: [
+                    "あたまが あつい です (Atama ga atsui desu)",
+                    "あたま が いたい です (Atama ga itai desu) ✔️",
+                    "あたま が ほしい です (Atama ga hoshii desu)",
+                    "あたま が たかい です (Atama ga takai desu)"
+                ],
+                correct: 1
+            },
+            {
+                q: "2. Which particle connects an incomplete list of symptoms: 'seki ___ hanamizu' (cough, runny nose, etc.)?",
+                options: [
+                    "と (to - complete list)",
+                    "や (ya - incomplete list / etc.) ✔️",
+                    "へ (e - direction)",
+                    "で (de - place/means)"
+                ],
+                correct: 1
+            },
+            {
+                q: "3. What is the difference between '～から' and '～ので' when asking for sick leave?",
+                options: [
+                    "Both mean 'because', but ので (node) is softer and more polite/formal ✔️",
+                    "から means 'until' and ので means 'from'",
+                    "They mean opposite things",
+                    "ので is only used for positive news"
+                ],
+                correct: 0
+            },
+            {
+                q: "4. What does the doctor's warning 'むり を しないで ください' mean?",
+                options: [
+                    "Please exercise very hard today",
+                    "Zyada strain / overexertion mat lijiye (Please don't overdo it) ✔️",
+                    "Please do not eat vegetables",
+                    "Please go to work immediately"
+                ],
+                correct: 1
+            },
+            {
+                q: "5. Which hospital department (科) is specialized for ENT (Ear, Nose, Throat)?",
+                options: [
+                    "ないか (内科 - Naika)",
+                    "じびか (耳鼻科 - Jibika) ✔️",
+                    "しか (歯科 - Shika)",
+                    "がんか (眼科 - Ganka)"
+                ],
+                correct: 1
+            },
+            {
+                q: "6. How do you say 'Please take this medicine after every meal'?",
+                options: [
+                    "まいしょくご に のんで ください (Maishokugo ni nonde kudasai) ✔️",
+                    "しょくぜん に ぬって ください (Shokuzen ni nutte kudasai)",
+                    "ねる まえ に してください (Neru mae ni shite kudasai)",
+                    "いちにち にかい たべて ください (Ichinichi nikai tabete kudasai)"
+                ],
+                correct: 0
+            },
+            {
+                q: "7. Which Japanese word means 'Runny nose / naak behna'?",
+                options: [
+                    "くしゃみ (Kushami - sneeze)",
+                    "はなみず (鼻水 - Hanamizu) ✔️",
+                    "せき (Seki - cough)",
+                    "めまい (Memai - dizziness)"
+                ],
+                correct: 1
+            },
+            {
+                q: "8. What does the pharmacy instruction 'いっかい にじょう (一回二錠)' mean?",
+                options: [
+                    "Take 1 hour to drink 2 bottles",
+                    "Ek baar mein 2 goli (2 tablets per dose) ✔️",
+                    "Take once every 2 days",
+                    "Buy 2 medicines for the price of 1"
+                ],
+                correct: 1
+            },
+            {
+                q: "9. How do you express an ongoing condition: 'I am currently taking medicine' (Grammar Pt 38)?",
+                options: [
+                    "くすり を のみました (Kusuri wo nomimashita - past)",
+                    "くすり を のんで います (Kusuri wo nonde imasu - ongoing state) ✔️",
+                    "くすり を のまないで ください (Kusuri wo nomanaide kudasai)",
+                    "くすり を のみたい です (Kusuri wo nomitai desu)"
+                ],
+                correct: 1
+            },
+            {
+                q: "10. What is the traditional caring phrase said to someone who is sick in Japan?",
+                options: [
+                    "おめでとう ございます (Omedetou gozaimasu)",
+                    "おだいじに (お大事に - Odaiji ni / Take care / Get well soon) ✔️",
+                    "いってきます (Ittekimasu)",
+                    "ただいま (Tadaima)"
+                ],
+                correct: 1
+            }
+        ];
+
+        function renderQuiz() {
+            const quizArea = document.getElementById('quiz-area');
+            let html = '';
+            quizQuestions.forEach((item, index) => {
+                html += `
+                    <div class="question-box" id="q-${index}">
+                        <div class="question-text"><span>${item.q}</span></div>
+                        <div class="options-grid">
+                            ${item.options.map((opt, optIndex) => `
+                                <button class="option-btn" onclick="checkAnswer(${index}, ${optIndex})">
+                                    <span>${opt}</span>
+                                    <span class="status-icon"></span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            quizArea.innerHTML = html;
+        }
+
+        let score = 0;
+        let answered = new Array(quizQuestions.length).fill(false);
+
+        function checkAnswer(qIndex, optIndex) {
+            if (answered[qIndex]) return;
+            answered[qIndex] = true;
+
+            const qBox = document.getElementById(`q-${qIndex}`);
+            const buttons = qBox.querySelectorAll('.option-btn');
+            const correctIndex = quizQuestions[qIndex].correct;
+
+            if (optIndex === correctIndex) {
+                buttons[optIndex].classList.add('correct');
+                buttons[optIndex].querySelector('.status-icon').innerText = '🎉 Correct!';
+                score++;
+                speakText('せいかい！');
+            } else {
+                buttons[optIndex].classList.add('wrong');
+                buttons[optIndex].querySelector('.status-icon').innerText = '❌ Incorrect';
+                buttons[correctIndex].classList.add('correct');
+                buttons[correctIndex].querySelector('.status-icon').innerText = '✔ Correct Answer';
+            }
+
+            if (answered.every(val => val === true)) {
+                const quizArea = document.getElementById('quiz-area');
+                const scoreDiv = document.createElement('div');
+                scoreDiv.className = 'quiz-score';
+                scoreDiv.innerHTML = `🏆 Chapter 11 Medical & Body Quiz Completed!<br><span style="font-size:2rem; color:#fff; display:block; margin:0.5rem 0;">Your Score: ${score} / ${quizQuestions.length}</span><span style="font-size:1rem; color:var(--text-main); font-weight:500;">Wonderful work! You can now confidently explain symptoms, talk to doctors, ask for sick leave, and understand prescriptions in Japanese!</span>`;
+                quizArea.appendChild(scoreDiv);
+            }
+        }
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        });
+    </script>
+<script src="nav.js"></script>
+</body>
+</html>

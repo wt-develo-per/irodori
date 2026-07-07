@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFT-Basic Mock Test 10: Comprehensive SSW Grand Finale (All Sectors & Disasters)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="jft_style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="brand">
+                <div class="brand-icon">🏆</div>
+                <div class="brand-text">
+                    <h1>JFT-Basic Mock Test 10 (Grand Finale)</h1>
+                    <p>Comprehensive SSW Capstone — All 14 Industry Sectors, Emergency Calls & Disaster Safety</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="ssw-badge" style="background:rgba(234,179,8,0.2); color:#facc15; border:1px solid #facc15;">🌟 Test 10 of 10 / CAPSTONE FINALE</div>
+                <button class="theme-btn" id="themeToggleBtn">☀️ Light Mode</button>
+                <a href="index.html" class="nav-btn" id="homeNavBtn">🏠 All Mock Tests Hub</a>
+            </div>
+        </header>
+
+        <!-- Home Introduction Box -->
+        <section class="hero-box" id="homeIntro" style="border: 1px solid rgba(234,179,8,0.4); box-shadow: 0 0 30px rgba(234,179,8,0.15);">
+            <div class="hero-content">
+                <h2 style="color: #facc15;">🏆 The Grand Finale: Comprehensive SSW Master Capstone</h2>
+                <p>Congratulations on reaching the final capstone test of the official **JFT-Basic (Japan Foundation Test for Basic Japanese)** 10-Test Master Suite! Test 10 contains **50 capstone CBT questions** synthesizing all 14 SSW industry sectors, emergency 119 calls, earthquake/fire evacuation ("O-Ka-Shi-Mo"), fire extinguisher PASS technique, salary slip tax deductions, Worker's Accident Compensation ("Rosai"), Horenso teamwork, AED defibrillator usage, and the SSW No. 2 visa permanent residency pathway!</p>
+                
+                <div class="exam-meta-grid">
+                    <div class="meta-card">
+                        <span class="meta-label">Total Questions</span>
+                        <span class="meta-value">50 CBT Items</span>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Exam Duration</span>
+                        <span class="meta-value">60 Minutes</span>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Official Scale</span>
+                        <span class="meta-value">250 Points Max</span>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Pass Threshold</span>
+                        <span class="meta-value">80% (200 / 250)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mode Selection Cards -->
+        <section id="modeSelection">
+            <h2 class="section-title">🚀 Select Practice Mode</h2>
+            <div class="mode-grid">
+                <div class="mode-card">
+                    <div>
+                        <div class="mode-icon">⏱️</div>
+                        <h3>Timed CBT Exam Simulation</h3>
+                        <p>Experience the exact test environment of the official Computer-Based Testing (CBT) exam under strict time limit.</p>
+                        <ul class="mode-features">
+                            <li>Full 50-question master test across all 4 sections</li>
+                            <li>60-minute countdown timer with low-time alert</li>
+                            <li>Flag questions for review before submitting</li>
+                            <li>Official 250-point SSW scale grading & scorecard</li>
+                        </ul>
+                    </div>
+                    <button class="start-btn" id="startExamBtn" style="background:linear-gradient(135deg, #facc15 0%, #ca8a04 100%); color:#000;">▶️ Start Timed Capstone Exam</button>
+                </div>
+
+                <div class="mode-card">
+                    <div>
+                        <div class="mode-icon">💡</div>
+                        <h3>Interactive Practice Mode</h3>
+                        <p>Study at your own pace with instant answer validation, detailed grammar notes, and vocabulary breakdowns.</p>
+                        <ul class="mode-features">
+                            <li>Immediate correct / incorrect answer feedback</li>
+                            <li>Detailed explanation box for every question</li>
+                            <li>Filter by individual section (Vocab, Kaiwa, Chokai, Dokkai)</li>
+                            <li>No countdown timer pressure — master every concept</li>
+                        </ul>
+                    </div>
+                    <button class="start-btn practice" id="startPracticeBtn">✍️ Start Practice & Explanations</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Filter Bar -->
+        <div class="section-filter-bar" id="sectionFilterBar" style="display:none;">
+            <button class="sec-tab-btn active" data-sec="all">🌐 All Sections (50)</button>
+            <button class="sec-tab-btn" data-sec="sec1">📝 1. Script & Vocabulary (13)</button>
+            <button class="sec-tab-btn" data-sec="sec2">💬 2. Conversation & Expression (12)</button>
+            <button class="sec-tab-btn" data-sec="sec3">🎧 3. Listening Comprehension (12)</button>
+            <button class="sec-tab-btn" data-sec="sec4">📖 4. Reading Comprehension (13)</button>
+        </div>
+
+        <!-- CBT Testing Arena -->
+        <main class="cbt-arena" id="cbtArena">
+            <div class="question-container">
+                <div class="q-header">
+                    <div>
+                        <span class="q-badge" id="qBadge">Question 1 of 50</span>
+                        <span class="q-sec-name" id="qSecName">1. Script and Vocabulary</span>
+                    </div>
+                    <button class="flag-btn" id="flagBtn">🏳️ Flag for Review</button>
+                </div>
+
+                <div class="q-body">
+                    <div class="q-prompt-jp" id="qPromptJp">Question prompt goes here...</div>
+                    <div class="q-prompt-en" id="qPromptEn">English translation goes here...</div>
+                    <div id="scenarioContainer"></div>
+                    <div class="options-list" id="optionsList"></div>
+                    <div class="explanation-box" id="explanationBox">
+                        <div class="exp-title" id="expTitle">✅ Correct!</div>
+                        <div class="exp-text" id="expText">Detailed explanation...</div>
+                    </div>
+                </div>
+
+                <div class="cbt-footer">
+                    <button class="nav-arrow-btn" id="prevBtn" disabled>⬅️ Previous Question</button>
+                    <button class="submit-exam-btn" id="submitExamBtn" style="background:linear-gradient(135deg, #facc15 0%, #ca8a04 100%); color:#000;">📥 Submit Capstone Exam</button>
+                    <button class="nav-arrow-btn" id="nextBtn">Next Question ➡️</button>
+                </div>
+            </div>
+
+            <aside class="cbt-sidebar">
+                <div class="timer-box">
+                    <span class="timer-label">⏳ Time Remaining</span>
+                    <span class="timer-display" id="timerDisplay">60:00</span>
+                </div>
+                <div class="sidebar-section-title">📊 Question Navigator</div>
+                <div class="q-grid-nav" id="qGridNav"></div>
+                <ul class="legend-list">
+                    <li><span class="legend-box" style="border: 1px solid var(--accent-blue);"></span> Current Question</li>
+                    <li><span class="legend-box" style="background: var(--accent-indigo);"></span> Answered</li>
+                    <li><span class="legend-box" style="background: var(--warning-color);"></span> Flagged for Review</li>
+                    <li><span class="legend-box" style="background: rgba(255,255,255,0.05);"></span> Unanswered</li>
+                </ul>
+            </aside>
+        </main>
+
+        <!-- Results Arena -->
+        <section class="results-arena" id="resultsArena">
+            <div class="score-banner" style="background:linear-gradient(135deg, rgba(234,179,8,0.2) 0%, rgba(16,185,129,0.2) 100%); border:1px solid #facc15;">
+                <div class="score-badge pass" id="scoreBadge" style="background:#facc15; color:#000;">🏆 MASTER CERTIFIED! YOU PASSED!</div>
+                <div class="score-num" id="scoreNum">220 / 250 (88%)</div>
+                <div class="score-sub" id="scoreSub">You correctly answered 44 out of 50 capstone questions across all sections.</div>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 8px;">📋 Section-by-Section Performance</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">Review your breakdown below to see your mastery across all SSW domains.</p>
+            <div class="section-scores-grid" id="sectionScoresGrid"></div>
+            <div class="results-actions">
+                <button class="restart-btn" id="restartBtn">🔄 Return to Test 10 Home</button>
+                <a href="index.html" class="restart-btn" style="background:linear-gradient(135deg, #facc15 0%, #10b981 100%); color:#000; text-decoration:none; display:flex; align-items:center;">🏠 Back to All 10 Tests Hub</a>
+            </div>
+        </section>
+    </div>
+    <script src="test10_data.js"></script>
+    <script src="jft_app.js"></script>
+</body>
+</html>

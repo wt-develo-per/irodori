@@ -1,0 +1,1627 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Ch 2: せいかつ のことば (Daily Life Words) - Interactive Learning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0c10;
+            --bg-secondary: #12161f;
+            --bg-tertiary: #1b2230;
+            --bg-card: rgba(27, 34, 48, 0.7);
+            --bg-glass: rgba(18, 22, 31, 0.85);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(56, 189, 248, 0.5);
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #ff4b72;
+            --accent-tertiary: #4ade80;
+            --accent-warning: #fbbf24;
+            --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff4b72 0%, #ff8f70 100%);
+            --gradient-tertiary: linear-gradient(135deg, #4ade80 0%, #2dd4bf 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(56, 189, 248, 0.25);
+            --font-main: 'Outfit', sans-serif;
+            --font-jp: 'Noto Sans JP', sans-serif;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f5f9;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-hover: rgba(2, 132, 199, 0.5);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #94a3b8;
+            --accent-primary: #0284c7;
+            --accent-secondary: #e11d48;
+            --accent-tertiary: #16a34a;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 20px rgba(2, 132, 199, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(255, 75, 114, 0.08) 0%, transparent 40%);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-badge {
+            background: var(--gradient-primary);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-glow);
+            letter-spacing: 1px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--text-main), var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-theme, .btn-audio-global {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme:hover, .btn-audio-global:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Welcome Banner */
+        .banner {
+            background: var(--gradient-primary);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .banner::after {
+            content: "せいかつ";
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-family: var(--font-jp);
+            font-size: 8rem;
+            font-weight: 900;
+            opacity: 0.12;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .banner h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .banner p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .banner-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tabs-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.75rem 1.4rem;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Tab Content Panels */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Flashcards Grid */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .jp-text {
+            font-family: var(--font-jp);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1.3;
+        }
+
+        .btn-audio {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-primary);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .card:hover .btn-audio {
+            background: var(--accent-primary);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .romaji-text {
+            font-size: 0.95rem;
+            color: var(--accent-secondary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .meaning-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 500;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--bg-tertiary);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-bottom-left-radius: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Interactive Tools Box */
+        .interactive-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .interactive-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .output-panel {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .output-jp {
+            font-family: var(--font-jp);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .output-romaji {
+            color: var(--accent-secondary);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .output-meaning {
+            color: var(--accent-tertiary);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+        }
+
+        .btn-action {
+            background: var(--gradient-secondary);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(255, 75, 114, 0.4);
+        }
+
+        /* Grammar & Phrase Cards */
+        .grammar-card {
+            background: var(--bg-secondary);
+            border-left: 5px solid var(--accent-primary);
+            border-radius: 0 20px 20px 0;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .grammar-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grammar-formula {
+            background: var(--bg-tertiary);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-family: var(--font-jp);
+            font-size: 1.25rem;
+            color: var(--accent-warning);
+            margin-bottom: 1.5rem;
+            border: 1px dashed var(--border-color);
+            display: inline-block;
+        }
+
+        .example-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .example-item {
+            background: var(--bg-primary);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .example-item:hover {
+            border-color: var(--accent-primary);
+        }
+
+        /* Numbers Grid */
+        .num-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .num-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .num-card:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-warning);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .num-digit {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent-warning);
+        }
+
+        .num-jp {
+            font-family: var(--font-jp);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0.2rem 0;
+        }
+
+        .num-romaji {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Kanji Section Grid */
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kanji-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kanji-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-secondary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .kanji-top {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .kanji-char {
+            font-family: var(--font-jp);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-secondary);
+            line-height: 1;
+            background: var(--bg-tertiary);
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .kanji-info h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        .kanji-readings {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .kanji-readings span {
+            color: var(--accent-warning);
+            font-weight: 600;
+        }
+
+        .kanji-example {
+            background: var(--bg-primary);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .kanji-example:hover {
+            border-color: var(--accent-tertiary);
+        }
+
+        /* Quiz Module */
+        .quiz-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .question-box {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .option-btn {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent-primary);
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        .option-btn.correct {
+            background: rgba(74, 222, 128, 0.2);
+            border-color: var(--accent-tertiary);
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            background: rgba(255, 75, 114, 0.2);
+            border-color: var(--accent-secondary);
+            color: #fff;
+        }
+
+        .quiz-score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 2rem;
+            color: var(--accent-tertiary);
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            border: 2px solid var(--accent-tertiary);
+        }
+
+        /* Verbatim Text Reference Box */
+        .verbatim-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 2rem;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #e6edf3;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .verbatim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .badge-100 {
+            background: #238636;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner h2 { font-size: 1.8rem; }
+            .grid-cards, .kanji-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 1rem; }
+            .tabs-nav { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">第 2 課</div>
+            <div class="logo-text">
+                <h1>Irodori (いろどり) Elementary 1</h1>
+                <p>Chapter 2: せいかつ のことば (Seikatsu no Kotoba) - Daily Life Words</p>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button class="btn-audio-global" onclick="speakText('いまなんじですか。ごごさんじはんです。')">
+                <span>🔊</span> Speak Sample
+            </button>
+            <button class="btn-theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> Theme
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Welcome Banner -->
+        <div class="banner">
+            <h2>せいかつ のことば (Seikatsu no Kotoba)</h2>
+            <p>Master daily life essentials in Japanese! Learn numbers from 11 to 100, telling exact time (hours and minutes), phone numbers, days of the week, useful daily time words, and fundamental Kanji symbols.</p>
+            <div class="banner-tags">
+                <div class="tag">🎯 Goal: Numbers, time, phone number, daily life words</div>
+                <div class="tag">📚 JLPT N5 Level</div>
+                <div class="tag">⚡ 100% Verbatim Complete Content</div>
+                <div class="tag">🈹 Kanji Mastery & 10-Q Quiz Included</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('numbers')">
+                <span>🔢</span> Numbers & Phone Reader
+            </button>
+            <button class="tab-btn" onclick="switchTab('time')">
+                <span>⏰</span> Time & Schedules
+            </button>
+            <button class="tab-btn" onclick="switchTab('days')">
+                <span>📅</span> Days & Daily Words
+            </button>
+            <button class="tab-btn" onclick="switchTab('kanji')">
+                <span>🈹</span> Kanji Mastery
+            </button>
+            <button class="tab-btn" onclick="switchTab('quiz')">
+                <span>🎮</span> Practice Quiz (10 Qs)
+            </button>
+            <button class="tab-btn" onclick="switchTab('verbatim')">
+                <span>📖</span> Verbatim Original Text (100% Complete)
+            </button>
+        </div>
+
+        <!-- TAB 1: Numbers & Phone Reader -->
+        <div id="tab-numbers" class="tab-content active">
+            <!-- Interactive Phone Number Reader -->
+            <div class="interactive-box">
+                <h4>📱 Interactive Phone Number Reader</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">In Japanese, phone numbers are spoken digit-by-digit. The hyphen (-) is spoken as <strong style="color:var(--accent-warning);">の (no)</strong> and 0 is <strong style="color:var(--accent-warning);">ゼロ (zero) / れい (rei)</strong>. Type a phone number below to hear it!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="phone-input">Enter Phone Number (e.g. 090-1234-5678)</label>
+                        <input type="text" id="phone-input" value="090-1234-5678" placeholder="090-xxxx-xxxx">
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="phone-jp">ゼロ きゅう ゼロ の いち に さん よん の ご ろく なな はち</div>
+                    <div class="output-romaji" id="phone-romaji">Zero kyuu zero no ichi ni san yon no go roku nana hachi</div>
+                    <div class="output-meaning">Phrase: でんわばんごう は なんばん ですか？ (Phone number kya hai?) → 090-1234-5678 です。</div>
+                    <button class="btn-action" onclick="speakPhoneNumber()">🔊 Read My Phone Number</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h3>Numbers 11 to 100 (すうじ / Suuji)</h3>
+                <p>Pattern: Tens digit + <strong style="color:var(--accent-warning);">じゅう (juu)</strong> + Ones digit. Click any number to hear pronunciation!</p>
+            </div>
+
+            <div class="num-grid">
+                <div class="num-card" onclick="speakText('じゅういち')"><div class="num-digit">11</div><div class="num-jp">じゅういち</div><div class="num-romaji">Juu-ichi</div></div>
+                <div class="num-card" onclick="speakText('じゅうに')"><div class="num-digit">12</div><div class="num-jp">じゅうに</div><div class="num-romaji">Juu-ni</div></div>
+                <div class="num-card" onclick="speakText('じゅうさん')"><div class="num-digit">13</div><div class="num-jp">じゅうさん</div><div class="num-romaji">Juu-san</div></div>
+                <div class="num-card" onclick="speakText('じゅうよん')"><div class="num-digit">14</div><div class="num-jp">じゅうよん</div><div class="num-romaji">Juu-yon</div></div>
+                <div class="num-card" onclick="speakText('じゅうご')"><div class="num-digit">15</div><div class="num-jp">じゅうご</div><div class="num-romaji">Juu-go</div></div>
+                <div class="num-card" onclick="speakText('じゅうろく')"><div class="num-digit">16</div><div class="num-jp">じゅうろく</div><div class="num-romaji">Juu-roku</div></div>
+                <div class="num-card" onclick="speakText('じゅうなな')"><div class="num-digit">17</div><div class="num-jp">じゅうなな</div><div class="num-romaji">Juu-nana</div></div>
+                <div class="num-card" onclick="speakText('じゅうはち')"><div class="num-digit">18</div><div class="num-jp">じゅうはち</div><div class="num-romaji">Juu-hachi</div></div>
+                <div class="num-card" onclick="speakText('じゅうきゅう')"><div class="num-digit">19</div><div class="num-jp">じゅうきゅう</div><div class="num-romaji">Juu-kyuu</div></div>
+                <div class="num-card" onclick="speakText('にじゅう')"><div class="num-digit">20</div><div class="num-jp">にじゅう</div><div class="num-romaji">Ni-juu</div></div>
+                <div class="num-card" style="border-color:var(--accent-secondary);" onclick="speakText('にじゅうご')"><div class="num-digit">25</div><div class="num-jp">にじゅうご</div><div class="num-romaji">Ni-juu-go (20+5)</div></div>
+                <div class="num-card" onclick="speakText('さんじゅう')"><div class="num-digit">30</div><div class="num-jp">さんじゅう</div><div class="num-romaji">San-juu</div></div>
+                <div class="num-card" onclick="speakText('よんじゅう')"><div class="num-digit">40</div><div class="num-jp">よんじゅう</div><div class="num-romaji">Yon-juu</div></div>
+                <div class="num-card" style="border-color:var(--accent-secondary);" onclick="speakText('よんじゅうはち')"><div class="num-digit">48</div><div class="num-jp">よんじゅうはち</div><div class="num-romaji">Yon-juu-hachi (40+8)</div></div>
+                <div class="num-card" onclick="speakText('ごじゅう')"><div class="num-digit">50</div><div class="num-jp">ごじゅう</div><div class="num-romaji">Go-juu</div></div>
+                <div class="num-card" onclick="speakText('ろくじゅう')"><div class="num-digit">60</div><div class="num-jp">ろくじゅう</div><div class="num-romaji">Roku-juu</div></div>
+                <div class="num-card" onclick="speakText('ななじゅう')"><div class="num-digit">70</div><div class="num-jp">ななじゅう</div><div class="num-romaji">Nana-juu</div></div>
+                <div class="num-card" onclick="speakText('はちじゅう')"><div class="num-digit">80</div><div class="num-jp">はちじゅう</div><div class="num-romaji">Hachi-juu</div></div>
+                <div class="num-card" onclick="speakText('きゅうじゅう')"><div class="num-digit">90</div><div class="num-jp">きゅうじゅう</div><div class="num-romaji">Kyuu-juu</div></div>
+                <div class="num-card" style="background:var(--gradient-primary); color:#fff;" onclick="speakText('ひゃく')"><div class="num-digit" style="color:#fff;">100</div><div class="num-jp">ひゃく</div><div class="num-romaji">Hyaku</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 2: Time & Schedules -->
+        <div id="tab-time" class="tab-content">
+            <!-- Interactive Time Simulator -->
+            <div class="interactive-box">
+                <h4>⏰ Interactive Time & Clock Simulator</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pick an hour, minute, and AM/PM to see the exact Japanese expression and hear it spoken!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="time-ampm">AM / PM</label>
+                        <select id="time-ampm">
+                            <option value="ごぜん|Gozen|Subah / AM">ごぜん (午前 - AM / Subah)</option>
+                            <option value="ごご|Gogo|Dopahar baad / PM">ごご (午後 - PM / Dopahar baad)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="time-hour">Hour (_____ じ / ji)</label>
+                        <select id="time-hour">
+                            <option value="いちじ|Ichi-ji|1:00">1:00 (いちじ - Ichi-ji)</option>
+                            <option value="にじ|Ni-ji|2:00">2:00 (にじ - Ni-ji)</option>
+                            <option value="さんじ|San-ji|3:00">3:00 (さんじ - San-ji)</option>
+                            <option value="よじ|Yo-ji|4:00 (⚠️ Yo-ji)">4:00 (よじ - Yo-ji ⚠️ yonji nahi)</option>
+                            <option value="ごじ|Go-ji|5:00">5:00 (ごじ - Go-ji)</option>
+                            <option value="ろくじ|Roku-ji|6:00">6:00 (ろくじ - Roku-ji)</option>
+                            <option value="しちじ|Shichi-ji|7:00 (⚠️ Shichi-ji)">7:00 (しちじ - Shichi-ji)</option>
+                            <option value="はちじ|Hachi-ji|8:00" selected>8:00 (はちじ - Hachi-ji)</option>
+                            <option value="くじ|Ku-ji|9:00 (⚠️ Ku-ji)">9:00 (くじ - Ku-ji ⚠️ kyuuji nahi)</option>
+                            <option value="じゅうじ|Juu-ji|10:00">10:00 (じゅうじ - Juu-ji)</option>
+                            <option value="じゅういちじ|Juu-ichi-ji|11:00">11:00 (じゅういちじ - Juu-ichi-ji)</option>
+                            <option value="じゅうにじ|Juu-ni-ji|12:00">12:00 (じゅうにじ - Juu-ni-ji)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="time-minute">Minutes (_____ ふん/ぷん / fun/pun)</label>
+                        <select id="time-minute">
+                            <option value="" selected>00 min (Exact O'clock)</option>
+                            <option value="いっぷん|Ippun|1 min">01 min (いっぷん - Ippun)</option>
+                            <option value="ごふん|Go-fun|5 min">05 min (ごふん - Go-fun)</option>
+                            <option value="じゅっぷん|Juppun|10 min">10 min (じゅっぷん - Juppun)</option>
+                            <option value="じゅうごふん|Juu-go-fun|15 min">15 min (じゅうごふん - Juu-go-fun)</option>
+                            <option value="さんじゅっぷん (はん)|Sanjuppun / Han (Half)|30 min">30 min / Half (はん - Han)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="time-jp">ごぜん はちじ です。</div>
+                    <div class="output-romaji" id="time-romaji">Gozen Hachi-ji desu.</div>
+                    <div class="output-meaning" id="time-meaning">Matlab: Subah ke 8:00 baje hain.</div>
+                    <button class="btn-action" onclick="speakSelectedTime()">🔊 Speak This Time</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h3>Time Rules & Special Pronunciations</h3>
+                <p>Pay close attention to the special irregular hours and minutes!</p>
+            </div>
+
+            <div class="grid-cards">
+                <div class="card" style="border-color:var(--accent-secondary);" onclick="speakText('よじ')">
+                    <span class="card-tag" style="background:var(--accent-secondary); color:#fff;">⚠️ Special Hour</span>
+                    <div class="card-top"><div class="jp-text">4:00 = よじ (Yo-ji)</div><button class="btn-audio">🔊</button></div>
+                    <div class="romaji-text">⚠️ yonji ya shiji NAHI bolna! Only Yo-ji!</div>
+                    <div class="meaning-text">4 O'clock</div>
+                </div>
+                <div class="card" style="border-color:var(--accent-secondary);" onclick="speakText('しちじ')">
+                    <span class="card-tag" style="background:var(--accent-secondary); color:#fff;">⚠️ Special Hour</span>
+                    <div class="card-top"><div class="jp-text">7:00 = しちじ (Shichi-ji)</div><button class="btn-audio">🔊</button></div>
+                    <div class="romaji-text">Shichi-ji (not nanaji)</div>
+                    <div class="meaning-text">7 O'clock</div>
+                </div>
+                <div class="card" style="border-color:var(--accent-secondary);" onclick="speakText('くじ')">
+                    <span class="card-tag" style="background:var(--accent-secondary); color:#fff;">⚠️ Special Hour</span>
+                    <div class="card-top"><div class="jp-text">9:00 = くじ (Ku-ji)</div><button class="btn-audio">🔊</button></div>
+                    <div class="romaji-text">⚠️ kyuuji NAHI bolna! Only Ku-ji!</div>
+                    <div class="meaning-text">9 O'clock</div>
+                </div>
+                <div class="card" onclick="speakText('いっぷん')">
+                    <span class="card-tag">Minute Rule</span>
+                    <div class="card-top"><div class="jp-text">1 min = いっぷん (Ippun)</div><button class="btn-audio">🔊</button></div>
+                    <div class="romaji-text">3 min = さんぷん (Sanpun) • 4 min = よんぷん (Yonpun)</div>
+                    <div class="meaning-text">Notice 'pun' (ぷん) sound instead of 'fun'</div>
+                </div>
+                <div class="card" onclick="speakText('じゅっぷん')">
+                    <span class="card-tag">Minute Rule</span>
+                    <div class="card-top"><div class="jp-text">10 min = じゅっぷん (Juppun)</div><button class="btn-audio">🔊</button></div>
+                    <div class="romaji-text">6 min = ろっぷん (Roppun) • 8 min = はっぷん (Happun)</div>
+                    <div class="meaning-text">Double consonant (small tsu ッ)</div>
+                </div>
+                <div class="card" style="border-color:var(--accent-tertiary);" onclick="speakText('さんじはん')">
+                    <span class="card-tag" style="background:var(--accent-tertiary); color:#000;">Half Hour</span>
+                    <div class="card-top"><div class="jp-text">_____ はん (Han) = Half</div><button class="btn-audio">🔊</button></div>
+                    <div class="romaji-text">3:30 = さんじ はん (Sanji han)</div>
+                    <div class="meaning-text">Aadha ghanta / 30 minutes</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h3>Time Related Phrases & Grammar</h3>
+                <p>Asking the time and explaining start and end times.</p>
+            </div>
+
+            <div class="grammar-card">
+                <div class="grammar-title">
+                    <span>From _____ To _____ (から / まで)</span>
+                    <span class="particle-badge">から (from)</span>
+                    <span class="particle-badge" style="background:var(--accent-tertiary);">まで (until)</span>
+                </div>
+                <div class="grammar-formula">[Start Time] から [End Time] まで です</div>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    • <strong style="color:var(--accent-primary);">から (kara)</strong> = se (from - start time)<br>
+                    • <strong style="color:var(--accent-tertiary);">まで (made)</strong> = tak (until / to - end time)<br>
+                    • <strong style="color:var(--text-main);">いま なんじ ですか？ (Ima nanji desu ka?)</strong> = Abhi kitne baje hain?
+                </p>
+                <div class="example-list">
+                    <div class="example-item" onclick="speakText('いまなんじですか。さんじです。')">
+                        <div>
+                            <div style="font-family:var(--font-jp); font-size:1.2rem; font-weight:700;">いま なんじ ですか？ → 3じ です。</div>
+                            <div style="font-size:0.9rem; color:var(--text-muted);">Ima nanji desu ka? → Sanji desu. (Abhi kitne baje hain? → 3 baje hain.)</div>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                    <div class="example-item" onclick="speakText('しごとはくじからごじまでです')">
+                        <div>
+                            <div style="font-family:var(--font-jp); font-size:1.2rem; font-weight:700;">しごと (仕事) は 9じ <span style="color:var(--accent-primary);">から</span> 5じ <span style="color:var(--accent-tertiary);">まで</span> です。</div>
+                            <div style="font-size:0.9rem; color:var(--text-muted);">Shigoto wa 9-ji kara 5-ji made desu. → Kaam 9 baje se 5 baje tak hai.</div>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Days & Daily Words -->
+        <div id="tab-days" class="tab-content">
+            <div class="section-header">
+                <h3>Days of the Week (ようび / Youbi)</h3>
+                <p>Every day of the week ends with <strong style="color:var(--accent-warning);">ようび (youbi)</strong>. Click any card to hear it!</p>
+            </div>
+
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('げつようび')"><span class="card-tag">Monday</span><div class="card-top"><div class="jp-text">げつようび (月曜日)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Getsu-youbi</div><div class="meaning-text">Monday (Somvaar) • Moon day</div></div>
+                <div class="card" onclick="speakText('かようび')"><span class="card-tag">Tuesday</span><div class="card-top"><div class="jp-text">かようび (火曜日)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ka-youbi</div><div class="meaning-text">Tuesday (Mangalvaar) • Fire day</div></div>
+                <div class="card" onclick="speakText('すいようび')"><span class="card-tag">Wednesday</span><div class="card-top"><div class="jp-text">すいようび (水曜日)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sui-youbi</div><div class="meaning-text">Wednesday (Budhvaar) • Water day</div></div>
+                <div class="card" onclick="speakText('もくようび')"><span class="card-tag">Thursday</span><div class="card-top"><div class="jp-text">もくようび (木曜日)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Moku-youbi</div><div class="meaning-text">Thursday (Guruvaar) • Tree/Wood day</div></div>
+                <div class="card" onclick="speakText('きんようび')"><span class="card-tag">Friday</span><div class="card-top"><div class="jp-text">きんようび (金曜日)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kin-youbi</div><div class="meaning-text">Friday (Shukravaar) • Gold/Money day</div></div>
+                <div class="card" onclick="speakText('どようび')"><span class="card-tag">Saturday</span><div class="card-top"><div class="jp-text">どようび (土曜日)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Do-youbi</div><div class="meaning-text">Saturday (Shanivaar) • Earth/Soil day</div></div>
+                <div class="card" style="border-color:var(--accent-secondary);" onclick="speakText('にちようび')"><span class="card-tag" style="background:var(--accent-secondary); color:#fff;">Sunday</span><div class="card-top"><div class="jp-text">にちようび (日曜日)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Nichi-youbi</div><div class="meaning-text">Sunday (Ravivaar) • Sun day</div></div>
+                <div class="card" style="background:var(--bg-tertiary);" onclick="speakText('きょうはなんようびですか')"><span class="card-tag">Question</span><div class="card-top"><div class="jp-text">きょう は なんようび ですか？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyou wa nan-youbi desu ka?</div><div class="meaning-text">Aaj kaunsa din hai? (What day is it today?)</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>Useful Daily Words (せいかつ のことば)</h3>
+                <p>Essential time-related vocabulary for daily conversation.</p>
+            </div>
+
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('きょう')"><div class="card-top"><div class="jp-text">きょう (今日)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyou</div><div class="meaning-text">Aaj (Today)</div></div>
+                <div class="card" onclick="speakText('あした')"><div class="card-top"><div class="jp-text">あした (明日)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ashita</div><div class="meaning-text">Kal - aane wala (Tomorrow)</div></div>
+                <div class="card" onclick="speakText('きのう')"><div class="card-top"><div class="jp-text">きのう (昨日)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kinou</div><div class="meaning-text">Kal - beeta hua (Yesterday)</div></div>
+                <div class="card" onclick="speakText('あさ')"><div class="card-top"><div class="jp-text">あさ (朝)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Asa</div><div class="meaning-text">Subah (Morning)</div></div>
+                <div class="card" onclick="speakText('ひる')"><div class="card-top"><div class="jp-text">ひる (昼)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hiru</div><div class="meaning-text">Dopahar (Afternoon / Daytime)</div></div>
+                <div class="card" onclick="speakText('よる')"><div class="card-top"><div class="jp-text">よる (夜)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Yoru</div><div class="meaning-text">Raat (Night)</div></div>
+                <div class="card" style="border-color:var(--accent-primary);" onclick="speakText('いま')"><div class="card-top"><div class="jp-text">いま (今)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ima</div><div class="meaning-text">Abhi (Now / Currently)</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 4: Kanji Mastery -->
+        <div id="tab-kanji" class="tab-content">
+            <div class="section-header">
+                <h3>🈹 Chapter 2 Kanji Mastery (漢字)</h3>
+                <p>Learn the 12 essential Kanji characters for days of the week, time, and daily life!</p>
+            </div>
+
+            <div class="kanji-grid">
+                <!-- Kanji 1: 月 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">月</div><div class="kanji-info"><h5>Moon / Month / Monday</h5><div class="kanji-readings">Kun: <span>つき (tsuki)</span><br>On: <span>ゲツ / ガツ (getsu / gatsu)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('げつようび')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">月曜日 (げつようび)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Getsu-youbi → Monday</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 2: 火 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">火</div><div class="kanji-info"><h5>Fire / Tuesday</h5><div class="kanji-readings">Kun: <span>ひ (hi)</span><br>On: <span>カ (ka)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('かようび')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">火曜日 (かようび)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ka-youbi → Tuesday</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 3: 水 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">水</div><div class="kanji-info"><h5>Water / Wednesday</h5><div class="kanji-readings">Kun: <span>みず (mizu)</span><br>On: <span>スイ (sui)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('すいようび')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">水曜日 (すいようび)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Sui-youbi → Wednesday</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 4: 木 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">木</div><div class="kanji-info"><h5>Tree / Wood / Thursday</h5><div class="kanji-readings">Kun: <span>き (ki)</span><br>On: <span>モク / ボク (moku / boku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('もくようび')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">木曜日 (もくようび)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Moku-youbi → Thursday</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 5: 金 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">金</div><div class="kanji-info"><h5>Gold / Money / Friday</h5><div class="kanji-readings">Kun: <span>かね (kane)</span><br>On: <span>キン / コン (kin / kon)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('きんようび')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">金曜日 (きんようび)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kin-youbi → Friday</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 6: 土 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">土</div><div class="kanji-info"><h5>Earth / Soil / Saturday</h5><div class="kanji-readings">Kun: <span>つち (tsuchi)</span><br>On: <span>ド / ト (do / to)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('どようび')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">土曜日 (どようび)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Do-youbi → Saturday</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 7: 曜 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">曜</div><div class="kanji-info"><h5>Day of the week</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ヨウ (you)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('なんようびですか')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">何曜日 (なんようび)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Nan-youbi → What day of week?</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 8: 百 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">百</div><div class="kanji-info"><h5>Hundred (Number 100)</h5><div class="kanji-readings">Kun: <span>--</span><br>On: <span>ヒャク / ビャク (hyaku / byaku)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('ひゃく')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">百 (ひゃく)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Hyaku → 100</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 9: 半 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">半</div><div class="kanji-info"><h5>Half (30 mins / Aadha)</h5><div class="kanji-readings">Kun: <span>なか・ば (nakaba)</span><br>On: <span>ハン (han)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('さんじはん')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">三時半 (さんじはん)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Sanji han → 3:30 (Half past 3)</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 10: 今 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">今</div><div class="kanji-info"><h5>Now / Current / Today</h5><div class="kanji-readings">Kun: <span>いま (ima)</span><br>On: <span>コン / キン (kon / kin)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('いまなんじですか')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">今 (いま) / 今日 (きょう)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Ima → Now / Kyou → Today</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 11: 朝 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">朝</div><div class="kanji-info"><h5>Morning (Subah)</h5><div class="kanji-readings">Kun: <span>あさ (asa)</span><br>On: <span>チョウ (chou)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('あさ')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">朝 (あさ)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Asa → Morning</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+
+                <!-- Kanji 12: 夜 -->
+                <div class="kanji-card">
+                    <div class="kanji-top"><div class="kanji-char">夜</div><div class="kanji-info"><h5>Night / Evening (Raat)</h5><div class="kanji-readings">Kun: <span>よる / よ (yoru / yo)</span><br>On: <span>ヤ (ya)</span></div></div></div>
+                    <div class="kanji-example" onclick="speakText('よる')"><div><span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">夜 (よる)</span><span style="font-size:0.85rem; color:var(--text-muted); display:block;">Yoru → Night</span></div><button class="btn-audio">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: Practice Quiz (10 Questions) -->
+        <div id="tab-quiz" class="tab-content">
+            <div class="quiz-container">
+                <div class="section-header" style="text-align: center;">
+                    <h3>🎯 Chapter 2 Mastery Quiz (10 Questions)</h3>
+                    <p>Test your knowledge of numbers 11-100, time telling, phone numbers, days of the week, and Kanji!</p>
+                </div>
+
+                <div id="quiz-area">
+                    <!-- Quiz dynamically rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Verbatim Original Text (100% Complete) -->
+        <div id="tab-verbatim" class="tab-content">
+            <div class="verbatim-box">
+                <div class="verbatim-header">
+                    <span style="font-weight: 700; color: #38bdf8;">📄 Original irodori.txt Content (Lines 115 to 261 - Chapter 2 Complete)</span>
+                    <span class="badge-100">✔ 100% Zero Character Loss Guarantee</span>
+                </div>
+                <pre>---
+
+# 📘 Chapter 2: せいかつ のことば (Seikatsu no Kotoba) - Daily Life Words
+
+## 🎯 Goal: Numbers, time, phone number, daily life ke basic words
+
+---
+
+### **Numbers 11-100:**
+
+| Number | Japanese | Reading |
+|---|---|---|
+| 11 | じゅういち | Juu-ichi |
+| 12 | じゅうに | Juu-ni |
+| 13 | じゅうさん | Juu-san |
+| 14 | じゅうよん | Juu-yon |
+| 15 | じゅうご | Juu-go |
+| 16 | じゅうろく | Juu-roku |
+| 17 | じゅうなな | Juu-nana |
+| 18 | じゅうはち | Juu-hachi |
+| 19 | じゅうきゅう | Juu-kyuu |
+| 20 | にじゅう | Ni-juu |
+| 30 | さんじゅう | San-juu |
+| 40 | よんじゅう | Yon-juu |
+| 50 | ごじゅう | Go-juu |
+| 60 | ろくじゅう | Roku-juu |
+| 70 | ななじゅう | Nana-juu |
+| 80 | はちじゅう | Hachi-juu |
+| 90 | きゅうじゅう | Kyuu-juu |
+| 100 | ひゃく | Hyaku |
+
+**Pattern:** Tens digit + じゅう + Ones digit
+- 25 = にじゅうご (ni-juu-go)
+- 48 = よんじゅうはち (yon-juu-hachi)
+
+---
+
+### **Time (じかん / Jikan):**
+
+**_____ じ (ji) = _____ baje**
+
+| Time | Japanese | Reading |
+|---|---|---|
+| 1:00 | いちじ | Ichi-ji |
+| 2:00 | にじ | Ni-ji |
+| 3:00 | さんじ | San-ji |
+| 4:00 | よじ | **Yo-ji** (⚠️ yonji nahi) |
+| 5:00 | ごじ | Go-ji |
+| 6:00 | ろくじ | Roku-ji |
+| 7:00 | しちじ | **Shichi-ji** |
+| 8:00 | はちじ | Hachi-ji |
+| 9:00 | くじ | **Ku-ji** (⚠️ kyuuji nahi) |
+| 10:00 | じゅうじ | Juu-ji |
+| 11:00 | じゅういちじ | Juu-ichi-ji |
+| 12:00 | じゅうにじ | Juu-ni-ji |
+
+**Minutes = _____ ふん/ぷん (fun/pun)**
+
+| Minutes | Japanese | Reading |
+|---|---|---|
+| 1 min | いっぷん | **Ippun** |
+| 2 min | にふん | Ni-fun |
+| 3 min | さんぷん | **Sanpun** |
+| 4 min | よんぷん | **Yonpun** |
+| 5 min | ごふん | Go-fun |
+| 6 min | ろっぷん | **Roppun** |
+| 7 min | ななふん | Nana-fun |
+| 8 min | はっぷん | **Happun** |
+| 9 min | きゅうふん | Kyuu-fun |
+| 10 min | じゅっぷん | **Juppun** |
+| 15 min | じゅうごふん | Juu-go-fun |
+| 30 min | さんじゅっぷん / はん | Sanjuppun / **Han** |
+
+⚠️ **はん (han) = half / aadha** → 3:30 = さんじ はん (sanji han)
+
+**AM/PM:**
+- ごぜん (午前 - gozen) = AM / subah
+- ごご (午後 - gogo) = PM / dopahar baad
+
+**Example:**
+- ごぜん 8じ = Subah 8 baje
+- ごご 3じ 30ぷん = Dopahar 3:30 baje
+
+---
+
+### **Time Related Phrases:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| いま なんじ ですか？ | Ima nanji desu ka? | Abhi kitne baje hain? |
+| _____ じ です | _____ ji desu | _____ baje hain |
+| なんじ から ですか？ | Nanji kara desu ka? | Kitne baje se hai? |
+| なんじ まで ですか？ | Nanji made desu ka? | Kitne baje tak hai? |
+| _____ から _____ まで | _____ kara _____ made | _____ se _____ tak |
+
+**Example:**
+- しごと (仕事 - shigoto) は 9じ から 5じ まで です。
+- Kaam 9 baje se 5 baje tak hai.
+
+---
+
+### **Phone Number (でんわばんごう / Denwa Bangou):**
+
+Phone number bolte waqt har digit alag alag bolte hain.
+
+**Special readings in phone numbers:**
+- 0 = ゼロ (zero) ya れい (rei)
+- Hyphen = の (no)
+
+**Example:**
+- 090-1234-5678 = ゼロ きゅう ゼロ の いち に さん よん の ご ろく なな はち
+
+**Phrase:**
+- でんわばんごう は なんばん ですか？ = Phone number kya hai?
+- (でんわばんごう は) 090-xxxx-xxxx です。
+
+---
+
+### **Days of the Week (ようび / Youbi):**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| げつようび (月曜日) | Getsu-youbi | Monday |
+| かようび (火曜日) | Ka-youbi | Tuesday |
+| すいようび (水曜日) | Sui-youbi | Wednesday |
+| もくようび (木曜日) | Moku-youbi | Thursday |
+| きんようび (金曜日) | Kin-youbi | Friday |
+| どようび (土曜日) | Do-youbi | Saturday |
+| にちようび (日曜日) | Nichi-youbi | Sunday |
+
+**Question:** きょう は なんようび ですか？ (Kyou wa nan-youbi desu ka?) = Aaj kaunsa din hai?
+
+---
+
+### **Useful Daily Words:**
+
+| Japanese | Reading | Meaning |
+|---|---|---|
+| きょう (今日) | Kyou | Aaj |
+| あした (明日) | Ashita | Kal (aane wala) |
+| きのう (昨日) | Kinou | Kal (beeta hua) |
+| あさ (朝) | Asa | Subah |
+| ひる (昼) | Hiru | Dopahar |
+| よる (夜) | Yoru | Raat |
+| いま (今) | Ima | Abhi |
+
+---</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>🎌 Built with precision for Irodori Elementary 1 Course • Chapter 2 Complete Interactive Learning Module</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">100% Content Preservation Guaranteed • Developed for Hindi & Roman Urdu Learners</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.innerText = '☀️';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerText = '🌙';
+            }
+        }
+
+        // Web Speech API - Japanese TTS
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Speech synthesis is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.95;
+            
+            const voices = window.speechSynthesis.getVoices();
+            const jpVoice = voices.find(v => v.lang.includes('ja') || v.lang.includes('JP'));
+            if (jpVoice) utterance.voice = jpVoice;
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Phone Number Generator Logic
+        const phoneInput = document.getElementById('phone-input');
+        
+        function updatePhoneReader() {
+            const val = phoneInput.value.trim() || '090-1234-5678';
+            const charMap = {
+                '0': 'ゼロ (zero) ',
+                '1': 'いち (ichi) ',
+                '2': 'に (ni) ',
+                '3': 'さん (san) ',
+                '4': 'よん (yon) ',
+                '5': 'ご (go) ',
+                '6': 'ろく (roku) ',
+                '7': 'なな (nana) ',
+                '8': 'はち (hachi) ',
+                '9': 'きゅう (kyuu) ',
+                '-': '<strong style="color:var(--accent-warning);">の (no)</strong> ',
+                ' ': ' '
+            };
+            
+            const romajiMap = {
+                '0': 'zero ', '1': 'ichi ', '2': 'ni ', '3': 'san ', '4': 'yon ',
+                '5': 'go ', '6': 'roku ', '7': 'nana ', '8': 'hachi ', '9': 'kyuu ', '-': 'no '
+            };
+
+            let jpStr = '';
+            let romajiStr = '';
+            for (let c of val) {
+                jpStr += charMap[c] || c;
+                romajiStr += romajiMap[c] || c;
+            }
+
+            document.getElementById('phone-jp').innerHTML = jpStr;
+            document.getElementById('phone-romaji').innerHTML = romajiStr.trim();
+        }
+
+        phoneInput.addEventListener('input', updatePhoneReader);
+
+        function speakPhoneNumber() {
+            const val = phoneInput.value.trim() || '090-1234-5678';
+            const speakMap = {
+                '0': 'ゼロ、', '1': 'いち、', '2': 'に、', '3': 'さん、', '4': 'よん、',
+                '5': 'ご、', '6': 'ろく、', '7': 'なな、', '8': 'はち、', '9': 'きゅう、', '-': 'の、'
+            };
+            let toSpeak = '';
+            for (let c of val) {
+                toSpeak += speakMap[c] || c;
+            }
+            speakText(toSpeak);
+        }
+
+        // Time Simulator Logic
+        const timeAmPm = document.getElementById('time-ampm');
+        const timeHour = document.getElementById('time-hour');
+        const timeMin = document.getElementById('time-minute');
+
+        function updateTimeSimulator() {
+            const ampmVal = timeAmPm.value.split('|');
+            const hourVal = timeHour.value.split('|');
+            const minVal = timeMin.value ? timeMin.value.split('|') : ['', '', ''];
+
+            const jpKana = `${ampmVal[0]} ${hourVal[0]} ${minVal[0] ? minVal[0].split(' ')[0] : ''} です。`;
+            const romaji = `${ampmVal[1]} ${hourVal[1]} ${minVal[1] ? minVal[1].split(' ')[0] : ''} desu.`;
+            const meaning = `Matlab: ${ampmVal[2].split(' / ')[0]} ke ${hourVal[2].split(' ')[0]}${minVal[2] ? ':' + minVal[2].split(' ')[0] : ':00'} baje hain.`;
+
+            document.getElementById('time-jp').innerHTML = jpKana;
+            document.getElementById('time-romaji').innerHTML = romaji;
+            document.getElementById('time-meaning').innerHTML = meaning;
+        }
+
+        timeAmPm.addEventListener('change', updateTimeSimulator);
+        timeHour.addEventListener('change', updateTimeSimulator);
+        timeMin.addEventListener('change', updateTimeSimulator);
+
+        function speakSelectedTime() {
+            const ampmJp = timeAmPm.value.split('|')[0];
+            const hourJp = timeHour.value.split('|')[0];
+            const minJp = timeMin.value ? timeMin.value.split('|')[0].split(' ')[0] : '';
+            speakText(`${ampmJp}${hourJp}${minJp}です。`);
+        }
+
+        // Quiz Module Logic (10 Comprehensive Questions)
+        const quizQuestions = [
+            {
+                q: "1. What is the correct Japanese pronunciation for 4:00 (4 O'clock)?",
+                options: [
+                    "よんじ (Yon-ji)",
+                    "よじ (Yo-ji) ⚠️ Special",
+                    "しじ (Shi-ji)",
+                    "よんじかん (Yon-jikan)"
+                ],
+                correct: 1
+            },
+            {
+                q: "2. How do you say the number 48 in Japanese?",
+                options: [
+                    "よんじゅうはち (Yon-juu-hachi)",
+                    "はちじゅうよん (Hachi-juu-yon)",
+                    "よんはち (Yon-hachi)",
+                    "しじゅうはち (Shi-juu-hachi)"
+                ],
+                correct: 0
+            },
+            {
+                q: "3. When reading a phone number in Japanese, how is the hyphen (-) pronounced?",
+                options: [
+                    "から (kara)",
+                    "は (wa)",
+                    "の (no)",
+                    "に (ni)"
+                ],
+                correct: 2
+            },
+            {
+                q: "4. Which Japanese word means 'Monday'?",
+                options: [
+                    "かようび (Ka-youbi)",
+                    "きんようび (Kin-youbi)",
+                    "げつようび / 月曜日 (Getsu-youbi)",
+                    "にちようび (Nichi-youbi)"
+                ],
+                correct: 2
+            },
+            {
+                q: "5. What is the correct reading for 9:00 (9 O'clock)?",
+                options: [
+                    "きゅうじ (Kyuu-ji)",
+                    "くじ (Ku-ji) ⚠️ Special",
+                    "くふん (Ku-fun)",
+                    "きゅうじかん (Kyuu-jikan)"
+                ],
+                correct: 1
+            },
+            {
+                q: "6. How do you say 'Half past 3' (3:30) in Japanese?",
+                options: [
+                    "さんじ はん / 三時半 (Sanji han)",
+                    "さんじ ごご (Sanji gogo)",
+                    "さんじ ゼロ (Sanji zero)",
+                    "さんじ じゅっぷん (Sanji juppun)"
+                ],
+                correct: 0
+            },
+            {
+                q: "7. What does 'いま なんじ ですか？ (Ima nanji desu ka?)' mean?",
+                options: [
+                    "Aaj kaunsa din hai?",
+                    "Abhi kitne baje hain? (What time is it now?)",
+                    "Phone number kya hai?",
+                    "Kal kitne baje se hai?"
+                ],
+                correct: 1
+            },
+            {
+                q: "8. Which Kanji character represents 'Gold / Money / Friday'?",
+                options: [
+                    "月 (Getsu / Moon)",
+                    "火 (Ka / Fire)",
+                    "水 (Sui / Water)",
+                    "金 (Kin / Gold)"
+                ],
+                correct: 3
+            },
+            {
+                q: "9. What is the correct Japanese word for 'Tomorrow' (Kal - aane wala)?",
+                options: [
+                    "きのう (Kinou)",
+                    "きょう (Kyou)",
+                    "あした / 明日 (Ashita)",
+                    "いま (Ima)"
+                ],
+                correct: 2
+            },
+            {
+                q: "10. In the grammar pattern '9じ から 5じ まで', what do から (kara) and まで (made) mean?",
+                options: [
+                    "se (from) and tak (until/to)",
+                    "ko (to) and mein (in)",
+                    "aur (and) and bhi (also)",
+                    "hai (is) and tha (was)"
+                ],
+                correct: 0
+            }
+        ];
+
+        function renderQuiz() {
+            const quizArea = document.getElementById('quiz-area');
+            let html = '';
+            quizQuestions.forEach((item, index) => {
+                html += `
+                    <div class="question-box" id="q-${index}">
+                        <div class="question-text"><span>${item.q}</span></div>
+                        <div class="options-grid">
+                            ${item.options.map((opt, optIndex) => `
+                                <button class="option-btn" onclick="checkAnswer(${index}, ${optIndex})">
+                                    <span>${opt}</span>
+                                    <span class="status-icon"></span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            quizArea.innerHTML = html;
+        }
+
+        let score = 0;
+        let answered = new Array(quizQuestions.length).fill(false);
+
+        function checkAnswer(qIndex, optIndex) {
+            if (answered[qIndex]) return;
+            answered[qIndex] = true;
+
+            const qBox = document.getElementById(`q-${qIndex}`);
+            const buttons = qBox.querySelectorAll('.option-btn');
+            const correctIndex = quizQuestions[qIndex].correct;
+
+            if (optIndex === correctIndex) {
+                buttons[optIndex].classList.add('correct');
+                buttons[optIndex].querySelector('.status-icon').innerText = '🎉 Correct!';
+                score++;
+                speakText('せいかい！');
+            } else {
+                buttons[optIndex].classList.add('wrong');
+                buttons[optIndex].querySelector('.status-icon').innerText = '❌ Incorrect';
+                buttons[correctIndex].classList.add('correct');
+                buttons[correctIndex].querySelector('.status-icon').innerText = '✔ Correct Answer';
+            }
+
+            if (answered.every(val => val === true)) {
+                const quizArea = document.getElementById('quiz-area');
+                const scoreDiv = document.createElement('div');
+                scoreDiv.className = 'quiz-score';
+                scoreDiv.innerHTML = `🏆 10-Question Mastery Quiz Completed!<br><span style="font-size:2rem; color:#fff; display:block; margin:0.5rem 0;">Your Score: ${score} / ${quizQuestions.length}</span><span style="font-size:1rem; color:var(--text-main); font-weight:500;">Fantastic work! You have mastered Chapter 2 Numbers, Time, Phone Numbers, Days of the Week, and Kanji!</span>`;
+                quizArea.appendChild(scoreDiv);
+            }
+        }
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        });
+    </script>
+<script src="nav.js"></script>
+</body>
+</html>

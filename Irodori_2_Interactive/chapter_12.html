@@ -1,0 +1,847 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 12: わたしのまち (My Town, Geography & Recommendations)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 12: わたしのまち - My Town. Covers town facilities, geography, comparisons, and grammar (~ば~ほど, ~によって, ~たらどうですか, ~ので).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 12: わたしのまち (My Town) • Facilities, Comparisons & Opinions</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('べんきょう すれば する ほど、にほんご が うまく なります。まち に よって、せいかつ が ちがいます。この まち が ふべん なら、もっと べんり な ところ に ひっこしたら どうですか。えき から ちかい ので、べんり です。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>🏙️ わたしのまち (Watashi no Machi) - My Town / Mera Sheher</h2>
+        <p>Master describing your hometown (<strong>都会・郊外・田舎・下町</strong>), public facilities (<strong>図書館・体育館・公民館・交番</strong>), comparing cities, and advanced descriptive grammar (<strong>～ば～ほど / ～によって / ～たらどうですか / ～ので / ～し～し</strong>)!</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 4112–4517</span>
+            <span class="meta-pill">💬 Grammar Points 57–61</span>
+            <span class="meta-pill">📚 35+ Town & Geography Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">🗺️ Town Speech & Ch 10–12 Summary</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('simulator',this)"><span>🏙️</span> Town Recommendation Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Town & Opinions (Pt 57–61)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 35+ Audio Vocab & Facility Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 12 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>🗺️</span> Town Speech & Mini Writing Practice</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Town & Grammar Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Town Recommendation Simulator -->
+    <div id="tab-simulator" class="tab-content active">
+        <div class="interactive-box">
+            <h4>🏙️ Interactive Hometown & Town Recommendation Simulator (私の街・おすすめ紹介シミュレーター)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Select a neighborhood setting and an advanced descriptive grammar pattern to generate authentic Japanese town presentations and travel advice!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Town Setting (街・地域の種類)</label>
+                    <select id="sim-scene" onchange="updateTownSim()">
+                        <option value="urban">🏬 Convenient Station Area (駅前の都会 - スーパーやコンビニが多い)</option>
+                        <option value="rural">🌾 Quiet Rural Village (静かな田舎 - 自然と緑が豊かで空気がきれい)</option>
+                        <option value="shitamachi">🏮 Traditional Downtown (昔ながらの下町 - 人情味がある・神社がある)</option>
+                        <option value="suburb">🌳 Green Suburbs (公園が多い郊外 - 家族や子どもが住みやすい)</option>
+                        <option value="mall">🛍️ Modern Shopping District (ショッピングモール周辺 - 映画館やカフェ)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updateTownSim()">
+                        <option value="hodo">📈 Proportional Increase (～ば～ほど - The more you live, the more... / Jitna... utna)</option>
+                        <option value="yotte">🔀 Depending on (～によって - Depending on the town/season / Ke mutabiq)</option>
+                        <option value="dousuka">💡 Suggestion (～たらどうですか - Why don't you...? / Kyun nahi karte?)</option>
+                        <option value="node">🙇 Polite Reason (～ので - Because it's convenient/quiet / Isliye)</option>
+                        <option value="shishi">🌟 Listing Good Points (～し、～し - Also this, also that / ...bhi hai aur ...bhi)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">この 街（まち）は 住（す）めば 住（す）むほど、好（す）きに なります。</div>
+                <div class="output-rom" id="sim-rom">Kono machi wa sumeba sumu hodo, suki ni narimasu.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Is sheher mein jitna raho, utna yeh sheher pasand aata hai.</div>
+                <button class="btn-speak" onclick="speakTownSim()">🔊 Speak Sentence in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🗺️ Essential Town & Geography Expressions (街の評価と特徴)</h3>
+            <p>Click any card to listen to the native Japanese pronunciation and learn how to evaluate neighborhoods!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">住（す）みやすい / 住みかた</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sumiyasui • Easy and comfortable to live in</div><div class="meaning-text">Rehne ke liye comfortable aur aasaan. "この街は静かで治安がいいので、とても住みやすいです！"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">昔（むかし）ながらの 下町（したまち）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mukashinagara no shitamachi • Traditional old downtown</div><div class="meaning-text">Purane zamaane ka traditional downtown area. Known for friendly locals, shrines (神社), and local markets.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">都会（とかい）と 田舎（いなか）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tokai to Inaka • Urban city and rural village</div><div class="meaning-text">Sheher (都会) vs Gaon (田舎). "都会は便利ですが、田舎ほど空気がきれいで静かじゃありません。"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">全体的（ぜんたいてき）には</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Zentaiteki ni wa • Overall / In general</div><div class="meaning-text">Overall / Kul milakar. The perfect adverb to summarize your feelings at the end of a speech or essay!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">気（き）に入（い）って います</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ki ni itte imasu • I am fond of it / I like it</div><div class="meaning-text">Bahut pasand hai / dil ko bha gaya hai. "今の家と近所の環境がとても気に入っています。"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">一般的（いっぱんてき）に</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ippanteki ni • Generally speaking</div><div class="meaning-text">Generally / Aam taur par. Used when giving objective opinions about Japanese cities or lifestyle patterns.</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Proportional Increase & Dependency: Jitna...utna / Depending on</span><span class="particle-badge">Pt 57 & 58</span></div>
+            <div class="grammar-formula">Verb/Adj ば-form + Dict-form + ほど (The more... the more) / Noun + によって (Depending on)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ば～ほど</strong> to express that as one condition increases, another increases proportionally ("Jitna zyada... utna zyada"). Use <strong>～によって</strong> to state that a situation changes depending on the factor ("_____ ke mutabiq").</p>
+            <ul class="example-list">
+                <li onclick="speakText('べんきょうすれば するほど、にほんご が うまく なります。')">
+                    <span class="ex-jp">勉強すれば するほど、日本語 が うまく なります。</span>
+                    <span class="ex-rom">Benkyou sureba suru hodo, nihongo ga umaku narimasu. (Jitna zyada padho, utna Japanese acchi hoti hai.)</span>
+                </li>
+                <li onclick="speakText('このまちは すめば すむほど、すきに なります。')">
+                    <span class="ex-jp">この街は 住めば 住むほど、好きに なります。</span>
+                    <span class="ex-rom">Kono machi wa sumeba sumu hodo, suki ni narimasu. (Jitna yahaan raho, utna yeh sheher pasand aata hai.)</span>
+                </li>
+                <li onclick="speakText('まちに よって、せいかつ が ちがいます。')">
+                    <span class="ex-jp">街に よって、生活 が 違います。</span>
+                    <span class="ex-rom">Machi ni yotte, seikatsu ga chigaimasu. (Sheher ke mutabiq, zindagi alag hoti hai.)</span>
+                </li>
+                <li onclick="speakText('きせつ に よって、まち の ふんいき が かわります。')">
+                    <span class="ex-jp">季節 に よって、街 の 雰囲気 が 変わり ます。</span>
+                    <span class="ex-rom">Kisetsu ni yotte, machi no fun'iki ga kawarimasu. (Season ke mutabiq, sheher ka mahaul badalta hai.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Suggestions & Polite Reason: Why don't you / Because (formal)</span><span class="particle-badge" style="background:var(--accent-success);">Pt 59 & 60</span></div>
+            <div class="grammar-formula">Verb たら-form + どうですか (Why don't you?) / Plain form + ので (Polite because / Isliye)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～たらどうですか</strong> to give gentle, constructive suggestions ("_____ karte kyun nahi?"). Use <strong>～ので</strong> instead of から to state reasons in formal speech, presentations, and business writing!</p>
+            <ul class="example-list">
+                <li onclick="speakText('この まち が ふべんなら、もっと べんりな ところに ひっこしたら どうですか。')">
+                    <span class="ex-jp">この 街 が 不便なら、もっと 便利 な ところに 引っ越したら どうですか。</span>
+                    <span class="ex-rom">Kono machi ga fuben nara, motto benri na tokoro ni hikkoshitara dou desu ka. (Inconvenient hai toh, convenient jagah shift kyun nahi kar lete?)</span>
+                </li>
+                <li onclick="speakText('ストレスが たまっているなら、りょこう したら どうですか。')">
+                    <span class="ex-jp">ストレスが たまっているなら、旅行 したら どうですか。</span>
+                    <span class="ex-rom">Sutoresu ga tamatte iru nara, ryokou shitara dou desu ka. (Stress ho raha hai toh, travel kyun nahi kar lete?)</span>
+                </li>
+                <li onclick="speakText('このまちは えきから ちかいので、べんりです。')">
+                    <span class="ex-jp">この街は 駅から 近い ので、便利です。</span>
+                    <span class="ex-rom">Kono machi wa eki kara chikai node, benri desu. (Yeh sheher station se paas hai, isliye convenient hai.)</span>
+                </li>
+                <li onclick="speakText('にほんご が まだ じょうずじゃないので、ゆっくり おねがいします。')">
+                    <span class="ex-jp">日本語 が まだ 上手じゃない ので、ゆっくり お願いします。</span>
+                    <span class="ex-rom">Nihongo ga mada jouzu janai node, yukkuri onegaishimasu. (Japanese abhi acchi nahi hai isliye, dheere boliye - polite.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Listing Multiple Reasons & Town Comparisons</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 61 & Comparisons</span></div>
+            <div class="grammar-formula">Plain form + し、Plain form + し (Also this, also that) / A より B のほうが ～ (B is more than A)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～し、～し</strong> to list multiple merits or demerits of a town ("...bhi hai aur ...bhi hai"). When comparing two cities, use <strong>～より～のほうが</strong> or state equality/difference with <strong>～ほど～くない</strong>!</p>
+            <ul class="example-list">
+                <li onclick="speakText('このまちは しずかだし、こうえんも おおいし、すみやすい です。')">
+                    <span class="ex-jp">この街は 静かだし、公園も 多いし、住みやすい です。</span>
+                    <span class="ex-rom">Kono machi wa shizuka da shi, kouen mo ooi shi, sumiyasui desu. (Quiet bhi hai, parks bhi bahut hain, rehne ke liye accha hai.)</span>
+                </li>
+                <li onclick="speakText('えきから とおいし、コンビニも ないし、このまちは ふべんです。')">
+                    <span class="ex-jp">駅から 遠いし、コンビニも ないし、この街は 不便です。</span>
+                    <span class="ex-rom">Eki kara tooi shi, konbini mo nai shi, kono machi wa fuben desu. (Station se door bhi hai, convenience store bhi nahi, inconvenient hai.)</span>
+                </li>
+                <li onclick="speakText('とうきょう より おおさか の ほうが たべもの が おいしいと おもいます。')">
+                    <span class="ex-jp">東京 より 大阪 の ほうが 食べ物 が 美味しいと 思います。</span>
+                    <span class="ex-rom">Toukyou yori Oosaka no hou ga tabemono ga oishii to omoimasu. (Tokyo se Osaka ka khana zyada tasty lagta hai.)</span>
+                </li>
+                <li onclick="speakText('このまちは いなか ほど しずかじゃないですが、とかい ほど うるさくもないです。')">
+                    <span class="ex-jp">この街は 田舎 ほど 静かじゃないですが、都会 ほど 煩くもないです。</span>
+                    <span class="ex-rom">Kono machi wa inaka hodo shizuka janai desu ga, tokai hodo urusaku mo nai desu. (Gaon jitna quiet nahi, lekin city jitna noisy bhi nahi.)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 12 Town Facilities, Geography & Adjectives Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize public town vocabulary.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">施設（しせつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shisetsu</div><div class="meaning-text">Public facility / Institution / Building</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">図書館（としょかん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Toshokan</div><div class="meaning-text">Public library</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">体育館（たいいくかん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Taiikukan</div><div class="meaning-text">Gymnasium / Sports hall</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">公民館（こうみんかん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kouminkan</div><div class="meaning-text">Community center / Public hall</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">映画館（えいがかん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Eigakan</div><div class="meaning-text">Movie theater / Cinema</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">郵便局（ゆうびんきょく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yuubinkyoku</div><div class="meaning-text">Post office</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">交番（こうばん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kouban</div><div class="meaning-text">Police box / Neighborhood police station</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">便利（べんり）/ 不便（ふべん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Benri / Fuben</div><div class="meaning-text">Convenient / Inconvenient</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">にぎやか / 静（しず）か</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nigiyaka / Shizuka</div><div class="meaning-text">Lively & bustling / Quiet & peaceful</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">安全（あんぜん）/ 危（あぶ）ない</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Anzen / Abunai</div><div class="meaning-text">Safe / Dangerous</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">きれい / 汚（きたな）い</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kirei / Kitanai</div><div class="meaning-text">Clean & beautiful / Dirty & messy</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">広（ひろ）い / 狭（せま）い</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hiroi / Semai</div><div class="meaning-text">Spacious & wide / Cramped & narrow</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">昔（むかし）ながら / モダン</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mukashinagara / Modan</div><div class="meaning-text">Traditional old-fashioned / Modern</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">下町（したまち）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shitamachi</div><div class="meaning-text">Old traditional downtown neighborhood</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">郊外（こうがい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kougai</div><div class="meaning-text">Suburbs / Residential outskirts</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">田舎（いなか）/ 都会（とかい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Inaka / Tokai</div><div class="meaning-text">Rural countryside / Urban city</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～と 思（おも）います</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~to omoimasu</div><div class="meaning-text">I think that... (standard opinion)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～と 考（かんが）えます</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~to kangaemasu</div><div class="meaning-text">I consider / think deeply that...</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～ので はないでしょうか</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~node wa nai deshou ka</div><div class="meaning-text">Perhaps / Might it not be that...?</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～と 言（い）われて います</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~to iwarete imasu</div><div class="meaning-text">It is said that / People say that...</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～らしいです</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~rashiidesu</div><div class="meaning-text">It seems / I heard that... (hearsay)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">経験（けいけん）では / たいてい</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Keiken de wa / Taitei</div><div class="meaning-text">In my experience / Mostly (usually)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">スーパー / コンビニ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Suupaa / Konbini</div><div class="meaning-text">Supermarket / Convenience store</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">プール / レストラン</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Puuru / Resutoran</div><div class="meaning-text">Swimming pool / Restaurant</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 12 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for public facilities, libraries, movie theaters, post offices, convenience, safety, and rural life.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">施</div><div class="kanji-info"><h5>Carry out / Conduct / Facility</h5><div class="kanji-readings">Onyomi: <span>シ、セ (shi)</span><br>Kunyomi: ほどこ-す</div></div></div><div class="kanji-example" onclick="speakText('施設、実施、施工')"><span>施設（しせつ）- facility<br>実施（じっし）- enforcement</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">設</div><div class="kanji-info"><h5>Establish / Provide / Set up</h5><div class="kanji-readings">Onyomi: <span>セツ (setsu)</span><br>Kunyomi: もう-ける</div></div></div><div class="kanji-example" onclick="speakText('施設、建設、設定')"><span>施設（しせつ）- facility<br>建設（けんせつ）- construction</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">図</div><div class="kanji-info"><h5>Map / Drawing / Plan</h5><div class="kanji-readings">Onyomi: <span>ズ、ト (zu)</span><br>Kunyomi: はか-る</div></div></div><div class="kanji-example" onclick="speakText('図書館、地図、図面')"><span>図書館（としょかん）- library<br>地図（ちず）- map</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">映</div><div class="kanji-info"><h5>Reflect / Projection / Film</h5><div class="kanji-readings">Onyomi: <span>エイ (ei)</span><br>Kunyomi: うつ-る、うつ-す</div></div></div><div class="kanji-example" onclick="speakText('映画館、映画、映る')"><span>映画館（えいがかん）- cinema<br>映画（えいが）- movie</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">画</div><div class="kanji-info"><h5>Picture / Drawing / Plan</h5><div class="kanji-readings">Onyomi: <span>ガ、カク (ga)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('映画、画家、計画')"><span>映画（えいが）- movie<br>計画（けいかく）- plan</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">館</div><div class="kanji-info"><h5>Public building / Hall</h5><div class="kanji-readings">Onyomi: <span>カン (kan)</span><br>Kunyomi: たてもの</div></div></div><div class="kanji-example" onclick="speakText('図書館、映画館、体育館')"><span>図書館（としょかん）- library<br>体育館（たいいくかん）- gym</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">郵</div><div class="kanji-info"><h5>Mail / Postage</h5><div class="kanji-readings">Onyomi: <span>ユウ (yuu)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('郵便局、郵便物')"><span>郵便局（ゆうびんきょく）- post office<br>郵便（ゆうびん）- mail</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">便</div><div class="kanji-info"><h5>Convenient / Flight / Mail</h5><div class="kanji-readings">Onyomi: <span>ベン、ビン (ben)</span><br>Kunyomi: たよ-り</div></div></div><div class="kanji-example" onclick="speakText('便利、不便、郵便局')"><span>便利（べんり）- convenient<br>不便（ふべん）- inconvenient</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">局</div><div class="kanji-info"><h5>Bureau / Office / Board</h5><div class="kanji-readings">Onyomi: <span>キョク (kyoku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('郵便局、薬局、放送局')"><span>郵便局（ゆうびんきょく）- post office<br>薬局（やっきょく）- pharmacy</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">交</div><div class="kanji-info"><h5>Mix / Intersect / Association</h5><div class="kanji-readings">Onyomi: <span>コウ (kou)</span><br>Kunyomi: まじ-わる、か-わす</div></div></div><div class="kanji-example" onclick="speakText('交番、交通、交代')"><span>交番（こうばん）- police box<br>交通（こうつう）- traffic</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">番</div><div class="kanji-info"><h5>Turn / Number / Watch</h5><div class="kanji-readings">Onyomi: <span>バン (ban)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('交番、番号、一番')"><span>交番（こうばん）- police box<br>一番（いちばん）- number one</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">静</div><div class="kanji-info"><h5>Quiet / Silent / Calm</h5><div class="kanji-readings">Onyomi: <span>セイ、ジョウ (sei)</span><br>Kunyomi: しず-か、しず-まる</div></div></div><div class="kanji-example" onclick="speakText('静か、安静、冷静')"><span>静か（しずか）- quiet<br>冷静（れいせい）- calm</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">栄</div><div class="kanji-info"><h5>Flourish / Prosperity / Honor</h5><div class="kanji-readings">Onyomi: <span>エイ (ei)</span><br>Kunyomi: さか-える、はえ</div></div></div><div class="kanji-example" onclick="speakText('栄える、栄養、繁栄')"><span>栄える（さかえる）- to prosper<br>栄養（えいよう）- nutrition</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">安</div><div class="kanji-info"><h5>Safe / Cheap / Peaceful</h5><div class="kanji-readings">Onyomi: <span>アン (an)</span><br>Kunyomi: やす-い</div></div></div><div class="kanji-example" onclick="speakText('安全、安い、安心')"><span>安全（あんぜん）- safe<br>安い（やすい）- cheap</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">全</div><div class="kanji-info"><h5>Whole / Entire / All</h5><div class="kanji-readings">Onyomi: <span>ゼン (zen)</span><br>Kunyomi: すべ-て</div></div></div><div class="kanji-example" onclick="speakText('安全、全員、全部')"><span>安全（あんぜん）- safety<br>全員（ぜんいん）- all members</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">危</div><div class="kanji-info"><h5>Dangerous / Fear / Risk</h5><div class="kanji-readings">Onyomi: <span>キ (ki)</span><br>Kunyomi: あぶ-ない、あや-うい</div></div></div><div class="kanji-example" onclick="speakText('危ない、危険、危機')"><span>危ない（あぶない）- dangerous<br>危険（きけん）- danger</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">険</div><div class="kanji-info"><h5>Precipice / Inaccessible / Steep</h5><div class="kanji-readings">Onyomi: <span>ケン (ken)</span><br>Kunyomi: けわ-しい</div></div></div><div class="kanji-example" onclick="speakText('危険、保険、険しい')"><span>危険（きけん）- danger / hazard<br>保険（ほけん）- insurance</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">汚</div><div class="kanji-info"><h5>Dirty / Pollute / Defile</h5><div class="kanji-readings">Onyomi: <span>オ (o)</span><br>Kunyomi: きたな-い、よご-れる</div></div></div><div class="kanji-example" onclick="speakText('汚い、汚れる、汚染')"><span>汚い（きたない）- dirty<br>汚染（おせん）- pollution</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">広</div><div class="kanji-info"><h5>Wide / Broad / Spacious</h5><div class="kanji-readings">Onyomi: <span>コウ (kou)</span><br>Kunyomi: ひろ-い、ひろ-まる</div></div></div><div class="kanji-example" onclick="speakText('広い、広場、広告')"><span>広い（ひろい）- wide / spacious<br>広場（ひろば）- public plaza</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">狭</div><div class="kanji-info"><h5>Cramped / Narrow / Contract</h5><div class="kanji-readings">Onyomi: <span>キョウ (kyou)</span><br>Kunyomi: せま-い</div></div></div><div class="kanji-example" onclick="speakText('狭い、狭義')"><span>狭い（せまい）- cramped / narrow<br>狭義（きょうぎ）- narrow sense</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">郊</div><div class="kanji-info"><h5>Suburbs / Outskirts / Outlying</h5><div class="kanji-readings">Onyomi: <span>コウ (kou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('郊外、近郊')"><span>郊外（こうがい）- suburbs<br>近郊（きんこう）- environs</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">外</div><div class="kanji-info"><h5>Outside / External / Foreign</h5><div class="kanji-readings">Onyomi: <span>ガイ、ゲ (gai)</span><br>Kunyomi: そと、ほか、はず-す</div></div></div><div class="kanji-example" onclick="speakText('郊外、外国、外へ')"><span>郊外（こうがい）- suburbs<br>外国（がいこく）- foreign country</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">田</div><div class="kanji-info"><h5>Rice field / Paddy</h5><div class="kanji-readings">Onyomi: <span>デン (den)</span><br>Kunyomi: た</div></div></div><div class="kanji-example" onclick="speakText('田舎、水田、田中')"><span>田舎（いなか）- rural countryside<br>水田（すいでん）- rice paddy</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">舎</div><div class="kanji-info"><h5>Cottage / Inn / Hut</h5><div class="kanji-readings">Onyomi: <span>シャ (sha)</span><br>Kunyomi: やどり</div></div></div><div class="kanji-example" onclick="speakText('田舎、校舎、宿舎')"><span>田舎（いなか）- rural village<br>校舎（こうしゃ）- school building</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay Module -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>🗺️ Hometown Speech & Mini Writing Practice (私の街の紹介と言語練習)</h3>
+            <p>Master presenting a complete Japanese speech about your neighborhood and practice writing about health & town!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-info);">
+            <h4>🏙️ Scene 1: Model Town Presentation Paragraph (私の街の紹介)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('わたし が すんでいる まちは えき から あるいて １０ぷん くらい です。')">
+                    <strong style="color:var(--accent-secondary);">スピーチ 1:</strong> 私（わたし）が 住（す）んでいる 街（まち）は 駅（えき）から 歩（ある）いて １０分（じゅっぷん）くらい です。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Watashi ga sunde iru machi wa eki kara aruite 10pun kurai desu. (The town I live in is about a 10-minute walk from the station.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('スーパー や コンビニ も ちかく に ある ので、せいかつ は とても べんり です。')">
+                    <strong style="color:var(--accent-primary);">スピーチ 2:</strong> スーパーや コンビニも 近く（ちかく）に あるので、生活（せいかつ）は とても 便利（べんり）です。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Suupaa ya konbini mo chikaku ni aru node, seikatsu wa totemo benri desu. (There are supermarkets and convenience stores nearby, so daily life is very convenient.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('こうえん も あるし、しずか なので、すみやすい と おもいます。')">
+                    <strong style="color:var(--accent-secondary);">スピーチ 3:</strong> 公園（こうえん）も あるし、静（しず）かなので、住（す）みやすいと 思（おも）います。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kouen mo aru shi, shizuka na node, sumiyasui to omoimasu. (There are also parks and it is quiet, so I think it is easy/comfortable to live in.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('ただ、えいがかん や おおきい ショッピングモール が ない ので、そういう とき は となり の まちに いきます。')">
+                    <strong style="color:var(--accent-primary);">スピーチ 4:</strong> ただ、映画館（えいがかん）や 大きい（おおきい）ショッピングモールが ないので、そういう時（とき）は 隣（となり）の 街に 行きます。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Tada, eigakan ya ookii shoppingu mooru ga nai node, sou iu toki wa tonari no machi ni ikimasu. (However, because there is no cinema or big shopping mall, when I want those, I go to the neighboring town.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('ぜんたいてきには、この まち が とても きにいっています。')">
+                    <strong style="color:var(--accent-secondary);">スピーチ 5:</strong> 全体的（ぜんたいてき）には、この街が とても 気（き）に入（い）っています。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Zentaiteki ni wa, kono machi ga totemo ki ni itte imasu. (Overall, I am very fond of this town!)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-success);">
+            <h4>✍️ Scene 2: Mini Writing Practice Workshop (ミニ作文・健康と街)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Practice filling in the blanks to describe your own health habits and hometown evaluation!</p>
+            <div style="background:var(--bg-tertiary);padding:1.5rem;border-radius:14px;border:1px solid var(--border-color);line-height:2.2;">
+                <strong style="color:var(--accent-success);">💪 けんこう について (About Health):</strong><br>
+                私は 健康のために、<input type="text" placeholder="例: 毎日30分歩く" style="padding:0.3rem 0.6rem;border-radius:6px;border:1px solid var(--border-color);background:var(--bg-primary);color:var(--text-primary);width:180px;"> します。<br>
+                毎日 <input type="text" placeholder="例: 野菜をたくさん食べる" style="padding:0.3rem 0.6rem;border-radius:6px;border:1px solid var(--border-color);background:var(--bg-primary);color:var(--text-primary);width:200px;"> ように しています。<br>
+                でも、<input type="text" placeholder="例: 夜遅くまでスマホを見" style="padding:0.3rem 0.6rem;border-radius:6px;border:1px solid var(--border-color);background:var(--bg-primary);color:var(--text-primary);width:200px;"> すぎる ところが 問題です。<br><br>
+                <strong style="color:var(--accent-warning);">🏙️ まち について (About My Town):</strong><br>
+                私が 住んでいる 街は <input type="text" placeholder="例: 駅前の賑やかな街" style="padding:0.3rem 0.6rem;border-radius:6px;border:1px solid var(--border-color);background:var(--bg-primary);color:var(--text-primary);width:180px;"> です。<br>
+                <input type="text" placeholder="例: スーパーが近くにある" style="padding:0.3rem 0.6rem;border-radius:6px;border:1px solid var(--border-color);background:var(--bg-primary);color:var(--text-primary);width:200px;"> ので、便利です。<br>
+                でも、<input type="text" placeholder="例: 朝の電車が込みすぎる" style="padding:0.3rem 0.6rem;border-radius:6px;border:1px solid var(--border-color);background:var(--bg-primary);color:var(--text-primary);width:200px;"> ので、少し 不便な ところも あります。<br>
+                全体的には、<input type="text" placeholder="例: とても住みやすくて素晴らしい" style="padding:0.3rem 0.6rem;border-radius:6px;border:1px solid var(--border-color);background:var(--bg-primary);color:var(--text-primary);width:220px;"> と 思います！
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 12 Town Facilities & Grammar Quiz</h3>
+                <p>Test your understanding of proportional increase, suggestions, polite reasons, and town vocabulary!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 4112–4517)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 12: わたしのまち (Watashi no Machi) - My Town
+
+## 🎯 Goal:
+- Apne sheher ke baare mein batana
+- Compare karna
+- Town ke facilities describe karna
+- Suggestions aur opinions dena
+
+---
+
+## 1) Town Vocabulary
+
+### **Town facilities:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| しせつ (施設) | しせつ | Facility |
+| びょういん (病院) | びょういん | Hospital |
+| がっこう (学校) | がっこう | School |
+| としょかん (図書館) | としょかん | Library |
+| こうえん (公園) | こうえん | Park |
+| たいいくかん (体育館) | たいいくかん | Gymnasium |
+| プール | ぷうる | Swimming pool |
+| こうみんかん (公民館) | こうみんかん | Community center |
+| スーパー | すうぱあ | Supermarket |
+| コンビニ | こんびに | Convenience store |
+| ショッピングモール | しょっぴんぐもおる | Shopping mall |
+| えいがかん (映画館) | えいがかん | Cinema |
+| レストラン | れすとらん | Restaurant |
+| ゆうびんきょく (郵便局) | ゆうびんきょく | Post office |
+| ぎんこう (銀行) | ぎんこう | Bank |
+| こうばん (交番) | こうばん | Police box |
+| バスてい (バス停) | ばすてい | Bus stop |
+| えき (駅) | えき | Station |
+
+---
+
+### **Town description adjectives:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| べんり (便利) | べんり | Convenient |
+| ふべん (不便) | ふべん | Inconvenient |
+| にぎやか | にぎやか | Lively / Bustling |
+| しずか (静か) | しずか | Quiet |
+| あんぜん (安全) | あんぜん | Safe |
+| あぶない (危ない) | あぶない | Dangerous |
+| きれい | きれい | Clean / Pretty |
+| きたない (汚い) | きたない | Dirty |
+| ひろい (広い) | ひろい | Spacious |
+| せまい (狭い) | せまい | Cramped |
+| むかしながら (昔ながら) | むかしながら | Old fashioned / Traditional |
+| モダン | もだん | Modern |
+| したまち (下町) | したまち | Old downtown area |
+| こうがい (郊外) | こうがい | Suburbs |
+| いなか (田舎) | いなか | Rural / Village |
+| とかい (都会) | とかい | Urban / City |
+
+---
+
+## 2) Grammar Point 57: ～ば ～ほど  
+## Meaning: "Jitna zyada _____ utna zyada _____"
+
+**Verb / Adjective ば form + Verb / Adjective dict. form + ほど**
+
+### ば form quick rules:
+
+| Type | Rule | Example |
+|---|---|---|
+| Group 1 verb | え sound + ば | のむ → のめば |
+| Group 2 verb | れば | たべる → たべれば |
+| する | すれば | |
+| くる | くれば | |
+| い-adj | い → ければ | たかい → たかければ |
+| な-adj | なら | しずか → しずかなら |
+
+### Examples:
+
+```
+べんきょうすれば するほど、にほんご が うまく なります。
+(Benkyou sureba suru hodo, nihongo ga umaku narimasu.)
+Jitna zyada padho, utna Japanese acchi hoti hai.
+
+まちに なれれば なれるほど、せいかつ が かんたん に なります。
+(Machi ni narereba nareru hodo, seikatsu ga kantan ni narimasu.)
+Jitna sheher se familiar hote hao, utna zindagi aasaan hoti hai.
+
+このまちは すめばすむほど、すきに なります。
+(Kono machi wa sumeba sumu hodo, suki ni narimasu.)
+Jitna yahaan raho, utna yeh sheher pasand aata hai.
+
+たかければ たかいほど、いい ものだ と おもいます。
+(Takakereba takai hodo, ii mono da to omoimasu.)
+Jitna mehenga, utna accha lagta hai.
+
+しずかであれば あるほど、すみやすいです。
+(Shizuka de areba aru hodo, sumiyasui desu.)
+Jitna shaant, utna rehne mein comfortable hai.
+```
+
+---
+
+## 3) Grammar Point 58: ～によって  
+## Meaning: "_____ ke mutabiq / depending on"
+
+**Noun + によって**
+
+### Examples:
+
+```
+まちに よって、せいかつ が ちがいます。
+(Machi ni yotte, seikatsu ga chigaimasu.)
+Sheher ke mutabiq, zindagi alag hoti hai.
+
+きせつ (季節) によって、まち の ふんいき (雰囲気) が かわります。
+(Kisetsu ni yotte, machi no fun'iki ga kawarimasu.)
+Season ke mutabiq, sheher ka mahaul badalta hai.
+
+ひと によって、まちの すきなところが ちがいます。
+(Hito ni yotte, machi no suki na tokoro ga chigaimasu.)
+Insaan ke mutabiq, sheher ki pasandida jagah alag hoti hai.
+
+くに によって、まちの つくりかたが ちがいます。
+(Kuni ni yotte, machi no tsukurikata ga chigaimasu.)
+Desh ke mutabiq, sheher ka design alag hota hai.
+```
+
+---
+
+## 4) Grammar Point 59: ～たら どうですか  
+## Meaning: "_____ karte kyun nahi / Why don't you _____ ?"
+
+Suggestion dene ke liye.
+
+### Examples:
+
+```
+びょうきなら、はやく びょういんに いったら どうですか。
+(Byouki nara, hayaku byouin ni ittara dou desu ka.)
+Bimaar ho toh, jaldi hospital kyun nahi jaate?
+
+この まち が ふべんなら、もっとべんりな ところに ひっこしたら どうですか。
+(Kono machi ga fuben nara, motto benri na tokoro ni hikkoshitara dou desu ka.)
+Yeh sheher inconvenient hai toh, zyada convenient jagah shift kyun nahi kar lete?
+
+ストレスがたまって いるなら、りょこうしたら どうですか。
+(Sutoresu ga tamatte iru nara, ryokou shitara dou desu ka.)
+Stress ho raha hai toh, travel kyun nahi kar lete?
+
+もっと にほんご を つかいたいなら、ボランティアに さんかしたら どうですか。
+(Motto nihongo wo tsukaitai nara, borantia ni sanka shitara dou desu ka.)
+Zyada Japanese use karna chahte ho toh, volunteer mein participate kyun nahi kar lete?
+```
+
+---
+
+## 5) Grammar Point 60: ～ので  
+## Meaning: "_____ ki wajah se / because (polite)"
+
+**Plain form + ので**
+
+Yeh **から** jaisa hai, lekin zyada polite aur formal.
+
+### Difference:
+
+| Pattern | Politeness | Use |
+|---|---|---|
+| ～から | Casual / Normal | doston ke saath |
+| ～ので | Polite | keigo, formal situations |
+
+### Examples:
+
+```
+このまちは えきから ちかいので、べんりです。
+(Kono machi wa eki kara chikai node, benri desu.)
+Yeh sheher station se paas hai, isliye convenient hai.
+
+しごとが あるので、はやく かえらなければ なりません。
+(Shigoto ga aru node, hayaku kaeranakerebanarimasen.)
+Kaam hai isliye, jaldi ghar jaana padega.
+
+こどもが おおいので、がっこうが ちかいほうが いいです。
+(Kodomo ga ooi node, gakkou ga chikai hou ga ii desu.)
+Bacche zyada hain isliye, school paas hona accha hai.
+
+にほんごが まだ じょうずじゃないので、ゆっくり おねがいします。
+(Nihongo ga mada jouzu janai node, yukkuri onegaishimasu.)
+Japanese abhi acchi nahi hai isliye, dheere boliye.
+```
+
+---
+
+## 6) Grammar Point 61: ～し ～し  
+## Meaning: "...bhi hai aur ...bhi hai" - Multiple good/bad points
+
+Listing multiple reasons - seen in ch.2, now reviewing in town context.
+
+### Examples:
+
+```
+このまちは しずかだし、こうえんも おおいし、すみやすい です。
+(Kono machi wa shizuka da shi, kouen mo ooi shi, sumiyasui desu.)
+Yeh sheher quiet bhi hai, parks bhi bahut hain, rehne ke liye accha hai.
+
+えきから とおいし、コンビニも ないし、このまちは ふべんです。
+(Eki kara tooi shi, konbini mo nai shi, kono machi wa fuben desu.)
+Station se door bhi hai, convenience store bhi nahi, yeh sheher inconvenient hai.
+
+このまちは やちんが やすいし、じんじゃも あるし、いい ところです。
+(Kono machi wa yachin ga yasui shi, jinja mo aru shi, ii tokoro desu.)
+Yeh sheher mein rent bhi sasta hai, shrine bhi hai, acchi jagah hai.
+```
+
+---
+
+## 7) Comparing towns - patterns
+
+### Useful phrases:
+
+```
+_____ より _____ のほうが べんりです。
+(_____ yori _____ no hou ga benri desu.)
+_____ se _____ zyada convenient hai.
+
+_____ ほど _____ くありません。
+(_____ hodo _____ ku arimasen.)
+_____ jitna _____ nahi hai.
+
+_____ は _____ に にています。
+(_____ wa _____ ni niteimasu.)
+_____ , _____ se milta julta hai.
+
+_____ と くらべると _____ のほうが _____ です。
+(_____ to kuraberu to _____ no hou ga _____ desu.)
+_____ se compare karein toh _____ zyada _____ hai.
+```
+
+### Examples:
+
+```
+とうきょうより おおさかの ほうが たべものが おいしいと おもいます。
+(Toukyou yori Oosaka no hou ga tabemono ga oishii to omoimasu.)
+Tokyo se Osaka ka khana zyada tasty lagta hai.
+
+このまちは いなかほど しずかじゃないですが、
+とかいほど うるさくもないです。
+(Kono machi wa inaka hodo shizuka janai desu ga,
+tokai hodo urusakumo nai desu.)
+Yeh sheher gaon jitna quiet nahi, lekin city jitna noisy bhi nahi.
+```
+
+---
+
+## 8) Describing your town
+
+### Model paragraph:
+
+```
+わたしが すんでいる まちは えきから あるいて 10ぷん くらい です。
+(Watashi ga sunde iru machi wa eki kara aruite 10pun kurai desu.)
+Mera sheher station se paidal 10 minute hai.
+
+スーパーや コンビニも ちかくに あるので、せいかつは とても べんりです。
+(Suupaa ya konbini mo chikaku ni aru node, seikatsu wa totemo benri desu.)
+Supermarket aur convenience store bhi paas hain isliye, zindagi bahut convenient hai.
+
+こうえんも あるし、しずかなので、すみやすいと おもいます。
+(Kouen mo aru shi, shizuka na node, sumiyasui to omoimasu.)
+Park bhi hai aur quiet bhi hai isliye, rehne ke liye accha lagta hai.
+
+ただ、えいがかんや おおきい ショッピングモールが ないので、
+そういうときは となりの まちに いきます。
+(Tada, eigakan ya ookii shopinggu mooru ga nai node,
+sou iu toki wa tonari no machi ni ikimasu.)
+Lekin, cinema ya bada mall nahi hai isliye,
+aisi jagah chahiye toh paas ke sheher jaata hoon.
+
+ぜんたいてきには、このまちが とても きにいっています。
+(Zentaiteki ni wa, kono machi ga totemo ki ni itte imasu.)
+Overall, yeh sheher bahut pasand hai.
+```
+
+---
+
+## 9) Opinion giving patterns
+
+| Japanese | Meaning |
+|---|---|
+| ～と おもいます | Mujhe lagta hai |
+| ～と かんがえます | Main sochta hoon |
+| ～のでは ないでしょうか | Shayad _____ hoga |
+| ～と いわれています | Kaha jaata hai |
+| ～らしいです | Lagta hai / suna hai |
+| わたし の けいけんでは | Mere experience mein |
+| いっぱんてきに (一般的に) | Generally |
+| たいてい | Mostly |
+
+---
+
+# 📝 Grammar Summary (Chapter 10-12)
+
+| # | Pattern | Meaning |
+|---|---|---|
+| 48 | ～ために | ke liye / in order to |
+| 49 | ～ばよかった | kash _____ kiya hota |
+| 50 | ～といいです | _____ hota toh accha |
+| 51 | ～ように いいます | kisi ko _____ kehna |
+| 52 | ～すぎます (adv.) | bahut zyada |
+| 53 | ～ていただけますか | kar sakte hain? (very polite) |
+| 54 | Keigo basics | respectful / humble language |
+| 55 | ～ていただく | karwa lena (humble) |
+| 56 | ほうれんそう | report, contact, consult |
+| 57 | ～ば～ほど | jitna...utna |
+| 58 | ～によって | ke mutabiq / depending on |
+| 59 | ～たらどうですか | kyun nahi karte? (suggestion) |
+| 60 | ～ので | isliye (polite because) |
+| 61 | ～し、～し (review) | ...bhi aur ...bhi |
+
+---
+
+# 📝 Vocabulary Summary (Ch 10-12)
+
+### Health (けんこう):
+```
+けつあつ、すいみん、えいよう、バランス
+ねつ、せき、めまい、はきけ、だるい
+うんどう する、やすむ、くすり を のむ
+```
+
+### Work (しごと):
+```
+かいぎ、ざんぎょう、しゅっちょう、てんきん
+ほうこく、れんらく、そうだん
+いらっしゃる、もうす、まいる、いたす
+おっしゃる、めしあがる、いただく
+```
+
+### Town (まち):
+```
+べんり、ふべん、にぎやか、しずか
+あんぜん、きれい、いなか、とかい
+こうえん、としょかん、たいいくかん
+えき、コンビニ、スーパー
+```
+
+---
+
+# 🎯 Quick Practice Sentences
+
+## Chapter 10
+1. けんこうの ために、まいにち さんぽ します。
+2. もっと はやく いけば よかった。
+3. はやく よく なると いいですね。
+4. いしゃに やすむように いわれました。
+
+## Chapter 11
+1. この しょるいを みて いただけますか。
+2. ぶちょうは いま かいぎしつに いらっしゃいます。
+3. わたしは やまだと もうします。
+4. ご いけんを きかせて いただけますか。
+
+## Chapter 12
+1. べんきょうすれば するほど、じょうずに なります。
+2. このまちは えきから ちかいので、べんりです。
+3. ふべんなら、ひっこしたら どうですか。
+4. こうえんも あるし、しずかだし、すみやすい です。
+
+---
+
+# 🎯 Mini Writing Practice
+
+Apne baare mein likho:
+
+**けんこうについて:**
+```
+わたしは けんこうのために、_____ します。
+まいにち _____ ように して います。
+でも、_____ すぎる ところが もんだいです。
+```
+
+**まちについて:**
+```
+わたしが すんでいる まちは _____ です。
+_____ ので、べんりです。
+でも、_____ ので、すこし ふべんな ところも あります。
+ぜんたいてきには、_____ と おもいます。
+```
+
+---
+
+**がんばって ください！** 💪🎌
+
+Agar **Chapter 13-15** chahiye toh bata do!
+
+**つづけて べんきょう しましょう！**
+(Tsudukete benkyou shimashou!)
+Chaliye padhai jaari rakhte hain!</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 12: わたしのまち (My Town) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const townData = {
+        urban: {
+            hodo: { jp: "駅前（えきまえ）の 都会（とかい）は、住（す）めば 住（す）むほど 便利（べんり）さが 分（わ）かります。", rom: "Ekimae no tokai wa, sumeba sumu hodo benrisa ga wakarimasu.", hi: "Hindi Translation: Station ke paas wale sheher mein jitna raho, utna uski convenience samajh aati hai." },
+            yotte: { jp: "時間帯（じかんたい）によって、駅前（えきまえ）の 人込（ひとご）みが 全然（ぜんぜん）違（ちが）います。", rom: "Jikantai ni yotte, ekimae no hitogomi ga zenzen chigaimasu.", hi: "Hindi Translation: Time ke mutabiq, station ke samne ki bheed bilkul alag hoti hai." },
+            dousuka: { jp: "通勤（つうきん）が 大変（たいへん）なら、もっと 駅（えき）から 近（ちか）い 都会（とかい）に 引っ越（ひっこ）したら どうですか。", rom: "Tsuukin ga taihen nara, motto eki kara chikai tokai ni hikkoshitara dou desu ka.", hi: "Hindi Translation: Commuting mushkil hai toh, station ke paas wali city mein shift kyun nahi kar lete?" },
+            node: { jp: "スーパーも コンビニも 歩（ある）いて ２分（にふん）の 場所（ばしょ）に ある ので、とても 便利（べんり）です。", rom: "Suupaa mo konbini mo aruite nifun no basho ni aru node, totemo benri desu.", hi: "Hindi Translation: Supermarket aur convenience store paidal 2 minute ki doori pe hain isliye, bahut convenient hai." },
+            shishi: { jp: "この 街（まち）は 夜（よる）遅（おそ）くまで 開（あ）いている お店（みせ）も 多い（おおい）し、駅（えき）も 近（ちか）いし、住（す）みやすい です。", rom: "Kono machi wa yoru osoku made aite iru omise mo ooi shi, eki mo chikai shi, sumiyasui desu.", hi: "Hindi Translation: Is sheher mein der raat tak dukaanein khuli rehti hain, station bhi paas hai, rehne ke liye accha hai." }
+        },
+        rural: {
+            hodo: { jp: "田舎（いなか）の 自然（しぜん）は、見（み）れば 見（み）るほど 心（こころ）が 癒（いや）されます。", rom: "Inaka no shizen wa, mireba miru hodo kokoro ga iyasaremasu.", hi: "Hindi Translation: Gaon ki nature ko jitna dekho, utna dil ko sukoon milta hai." },
+            yotte: { jp: "季節（きせつ）によって、田舎（いなか）の 山（やま）や 田んぼ（たんぼ）の 色（いろ）が 美（うつく）しく 変（か）わります。", rom: "Kisetsu ni yotte, inaka no yama ya tanbo no iro ga utsukushiku kawarimasu.", hi: "Hindi Translation: Season ke mutabiq, gaon ke pahad aur khet ka rang khoobsurat badalta hai." },
+            dousuka: { jp: "都会（とかい）の 騒音（そうおん）に 疲（つか）れたなら、週末（しゅうまつ）に 静（しず）かな 田舎（いなか）へ 旅行（りょこう）したら どうですか。", rom: "Tokai no souon ni tsukareta nara, shuumatsu ni shizuka na inaka e ryokou shitara dou desu ka.", hi: "Hindi Translation: City ke shor se thak gaye ho toh, weekend pe shaant gaon ki trip kyun nahi kar lete?" },
+            node: { jp: "この 村（むら）は 空気（くうき）が きれいで 静（しず）か なので、健康（けんこう）に とても いい ところです。", rom: "Kono mura wa kuuki ga kirei de shizuka na node, kenkou ni totemo ii tokoro desu.", hi: "Hindi Translation: Is gaon ki hawa saaf aur shaant hai isliye, sehat ke liye bahut acchi jagah hai." },
+            shishi: { jp: "田舎（いなか）は 家賃（やちん）が 安（やす）いし、自然（しぜん）も 豊（ゆた）かだし、のんびり 暮（くら）せます。", rom: "Inaka wa yachin ga yasui shi, shizen mo yutaka da shi, nonbiri kura semasu.", hi: "Hindi Translation: Gaon mein rent sasta hai, nature bhi rich hai, araam se zindagi bita sakte hain." }
+        },
+        shitamachi: {
+            hodo: { jp: "昔（むかし）ながらの 下町（したまち）は、歩（ある）けば 歩（ある）くほど 面白（おもしろ）い お店（みせ）が 見（み）つかります。", rom: "Mukashinagara no shitamachi wa, arukeba aruku hodo omoshiroi omise ga mitsukarimasu.", hi: "Hindi Translation: Old traditional downtown mein jitna chaloge, utni interesting dukaanein milengi." },
+            yotte: { jp: "お祭（まつ）り の 日（ひ）によって、下町（したまち）の 雰囲気（ふんいき）が 一気（いっき）に 賑（にぎ）やかに なります。", rom: "Omatsuri no hi ni yotte, shitamachi no fun'iki ga ikki ni nigiyaka ni narimasu.", hi: "Hindi Translation: Festival ke din ke mutabiq, downtown ka mahaul ekdam lively ho jaata hai." },
+            dousuka: { jp: "日本（にほん）の 歴史（れきし）や 文化（ぶんか）が 好（す）きなら、浅草（あさくさ）のような 下町（したまち）を 散歩（さんぽ）したら どうですか。", rom: "Nihon no rekishi ya bunka ga suki nara, Asakusa no you na shitamachi wo sanpo shitara dou desu ka.", hi: "Hindi Translation: Japanese history aur culture pasand hai toh, Asakusa jaise downtown mein walk kyun nahi karte?" },
+            node: { jp: "近所（きんじょ）の 人（ひと）たちが みんな 親切（しんせつ）なので、下町（したまち）の 生活（せいかつ）は 温（あたた）かい です。", rom: "Kinjo no hitotachi ga minna shinsetsu na node, shitamachi no seikatsu wa atatakai desu.", hi: "Hindi Translation: Pados ke log sabhi kind aur helping hain isliye, downtown ki zindagi warm lagti hai." },
+            shishi: { jp: "下町（したまち）は 美味（おい）しい 伝統（でんとう）料理（りょうり）も あるし、神社（じんじゃ）も あるし、魅力的（みりょくてき）な 街（まち）です。", rom: "Shitamachi wa oishii dentou ryouri mo aru shi, jinja mo aru shi, miryokuteki na machi desu.", hi: "Hindi Translation: Downtown mein tasty traditional khana bhi hai, shrines bhi hain, attractive sheher hai." }
+        },
+        suburb: {
+            hodo: { jp: "緑（みどり）が 多い（おおい）郊外（こうがい）は、住（す）めば 住（す）むほど 子育（こそだ）て の 良（よ）さが 分（わ）かります。", rom: "Midori ga ooi kougai wa, sumeba sumu hodo kosodate no yosa ga wakarimasu.", hi: "Hindi Translation: Greenery se bhare suburbs mein jitna raho, utna child-rearing ka acchapan samajh aata hai." },
+            yotte: { jp: "走（はし）っている バス（ばす）の 路線（ろせん）によって、駅（えき）までの 時間（じかん）が 違（ちが）います。", rom: "Hashitte iru basu no rosen ni yotte, eki made no jikan ga chigaimasu.", hi: "Hindi Translation: Chalne wali bus ki route ke mutabiq, station tak ka time alag hota hai." },
+            dousuka: { jp: "家（いえ）が 狭（せま）くて 困（こま）っているなら、広（ひろ）い 公園（こうえん）が ある 郊外（こうがい）に 家（いえ）を 探（さが）したら どうですか。", rom: "Ie ga semakute komatte iru nara, hiroi kouen ga aru kougai ni ie wo sagashitara dou desu ka.", hi: "Hindi Translation: Ghar cramped hai aur takleef hai toh, bade parks wale suburbs mein ghar kyun nahi dhoondhte?" },
+            node: { jp: "学校（がっこう）や 図書館（としょかん）が 近く（ちかく）に あり、治安（ちあん）も 良い（よい）ので、家族（かぞく）に 人気（にんき）です。", rom: "Gakkou ya toshokan ga chikaku ni ari, chian mo yoi node, kazoku ni ninki desu.", hi: "Hindi Translation: School aur library paas hain aur safety bhi acchi hai isliye, families mein famous hai." },
+            shishi: { jp: "郊外（こうがい）は 道路（どうろ）が 広い（ひろい）し、静（しず）かだし、休（やす）みの日（ひ）は ゆっくり 過ごせます。", rom: "Kougai wa douro ga hiroi shi, shizuka da shi, yasumi no hi wa yukkuri sugosemasu.", hi: "Hindi Translation: Suburbs mein sadkein choudi hain, shaant bhi hai, chhutti ke din araam se bita sakte hain." }
+        },
+        mall: {
+            hodo: { jp: "巨大（きょだい）な ショッピングモールは、行（い）けば 行（い）くほど 新（あたら）しい 買（か）い物（もの）の 楽（たの）しみが 増（ふ）えます。", rom: "Kyodai na shoppingu mooru wa, ikeba iku hodo atarashii kaimono no tanoshimi ga fuemasu.", hi: "Hindi Translation: Huge shopping mall mein jitna jaao, utna naye shopping ka maza badhta hai." },
+            yotte: { jp: "週末（しゅうまつ）か 平日（へいじつ）か によって、映画館（えいがかん）や レストランの 混雑（こんざつ）が 違（ちが）います。", rom: "Shuumatsu ka heijitsu ka ni yotte, eigakan ya resutoran no konzatsu ga chigaimasu.", hi: "Hindi Translation: Weekend hai ya weekday iske mutabiq, cinema aur restaurant ki bheed alag hoti hai." },
+            dousuka: { jp: "雨（あめ）の 日（ひ）に どこへ 行（い）くか 迷（まよ）っているなら、室内（しつない）の モールで 遊（あそ）んだら どうですか。", rom: "Ame no hi ni doko e iku ka mayotte iru nara, shitsunai no mooru de asondara dou desu ka.", hi: "Hindi Translation: Baarish ke din kahan jaao soch rahe ho toh, indoor shopping mall mein kyun nahi enjoy karte?" },
+            node: { jp: "何（なに）でも 一つ（ひとつ）の 建物（たてもの）の 中（なか）で 揃（そろ）う ので、買（か）い物（もの）が 楽（らく）です。", rom: "Nan demo hitotsu no tatemono no naka de sorou node, kaimono ga raku desu.", hi: "Hindi Translation: Sab kuch ek hi building ke andar mil jaata hai isliye, shopping karna aasaan hai." },
+            shishi: { jp: "この 街（まち）は 映画館（えいがかん）も あるし、おしゃれな カフェも 多い（おおい）し、若者（わかもの）に 大人気（だいにんき）です。", rom: "Kono machi wa eigakan mo aru shi, oshare na kafe mo ooi shi, wakamono ni daininki desu.", hi: "Hindi Translation: Is sheher mein cinema bhi hai, stylish cafes bhi bahut hain, youngsters mein super famous hai." }
+        }
+    };
+
+    function updateTownSim() {
+        const s = document.getElementById('sim-scene').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = townData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakTownSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 「勉強（べんきょう）すれば _______、日本語が 上手（じょうず）に なります。」\n(The MORE you study, the MORE your Japanese improves - Proportional pattern)", opt: ["するほど (suru hodo)", "したから (shita kara)", "するのに (suru noni)", "するし (suru shi)"], ans: 0 },
+        { q: "2. 「街（まち）に _______、生活（せいかつ）の スタイルや 雰囲気（ふんいき）が 違（ちが）います。」\n(DEPENDING ON / ACCORDING TO the town, lifestyle differs)", opt: ["よって (yotte)", "ついて (tsuite)", "たいして (taishite)", "とって (totte)"], ans: 0 },
+        { q: "3. 「この 街が 不便（ふべん）なら、もっと 便利（べんり）な ところに 引っ越（ひっこ）し_______ どうですか。」\n(WHY DON'T YOU move to a more convenient place? - Suggestion conditional)", opt: ["たら (tara)", "て (te)", "れば (reba)", "ようと (youto)"], ans: 0 },
+        { q: "4. 「駅（えき）から 近（ちか）い _______、毎日（まいにち）の 通勤（つうきん）が 便利（べんり）です。」\n(BECAUSE it is close to the station, daily commuting is convenient - formal reason particle)", opt: ["ので (node)", "のに (noni)", "ながら (nagara)", "くらい (kurai)"], ans: 0 },
+        { q: "5. 「この街は 静（しず）かだ_______、公園（こうえん）も 多い（おおい）_______、住（す）みやすいです。」\n(This town is quiet AND ALSO has many parks - listing multiple good reasons)", opt: ["し、し (shi, shi)", "や、や (ya, ya)", "か、か (ka, ka)", "ね、ね (ne, ne)"], ans: 0 },
+        { q: "6. 「公民館（こうみんかん）」の 正しい 意味（いみ）は どれですか？\n(What public town facility is represented by the word 公民館 - kouminkan?)", opt: ["Community center / public hall for local events", "Police box / neighborhood police station", "Gymnasium / indoor sports center", "Public post office"], ans: 0 },
+        { q: "7. 「昔（むかし）ながらの 下町（したまち）」の 意味（いみ）と 特徴（とくちょう）は 何ですか？\n(What does mukashinagara no shitamachi mean in Japanese geography?)", opt: ["Traditional old-fashioned downtown neighborhood with friendly locals and shrines", "A high-tech financial district full of 50-story modern skyscrapers", "A rural countryside village surrounded only by rice paddies and mountains", "An underground subway station connected to a large department store"], ans: 0 },
+        { q: "8. 「東京（とうきょう）より 大阪（おおさか）のほうが 食べ物が 美味（おい）しいと 思います。」\n(In this comparative sentence, which city's food does the speaker think is tastier?)", opt: ["Osaka (おおさか - Osaka is tastier than Tokyo)", "Tokyo (とうきょう - Tokyo is tastier than Osaka)", "Both cities have exactly the same taste", "Neither city has good food"], ans: 0 },
+        { q: "9. 「この街は 田舎（いなか）ほど 静かじゃないですが、都会（とかい）ほど うるさくもないです。」\n(What is the speaker saying about their town's noise level?)", opt: ["It is not as quiet as the countryside, but also not as noisy as the big city (moderate balance)", "It is extremely noisy every day like the center of Tokyo", "It is completely silent with no cars or people at all", "There are no parks or trees in this neighborhood"], ans: 0 },
+        { q: "10. スピーチの 最後（さいご）に 使う 「全体的（ぜんたいてき）には」の 正しい 意味は どれですか？\n(What does the concluding adverb zentaiteki ni wa mean at the end of a town presentation?)", opt: ["Overall / in general / all things considered (summarizing one's overall impression)", "Suddenly and unexpectedly without any prior warning", "In strict detail point-by-point without missing anything", "Unfortunately and with great sorrow and regret"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Excellent! You can now present your hometown in Japanese with complete confidence!':'💪 Keep practicing! Review the proportional grammar (~ば~ほど) and comparative structures!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

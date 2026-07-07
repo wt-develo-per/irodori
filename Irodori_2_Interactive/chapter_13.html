@@ -1,0 +1,806 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 13: りょこう (Travel, Sightseeing & Reservations)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 13: りょこう - Travel. Covers planning, Shinkansen booking, sightseeing, and grammar (~ておけばよかった, ~たらどうでしたか, ~てみたら, ~らしい, ~なら).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 13: りょこう (Travel) • Sightseeing, Shinkansen & Booking</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('もっと にほんご を べんきょう して おけば よかった。にほん に いったら どうでしたか。たべて みたら、おもった より おいしかった です。あの おんせん は とても いい らしい です。きょうと に いく なら、きんかくじ を みて ください。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>✈️ りょこう (Ryokou) - Travel / Safar</h2>
+        <p>Master planning trips (<strong>予定・予約・切符・旅費</strong>), Japanese transportation (<strong>新幹線・特急・指定席・往復</strong>), sightseeing spots (<strong>名所・温泉・旅館・お土産</strong>), and travel grammar (<strong>～ておけばよかった / ～たらどうでしたか / ～てみたら / ～らしい / ～なら</strong>)!</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 4518–4868</span>
+            <span class="meta-pill">💬 Grammar Points 62–67</span>
+            <span class="meta-pill">📚 35+ Travel & Transport Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">🎫 Shinkansen Booking Roleplay</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('simulator',this)"><span>✈️</span> Travel Booking & Guide Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Travel & Experience (Pt 62–67)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 35+ Audio Vocab & Transport Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 13 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>🎫</span> Shinkansen Counter & Okinawa Roleplay</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Travel & Grammar Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Travel Booking & Guide Simulator -->
+    <div id="tab-simulator" class="tab-content active">
+        <div class="interactive-box">
+            <h4>✈️ Interactive Travel Planning & Recommendation Simulator (旅行予約・観光ガイドシミュレーター)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Select a Japanese tourist destination and a travel grammar structure to generate authentic sightseeing advice, hotel reviews, and regret expressions!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Destination / Travel Scene (観光地・予約シーン)</label>
+                    <select id="sim-scene" onchange="updateTravelSim()">
+                        <option value="kyoto">⛩️ Kyoto Ancient Temples (京都・金閣寺や伏見稲荷の観光)</option>
+                        <option value="okinawa">🏝️ Okinawa Beaches & Snorkeling (沖縄・海とマリンスポーツ)</option>
+                        <option value="shinkansen">🚄 Tokyo-Osaka Bullet Train (新幹線・のぞみ指定席の予約)</option>
+                        <option value="hakone">♨️ Hakone Hot Spring Ryokan (箱根・温泉旅館と和食の体験)</option>
+                        <option value="nara">🦌 Nara Deer Park & Ruins (奈良・公園の鹿と歴史遺跡)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updateTravelSim()">
+                        <option value="okeba">😭 Advance Regret (～ておけばよかった - Kash pehle se karke rakhta / Should have prepared)</option>
+                        <option value="doudeshita">🗣️ Experience Query (～たらどうでしたか - When you went, how was it? / Kaisa raha?)</option>
+                        <option value="mitara">✨ Trial Discovery (～てみたら - Once I tried it, it was... / Try kiya toh...)</option>
+                        <option value="rashii">📢 Hearsay & Reputation (～らしいです - I heard that... / Lagta hai / Suna hai)</option>
+                        <option value="nara">💡 Topical Advice (～なら - If you go there / Agar jaao toh... recommend hai)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">もっと 早（はや）く ホテルを 予約（よやく）して おけば よかった。</div>
+                <div class="output-rom" id="sim-rom">Motto hayaku hoteru wo yoyaku shite okeba yokatta.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Kash hotel pehle se book karke rakhta (regret of lack of preparation).</div>
+                <button class="btn-speak" onclick="speakTravelSim()">🔊 Speak Travel Advice in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🎫 Essential Shinkansen & Booking Keywords (新幹線と宿泊の用語)</h3>
+            <p>Click any card to listen to the Japanese pronunciation and master ticket purchasing in Japan!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">指定席（していせき）と 自由席（じゆうせき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shiteiseki to Jiyuuseki • Reserved vs Non-reserved seat</div><div class="meaning-text">Reserved seat vs Non-reserved seat. At ticket counters, staff will always ask: "指定席と自由席、どちらになさいますか？"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">片道（かたみち）と 往復（おうふく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Katamichi to Oufuku • One-way vs Round-trip ticket</div><div class="meaning-text">One way (片道) vs Round trip (往復). "往復でお願いします" is the standard phrase to buy a return ticket!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">窓側（まどがわ）と 通路側（つうろがわ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Madogawa to Tsuurogawa • Window seat vs Aisle seat</div><div class="meaning-text">Window side (窓側) vs Aisle side (通路側). On the Shinkansen, window seat E gives you a view of Mt. Fuji!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">感動（かんどう）しました</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kandou shimashita • I was deeply moved / impressed</div><div class="meaning-text">Dil bhar aaya / bahut impressed hua! "海がとてもきれいで、感動しました" is a great travel memory phrase.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">思（おも）ったより 楽（たの）しかった</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Omotta yori tanoshikatta • More fun than I expected</div><div class="meaning-text">Socha tha usse zyada maza aaya! Used when you try a new activity like snorkeling or hot springs for the first time.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">両替（りょうがえ）と 外貨（がいか）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ryougae to Gaika • Currency exchange and foreign money</div><div class="meaning-text">Currency exchange / foreign currency. Essential when traveling internationally at airports or banks!</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Advance Preparation Regret: Kash pehle se karke rakhta</span><span class="particle-badge">Pt 62 & 63</span></div>
+            <div class="grammar-formula">Verb て-form + おけばよかった (Should have prepared / done in advance)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">While <strong>～ばよかった</strong> (Pt 62) expresses general regret, <strong>～ておけばよかった</strong> (Pt 63) specifically expresses regret about <strong>not preparing something in advance</strong> before a trip or important event ("Kash pehle se... karke rakh leta")!</p>
+            <ul class="example-list">
+                <li onclick="speakText('もっと にほんご を べんきょう して おけば よかった。')">
+                    <span class="ex-jp">もっと 日本語 を 勉強 して おけば よかった。</span>
+                    <span class="ex-rom">Motto nihongo wo benkyou shite okeba yokatta. (Kash pehle se Japanese aur padh ke aata.)</span>
+                </li>
+                <li onclick="speakText('ホテル を もっと はやく よやく して おけば よかった。')">
+                    <span class="ex-jp">ホテル を もっと 早く 予約 して おけば よかった。</span>
+                    <span class="ex-rom">Hoteru wo motto hayaku yoyaku shite okeba yokatta. (Kash hotel pehle se book karke rakhta.)</span>
+                </li>
+                <li onclick="speakText('ちず を ダウンロード して おけば よかった。')">
+                    <span class="ex-jp">地図 を ダウンロード して おけば よかった。</span>
+                    <span class="ex-rom">Chizu wo daunroodo shite okeba yokatta. (Kash map download karke rakhta.)</span>
+                </li>
+                <li onclick="speakText('パスポート を かくにん して おけば よかった。')">
+                    <span class="ex-jp">パスポート を 確認 して おけば よかった。</span>
+                    <span class="ex-rom">Pasupooto wo kakunin shite okeba yokatta. (Kash passport check karke rakhta.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Asking & Sharing Experiences: How was it? / Once I tried...</span><span class="particle-badge" style="background:var(--accent-success);">Pt 64 & 65</span></div>
+            <div class="grammar-formula">Verb たら-form + どうでしたか (How was it?) / Verb て-form + みたら (When I tried it...)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～たらどうでしたか</strong> to ask someone about their travel or activity experience ("_____ kiya toh kaisa raha?"). Use <strong>～てみたら</strong> to describe what happened or how you felt after trying something for the first time!</p>
+            <ul class="example-list">
+                <li onclick="speakText('にほん に いったら どうでしたか。')">
+                    <span class="ex-jp">日本 に 行ったら どうでしたか。</span>
+                    <span class="ex-rom">Nihon ni ittara dou deshita ka. (Japan gaye toh kaisa raha? / How was your trip to Japan?)</span>
+                </li>
+                <li onclick="speakText('おんせん に はいったら どうでしたか。')">
+                    <span class="ex-jp">温泉 に 入ったら どうでしたか。</span>
+                    <span class="ex-rom">Onsen ni haittara dou deshita ka. (Onsen mein gaye toh kaisa laga?)</span>
+                </li>
+                <li onclick="speakText('たべて みたら、おもった より おいしかった です。')">
+                    <span class="ex-jp">食べて みたら、思った より 美味しかった です。</span>
+                    <span class="ex-rom">Tabete mitara, omotta yori oishikatta desu. (Khaya toh, socha tha usse zyada tasty tha!)</span>
+                </li>
+                <li onclick="speakText('シュノーケリングも やって みたら、とても たのしかったです。')">
+                    <span class="ex-jp">シュノーケリングも やって みたら、とても 楽しかったです。</span>
+                    <span class="ex-rom">Shunookeringu mo yatte mitara, totemo tanoshikatta desu. (Snorkeling try kiya toh bahut maza aaya.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Hearsay & Topical Advice: I heard that / If you go to...</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 66 & 67</span></div>
+            <div class="grammar-formula">Plain form + らしい (I heard / It seems) / Noun / Plain verb + なら (If that's the case / Agar ho toh)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～らしい</strong> to report information or reputation you heard from brochures, friends, or reviews ("Lagta hai / Suna hai"). Use <strong>～なら</strong> to pick up a topic and give tailored recommendations!</p>
+            <ul class="example-list">
+                <li onclick="speakText('あの おんせん は とても いい らしいです。')">
+                    <span class="ex-jp">あの 温泉 は とても いい らしいです。</span>
+                    <span class="ex-rom">Ano onsen wa totemo ii rashii desu. (Woh onsen bahut accha lagta hai / suna hai review mein.)</span>
+                </li>
+                <li onclick="speakText('この りょかん は しょくじ が おいしい らしいです。')">
+                    <span class="ex-jp">この 旅館 は 食事 が 美味しい らしいです。</span>
+                    <span class="ex-rom">Kono ryokan wa shokuji ga oishii rashii desu. (Is ryokan ka khana tasty lagta hai / I heard.)</span>
+                </li>
+                <li onclick="speakText('きょうと に いくなら、ふしみいなり は おすすめ です。')">
+                    <span class="ex-jp">京都 に 行くなら、伏見稲荷 は おすすめ です。</span>
+                    <span class="ex-rom">Kyouto ni iku nara, Fushimi Inari wa osusume desu. (Kyoto jaana ho toh, Fushimi Inari recommend hai!)</span>
+                </li>
+                <li onclick="speakText('おかね が すくないなら、ゲストハウス の ほうが やすいです よ。')">
+                    <span class="ex-jp">お金 が 少ないなら、ゲストハウス の ほうが 安いです よ。</span>
+                    <span class="ex-rom">Okane ga sukunai nara, gesutohausu no hou ga yasui desu yo. (Paise kam hain toh, guest house zyada sasta hai.)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 13 Travel, Transport & Sightseeing Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize sightseeing vocabulary.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">旅行（りょこう）/ 観光（かんこう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ryokou / Kankou</div><div class="meaning-text">Travel (safar) / Sightseeing (touring)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">予定（よてい）/ 予約（よやく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yotei / Yoyaku</div><div class="meaning-text">Schedule (plan) / Reservation (booking)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">切符（きっぷ）/ 旅費（りょひ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kippu / Ryohi</div><div class="meaning-text">Ticket / Travel expenses & costs</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">パスポート / ビザ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Pasupooto / Biza</div><div class="meaning-text">Passport document / Travel visa</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">旅館（りょかん）/ ホテル</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ryokan / Hoteru</div><div class="meaning-text">Traditional Japanese inn / Western hotel</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ゲストハウス / 民泊（みんぱく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Gesutohausu / Minpaku</div><div class="meaning-text">Guest house / Homestay (Airbnb)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お土産（みやげ）/ 外貨（がいか）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Omiyage / Gaika</div><div class="meaning-text">Souvenir gift / Foreign currency</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">新幹線（しんかんせん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinkansen</div><div class="meaning-text">Japanese high-speed bullet train</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">特急（とっきゅう）/ 急行（きゅうこう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tokkyuu / Kyuukou</div><div class="meaning-text">Limited express / Express train</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">各駅停車（かくえきていしゃ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kakueki teisha</div><div class="meaning-text">Local train stopping at every station</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">国際線（こくさいせん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kokusaisen</div><div class="meaning-text">International flight airline route</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">国内線（こくないせん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kokunaisen</div><div class="meaning-text">Domestic flight airline route</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">乗（の）り換（か）え / 時刻表（じこくひょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Norikae / Jikokuhyou</div><div class="meaning-text">Train transfer / Schedule timetable</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">片道（かたみち）/ 往復（おうふく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Katamichi / Oufuku</div><div class="meaning-text">One-way trip / Round-trip return</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">自由席（じゆうせき）/ 指定席（していせき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Jiyuuseki / Shiteiseki</div><div class="meaning-text">Non-reserved seat / Reserved seat</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">グリーン車（しゃ）/ フェリー</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Guriinsha / Ferii</div><div class="meaning-text">Green car (first class) / Boat ferry</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">名所（めいしょ）/ 観光地（かんこうち）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Meisho / Kankouchi</div><div class="meaning-text">Famous place / Tourist attraction spot</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">遺跡（いせき）/ 博物館（はくぶつかん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Iseki / Hakubutsukan</div><div class="meaning-text">Historical ruins / General museum</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">美術館（びじゅつかん）/ 水族館（すいぞくかん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Bijutsukan / Suizokukan</div><div class="meaning-text">Art gallery museum / Aquarium</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">温泉（おんせん）/ 動物園（どうぶつえん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Onsen / Doubutsuen</div><div class="meaning-text">Natural hot spring / Zoo park</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">城（しろ）/ 神社（じんじゃ）/ お寺（てら）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shiro / Jinja / Otera</div><div class="meaning-text">Castle / Shinto shrine / Buddhist temple</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">桜（さくら）/ 紅葉（こうよう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sakura / Kouyou</div><div class="meaning-text">Cherry blossoms / Autumn red leaves</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">パンフレット / ツアー / ガイド</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Panfuretto / Tsuaa / Gaido</div><div class="meaning-text">Brochure / Group tour / Tour guide</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">両替（りょうがえ）/ 焚（た）き火（び）体験（たいけん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ryougae / Takibi taiken</div><div class="meaning-text">Money exchange / Bonfire experience</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 13 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for travel, sightseeing, scheduling, reservations, tickets, trains, hot springs, and inns.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">旅</div><div class="kanji-info"><h5>Trip / Travel</h5><div class="kanji-readings">Onyomi: <span>リョ (ryo)</span><br>Kunyomi: たび</div></div></div><div class="kanji-example" onclick="speakText('旅行、旅館、旅費')"><span>旅行（りょこう）- travel<br>旅館（りょかん）- inn</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">行</div><div class="kanji-info"><h5>Go / Journey / Act</h5><div class="kanji-readings">Onyomi: <span>コウ、ギョウ (kou)</span><br>Kunyomi: い-く、ゆ-く</div></div></div><div class="kanji-example" onclick="speakText('旅行、急行、行く')"><span>旅行（りょこう）- travel<br>急行（きゅうこう）- express train</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">観</div><div class="kanji-info"><h5>Observe / View / Sightseeing</h5><div class="kanji-readings">Onyomi: <span>カン (kan)</span><br>Kunyomi: み-る</div></div></div><div class="kanji-example" onclick="speakText('観光、観光地、観察')"><span>観光（かんこう）- sightseeing<br>観光地（かんこうち）- tourist spot</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">光</div><div class="kanji-info"><h5>Ray / Light / Shine</h5><div class="kanji-readings">Onyomi: <span>コウ (kou)</span><br>Kunyomi: ひかり、ひか-る</div></div></div><div class="kanji-example" onclick="speakText('観光、日光、光る')"><span>観光（かんこう）- sightseeing<br>日光（にっこう）- sunlight / Nikko</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">予</div><div class="kanji-info"><h5>In advance / Previous / Myself</h5><div class="kanji-readings">Onyomi: <span>ヨ (yo)</span><br>Kunyomi: あらかじ-め</div></div></div><div class="kanji-example" onclick="speakText('予定、予約、天気予報')"><span>予定（よてい）- schedule<br>予約（よやく）- reservation</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">定</div><div class="kanji-info"><h5>Determine / Fix / Establish</h5><div class="kanji-readings">Onyomi: <span>テイ、ジョウ (tei)</span><br>Kunyomi: さだ-める</div></div></div><div class="kanji-example" onclick="speakText('予定、指定席、定食')"><span>予定（よてい）- plan<br>指定席（していせき）- reserved seat</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">約</div><div class="kanji-info"><h5>Promise / Approximately / Shrink</h5><div class="kanji-readings">Onyomi: <span>ヤク (yaku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('予約、約束、約10分')"><span>予約（よやく）- booking<br>約束（やくそく）- promise</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">切</div><div class="kanji-info"><h5>Cut / Ticket / Urgent</h5><div class="kanji-readings">Onyomi: <span>セツ、サイ (setsu)</span><br>Kunyomi: き-る、き-れる</div></div></div><div class="kanji-example" onclick="speakText('切符、切る、大切')"><span>切符（きっぷ）- ticket<br>切る（きる）- to cut</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">符</div><div class="kanji-info"><h5>Token / Sign / Ticket</h5><div class="kanji-readings">Onyomi: <span>フ (fu)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('切符、音符、符号')"><span>切符（きっぷ）- ticket<br>音符（おんぷ）- musical note</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">宿</div><div class="kanji-info"><h5>Inn / Lodging / Rely</h5><div class="kanji-readings">Onyomi: <span>シュク (shuku)</span><br>Kunyomi: やど、やど-る</div></div></div><div class="kanji-example" onclick="speakText('新宿、宿、宿泊')"><span>新宿（しんじゅく）- Shinjuku<br>宿泊（しゅくはく）- lodging</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">泊</div><div class="kanji-info"><h5>Overnight / Stay at / Anchor</h5><div class="kanji-readings">Onyomi: <span>ハク、バク (haku)</span><br>Kunyomi: とま-る、とま-せる</div></div></div><div class="kanji-example" onclick="speakText('民泊、宿泊、泊まる')"><span>民泊（みんぱく）- homestay<br>泊まる（とまる）- to stay overnight</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">鉄</div><div class="kanji-info"><h5>Iron / Steel / Railway</h5><div class="kanji-readings">Onyomi: <span>テツ (tetsu)</span><br>Kunyomi: くろがね</div></div></div><div class="kanji-example" onclick="speakText('地下鉄、私鉄、鉄道')"><span>地下鉄（ちかてつ）- subway<br>鉄道（てつどう）- railway</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">線</div><div class="kanji-info"><h5>Line / Track / Route</h5><div class="kanji-readings">Onyomi: <span>セン (sen)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('新幹線、国際線、山手線')"><span>新幹線（しんかんせん）- Shinkansen<br>国際線（こくさいせん）- intl flight</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">駅</div><div class="kanji-info"><h5>Station / Train depot</h5><div class="kanji-readings">Onyomi: <span>エキ (eki)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('駅、駅前、東京駅')"><span>駅（えき）- train station<br>駅前（えきまえ）- in front of station</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">特</div><div class="kanji-info"><h5>Special / Particular</h5><div class="kanji-readings">Onyomi: <span>トク (toku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('特急、特に、特別')"><span>特急（とっきゅう）- ltd express<br>特に（とくに）- especially</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">急</div><div class="kanji-info"><h5>Hurry / Emergency / Sudden</h5><div class="kanji-readings">Onyomi: <span>キュウ (kyuu)</span><br>Kunyomi: いそ-ぐ</div></div></div><div class="kanji-example" onclick="speakText('急行、特急、急ぐ')"><span>急行（きゅうこう）- express<br>急ぐ（いそぐ）- to hurry</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">席</div><div class="kanji-info"><h5>Seat / Mat / Sit</h5><div class="kanji-readings">Onyomi: <span>セキ (seki)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('指定席、自由席、座席')"><span>指定席（していせき）- reserved<br>自由席（じゆうせき）- non-reserved</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">往</div><div class="kanji-info"><h5>Journey / Go / Depart</h5><div class="kanji-readings">Onyomi: <span>オウ (ou)</span><br>Kunyomi: い-く</div></div></div><div class="kanji-example" onclick="speakText('往復、往路')"><span>往復（おうふく）- round trip<br>往路（おうろ）- outward journey</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">復</div><div class="kanji-info"><h5>Restore / Return / Revert</h5><div class="kanji-readings">Onyomi: <span>フク (fuku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('往復、回復、復習')"><span>往復（おうふく）- round trip<br>回復（かいふく）- recovery</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">名</div><div class="kanji-info"><h5>Name / Famous / Distinction</h5><div class="kanji-readings">Onyomi: <span>メイ、ミョウ (mei)</span><br>Kunyomi: な</div></div></div><div class="kanji-example" onclick="speakText('名所、名前、有名')"><span>名所（めいしょ）- famous place<br>有名（ゆうめい）- famous</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">所</div><div class="kanji-info"><h5>Place / Extent</h5><div class="kanji-readings">Onyomi: <span>ショ (sho)</span><br>Kunyomi: ところ</div></div></div><div class="kanji-example" onclick="speakText('名所、場所、住所')"><span>名所（めいしょ）- famous place<br>場所（ばしょ）- location / place</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">温</div><div class="kanji-info"><h5>Warm / Temperate / Mild</h5><div class="kanji-readings">Onyomi: <span>オン (on)</span><br>Kunyomi: あたた-かい、あたた-まる</div></div></div><div class="kanji-example" onclick="speakText('温泉、温かい、気温')"><span>温泉（おんせん）- hot spring<br>温かい（あたたかい）- warm (touch)</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">泉</div><div class="kanji-info"><h5>Spring / Fountain</h5><div class="kanji-readings">Onyomi: <span>セン (sen)</span><br>Kunyomi: いずみ</div></div></div><div class="kanji-example" onclick="speakText('温泉、泉、源泉')"><span>温泉（おんせん）- hot spring<br>泉（いずみ）- natural spring</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">景</div><div class="kanji-info"><h5>Scenery / View / Landscape</h5><div class="kanji-readings">Onyomi: <span>ケイ (kei)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('景色、景気、風景')"><span>景色（けしき）- scenery / view<br>風景（ふうけい）- landscape</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay Module -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>🎫 Shinkansen Ticket Counter & Okinawa Trip Story (新幹線の窓口予約と沖縄旅行の思い出)</h3>
+            <p>Master purchasing bullet train tickets at a station counter and sharing exciting travel memories!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-info);">
+            <h4>🚄 Scene 1: Buying Shinkansen Tickets at the Counter (新幹線切符の予約)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('すみません、とうきょう から おおさか まで、あした の のぞみ を ２まい おねがいします。')">
+                    <strong style="color:var(--accent-secondary);">お客様 (You):</strong> すみません、東京（とうきょう）から 大阪（おおさか）まで、明日（あした）の「のぞみ」を ２枚（にまい）お願（ねが）いします。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sumimasen, Toukyou kara Oosaka made, ashita no Nozomi wo 2mai onegaishimasu. (Excuse me, 2 tickets for tomorrow's Nozomi bullet train from Tokyo to Osaka please.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('していせき と じゆうせき、どちら に なさいますか。')">
+                    <strong style="color:var(--accent-primary);">駅員 (Station Staff):</strong> 指定席（していせき）と 自由席（じゆうせき）、どちらに なさいますか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Shiteiseki to jiyuuseki, dochira ni nasaimasu ka. (Reserved or non-reserved seat, which would you prefer?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('していせき を おねがいします。まどがわ が いいんですが。')">
+                    <strong style="color:var(--accent-secondary);">お客様 (You):</strong> 指定席（していせき）を お願（ねが）いします。窓側（まどがわ）が いいんですが。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Shiteiseki wo onegaishimasu. Madogawa ga iin desu ga. (Reserved seats please. I would prefer window seats.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('かたみち ですか、おうふく ですか。')">
+                    <strong style="color:var(--accent-primary);">駅員 (Station Staff):</strong> 片道（かたみち）ですか、往復（おうふく）ですか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Katamichi desu ka, oufuku desu ka. (Is this one-way or a round-trip?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('おうふく で おねがいします。')">
+                    <strong style="color:var(--accent-secondary);">お客様 (You):</strong> 往復（おうふく）で お願（ねが）いします。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Oufuku de onegaishimasu. (Round-trip return tickets please.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('おふたり で ２８，０００えん に なります。')">
+                    <strong style="color:var(--accent-primary);">駅員 (Station Staff):</strong> お二人（ふたり）で ２８，０００円（にまんはっせんえん）に なります。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ofutari de 28,000 en ni narimasu. (That will be 28,000 yen for two passengers.)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-success);">
+            <h4>🏝️ Scene 2: Sharing Okinawa Travel Memories (沖縄旅行の思い出)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('せんげつ、かぞく と おきなわ に いきました。うみ が とても きれいで、かんどうしました。')">
+                    <strong style="color:var(--accent-secondary);">旅行の思い出 1:</strong> 先月（せんげつ）、家族（かぞく）と 沖縄（おきなわ）に 行きました。海（うみ）が とても 綺麗（きれい）で、感動（かんどう）しました。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sengetsu, kazoku to Okinawa ni ikimashita. Umi ga totemo kirei de, kandou shimashita. (Last month, I went to Okinawa with my family. The ocean was so beautiful, I was deeply moved!)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('シュノーケリング も はじめて やって みたん です が、おもった より たのしかった です。')">
+                    <strong style="color:var(--accent-primary);">旅行の思い出 2:</strong> シュノーケリングも 初（はじ）めて やってみたん ですが、思（おも）った より 楽（たの）しかったです。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Shunookeringu mo hajimete yatte mitan desu ga, omotta yori tanoshikatta desu. (I also tried snorkeling for the first time, and it was even more fun than I had expected!)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('たべもの も おいしくて、とくに ゴーヤチャンプルー が きにいりました。ぜひ また いきたい と おもって います。')">
+                    <strong style="color:var(--accent-secondary);">旅行の思い出 3:</strong> 食べ物（たべもの）も 美味（おい）しくて、特に（とくに）ゴーヤチャンプルー が 気（き）に入（い）りました。ぜひ また 行きたいと 思（おも）っています。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Tabemono mo oishikute, toku ni gooya chanpuruu ga ki ni irimashita. Zehi mata ikitai to omotte imasu. (The food was delicious too, and I especially loved Goya Champuru. I definitely want to visit again!)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 13 Travel, Booking & Grammar Quiz</h3>
+                <p>Test your understanding of Shinkansen vocabulary, advance preparation regret, hearsay, and travel tips!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 4518–4868)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 13: りょこう (Ryokou) - Travel / Safar
+
+## 🎯 Goal:
+- Travel plans banana
+- Transport aur accommodation book karna
+- Travel experiences share karna
+- Recommendations dena / lena
+
+---
+
+## 1) Travel Vocabulary
+
+### **Planning & Booking:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| りょこう (旅行) | りょこう | Travel / Safar |
+| かんこう (観光) | かんこう | Sightseeing |
+| よてい (予定) | よてい | Plan / Schedule |
+| よやく (予約) | よやく | Reservation / Booking |
+| きっぷ (切符) | きっぷ | Ticket |
+| パスポート | ぱすぽおと | Passport |
+| ビザ | びざ | Visa |
+| りょかん (旅館) | りょかん | Japanese inn |
+| ホテル | ほてる | Hotel |
+| ゲストハウス | げすとはうす | Guest house |
+| みんぱく (民泊) | みんぱく | Home stay / Airbnb |
+| ツアー | つああ | Tour |
+| ガイド | がいど | Guide |
+| パンフレット | ぱんふれっと | Pamphlet / Brochure |
+| おみやげ (お土産) | おみやげ | Souvenir / Gift |
+| りょひ (旅費) | りょひ | Travel expenses |
+| がいか (外貨) | がいか | Foreign currency |
+| りょうがえ (両替) | りょうがえ | Currency exchange |
+
+---
+
+### **Transportation:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| しんかんせん (新幹線) | しんかんせん | Bullet train |
+| とっきゅう (特急) | とっきゅう | Express train |
+| きゅうこう (急行) | きゅうこう | Semi-express |
+| かくえきていしゃ (各駅停車) | かくえきていしゃ | Local train |
+| フェリー | ふぇりい | Ferry |
+| こくさいせん (国際線) | こくさいせん | International flight |
+| こくないせん (国内線) | こくないせん | Domestic flight |
+| のりかえ (乗り換え) | のりかえ | Transfer / Change |
+| じこくひょう (時刻表) | じこくひょう | Timetable |
+| かたみち (片道) | かたみち | One way |
+| おうふく (往復) | おうふく | Round trip |
+| じゆうせき (自由席) | じゆうせき | Non-reserved seat |
+| していせき (指定席) | していせき | Reserved seat |
+| グリーンしゃ (グリーン車) | ぐりいんしゃ | Green car (first class) |
+
+---
+
+### **Sightseeing:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| めいしょ (名所) | めいしょ | Famous place |
+| かんこうち (観光地) | かんこうち | Tourist spot |
+| いせき (遺跡) | いせき | Ruins / Historical site |
+| はくぶつかん (博物館) | はくぶつかん | Museum |
+| びじゅつかん (美術館) | びじゅつかん | Art museum |
+| どうぶつえん (動物園) | どうぶつえん | Zoo |
+| すいぞくかん (水族館) | すいぞくかん | Aquarium |
+| おんせん (温泉) | おんせん | Hot spring |
+| りょかん (旅館) | りょかん | Japanese inn |
+| しろ (城) | しろ | Castle |
+| じんじゃ (神社) | じんじゃ | Shrine |
+| おてら (お寺) | おてら | Temple |
+| たきびたいけん (焚き火体験) | たきびたいけん | Bonfire experience |
+| さくら (桜) | さくら | Cherry blossom |
+| こうよう (紅葉) | こうよう | Autumn leaves |
+
+---
+
+## 2) Grammar Point 62: ～ば よかった - Review
+
+Chapter 10 mein dekha tha. Travel context mein:
+
+```
+もっと はやく よやく すれば よかった。
+(Motto hayaku yoyaku sureba yokatta.)
+Kash pehle booking kar leta.
+
+あの びじゅつかん に いけば よかった。
+(Ano bijutsukan ni ikeba yokatta.)
+Kash woh art museum jaata.
+
+もっと おかね を もって くれば よかった。
+(Motto okane wo motte kureba yokatta.)
+Kash zyada paise laata.
+
+かさ を もって いけば よかった。
+(Kasa wo motte ikeba yokatta.)
+Kash chhata le jaata.
+```
+
+---
+
+## 3) Grammar Point 63: ～ておけばよかった  
+## Meaning: "Kash pehle se _____ karke rakh leta"
+
+**て-form + おけば よかった**
+
+Advance preparation na karne ka regret:
+
+### Examples:
+
+```
+もっと にほんご を べんきょうして おけば よかった。
+(Motto nihongo wo benkyou shite okeba yokatta.)
+Kash pehle se Japanese aur padh ke aata.
+
+ホテル を もっとはやく よやくして おけば よかった。
+(Hoteru wo motto hayaku yoyaku shite okeba yokatta.)
+Kash hotel pehle se book karke rakhta.
+
+ちずを ダウンロードして おけば よかった。
+(Chizu wo daunroodo shite okeba yokatta.)
+Kash map download karke rakhta.
+
+パスポートを かくにんして おけば よかった。
+(Pasupooto wo kakunin shite okeba yokatta.)
+Kash passport check karke rakhta.
+```
+
+---
+
+## 4) Grammar Point 64: ～たら どうでしたか  
+## Meaning: "_____ kiya toh kaisa raha? / How was it when you _____ ?"
+
+Experience poochne ke liye:
+
+### Examples:
+
+```
+にほんに いったら どうでしたか。
+(Nihon ni ittara dou deshita ka.)
+Japan gaye toh kaisa raha?
+
+おんせんに はいったら どうでしたか。
+(Onsen ni haittara dou deshita ka.)
+Onsen mein gaye toh kaisa laga?
+
+しんかんせんに のったら どうでしたか。
+(Shinkansen ni nottara dou deshita ka.)
+Bullet train mein baitha toh kaisa laga?
+```
+
+### Answers:
+
+```
+とても たのしかったです。また いきたいです。
+(Totemo tanoshikatta desu. Mata ikitai desu.)
+Bahut maza aaya. Phir jaana chahta hoon.
+
+おもったより はやかったです。
+(Omotta yori hayakatta desu.)
+Socha tha usse zyada jaldi tha.
+
+すごく きれいで、かんどうしました。(感動)
+(Sugoku kirei de, kandou shimashita.)
+Bahut sundar tha, dil bhar aaya.
+```
+
+---
+
+## 5) Grammar Point 65: ～てみたら  
+## Meaning: "Try kiya toh / Once you try it..."
+
+**て-form + みたら**
+
+### Examples:
+
+```
+たべてみたら、おもったより おいしかったです。
+(Tabete mitara, omotta yori oishikatta desu.)
+Khaya toh, socha tha usse zyada tasty tha.
+
+いってみたら、とても よかったです。
+(Itte mitara, totemo yokatta desu.)
+Gaya toh, bahut accha tha.
+
+やってみたら、かんたんでした。
+(Yatte mitara, kantan deshita.)
+Kiya toh, aasaan tha.
+
+このみせ、はいってみたら どうですか。
+(Kono mise, haitte mitara dou desu ka.)
+Is dukaan mein, andar jaake dekho kyun nahi?
+```
+
+---
+
+## 6) Grammar Point 66: ～らしい  
+## Meaning: "Lagta hai / Apparently (evidence based)"
+
+**Plain form + らしい**
+
+Evidence ya information ke basis pe opinion:
+
+### Examples:
+
+```
+あの おんせん は とても いい らしいです。
+(Ano onsen wa totemo ii rashii desu.)
+Woh onsen bahut accha lagta hai. (suna hai)
+
+きょうとは ことし の はるも さくら が きれい らしいです。
+(Kyouto wa kotoshi no haru mo sakura ga kirei rashii desu.)
+Kyoto mein is saal bhi spring mein cherry blossom sundar hai lagta hai.
+
+あの ホテルは サービスが いい らしいですよ。
+(Ano hoteru wa saabisu ga ii rashii desu yo.)
+Woh hotel ka service accha lagta hai.
+
+このりょかんは しょくじが おいしい らしいです。
+(Kono ryokan wa shokuji ga oishii rashii desu.)
+Is ryokan ka khana tasty lagta hai.
+```
+
+---
+
+## 7) Grammar Point 67: ～なら  
+## Meaning: "Agar _____ ho toh / If that's the case..."
+
+**Noun / Verb plain + なら**
+
+Context ya topic receive karke suggestion dena:
+
+### Examples:
+
+```
+きょうとに いくなら、ふしみいなりは おすすめです。
+(Kyouto ni iku nara, Fushimi Inari wa osusume desu.)
+Kyoto jaana ho toh, Fushimi Inari recommend hai.
+
+はじめてなら、ツアーの ほうが いいかもしれません。
+(Hajimete nara, tsuaa no hou ga ii kamo shiremasen.)
+Pehli baar hai toh, tour zyada accha ho sakta hai.
+
+にほんごが わからないなら、ガイドを たのんだら どうですか。
+(Nihongo ga wakaranai nara, gaido wo tanondara dou desu ka.)
+Japanese nahi samajhte toh, guide le lete kyun nahi?
+
+おかねが すくないなら、ゲストハウスの ほうが やすいですよ。
+(Okane ga sukunai nara, gesutohausu no hou ga yasui desu yo.)
+Paise kam hain toh, guest house zyada sasta hai.
+```
+
+---
+
+## 8) Booking conversation
+
+### Shinkansen ticket:
+
+```
+A: すみません、とうきょうから おおさかまで、
+   あしたの のぞみ を 2まい おねがいします。
+(Sumimasen, Toukyou kara Oosaka made,
+ashita no Nozomi wo 2 mai onegaishimasu.)
+Excuse me, Tokyo se Osaka kal ki Nozomi 2 tickets please.
+
+B: していせき と じゆうせき、どちらに なさいますか。
+(Shitei seki to jiyuu seki, dochira ni nasaimasu ka.)
+Reserved ya non-reserved seat, kaunsa chahiye?
+
+A: していせきを おねがいします。
+   まどがわ (窓側) が いいんですが。
+(Shiteiseki wo onegaishimasu.
+Madogawa ga iin desu ga.)
+Reserved please. Window side chahiye.
+
+B: かたみち ですか、おうふく ですか。
+(Katamichi desu ka, oufuku desu ka.)
+One way ya round trip?
+
+A: おうふく で おねがいします。
+(Oufuku de onegaishimasu.)
+Round trip please.
+
+B: おふたりで 28,000えん に なります。
+(Ofutari de 28,000 en ni narimasu.)
+Do logon ke liye 28,000 yen hoga.
+```
+
+---
+
+## 9) Travel recommendations
+
+### Giving recommendations:
+
+```
+きょうとに いくなら、ぜひ きんかくじ (金閣寺) を みて ください。
+(Kyouto ni iku nara, zehi Kinkakuji wo mite kudasai.)
+Kyoto jaao toh zaroor Kinkakuji dekho.
+
+このりょかんは とても おすすめです。
+しょくじも おいしいし、おんせんも きれいですよ。
+(Kono ryokan wa totemo osusume desu.
+Shokuji mo oishii shi, onsen mo kirei desu yo.)
+Yeh ryokan bahut recommend hai.
+Khana bhi tasty hai aur onsen bhi clean hai.
+
+じかんが あれば、なしゃ (奈良) も よって みてください。
+しかが あるいていて、おもしろいですよ。
+(Jikan ga areba, Nara mo yotte mite kudasai.
+Shika ga aruite ite, omoshiroi desu yo.)
+Time ho toh Nara bhi ghoom aao.
+Hiran ghoomte hain, interesting hai.
+```
+
+---
+
+## 10) Travel experience sharing
+
+```
+せんげつ、かぞくと おきなわ (沖縄) に いきました。
+(Sengetsu, kazoku to Okinawa ni ikimashita.)
+Pichle mahine, family ke saath Okinawa gaya.
+
+うみが とてもきれいで、かんどうしました。
+(Umi ga totemo kirei de, kandou shimashita.)
+Samundar bahut sundar tha, dil bhar gaya.
+
+シュノーケリングも はじめて やってみたんですが、
+おもったより たのしかったです。
+(Shunookeringu mo hajimete yatte mitan desu ga,
+omotta yori tanoshikatta desu.)
+Snorkeling bhi pehli baar try kiya,
+socha tha usse zyada maza aaya.
+
+たべものも おいしくて、とくに ゴーヤチャンプルーが
+きにいりました。
+(Tabemono mo oishikute, toku ni Gooya chanpuruu ga
+ki ni irimashita.)
+Khana bhi tasty tha, especially Goya Champuru
+bahut pasand aaya.
+
+ぜひ また いきたいと おもっています。
+(Zehi mata ikitai to omotteimasu.)
+Zaroor phir jaana chahta hoon.
+```
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 13: りょこう (Travel) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const travelData = {
+        kyoto: {
+            okeba: { jp: "秋（あき）の 京都（きょうと）は 混（こ）むので、もっと 早（はや）く 新幹線（しんかんせん）の 切符（きっぷ）を 買（か）っておけば よかった。", rom: "Aki no Kyouto wa komu node, motto hayaku shinkansen no kippu wo katte okeba yokatta.", hi: "Hindi Translation: Autumn mein Kyoto mein bheed hoti hai isliye, kash Shinkansen ka ticket pehle se khareed ke rakhta!" },
+            doudeshita: { jp: "京都（きょうと）の 伏見稲荷（ふしみいなり）大社（たいしゃ）に 行（い）ったら どうでしたか。", rom: "Kyouto no Fushimi Inari taisha ni ittara dou deshita ka.", hi: "Hindi Translation: Kyoto ke Fushimi Inari shrine gaye toh kaisa raha? / How was your visit?" },
+            mitara: { jp: "金閣寺（きんかくじ）を 見（み）て みたら、写真（しゃしん）より ずっと 輝（かがや）いていて 感動（かんどう）しました。", rom: "Kinkakuji wo mite mitara, shashin yori zutto kagayaite ite kandou shimashita.", hi: "Hindi Translation: Kinkakuji dekha toh, photo se kahin zyada chamak raha tha aur dil bhar aaya!" },
+            rashii: { jp: "京都（きょうと）は 今年（ことし）の 春（はる）も 桜（さくら）が とても 綺麗（きれい）らしい ですよ。", rom: "Kyouto wa kotoshi no haru mo sakura ga totemo kirei rashii desu yo.", hi: "Hindi Translation: Kyoto mein is saal bhi spring mein cherry blossoms bahut sundar hain lagta hai (heard online)." },
+            nara: { jp: "京都（きょうと）に 行（い）くなら、ぜひ 伝統的（でんとうてき）な 旅館（りょかん）に 泊（とま）ってみて ください。", rom: "Kyouto ni iku nara, zehi dentouteki na ryokan ni tomatte mite kudasai.", hi: "Hindi Translation: Kyoto jaao toh, zaroor kisi traditional Japanese ryokan inn mein stay karke dekho!" }
+        },
+        okinawa: {
+            okeba: { jp: "日焼（ひや）け止（ど）めクリームを 日本（にほん）から 持（も）って 行（い）っておけば よかった。日差（ひざ）しが 強（つよ）いです。", rom: "Hiyakedome kuriimu wo Nihon kara motte itte okeba yokatta. Hizashi ga tsuyoi desu.", hi: "Hindi Translation: Kash sunscreen cream pehle se saath le jaata. Dhoop bahut tez hai!" },
+            doudeshita: { jp: "沖縄（おきなわ）で 初（はじ）めて シュノーケリングを やったら どうでしたか。", rom: "Okinawa de hajimete shunookeringu wo yattara dou deshita ka.", hi: "Hindi Translation: Okinawa mein pehli baar snorkeling kiya toh kaisa experience raha?" },
+            mitara: { jp: "ゴーヤチャンプルーを 食（た）べて みたら、思（おも）った より 苦（にが）くなくて 美味（おい）しかったです。", rom: "Gooya chanpuruu wo tabete mitara, omotta yori nigakunakte oishikatta desu.", hi: "Hindi Translation: Goya Champuru khaya toh, socha tha usse kam kadwa aur bahut tasty tha!" },
+            rashii: { jp: "あの ビーチは 夕日（ゆうひ）が とても 美（うつく）しく 見（み）える らしい です。", rom: "Ano biichi wa yuuhi ga totemo utsukushiku mieru rashii desu.", hi: "Hindi Translation: Woh beach se sunset bahut khoobsurat dikhta hai lagta hai (suna hai review mein)." },
+            nara: { jp: "沖縄（おきなわ）に 行（い）くなら、レンタカーを 予約（よやく）した ほうが 便利（べんり）ですよ。", rom: "Okinawa ni iku nara, rentakaa wo yoyaku shita hou ga benri desu yo.", hi: "Hindi Translation: Okinawa jaao toh, rental car book kar lena zyada convenient rahega!" }
+        },
+        shinkansen: {
+            okeba: { jp: "新幹線（しんかんせん）の 窓側（まどがわ）の 指定席（していせき）を 予約（よやく）して おけば よかった。富士山（ふじさん）が 見（み）えませんでした。", rom: "Shinkansen no madogawa no shiteiseki wo yoyaku shite okeba yokatta. Fujisan ga miemasen deshita.", hi: "Hindi Translation: Kash Shinkansen ka window side reserved seat pehle se book rakhta. Mt. Fuji nahi dikha!" },
+            doudeshita: { jp: "東京（とうきょう）から 大阪（おおさか）まで「のぞみ」に 乗（の）ったら どうでしたか。", rom: "Toukyou kara Oosaka made Nozomi ni nottara dou deshita ka.", hi: "Hindi Translation: Tokyo se Osaka tak Nozomi bullet train mein baithe toh kaisa laga?" },
+            mitara: { jp: "駅弁（えきべん）を 買（か）って 新幹線（しんかんせん）の中で 食（た）べて みたら、最高（さいこう）の 旅行（りょこう）気分（きぶん）でした。", rom: "Ekiben wo katte shinkansen no naka de tabete mitara, saikou no ryokou kibun deshita.", hi: "Hindi Translation: Station bento khareed kar train mein khaya toh best travel feeling aayi!" },
+            rashii: { jp: "ゴールデンウィークの 新幹線（しんかんせん）は 自由席（じゆうせき）が 満席（まんせき）になる らしい です。", rom: "Gooruden wiiku no shinkansen wa jiyuuseki ga manseki ni naru rashii desu.", hi: "Hindi Translation: Golden Week ki bullet train mein non-reserved seats full ho jaati hain lagta hai." },
+            nara: { jp: "新幹線（しんかんせん）で 大阪（おおさか）に 行（い）くなら、往復（おうふく）切符（きっぷ）を 買（か）った ほうが 安（やす）いですよ。", rom: "Shinkansen de Oosaka ni iku nara, oufuku kippu wo katta hou ga yasui desu yo.", hi: "Hindi Translation: Bullet train se Osaka jaao toh, round-trip return ticket lena zyada sasta padega!" }
+        },
+        hakone: {
+            okeba: { jp: "露天風呂（ろてんぶろ）が ある 旅館（りょかん）を 確認（かくにん）して おけば よかった。", rom: "Rotenburo ga aru ryokan wo kakunin shite okeba yokatta.", hi: "Hindi Translation: Kash open-air hot spring wala ryokan pehle se check karke book rakhta." },
+            doudeshita: { jp: "箱根（はこね）の 温泉（おんせん）に ゆっくり 入（はい）ったら どうでしたか。", rom: "Hakone no onsen ni yukkuri haittara dou deshita ka.", hi: "Hindi Translation: Hakone ke onsen mein araam se nahaye toh kaisa laga?" },
+            mitara: { jp: "旅館（りょかん）の 伝統的（でんとうてき）な 和食（わしょく）を 食（た）べて みたら、品数（しなかず）が 多（おお）くて 驚（おどろ）きました。", rom: "Ryokan no dentouteki na washoku wo tabete mitara, shinakazu ga ookute odorokimashita.", hi: "Hindi Translation: Ryokan ka traditional Japanese khana khaya toh, dishes ki tadaad dekh kar hairan ho gaya!" },
+            rashii: { jp: "あの 温泉（おんせん）旅館（りょかん）は サービスも 良（よ）くて 料理（りょうり）も 最高（さいこう）らしい です。", rom: "Ano onsen ryokan wa saabisu mo yokute ryouri mo saikou rashii desu.", hi: "Hindi Translation: Woh hot spring inn ka service aur khana dono best hai lagta hai (suna hai)." },
+            nara: { jp: "箱根（はこね）に 泊（とま）るなら、ぜひ 温泉（おんせん）と 美味（おい）しい 日本（にほん）酒（しゅ）を 楽（たの）しんで ください。", rom: "Hakone ni tomaru nara, zehi onsen to oishii nihonshu wo tanoshinde kudasai.", hi: "Hindi Translation: Hakone mein stay karo toh, zaroor hot spring aur tasty Japanese sake enjoy karo!" }
+        },
+        nara: {
+            okeba: { jp: "鹿（しか）せんべい用（よう）の 小銭（こぜに）を もっと 準備（じゅんび）して おけば よかった。", rom: "Shikasenbeiyou no kozeni wo motto junbi shite okeba yokatta.", hi: "Hindi Translation: Kash hiran ke crackers ke liye chillar paise pehle se taiyar karke rakhta!" },
+            doudeshita: { jp: "奈良（なら）公園（こうえん）で たくさんの 鹿（しか）と 遊（あそ）んだら どうでしたか。", rom: "Nara kouen de takusan no shika to asondara dou deshita ka.", hi: "Hindi Translation: Nara park mein bahut saare hiran ke saath khele toh kaisa laga?" },
+            mitara: { jp: "鹿（しか）に せんべいを あげて みたら、お辞儀（じぎ）を してくれて とても 可愛（かわい）かったです。", rom: "Shika ni senbei wo agete mitara, ojigi wo shite kurete totemo kawaikatta desu.", hi: "Hindi Translation: Hiran ko cracker khilaya toh, unhone bow (salaam) kiya jo bahut cute tha!" },
+            rashii: { jp: "奈良（なら）の 東大寺（とうだいじ）の大仏（だいぶつ）は 思（おも）った より ずっと 大（おお）きい らしい です。", rom: "Nara no Toudaiji no daibutsu wa omotta yori zutto ookii rashii desu.", hi: "Hindi Translation: Nara ke Todaiji temple ka Buddha statue socha tha usse kahin zyada bada hai lagta hai." },
+            nara: { jp: "時間（じかん）が あるなら、奈良（なら）も 寄（よ）って みてください。歴史（れきし）の 遺跡（いせき）が 素晴（すば）らしいですよ。", rom: "Jikan ga aru nara, Nara mo yotte mite kudasai. Rekishi no iseki ga subarashii desu yo.", hi: "Hindi Translation: Time ho toh, Nara bhi ghoom aao. Wahan ke historical ruins lajawab hain!" }
+        }
+    };
+
+    function updateTravelSim() {
+        const s = document.getElementById('sim-scene').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = travelData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakTravelSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 「ホテルを もっと 早（はや）く 予約（よやく）して _______ よかった。」\n(I SHOULD HAVE BOOKED / PREPARED the hotel earlier in advance - Advance regret)", opt: ["おけば (okeba)", "いけば (ikeba)", "みれば (mireba)", "あれば (areba)"], ans: 0 },
+        { q: "2. 「日本（にほん）の 温泉（おんせん）に _______ どうでしたか。」\n(HOW WAS IT WHEN YOU WENT into a Japanese hot spring? - Asking experience)", opt: ["入ったら (haittara)", "入って (haitte)", "入ろうと (harou to)", "入れば (haireba)"], ans: 0 },
+        { q: "3. 「沖縄（おきなわ）で シュノーケリングを やって_______、思（おも）ったより 楽（たの）しかったです。」\n(ONCE I TRIED doing snorkeling, it was more fun than I expected - Trial discovery)", opt: ["みたら (mitara)", "おいたら (oitara)", "しまったら (shimattara)", "あげたら (agetara)"], ans: 0 },
+        { q: "4. 「あの 旅館（りょかん）は サービスが 良（よ）くて 料理（りょうり）も 美味（おい）しい _______ですよ。」\n(I HEARD THAT / IT SEEMS THAT that inn has good service and tasty food - Hearsay)", opt: ["らしい (rashii)", "ために (tame ni)", "ように (you ni)", "すぎて (sugite)"], ans: 0 },
+        { q: "5. 「京都（きょうと）に _______、金閣寺（きんかくじ）は おすすめです。」\n(IF YOU ARE GOING TO Kyoto / IF THAT'S THE CASE, Kinkakuji is recommended - Topical advice)", opt: ["行くなら (iku nara)", "行ったので (itta node)", "行けども (ikedomo)", "行きながら (ikinagara)"], ans: 0 },
+        { q: "6. 新幹線（しんかんせん）の 切符（きっぷ）を 買（か）う 時、駅員（えきいん）が 「かたみち ですか、おうふく ですか」と 聞（き）きました。意味は 何ですか？\n(What is the staff asking when they say 'Katamichi desu ka, oufuku desu ka?')", opt: ["Is this a one-way ticket or a round-trip return ticket?", "Would you like a reserved seat or a non-reserved seat?", "Are you paying by cash or credit card?", "Do you want a window seat or an aisle seat?"], ans: 0 },
+        { q: "7. 「していせき（指定席）」と 「じゆうせき（自由席）」の 正しい 意味（いみ）の 違（ちが）いは どれですか？\n(What is the difference between Shiteiseki and Jiyuuseki on Japanese trains?)", opt: ["Shiteiseki is a reserved seat with a guaranteed seat number; Jiyuuseki is unreserved first-come-first-served", "Shiteiseki is only for elderly passengers; Jiyuuseki is for students and children", "Shiteiseki is a smoking car; Jiyuuseki is a completely non-smoking car", "Shiteiseki is an international flight; Jiyuuseki is a domestic ferry boat"], ans: 0 },
+        { q: "8. 「感動（かんどう）しました」の 正しい 英語・ヒンディー語の 意味は どれですか？\n(What does kandou shimashita mean when sharing a travel memory?)", opt: ["I was deeply moved / impressed (dil bhar aaya / bahut impressed hua)", "I lost my passport and wallet at the train station", "The hotel room was very dirty and cramped", "I caught a high fever and had to go to the hospital"], ans: 0 },
+        { q: "9. 「思ったより（おもったより）楽（たの）しかった」の 正しい 意味は どれですか？\n(What does omotta yori tanoshikatta mean when describing snorkeling?)", opt: ["It was more enjoyable / fun than I had expected or imagined before trying it", "It was much more expensive than the price written on the tour pamphlet", "It was raining all day so we could not go outside at all", "The train was delayed by two hours due to heavy snow"], ans: 0 },
+        { q: "10. 旅行の 「お土産（みやげ）」と 「両替（りょうがえ）」の 正しい 意味は どれですか？\n(What do the travel nouns omiyage and ryougae mean?)", opt: ["Omiyage means souvenir gifts; Ryougae means currency money exchange", "Omiyage means a passport; Ryougae means an airline visa", "Omiyage means a Shinkansen timetable; Ryougae means a hotel key", "Omiyage means a tourist guide; Ryougae means a travel insurance policy"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Amazing! You are a master of Japanese travel planning and Shinkansen ticket reservations!':'💪 Keep practicing! Review advance preparation regret (~ておけばよかった) and Shinkansen terms!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

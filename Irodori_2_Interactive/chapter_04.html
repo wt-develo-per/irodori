@@ -1,0 +1,938 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 04: しょくじ (Meals & Food)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 4: しょくじ - Meals & Food. Covers cooking verbs, recipes, dining expressions, and grammar (~てから, ~まえに, ~ておく, ~ながら, ~たらいい).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 04: しょくじ (Meals & Food) • Cooking, Recipes & Advanced Dining</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('て を あらってから、りょうり を します。やさい を きってから、いためます。パーティー の まえに、りょうり を つくって おきます。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>🍱 しょくじ (Shokuji) - Meals & Food / Cooking & Dining</h2>
+        <p>Master Japanese cooking terminology, kitchen verbs, recipe explanations, sequence grammar (<strong>～てから / ～まえに / ～ておく / ～ながら / ～たら いい</strong>), and advanced restaurant reservation & ordering conversations! Includes interactive Oyakodon step-by-step cooking simulator.</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 1321–1800</span>
+            <span class="meta-pill">💬 Grammar Points 19–23</span>
+            <span class="meta-pill">📚 40+ Food & Verb Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">🍽️ Restaurant Roleplay</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('kitchen',this)"><span>🍳</span> Cooking & Recipe Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Sequence & Prep (Pt 19–23)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 40+ Audio Vocab & Verb Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 04 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('restaurant',this)"><span>🍽️</span> Restaurant & Dining Roleplay</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Food Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Cooking & Recipe Simulator -->
+    <div id="tab-kitchen" class="tab-content active">
+        <div class="interactive-box">
+            <h4>🍳 Interactive Step-by-Step Recipe Builder (おやこどん の つくりかた)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Experience cooking Oyakodon (Chicken & Egg Rice Bowl) while mastering sequence grammar like <strong>～てから</strong> (after), <strong>～まえに</strong> (before), and <strong>～ておく</strong> (prep in advance)! Select a cooking step to generate native Japanese instructions.</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Recipe Step (つくりかたのステップ)</label>
+                    <select id="sim-step" onchange="updateKitchenSim()">
+                        <option value="step1">1️⃣ Prep Ingredients (材料を切って、卵を混ぜておきます)</option>
+                        <option value="step2">2️⃣ Simmer Sauce & Chicken (調味料を入れて、中火にかけます)</option>
+                        <option value="step3">3️⃣ Pour Egg & Steam (火が通ったら、卵を回し入れます)</option>
+                        <option value="step4">4️⃣ Serve over Rice (ご飯の上にのせて、完成です！)</option>
+                        <option value="advice">💡 Cooking Advice (毎日練習したらいいですよ)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updateKitchenSim()">
+                        <option value="after">⏩ After doing (～てから - Sequence)</option>
+                        <option value="before">⏪ Before doing (～まえに - Preparation)</option>
+                        <option value="prep">📦 Do in advance (～ておく / ～とく - Advance action)</option>
+                        <option value="while">🔀 While doing (～ながら - Simultaneous action)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">手（て）を 洗（あら）ってから、鶏肉（とりにく）を 一口大（ひとくちだい）に 切（き）ります。</div>
+                <div class="output-rom" id="sim-rom">Te wo aratte kara, toriniku wo hitokuchidai ni kirimasu.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Haath dhone ke baad, chicken ko bite-size mein kaato.</div>
+                <button class="btn-speak" onclick="speakKitchenSim()">🔊 Speak Instruction in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🔪 Cutting Styles & Techniques Reference (きりかた)</h3>
+            <p>Click any card to hear the Japanese pronunciation and culinary explanation!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">薄切り（うすぎり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Usugiri • Thin Slice</div><div class="meaning-text">Patla slice. Used for onions (たまねぎを薄切りにする) in salads and stir-fries.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">厚切り（あつぎり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Atsugiri • Thick Slice</div><div class="meaning-text">Mota slice. Used for meat steaks, thick toast, and stew root vegetables.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">千切り（せんぎり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sengiri • Julienne / Thin Strips</div><div class="meaning-text">Patli strips. Commonly used for cabbage (キャベツの千切り) served with Tonkatsu.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">みじん切り（みじんぎり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mijingiri • Fine Chop / Mince</div><div class="meaning-text">Fine chop / Kheema jaisa. Essential for garlic, ginger, and onions in curry or fried rice.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">さいの目切り（さいのめぎり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sainomegiri • Cube Cut</div><div class="meaning-text">Diced into cubes like dice. Used for tofu in miso soup or potatoes in soups.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">一口大（ひとくちだい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hitokuchidai • Bite-Size Pieces</div><div class="meaning-text">Cut into pieces easy to eat in one bite. Standard for chicken in Oyakodon or Karaage.</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Sequence: After doing / Before doing</span><span class="particle-badge">Pt 19 & 20</span></div>
+            <div class="grammar-formula">て-form + から (After) / Dictionary form + まえに (Before)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～てから</strong> to emphasize sequential order ("after doing A, do B"), and <strong>～まえに</strong> to state an action done before another.</p>
+            <ul class="example-list">
+                <li onclick="speakText('て を あらってから、りょうり を します。')">
+                    <span class="ex-jp">手 を 洗ってから、料理 を します。</span>
+                    <span class="ex-rom">Te wo aratte kara, ryouri wo shimasu. (Haath dhone ke baad, khana banata hoon.)</span>
+                </li>
+                <li onclick="speakText('やさい を きってから、いためます。')">
+                    <span class="ex-jp">野菜 を 切ってから、炒めます。</span>
+                    <span class="ex-rom">Yasai wo kitte kara, itamemasu. (Sabzi kaatne ke baad, stir-fry karta hoon.)</span>
+                </li>
+                <li onclick="speakText('りょうり を つくる まえに、ざいりょう を かいます。')">
+                    <span class="ex-jp">料理 を 作る まえに、材料 を 買います。</span>
+                    <span class="ex-rom">Ryouri wo tsukuru mae ni, zairyou wo kaimasu. (Khana banane se pehle, ingredients khareedta hoon.)</span>
+                </li>
+                <li onclick="speakText('ねる まえに、は を みがきます。')">
+                    <span class="ex-jp">寝る まえに、歯 を 磨きます。</span>
+                    <span class="ex-rom">Neru mae ni, ha wo migakimasu. (Sone se pehle, daant saaf karta hoon.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Preparation & Advance Action: Do in advance</span><span class="particle-badge" style="background:var(--accent-success);">Pt 21</span></div>
+            <div class="grammar-formula">て-form + おく / Casual: ～とく</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Expresses completing an action in advance for future convenience or preparation. In casual speech, <strong>～ておく</strong> becomes <strong>～とく</strong> (e.g., 作っておく → 作っとく).</p>
+            <ul class="example-list">
+                <li onclick="speakText('パーティー の まえに、りょうり を つくって おきます。')">
+                    <span class="ex-jp">パーティー の まえに、料理 を 作って おきます。</span>
+                    <span class="ex-rom">Paatii no mae ni, ryouri wo tsukutte okimasu. (Party se pehle, khana bana ke rakhunga.)</span>
+                </li>
+                <li onclick="speakText('やさい を きって おいて ください。')">
+                    <span class="ex-jp">野菜 を 切って おいて ください。</span>
+                    <span class="ex-rom">Yasai wo kitte oite kudasai. (Sabzi kaat ke rakh dijiye.)</span>
+                </li>
+                <li onclick="speakText('あとで たべる から、とっといて。')">
+                    <span class="ex-jp">あとで 食べる から、とっといて。（取っておいて）</span>
+                    <span class="ex-rom">Atode taberu kara, tottoite. (Baad mein khaunga, rakh de - Casual.)</span>
+                </li>
+                <li onclick="speakText('ホテル を よやくして おきました。')">
+                    <span class="ex-jp">ホテル を 予約して おきました。</span>
+                    <span class="ex-rom">Hoteru wo yoyaku shite okimashita. (Hotel book kar ke rakha hai.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Simultaneous Action & Advice: While / Should</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 22 & 23</span></div>
+            <div class="grammar-formula">ます-stem + ながら (While) / ～たら いい (Should / Better to)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ながら</strong> when two actions are performed simultaneously by the same person (main action comes second). Use <strong>～たら いい</strong> to give gentle advice or recommendations.</p>
+            <ul class="example-list">
+                <li onclick="speakText('おんがく を ききながら、りょうり を します。')">
+                    <span class="ex-jp">音楽 を 聞きながら、料理 を します。</span>
+                    <span class="ex-rom">Ongaku wo kikinagara, ryouri wo shimasu. (Music sunte hue, khana banata hoon.)</span>
+                </li>
+                <li onclick="speakText('あるきながら、スマホ を つかわないで ください。')">
+                    <span class="ex-jp">歩きながら、スマホ を 使わないで ください。</span>
+                    <span class="ex-rom">Arukinagara, sumaho wo tsukawanaide kudasai. (Chalte hue, phone use mat karo.)</span>
+                </li>
+                <li onclick="speakText('まいにち れんしゅうしたら いいですよ。')">
+                    <span class="ex-jp">毎日 練習したら いいですよ。</span>
+                    <span class="ex-rom">Mainichi renshuu shitara ii desu yo. (Har roz practice karo toh accha hoga.)</span>
+                </li>
+                <li onclick="speakText('かぜ を ひいたら、あたたかい もの を たべたら いいですよ。')">
+                    <span class="ex-jp">風邪 を 引いたら、温かい もの を 食べたら いいですよ。</span>
+                    <span class="ex-rom">Kaze wo hiitara, atatakai mono wo tabetara ii desu yo. (Sardi lag jaye toh, garam cheez khaana chahiye.)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 4 Essential Vocabulary & Cooking Verbs</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize culinary vocabulary.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">食事（しょくじ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shokuji</div><div class="meaning-text">Bhojan / Meal / Dining</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">料理（りょうり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ryouri</div><div class="meaning-text">Khana / Cooking / Dish</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">材料（ざいりょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Zairyou</div><div class="meaning-text">Ingredients / Saamagri</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">調味料（ちょうみりょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Choumiryou</div><div class="meaning-text">Seasoning / Masala</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">作り方（つくりかた）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tsukurikata</div><div class="meaning-text">Banane ka tareeka / Method</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">下ごしらえ（したごしらえ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shita goshirae</div><div class="meaning-text">Preparation / Taiyaari</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">切ります（きります）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kirimasu</div><div class="meaning-text">Kaatna / To cut / slice</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">焼きます（やきます）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yakimasu</div><div class="meaning-text">Bhunna / Grill / Bake</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">煮ます（にます）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nimasu</div><div class="meaning-text">Ubalna / Simmer (slow cook)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">茹でます（ゆでます）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yudemasu</div><div class="meaning-text">Ubalna / Boil in hot water</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">炒めます（いためます）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Itamemasu</div><div class="meaning-text">Stir-fry karna / Sauté</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">揚げます（あげます）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Agemasu</div><div class="meaning-text">Deep fry karna</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">蒸します（むします）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mushimasu</div><div class="meaning-text">Steam karna</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">混ぜます（まぜます）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mazemasu</div><div class="meaning-text">Milana / Mix karna</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">加えます（くわえます）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kuwaemasu</div><div class="meaning-text">Add karna / Include</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">玉ねぎ（たまねぎ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tamanegi</div><div class="meaning-text">Pyaaz / Onion</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">人参（にんじん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ninjin</div><div class="meaning-text">Gajar / Carrot</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">じゃがいも</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Jagaimo</div><div class="meaning-text">Aloo / Potato</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">大根（だいこん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Daikon</div><div class="meaning-text">Mooli / Radish</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">生姜（しょうが）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shouga</div><div class="meaning-text">Adrak / Ginger</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">牛肉（ぎゅうにく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Gyuuniku</div><div class="meaning-text">Beef meat</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">豚肉（ぶたにく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Butaniku</div><div class="meaning-text">Pork meat</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">鶏肉（とりにく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Toriniku</div><div class="meaning-text">Chicken meat</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ひき肉（ひきにく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hikiniku</div><div class="meaning-text">Kheema / Minced meat</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">海老（えび）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ebi</div><div class="meaning-text">Jheenga / Shrimp / Prawn</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">醤油（しょうゆ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shouyu</div><div class="meaning-text">Soy sauce</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">味噌（みそ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Miso</div><div class="meaning-text">Miso paste (soybean paste)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">砂糖（さとう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Satou</div><div class="meaning-text">Cheeni / Sugar</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">塩（しお）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shio</div><div class="meaning-text">Namak / Salt</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">口に合う（くちにあう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kuchi ni au</div><div class="meaning-text">Taste suit karna / Suit one's palate</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">味が濃い（あじがこい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Aji ga koi</div><div class="meaning-text">Taste strong hai / Rich flavor</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">おかわり</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Okawari</div><div class="meaning-text">Refill / Second serving</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">別腹（べつばら）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Betsubara</div><div class="meaning-text">Separate stomach for dessert!</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 4 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for food, dining, ingredients, cooking techniques, and kitchen seasonings.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">食</div><div class="kanji-info"><h5>Eat / Food / Meal</h5><div class="kanji-readings">Onyomi: <span>ショク、ジキ (shoku)</span><br>Kunyomi: た-べる、く-う</div></div></div><div class="kanji-example" onclick="speakText('食事、食べる')"><span>食事（しょくじ）- meal<br>食べる（たべる）- to eat</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">料</div><div class="kanji-info"><h5>Fee / Materials</h5><div class="kanji-readings">Onyomi: <span>リョウ (ryou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('料理、材料')"><span>料理（りょうり）- cooking<br>材料（ざいりょう）- ingredients</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">理</div><div class="kanji-info"><h5>Reason / Logic / Arrange</h5><div class="kanji-readings">Onyomi: <span>リ (ri)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('料理、理由')"><span>料理（りょうり）- cooking<br>理由（りゆう）- reason</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">材</div><div class="kanji-info"><h5>Timber / Material</h5><div class="kanji-readings">Onyomi: <span>ザイ (zai)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('材料、木材')"><span>材料（ざいりょう）- ingredients<br>木材（もくざい）- lumber</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">調</div><div class="kanji-info"><h5>Tune / Investigate / Prepare</h5><div class="kanji-readings">Onyomi: <span>チョウ (chou)</span><br>Kunyomi: しら-べる、ととの-える</div></div></div><div class="kanji-example" onclick="speakText('調味料、調べる')"><span>調味料（ちょうみりょう）- seasoning<br>調べる（しらべる）- investigate</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">味</div><div class="kanji-info"><h5>Flavor / Taste</h5><div class="kanji-readings">Onyomi: <span>ミ (mi)</span><br>Kunyomi: あじ、あじ-わう</div></div></div><div class="kanji-example" onclick="speakText('調味料、味、意味')"><span>調味料（ちょうみりょう）- seasoning<br>味（あじ）- flavor / taste</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">作</div><div class="kanji-info"><h5>Make / Produce</h5><div class="kanji-readings">Onyomi: <span>サク、サ (saku, sa)</span><br>Kunyomi: つく-る</div></div></div><div class="kanji-example" onclick="speakText('作り方、作家')"><span>作り方（つくりかた）- method<br>作家（さっか）- author</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">切</div><div class="kanji-info"><h5>Cut / Important</h5><div class="kanji-readings">Onyomi: <span>セツ、サイ (setsu)</span><br>Kunyomi: き-る、き-れる</div></div></div><div class="kanji-example" onclick="speakText('切る、大切、親切')"><span>切る（きる）- to cut<br>大切（たいせつ）- important</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">焼</div><div class="kanji-info"><h5>Bake / Grill / Burn</h5><div class="kanji-readings">Onyomi: <span>ショウ (shou)</span><br>Kunyomi: や-く、や-ける</div></div></div><div class="kanji-example" onclick="speakText('焼く、焼肉')"><span>焼く（やく）- to grill / bake<br>焼肉（やきにく）- grilled meat</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">煮</div><div class="kanji-info"><h5>Boil / Simmer</h5><div class="kanji-readings">Onyomi: <span>シャ (sha)</span><br>Kunyomi: に-る、に-える</div></div></div><div class="kanji-example" onclick="speakText('煮る、煮物')"><span>煮る（にる）- simmer in stew<br>煮物（にもの）- simmered dish</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">冷</div><div class="kanji-info"><h5>Cool / Cold</h5><div class="kanji-readings">Onyomi: <span>レイ (rei)</span><br>Kunyomi: つめ-たい、ひ-やす、さ-ます</div></div></div><div class="kanji-example" onclick="speakText('冷やす、冷たい、冷蔵庫')"><span>冷やす（ひやす）- to cool<br>冷蔵庫（れいぞうこ）- fridge</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">温</div><div class="kanji-info"><h5>Warm / Temperature</h5><div class="kanji-readings">Onyomi: <span>オン (on)</span><br>Kunyomi: あたた-かい、あたた-める</div></div></div><div class="kanji-example" onclick="speakText('温める、温度、温泉')"><span>温める（あたためる）- warm up<br>温泉（おんせん）- hot spring</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">洗</div><div class="kanji-info"><h5>Wash / Clean</h5><div class="kanji-readings">Onyomi: <span>セン (sen)</span><br>Kunyomi: あら-う</div></div></div><div class="kanji-example" onclick="speakText('洗う、洗濯機')"><span>洗う（あらう）- to wash<br>洗濯機（せんたくき）- washer</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">野</div><div class="kanji-info"><h5>Field / Plain / Wild</h5><div class="kanji-readings">Onyomi: <span>ヤ (ya)</span><br>Kunyomi: の</div></div></div><div class="kanji-example" onclick="speakText('野菜、野球')"><span>野菜（やさい）- vegetable<br>野球（やきゅう）- baseball</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">菜</div><div class="kanji-info"><h5>Vegetable / Side dish</h5><div class="kanji-readings">Onyomi: <span>サイ (sai)</span><br>Kunyomi: な</div></div></div><div class="kanji-example" onclick="speakText('野菜、白菜')"><span>野菜（やさい）- vegetable<br>白菜（はくさい）- Chinese cabbage</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">肉</div><div class="kanji-info"><h5>Meat / Flesh</h5><div class="kanji-readings">Onyomi: <span>ニク (niku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('牛肉、豚肉、鶏肉')"><span>肉（にく）- meat<br>牛肉（ぎゅうにく）- beef</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">魚</div><div class="kanji-info"><h5>Fish</h5><div class="kanji-readings">Onyomi: <span>ギョ (gyo)</span><br>Kunyomi: さかな、うお</div></div></div><div class="kanji-example" onclick="speakText('魚、魚介類')"><span>魚（さかな）- fish<br>魚介類（ぎょかいるい）- seafood</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">塩</div><div class="kanji-info"><h5>Salt</h5><div class="kanji-readings">Onyomi: <span>エン (en)</span><br>Kunyomi: しお</div></div></div><div class="kanji-example" onclick="speakText('塩、塩分')"><span>塩（しお）- salt<br>塩分（えんぶん）- salt intake</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">糖</div><div class="kanji-info"><h5>Sugar</h5><div class="kanji-readings">Onyomi: <span>トウ (tou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('砂糖、糖分')"><span>砂糖（さとう）- sugar<br>糖分（とうぶん）- sugar content</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">豆</div><div class="kanji-info"><h5>Bean / Pea</h5><div class="kanji-readings">Onyomi: <span>トウ、ズ (tou, zu)</span><br>Kunyomi: まめ</div></div></div><div class="kanji-example" onclick="speakText('豆、豆腐、納豆')"><span>豆（まめ）- bean<br>豆腐（とうふ）- tofu / bean curd</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">醤</div><div class="kanji-info"><h5>Soy sauce / Paste</h5><div class="kanji-readings">Onyomi: <span>ショウ (shou)</span><br>Kunyomi: ひしお</div></div></div><div class="kanji-example" onclick="speakText('醤油')"><span>醤油（しょうゆ）- soy sauce</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">油</div><div class="kanji-info"><h5>Oil / Fat</h5><div class="kanji-readings">Onyomi: <span>ユ (yu)</span><br>Kunyomi: あぶら</div></div></div><div class="kanji-example" onclick="speakText('油、ごま油、石油')"><span>油（あぶら）- cooking oil<br>ごま油（ごまあぶら）- sesame oil</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">茶</div><div class="kanji-info"><h5>Tea</h5><div class="kanji-readings">Onyomi: <span>チャ、サ (cha, sa)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('お茶、紅茶、緑茶')"><span>お茶（おちゃ）- green tea<br>紅茶（こうちゃ）- black tea</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">酒</div><div class="kanji-info"><h5>Sake / Alcohol</h5><div class="kanji-readings">Onyomi: <span>シュ (shu)</span><br>Kunyomi: さけ、さか</div></div></div><div class="kanji-example" onclick="speakText('お酒、日本酒、居酒屋')"><span>お酒（おさけ）- alcohol<br>居酒屋（いざかや）- Japanese pub</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Restaurant & Dining Roleplay -->
+    <div id="tab-restaurant" class="tab-content">
+        <div class="section-header">
+            <h3>🍽️ Advanced Restaurant Conversation & Roleplay</h3>
+            <p>Master making reservations, asking about courses, handling food allergies, and ordering like a native!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-info);">
+            <h4>📞 Scene 1: Making a Reservation (予約する)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('もしもし、レストラン さくら です。')">
+                    <strong style="color:var(--accent-primary);">店員 (Staff):</strong> もしもし、レストラン さくら です。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Moshimoshi, resutoran Sakura desu. (Hello, Restaurant Sakura.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('あした の よる、7じ に 4にん で よやく したいんですが...')">
+                    <strong style="color:var(--accent-secondary);">客 (Customer):</strong> 明日（あした）の 夜（よる）、7時（じ）に 4人（にん）で 予約（よやく）したいんですが...<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ashita no yoru, 7ji ni 4nin de yoyaku shitain desu ga... (I'd like to book for 4 people at 7 PM tomorrow night...)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('もうしわけございません。こせき は いっぱい です。カウンターせき なら あいて います。')">
+                    <strong style="color:var(--accent-primary);">店員 (Staff):</strong> 申し訳ございません。個室（こしつ）は いっぱい です。カウンター席（せき）なら 空（あ）いて います。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Moushiwake gozaimasen. Koshitsu wa ippai desu. Kauntaa seki nara aite imasu. (Sorry, private rooms are full. Counter seats are available.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('じゃ、カウンターせき で おねがいします。')">
+                    <strong style="color:var(--accent-secondary);">客 (Customer):</strong> じゃ、カウンター席（せき）で お願（ねが）いします。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ja, kauntaa seki de onegaishimasu. (Then counter seats, please.)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-secondary);">
+            <h4>🍤 Scene 2: Ordering & Allergies (注文する・アレルギー)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('ごちゅうもん は おきまり ですか？')">
+                    <strong style="color:var(--accent-primary);">店員 (Staff):</strong> ご注文（ちゅうもん）は お決（き）まり ですか？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Gochuumon wa okimari desu ka? (Have you decided on your order?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('この コース りょうり は なにが ついて いますか？')">
+                    <strong style="color:var(--accent-secondary);">客 (Customer):</strong> この コース料理（りょうり）は 何（なに）が ついて いますか？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kono koosu ryouri wa nani ga tsuite imasu ka? (What is included in this course meal?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('ぜんさい、メイン、デザート、のみもの が ついて います。')">
+                    <strong style="color:var(--accent-primary);">店員 (Staff):</strong> 前菜（ぜんさい）、メイン、デザート、飲（の）み物（もの）が ついて います。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Zensai, mein, dezaato, nomimono ga tsuite imasu. (Appetizers, main dish, dessert, and drinks are included.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('アレルギー が あるんですが、えび ぬき に できますか？')">
+                    <strong style="color:var(--accent-secondary);">客 (Customer):</strong> アレルギー が あるんですが、海老（えび）抜（ぬ）き に できますか？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Arerugii ga arun desu ga, ebi nuki ni dekimasu ka? (I have an allergy; can you make it without shrimp?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('はい、えび ぬき で おつくりします。')">
+                    <strong style="color:var(--accent-primary);">店員 (Staff):</strong> はい、海老（えび）抜（ぬ）き で お作（つく）りします。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hai, ebi nuki de otsukuri shimasu. (Yes, we will prepare it without shrimp.)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 4 Cooking & Dining Quiz</h3>
+                <p>Test your knowledge of kitchen verbs, sequence grammar (~てから / ~まえに / ~ておく), and dining terminology!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 1321–1800)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 4: しょくじ (Shokuji) - Meals / Khana
+
+## 🎯 Goal: Khane ke baare mein detail mein baat karna, recipes explain karna, food culture discuss karna, restaurant mein advanced conversation
+
+---
+
+### **Food & Cooking Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| しょくじ (食事) | Shokuji | Bhojan/Meal |
+| りょうり (料理) | Ryouri | Khana/Cooking/Dish |
+| ざいりょう (材料) | Zairyou | Ingredients/Saamagri |
+| ちょうみりょう (調味料) | Choumiryou | Seasoning/Masala |
+| レシピ | Reshipi | Recipe |
+| つくりかた (作り方) | Tsukurikata | Banane ka tareeka |
+| ぶんりょう (分量) | Bunryou | Quantity/Matra |
+| かねつ (加熱) | Kanetsu | Heating/Garam karna |
+| した ごしらえ (下ごしらえ) | Shita goshirae | Preparation/Taiyaari |
+
+---
+
+### **Cooking Verbs (りょうり の どうし):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| つくります (作ります) | Tsukurimasu | Banana |
+| きります (切ります) | Kirimasu | Kaatna |
+| やきます (焼きます) | Yakimasu | Bhunna/Grill karna |
+| にます (煮ます) | Nimasu | Ubalna (slow cook) |
+| ゆでます (茹でます) | Yudemasu | Ubalna (boil) |
+| いためます (炒めます) | Itamemasu | Stir-fry karna |
+| あげます (揚げます) | Agemasu | Deep fry karna |
+| むします (蒸します) | Mushimasu | Steam karna |
+| まぜます (混ぜます) | Mazemasu | Milana/Mix karna |
+| いれます (入れます) | Iremasu | Daalna |
+| くわえます (加えます) | Kuwaemasu | Add karna |
+| かけます | Kakemasu | Dalna (upar se) |
+| ふります | Furimasu | Chhidakna/Sprinkle |
+| ひやします (冷やします) | Hiyashimasu | Thanda karna |
+| あたためます (温めます) | Atatamemasu | Garam karna |
+| さます (冷ます) | Samasu | Thanda hone dena |
+| むきます (剥きます) | Mukimasu | Chhilna (peel) |
+| あらいます (洗います) | Araimasu | Dhona |
+| かわかします (乾かします) | Kawakashimasu | Sukhana |
+
+---
+
+### **Cutting Styles (きりかた / Kirikata):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| うすぎり (薄切り) | Usugiri | Patla slice |
+| あつぎり (厚切り) | Atsugiri | Mota slice |
+| せんぎり (千切り) | Sengiri | Julienne/Patli strips |
+| みじんぎり (みじん切り) | Mijingiri | Fine chop/Kheema jaisa |
+| さいのめぎり (さいの目切り) | Sainomegiri | Cube cut |
+| ななめぎり (斜め切り) | Nanamegiri | Diagonal cut |
+| ひとくちだい (一口大) | Hitokuchidai | Bite-size |
+
+---
+
+### **Ingredients (ざいりょう):**
+
+#### **Vegetables (やさい / Yasai):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| たまねぎ (玉ねぎ) | Tamanegi | Pyaaz/Onion |
+| にんじん (人参) | Ninjin | Gajar/Carrot |
+| じゃがいも | Jagaimo | Aloo/Potato |
+| キャベツ | Kyabetsu | Patta gobi/Cabbage |
+| レタス | Retasu | Lettuce |
+| トマト | Tomato | Tamatar |
+| きゅうり | Kyuuri | Kheera/Cucumber |
+| なす | Nasu | Baingan/Eggplant |
+| ピーマン | Piiman | Shimla mirch/Bell pepper |
+| ほうれんそう (ほうれん草) | Hourensou | Palak/Spinach |
+| だいこん (大根) | Daikon | Mooli/Radish |
+| ねぎ (葱) | Negi | Hara pyaaz/Green onion |
+| にんにく | Ninniku | Lahsun/Garlic |
+| しょうが (生姜) | Shouga | Adrak/Ginger |
+| きのこ | Kinoko | Mushroom |
+| もやし | Moyashi | Bean sprouts |
+
+#### **Meat & Seafood (にく と シーフード):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| にく (肉) | Niku | Meat/Gosht |
+| ぎゅうにく (牛肉) | Gyuuniku | Beef |
+| ぶたにく (豚肉) | Butaniku | Pork |
+| とりにく (鶏肉) | Toriniku | Chicken |
+| ひきにく (ひき肉) | Hikiniku | Kheema/Minced meat |
+| さかな (魚) | Sakana | Machli/Fish |
+| えび (海老) | Ebi | Jheenga/Shrimp |
+| いか | Ika | Squid |
+| たこ | Tako | Octopus |
+| かい (貝) | Kai | Shellfish |
+
+#### **Seasonings (ちょうみりょう):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| しお (塩) | Shio | Namak/Salt |
+| さとう (砂糖) | Satou | Cheeni/Sugar |
+| しょうゆ (醤油) | Shouyu | Soy sauce |
+| みそ (味噌) | Miso | Miso paste |
+| す (酢) | Su | Sirka/Vinegar |
+| みりん | Mirin | Sweet cooking sake |
+| さけ (酒) | Sake | Cooking sake |
+| あぶら (油) | Abura | Tel/Oil |
+| こしょう (胡椒) | Koshou | Kali mirch/Pepper |
+| ソース | Soosu | Sauce |
+| マヨネーズ | Mayoneezu | Mayonnaise |
+| ケチャップ | Kechappu | Ketchup |
+| バター | Bataa | Makhan/Butter |
+
+---
+
+### **Grammar Point 19: ～てから (After doing / _____ karne ke baad)**
+
+**て-form + から = _____ karne ke baad**
+
+#### **Examples:**
+
+```
+て を あらってから、りょうり を します。
+(Te wo aratte kara, ryouri wo shimasu.)
+Haath dhone ke baad, khana banata hoon.
+
+やさい を きってから、いためます。
+(Yasai wo kitte kara, itamemasu.)
+Sabzi kaatne ke baad, stir-fry karta hoon.
+
+ごはん を たべてから、でかけましょう。
+(Gohan wo tabete kara, dekakemashou.)
+Khana khaane ke baad, bahar chalte hain.
+
+にほん に きてから、すし が すきに なりました。
+(Nihon ni kite kara, sushi ga suki ni narimashita.)
+Japan aane ke baad, sushi pasand ho gayi.
+
+しごと が おわってから、ジム に いきます。
+(Shigoto ga owatte kara, jimu ni ikimasu.)
+Kaam khatam hone ke baad, gym jaata hoon.
+```
+
+#### **Difference: ～てから vs ～たあと:**
+
+Both mean "after doing" but slight nuance:
+- **～てから**: Emphasizes sequence (pehle yeh, phir woh)
+- **～たあと**: Just states "after" (time reference)
+
+```
+ごはん を たべてから、すぐ でかけます。
+(Sequence emphasis - khana khaake, turant nikalta hoon)
+
+ごはん を たべたあと、テレビ を みます。
+(Time reference - khane ke baad TV dekhta hoon)
+```
+
+---
+
+### **Grammar Point 20: ～まえに (Before doing / _____ karne se pehle)**
+
+**Dictionary form + まえに = _____ karne se pehle**
+**Noun + の + まえに = _____ se pehle**
+
+#### **Examples:**
+
+```
+ねる まえに、は を みがきます。
+(Neru mae ni, ha wo migakimasu.)
+Sone se pehle, daant saaf karta hoon.
+
+りょうり を つくる まえに、ざいりょう を かいます。
+(Ryouri wo tsukuru mae ni, zairyou wo kaimasu.)
+Khana banane se pehle, ingredients khareedta hoon.
+
+しょくじ の まえに、て を あらいます。
+(Shokuji no mae ni, te wo araimasu.)
+Khane se pehle, haath dhota hoon.
+
+にほん に くる まえに、ひらがな を べんきょうしました。
+(Nihon ni kuru mae ni, hiragana wo benkyou shimashita.)
+Japan aane se pehle, hiragana padha tha.
+
+かいぎ の まえに、しりょう (資料) を よんで おいて ください。
+(Kaigi no mae ni, shiryou wo yonde oite kudasai.)
+Meeting se pehle, documents padh lijiye.
+```
+
+---
+
+### **Grammar Point 21: ～ておく (Do in advance / Pehle se kar lena)**
+
+**て-form + おく = Pehle se kar ke rakhna / Advance mein karna**
+
+Yeh tab use hota hai jab kuch preparation ya advance action ki baat ho:
+
+#### **Examples:**
+
+```
+パーティー の まえに、りょうり を つくって おきます。
+(Paatii no mae ni, ryouri wo tsukutte okimasu.)
+Party se pehle, khana bana ke rakhunga.
+
+あした の かいぎ の ために、しりょう を よんで おきます。
+(Ashita no kaigi no tame ni, shiryou wo yonde okimasu.)
+Kal ki meeting ke liye, documents padh ke rakhunga.
+
+やさい を きって おいて ください。
+(Yasai wo kitte oite kudasai.)
+Sabzi kaat ke rakh dijiye.
+
+ホテル を よやくして おきました。
+(Hoteru wo yoyaku shite okimashita.)
+Hotel book kar ke rakha hai.
+
+でかける まえに、エアコン を けして おいて ください。
+(Dekakeru mae ni, eakon wo keshite oite kudasai.)
+Bahar jaane se pehle, AC band kar dijiye.
+```
+
+#### **Casual form: ～とく**
+- つくっておく → つくっとく
+- よんでおく → よんどく
+- かっておく → かっとく
+
+```
+あとで たべる から、とっといて。
+(Ato de taberu kara, tottoite.)
+Baad mein khaunga, rakh de.
+```
+
+---
+
+### **Grammar Point 22: ～ながら (While doing / _____ karte hue)**
+
+**ます-stem + ながら = _____ karte hue / _____ ke saath saath**
+
+Two actions simultaneously:
+
+#### **Examples:**
+
+```
+おんがく を ききながら、りょうり を します。
+(Ongaku wo kikinagara, ryouri wo shimasu.)
+Music sunte hue, khana banata hoon.
+
+テレビ を みながら、ごはん を たべます。
+(Terebi wo minagara, gohan wo tabemasu.)
+TV dekhte hue, khana khata hoon.
+
+あるきながら、スマホ を つかわないで ください。
+(Arukinagara, sumaho wo tsukawanaide kudasai.)
+Chalte hue, phone use mat karo.
+
+コーヒー を のみながら、ほん を よみます。
+(Koohii wo nominagara, hon wo yomimasu.)
+Coffee peete hue, kitaab padhta hoon.
+
+はたらきながら、だいがく に かよって います。(通う)
+(Hatarakinagara, daigaku ni kayotte imasu.)
+Kaam karte hue, university jaata hoon.
+```
+
+⚠️ **Note:** Main action baad mein aata hai. Side action + ながら, Main action.
+
+---
+
+### **Recipe Example - Oyakodon (親子丼):**
+
+```
+【おやこどん の つくりかた】
+(Oyakodon no tsukurikata)
+Oyakodon Recipe
+
+【ざいりょう】(2にんぶん)
+(Zairyou - 2 nin bun)
+Ingredients (2 servings):
+
+・とりにく 200g
+・たまねぎ 1/2こ
+・たまご 3こ
+・ごはん 2はい
+
+【ちょうみりょう】
+・しょうゆ おおさじ 2 (大さじ = tablespoon)
+・みりん おおさじ 2
+・さとう おおさじ 1
+・みず 100ml
+・だし こさじ 1 (小さじ = teaspoon)
+
+【つくりかた】
+
+1. まず、とりにく を ひとくちだい に きります。
+   (Mazu, toriniku wo hitokuchidai ni kirimasu.)
+   Sabse pehle, chicken ko bite-size mein kaato.
+
+2. たまねぎ を うすぎり に きります。
+   (Tamanegi wo usugiri ni kirimasu.)
+   Pyaaz ko patla slice karo.
+
+3. たまご を わって、かるく まぜて おきます。
+   (Tamago wo watte, karuku mazete okimasu.)
+   Ande tod ke, halka mix kar ke rakho.
+
+4. フライパン に ちょうみりょう と みず を いれて、
+   ちゅうび (中火) に かけます。
+   (Furaipan ni choumiryou to mizu wo irete, chuubi ni kakemasu.)
+   Pan mein seasonings aur paani daal ke, medium flame pe rakho.
+
+5. にたったら、たまねぎ と とりにく を いれます。
+   (Nitattara, tamanegi to toriniku wo iremasu.)
+   Ubalne lage toh, pyaaz aur chicken daalo.
+
+6. とりにく に ひ が とおったら、たまご を まわしいれます。
+   (Toriniku ni hi ga toottara, tamago wo mawashi iremasu.)
+   Chicken pak jaaye toh, anda ghuma ke daalo.
+
+7. ふた を して、30びょう くらい まちます。
+   (Futa wo shite, 30 byou kurai machimasu.)
+   Dhakkan lagake, 30 second wait karo.
+
+8. さいごに、ごはん の うえに のせて、かんせい です！
+   (Saigo ni, gohan no ue ni nosete, kansei desu!)
+   Ant mein, chawal ke upar daal ke, ready hai!
+
+ポイント：たまご は はんじゅく (半熟) が おいしい です。
+(Pointo: Tamago wa hanjuku ga oishii desu.)
+Tip: Anda half-cooked zyada tasty hota hai.
+```
+
+---
+
+### **Measurement Words:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| おおさじ (大さじ) | Oosaji | Tablespoon |
+| こさじ (小さじ) | Kosaji | Teaspoon |
+| カップ | Kappu | Cup |
+| グラム (g) | Guramu | Gram |
+| ミリリットル (ml) | Miririttoru | Milliliter |
+| はい (杯) | Hai | Cup/Bowl (counter) |
+| こ (個) | Ko | Piece (counter) |
+| ぶん (分) | Bun | Portion |
+
+---
+
+### **Grammar Point 23: ～たら いい (Should / Better to)**
+
+**たら + いい = _____ karna chahiye / _____ karo toh accha**
+
+Suggestion ya advice dene ke liye:
+
+#### **Examples:**
+
+```
+A: りょうり が じょうず に なりたい です。
+   (Ryouri ga jouzu ni naritai desu.)
+   Khana banana accha karna chahta hoon.
+
+B: まいにち れんしゅうしたら いいですよ。
+   (Mainichi renshuu shitara ii desu yo.)
+   Har roz practice karo toh accha hoga.
+
+A: どんな ざいりょう を かったら いいですか？
+   (Donna zairyou wo kattara ii desu ka?)
+   Kaisa ingredients khareedna chahiye?
+
+B: しんせんな (新鮮な) やさい を かったら いいですよ。
+   (Shinsen na yasai wo kattara ii desu yo.)
+   Fresh sabzi khareedna chahiye.
+
+かぜ を ひいたら、あたたかい もの を たべたら いいですよ。
+(Kaze wo hiitara, atatakai mono wo tabetara ii desu yo.)
+Sardi lag jaye toh, garam cheez khaana chahiye.
+```
+
+---
+
+### **At Restaurant - Advanced Conversation:**
+
+```
+【よやく する】(Making reservation)
+
+A: もしもし、レストラン さくら です。
+   (Moshimoshi, resutoran Sakura desu.)
+   Hello, Restaurant Sakura hai.
+
+B: あした の よる、7じ に 4にん で よやく したいんですが...
+   (Ashita no yoru, 7ji ni 4nin de yoyaku shitain desu ga...)
+   Kal raat 7 baje 4 logon ke liye booking karna chahta hoon...
+
+A: しょうしょう おまち ください... はい、だいじょうぶ です。
+   (Shoushou omachi kudasai... Hai, daijoubu desu.)
+   Thoda wait kijiye... Haan, theek hai.
+
+B: こせき (個室) は ありますか？
+   (Koshitsu wa arimasu ka?)
+   Private room hai?
+
+A: もうしわけ ございません。こせき は いっぱい です。
+   カウンターせき なら あいて います。
+   (Moushiwake gozaimasen. Koshitsu wa ippai desu.
+   Kauntaa seki nara aite imasu.)
+   Sorry. Private room full hai.
+   Counter seat available hai.
+
+B: じゃ、カウンターせき で おねがいします。
+   (Ja, kauntaa seki de onegaishimasu.)
+   Toh, counter seat please.
+
+A: おなまえ と おでんわばんごう を おねがいします。
+   (Onamae to odenwa bangou wo onegaishimasu.)
+   Naam aur phone number please.
+
+B: ラジェシュ です。でんわばんごう は 090-1234-5678 です。
+   (Rajeshu desu. Denwa bangou wa 090-1234-5678 desu.)
+   Rajesh hai. Phone number 090-1234-5678 hai.
+
+A: かしこまりました。では、あした 7じ に おまちして おります。
+   (Kashikomarimashita. Dewa, ashita 7ji ni omachishite orimasu.)
+   Samajh gaya. Toh, kal 7 baje aapka intezaar karunga.
+```
+
+```
+【ちゅうもん する】(Ordering)
+
+てんいん: ごちゅうもん は おきまり ですか？
+(Tenin: Gochuumon wa okimari desu ka?)
+Waiter: Order decide ho gaya?
+
+きゃく: この コース りょうり は なにが ついて いますか？
+(Kyaku: Kono koosu ryouri wa nani ga tsuite imasu ka?)
+Customer: Is course mein kya kya hai?
+
+てんいん: ぜんさい (前菜)、メイン、デザート、のみもの が ついて います。
+(Tenin: Zensai, mein, dezaato, nomimono ga tsuite imasu.)
+Waiter: Starter, main, dessert, drink included hai.
+
+きゃく: アレルギー が あるんですが、えび ぬき に できますか？
+(Kyaku: Arerugii ga arun desu ga, ebi nuki ni dekimasu ka?)
+Customer: Allergy hai, toh jheenga bina ban sakta hai?
+
+てんいん: はい、えび ぬき で おつくりします。
+(Tenin: Hai, ebi nuki de otsukuri shimasu.)
+Waiter: Haan, jheenga bina banaunga.
+
+きゃく: じゃ、これ を ふたつ と、ビール を ふたつ おねがいします。
+(Kyaku: Ja, kore wo futatsu to, biiru wo futatsu onegaishimasu.)
+Customer: Toh, yeh 2 aur beer 2 please.
+
+てんいん: かしこまりました。
+(Tenin: Kashikomarimashita.)
+Waiter: Samajh gaya.
+```
+
+---
+
+### **Food Related Expressions:**
+
+| Japanese | Meaning |
+|----------|---------|
+| おなか が すいた | Bhook lagi |
+| おなか が いっぱい | Pet bhar gaya |
+| のど が かわいた | Pyaas lagi |
+| くち に あう (口に合う) | Taste suit karna |
+| くち に あわない | Taste suit nahi karna |
+| あじ が うすい (味が薄い) | Taste halka hai |
+| あじ が こい (味が濃い) | Taste strong hai |
+| ひかえめ に する (控えめ) | Kam rakhna |
+| おかわり | Refill/Ek aur serving |
+| べつばら (別腹) | Dessert ke liye jagah hai (lit. separate stomach) |
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 04: しょくじ (Meals & Food) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const kitchenData = {
+        step1: {
+            after: { jp: "手（て）を 洗（あら）ってから、鶏肉（とりにく）を 一口大（ひとくちだい）に 切（き）ります。", rom: "Te wo aratte kara, toriniku wo hitokuchidai ni kirimasu.", hi: "Hindi Translation: Haath dhone ke baad, chicken ko bite-size mein kaato." },
+            before: { jp: "料理（りょうり）を 作（つく）る まえに、材料（ざいりょう）と 調味料（ちょうみりょう）を 買（か）います。", rom: "Ryouri wo tsukuru mae ni, zairyou to choumiryou wo kaimasu.", hi: "Hindi Translation: Khana banane se pehle, ingredients aur seasoning khareedta hoon." },
+            prep: { jp: "卵（たまご）を 割（わ）って、軽（かる）く 混（ま）ぜて おきます。", rom: "Tamago wo watte, karuku mazete okimasu.", hi: "Hindi Translation: Ande tod ke, halka mix kar ke rakh dete hain (in advance)." },
+            while: { jp: "音楽（おんがく）を 聞（き）きながら、下（した）ごしらえ を します。", rom: "Ongaku wo kikinagara, shita goshirae wo shimasu.", hi: "Hindi Translation: Music sunte hue, kitchen preparation (taiyaari) karta hoon." }
+        },
+        step2: {
+            after: { jp: "フライパンに 調味料（ちょうみりょう）を 入（い）れてから、中火（ちゅうび）に かけます。", rom: "Furaipan ni choumiryou wo irete kara, chuubi ni kakemasu.", hi: "Hindi Translation: Pan mein seasoning daalne ke baad, medium flame pe rakho." },
+            before: { jp: "玉（たま）ねぎを 入（い）れる まえに、だしと 醤油（しょうゆ）を 温（あたた）めます。", rom: "Tamanegi wo ireru mae ni, dashi to shouyu wo atatamemasu.", hi: "Hindi Translation: Pyaaz daalne se pehle, dashi aur soy sauce ko garam karo." },
+            prep: { jp: "調味料（ちょうみりょう）を 醤油（しょうゆ）大さじ2、みりん大さじ2 で 測（はか）っておきます。", rom: "Choumiryou wo shouyu oosaji 2, mirin oosaji 2 de hakatte okimasu.", hi: "Hindi Translation: Seasoning ko 2 tbsp soy sauce aur 2 tbsp mirin naap ke rakho." },
+            while: { jp: "におい を 確認（かくにん）しながら、スープ を 煮（に）ます。", rom: "Nioi wo kakunin shinagara, suupu wo nimasu.", hi: "Hindi Translation: Khushbu/smell check karte hue, broth ko ubalo (simmer)." }
+        },
+        step3: {
+            after: { jp: "鶏肉（とりにく）に 火（ひ）が 通（とお）ってから、卵（たまご）を 回（まわ）し入（い）れます。", rom: "Toriniku ni hi ga tootte kara, tamago wo mawashi iremasu.", hi: "Hindi Translation: Chicken pak jaane ke baad, anda ghuma ke daalo." },
+            before: { jp: "ふた を する まえに、卵（たまご）を 全体（ぜんたい）に 広（ひろ）げます。", rom: "Futa wo suru mae ni, tamago wo zentai ni hirogemasu.", hi: "Hindi Translation: Dhakkan lagane se pehle, ande ko har jagah phaila do." },
+            prep: { jp: "卵（たまご）は 半熟（はんじゅく）の 状態（じょうたい）に しておきます。", rom: "Tamago wa hanjuku no joutai ni shite okimasu.", hi: "Hindi Translation: Ande ko half-cooked state mein rakho (zyada tasty hota hai)." },
+            while: { jp: "火（ひ）の 加減（かげん）を 見（み）ながら、30秒（びょう）くらい 待（ち）ちます。", rom: "Hi no kagen wo minagara, 30 byou kurai machimasu.", hi: "Hindi Translation: Aag ki flame dekhte hue, 30 seconds wait karo." }
+        },
+        step4: {
+            after: { jp: "ご飯（ごはん）を 丼（どんぶり）に 盛（も）ってから、上（うえ）に のせます。", rom: "Gohan wo donburi ni motte kara, ue ni nosemasu.", hi: "Hindi Translation: Chawal bowl mein nikalne ke baad, upar daal do." },
+            before: { jp: "食（た）べる まえに、「いただきます」と 言（い）います。", rom: "Taberu mae ni, 'Itadakimasu' to iimasu.", hi: "Hindi Translation: Khaane se pehle, 'Itadakimasu' bolte hain." },
+            prep: { jp: "お茶（ちゃ）を 熱（あつ）い 状態（じょうたい）で 用意（ようい）しておきます。", rom: "Ocha wo atsui joutai de youi shite okimasu.", hi: "Hindi Translation: Green tea ko garam ready kar ke rakho." },
+            while: { jp: "「おいしいね」と 話（はな）しながら、一緒（いっしょ）に 食べます。", rom: "'Oishii ne' to hanashinagara, issho ni tabemasu.", hi: "Hindi Translation: 'Tasty hai na' bolte hue, saath mein khate hain." }
+        },
+        advice: {
+            after: { jp: "料理（りょうり）を 作（つく）ってから、すぐに 片付（かたづ）けをしたほうがいいですよ。", rom: "Ryouri wo tsukutte kara, sugu ni katazuke wo shita hou ga ii desu yo.", hi: "Hindi Translation: Khana banane ke baad, turant saaf-safai kar lena accha hai." },
+            before: { jp: "レストランに 行（い）く まえに、個室（こしつ）を 予約（よやく）したほうがいいですよ。", rom: "Resutoran ni iku mae ni, koshitsu wo yoyaku shita hou ga ii desu yo.", hi: "Hindi Translation: Restaurant jaane se pehle, private room reserve kar lena accha hai." },
+            prep: { jp: "週末（しゅうまつ）に １週間分（いっしゅうかんぶん）の 野菜（やさい）を 切（き）っておくと 便利（べんり）ですよ。", rom: "Shuumatsu ni isshuukan bun no yasai wo kitte oku to benri desu yo.", hi: "Hindi Translation: Weekend pe 1 week ki sabzi kaat ke rakhna convenient hota hai." },
+            while: { jp: "レシピの 動画（どうが）を 見（み）ながら 作（つく）ったら いいですよ。", rom: "Reshipi no douga wo minagara tsukuttara ii desu yo.", hi: "Hindi Translation: Recipe ka video dekhte hue banao toh accha hoga!" }
+        }
+    };
+
+    function updateKitchenSim() {
+        const s = document.getElementById('sim-step').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = kitchenData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakKitchenSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 手 を 洗って _______、料理 を します。\n(I cook AFTER washing my hands - Sequence)", opt: ["から (kara)", "まえに (mae ni)", "ながら (nagara)", "くらい (kurai)"], ans: 0 },
+        { q: "2. 寝る _______、歯 を 磨きます。\n(I brush my teeth BEFORE sleeping)", opt: ["から (kara)", "あとで (atode)", "まえに (mae ni)", "によって (ni yotte)"], ans: 2 },
+        { q: "3. パーティーの 前に、料理 を 作って _______。\n(I will make food IN ADVANCE before the party)", opt: ["おきます (okimasu)", "みます (mimasu)", "います (imasu)", "なります (narimasu)"], ans: 0 },
+        { q: "4. 音楽 を 聞き _______、料理 を します。\n(I cook WHILE listening to music - Simultaneous)", opt: ["から (kara)", "ながら (nagara)", "あと (ato)", "ほど (hodo)"], ans: 1 },
+        { q: "5. 料理が 上手に なりたいなら、毎日 練習したら _______。\n(If you want to be good at cooking, you SHOULD practice daily)", opt: ["いいですよ (ii desu yo)", "ダメですよ (dame desu yo)", "すぎますよ (sugimasu yo)", "にくいですよ (nikui desu yo)"], ans: 0 },
+        { q: "6. 「野菜の 千切り」の 正しい 意味 は どれですか？\n(What does 千切り - sengiri mean?)", opt: ["Julienne / Thin strips", "Thick slices", "Bite-size cubes", "Mashed"], ans: 0 },
+        { q: "7. 「炒めます」の 正しい 読み方 と 意味 は どれですか？\n(Reading and meaning of 炒めます?)", opt: ["にます (nimasu) - to boil", "いためます (itamemasu) - to stir-fry", "あげます (agemasu) - to deep fry", "むします (mushimasu) - to steam"], ans: 1 },
+        { q: "8. レストランで アレルギー が ある時、「海老 _______ に できますか？」と 言います。\n(When you have an allergy, how do you ask for it WITHOUT shrimp?)", opt: ["ぬき (nuki - without)", "おおもり (oomori - extra large)", "いり (iri - included)", "つき (tsuki - attached)"], ans: 0 },
+        { q: "9. 「大さじ 2」の 「大さじ」の 意味 は 何ですか？\n(What does 大さじ - oosaji mean in Japanese recipes?)", opt: ["Teaspoon (小さじ)", "Tablespoon (大さじ)", "Cup (カップ)", "Gram (グラム)"], ans: 1 },
+        { q: "10. 「別腹（べつばら）」の 面白い 意味 は 何ですか？\n(What is the fun cultural meaning of 別腹 - betsubara?)", opt: ["Separate stomach for dessert!", "Stomach ache from overeating", "Spicy food intolerance", "Eating with hands"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Amazing! You are a master of Japanese cooking & dining!':'💪 Keep practicing! Review the cooking verbs and grammar cards!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

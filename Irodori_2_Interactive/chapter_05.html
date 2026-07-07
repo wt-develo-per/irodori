@@ -1,0 +1,837 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 05: じかん (Time & Schedules)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 5: じかん - Time & Schedules. Covers duration, frequency, deadlines, and grammar (かかります, ~に~かい, ~あいだ/に, ~までに, ~ところ, ~てしまう/ちゃう).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 05: じかん (Time & Schedules) • Duration, Deadlines & Punctuality</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('うち から かいしゃ まで いちじかん かかります。いっしゅうかん に さんかい ジム に いきます。きんようび までに レポート を だして ください。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>⌚ じかん (Jikan) - Time & Schedules / Samay</h2>
+        <p>Master time expressions, duration counters, frequency, deadlines, exact points in time, and unintentional completion/regret! Learn essential time grammar (<strong>～かかります / ～に～かい / ～あいだ・あいだに / ～までに / ～ところ / ～てしまう・ちゃう</strong>).</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 1801–2194</span>
+            <span class="meta-pill">💬 Grammar Points 24–29</span>
+            <span class="meta-pill">📚 35+ Time & Counter Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">📅 Schedule Roleplay</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('calculator',this)"><span>⌚</span> Schedule & Time Calculator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Time & Deadlines (Pt 24–29)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 35+ Audio Vocab & Counter Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 05 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>📅</span> Schedule Planning Roleplay</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Time Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Schedule & Time Calculator -->
+    <div id="tab-calculator" class="tab-content active">
+        <div class="interactive-box">
+            <h4>⌚ Interactive Schedule Planner & Time Expression Builder</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Combine different time situations with duration, frequency, deadlines, and completion forms to build natural Japanese scheduling sentences!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Situation (シチュエーション)</label>
+                    <select id="sim-sit" onchange="updateTimeSim()">
+                        <option value="commute">🚆 Daily Commute (通勤 - Home to Office / Station)</option>
+                        <option value="gym">🏋️ Gym & Fitness (運動 - Weekly workout frequency)</option>
+                        <option value="report">📝 Work / Study Deadline (仕事・勉強 - Report submission deadline)</option>
+                        <option value="meeting">🤝 Meeting & Appointments (会議 - Just about to start / in the middle)</option>
+                        <option value="mistake">🤦 Unintentional Regret (失敗 - Wasting time / Forgetting)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Pattern</label>
+                    <select id="sim-gram" onchange="updateTimeSim()">
+                        <option value="duration">⏳ Duration (～かかります - Takes time)</option>
+                        <option value="freq">🔄 Frequency (～に～かい - _____ times per _____)</option>
+                        <option value="during">⏸️ During (～あいだ / ～あいだに - While / During)</option>
+                        <option value="deadline">⏰ Deadline (～までに - By _____ / Before deadline)</option>
+                        <option value="point">📍 Exact Point (～ところ - Just about to / In the middle / Just finished)</option>
+                        <option value="regret">💥 Completion / Regret (～てしまう / ～ちゃう - Completely / Dammit!)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">家（うち）から 会社（かいしゃ）まで 電車（でんしゃ）で １時間（いちじかん）かかります。</div>
+                <div class="output-rom" id="sim-rom">Uchi kara kaisha made densha de ichijikan kakarimasu.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Ghar se office tak train se 1 ghanta lagta hai.</div>
+                <button class="btn-speak" onclick="speakTimeSim()">🔊 Speak Sentence in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🔢 Special Duration Counter Pronunciation Reference</h3>
+            <p>Minutes, weeks, and months have irregular phonetic readings! Click any card to hear native pronunciation.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">１分（いっぷん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ippun • 1 Minute</div><div class="meaning-text">Irregular reading (not ichifun). Similarly: 3分 (さんぷん), 6分 (ろっぷん), 8分 (はっぷん), 10分 (じゅっぷん).</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">１時間（いちじかん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ichijikan • 1 Hour</div><div class="meaning-text">4 hours is よじかん (yojikan) - do not say yonjikan! 9 hours is くじかん (kujikan).</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">１週間（いっしゅうかん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Isshuukan • 1 Week</div><div class="meaning-text">Irregular double s sound. 8 weeks is はっしゅうかん (hasshuukan), 10 weeks is じゅっしゅうかん.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">１か月（いっかげつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ikkagetsu • 1 Month</div><div class="meaning-text">Irregular double k sound. 6 months is ろっかげつ (rokkagetsu) or 半年 (はんとしい - hantoshi).</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">１年（いちねん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ichinen • 1 Year</div><div class="meaning-text">4 years is よねん (yonen) - do not say yonnen! 1.5 years is 一年半 (いちねんはん - ichinenhan).</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">半年（はんとし）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hantoshi • Half a Year (6 Months)</div><div class="meaning-text">Very common in daily life when expressing duration instead of saying ろっかげつ.</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Duration & Frequency: Takes time / Times per period</span><span class="particle-badge">Pt 24 & 25</span></div>
+            <div class="grammar-formula">[Duration] かかります / [Duration] に [Number] 回（かい）</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>かかります</strong> to express how much time or money something takes. Use <strong>～に～回（かい）</strong> to express frequency of actions.</p>
+            <ul class="example-list">
+                <li onclick="speakText('うち から かいしゃ まで いちじかん かかります。')">
+                    <span class="ex-jp">うち から 会社 まで １時間 かかります。</span>
+                    <span class="ex-rom">Uchi kara kaisha made 1 jikan kakarimasu. (Ghar se office tak 1 ghanta lagta hai.)</span>
+                </li>
+                <li onclick="speakText('えき まで あるいて じゅっぷん かかります。')">
+                    <span class="ex-jp">駅 まで 歩いて 10分 かかります。</span>
+                    <span class="ex-rom">Eki made aruite 10 pun kakarimasu. (Station tak paidal 10 minute lagta hai.)</span>
+                </li>
+                <li onclick="speakText('いっしゅうかん に さんかい、ジム に いきます。')">
+                    <span class="ex-jp">１週間 に 3回、ジム に 行きます。</span>
+                    <span class="ex-rom">Isshuukan ni 3 kai, jimu ni ikimasu. (Hafte mein 3 baar gym jaata hoon.)</span>
+                </li>
+                <li onclick="speakText('いちねん に いっかい、くに に かえります。')">
+                    <span class="ex-jp">１年 に 1回、国 に 帰ります。</span>
+                    <span class="ex-rom">Ichinen ni 1 kai, kuni ni kaerimasu. (Saal mein 1 baar desh jaata hoon.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. During & Deadlines: While / By (Deadline)</span><span class="particle-badge" style="background:var(--accent-success);">Pt 26 & 27</span></div>
+            <div class="grammar-formula">～あいだ (Continuous) vs ～あいだに (Point in time) / ～までに (By deadline)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;"><strong>あいだ</strong> means an action occurred continuously during a period, while <strong>あいだに</strong> means something happened at a single point during that time! <strong>までに</strong> indicates a strict deadline (by _______), unlike <strong>まで</strong> (until _______).</p>
+            <ul class="example-list">
+                <li onclick="speakText('なつやすみ の あいだ、ずっと うち に いました。')">
+                    <span class="ex-jp">夏休み の あいだ、ずっと 家 に いました。</span>
+                    <span class="ex-rom">Natsuyasumi no aida, zutto uchi ni imashita. (Summer vacation ke dauraan, poora time ghar pe tha - Continuous.)</span>
+                </li>
+                <li onclick="speakText('でんしゃ を まっている あいだに、ほん を よみました。')">
+                    <span class="ex-jp">電車 を 待っている あいだに、本 を 読みました。</span>
+                    <span class="ex-rom">Densha wo matte iru aida ni, hon wo yomimashita. (Train wait karte waqt, kitaab padhi - Point in time.)</span>
+                </li>
+                <li onclick="speakText('らいしゅう の きんようび までに レポート を だしてください。')">
+                    <span class="ex-jp">来週 の 金曜日 までに レポート を 出してください。</span>
+                    <span class="ex-rom">Raishuu no kinyoubi made ni repooto wo dashite kudasai. (Agle Friday tak report submit karo - Strict deadline.)</span>
+                </li>
+                <li onclick="speakText('ごじ までに かえって きてください。')">
+                    <span class="ex-jp">5時 までに 帰って きて ください。</span>
+                    <span class="ex-rom">5ji made ni kaette kite kudasai. (5 baje tak wapas aa jao.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Exact Point in Time & Unintentional Completion</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 28 & 29</span></div>
+            <div class="grammar-formula">～ところ (About to / In middle / Just did) / ～てしまう・ちゃう (Done / Regret)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;"><strong>ところ</strong> pinpoints an exact stage: Dict + ところ (about to start), ている + ところ (in the middle of), た + ところ (just finished)! <strong>てしまう / ちゃう</strong> expresses either 100% completion or regret for an accidental/unfortunate mistake.</p>
+            <ul class="example-list">
+                <li onclick="speakText('いま、でかける ところ なんだ。あとで いい？')">
+                    <span class="ex-jp">今、出かける ところ なんだ。後で いい？</span>
+                    <span class="ex-rom">Ima, dekakeru tokoro nan da. Atode ii? (Abhi nikalne wala hoon. Baad mein theek?)</span>
+                </li>
+                <li onclick="speakText('さっき、ごはん を たべた ところ です。')">
+                    <span class="ex-jp">さっき、ご飯 を 食べた ところ です。</span>
+                    <span class="ex-rom">Sakki, gohan wo tabeta tokoro desu. (Abhi hi khana khaya - Just finished.)</span>
+                </li>
+                <li onclick="speakText('しゅくだい を もう おわって しまいました。')">
+                    <span class="ex-jp">宿題 を もう 終わって しまいました。</span>
+                    <span class="ex-rom">Shukudai wo mou owatte shimaimashita. (Homework already 100% khatam kar diya - Completion.)</span>
+                </li>
+                <li onclick="speakText('さいふ を おとして しまいました。また、ちこくしちゃった！')">
+                    <span class="ex-jp">財布 を 落として しまいました。また、遅刻しちゃった！</span>
+                    <span class="ex-rom">Saifu wo otoshite shimaimashita. Mata, chikoku shichatta! (Wallet gira diya. Phir se late ho gaya - Regret/Dammit!)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 5 Time & Frequency Adverbs Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize time terminology.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">時間（じかん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Jikan</div><div class="meaning-text">Samay / Time / Hours duration</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">間（あいだ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Aida</div><div class="meaning-text">Duration / Beech / Interval</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">最初（さいしょ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Saisho</div><div class="meaning-text">Sabse pehle / First / Beginning</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">最後（さいご）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Saigo</div><div class="meaning-text">Sabse aakhir / Last / End</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">途中（とちゅう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tochuu</div><div class="meaning-text">Beech mein / Midway / On the way</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">間に合う（まにあう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Maniau</div><div class="meaning-text">Time pe pahunchna / Be on time</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">遅れる（おくれる）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Okureru</div><div class="meaning-text">Late hona / Be delayed</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">すぐ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sugu</div><div class="meaning-text">Turant / Immediately / Right away</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">もうすぐ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mousugu</div><div class="meaning-text">Jaldi hi / Very soon</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">やっと</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yatto</div><div class="meaning-text">Finally / Aakhir mein (after effort)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">いつも</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Itsumo</div><div class="meaning-text">Hamesha / Always</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">たまに</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tamani</div><div class="meaning-text">Kabhi kabhi / Occasionally</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">時々（ときどき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tokidoki</div><div class="meaning-text">Kabhi kabhi / Sometimes</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">めったに～ない</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mettani ~nai</div><div class="meaning-text">Bahut kam / Rarely / Hardly ever</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">全然～ない（ぜんぜん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Zenzen ~nai</div><div class="meaning-text">Bilkul nahi / Not at all / Never</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">もう</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mou</div><div class="meaning-text">Already / Pehle hi / Anymore</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">まだ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Mada</div><div class="meaning-text">Abhi bhi / Still / Not yet</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">早い（はやい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hayai</div><div class="meaning-text">Jaldi / Early (in time or speed)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">遅い（おそい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Osoi</div><div class="meaning-text">Deri / Late / Slow</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">半年（はんとし）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hantoshi</div><div class="meaning-text">6 months / Half a year</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">予定（よてい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yotei</div><div class="meaning-text">Schedule / Plan / Arrangement</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">締め切り（しめきり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shimekiri</div><div class="meaning-text">Deadline / Time limit</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">約束（やくそく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yakusoku</div><div class="meaning-text">Promise / Appointment</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">遅刻する（ちこくする）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Chikoku suru</div><div class="meaning-text">Late hona / To arrive late</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 5 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for time, duration, intervals, deadlines, frequency, and scheduling.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">時</div><div class="kanji-info"><h5>Time / Hour</h5><div class="kanji-readings">Onyomi: <span>ジ (ji)</span><br>Kunyomi: とき</div></div></div><div class="kanji-example" onclick="speakText('時間、時々、時計')"><span>時間（じかん）- time<br>時々（ときどき）- sometimes</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">間</div><div class="kanji-info"><h5>Interval / Between</h5><div class="kanji-readings">Onyomi: <span>カン、ケン (kan, ken)</span><br>Kunyomi: あいだ、ま</div></div></div><div class="kanji-example" onclick="speakText('時間、間、間に合う')"><span>時間（じかん）- duration<br>間に合う（まにあう）- be on time</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">前</div><div class="kanji-info"><h5>Before / In front</h5><div class="kanji-readings">Onyomi: <span>ゼン (zen)</span><br>Kunyomi: まえ</div></div></div><div class="kanji-example" onclick="speakText('午前、名前、寝る前に')"><span>午前（ごぜん）- AM<br>寝る前に（ねるまえに）- before bed</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">後</div><div class="kanji-info"><h5>After / Behind</h5><div class="kanji-readings">Onyomi: <span>ゴ、コウ (go, kou)</span><br>Kunyomi: あと、うし-ろ</div></div></div><div class="kanji-example" onclick="speakText('午後、最後、後で')"><span>午後（ごご）- PM<br>最後（さいご）- last / end</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">初</div><div class="kanji-info"><h5>First / Beginning</h5><div class="kanji-readings">Onyomi: <span>ショ (sho)</span><br>Kunyomi: はじ-め、はつ</div></div></div><div class="kanji-example" onclick="speakText('最初、初めて')"><span>最初（さいしょ）- beginning / first<br>初めて（はじめて）- for 1st time</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">終</div><div class="kanji-info"><h5>End / Finish</h5><div class="kanji-readings">Onyomi: <span>シュウ (shuu)</span><br>Kunyomi: お-わる、お-わり</div></div></div><div class="kanji-example" onclick="speakText('最後、終わる、週末')"><span>最後（さいご）- last<br>終わる（おわる）- finish / end</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">途</div><div class="kanji-info"><h5>Route / Way / Midway</h5><div class="kanji-readings">Onyomi: <span>ト (to)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('途中、用途')"><span>途中（とちゅう）- on the way<br>中途半端（ちゅうとはんぱ）- half-baked</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">中</div><div class="kanji-info"><h5>Middle / Inside</h5><div class="kanji-readings">Onyomi: <span>チュウ、ジュウ (chuu)</span><br>Kunyomi: なか</div></div></div><div class="kanji-example" onclick="speakText('途中、一日中、中国')"><span>途中（とちゅう）- midway<br>一日中（いちにちじゅう）- all day</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">早</div><div class="kanji-info"><h5>Early / Fast</h5><div class="kanji-readings">Onyomi: <span>ソウ、サッ (sou)</span><br>Kunyomi: はや-い、はや-まる</div></div></div><div class="kanji-example" onclick="speakText('早い、早朝、早速')"><span>早い（はやい）- early<br>早速（さっそく）- immediately</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">遅</div><div class="kanji-info"><h5>Late / Slow</h5><div class="kanji-readings">Onyomi: <span>チ (chi)</span><br>Kunyomi: おそ-い、おく-れる</div></div></div><div class="kanji-example" onclick="speakText('遅い、遅れる、遅刻')"><span>遅い（おそい）- late<br>遅れる（おくれる）- be delayed</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">分</div><div class="kanji-info"><h5>Minute / Part / Divide</h5><div class="kanji-readings">Onyomi: <span>フン、プン、ブン (fun)</span><br>Kunyomi: わ-かる、わ-ける</div></div></div><div class="kanji-example" onclick="speakText('１分、十分、分かる')"><span>１分（いっぷん）- 1 min<br>十分（じゅうぶん）- enough / 10m</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">半</div><div class="kanji-info"><h5>Half</h5><div class="kanji-readings">Onyomi: <span>ハン (han)</span><br>Kunyomi: なか-ば</div></div></div><div class="kanji-example" onclick="speakText('半年、３時半、半分')"><span>半年（はんとし）- half a year<br>３時半（さんじはん）- 3:30</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">年</div><div class="kanji-info"><h5>Year</h5><div class="kanji-readings">Onyomi: <span>ネン (nen)</span><br>Kunyomi: とし</div></div></div><div class="kanji-example" onclick="speakText('１年、半年、今年')"><span>１年（いちねん）- 1 year<br>今年（ことし）- this year</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">月</div><div class="kanji-info"><h5>Month / Moon</h5><div class="kanji-readings">Onyomi: <span>ゲツ、ガツ (getsu)</span><br>Kunyomi: つき</div></div></div><div class="kanji-example" onclick="speakText('１か月、月曜日、今月')"><span>１か月（いっかげつ）- 1 month<br>月曜日（げつようび）- Monday</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">日</div><div class="kanji-info"><h5>Day / Sun</h5><div class="kanji-readings">Onyomi: <span>ニチ、ジツ (nichi)</span><br>Kunyomi: ひ、か</div></div></div><div class="kanji-example" onclick="speakText('１日、毎日、日曜日')"><span>１日（いちにち）- 1 day<br>毎日（まいにち）- every day</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">週</div><div class="kanji-info"><h5>Week</h5><div class="kanji-readings">Onyomi: <span>シュウ (shuu)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('１週間、来週、週末')"><span>１週間（いっしゅうかん）- 1 week<br>週末（しゅうまつ）- weekend</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">毎</div><div class="kanji-info"><h5>Every</h5><div class="kanji-readings">Onyomi: <span>マイ (mai)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('毎日、毎週、毎月')"><span>毎日（まいにち）- every day<br>毎週（まいしゅう）- every week</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">回</div><div class="kanji-info"><h5>Times / Revolve</h5><div class="kanji-readings">Onyomi: <span>カイ (kai)</span><br>Kunyomi: まわ-る、まわ-す</div></div></div><div class="kanji-example" onclick="speakText('１回、何回、回す')"><span>１回（いっかい）- once / 1 time<br>何回（なんかい）- how many times</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">度</div><div class="kanji-info"><h5>Degrees / Times / Occurrence</h5><div class="kanji-readings">Onyomi: <span>ド、ト (do, to)</span><br>Kunyomi: たび</div></div></div><div class="kanji-example" onclick="speakText('今度、一度、温度')"><span>今度（こんど）- next time<br>一度（いちど）- once</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">待</div><div class="kanji-info"><h5>Wait</h5><div class="kanji-readings">Onyomi: <span>タイ (tai)</span><br>Kunyomi: ま-つ</span></div></div></div><div class="kanji-example" onclick="speakText('待つ、期待、招待')"><span>待つ（まつ）- to wait<br>期待（きたい）- expectation</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">期</div><div class="kanji-info"><h5>Period / Time / Term</h5><div class="kanji-readings">Onyomi: <span>キ (ki)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('期間、締め切り、学期')"><span>期間（きかん）- period of time<br>学期（がっき）- semester / term</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">約</div><div class="kanji-info"><h5>Promise / Approximately</h5><div class="kanji-readings">Onyomi: <span>ヤク (yaku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('約束、予約、約１時間')"><span>約束（やくそく）- promise<br>予約（よやく）- reservation</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">予</div><div class="kanji-info"><h5>Beforehand / Previous</h5><div class="kanji-readings">Onyomi: <span>ヨ (yo)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('予定、予約、予習')"><span>予定（よてい）- schedule / plan<br>予約（よやく）- reservation</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">定</div><div class="kanji-info"><h5>Determine / Fix / Decide</h5><div class="kanji-readings">Onyomi: <span>テイ、ジョウ (tei)</span><br>Kunyomi: さだ-める</span></div></div></div><div class="kanji-example" onclick="speakText('予定、決定、定食')"><span>予定（よてい）- plan / schedule<br>定食（ていしょく）- set meal</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Schedule Planning Roleplay -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>📅 Schedule & Time Conversation Roleplay</h3>
+            <p>Master scheduling meetings, checking availability, negotiating times, and ensuring punctuality!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-primary);">
+            <h4>🤝 Arranging a Meeting Schedule (来週の予定を相談する)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('らいしゅう の よてい、どうなってる？')">
+                    <strong style="color:var(--accent-primary);">Aさん:</strong> 来週（らいしゅう）の 予定（よてい）、どうなってる？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Raishuu no yotei, dou natteru? (How is your schedule looking for next week?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('げつようび は ちょっと いそがしいんだ。あさ から かいぎ が あって、ひる も アポ が ある。')">
+                    <strong style="color:var(--accent-secondary);">Bさん:</strong> 月曜日（げつようび）は ちょっと 忙（いそが）しいんだ。朝（あさ）から 会議（かいぎ）が あって、昼（ひる）も アポ が ある。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Getsuyoubi wa chotto isogashiin da. Asa kara kaigi ga atte, hiru mo apo ga aru. (Monday is a bit busy. I have meetings from the morning, and appointments at lunch.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('じゃ、かようび は？')">
+                    <strong style="color:var(--accent-primary);">Aさん:</strong> じゃ、火曜日（かようび）は？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ja, kayoubi wa? (Then how about Tuesday?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('かようび の ごご なら あいてる。3じ から 5じ の あいだ、どう？')">
+                    <strong style="color:var(--accent-secondary);">Bさん:</strong> 火曜日（かようび）の 午後（ごご）なら 空（あ）いてる。3時（じ）から 5時（じ）の あいだ、どう？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kayoubi no gogo nara aiteru. 3ji kara 5ji no aida, dou? (Tuesday afternoon is open. How about between 3 and 5 PM?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('いいね。じゃ、3じ に えき の まえで。おくれないでね！')">
+                    <strong style="color:var(--accent-primary);">Aさん:</strong> いいね。じゃ、3時（じ）に 駅（えき）の 前（まえ）で。遅（おく）れないでね！<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ii ne. Ja, 3ji ni eki no mae de. Okurenaide ne! (Great. Then at 3 PM in front of the station. Don't be late!)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('りょうかい！まにあうように いくよ。')">
+                    <strong style="color:var(--accent-secondary);">Bさん:</strong> 了解（りょうかい）！間（ま）に合（あ）うように 行（い）くよ。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Ryoukai! Maniau you ni iku yo. (Roger! I'll make sure to be on time.)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 5 Time & Schedules Quiz</h3>
+                <p>Test your knowledge of duration counters, deadlines, frequency, and completion grammar!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 1801–2194)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 5: じかん (Jikan) - Time / Samay
+
+## 🎯 Goal: Time ke baare mein detail mein baat karna, schedules, duration, frequency, deadlines
+
+---
+
+### **Time Related Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| じかん (時間) | Jikan | Samay/Time |
+| とき (時) | Toki | Waqt/Occasion |
+| あいだ (間) | Aida | Duration/Beech |
+| まえ (前) | Mae | Pehle/Before |
+| あと (後) | Ato | Baad/After |
+| さいしょ (最初) | Saisho | Sabse pehle/First |
+| さいご (最後) | Saigo | Sabse aakhir/Last |
+| はじめ (始め) | Hajime | Shuruwaat |
+| おわり (終わり) | Owari | Khatam/End |
+| とちゅう (途中) | Tochuu | Beech mein/Midway |
+| まにあう (間に合う) | Maniau | Time pe pahunchna |
+| おくれる (遅れる) | Okureru | Late hona |
+| はやい (早い) | Hayai | Jaldi/Early |
+| おそい (遅い) | Osoi | Deri/Late |
+| すぐ | Sugu | Turant/Immediately |
+| もうすぐ | Mousugu | Jaldi hi/Soon |
+| まだ | Mada | Abhi bhi/Still |
+| もう | Mou | Already/Pehle hi |
+| やっと | Yatto | Finally/Aakhir mein |
+| いつも | Itsumo | Hamesha |
+| たまに | Tamani | Kabhi kabhi |
+| ときどき (時々) | Tokidoki | Kabhi kabhi |
+| めったに～ない | Mettani ~nai | Bahut kam |
+| ぜんぜん～ない | Zenzen ~nai | Bilkul nahi |
+
+---
+
+### **Duration Words (どのくらい / Donokurai):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| ～ふん/ぷん (分) | ~fun/pun | _____ minute |
+| ～じかん (時間) | ~jikan | _____ hour |
+| ～にち (日) | ~nichi | _____ day |
+| ～しゅうかん (週間) | ~shuukan | _____ week |
+| ～かげつ (か月) | ~kagetsu | _____ month |
+| ～ねん (年) | ~nen | _____ year |
+| はんとし (半年) | Hantoshi | 6 months |
+| ～はん (半) | ~han | _____ aur aadha |
+
+**Duration Counter Special Readings:**
+
+| Duration | Japanese | Reading |
+|----------|----------|---------|
+| 1 minute | いっぷん | Ippun |
+| 3 minutes | さんぷん | Sanpun |
+| 4 minutes | よんぷん | Yonpun |
+| 6 minutes | ろっぷん | Roppun |
+| 8 minutes | はっぷん | Happun |
+| 10 minutes | じゅっぷん | Juppun |
+| 1 hour | いちじかん | Ichijikan |
+| 4 hours | よじかん | Yojikan |
+| 1 day | いちにち | Ichinichi |
+| 1 week | いっしゅうかん | Isshuukan |
+| 8 weeks | はっしゅうかん | Hasshuukan |
+| 1 month | いっかげつ | Ikkagetsu |
+| 6 months | ろっかげつ | Rokkagetsu |
+| 10 months | じゅっかげつ | Jukkagetsu |
+| 1 year | いちねん | Ichinen |
+| 4 years | よねん | Yonen |
+
+---
+
+### **Grammar Point 24: Duration + かかります (Takes time)**
+
+**[Duration] かかります = _____ time lagta hai**
+
+#### **Examples:**
+
+```
+えき まで あるいて 10ぷん かかります。
+(Eki made aruite 10 pun kakarimasu.)
+Station tak paidal 10 minute lagta hai.
+
+うち から かいしゃ まで 1じかん かかります。
+(Uchi kara kaisha made 1 jikan kakarimasu.)
+Ghar se office tak 1 ghanta lagta hai.
+
+この りょうり は 30ぷん くらい かかります。
+(Kono ryouri wa 30 pun kurai kakarimasu.)
+Yeh khana 30 minute lagega.
+
+にほんご が じょうず に なる まで、なんねん かかりますか？
+(Nihongo ga jouzu ni naru made, nannen kakarimasu ka?)
+Japanese acchi hone tak, kitne saal lagenge?
+
+おもったより じかん が かかりました。
+(Omotta yori jikan ga kakarimashita.)
+Socha tha usse zyada time laga.
+```
+
+---
+
+### **Grammar Point 25: Duration + に + Frequency (_____ mein _____ baar)**
+
+**[Duration] に [Number] かい/ど = _____ mein _____ baar**
+
+#### **Examples:**
+
+```
+いっしゅうかん に 3かい、ジム に いきます。
+(Isshuukan ni 3 kai, jimu ni ikimasu.)
+Hafte mein 3 baar gym jaata hoon.
+
+いちにち に 2かい、は を みがきます。
+(Ichinichi ni 2 kai, ha wo migakimasu.)
+Din mein 2 baar daant saaf karta hoon.
+
+いちねん に 1かい、くに に かえります。
+(Ichinen ni 1 kai, kuni ni kaerimasu.)
+Saal mein 1 baar desh jaata hoon.
+
+1かげつ に なんかい、えいが を みますか？
+(Ikkagetsu ni nankai, eiga wo mimasu ka?)
+Mahine mein kitni baar movie dekhte ho?
+
+にほんじん は いちにち に さんかい、ごはん を たべます。
+(Nihonjin wa ichinichi ni sankai, gohan wo tabemasu.)
+Japanese log din mein 3 baar khana khaate hain.
+```
+
+---
+
+### **Grammar Point 26: ～あいだ / ～あいだに (During / While)**
+
+**Duration/Activity + あいだ = _____ ke dauraan (continuous)**
+**Duration/Activity + あいだに = _____ ke dauraan mein (point in time)**
+
+#### **Difference:**
+
+- **あいだ**: Poore time mein continuously
+- **あいだに**: Us time period ke andar kisi point pe
+
+#### **Examples:**
+
+**あいだ (continuous):**
+```
+なつやすみ の あいだ、ずっと うち に いました。
+(Natsuyasumi no aida, zutto uchi ni imashita.)
+Summer vacation ke dauraan, poora time ghar pe tha.
+
+かいぎ の あいだ、メモ を とります。
+(Kaigi no aida, memo wo torimasu.)
+Meeting ke dauraan, notes leta hoon.
+
+ね て いる あいだ、ゆめ を みました。
+(Nete iru aida, yume wo mimashita.)
+Sote waqt, sapna dekha.
+```
+
+**あいだに (point in time):**
+```
+なつやすみ の あいだに、りょこう に いきました。
+(Natsuyasumi no aida ni, ryokou ni ikimashita.)
+Summer vacation ke dauraan mein, travel gaya.
+
+ひるやすみ の あいだに、ぎんこう に いきたい です。
+(Hiruyasumi no aida ni, ginkou ni ikitai desu.)
+Lunch break ke dauraan mein, bank jaana chahta hoon.
+
+でんしゃ を まって いる あいだに、ほん を よみました。
+(Densha wo matte iru aida ni, hon wo yomimashita.)
+Train wait karte waqt, kitaab padhi.
+
+わかい あいだに、いろいろな けいけん を した ほうが いいです。
+(Wakai aida ni, iroirona keiken wo shita hou ga ii desu.)
+Jawaan hote waqt, bahut experiences karne chahiye.
+```
+
+---
+
+### **Grammar Point 27: ～までに (By _____ / _____ tak)**
+
+**Time/Event + までに = _____ tak / _____ se pehle**
+
+Deadline ya time limit batane ke liye:
+
+#### **Examples:**
+
+```
+5じ までに かえって きて ください。
+(5ji made ni kaette kite kudasai.)
+5 baje tak wapas aa jao.
+
+らいしゅう の きんようび までに レポート を だして ください。
+(Raishuu no kinyoubi made ni repooto wo dashite kudasai.)
+Agle Friday tak report submit karo.
+
+かいぎ が はじまる までに、しりょう を よんで おいて ください。
+(Kaigi ga hajimaru made ni, shiryou wo yonde oite kudasai.)
+Meeting shuru hone se pehle, documents padh lo.
+
+しめきり までに まにあいますか？
+(Shimekiri made ni maniaimasu ka?)
+Deadline tak time pe ho jaayega?
+
+30さい までに、けっこんしたい です。
+(30sai made ni, kekkon shitai desu.)
+30 saal tak shaadi karna chahta hoon.
+```
+
+#### **Difference: まで vs までに:**
+
+| Pattern | Meaning | Example |
+|---------|---------|---------|
+| まで | Until (continuous) | 5じ **まで** はたらきます (5 baje tak kaam karta hoon) |
+| までに | By (deadline) | 5じ **までに** おわります (5 baje tak khatam karunga) |
+
+```
+あした まで やすみ です。
+(Ashita made yasumi desu.)
+Kal tak chutti hai. (Kal bhi chutti)
+
+あした までに おわります。
+(Ashita made ni owarimasu.)
+Kal tak khatam karunga. (Deadline kal hai)
+```
+
+---
+
+### **Grammar Point 28: ～ところ (Just about to / Just did / In the middle of)**
+
+**Verb forms + ところ = _____ hi / _____ wala hai / _____ ke beech mein**
+
+Yeh action ka **exact point** batata hai:
+
+| Pattern | Meaning | Example |
+|---------|---------|---------|
+| Dictionary + ところ | About to do | いま、でかける**ところ**です (Abhi nikalne wala hoon) |
+| ている + ところ | In the middle of | いま、たべている**ところ**です (Abhi kha raha hoon) |
+| た + ところ | Just did | いま、かえってきた**ところ**です (Abhi hi wapas aaya) |
+
+#### **Examples:**
+
+**Dictionary form + ところ (about to):**
+```
+A: いま、いそがしい？
+   (Ima, isogashii?)
+   Abhi busy hai?
+
+B: うん、いま でかける ところ なんだ。あとで いい？
+   (Un, ima dekakeru tokoro nan da. Ato de ii?)
+   Haan, abhi nikalne wala hoon. Baad mein theek?
+
+いま、ごはん を たべる ところ です。
+(Ima, gohan wo taberu tokoro desu.)
+Abhi khana khaane wala hoon.
+```
+
+**ている + ところ (in the middle of):**
+```
+いま、レポート を かいている ところ です。
+(Ima, repooto wo kaite iru tokoro desu.)
+Abhi report likh raha hoon.
+
+ちょうど その はなし を している ところ でした。
+(Choudo sono hanashi wo shite iru tokoro deshita.)
+Bilkul wohi baat ho rahi thi.
+```
+
+**た + ところ (just finished):**
+```
+いま、かえってきた ところ です。
+(Ima, kaette kita tokoro desu.)
+Abhi hi wapas aaya.
+
+さっき、ごはん を たべた ところ です。
+(Sakki, gohan wo tabeta tokoro desu.)
+Abhi hi khana khaya.
+
+ちょうど あなた の こと を かんがえていた ところ です。
+(Choudo anata no koto wo kangaete ita tokoro desu.)
+Bilkul tumhare baare mein soch raha tha.
+```
+
+---
+
+### **Grammar Point 29: ～てしまう (Completely done / Unfortunately happened)**
+
+Pehle chapter mein briefly dekha. Ab detail:
+
+**て-form + しまう = Puri tarah karna / Galti se ho gaya**
+
+Two meanings:
+1. **Completion**: Puri tarah khatam kar diya
+2. **Regret**: Galti se / Unfortunately ho gaya
+
+#### **Examples:**
+
+**Completion (neutral/positive):**
+```
+この ほん を ぜんぶ よんで しまいました。
+(Kono hon wo zenbu yonde shimaimashita.)
+Yeh poori kitaab padh li.
+
+しゅくだい を もう おわって しまいました。
+(Shukudai wo mou owatte shimaimashita.)
+Homework already khatam kar diya.
+
+ケーキ を ぜんぶ たべて しまった！
+(Keeki wo zenbu tabete shimatta!)
+Poora cake kha gaya!
+```
+
+**Regret (negative feeling):**
+```
+だいじな やくそく を わすれて しまいました。
+(Daiji na yakusoku wo wasurete shimaimashita.)
+Important promise bhool gaya (sadly).
+
+さいふ を おとして しまいました。
+(Saifu wo otoshite shimaimashita.)
+Wallet gira diya (unfortunately).
+
+また、ちこくして しまった。
+(Mata, chikoku shite shimatta.)
+Phir se late ho gaya (dammit).
+
+せっかく つくった りょうり を こがして しまった。(焦がす)
+(Sekkaku tsukutta ryouri wo kogashite shimatta.)
+Mehnat se banaya khana jala diya.
+```
+
+#### **Casual form: ～ちゃう / ～じゃう**
+
+| Plain | Casual | Example |
+|-------|--------|---------|
+| てしまう | ちゃう | たべてしまう → たべちゃう |
+| でしまう | じゃう | よんでしまう → よんじゃう |
+
+```
+ぜんぶ たべちゃった！
+(Zenbu tabechatta!)
+Sab kha gaya!
+
+また わすれちゃった...
+(Mata wasurechatta...)
+Phir bhool gaya...
+```
+
+---
+
+### **Schedule & Time Conversation:**
+
+```
+A: らいしゅう の よてい、どうなってる？
+   (Raishuu no yotei, dou natteru?)
+   Agle hafte ka schedule kaisa hai?
+
+B: げつようび は ちょっと いそがしいんだ。
+   あさ から かいぎ が あって、
+   ひる も アポ が ある。
+   (Getsuyoubi wa chotto isogashiin da.
+   Asa kara kaigi ga atte,
+   hiru mo apo ga aru.)
+   Monday thoda busy hai.
+   Subah se meeting hai,
+   dopahar bhi appointment hai.
+
+A: じゃ、かようび は？
+   (Ja, kayoubi wa?)
+   Toh Tuesday?
+
+B: かようび の ごご なら あいてる。
+   3じ から 5じ の あいだ、どう？
+   (Kayoubi no gogo nara aiteru.
+   3ji kara 5ji no aida, dou?)
+   Tuesday dopahar free hai.
+   3 se 5 ke beech, kaisa?
+
+A: いいね。じゃ、3じ に えき の まえで。
+   おくれないでね！
+   (Ii ne. Ja, 3ji ni eki no mae de.
+   Okurenaide ne!)
+   Accha. Toh 3 baje station ke saamne.
+   Late mat hona!
+
+B: りょうかい！まにあうように いくよ。
+   (Ryoukai! Maniau you ni iku yo.)
+   OK! Time pe pahunchne ki koshish karunga.
+```
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 05: じかん (Time & Schedules) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const timeData = {
+        commute: {
+            duration: { jp: "家（うち）から 会社（かいしゃ）まで 電車（でんしゃ）で １時間（いちじかん）かかります。", rom: "Uchi kara kaisha made densha de ichijikan kakarimasu.", hi: "Hindi Translation: Ghar se office tak train se 1 ghanta lagta hai." },
+            freq: { jp: "１週間に（いっしゅうかんに）５回（ごかい）、電車（でんしゃ）で 通勤（つうきん）します。", rom: "Isshuukan ni gokai, densha de tsuukin shimasu.", hi: "Hindi Translation: Hafte mein 5 baar train se commute karta hoon." },
+            during: { jp: "電車（でんしゃ）に乗（の）っている あいだに、本（ほん）を 読（よ）みました。", rom: "Densha ni notte iru aida ni, hon wo yomimashita.", hi: "Hindi Translation: Train mein safar karte waqt (point in time), kitaab padhi." },
+            deadline: { jp: "毎朝（まいあさ）、９時（くじ）までに オフィスに 着（つ）かなければなりません。", rom: "Maiasa, kuji made ni ofisu ni tsukanakereba narimasen.", hi: "Hindi Translation: Har subah 9 baje tak (deadline) office pahunchna zaroori hai." },
+            point: { jp: "今（いま）、駅（えき）の ホームに 着（つ）いた ところ です。", rom: "Ima, eki no hoomu ni tsuita tokoro desu.", hi: "Hindi Translation: Abhi hi station ke platform pe pahuncha (just arrived)." },
+            regret: { jp: "電車（でんしゃ）に 遅（おく）れて、遅刻（ちこく）して しまいました。", rom: "Densha ni okurete, chikoku shite shimaimashita.", hi: "Hindi Translation: Train late hone se, main late ho gaya (regret/dammit)." }
+        },
+        gym: {
+            duration: { jp: "１回（いっかい）の 運動（うんどう）に 約（やく）２時間（にじかん）かかります。", rom: "Ikkai no undou ni yaku nijikan kakarimasu.", hi: "Hindi Translation: 1 baar ke workout mein lagbhag 2 ghante lagte hain." },
+            freq: { jp: "１週間（いっしゅうかん）に ３回（さんかい）、ジムに 行（い）きます。", rom: "Isshuukan ni sankai, jimu ni ikimasu.", hi: "Hindi Translation: Hafte mein 3 baar gym jaata hoon." },
+            during: { jp: "運動（うんどう）している あいだ、ずっと 音楽（おんがく）を 聞（き）いています。", rom: "Undou shite iru aida, zutto ongaku wo kite imasu.", hi: "Hindi Translation: Exercise karne ke dauraan (continuously), music sunta rehta hoon." },
+            deadline: { jp: "夏（なつ）までに ５キロ 痩（や）せたい です。", rom: "Natsu made ni gokiro yasetai desu.", hi: "Hindi Translation: Summer tak (deadline) 5 kilo wajan kam karna chahta hoon." },
+            point: { jp: "今（いま）、ジムの トレーニングが 終（お）わった ところ です。", rom: "Ima, jimu no toreeningu ga owatta tokoro desu.", hi: "Hindi Translation: Abhi hi gym ka workout khatam hua hai (just finished)." },
+            regret: { jp: "疲（つか）れていて、ジムに 行（い）くのを 忘（わす）れちゃった！", rom: "Tsukarete ite, jimu ni iku no wo wasurechatta!", hi: "Hindi Translation: Thaka hua tha, isliye gym jaana bhool gaya (casual regret)!" }
+        },
+        report: {
+            duration: { jp: "この レポートを書（か）くのに ３日（みっか）かかりました。", rom: "Kono repooto wo kaku no ni mikka kakarimashita.", hi: "Hindi Translation: Yeh report likhne mein 3 din lage." },
+            freq: { jp: "１か月（いっかげつ）に ２回（にかい）、大（おお）きな レポートを 出（だ）します。", rom: "Ikkagetsu ni nikai, ookina repooto wo dashimasu.", hi: "Hindi Translation: Mahine mein 2 baar badi report submit karta hoon." },
+            during: { jp: "昼休（ひるやす）みの あいだに、資料（しりょう）を 確認（かくにん）しました。", rom: "Hiruyasumi no aida ni, shiryou wo kakunin shimashita.", hi: "Hindi Translation: Lunch break ke dauraan (point in time), documents check kiye." },
+            deadline: { jp: "来週（らいしゅう）の 金曜日（きんようび）までに レポートを 出（だ）してください。", rom: "Raishuu no kinyoubi made ni repooto wo dashite kudasai.", hi: "Hindi Translation: Agle Friday tak (strict deadline) report submit kar dijiye." },
+            point: { jp: "ちょうど 今（いま）、レポートを 書（か）いている ところ です。", rom: "Choudo ima, repooto wo kaite iru tokoro desu.", hi: "Hindi Translation: Bilkul abhi, main report likh raha hoon (in the middle of)." },
+            regret: { jp: "徹夜（てつや）して、レポートを 全部（ぜんぶ）終（お）わらせて しまいました。", rom: "Tetsuya shite, repooto wo zenbu owarasete shimaimashita.", hi: "Hindi Translation: Raat bhar jaag ke, report poori tarah khatam kar di (100% completion)!" }
+        },
+        meeting: {
+            duration: { jp: "今日（きょう）の 会議（かいぎ）は ２時間半（にじかんはん）も かかりました。", rom: "Kyou no kaigi wa nijikanhan mo kakarimashita.", hi: "Hindi Translation: Aaj ki meeting mein 2 ghante 30 minute lag gaye." },
+            freq: { jp: "１年（いちねん）に １回（いっかい）、海外（かいがい）で 大会（たいかい）が あります。", rom: "Ichinen ni ikkai, kaigai de taikai ga arimasu.", hi: "Hindi Translation: Saal mein 1 baar foreign country mein convention hota hai." },
+            during: { jp: "会議（かいぎ）の あいだ、ずっと メモを 取（と）っていました。", rom: "Kaigi no aida, zutto memo wo totte imashita.", hi: "Hindi Translation: Meeting ke dauraan (continuously), main notes leta raha." },
+            deadline: { jp: "会議（かいぎ）が 始（はじ）まる までに、部屋（へや）を 準備（じゅんび）してください。", rom: "Kaigi ga hajimaru made ni, heya wo junbi shite kudasai.", hi: "Hindi Translation: Meeting shuru hone se pehle (deadline), room ready kar lo." },
+            point: { jp: "今（いま）、ちょうど 出（で）かける ところ なんだ。後（あと）で いい？", rom: "Ima, choudo dekakeru tokoro nan da. Atode ii?", hi: "Hindi Translation: Abhi bilkul nikalne wala hoon (about to start). Baad mein theek hai?" },
+            regret: { jp: "大事（だいじ）な 約束（やくそく）の 時間（じかん）を 間違（まちが）えて しまった！", rom: "Daiji na yakusoku no jikan wo machigaete shimatta!", hi: "Hindi Translation: Important appointment ka time galat samajh liya (regret/dammit)!" }
+        },
+        mistake: {
+            duration: { jp: "道（みち）に 迷（まよ）って、予定（よてい）より １時間（いちじかん）多（おお）く かかりました。", rom: "Michi ni mayotte, yotei yori ichijikan ooku kakarimashita.", hi: "Hindi Translation: Rasta bhoolne se, plan se 1 ghanta zyada lag gaya." },
+            freq: { jp: "めったに 遅刻（ちこく）しないのに、今日（きょう）は 遅（おく）れて しまいました。", rom: "Mettani chikoku shinai no ni, kyou wa okurete shimaimashita.", hi: "Hindi Translation: Bahut kam late hota hoon, phir bhi aaj late ho gaya." },
+            during: { jp: "テレビを 見（み）ている あいだに、料理（りょうり）を 焦（こ）がして しまいました。", rom: "Terebi wo mite iru aida ni, ryouri wo kogashite shimaimashita.", hi: "Hindi Translation: TV dekhte waqt, main ne khana jala diya." },
+            deadline: { jp: "締（し）め切（き）り までに 宿題（しゅくだい）が 終（お）わりませんでした。", rom: "Shimekiri made ni shukudai ga owarimasen deshita.", hi: "Hindi Translation: Deadline tak homework poora nahi hua." },
+            point: { jp: "あ！今（いま）、電車（でんしゃ）が 出（で）た ところ です。乗（の）れなかった！", rom: "A! Ima, densha ga deta tokoro desu. Norenakatta!", hi: "Hindi Translation: Ah! Abhi hi train nikal gayi (just left). Chhoot gayi!" },
+            regret: { jp: "財布（さいふ）を 家（いえ）に 忘（わす）れちゃった！ほんとうに 困（こま）った。", rom: "Saifu wo ie ni wasurechatta! Hontou ni komatta.", hi: "Hindi Translation: Wallet ghar pe hi bhool gaya (casual regret)! Sach mein problem ho gayi." }
+        }
+    };
+
+    function updateTimeSim() {
+        const s = document.getElementById('sim-sit').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = timeData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakTimeSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 駅 まで 歩いて 10分 _______。\n(It TAKES 10 minutes to walk to the station)", opt: ["かかります (kakarimasu)", "います (imasu)", "します (shimasu)", "あります (arimasu)"], ans: 0 },
+        { q: "2. １週間 _______ ３回、ジムに 行きます。\n(I go to the gym 3 times PER week)", opt: ["を (wo)", "に (ni)", "で (de)", "から (kara)"], ans: 1 },
+        { q: "3. 夏休みの _______、ずっと 家に いました。\n(DURING summer vacation, I stayed home the WHOLE time - Continuous)", opt: ["あいだ (aida)", "あいだに (aida ni)", "までに (made ni)", "から (kara)"], ans: 0 },
+        { q: "4. 電車を 待っている _______、本を 読みました。\n(I read a book AT A POINT IN TIME while waiting for the train)", opt: ["あいだ (aida)", "あいだに (aida ni)", "まで (made)", "ほど (hodo)"], ans: 1 },
+        { q: "5. 来週の 金曜日 _______ レポートを 出してください。\n(Please submit the report BY next Friday - Strict deadline)", opt: ["まで (made)", "までに (made ni)", "から (kara)", "ほど (hodo)"], ans: 1 },
+        { q: "6. 今、ちょうど 出かける _______ なんだ。後で いい？\n(I am JUST ABOUT TO leave now. Is later okay?)", opt: ["ところ (tokoro)", "ばかり (bakari)", "はず (hazu)", "つもり (tsumori)"], ans: 0 },
+        { q: "7. 宿題 を もう 終わって _______。\n(I have ALREADY COMPLETELY FINISHED the homework)", opt: ["いまいました (imaimashita)", "しまいました (shimaimashita)", "ききました (kikimashita)", "みました (mimashita)"], ans: 1 },
+        { q: "8. ケーキを 全部 食べ _______！\n(I COMPLETELY ate all the cake! - Casual contraction of てしまった)", opt: ["ちゃった (chatta)", "かった (katta)", "なった (natta)", "らった (ratta)"], ans: 0 },
+        { q: "9. 「１週間」の 正しい 読み方 は どれですか？\n(What is the correct reading for １週間 - 1 week?)", opt: ["いちしゅうかん (ichishuukan)", "いっしゅうかん (isshuukan)", "ひとしゅうかん (hitoshuukan)", "いつしゅうかん (itsushuukan)"], ans: 1 },
+        { q: "10. 「半年」の 正しい 読み方 と 意味 は どれですか？\n(What is the reading and meaning of 半年?)", opt: ["はんとし (hantoshi) - 6 months / Half a year", "はんねん (hannen) - 1.5 years", "なかとし (nakatoshi) - middle of year", "はんげつ (hangetsu) - half a month"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Amazing! You are a master of Japanese time & schedule grammar!':'💪 Keep practicing! Review the duration counters and grammar cards!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

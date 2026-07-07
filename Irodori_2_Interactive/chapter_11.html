@@ -1,0 +1,731 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 11: しごと (Work, Workplace Communication & Basic Keigo)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 11: しごと - Work. Covers workplace communication, Ho-Ren-So, emails, and Keigo basics (~ていただけますか, 尊敬語, 謙譲語, ~ていただく).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 11: しごと (Work) • Workplace Communication, Ho-Ren-So & Keigo</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('この しょるい を みて いただけますか。しゃちょう は いま かいぎしつ に いらっしゃいます。わたし は やまだ と もうします。ぶちょう、プロジェクト の しんちょく を ほうこく します。おせわ に なって おります。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>💼 しごと (Shigoto) - Work / Kaam</h2>
+        <p>Master workplace communication, the golden rule of Japanese business <strong>ホウレンソウ (報告・連絡・相談)</strong>, very polite requests (<strong>～ていただけますか</strong>), essential Keigo polite language (<strong>尊敬語・謙譲語・丁寧語</strong>), email writing templates, and formal workplace greetings (<strong>お疲れ様です・かしこまりました</strong>)!</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 3830–4111</span>
+            <span class="meta-pill">💬 Grammar Points 53–56</span>
+            <span class="meta-pill">📚 35+ Business & Keigo Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">🏢 Business Roleplay & Emails</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('simulator',this)"><span>💼</span> Workplace Ho-Ren-So Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Keigo & Requests (Pt 53–56)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 35+ Audio Vocab & Business Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 11 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>🏢</span> Business Roleplay & Email Templates</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Work & Keigo Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Workplace Ho-Ren-So Simulator -->
+    <div id="tab-simulator" class="tab-content active">
+        <div class="interactive-box">
+            <h4>💼 Interactive Workplace Communication & Ho-Ren-So Simulator (職場コミュニケーション・報連相シミュレーター)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Practice talking to bosses, colleagues, and clients in native Japanese! Select an office situation and a Keigo/communication pattern to generate professional business phrases and email lines.</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Workplace Situation (職場の状況・タスク)</label>
+                    <select id="sim-scene" onchange="updateWorkSim()">
+                        <option value="report">📊 Project Progress Report (進捗の報告 - 部長・社長に伝える)</option>
+                        <option value="leave">🌴 Asking for Paid Leave (有給休暇の申請 - 明日休ませていただきたい)</option>
+                        <option value="deadline">⏰ Deadline Extension Request (締め切りを延ばす - スケジュール調整)</option>
+                        <option value="delay">🚆 Train Delay / Late Notice (電車の遅延連絡 - 会議に遅れる)</option>
+                        <option value="client">🤝 Client Meeting & Email (お客様との商談・メール作成)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Communication / Keigo Focus</label>
+                    <select id="sim-gram" onchange="updateWorkSim()">
+                        <option value="request">🙇 Very Polite Request (～ていただけますか - Could you kindly do...? / Kar de sakte hain?)</option>
+                        <option value="respect">👑 Respectful Keigo (尊敬語・いらっしゃる/おっしゃる - Actions of superiors)</option>
+                        <option value="humble">🙇 Humble Keigo (謙譲語・おる/まいる/もうす - My own humble actions)</option>
+                        <option value="itadaku">🙏 Humble Receiving (～ていただく - Having someone do a favor for me)</option>
+                        <option value="horenso">📢 Ho-Ren-So Practice (報告・連絡・相談 - Professional office communication)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">部長（ぶちょう）、プロジェクトの 進捗（しんちょく）を 報告（ほうこく）いたします。</div>
+                <div class="output-rom" id="sim-rom">Buchou, purojekuto no shinchoku wo houkoku itashimasu.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Boss, project ki progress report karta hoon (humble keigo).</div>
+                <button class="btn-speak" onclick="speakWorkSim()">🔊 Speak Business Line in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🏢 Essential Business Greetings & Workplace Rules (職場の挨拶・マナー)</h3>
+            <p>Click any card to listen to the native Japanese pronunciation and sound like an authentic Tokyo office worker!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お疲（つか）れ様（さま）です</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Otsukaresama desu • Good work / Hello</div><div class="meaning-text">The universal workplace greeting! Used when passing colleagues in the hallway, starting emails, or leaving work.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お先（さき）に失礼（しつれい）します</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Osaki ni shitsurei shimasu • I am leaving first</div><div class="meaning-text">Always say this polite phrase when leaving the office before your boss or coworkers!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">かしこまりました / 承知（しょうち）しました</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kashikomarimashita / Shouchi shimashita</div><div class="meaning-text">Understood / Roger (Formal). Use these instead of "分かりました" when replying to bosses and clients!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お世話（せわ）になっております</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Osewa ni natte orimasu • Thank you for your support</div><div class="meaning-text">The mandatory opening line for every external business email and telephone call in Japan!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お手数（てすう）ですが</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Otesuu desu ga • Sorry to bother you, but...</div><div class="meaning-text">A polite cushion word (クッション言葉) used when asking clients or superiors to perform a task for you.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ご迷惑（めいわく）をおかけしました</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Gomeiwaku wo okake shimashita</div><div class="meaning-text">I deeply apologize for the inconvenience caused. Essential formal apology line in professional settings.</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Very Polite Requests: Could you kindly do...?</span><span class="particle-badge">Pt 53</span></div>
+            <div class="grammar-formula">Verb て-form + いただけますか / いただけないでしょうか</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ていただけますか</strong> when making requests to your boss, senior colleagues, or clients. It is much more respectful than <strong>～てくれませんか</strong>! For the ultimate politeness, use <strong>～ていただけないでしょうか</strong>.</p>
+            <ul class="example-list">
+                <li onclick="speakText('この しょるい を みて いただけますか。')">
+                    <span class="ex-jp">この 書類 を 見て いただけますか。</span>
+                    <span class="ex-rom">Kono shorui wo mite itadakemasu ka. (Yeh document dekh sakte hain? / Please review this.)</span>
+                </li>
+                <li onclick="speakText('もう すこし ゆっくり はなして いただけますか。')">
+                    <span class="ex-jp">もう 少し ゆっくり 話して いただけますか。</span>
+                    <span class="ex-rom">Mou sukoshi yukkuri hanashite itadakemasu ka. (Thoda dheere bol sakte hain? / Could you speak slower?)</span>
+                </li>
+                <li onclick="speakText('しめきり を のばして いただけますか。')">
+                    <span class="ex-jp">締め切り を 延ばして いただけますか。</span>
+                    <span class="ex-rom">Shimekiri wo nobashite itadakemasu ka. (Deadline aage badha sakte hain?)</span>
+                </li>
+                <li onclick="speakText('おなまえ を おしえて いただけますか。')">
+                    <span class="ex-jp">お名前 を 教えて いただけますか。</span>
+                    <span class="ex-rom">Onamae wo oshiete itadakemasu ka. (Naam bata sakte hain? / May I have your name?)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Keigo Basics: Respectful (尊敬語) & Humble (謙譲語)</span><span class="particle-badge" style="background:var(--accent-success);">Pt 54 & 55</span></div>
+            <div class="grammar-formula">Respectful: いらっしゃる / おっしゃる / なさる • Humble: おる / まいる / もうす / いたす</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">In Japanese business, elevate superiors with <strong>Respectful Keigo (尊敬語)</strong> and lower yourself with <strong>Humble Keigo (謙譲語)</strong>! Use <strong>～ていただく</strong> to humbly express having someone do a favor for you.</p>
+            <ul class="example-list">
+                <li onclick="speakText('しゃちょう は いま かいぎしつ に いらっしゃいます。')">
+                    <span class="ex-jp">社長 は 今 会議室 に いらっしゃいます。</span>
+                    <span class="ex-rom">Shachou wa ima kaigishitsu ni irasshaimasu. (President abhi meeting room mein hain - respectful いる.)</span>
+                </li>
+                <li onclick="speakText('わたし は やまだ と もうします。')">
+                    <span class="ex-jp">私 は 山田 と 申します。</span>
+                    <span class="ex-rom">Watashi wa Yamada to moushimasu. (Main Yamada hoon / My name is Yamada - humble 言う.)</span>
+                </li>
+                <li onclick="speakText('らいしゅう そちら に まいります。')">
+                    <span class="ex-jp">来週 そちら に 参ります。</span>
+                    <span class="ex-rom">Raishuu sochira ni mairimasu. (Agle hafte wahaan aaunga / I will go there - humble 行く/来る.)</span>
+                </li>
+                <li onclick="speakText('しゃちょう に しょるい を みて いただきました。')">
+                    <span class="ex-jp">社長 に 書類 を 見て いただきました。</span>
+                    <span class="ex-rom">Shachou ni shorui wo mite itadakimashita. (President ne mere liye document dekha - humble receiving.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Japanese Workplace Golden Rule: ホウ・レン・ソウ (報・連・相)</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 56</span></div>
+            <div class="grammar-formula">報告 (Houkoku - Report) • 連絡 (Renraku - Inform) • 相談 (Soudan - Consult)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;"><strong>ホウレンソウ (Spinach)</strong> is the core philosophy of Japanese teamwork! Always **Report (報告)** progress, **Inform (連絡)** about delays or absences immediately, and **Consult (相談)** superiors whenever a problem arises!</p>
+            <ul class="example-list">
+                <li onclick="speakText('ぶちょう、プロジェクト の しんちょく を ほうこく します。')">
+                    <span class="ex-jp">【報告】部長、プロジェクト の 進捗 を 報告 します。</span>
+                    <span class="ex-rom">Buchou, purojekuto no shinchoku wo houkoku shimasu. (Boss, project ki progress report karta hoon.)</span>
+                </li>
+                <li onclick="speakText('すみません、きょう の かいぎ に おくれます。')">
+                    <span class="ex-jp">【連絡】すみません、今日 の 会議 に 遅れます。</span>
+                    <span class="ex-rom">Sumimasen, kyou no kaigi ni okuremasu. (Sorry, aaj ki meeting mein late hounga - informing delay.)</span>
+                </li>
+                <li onclick="speakText('すみません、ちょっと そうだんしたい こと が あるんですが。')">
+                    <span class="ex-jp">【相談】すみません、ちょっと 相談したい こと が あるんですが。</span>
+                    <span class="ex-rom">Sumimasen, chotto soudan shitai koto ga arun desu ga. (Excuse me, ek baat consult karna tha.)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 11 Work, Professions & Keigo Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize professional office vocabulary.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">会社員（かいしゃいん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaishain</div><div class="meaning-text">Company employee / Office worker</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">工場（こうじょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Koujou</div><div class="meaning-text">Factory / Manufacturing plant</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">介護士（かいごし）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaigoshi</div><div class="meaning-text">Care worker / Nursing assistant</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">エンジニア / プログラマー</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Enjinia / Puroguramaa</div><div class="meaning-text">Engineer / Software programmer</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">看護師（かんごし）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kangoshi</div><div class="meaning-text">Registered nurse / Medical nurse</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">通訳（つうやく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tsuuyaku</div><div class="meaning-text">Language interpreter / Translation</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">正社員（せいしゃいん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Seishain</div><div class="meaning-text">Full-time permanent employee</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">アルバイト / パートタイム</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Arubaito / Paatotaimu</div><div class="meaning-text">Part-time job / Part-time worker</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">会議（かいぎ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaigi</div><div class="meaning-text">Business meeting / Conference</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">休憩（きゅうけい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyuukei</div><div class="meaning-text">Rest break / Coffee intermission</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">残業（ざんぎょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Zangyou</div><div class="meaning-text">Overtime work / Working late</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">出張（しゅっちょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shucchou</div><div class="meaning-text">Business trip / Traveling for work</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">転勤（てんきん）/ 昇進（しょうしん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tenkin / Shoushin</div><div class="meaning-text">Job transfer / Career promotion</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">給料（きゅうりょう）/ ボーナス</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyuuryou / Boonasu</div><div class="meaning-text">Monthly salary / Seasonal bonus</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">有給（ゆうきゅう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yuukyuu</div><div class="meaning-text">Paid vacation leave / Holiday</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">報告（ほうこく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Houkoku</div><div class="meaning-text">Progress report (Ho of Ho-Ren-So)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">連絡（れんらく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Renraku</div><div class="meaning-text">Informing / Contact (Ren of Ho-Ren-So)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">相談（そうだん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Soudan</div><div class="meaning-text">Consultation / Advice (So of Ho-Ren-So)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">締め切り（しめきり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shimekiri</div><div class="meaning-text">Project deadline / Due date</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">日報（にっぽう）/ 資料（しりょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nippou / Shiryou</div><div class="meaning-text">Daily report / Meeting documents</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">いらっしゃる / まいる</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Irassharu / Mairu</div><div class="meaning-text">Go/Come/Be (Respectful / Humble)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">おっしゃる / 申（もう）す</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ossharu / Mousu</div><div class="meaning-text">To say/speak (Respectful / Humble)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">なさる / いたす</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nasaru / Itasu</div><div class="meaning-text">To do (Respectful / Humble)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">召（め）し上（あ）がる / いただく</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Meshiagaru / Itadaku</div><div class="meaning-text">To eat/drink (Respectful / Humble)</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 11 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for company, employees, meetings, overtime, reports, consultation, and respectful language.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">社</div><div class="kanji-info"><h5>Company / Shinto shrine</h5><div class="kanji-readings">Onyomi: <span>シャ (sha)</span><br>Kunyomi: やしろ</div></div></div><div class="kanji-example" onclick="speakText('会社、正社員、社長')"><span>会社（かいしゃ）- company<br>正社員（せいしゃいん）- full-time</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">員</div><div class="kanji-info"><h5>Member / Employee / Personnel</h5><div class="kanji-readings">Onyomi: <span>イン (in)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('会社員、銀行員、店員')"><span>会社員（かいしゃいん）- employee<br>銀行員（ぎんこういん）- bank clerk</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">工</div><div class="kanji-info"><h5>Craft / Construction / Work</h5><div class="kanji-readings">Onyomi: <span>コウ、ク (kou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('工場、工事、人工')"><span>工場（こうじょう）- factory<br>工事（こうじ）- construction</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">場</div><div class="kanji-info"><h5>Place / Field / Site</h5><div class="kanji-readings">Onyomi: <span>ジョウ (jou)</span><br>Kunyomi: ば、ばしょ</div></div></div><div class="kanji-example" onclick="speakText('工場、場所、立場')"><span>工場（こうじょう）- factory<br>場所（ばしょ）- location / place</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">議</div><div class="kanji-info"><h5>Deliberation / Consultation / Debate</h5><div class="kanji-readings">Onyomi: <span>ギ (gi)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('会議、会議室、議会')"><span>会議（かいぎ）- meeting<br>会議室（かいぎしつ）- conf room</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">業</div><div class="kanji-info"><h5>Business / Vocation / Arts</h5><div class="kanji-readings">Onyomi: <span>ギョウ、ゴウ (gyou)</span><br>Kunyomi: わざ</div></div></div><div class="kanji-example" onclick="speakText('残業、業務、卒業')"><span>残業（ざんぎょう）- overtime<br>業務（ぎょうむ）- business task</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">勤</div><div class="kanji-info"><h5>Diligence / Employed / Serve</h5><div class="kanji-readings">Onyomi: <span>キン、ゴン (kin)</span><br>Kunyomi: つと-める</div></div></div><div class="kanji-example" onclick="speakText('転勤、通勤、勤める')"><span>転勤（てんきん）- job transfer<br>通勤（つうきん）- commuting</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">給</div><div class="kanji-info"><h5>Salary / Supply / Pay</h5><div class="kanji-readings">Onyomi: <span>キュウ (kyuu)</span><br>Kunyomi: たま-う</div></div></div><div class="kanji-example" onclick="speakText('給料、有給、給付')"><span>給料（きゅうりょう）- salary<br>有給（ゆうきゅう）- paid leave</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">報</div><div class="kanji-info"><h5>Report / News / Reward</h5><div class="kanji-readings">Onyomi: <span>ホウ (hou)</span><br>Kunyomi: むく-いる</div></div></div><div class="kanji-example" onclick="speakText('報告、日報、天気予報')"><span>報告（ほうこく）- progress report<br>日報（にっぽう）- daily report</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">告</div><div class="kanji-info"><h5>Tell / Announce / Inform</h5><div class="kanji-readings">Onyomi: <span>コク (koku)</span><br>Kunyomi: つ-げる</div></div></div><div class="kanji-example" onclick="speakText('報告、広告、告げる')"><span>報告（ほうこく）- report<br>広告（こうこく）- advertisement</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">連</div><div class="kanji-info"><h5>Take along / Lead / Join</h5><div class="kanji-readings">Onyomi: <span>レン (ren)</span><br>Kunyomi: つら-なる、つ-れる</div></div></div><div class="kanji-example" onclick="speakText('連絡、連休、連れていく')"><span>連絡（れんらく）- inform / contact<br>連休（れんきゅう）- long holiday</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">絡</div><div class="kanji-info"><h5>Entwine / Coil / Get entangled</h5><div class="kanji-readings">Onyomi: <span>ラク (raku)</span><br>Kunyomi: から-む</div></div></div><div class="kanji-example" onclick="speakText('連絡、短絡')"><span>連絡（れんらく）- inform / contact<br>連絡先（れんらくさき）- contact info</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">談</div><div class="kanji-info"><h5>Discuss / Talk / Converse</h5><div class="kanji-readings">Onyomi: <span>ダン (dan)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('相談、商談、会談')"><span>相談（そうだん）- consultation<br>商談（しょうだん）- business deal</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">締</div><div class="kanji-info"><h5>Tighten / Tie / Fasten</h5><div class="kanji-readings">Onyomi: <span>テイ (tei)</span><br>Kunyomi: し-める、し-まる</div></div></div><div class="kanji-example" onclick="speakText('締め切り、締結')"><span>締め切り（しめきり）- deadline<br>締める（しめる）- to tie / fasten</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">切</div><div class="kanji-info"><h5>Cut / Urgent / Important</h5><div class="kanji-readings">Onyomi: <span>セツ、サイ (setsu)</span><br>Kunyomi: き-る、き-れる</div></div></div><div class="kanji-example" onclick="speakText('締め切り、切る、親切')"><span>締め切り（しめきり）- deadline<br>親切（しんせつ）- kind</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">資</div><div class="kanji-info"><h5>Assets / Resources / Capital</h5><div class="kanji-readings">Onyomi: <span>シ (shi)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('資料、資本、資格')"><span>資料（しりょう）- documents<br>資格（しかく）- qualification</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">料</div><div class="kanji-info"><h5>Fee / Materials / Consider</h5><div class="kanji-readings">Onyomi: <span>リョウ (ryou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('資料、給料、料理')"><span>資料（しりょう）- materials<br>給料（きゅうりょう）- salary</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">尊</div><div class="kanji-info"><h5>Revered / Valuable / Precious</h5><div class="kanji-readings">Onyomi: <span>ソン (son)</span><br>Kunyomi: たっと-い、とうと-ぶ</div></div></div><div class="kanji-example" onclick="speakText('尊敬語、尊重、尊敬')"><span>尊敬語（そんけいご）- respectful<br>尊敬（そんけい）- respect</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">敬</div><div class="kanji-info"><h5>Awe / Respect / Honor</h5><div class="kanji-readings">Onyomi: <span>ケイ、キョウ (kei)</span><br>Kunyomi: うやま-う</div></div></div><div class="kanji-example" onclick="speakText('尊敬語、敬語、敬意')"><span>敬語（けいご）- polite language<br>尊敬語（そんけいご）- respectful</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">謙</div><div class="kanji-info"><h5>Modest / Humble / Modesty</h5><div class="kanji-readings">Onyomi: <span>ケン (ken)</span><br>Kunyomi: へりくだ-る</div></div></div><div class="kanji-example" onclick="speakText('謙譲語、謙虚')"><span>謙譲語（けんじょうご）- humble<br>謙虚（けんきょ）- modest / humble</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">譲</div><div class="kanji-info"><h5>Yield / Give up / Transfer</h5><div class="kanji-readings">Onyomi: <span>ジョウ (jou)</span><br>Kunyomi: ゆず-る</div></div></div><div class="kanji-example" onclick="speakText('謙譲語、譲る')"><span>謙譲語（けんじょうご）- humble<br>譲る（ゆずる）- to hand over / yield</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">礼</div><div class="kanji-info"><h5>Manners / Bow / Gratitude</h5><div class="kanji-readings">Onyomi: <span>レイ、ライ (rei)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('お礼、失礼します、礼儀')"><span>お礼（おれい）- gratitude / thanks<br>失礼します（しつれいします）- excuse me</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">伺</div><div class="kanji-info"><h5>Visit / Ask (Humble form)</h5><div class="kanji-readings">Onyomi: <span>シ (shi)</span><br>Kunyomi: うかが-う</div></div></div><div class="kanji-example" onclick="speakText('伺う、お伺いする')"><span>伺う（うかがう）- humbly visit/ask<br>お伺いする（おうかがいする）- humble visit</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">申</div><div class="kanji-info"><h5>Say / Speak (Humble form)</h5><div class="kanji-readings">Onyomi: <span>シン (shin)</span><br>Kunyomi: もう-す</div></div></div><div class="kanji-example" onclick="speakText('申す、申し上げる、申請')"><span>申す（もうす）- humbly say<br>申し上げる（もうしあげる）- humbly tell</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay Module -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>🏢 Workplace Ho-Ren-So & Business Email Roleplay (報告・相談・ビジネスメール)</h3>
+            <p>Master reporting project progress to department managers and writing authentic Japanese business emails!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-info);">
+            <h4>📊 Scene 1: Project Progress Reporting - Ho-Ren-So (部長への進捗報告)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('ぶちょう、プロジェクトの しんちょくを ほうこくします。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 部長（ぶちょう）、プロジェクトの 進捗（しんちょく）を 報告（ほうこく）します。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Buchou, purojekuto no shinchoku wo houkoku shimasu. (Boss, I would like to report on the project progress.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('うん、状況は どうですか。')">
+                    <strong style="color:var(--accent-primary);">部長 (Department Manager):</strong> うん、状況（じょうきょう）は どうですか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Un, joukyou wa dou desu ka. (Yes, how is the situation going?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('すこし おくれています が、きんようび までに おわらせます。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 少（すこ）し 遅（おく）れていますが、金曜日（きんようび）までに 終（お）わらせます。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sukoshi okurete imasu ga, kinyoubi made ni owarasemasu. (It is slightly delayed, but I will finish it by Friday.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('わかりました。なにか こまった こと が あれば、すぐに そうだん して ください。')">
+                    <strong style="color:var(--accent-primary);">部長 (Department Manager):</strong> わかりました。何（なに）か 困（こま）った こと が あれば、すぐに 相談（そうだん）して ください。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">I understand. If you have any trouble, please consult me immediately.</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('しょうちしました。よろしく おねがいいたします。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 承知（しょうち）しました。よろしく お願（ねが）いいたします。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Shouchi shimashita. Yoroshiku onegai itashimasu. (Understood formal. Thank you for your continued guidance.)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-success);">
+            <h4>📧 Scene 2: Standard Business Email Template (ビジネスメールの基本構造)</h4>
+            <div style="background:var(--bg-tertiary);padding:1.5rem;border-radius:14px;border:1px solid var(--border-color);font-family:monospace;line-height:1.8;margin-top:1rem;">
+                <span style="color:var(--accent-info);">件名（けんめい）:</span> 【資料ご送付】プロジェクト会議の件 / 山田<br>
+                <hr style="border-color:var(--border-color);margin:0.8rem 0;">
+                株式会社（かぶしきがいしゃ）ABC<br>
+                営業部（えいぎょうぶ） 佐藤（さとう）様（さま）<br><br>
+                <span style="color:var(--accent-success);font-weight:700;">お世話（せわ）になっております。</span><br>
+                XYZ株式会社の 山田（やまだ）と <span style="color:var(--accent-warning);font-weight:700;">申（もう）します。</span><br><br>
+                明日の 会議の 資料（しりょう）を 添付（てんぷ）いたしました。<br>
+                お手数（てすう）ですが、事前に <span style="color:var(--accent-secondary);font-weight:700;">ご覧（らん）いただけますでしょうか。</span><br><br>
+                ご不明な 点（てん）が ございましたら、お知（し）らせ ください。<br>
+                ご確（かく）認のほど、<span style="color:var(--accent-success);font-weight:700;">よろしく お願（ねが）いいたします。</span><br><br>
+                --------------------------------------------------<br>
+                XYZ株式会社 開発部 山田 太郎 (Yamada Taro)<br>
+                Email: yamada@xyz-company.co.jp<br>
+                --------------------------------------------------
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 11 Work, Keigo & Business Quiz</h3>
+                <p>Test your mastery of polite requests, Respectful vs Humble Keigo, Ho-Ren-So, and office etiquette!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 3830–4111)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 11: しごと (Shigoto) - Work / Kaam
+
+## 🎯 Goal:
+- Kaam ke baare mein detail mein baat karna
+- Workplace communication
+- Keigo (polite language) ka basic use
+- Work problems discuss karna
+
+---
+
+## 1) Work Vocabulary
+
+### **Job types:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| かいしゃいん (会社員) | かいしゃいん | Company employee |
+| こうじょう (工場) | こうじょう | Factory |
+| のうか (農家) | のうか | Farmer |
+| かいごし (介護士) | かいごし | Care worker |
+| ぎんこういん (銀行員) | ぎんこういん | Bank employee |
+| エンジニア | えんじにあ | Engineer |
+| プログラマー | ぷろぐらまあ | Programmer |
+| けんちくし (建築士) | けんちくし | Architect |
+| うんてんしゅ (運転手) | うんてんしゅ | Driver |
+| コック | こっく | Cook / Chef |
+| かんごし (看護師) | かんごし | Nurse |
+| つうやく (通訳) | つうやく | Interpreter |
+| アルバイト | あるばいと | Part-time job |
+| パートタイム | ぱあとたいむ | Part-time |
+| せいしゃいん (正社員) | せいしゃいん | Full-time employee |
+| けいやくしゃいん (契約社員) | けいやくしゃいん | Contract employee |
+| はけんしゃいん (派遣社員) | はけんしゃいん | Dispatch employee |
+| フリーランス | ふりいらんす | Freelancer |
+
+---
+
+### **Workplace words:**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| かいぎ (会議) | かいぎ | Meeting |
+| きゅうけい (休憩) | きゅうけい | Break / Rest |
+| ざんぎょう (残業) | ざんぎょう | Overtime |
+| しゅっちょう (出張) | しゅっちょう | Business trip |
+| てんきん (転勤) | てんきん | Transfer (job location) |
+| しょうしん (昇進) | しょうしん | Promotion |
+| きゅうりょう (給料) | きゅうりょう | Salary |
+| ボーナス | ぼおなす | Bonus |
+| ゆうきゅう (有給) | ゆうきゅう | Paid leave |
+| ほうこく (報告) | ほうこく | Report |
+| れんらく (連絡) | れんらく | Contact / Inform |
+| そうだん (相談) | そうだん | Consult |
+| しめきり (締め切り) | しめきり | Deadline |
+| にっぽう (日報) | にっぽう | Daily report |
+| しりょう (資料) | しりょう | Documents / Materials |
+| プレゼン | ぷれぜん | Presentation |
+
+---
+
+## 2) Grammar Point 53: ～ていただけますか  
+## Meaning: "_____ shite de sakte hain?" (Very polite request)
+
+**て-form + いただけますか**
+
+Yeh **てくれませんか** se zyada polite hai. Boss ya unfamiliar person ke liye.
+
+### Politeness levels:
+
+| Pattern | Level | Example |
+|---|---|---|
+| ～てください | Basic | みて ください |
+| ～てくれませんか | Polite | みて くれませんか |
+| ～ていただけますか | Very polite | みて いただけますか |
+| ～ていただけないでしょうか | Most polite | みて いただけないでしょうか |
+
+### Examples:
+
+```
+この しょるい (書類) を みて いただけますか。
+(Kono shorui wo mite itadakemasu ka.)
+Yeh document dekh sakte hain?
+
+もう すこし ゆっくり はなして いただけますか。
+(Mou sukoshi yukkuri hanashite itadakemasu ka.)
+Thoda dheere bol sakte hain?
+
+しめきり を のばして いただけますか。(延ばす)
+(Shimekiri wo nobashite itadakemasu ka.)
+Deadline aage badha sakte hain?
+
+めいしん を おしえて いただけますか。(名前)
+(Onamae wo oshiete itadakemasu ka.)
+Naam bata sakte hain?
+```
+
+---
+
+## 3) Grammar Point 54: Keigo (けいご) Basics  
+## Meaning: Polite / Respectful Language
+
+Keigo 3 types ka hota hai:
+
+| Type | Name | Use |
+|---|---|---|
+| Respectful | そんけいご (尊敬語) | Dusre ki action |
+| Humble | けんじょうご (謙譲語) | Apni action |
+| Polite | ていねいご (丁寧語) | General polite (desu/masu) |
+
+---
+
+### **Common Keigo verbs:**
+
+| Normal | Respectful (dusra) | Humble (main) | Meaning |
+|---|---|---|---|
+| いる | いらっしゃる | おる | Hona/Rehna |
+| いく | いらっしゃる | まいる | Jaana |
+| くる | いらっしゃる | まいる | Aana |
+| いう | おっしゃる | もうす | Bolna |
+| する | なさる | いたす | Karna |
+| たべる/のむ | めしあがる | いただく | Khana/Peena |
+| みる | ごらんになる | はいけんする | Dekhna |
+| しっている | ごぞんじ | ぞんじている | Jaanna |
+| もらう | - | いただく | Milna |
+| あげる | - | さしあげる | Dena |
+| くれる | くださる | - | Dena (mujhe) |
+
+### Examples:
+
+**Respectful (talking about boss/customer):**
+```
+しゃちょう は いま かいぎしつ に いらっしゃいます。
+(Shachou wa ima kaigishitsu ni irasshaimasu.)
+President abhi meeting room mein hain.
+
+お きゃく さま が いらっしゃいました。
+(Okyakusama ga irasshaimashita.)
+Customer aa gaye.
+
+ぶちょう は なんと おっしゃいましたか。
+(Buchou wa nanto osshaimashita ka.)
+Department head ne kya kaha?
+```
+
+**Humble (talking about yourself):**
+```
+わたし は やまだ と もうします。
+(Watashi wa Yamada to moushimasu.)
+Main Yamada hoon. (humble)
+
+らいしゅう そちら に まいります。
+(Raishuu sochira ni mairimasu.)
+Agle hafte wahaan aaunga. (humble)
+
+しょうしょう おまちいたします。
+(Shoushou omachi itashimasu.)
+Thoda wait karta hoon. (humble)
+```
+
+---
+
+## 4) Grammar Point 55: ～ていただく  
+## Meaning: "Kisi se humble tarike se karwana"
+
+**て-form + いただく = _____ karwa lena (humble)**
+
+Yeh **てもらう** ka humble version hai.
+
+### Examples:
+
+```
+しゃちょう に しょるい を みて いただきました。
+(Shachou ni shorui wo mite itadakimashita.)
+President ne mere liye document dekha.
+
+せんせい に そうだん して いただきました。
+(Sensei ni soudan shite itadakimashita.)
+Teacher se salah li.
+
+こちら の フォーム に きにゅうして いただけますか。
+(Kochira no foomu ni kinyuu shite itadakemasu ka.)
+Kya is form ko fill kar sakte hain?
+```
+
+---
+
+## 5) Grammar Point 56: ほうれんそう (報告・連絡・相談)
+
+Japan ke workplace mein **3 most important communication points**:
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ほうこく (報告) | ほうこく | Report karna |
+| れんらく (連絡) | れんらく | Inform / Contact karna |
+| そうだん (相談) | そうだん | Consult / Advice lena |
+
+### Workplace conversation patterns:
+
+**Reporting (ほうこく):**
+```
+ぶちょう、プロジェクト の しんちょく (進捗) を ほうこく します。
+(Buchou, purojekuto no shinchoku wo houkoku shimasu.)
+Boss, project ki progress report karta hoon.
+
+よてい どおり すすんで います。
+(Yotei doori susunde imasu.)
+Scheduled ke mutabiq chal raha hai.
+
+すこし おくれて います が、きんようび までに おわらせます。
+(Sukoshi okurete imasu ga, kinyoubi made ni owarasemasu.)
+Thoda late hai, lekin Friday tak khatam kar dunga.
+```
+
+**Informing (れんらく):**
+```
+すみません、きょう の かいぎ に おくれます。
+(Sumimasen, kyou no kaigi ni okuremasu.)
+Sorry, aaj ki meeting mein late hounga.
+
+あしたは やすませて いただきたいんですが。
+(Ashita wa yasumasete itadakitain desu ga.)
+Kal chutti lena chahta hoon.
+
+でんしゃ が とまっていて、まにあわない かもしれません。
+(Densha ga tomatte ite, maniawanai kamo shiremasen.)
+Train ruki hui hai, late ho sakta hoon.
+```
+
+**Consulting (そうだん):**
+```
+すみません、ちょっと そうだんしたい こと が あるんですが。
+(Sumimasen, chotto soudan shitai koto ga arun desu ga.)
+Excuse me, ek baat consult karna tha.
+
+この ばあい、どう したら いいでしょうか。
+(Kono baai, dou shitara ii deshou ka.)
+Is situation mein kya karna chahiye?
+
+ご いけん を きかせて いただけますか。
+(Go iken wo kikasete itadakemasu ka.)
+Aapki raay bata sakte hain?
+```
+
+---
+
+## 6) Work related email writing basics
+
+### Email opening:
+- おせわ に なって おります。  
+  → Thank you for your continued support.
+- _____ の _____ と もうします。  
+  → Main _____ company se _____ hoon.
+
+### Email closing:
+- よろしく おねがいいたします。  
+  → Please take care of this matter.
+- ご かくにん の ほど よろしく おねがいいたします。  
+  → Please confirm.
+- ご ふめい な てん が ございましたら おしらせ ください。  
+  → If anything is unclear, please let me know.
+
+---
+
+## 7) Common workplace phrases
+
+| Japanese | Meaning |
+|---|---|
+| おはようございます | Good morning |
+| おつかれさまです | Good work (colleague greeting) |
+| おさきに しつれいします | I'm leaving first |
+| いってきます | I'm heading out |
+| いってらっしゃい | Take care (response) |
+| ただいま もどりました | I'm back |
+| おかえりなさい | Welcome back |
+| よろしく おねがいします | Please take care of it |
+| かしこまりました | Understood (very formal) |
+| しょうちしました | Understood (formal) |
+| ご めいわく を おかけしました | Sorry for the inconvenience |
+| おてすうですが | Sorry to bother you but... |
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 11: しごと (Work) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const workData = {
+        report: {
+            request: { jp: "この 日報（にっぽう）と 資料（しりょう）を ご確認（かくにん）いただけますか。", rom: "Kono nippou to shiryou wo gokakunin itadakemasu ka.", hi: "Hindi Translation: Kya aap is daily report aur document ko check kar sakte hain? (very polite request)" },
+            respect: { jp: "部長（ぶちょう）は もう 新（あたら）しい プロジェクトの 資料（しりょう）を ご覧（らん）に なりましたか。", rom: "Buchou wa mou atarashii purojekuto no shiryou wo goran ni narimashita ka.", hi: "Hindi Translation: Boss, kya aapne naye project ka document dekh liya hai? (respectful 見る)" },
+            humble: { jp: "来週（らいしゅう）の 会議（かいぎ）の 準備（じゅんび）は、私（わたし）が 担当（たんとう）いたします。", rom: "Raishuu no kaigi no junbi wa, watashi ga tantou itashimasu.", hi: "Hindi Translation: Agle hafte ki meeting ki taiyari ka zimma main leta hoon (humble する)." },
+            itadaku: { jp: "先輩（せんぱい）に プレゼンの 資料（しりょう）を 修正（しゅうせい）して いただきました。", rom: "Senpai ni purezen no shiryou wo shuusei shite itadakimashita.", hi: "Hindi Translation: Senior se presentation ka document correct karwa liya / unhone mere liye check kiya." },
+            horenso: { jp: "【報告】部長（ぶちょう）、プロジェクトの 進捗（しんちょく）を 報告（ほうこく）いたします。予定（よてい）どおり 進（すす）んでいます。", rom: "【Houkoku】Buchou, purojekuto no shinchoku wo houkoku itashimasu. Yotei doori susunde imasu.", hi: "Hindi Translation: 【Report】Boss, project ki progress report karta hoon. Schedule ke mutabiq chal raha hai." }
+        },
+        leave: {
+            request: { jp: "来週（らいしゅう）の 水曜日（すいようび）、有給（ゆうきゅう）休暇（きゅうか）を取（と）らせて いただけますか。", rom: "Raishuu no suiyoubi, yuukyuu kyuuka wo torasete itadakemasu ka.", hi: "Hindi Translation: Kya agle Budhwar ko mujhe paid leave lene de sakte hain? (very polite permission request)" },
+            respect: { jp: "課長（かちょう）は 夏休み（なつやすみ）を いつ 取（と）られますか。", rom: "Kachou wa natsuyasumi wo itsu toraremasu ka.", hi: "Hindi Translation: Manager sahab, aap apni summer vacation kab le rahe hain? (respectful form)" },
+            humble: { jp: "明日（あした）は 私用（しよう）の ため、１日（いちにち）お休（やす）みを いただきます。", rom: "Ashita wa shiyou no tame, ichinichi oyasumi wo itadakimasu.", hi: "Hindi Translation: Kal personal kaam ke kaaran, 1 din ki chhutti le raha hoon (humble)." },
+            itadaku: { jp: "部長（ぶちょう）に 有給（ゆうきゅう）の 申請（しんせい）を 承認（しょうにん）して いただきました。", rom: "Buchou ni yuukyuu no shinsei wo shounin shite itadakimashita.", hi: "Hindi Translation: Boss se paid leave ka application approve karwa liya mere liye!" },
+            horenso: { jp: "【連絡】明日（あした）は 体調（たいちょう）不良（ふりょう）の ため、休（やす）ませて いただきたいんですが。", rom: "【Renraku】Ashita wa taichou furyou no tame, yasumasete itadakitain desu ga.", hi: "Hindi Translation: 【Inform】Kal tabiyat theek na hone ke kaaran, main chhutti lena chahta hoon." }
+        },
+        deadline: {
+            request: { jp: "大変（たいへん）申し訳（もうしわけ）ありませんが、締め切り（しめきり）を 明日（あした）まで 延（の）ばして いただけないでしょうか。", rom: "Taihen moushiwake arimasen ga, shimekiri wo ashita made nobashite itadakenai deshou ka.", hi: "Hindi Translation: Bahut maafi chahta hoon, lekin kya deadline kal tak badha nahi sakte kya? (most polite request)" },
+            respect: { jp: "お客様（きゃくさま）が 締め切り（しめきり）の 変更（へんこう）を ご希望（きぼう）なさっています。", rom: "Okyakusama ga shimekiri no henkou wo gokibou nasatte imasu.", hi: "Hindi Translation: Customer deadline mein changes chahte hain (respectful する)." },
+            humble: { jp: "修正（しゅうせい）した 資料（しりょう）を 本日（ほんじつ）中（ちゅう）に 再度（さいど）お送り（おくり）いたします。", rom: "Shuusei shita shiryou wo honjitsuchuu ni saido ookuri itashimasu.", hi: "Hindi Translation: Corrected document aaj ke andar wapas bhej dunga (humble する)." },
+            itadaku: { jp: "クライアントに スケジュール調整（ちょうせい）を ご了承（りょうしょう）いただきました。", rom: "Kuraianto ni sukejuuru chousei wo goryoushou itadakimashita.", hi: "Hindi Translation: Client se schedule adjustment ki approval / permission le li!" },
+            horenso: { jp: "【相談】すみません、締め切り（しめきり）の 件（けん）で ちょっと 相談（そうだん）したい ことが あるんですが。", rom: "【Soudan】Sumimasen, shimekiri no ken de chotto soudan shitai koto ga arun desu ga.", hi: "Hindi Translation: 【Consult】Excuse me, deadline ke matter pe thodi salah / consult karna tha." }
+        },
+        delay: {
+            request: { jp: "電車（でんしゃ）が 遅延（ちえん）しているので、会議（かいぎ）の 開始（かいし）を １５分（じゅうごふん）待（ま）って いただけますか。", rom: "Densha ga chien shite iru node, kaigi no kaishi wo juugofun matte itadakemasu ka.", hi: "Hindi Translation: Train late chal rahi hai, toh kya meeting 15 minute wait karke shuru kar sakte hain?" },
+            respect: { jp: "社長（しゃちょう）は 既に（すでに）オンライン会議（かいぎ）に 入（はい）っていらっしゃいます。", rom: "Shachou wa sudeni onrain kaigi ni haitte irasshaimasu.", hi: "Hindi Translation: President pehle se hi online meeting mein enter ho chuke hain (respectful いる)." },
+            humble: { jp: "ただいま 駅（えき）に おります。あと １０分（じゅっぷん）で 会社（かいしゃ）に 参（まい）ります。", rom: "Tadaima eki ni orimasu. Ato juppun de kaisha ni mairimasu.", hi: "Hindi Translation: Main abhi station pe hoon (humble いる). Aur 10 minute mein office pahunchta hoon (humble 来る)." },
+            itadaku: { jp: "チームの 皆（みな）さんに 会議（かいぎ）の 時間（じかん）を 変更（へんこう）して いただきました。", rom: "Chiimu no minasan ni kaigi no jikan wo henkou shite itadakimashita.", hi: "Hindi Translation: Team ke sabhi logon se meeting ka time change karwa liya mere liye." },
+            horenso: { jp: "【連絡】電車（でんしゃ）が 止（と）まっていて、今日（きょう）の 会議（かいぎ）に 間に合わない（まにあわない）かもしれません。", rom: "【Renraku】Densha ga tomatte ite, kyou no kaigi ni maniawanai kamo shiremasen.", hi: "Hindi Translation: 【Inform】Train ruki hui hai, aaj ki meeting mein shayad time pe nahi pahunch paunga." }
+        },
+        client: {
+            request: { jp: "御社（おんしゃ）の ご意見（いけん）を 聞（き）かせて いただけますか。", rom: "Onsha no goiken wo kikasete itadakemasu ka.", hi: "Hindi Translation: Kya hum aapki company ki raay / feedback sun sakte hain? (very polite request)" },
+            respect: { jp: "お客様（きゃくさま）が 弊社（へいしゃ）の 新製品（しんせいひん）を ご覧（らん）に なりました。", rom: "Okyakusama ga heisha no shinseihin wo goran ni narimashita.", hi: "Hindi Translation: Customer ne hamari company ka naya product dekha (respectful 見る)." },
+            humble: { jp: "私（わたし）は XYZ株式会社（かぶしきがいしゃ）の 山田（やまだ）と 申（もう）します。明日（あした）伺（うかが）います。", rom: "Watashi wa XYZ kabushikigaisha no Yamada to moushimasu. Ashita ukagaimasu.", hi: "Hindi Translation: Main XYZ company ka Yamada hoon (humble 言う). Kal aapke office visit karunga (humble 行く)." },
+            itadaku: { jp: "お客様（きゃくさま）に 契約書（けいやくしょ）へ ご署名（しょめい）を いただきました。", rom: "Okyakusama ni keiyakusho e goshomei wo itadakimashita.", hi: "Hindi Translation: Customer se contract paper pe sign le liya / unhone kindly sign kiya." },
+            horenso: { jp: "【報告】お客様（きゃくさま）との 商談（しょうだん）が 無事（ぶじ）に 終了（しゅうりょう）いたしました。", rom: "【Houkoku】Okyakusama to no shoudan ga buji ni shuuryou itashimashita.", hi: "Hindi Translation: 【Report】Customer ke saath business deal meeting successfully khatam ho gayi hai (humble する)." }
+        }
+    };
+
+    function updateWorkSim() {
+        const s = document.getElementById('sim-scene').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = workData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakWorkSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 職場（しょくば）で 最も（もっとも）丁寧（ていねい）な 依頼（いらい・Request）表現（ひょうげん）は どれですか？\n(Which of the following is the MOST POLITE request form for a boss or client?)", opt: ["～て いただけないでしょうか (te itadakenai deshou ka)", "～て いただけますか (te itadakemasu ka)", "～て くれませんか (te kuremasen ka)", "～て ください (te kudasai)"], ans: 0 },
+        { q: "2. 社長（しゃちょう）が 会議室（かいぎしつ）に 「います」。尊敬語（そんけいご・Respectful Keigo）に すると どうなりますか？\n(How do you say 'The President is in the room' using Respectful Keigo for いる?)", opt: ["いらっしゃいます (irasshaimasu)", "おります (orimasu)", "まいります (mairimasu)", "なさいます (nasaimasu)"], ans: 0 },
+        { q: "3. 「私（わたし）は 山田（やまだ）と 言（い）います」。謙譲語（けんじょうご・Humble Keigo）に すると どうなりますか？\n(How do you humbly say your own name 'I am called Yamada' in a business email?)", opt: ["申（もう）します (moushimasu)", "おっしゃいます (osshaimasu)", "いたします (itashimasu)", "ただきます (itadakimasu)"], ans: 0 },
+        { q: "4. 日本の 職場の ルール 「ホウレンソウ（報・連・相）」の 「レン（連）」の 意味は 何ですか？\n(What does the REN stand for in the Japanese business pillar Ho-Ren-So?)", opt: ["連絡（れんらく・Renraku - Informing / Contacting immediately about delays or updates)", "練習（れんしゅう・Renshuu - Practicing presentation skills)", "連休（れんきゅう・Renkyuu - Taking long consecutive holidays)", "連れていく（つれていく・Tsurete iku - Taking clients out for drinks)"], ans: 0 },
+        { q: "5. 社外（しゃがい・External client）への ビジネスメールの 最初の 挨拶（あいさつ）として 正しいのは どれですか？\n(What is the mandatory opening greeting for external business emails in Japan?)", opt: ["お世話（せわ）になって おります。(Osewa ni natte orimasu - Thank you for your support)", "お疲れ様（つかれさま）です。(Otsukaresama desu - Good work)", "おかえりなさい。(Okaerinasai - Welcome back)", "ごめんなさい。(Gomennasai - I am sorry)"], ans: 0 },
+        { q: "6. 上司（じょうし・Boss）より 先に（さきに）会社（かいしゃ）を 帰る（かえる）時、何と 挨拶（あいさつ）しますか？\n(What must you say when leaving the office before your boss or coworkers?)", opt: ["お先に 失礼します (Osaki ni shitsurei shimasu - Excuse me for leaving first)", "いってきます (Ittekimasu - I'm heading out)", "ただいま もどりました (Tadaima modorimashita - I'm back)", "かしこまりました (Kashikomarimashita - Understood)"], ans: 0 },
+        { q: "7. 「分（わ）かりました」を 社長（しゃちょう）や お客様（きゃくさま）に 言う 時の 正しい 敬語は どれですか？\n(How do you formally say 'Understood / Roger' to a superior or client?)", opt: ["かしこまりました / 承知（しょうち）しました (Kashikomarimashita / Shouchi shimashita)", "了解（りょうかい）です (Ryoukai desu)", "おけーです (Okee desu)", "いいですよ (Ii desu yo)"], ans: 0 },
+        { q: "8. 「明日（あした）は 休（やす）ませて _______のですが」\n(I would like to RECEIVE the favor of BEING ALLOWED TO TAKE A DAY OFF tomorrow - humble permission)", opt: ["いただきたい (itadakitai)", "あげたい (agetai)", "さしあげたい (sashiagetai)", "くださりたい (kudasaritai)"], ans: 0 },
+        { q: "9. クッション言葉（ことば）「お手数（てすう）ですが」の 正しい 使う 状況と 意味は どれですか？\n(When do you use the polite cushion phrase お手数ですが - otesuu desu ga?)", opt: ["Sorry to bother you / apologize for the trouble, but... (used when asking someone to do a task for you)", "Congratulations on your job promotion and salary increase", "I am very tired from doing overtime every single day", "The factory machinery is currently broken and leaking water"], ans: 0 },
+        { q: "10. 「来週（らいしゅう）そちらに 行（い）きます」。謙譲語（けんじょうご・Humble Keigo）に すると どうなりますか？\n(How do you humbly say 'I will go to your office next week' using Humble Keigo for 行く?)", opt: ["参（まい）ります (mairimasu)", "いらっしゃいます (irasshaimasu)", "おいでになります (oide ni narimasu)", "おるます (orumasu)"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Amazing! You are ready to work in any Japanese corporate office or factory!':'💪 Keep practicing! Review the differences between Respectful (いらっしゃる) and Humble (まいる) Keigo!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

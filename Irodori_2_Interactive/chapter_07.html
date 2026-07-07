@@ -1,0 +1,656 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 07: インフォメーション (Information & Notices)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 7: インフォメーション - Information & Notices. Covers flyers, event notices, and grammar (~について, ~そうです, ~かどうか, ~予定です).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 07: インフォメーション (Information) • Flyers, Notices & Event Inquiries</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('この イベント について おしえて ください。あした は あめ が ふる そうです。さんかできる かどうか、かくにんします。こんどの どようび、イベント に さんかする よていです。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>ℹ️ インフォメーション (Infomeeshon) - Information / Jaankari</h2>
+        <p>Master decoding Japanese flyers, event posters, recruitment notices (<strong>募集・締め切り・先着順</strong>), fee types (<strong>無料・有料</strong>), and essential information inquiry grammar (<strong>～について / ～そうです / ～かどうか / ～予定です</strong>)! Includes interactive Notice & Flyer Decoder.</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 2705–2911</span>
+            <span class="meta-pill">💬 Grammar Points 35–38</span>
+            <span class="meta-pill">📚 35+ Notice & Event Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">📰 Event Inquiry Roleplay</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('decoder',this)"><span>ℹ️</span> Event Notice & Flyer Decoder</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Inquiries & Hearsay (Pt 35–38)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 35+ Audio Vocab & Sign Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 07 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>📰</span> Event Inquiry & Poster Roleplay</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Information Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Event Notice & Flyer Decoder -->
+    <div id="tab-decoder" class="tab-content active">
+        <div class="interactive-box">
+            <h4>ℹ️ Interactive Event Notice & Flyer Decoder (イベント・お知らせ解読器)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Select an event flyer type and an inquiry/hearsay grammar pattern to see how Japanese notices are structured and how to ask questions about them!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Event Flyer / Notice (イベント・お知らせ)</label>
+                    <select id="sim-event" onchange="updateNoticeSim()">
+                        <option value="matsuri">🏮 Summer Festival (お祭り - 7月20日 • 駅前公園 • 予約不要)</option>
+                        <option value="seminar">👨‍🏫 Culture Seminar (セミナー - 日本の文化講演 • 参加無料 • 予約必要)</option>
+                        <option value="concert">🎸 Music Concert (コンサート - 有料チケット • 先着順 • 定員あり)</option>
+                        <option value="exhibit">🖼️ Art Exhibition (展示 - 美術館 • 学生無料 • 雨天決行)</option>
+                        <option value="volunteer">🤝 Volunteer Recruitment (ボランティア募集 - 誰でも歓迎 • 締め切り金曜)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updateNoticeSim()">
+                        <option value="about">❓ Inquiry (～について - Regarding / About _____)</option>
+                        <option value="hearsay">📢 Hearsay / Rumor (～そうです - I heard that _____)</option>
+                        <option value="whether">🤔 Uncertainty (～かどうか - Whether or not _____)</option>
+                        <option value="schedule">📅 Official Plan (～予定です - It is scheduled / planned to _____)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">来週（らいしゅう）の お祭り（まつり）について 詳しく（くわしく）教えて もらえますか。</div>
+                <div class="output-rom" id="sim-rom">Raishuu no omatsuri ni tsuite kuwashiku oshiete moraemasu ka.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Agle hafte ke festival ke baare mein thoda detail mein bata sakte ho?</div>
+                <button class="btn-speak" onclick="speakNoticeSim()">🔊 Speak Sentence in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🏷️ Essential Notice & Sign Vocabulary Guide (看板・ポスターの言葉)</h3>
+            <p>Click any card to hear the native pronunciation and memorize critical sign words found on Japanese flyers!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">無料（むりょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Muryou • Free of Charge</div><div class="meaning-text">Koi fee nahi. Very common on community seminar and festival flyers.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">有料（ゆうりょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yuuryou • Paid / Fee Required</div><div class="meaning-text">Paisa lagta hai. Indicates ticket purchase or entrance fee is mandatory.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">先着順（せんちゃくじゅん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Senchakujun • First-Come, First-Served</div><div class="meaning-text">Jo pehle aayega, usko pehle milega! Once capacity is reached, registration closes.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">どなたでも</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Donata demo • Anyone / Everyone Welcome</div><div class="meaning-text">Koi bhi join kar sakta hai. Polite way of saying だれでも on public announcements.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">予約必要（よやくひつよう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yoyaku hitsuyou • Reservation Required</div><div class="meaning-text">Pehle se booking karna zaroori hai. You must apply before the deadline (締め切り).</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">予約不要（よやくふよう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yoyaku fuyou • No Reservation Needed</div><div class="meaning-text">Booking ki zaroorat nahi. You can simply walk in directly on the day of the event!</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Regarding / About: Inquiring for details</span><span class="particle-badge">Pt 35</span></div>
+            <div class="grammar-formula">Noun + について (Regarding / About _____ )</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～について</strong> when asking questions, explaining, or consulting about a specific topic, event, or notice ("concerning / about").</p>
+            <ul class="example-list">
+                <li onclick="speakText('この イベント について おしえて ください。')">
+                    <span class="ex-jp">この イベント について 教えて ください。</span>
+                    <span class="ex-rom">Kono ibento ni tsuite oshiete kudasai. (Is event ke baare mein bataiye.)</span>
+                </li>
+                <li onclick="speakText('にほん の ぶんか について べんきょうして います。')">
+                    <span class="ex-jp">日本 の 文化 について 勉強して います。</span>
+                    <span class="ex-rom">Nihon no bunka ni tsuite benkyou shite imasu. (Japan ki culture ke baare mein padh raha hoon.)</span>
+                </li>
+                <li onclick="speakText('しごと について そうだんしたい です。')">
+                    <span class="ex-jp">仕事 について 相談したい です。</span>
+                    <span class="ex-rom">Shigoto ni tsuite soudan shitai desu. (Kaam ke baare mein baat / consult karna chahta hoon.)</span>
+                </li>
+                <li onclick="speakText('この セミナー について くわしく おしえて もらえますか。')">
+                    <span class="ex-jp">この セミナー について 詳しく 教えて もらえますか。</span>
+                    <span class="ex-rom">Kono seminaa ni tsuite kuwashiku oshiete moraemasu ka. (Is seminar ke baare mein thoda detail mein bata sakte ho?)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Hearsay / Rumor: I heard that...</span><span class="particle-badge" style="background:var(--accent-success);">Pt 36</span></div>
+            <div class="grammar-formula">Verb plain / い-adj + そうです • な-adj / Noun + だそうです</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">This is the <strong>hearsay</strong> (伝聞) form! It means you did not see it yourself, but heard it from someone else or read it on a flyer or news notice ("Suna hai ki...").</p>
+            <ul class="example-list">
+                <li onclick="speakText('あした は あめ が ふる そうです。')">
+                    <span class="ex-jp">明日 は 雨 が 降る そうです。</span>
+                    <span class="ex-rom">Ashita wa ame ga furu sou desu. (Kal baarish hogi suna hai - from weather forecast.)</span>
+                </li>
+                <li onclick="speakText('あの コンサート は すごく にんき が ある そうです。')">
+                    <span class="ex-jp">あの コンサート は すごく 人気 が ある そうです。</span>
+                    <span class="ex-rom">Ano konsaato wa sugoku ninki ga aru sou desu. (Woh concert bahut popular hai suna hai.)</span>
+                </li>
+                <li onclick="speakText('この イベント は むりょう だそうです。')">
+                    <span class="ex-jp">この イベント は 無料 だそうです。</span>
+                    <span class="ex-rom">Kono ibento wa muryou da sou desu. (Yeh event free hai suna hai - notice says so.)</span>
+                </li>
+                <li onclick="speakText('らいしゅう、えき の ちかく で おまつり が ある そうです。')">
+                    <span class="ex-jp">来週、駅 の 近く で お祭り が ある そうです。</span>
+                    <span class="ex-rom">Raishuu, eki no chikaku de omatsuri ga aru sou desu. (Agle hafte station ke paas festival hai suna hai.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Uncertainty & Official Schedules</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 37 & 38</span></div>
+            <div class="grammar-formula">Plain form + かどうか (Whether or not) / Verb dict + 予定です (Scheduled to)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～かどうか</strong> to express uncertainty ("whether or not / hai ya nahi"). Use <strong>～予定（よてい）です</strong> to state an official plan or scheduled timeline!</p>
+            <ul class="example-list">
+                <li onclick="speakText('さんかできる かどうか、かくにんします。')">
+                    <span class="ex-jp">参加できる かどうか、確認します。</span>
+                    <span class="ex-rom">Sanka dekiru ka dou ka, kakunin shimasu. (Join kar sakta hoon ya nahi, confirm karta hoon.)</span>
+                </li>
+                <li onclick="speakText('しめきり に まにあう かどうか、ちょっと しんぱい です。')">
+                    <span class="ex-jp">締め切り に 間に合う かどうか、ちょっと 心配 です。</span>
+                    <span class="ex-rom">Shimekiri ni maniau ka dou ka, chotto shinpai desu. (Deadline tak ho paayega ya nahi, thodi chinta hai.)</span>
+                </li>
+                <li onclick="speakText('こんどの どようび、イベント に さんかする よていです。')">
+                    <span class="ex-jp">今度の 土曜日、イベント に 参加する 予定です。</span>
+                    <span class="ex-rom">Kondo no doyoubi, ibento ni sanka suru yotei desu. (Is Saturday event mein join karne ka plan hai.)</span>
+                </li>
+                <li onclick="speakText('かいぎ は ごご にじ から の よていです。')">
+                    <span class="ex-jp">会議 は 午後 2時 からの 予定です。</span>
+                    <span class="ex-rom">Kaigi wa gogo niji kara no yotei desu. (Meeting dopahar 2 baje se hone ka schedule hai.)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 7 Event, Notice & Sign Vocabulary Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize notice terminology.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お祭り（おまつり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Omatsuri</div><div class="meaning-text">Festival / Mela / Cultural celebration</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">展示（てんじ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tenji</div><div class="meaning-text">Exhibition / Display</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">講演（こうえん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kouen</div><div class="meaning-text">Lecture / Talk / Public speech</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">募集（ぼしゅう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Boshuu</div><div class="meaning-text">Recruitment / Applications open</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">申し込み（もうしこみ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Moushikomi</div><div class="meaning-text">Registration / Application entry</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">締め切り（しめきり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shimekiri</div><div class="meaning-text">Deadline / Application closing date</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">定員（ていいん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Teiin</div><div class="meaning-text">Capacity / Limited seats number</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">先着順（せんちゃくじゅん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Senchakujun</div><div class="meaning-text">First-come, first-served basis</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">参加費（さんかひ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sankahi</div><div class="meaning-text">Participation fee</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">入場料（にゅうじょうりょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nyuujouryou</div><div class="meaning-text">Entrance fee / Admission fee</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">無料（むりょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Muryou</div><div class="meaning-text">Free of charge / Muft</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">有料（ゆうりょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yuuryou</div><div class="meaning-text">Paid / Fee required</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">日にち（ひにち）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hinichi</div><div class="meaning-text">Date / Specific day of event</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">会場（かいじょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaijou</div><div class="meaning-text">Venue / Event location</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">開始（かいし）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaishi</div><div class="meaning-text">Start time / Opening</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">終了（しゅうりょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shuuryou</div><div class="meaning-text">End time / Closing</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">変更（へんこう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Henkou</div><div class="meaning-text">Change / Modification of schedule</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">中止（ちゅうし）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Chuushi</div><div class="meaning-text">Cancellation / Called off</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">延期（えんき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Enki</div><div class="meaning-text">Postponement / Rescheduled later</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">お知らせ（おしらせ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Oshirase</div><div class="meaning-text">Notice / Announcement / Notification</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">詳細（しょうさい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shousai</div><div class="meaning-text">Details / Full particulars</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">問い合わせ（といあわせ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Toiawase</div><div class="meaning-text">Inquiry / Contact desk for questions</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">対象（たいしょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Taishou</div><div class="meaning-text">Target audience / Eligible participants</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">どなたでも</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Donata demo</div><div class="meaning-text">Anyone can join (polite form of だれでも)</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 7 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for notices, flyers, exhibitions, recruitment, fees, deadlines, and schedules.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">祭</div><div class="kanji-info"><h5>Festival / Ritual</h5><div class="kanji-readings">Onyomi: <span>サイ (sai)</span><br>Kunyomi: まつ-り、まつ-る</div></div></div><div class="kanji-example" onclick="speakText('お祭り、文化祭')"><span>お祭り（おまつり）- festival<br>文化祭（ぶんかさい）- culture fest</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">展</div><div class="kanji-info"><h5>Expand / Display</h5><div class="kanji-readings">Onyomi: <span>テン (ten)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('展示、展覧会、発展')"><span>展示（てんじ）- exhibition<br>発展（はってん）- development</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">示</div><div class="kanji-info"><h5>Show / Indicate</h5><div class="kanji-readings">Onyomi: <span>ジ、シ (ji, shi)</span><br>Kunyomi: しめ-す</div></div></div><div class="kanji-example" onclick="speakText('展示、示す、指示')"><span>展示（てんじ）- display<br>示す（しめす）- to indicate</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">講</div><div class="kanji-info"><h5>Lecture / Explain</h5><div class="kanji-readings">Onyomi: <span>コウ (kou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('講演、講座、講義')"><span>講演（こうえん）- lecture<br>講座（こうざ）- course / class</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">演</div><div class="kanji-info"><h5>Perform / Act / Play</h5><div class="kanji-readings">Onyomi: <span>エン (en)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('講演、演奏、演技')"><span>講演（こうえん）- talk / lecture<br>演奏（えんそう）- musical play</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">募</div><div class="kanji-info"><h5>Recruit / Enlist / Invite</h5><div class="kanji-readings">Onyomi: <span>ボ (bo)</span><br>Kunyomi: つの-る</div></div></div><div class="kanji-example" onclick="speakText('募集、応募')"><span>募集（ぼしゅう）- recruitment<br>応募（おうぼ）- application</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">集</div><div class="kanji-info"><h5>Gather / Collect</h5><div class="kanji-readings">Onyomi: <span>シュウ (shuu)</span><br>Kunyomi: あつ-まる、あつ-める</div></div></div><div class="kanji-example" onclick="speakText('募集、集まる、集中')"><span>募集（ぼしゅう）- recruit<br>集まる（あつまる）- to gather</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">込</div><div class="kanji-info"><h5>Include / Crowd / Put into</h5><div class="kanji-readings">Onyomi: <span>-</span><br>Kunyomi: こ-む、こ-める</div></div></div><div class="kanji-example" onclick="speakText('申し込み、込む')"><span>申し込み（もうしこみ）- apply<br>込む（こむ）- be crowded</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">締</div><div class="kanji-info"><h5>Tighten / Fasten / Close</h5><div class="kanji-readings">Onyomi: <span>テイ (tei)</span><br>Kunyomi: し-める、し-まる</div></div></div><div class="kanji-example" onclick="speakText('締め切り、締める')"><span>締め切り（しめきり）- deadline<br>締める（しめる）- fasten tight</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">切</div><div class="kanji-info"><h5>Cut / Important</h5><div class="kanji-readings">Onyomi: <span>セツ (setsu)</span><br>Kunyomi: き-る、き-れる</div></div></div><div class="kanji-example" onclick="speakText('締め切り、切る、大切')"><span>締め切り（しめきり）- deadline<br>切る（きる）- to cut / slice</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">定</div><div class="kanji-info"><h5>Determine / Fix</h5><div class="kanji-readings">Onyomi: <span>テイ、ジョウ (tei)</span><br>Kunyomi: さだ-める</div></div></div><div class="kanji-example" onclick="speakText('定員、予定、決定')"><span>定員（ていいん）- capacity<br>予定（よてい）- schedule</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">員</div><div class="kanji-info"><h5>Member / Employee</h5><div class="kanji-readings">Onyomi: <span>イン (in)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('定員、店員、社員')"><span>定員（ていいん）- capacity<br>店員（てんいん）- store clerk</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">先</div><div class="kanji-info"><h5>Ahead / Previous / First</h5><div class="kanji-readings">Onyomi: <span>セン (sen)</span><br>Kunyomi: さき</div></div></div><div class="kanji-example" onclick="speakText('先着順、先生、先日')"><span>先着順（せんちゃくじゅん）- FCFS<br>先生（せんせい）- teacher</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">着</div><div class="kanji-info"><h5>Arrive / Wear / Put on</h5><div class="kanji-readings">Onyomi: <span>チャク (chaku)</span><br>Kunyomi: き-る、つ-く</div></div></div><div class="kanji-example" onclick="speakText('先着順、着く、着る')"><span>先着順（せんちゃくじゅん）- FCFS<br>着く（つく）- to arrive</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">費</div><div class="kanji-info"><h5>Expense / Cost / Spend</h5><div class="kanji-readings">Onyomi: <span>ヒ (hi)</span><br>Kunyomi: ついや-す</div></div></div><div class="kanji-example" onclick="speakText('参加費、光熱費、費用')"><span>参加費（さんかひ）- entry fee<br>費用（ひよう）- expense cost</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">料</div><div class="kanji-info"><h5>Fee / Materials</h5><div class="kanji-readings">Onyomi: <span>リョウ (ryou)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('入場料、無料、有料')"><span>入場料（にゅうじょうりょう）- fee<br>無料（むりょう）- free</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">無</div><div class="kanji-info"><h5>Nothing / Without / Free</h5><div class="kanji-readings">Onyomi: <span>ム、ブ (mu, bu)</span><br>Kunyomi: な-い</div></div></div><div class="kanji-example" onclick="speakText('無料、無理、無い')"><span>無料（むりょう）- free<br>無理（むり）- impossible</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">有</div><div class="kanji-info"><h5>Possess / Exist / Have</h5><div class="kanji-readings">Onyomi: <span>ユウ、ウ (yuu, u)</span><br>Kunyomi: あ-る</div></div></div><div class="kanji-example" onclick="speakText('有料、有名、有る')"><span>有料（ゆうりょう）- paid<br>有名（ゆうめい）- famous</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">詳</div><div class="kanji-info"><h5>Detailed / Full</h5><div class="kanji-readings">Onyomi: <span>ショウ (shou)</span><br>Kunyomi: くわ-しい</div></div></div><div class="kanji-example" onclick="speakText('詳細、詳しい')"><span>詳細（しょうさい）- details<br>詳しい（くわしい）- knowledgeable</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">細</div><div class="kanji-info"><h5>Thin / Fine / Slender</h5><div class="kanji-readings">Onyomi: <span>サイ (sai)</span><br>Kunyomi: ほそ-い、こま-かい</div></div></div><div class="kanji-example" onclick="speakText('詳細、細かい、細い')"><span>詳細（しょうさい）- details<br>細かい（こまかい）- fine / small</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">問</div><div class="kanji-info"><h5>Question / Ask / Inquire</h5><div class="kanji-readings">Onyomi: <span>モン (mon)</span><br>Kunyomi: と-う、と-い</div></div></div><div class="kanji-example" onclick="speakText('問い合わせ、質問、問題')"><span>問い合わせ（といあわせ）- inquiry<br>質問（しつもん）- question</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">題</div><div class="kanji-info"><h5>Topic / Subject / Title</h5><div class="kanji-readings">Onyomi: <span>ダイ (dai)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('問題、話題、宿題')"><span>問題（もんだい）- problem<br>話題（わだい）- conversation topic</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">予</div><div class="kanji-info"><h5>Beforehand / Previous</h5><div class="kanji-readings">Onyomi: <span>ヨ (yo)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('予定、予約、天気予報')"><span>予定（よてい）- plan / schedule<br>予約（よやく）- reservation</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">込</div><div class="kanji-info"><h5>Apply / Put into / Crowd</h5><div class="kanji-readings">Onyomi: <span>-</span><br>Kunyomi: こ-む、こ-める</div></div></div><div class="kanji-example" onclick="speakText('申し込み、思い込み')"><span>申し込み（もうしこみ）- application<br>思い込み（おもいこみ）- conviction</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay Module -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>📰 Event Inquiry & Poster Reading Roleplay (イベント問い合わせ)</h3>
+            <p>Master calling community center receptions to ask about event schedules, fees, and application deadlines!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-info);">
+            <h4>📞 Scene 1: Calling Event Reception (セミナーについて問い合わせる)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('すみません、この セミナー について おしえて ください。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> すみません、この セミナー について 教（おし）えて ください。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sumimasen, kono seminaa ni tsuite oshiete kudasai. (Excuse me, please tell me about this seminar.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('はい、どうぞ。なにか ごしつもん ですか？')">
+                    <strong style="color:var(--accent-primary);">受付 (Reception):</strong> はい、どうぞ。なにか ご質問（しつもん）ですか？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hai, douzo. Nanika goshitsumon desu ka? (Yes, go ahead. Do you have any questions?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('だれでも さんか できますか。さんかひ は いくら ですか。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 誰（だれ）でも 参加（さんか）できますか。参加費（さんかひ）は いくら ですか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Dare demo sanka dekimasu ka. Sankahi wa ikura desu ka. (Can anyone participate? How much is the participation fee?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('はい、どなた でも さんか できます。さんかひ は むりょう です。')">
+                    <strong style="color:var(--accent-primary);">受付 (Reception):</strong> はい、どなた でも 参加（さんか）できます。参加費（さんかひ）は 無料（むりょう）です。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hai, donata demo sanka dekimasu. Sankahi wa muryou desu. (Yes, anyone can participate. The fee is free.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('もうしこみ は ひつよう ですか。しめきり は いつ ですか。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 申（もう）し込（こ）み は 必要（ひつよう）ですか。締（し）め切（き）り は いつ ですか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Moushikomi wa hitsuyou desu ka. Shimekiri wa itsu desu ka. (Is registration required? When is the deadline?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('はい、ひつよう です。きんようび までに もうしこんで ください。')">
+                    <strong style="color:var(--accent-primary);">受付 (Reception):</strong> はい、必要（ひつよう）です。金曜日（きんようび）までに 申（もう）し込（こ）んで ください。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hai, hitsuyou desu. Kinyoubi made ni moushikonde kudasai. (Yes, it is necessary. Please register by Friday.)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-secondary);">
+            <h4>📜 Scene 2: Poster Decoder Practice (お祭りのお知らせを読む)</h4>
+            <div style="background:var(--bg-tertiary);padding:1.5rem;border-radius:12px;font-family:'Noto Sans JP',sans-serif;line-height:2;">
+                <h4 style="text-align:center;color:var(--accent-primary);margin-bottom:1rem;border-bottom:2px dashed var(--border-color);padding-bottom:0.5rem;">🏮 お祭り（おまつり）の お知らせ 🏮</h4>
+                <div style="display:grid;grid-template-columns:100px 1fr;gap:0.5rem;font-size:1.05rem;">
+                    <strong style="color:var(--accent-secondary);">日にち：</strong> <span>7月 20日（しちがつ はつか）</span>
+                    <strong style="color:var(--accent-secondary);">時間：</strong> <span>午後 4時 ～ 8時（ごご よじ から はちじ まで）</span>
+                    <strong style="color:var(--accent-secondary);">場所：</strong> <span>駅前 公園（えきまえ こうえん）</span>
+                    <strong style="color:var(--accent-secondary);">参加費：</strong> <span>無料（むりょう）</span>
+                    <strong style="color:var(--accent-secondary);">申し込み：</strong> <span>不要（ふよう）</span>
+                </div>
+                <div style="margin-top:1rem;padding:0.8rem;background:rgba(239,68,68,0.1);border-left:4px solid var(--accent-danger);color:var(--text-main);font-size:0.95rem;">
+                    ※ 雨（あめ）の 場合（ばあい）は 中止（ちゅうし）です。（In case of rain, it will be cancelled.）
+                </div>
+                <button class="btn-speak" style="margin-top:1rem;width:100%;" onclick="speakText('おまつり の おしらせ。ひにち、しちがつ はつか。じかん、ごご よじ から はちじ まで。ばしょ、えきまえ こうえん。さんかひ、むりょう。もうしこみ、ふよう。あめ の ばあい は ちゅうし です。')">🔊 Read Complete Poster in Japanese</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 7 Information & Notices Quiz</h3>
+                <p>Test your knowledge of flyer terms, fee types, registration rules, and grammar points 35–38!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 2705–2911)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 7: インフォメーション - Information / Jaankari lena
+
+## 🎯 Goal:
+- event ya notice samajhna  
+- poster / flyer padhna  
+- kisi cheez ke baare mein poochna  
+- schedule aur details confirm karna  
+
+---
+
+## 1) Important Vocabulary
+
+### **Event / Notice words**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| イベント | いべんと | Event |
+| おまつり (お祭り) | おまつり | Festival / Mela |
+| コンサート | こんさあと | Concert |
+| セミナー | せみなあ | Seminar |
+| てんじ (展示) | てんじ | Exhibition |
+| こうえん (講演) | こうえん | Lecture / Talk |
+| ぼしゅう (募集) | ぼしゅう | Recruitment / Application open |
+| もうしこみ (申し込み) | もうしこみ | Registration / Apply |
+| しめきり (締め切り) | しめきり | Deadline |
+| ていいん (定員) | ていいん | Capacity / Limited seats |
+| せんちゃくじゅん (先着順) | せんちゃくじゅん | First come first served |
+| さんかひ (参加費) | さんかひ | Participation fee |
+| にゅうじょうりょう (入場料) | にゅうじょうりょう | Entrance fee |
+| むりょう (無料) | むりょう | Free |
+| ゆうりょう (有料) | ゆうりょう | Paid |
+
+---
+
+### **Schedule / place words**
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ひにち (日にち) | ひにち | Date |
+| じかん (時間) | じかん | Time |
+| かいじょう (会場) | かいじょう | Venue |
+| ばしょ (場所) | ばしょ | Place |
+| かいし (開始) | かいし | Start |
+| しゅうりょう (終了) | しゅうりょう | End |
+| よてい (予定) | よてい | Plan / Schedule |
+| へんこう (変更) | へんこう | Change |
+| ちゅうし (中止) | ちゅうし | Cancelled |
+| えんき (延期) | えんき | Postponed |
+| あめ の ばあい (雨の場合) | あめ の ばあい | In case of rain |
+
+---
+
+## 2) Grammar Point 35: ～について  
+## Meaning: “_____ ke baare mein”
+
+**Noun + について**
+
+### Examples:
+- この イベント **について** おしえて ください。  
+  → Is event **ke baare mein** bataiye.
+
+- にほん の ぶんか (文化) **について** べんきょうして います。  
+  → Japan ki culture **ke baare mein** padh raha hoon.
+
+- しごと **について** そうだんしたい です。  
+  → Kaam **ke baare mein** baat / consult karna chahta hoon.
+
+### Useful questions:
+- この イベント **について** しつもん が あります。  
+  → Is event ke baare mein ek sawaal hai.
+
+- くわしく (詳しく) おしえて もらえますか。  
+  → Thoda detail mein bata sakte ho?
+
+---
+
+## 3) Grammar Point 36: ～そうです  
+## Meaning: “Suna hai ki…”
+
+Ye wala **hearsay** hai. Matlab tumne khud nahi dekha, kisi se suna / notice mein padha.
+
+### Pattern:
+- Verb plain form + そうです
+- い-adjective + そうです
+- な-adjective + だそうです
+- Noun + だそうです
+
+### Examples:
+- あした は あめ が ふる **そうです**。  
+  → Kal baarish hogi **suna hai**.
+
+- あの コンサート は すごく にんき (人気) が ある **そうです**。  
+  → Woh concert bahut popular hai **suna hai**.
+
+- この イベント は むりょう **だそうです**。  
+  → Yeh event free hai **suna hai**.
+
+- らいしゅう、えき の ちかく で おまつり が ある **そうです**。  
+  → Agle hafte station ke paas festival hai **suna hai**.
+
+---
+
+## 4) Grammar Point 37: ～かどうか  
+## Meaning: “...hai ya nahi / whether or not”
+
+### Pattern:
+**Plain form + かどうか**
+
+### Examples:
+- さんかできる **かどうか**、かくにんします。  
+  → Join kar sakta hoon **ya nahi**, confirm karta hoon.
+
+- いく **かどうか**、まだ きめて いません。  
+  → Jaunga **ya nahi**, abhi decide nahi kiya.
+
+- この チケット が つかえる **かどうか** わかりません。  
+  → Yeh ticket use ho sakta hai **ya nahi**, pata nahi.
+
+- しめきり に まにあう **かどうか**、ちょっと しんぱい です。  
+  → Deadline tak ho paayega **ya nahi**, thodi chinta hai.
+
+---
+
+## 5) Grammar Point 38: ～よていです  
+## Meaning: “plan hai / scheduled hai”
+
+### Pattern:
+- Verb dictionary form + よていです
+- Noun + の + よていです
+
+### Examples:
+- こんどの どようび、イベント に さんかする **よていです**。  
+  → Is Saturday event mein join karne ka plan hai.
+
+- かいぎ は ごご 2じ から の **よていです**。  
+  → Meeting dopahar 2 baje se hone ka schedule hai.
+
+- あした は くやくしょ (区役所) に いく **よていです**。  
+  → Kal ward office jaane ka plan hai.
+
+- らいげつ、にほんご の しけん (試験) を うける **よていです**。  
+  → Agle mahine Japanese exam dene ka plan hai.
+
+---
+
+## 6) Poster / Notice padhne ke common words
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| おしらせ (お知らせ) | おしらせ | Notice |
+| しょうさい (詳細) | しょうさい | Details |
+| といあわせ (問い合わせ) | といあわせ | Inquiry / Contact |
+| うけつけ (受付) | うけつけ | Reception |
+| たいしょう (対象) | たいしょう | Target people / Eligibility |
+| どなたでも | どなたでも | Anyone can join |
+| よやく ひつよう | よやく ひつよう | Reservation needed |
+| よやく ふよう | よやく ふよう | Reservation not needed |
+
+---
+
+## 7) Example Poster Reading
+
+```
+おまつり の おしらせ
+
+ひにち: 7がつ 20にち
+じかん: ごご 4じ ～ 8じ
+ばしょ: えき まえ こうえん
+さんかひ: むりょう
+もうしこみ: ふよう
+
+※ あめ の ばあい は ちゅうし です。
+```
+
+### Hinglish meaning:
+- Date: 20 July  
+- Time: 4 PM se 8 PM  
+- Place: station ke saamne park  
+- Fee: free  
+- Registration: zaroori nahi  
+- Note: baarish hui toh cancel
+
+---
+
+## 8) Asking about an event
+
+### Useful phrases:
+- この イベント **について** おしえて ください。  
+- いつ ありますか。  
+- どこ で ありますか。  
+- なんじ から なんじ まで ですか。  
+- だれでも さんか できますか。  
+- もうしこみ は ひつよう ですか。  
+- しめきり は いつ ですか。  
+
+### Sample conversation:
+**A:** すみません、この セミナー について おしえて ください。  
+**B:** はい、どうぞ。  
+**A:** だれでも さんか できますか。  
+**B:** はい、できます。  
+**A:** さんかひ は いくら ですか。  
+**B:** むりょう です。  
+**A:** もうしこみ は ひつよう ですか。  
+**B:** はい、ひつよう です。 きんようび までに もうしこんで ください。  
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 07: インフォメーション (Information) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const noticeData = {
+        matsuri: {
+            about: { jp: "来週（らいしゅう）の お祭り（まつり）について 詳しく（くわしく）教えて もらえますか。", rom: "Raishuu no omatsuri ni tsuite kuwashiku oshiete moraemasu ka.", hi: "Hindi Translation: Agle hafte ke festival ke baare mein thoda detail mein bata sakte ho?" },
+            hearsay: { jp: "駅前（えきまえ）の お祭り（まつり）は、参加費（さんかひ）が 無料（むりょう）だそうです。", rom: "Ekimae no omatsuri wa, sankahi ga muryou da sou desu.", hi: "Hindi Translation: Station ke saamne ka festival free hai, aisa suna hai / notice mein likha hai." },
+            whether: { jp: "雨（あめ）が 降（ふ）ったら お祭り（まつり）が ある かどうか、確認（かくにん）します。", rom: "Ame ga futtara omatsuri ga aru ka dou ka, kakunin shimasu.", hi: "Hindi Translation: Baarish hui toh festival hoga ya nahi, confirm karta hoon." },
+            schedule: { jp: "お祭り（まつり）は 午後（ごご）４時（よじ）に 開始（かいし）する 予定（よてい）です。", rom: "Omatsuri wa gogo yoji ni kaishi suru yotei desu.", hi: "Hindi Translation: Festival dopahar 4 baje shuru hone ka schedule hai." }
+        },
+        seminar: {
+            about: { jp: "日本（にほん）の 文化（ぶんか）セミナーについて 質問（しつもん）が あります。", rom: "Nihon no bunka seminaa ni tsuite shitsumon ga arimasu.", hi: "Hindi Translation: Japanese culture seminar ke baare mein ek sawaal hai." },
+            hearsay: { jp: "この セミナーは、誰（だれ）でも 参加（さんか）できる そうです。", rom: "Kono seminaa wa, dare demo sanka dekiru sou desu.", hi: "Hindi Translation: Is seminar mein koi bhi join kar sakta hai, aisa suna hai." },
+            whether: { jp: "まだ 定員（ていいん）に 空（あ）きが ある かどうか 分（わ）かりません。", rom: "Mada teiin ni aki ga aru ka dou ka wakarimasen.", hi: "Hindi Translation: Abhi seat empty hai ya nahi, mujhe pata nahi." },
+            schedule: { jp: "セミナーは 来月（らいげつ）の １０日（とおか）に 開催（かいさい）される 予定（よてい）です。", rom: "Seminaa wa raigetsu no tooka ni kaisai sareru yotei desu.", hi: "Hindi Translation: Seminar agle mahine ki 10 taareekh ko hone ka plan hai." }
+        },
+        concert: {
+            about: { jp: "コンサートの 入場料（にゅうじょうりょう）について 問い合わせを したい です。", rom: "Konsaato no nyuujouryou ni tsuite toiawase wo shitai desu.", hi: "Hindi Translation: Concert ke admission fee ke baare mein inquiry karna chahta hoon." },
+            hearsay: { jp: "チケットの 申し込みは、先着順（せんちゃくじゅん）だそうです。", rom: "Chiketto no moushikomi wa, senchakujun da sou desu.", hi: "Hindi Translation: Ticket registration first-come first-served basis pe hai, aisa suna hai." },
+            whether: { jp: "当日（とうじつ）券（けん）が 買（か）える かどうか、窓口（まどぐち）で 聞（き）いてみます。", rom: "Toujitsuken ga kaeru ka dou ka, madoguchi de kiite mimasu.", hi: "Hindi Translation: Same-day ticket khareed sakte hain ya nahi, counter pe poochke dekhta hoon." },
+            schedule: { jp: "コンサートは 午後（ごご）８時（はちじ）に 終了（しゅうりょう）する 予定（よてい）です。", rom: "Konsaato wa gogo hachiji ni shuuryou suru yotei desu.", hi: "Hindi Translation: Concert raat 8 baje khatam hone ka schedule hai." }
+        },
+        exhibit: {
+            about: { jp: "美術館（びじゅつかん）の 展示（てんじ）について、場所（ばしょ）を 教（おし）えてください。", rom: "Bijutsukan no tenji ni tsuite, basho wo oshiete kudasai.", hi: "Hindi Translation: Art museum exhibition ke baare mein, location bata dijiye." },
+            hearsay: { jp: "学生（がくせい）は 入場料（にゅうじょうりょう）が 半額（はんがく）になる そうです。", rom: "Gakusei wa nyuujouryou ga hangaku ni naru sou desu.", hi: "Hindi Translation: Students ke liye entry fee half price ho jaati hai, aisa suna hai." },
+            whether: { jp: "写真（しゃしん）を 撮（と）っても いい かどうか、スタッフに 確認（かくにん）します。", rom: "Shashin wo totte mo ii ka dou ka, sutaffu ni kakunin shimasu.", hi: "Hindi Translation: Photo khinch sakte hain ya nahi, staff se check karta hoon." },
+            schedule: { jp: "展示（てんじ）は 今月（こんげつ）末（まつ）まで 行（おこな）われる 予定（よてい）です。", rom: "Tenji wa kongetsumatsu made okonawareru yotei desu.", hi: "Hindi Translation: Exhibition is mahine ke ant tak chalne ka plan hai." }
+        },
+        volunteer: {
+            about: { jp: "ボランティアの 募集（ぼしゅう）について、応募（おうぼ）条件（じょうけん）は ありますか。", rom: "Borantia no boshuu ni tsuite, oubo jouken wa arimasu ka.", hi: "Hindi Translation: Volunteer recruitment ke baare mein, koi application condition hai kya?" },
+            hearsay: { jp: "日本語（にほんご）が 少し（すこし）できれば、どなたでも 歓迎（かんげい）だそうです。", rom: "Nihongo ga sukoshi dekireba, donata demo kangei da sou desu.", hi: "Hindi Translation: Agar thodi Japanese aati hai, toh koi bhi welcome hai, aisa notice mein likha hai." },
+            whether: { jp: "今（いま）から 申し込んでも 間に合う かどうか 分（わ）かりません。", rom: "Ima kara moushikonde mo maniau ka dou ka wakarimasen.", hi: "Hindi Translation: Abhi apply karunga toh time pe ho paayega ya nahi, pata nahi." },
+            schedule: { jp: "来週（らいしゅう）の 金曜日（きんようび）に 説明会（せつめいかい）が ある 予定（よてい）です。", rom: "Raishuu no kinyoubi ni setsumeikai ga aru yotei desu.", hi: "Hindi Translation: Agle Friday ko orientation meeting hone ka schedule hai." }
+        }
+    };
+
+    function updateNoticeSim() {
+        const e = document.getElementById('sim-event').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = noticeData[e][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakNoticeSim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. この イベント _______ 教え てください。\n(Please tell me ABOUT / REGARDING this event)", opt: ["について (ni tsuite)", "にとって (ni totte)", "によって (ni yotte)", "に対して (ni taishite)"], ans: 0 },
+        { q: "2. 明日は 雨が 降る _______。\n(I HEARD THAT / RUMOR says it will rain tomorrow - Hearsay)", opt: ["ようです (you desu)", "そうです (sou desu)", "はずです (hazu desu)", "べきです (beki desu)"], ans: 1 },
+        { q: "3. 参加できる _______、確認します。\n(I will check WHETHER OR NOT I can participate)", opt: ["かどうか (ka dou ka)", "かも (kamo)", "から (kara)", "ほど (hodo)"], ans: 0 },
+        { q: "4. 今度の 土曜日、イベントに 参加する _______。\n(I am SCHEDULED / PLANNED to participate in the event this Saturday)", opt: ["予定です (yotei desu)", "つもりです (tsumori desu)", "ことになっています (koto ni natte imasu)", "はずです (hazu desu)"], ans: 0 },
+        { q: "5. 「無料（むりょう）」の 正しい 意味 は 何ですか？\n(What does 無料 - muryou mean on Japanese event flyers?)", opt: ["Paid / Fee required", "Free of charge / No entry fee", "Reservation required", "Cancelled due to rain"], ans: 1 },
+        { q: "6. 「先着順（せんちゃくじゅん）」の 正しい 意味 は 何ですか？\n(What does 先着順 - senchakujun mean?)", opt: ["First-come, first-served basis", "Lottery drawing system", "VIP members only", "Senior citizens only"], ans: 0 },
+        { q: "7. 「どなたでも」の 正しい 意味 と 使い方は どれですか？\n(What does どなたでも - donata demo mean on public notices?)", opt: ["Nobody is allowed", "Polite expression for だれでも (Anyone / Everyone is welcome to join)", "Only university students", "Only local residents"], ans: 1 },
+        { q: "8. 「予約不要（よやくふよう）」の ポスターを見た時、どうすればいいですか？\n(When a flyer says 予約不要 - yoyaku fuyou, what should you do?)", opt: ["You must call 1 week in advance", "You must register online", "No reservation is needed; you can simply walk in on the day!", "You must pay the deposit"], ans: 2 },
+        { q: "9. 「雨の場合（あめのばあい）は 中止（ちゅうし）です」の 意味 は 何ですか？\n(What does this common notice note mean?)", opt: ["In case of rain, the event will be held inside", "In case of rain, the event will be cancelled", "Bring an umbrella if it rains", "Free umbrellas will be distributed"], ans: 1 },
+        { q: "10. 「締め切り（しめきり）」の 正しい 読み方 と 意味 は どれですか？\n(What is the reading and meaning of 締め切り?)", opt: ["しめきり (shimekiri) - Application deadline / closing date", "もうしこみ (moushikomi) - Application entry", "たいしょう (taishou) - Target audience", "といあわせ (toiawase) - Contact desk"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Amazing! You are a master of Japanese information notices & flyers!':'💪 Keep practicing! Review the flyer terminology and grammar cards!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

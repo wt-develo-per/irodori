@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFT-Basic (SSW Visa) 10 Official CBT Mock Test Series Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="jft_style.css">
+    <style>
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .hub-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .hub-card:hover:not(.locked) {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-glow);
+        }
+        .hub-card.capstone {
+            border: 1px solid rgba(234, 179, 8, 0.6);
+            background: linear-gradient(145deg, rgba(30, 27, 18, 0.8) 0%, rgba(15, 20, 35, 0.9) 100%);
+        }
+        .hub-card.capstone:hover {
+            border-color: #facc15;
+            box-shadow: 0 0 25px rgba(234, 179, 8, 0.3);
+        }
+        .hub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .hub-badge {
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .hub-badge.active {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+        }
+        .hub-badge.capstone-badge {
+            background: rgba(234, 179, 8, 0.2);
+            color: #facc15;
+            border: 1px solid #facc15;
+        }
+        .hub-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        .hub-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .hub-stats {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .hub-stats span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .hub-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: block;
+        }
+        .hub-btn.launch {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+        .hub-btn.launch:hover {
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+            transform: translateY(-2px);
+        }
+        .hub-btn.capstone-btn {
+            background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);
+        }
+        .hub-btn.capstone-btn:hover {
+            box-shadow: 0 6px 20px rgba(234, 179, 8, 0.6);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="brand">
+                <div class="brand-icon">🏆</div>
+                <div class="brand-text">
+                    <h1>JFT-Basic 10 Mock Exam Series</h1>
+                    <p>Specified Skilled Worker (Tokutei Ginou / SSW) Official CBT Master Suite</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="ssw-badge" style="background:rgba(16,185,129,0.2); color:#10b981; border:1px solid #10b981;">🎉 ALL 10 TESTS 100% COMPLETE!</div>
+                <button class="theme-btn" id="themeToggleBtn" onclick="toggleThemeHub()">☀️ Light Mode</button>
+            </div>
+        </header>
+
+        <!-- Hero Intro Box -->
+        <section class="hero-box" style="border: 1px solid rgba(16,185,129,0.4); box-shadow: 0 0 30px rgba(16,185,129,0.15);">
+            <div class="hero-content">
+                <h2 style="color:#10b981;">🎉 Complete! Master All 10 Official SSW Visa Practice Tests</h2>
+                <p>Welcome to the complete interactive training hub for the <strong>JFT-Basic (Japan Foundation Test for Basic Japanese)</strong>. Every single test in this 10-part series is now fully active! Each test contains 40 to 50 realistic CBT exam questions covering Script & Vocabulary, Workplace Conversation, Simulated Listening Audio, and Reading Notices across all 14 SSW visa industry sectors.</p>
+                
+                <div class="exam-meta-grid">
+                    <div class="meta-card">
+                        <span class="meta-label">Total Suite Volume</span>
+                        <span class="meta-value" style="color:#facc15;">455 CBT Questions</span>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Test Time Limit</span>
+                        <span class="meta-value">60 Mins Each</span>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Official Score Scale</span>
+                        <span class="meta-value">250 Points Max</span>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Pass Target</span>
+                        <span class="meta-value">200 / 250 (80%)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Test Suite Grid -->
+        <h2 class="section-title">📚 Select any Mock Exam to Begin (All 10 Active!)</h2>
+        <div class="hub-grid">
+            <!-- Test 1: Active -->
+            <div class="hub-card">
+                <div>
+                    <div class="hub-header">
+                        <span style="font-size:1.8rem;">🏭</span>
+                        <span class="hub-badge active">🟢 Test Ready</span>
+                    </div>
+                    <h3>Mock Test 1: General Workplace & Safety</h3>
+                    <p>Covers fundamental factory safety signs, shift handovers, polite customer greetings, phone etiquette, and apartment garbage disposal rules.</p>
+                    <div class="hub-stats">
+                        <span>📝 40 Questions</span>
+                        <span>⏱️ 60 Mins</span>
+                        <span>🎯 All Sectors</span>
+                    </div>
+                </div>
+                <a href="test1.html" class="hub-btn launch">▶️ Launch Mock Test 1</a>
+            </div>
+
+            <!-- Test 2: Active -->
+            <div class="hub-card">
+                <div>
+                    <div class="hub-header">
+                        <span style="font-size:1.8rem;">🏥</span>
+                        <span class="hub-badge active">🟢 Test Ready</span>
+                    </div>
+                    <h3>Mock Test 2: Customer Service & Kaigo Caregiving</h3>
+                    <p>Covers nursing care texture modifications (刻み食), izakaya allergy requests (ネギ抜き), coin locker terms, and dormitory energy conservation.</p>
+                    <div class="hub-stats">
+                        <span>📝 45 Questions</span>
+                        <span>⏱️ 60 Mins</span>
+                        <span>🎯 Kaigo & Service</span>
+                    </div>
+                </div>
+                <a href="test2.html" class="hub-btn launch">▶️ Launch Mock Test 2</a>
+            </div>
+
+            <!-- Test 3: Active -->
+            <div class="hub-card">
+                <div>
+                    <div class="hub-header">
+                        <span style="font-size:1.8rem;">⚙️</span>
+                        <span class="hub-badge active">🟢 Test Ready</span>
+                    </div>
+                    <h3>Mock Test 3: Manufacturing & Machine Operations</h3>
+                    <p>Focuses on factory machine inspection manuals, 5S cleanup methodology (整理・整頓), reporting tool malfunctions, and assembly line safety.</p>
+                    <div class="hub-stats">
+                        <span>📝 45 Questions</span>
+                        <span>⏱️ 60 Mins</span>
+                        <span>🎯 Manufacturing</span>
+                    </div>
+                </div>
+                <a href="test3.html" class="hub-btn launch">▶️ Launch Mock Test 3</a>
+            </div>
+
+            <!-- Test 4: Active -->
+            <div class="hub-card">
+                <div>
+                    <div class="hub-header">
+                        <span style="font-size:1.8rem;">🌾</span>
+                        <span class="hub-badge active">🟢 Test Ready</span>
+                    </div>
+                    <h3>Mock Test 4: Agriculture & Food Processing</h3>
+                    <p>Focuses on greenhouse crop harvesting, HACCP hygiene management, food temperature rules, foreign matter prevention, and livestock safety.</p>
+                    <div class="hub-stats">
+                        <span>📝 45 Questions</span>
+                        <span>⏱️ 60 Mins</span>
+                        <span>🎯 Agriculture & Food</span>
+                    </div>
+                </div>
+                <a href="test4.html" class="hub-btn launch">▶️ Launch Mock Test 4</a>
+            </div>
+
+            <!-- Test 5: Active -->
+            <div class="hub-card">
+                <div>
+                    <div class="hub-header">
+                        <span style="font-size:1.8rem;">🏨</span>
+                        <span class="hub-badge active">🟢 Test Ready</span>
+                    </div>
+                    <h3>Mock Test 5: Hospitality & Restaurant Management</h3>
+                    <p>Focuses on hotel check-in/check-out procedures, guest room cleaning checklists, izakaya time-sale broadcasts, and handling complaints.</p>
+                    <div class="hub-stats">
+                        <span>📝 45 Questions</span>
+                        <span>⏱️ 60 Mins</span>
+                        <span>🎯 Hospitality & Food</span>
+                    </div>
+                </div>
+                <a href="test5.html" class="hub-btn launch">▶️ Launch Mock Test 5</a>
+            </div>
+
+            <!-- Test 6: Active -->
+            <div class="hub-card">
+                <div>
+                    <div class="hub-header">
+                        <span style="font-size:1.8rem;">🏗️</span>
+                        <span class="hub-badge active">🟢 Test Ready</span>
+                    </div>
+                    <h3>Mock Test 6: Construction Industry & Site Safety</h3>
+                    <p>Focuses on construction scaffolding rules, protective gear compliance, heavy machinery warnings, slinging, and site morning assembly instructions.</p>
+                    <div class="hub-stats">
+                        <span>📝 45 Questions</span>
+                        <span>⏱️ 60 Mins</span>
+                        <span>🎯 Construction</span>
+                    </div>
+                </div>
+                <a href="test6.html" class="hub-btn launch">▶️ Launch Mock Test 6</a>
+            </div>
+
+            <!-- Test 7: Active -->
+            <div class="hub-card">
+                <div>
+                    <div class="hub-header">
+                        <span style="font-size:1.8rem;">🚗</span>
+                        <span class="hub-badge active">🟢 Test Ready</span>
+                    </div>
+                    <h3>Mock Test 7: Transportation & Auto Repair</h3>
+                    <p>Focuses on vehicle inspection schedules (車検), parts replacement, train delay certificates, IC card fare adjustments, and courier doorstep delivery rules.</p>
+                    <div class="hub-stats">
+                        <span>📝 45 Questions</span>
+                        <span>⏱️ 60 Mins</span>
+                        <span>🎯 Auto & Transport</span>
+                    </div>
+                </div>
+                <a href="test7.html" class="hub-btn launch">▶️ Launch Mock Test 7</a>
+            </div>
+
+            <!-- Test 8: Active -->
+            <div class="hub-card">
+                <div>
+                    <div class="hub-header">
+                        <span style="font-size:1.8rem;">🏢</span>
+                        <span class="hub-badge active">🟢 Test Ready</span>
+                    </div>
+                    <h3>Mock Test 8: Building Cleaning & Facility Maintenance</h3>
+                    <p>Focuses on floor waxing safety signs, chemical dilution ratios, "Do Not Mix" chlorine warnings, stepladder rules, and hotel bed-making checklists.</p>
+                    <div class="hub-stats">
+                        <span>📝 45 Questions</span>
+                        <span>⏱️ 60 Mins</span>
+                        <span>🎯 Building Care</span>
+                    </div>
+                </div>
+                <a href="test8.html" class="hub-btn launch">▶️ Launch Mock Test 8</a>
+            </div>
+
+            <!-- Test 9: Active -->
+            <div class="hub-card">
+                <div>
+                    <div class="hub-header">
+                        <span style="font-size:1.8rem;">📦</span>
+                        <span class="hub-badge active">🟢 Test Ready</span>
+                    </div>
+                    <h3>Mock Test 9: Logistics & Warehouse Management</h3>
+                    <p>Focuses on forklift safety zones, item picking & barcode inspection, pallet stretch wrapping, inventory stocktaking, and truck docking wheel chocks.</p>
+                    <div class="hub-stats">
+                        <span>📝 45 Questions</span>
+                        <span>⏱️ 60 Mins</span>
+                        <span>🎯 Logistics</span>
+                    </div>
+                </div>
+                <a href="test9.html" class="hub-btn launch">▶️ Launch Mock Test 9</a>
+            </div>
+
+            <!-- Test 10: Active Capstone -->
+            <div class="hub-card capstone">
+                <div>
+                    <div class="hub-header">
+                        <span style="font-size:1.8rem;">🏆</span>
+                        <span class="hub-badge capstone-badge">🌟 Capstone Ready</span>
+                    </div>
+                    <h3>Mock Test 10: Comprehensive SSW Grand Finale</h3>
+                    <p>A master simulation combining all 14 industry sectors, emergency 119 calls, "O-Ka-Shi-Mo" evacuation, Rosai insurance, Horenso, AED, and SSW No. 2 visa pathways.</p>
+                    <div class="hub-stats">
+                        <span style="color:#facc15;">📝 50 Questions</span>
+                        <span>⏱️ 60 Mins</span>
+                        <span>🎯 All 14 Sectors</span>
+                    </div>
+                </div>
+                <a href="test10.html" class="hub-btn capstone-btn">🏆 Launch Grand Finale Exam</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple Hub Theme Toggle
+        function toggleThemeHub() {
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('jft_theme', next);
+            const btn = document.getElementById('themeToggleBtn');
+            if (btn) btn.innerHTML = next === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+        }
+        // Init theme
+        const saved = localStorage.getItem('jft_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', saved);
+        const btn = document.getElementById('themeToggleBtn');
+        if (btn) btn.innerHTML = saved === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+    </script>
+</body>
+</html>

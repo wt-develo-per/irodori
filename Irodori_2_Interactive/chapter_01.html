@@ -1,0 +1,1639 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 Ch 01: きょうのできごと (Today's Happenings) - Daily Events & Reactions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+            <div class="logo-text">
+                <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+                <p>Chapter 01: きょうのできごと (Today's Happenings) • News, Reactions & Plain Form Hub</p>
+            </div>
+        </div>
+        <div class="header-controls">
+            <button class="btn-audio-global" onclick="speakText('きょう は たいへんな いちにち でした。でんしゃ が とまったんです。えき で ゆうめいな サッカーせんしゅ に あったんだ！まじで？すごーい！')">
+                <span>🔊</span> Speak Chapter Highlights
+            </button>
+            <button class="btn-theme" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> Theme
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Welcome Banner -->
+        <div class="banner">
+            <h2>きょうのできごと (Today's Happenings) 🌸</h2>
+            <p>Welcome to the enriched <strong>Irodori Elementary 2 (A2-2) Chapter 1</strong>! Here you will master sharing recent daily events (<strong style="color:#fff; background:#0284c7; padding:0 6px; border-radius:4px;">できごと / ニュース</strong>), explaining reasons or situations with natural emphasis (<strong style="color:#fff; background:#059669; padding:0 6px; border-radius:4px;">Pt 2: ～んです / ～んだ</strong>), expressing why you feel emotional (<strong style="color:#fff; background:#a855f7; padding:0 6px; border-radius:4px;">Pt 3: ～て + Emotion</strong>), using conditionals & concessions (<strong style="color:#fff; background:#e11d48; padding:0 6px; border-radius:4px;">Pt 4/5: ～たら / ～ても</strong>), and giving native Japanese conversational reactions like <strong style="color:#fbbf24;">うそ！まじで？すごーい！</strong></p>
+            <div class="banner-tags">
+                <div class="tag">🎯 Goal: Din bhar ki baatein share karna & reactions dena</div>
+                <div class="tag">📰 Interactive Daily News & Gossip Storyteller</div>
+                <div class="tag">💬 Interactive Slang & Reaction Simulator</div>
+                <div class="tag">⚖️ Plain Form & Conditional Conjugator</div>
+                <div class="tag">⚡ 100% Verbatim Content (Lines 1 to 385)</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab('story')">
+                <span>📰</span> Daily News Storyteller (～んです / ～て+Emotion)
+            </button>
+            <button class="tab-btn" onclick="switchTab('gossip')">
+                <span>💬</span> Native Reaction Simulator (うそ！/ まじで？)
+            </button>
+            <button class="tab-btn" onclick="switchTab('grammar')">
+                <span>⚖️</span> Plain Form & Conditional Conjugator (～たら/～ても)
+            </button>
+            <button class="tab-btn" onclick="switchTab('vocab')">
+                <span>🗣️</span> 50+ Clickable Audio Events, Emotion & Reaction Cards
+            </button>
+            <button class="tab-btn" onclick="switchTab('kanji')">
+                <span>🈹</span> Kanji Mastery (24 Ch 01 Kanjis)
+            </button>
+            <button class="tab-btn" onclick="switchTab('quiz')">
+                <span>🎮</span> 10-Question Today's Happenings Quiz
+            </button>
+            <button class="tab-btn" onclick="switchTab('verbatim')">
+                <span>📖</span> Verbatim Original Text (100% Complete)
+            </button>
+        </div>
+
+        <!-- TAB 1: Daily News Storyteller -->
+        <div id="tab-story" class="tab-content active">
+            <div class="interactive-box">
+                <h4>📰 Interactive Daily News & Gossip Storyteller (Lines 99–195 & 284–316)</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Build real-life stories about your day! Combine daily events (<strong style="color:var(--accent-info);">できごと</strong>), background explanations using Plain Form + <strong style="color:var(--accent-primary);">～んです / ～んだ</strong> (Actually... / Baat yeh hai ki...), and your emotional feelings using <strong style="color:var(--accent-success);">Verb て-form + Emotion</strong>!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Select Daily Event / Topic (できごと / はなし)</label>
+                        <select id="st-event" onchange="updateStory()">
+                            <option value="train" selected>🚆 1️⃣ Train Stopped (電車 が 止まったんです - Densha ga tomarkan desu)</option>
+                            <option value="head">🤕 2️⃣ Have a Headache (頭 が 痛いんです - Atama ga itain desu)</option>
+                            <option value="fever">🤒 3️⃣ Have a Fever (熱 が あるんです - Netsu ga arun desu)</option>
+                            <option value="tired">😮‍💨 4️⃣ Was Tired (ちょっと 疲れたんだ - Chotto tsukaretan da)</option>
+                            <option value="doc">📁 5️⃣ Forgot Documents (資料 を 忘れたんです - Shiryou wo wasuretan desu)</option>
+                            <option value="soccer">⚽ 6️⃣ Met Famous Soccer Player (有名 な 選手 に 会ったんだ - Senshu ni attan da)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Select Resulting Situation / Action</label>
+                        <select id="st-result" onchange="updateStory()">
+                            <option value="late" selected>⏰ 1️⃣ Was late to office (会社 に 遅れて しまいました - Kaisha ni okurete shimaimashita)</option>
+                            <option value="off">🏠 2️⃣ Want to take a day off (今日 は 休みたいんです - Kyou wa yasumitain desu)</option>
+                            <option value="trouble">😰 3️⃣ Was in a lot of trouble (とても 困りました - Totemo komarimashita)</option>
+                            <option value="photo">📸 4️⃣ Took a photo together (いっしょに 写真 も 撮ったんだ - Issho ni shashin mo tottan da)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Select Your Emotional Feeling (て-form + きもち)</label>
+                        <select id="st-emotion" onchange="updateStory()">
+                            <option value="relieved" selected>😌 1️⃣ Boss was kind, felt relieved (部長が優しくて、ほっとしました)</option>
+                            <option value="sad">😢 2️⃣ Friend went home, felt lonely (友達が帰って、寂しいです)</option>
+                            <option value="happy">🎉 3️⃣ Passed exam, felt happy (試験に受かって、嬉しいです)</option>
+                            <option value="shocked">😲 4️⃣ Lost wallet, was shocked (財布をなくして、びっくりしました)</option>
+                            <option value="nervous">💓 5️⃣ Heart was pounding with excitement (すごく どきどき しました)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="st-jp" style="font-size:1.35rem; line-height:2;">
+                        きょう は たいへんな いちにち でした。<br>
+                        🚆 あさ、<span style="color:var(--accent-info);">電車（でんしゃ）が 止（と）まったんです。</span><br>
+                        ⏰ だから、<span style="color:var(--accent-warning);">会社（かいしゃ）に 遅（おく）れて しまいました。</span><br>
+                        😌 でも、<span style="color:var(--accent-success);">部長（ぶちょう）が 優（やさ）しくて、ほっとしました。</span>
+                    </div>
+                    <div class="output-meaning" id="st-meaning" style="margin-top:1rem;">
+                        Hindi Translation: Aaj bahut mushkil din tha. Subah actually train ruk gayi thi (densha ga tomarkan desu). Isliye office late pahunch gaya. Lekin boss acche the toh sukoon mila (hotto shimashita).
+                    </div>
+                    <button class="btn-action" onclick="speakStory()">🔊 Speak Daily Story in Japanese</button>
+                </div>
+            </div>
+
+            <!-- Grammar Comparison: ~ndes vs ~te+emotion -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-info);">
+                    <div class="grammar-title"><span>Explanation & Emphasis</span><span class="particle-badge" style="background:var(--accent-info);">Pt 2</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Plain Form + んです / のです / んだ</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('あたま が いたいんです。ねつ が あるんです。でんしゃ が とまったんです。ちょっと つかれたんだ。')">
+                        Use <strong style="color:#fff;">～んです</strong> (polite) or <strong style="color:#fff;">～んだ / ～の</strong> (casual) to explain a reason, provide background context, or emphasize "Actually... / Baat yeh hai ki...":<br>
+                        • <strong style="color:#fff;">頭（あたま）が 痛（いた）いんです。</strong> (Actually my head hurts).<br>
+                        • <strong style="color:#fff;">熱（ねつ）が あるんです。</strong> (Baat ye hai ki bukhar hai).<br>
+                        • <strong style="color:#fff;">電車（でんしゃ）が 止（と）まったんです。</strong> (Actually the train stopped).<br>
+                        • <strong style="color:var(--accent-warning);">Note:</strong> For な-adj and Nouns, add <strong style="color:#fff;">な</strong> before んです (e.g., <strong style="color:#fff;">病気（びょうき）なんです</strong> - Actually sick).
+                    </p>
+                </div>
+
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-success);">
+                    <div class="grammar-title"><span>Reason for Feeling</span><span class="particle-badge" style="background:var(--accent-success);">Pt 3</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">Verb て-form + Emotion Word</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('しけん に うかって、うれしい です。ともだち が かえって、さびしい です。さいふ を なくして、びっくりしました。')">
+                        Use <strong style="color:#fff;">Verb て-form</strong> before an emotion adjective to state "Because of doing X, I feel Y":<br>
+                        • <strong style="color:#fff;">試験（しけん）に 受（う）かって、嬉（うれ）しいです。</strong> (Passed exam, so I'm happy / Exam pass karke khush hoon).<br>
+                        • <strong style="color:#fff;">友達（ともだち）が 帰（かえ）って、寂（さび）しいです。</strong> (Friend went home, so I feel lonely).<br>
+                        • <strong style="color:#fff;">財布（さいふ）を なくして、びっくりしました。</strong> (Lost wallet, so I was shocked).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: Reaction & Gossip Simulator -->
+        <div id="tab-gossip" class="tab-content">
+            <div class="interactive-box" style="border-color:var(--accent-warning);">
+                <h4>💬 Interactive Native Reaction & Gossip Simulator (Lines 319–382)</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Master native Japanese reactions (<strong style="color:var(--accent-warning);">うそ！まじで？すごーい！</strong>) when responding to friends' gossip or news! Pick a friend's news statement and choose your reaction!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Select Friend's Gossip / News Item (はなし)</label>
+                        <select id="gos-news" onchange="updateGossip()">
+                            <option value="soccer" selected>⚽ 1️⃣ I met a famous soccer player at the station! (駅で有名なサッカー選手に会ったんだ！)</option>
+                            <option value="wallet">💸 2️⃣ I lost my wallet yesterday! (昨日、財布をなくしてしまったんだ！)</option>
+                            <option value="jlpt">🎉 3️⃣ I passed the JLPT exam with full marks! (日本語の試験に満点で合格したよ！)</option>
+                            <option value="train">🚆 4️⃣ The train was delayed for 2 hours! (電車が2時間も遅れたんだよ！)</option>
+                            <option value="marry">💍 5️⃣ I am getting married next month! (来月、結婚することになったんだ！)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Select Your Native Reaction (へんじ / リアクション)</label>
+                        <select id="gos-react" onchange="updateGossip()">
+                            <option value="uso" selected>😲 1️⃣ No way! Seriously? Show me! (うそ！まじで？すごーい！見せて見せて！ - Disbelief & Excitement)</option>
+                            <option value="sugoi">🌟 2️⃣ Amazing! I'm so happy for you! (すごーい！よかったね！おめでとう！ - Impressed & Happy)</option>
+                            <option value="kawai">😢 3️⃣ Poor thing! That was tough! (えー！かわいそう。たいへんだったね。大丈夫？ - Sympathy)</option>
+                            <option value="naru">🤔 4️⃣ I see! Makes sense! Is that so! (なるほど！そうなんだ。それはこまるね。 - Understanding)</option>
+                            <option value="yabai">🔥 5️⃣ Whoa! Unbelievable! (やばい！しんじられない！本当？ - Strong Reaction)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-jp" id="gos-jp" style="font-size:1.35rem; line-height:2;">
+                        🗣️ <strong>友達 (A):</strong> <span style="color:var(--accent-info);">えき で ゆうめいな サッカーせんしゅ に あったんだ！</span><br>
+                        💬 <strong>あなた (B):</strong> <span style="color:var(--accent-warning);">うそ！まじで？すごーい！みせて みせて！</span><br>
+                        🗣️ <strong>友達 (A):</strong> ほんと ほんと。いっしょに しゃしん も とったんだ！
+                    </div>
+                    <div class="output-meaning" id="gos-meaning" style="margin-top:1rem;">
+                        Hindi Translation: Dost: Station pe famous football player se mila! Aap: Jhooth! Seriously? Amazing! Dikha dikha! Dost: Sach sach. Saath mein photo bhi liya!
+                    </div>
+                    <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
+                        <button class="btn-action" onclick="speakGossip()">🔊 Speak Dialogue in Japanese</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reaction Reference Table -->
+            <div class="section-header">
+                <h3>⚡ Essential Conversational Reactions Table (Lines 321–337)</h3>
+                <p>Click any reaction to practice your tone! Native Japanese conversation relies heavily on these rhythmic responses (<strong style="color:var(--accent-info);">あいづち - Aizuchi</strong>).</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('えー！')"><div class="card-top"><div class="jp-text">えー！</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ee!</div><div class="meaning-text">What! (Surprise) 😲</div></div>
+                <div class="card" onclick="speakText('うそ！うそー！')"><div class="card-top"><div class="jp-text">うそ！ / うそー！</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Uso! / Usoo!</div><div class="meaning-text">No way! / Jhooth! (Disbelief) 🚫</div></div>
+                <div class="card" onclick="speakText('まじ？まじで？')"><div class="card-top"><div class="jp-text">まじ？ / まじで？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Maji? / Maji de?</div><div class="meaning-text">Seriously? (Casual surprise) 🤔</div></div>
+                <div class="card" onclick="speakText('ほんとう？ほんと？')"><div class="card-top"><div class="jp-text">ほんとう？ / ほんと？</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hontou? / Honto?</div><div class="meaning-text">Really? (Asking confirmation) ❓</div></div>
+                <div class="card" onclick="speakText('すごい！すごーい！')"><div class="card-top"><div class="jp-text">すごい！ / すごーい！</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sugoi! / Sugooi!</div><div class="meaning-text">Amazing! (Impressed) ✨</div></div>
+                <div class="card" onclick="speakText('やばい！')"><div class="card-top"><div class="jp-text">やばい！</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Yabai!</div><div class="meaning-text">Wow! / Oh no! (Strong reaction +/-) 🔥</div></div>
+                <div class="card" onclick="speakText('かわいそう')"><div class="card-top"><div class="jp-text">かわいそう (可哀想)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kawaisou</div><div class="meaning-text">Poor thing (Sympathy / Bechara) 😢</div></div>
+                <div class="card" onclick="speakText('よかったね！')"><div class="card-top"><div class="jp-text">よかったね！</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Yokatta ne!</div><div class="meaning-text">Good for you! (Happy for someone) 🎉</div></div>
+                <div class="card" onclick="speakText('たいへんだったね')"><div class="card-top"><div class="jp-text">たいへんだったね</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Taihen datta ne</div><div class="meaning-text">That was tough (Sympathy) 😮‍💨</div></div>
+                <div class="card" onclick="speakText('それはこまりますね')"><div class="card-top"><div class="jp-text">それは こまりますね</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sore wa komarimasu ne</div><div class="meaning-text">That's troubling (Understanding) 😰</div></div>
+                <div class="card" onclick="speakText('しんじられない')"><div class="card-top"><div class="jp-text">しんじられない (信じられない)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinjirarenai</div><div class="meaning-text">Unbelievable (Strong disbelief) 🤯</div></div>
+                <div class="card" onclick="speakText('なるほど')"><div class="card-top"><div class="jp-text">なるほど</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Naruhodo</div><div class="meaning-text">I see / Makes sense (Understanding) 💡</div></div>
+                <div class="card" onclick="speakText('そうなんだ')"><div class="card-top"><div class="jp-text">そうなんだ</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Sou nan da</div><div class="meaning-text">Is that so (Acknowledging) 👍</div></div>
+                <div class="card" onclick="speakText('へー')"><div class="card-top"><div class="jp-text">へー</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hee</div><div class="meaning-text">Hmm / Oh (Mild interest) 👀</div></div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Plain Form & Conditional Conjugator -->
+        <div id="tab-grammar" class="tab-content">
+            <div class="interactive-box" style="border-color:var(--accent-purple);">
+                <h4>⚖️ Interactive Plain Form & Conditional Conjugator (Lines 61–96, 198–280)</h4>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Convert polite speech into Plain Forms (essential for casual chat and <strong style="color:var(--accent-info);">～んです</strong>), condition <strong style="color:var(--accent-success);">～たら</strong> (If/When), and concession <strong style="color:var(--accent-rose);">～ても</strong> (Even if/Despite)!</p>
+                
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Select Verb / Adjective / Noun</label>
+                        <select id="gr-word" onchange="updateGrammar()">
+                            <option value="iku" selected>🚶‍♂️ 1️⃣ 行きます (Ikimasu - To go - Group 1 Verb)</option>
+                            <option value="nomu">☕ 2️⃣ 飲みます (Nomimasu - To drink - Group 1 Verb)</option>
+                            <option value="taberu">🍱 3️⃣ 食べます (Tabemasu - To eat - Group 2 Verb)</option>
+                            <option value="suru">⚡ 4️⃣ します (Shimasu - To do - Group 3 Verb)</option>
+                            <option value="takai">💰 5️⃣ 高い (Takai - High/Expensive - い-Adjective)</option>
+                            <option value="shizuka">🤫 6️⃣ 静かだ (Shizuka da - Quiet - な-Adjective)</option>
+                            <option value="ame">🌧️ 7️⃣ 雨だ (Ame da - Rain - Noun)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-panel" id="gr-output" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
+                    <!-- Dynamically filled -->
+                </div>
+            </div>
+
+            <!-- Grammar Comparison: ~tara vs ~temo -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-success);">
+                    <div class="grammar-title"><span>Condition / When / Discovery</span><span class="particle-badge" style="background:var(--accent-success);">Pt 4</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">た-form + ら (If / When / Found)</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('あした あめ が ふったら、うち に います。うち に かえったら、でんわ します。まど を あけたら、とり が いました。')">
+                        Add <strong style="color:#fff;">ら</strong> to any past tense Plain Form (<strong style="color:#fff;">た-form</strong>) to express 3 vital functions:<br>
+                        • <strong style="color:#fff;">1. Conditional (If):</strong> <strong style="color:#fff;">明日（あした）雨（あめ）が 降（ふ）ったら、家（うち）に い ます。</strong> (If it rains tomorrow, I'll stay home / Baarish hui toh ghar pe rahunga).<br>
+                        • <strong style="color:#fff;">2. When (Time sequence):</strong> <strong style="color:#fff;">家（うち）に 帰（かえ）ったら、電話（でんわ）します。</strong> (When I get home, I'll call you).<br>
+                        • <strong style="color:#fff;">3. Discovery (When I did X, found Y):</strong> <strong style="color:#fff;">窓（まど）を 開（あ）けたら、鳥（とり）が い ました。</strong> (When I opened the window, there was a bird!).
+                    </p>
+                </div>
+
+                <div class="grammar-card" style="margin:0; border-color:var(--accent-rose);">
+                    <div class="grammar-title"><span>Concession / Despite</span><span class="particle-badge" style="background:var(--accent-rose);">Pt 5</span></div>
+                    <div class="grammar-formula" style="font-size:1.05rem;">て-form + も (Even if / Despite)</div>
+                    <p style="color:var(--text-muted); font-size:0.95rem;" onclick="speakText('あめ が ふっても、いきます。たかくても、ほしい です。いそがしくても、れんしゅう します。にちようび でも、しごと が あります。')">
+                        Add <strong style="color:#fff;">も</strong> after any <strong style="color:#fff;">て-form / で</strong> to express "Even if X happens / Despite X":<br>
+                        • <strong style="color:#fff;">雨（あめ）が 降（ふ）っても、行（い）きます。</strong> (Even if it rains, I will go / Baarish ho ke bhi jaunga).<br>
+                        • <strong style="color:#fff;">高（たか）くても、ほしいです。</strong> (Even if it's expensive, I want it).<br>
+                        • <strong style="color:#fff;">忙（いそが）しくても、練習（れんしゅう）します。</strong> (Even if busy, I will practice).<br>
+                        • <strong style="color:#fff;">日曜日（にちようび）でも、仕事（しごと）が あります。</strong> (Even on Sunday, I have work).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: 50+ Clickable Audio Cards -->
+        <div id="tab-vocab" class="tab-content">
+            <div class="section-header">
+                <h3>📰 Daily Events Vocabulary (16 Words - Lines 11–31)</h3>
+                <p>Click any card to hear native pronunciation! These nouns describe daily happenings, news, memories, and problem-solving.</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('できごととニュース')"><div class="card-top"><div class="jp-text">出来事 (できごと) / ニュース</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Dekigoto / Nyuusu</div><div class="meaning-text">Event / Happening (Ghatna) & News (Khabar) 📰⚡</div></div>
+                <div class="card" onclick="speakText('じけんとじこ')"><div class="card-top"><div class="jp-text">事件 (じけん) / 事故 (じこ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Jiken / Jiko</div><div class="meaning-text">Incident / Case & Accident 🚨💥</div></div>
+                <div class="card" onclick="speakText('はなしとうわさ')"><div class="card-top"><div class="jp-text">話 (はなし) / 噂 (うわさ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hanashi / Uwasa</div><div class="meaning-text">Talk / Story (Baat) & Rumor / Gossip (Afwah) 💬🗣️</div></div>
+                <div class="card" onclick="speakText('きょうみとかんしん')"><div class="card-top"><div class="jp-text">興味 (きょうみ) / 関心 (かんしん)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyoumi / Kanshin</div><div class="meaning-text">Interest (Dilchaspi) & Concern / Interest ✨</div></div>
+                <div class="card" onclick="speakText('けいけきときにおく')"><div class="card-top"><div class="jp-text">経験 (けいけん) / 記憶 (きおく)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Keiken / Kioku</div><div class="meaning-text">Experience (Anubhav) & Memory (Yaad) 🧠📁</div></div>
+                <div class="card" onclick="speakText('きもちとりゆう')"><div class="card-top"><div class="jp-text">気持ち (きもち) / 理由 (りゆう)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kimochi / Riyuu</div><div class="meaning-text">Feeling (Ehsaas) & Reason (Wajah) 💖❓</div></div>
+                <div class="card" onclick="speakText('げんいんとけっか')"><div class="card-top"><div class="jp-text">原因 (げんいん) / 結果 (けっか)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Gen'in / Kekka</div><div class="meaning-text">Cause (Kaaran) & Result (Nateeja) 🔍🏁</div></div>
+                <div class="card" onclick="speakText('もんだいとかいけつ')"><div class="card-top"><div class="jp-text">問題 (もんだい) / 解決 (かいけつ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Mondai / Kaiketsu</div><div class="meaning-text">Problem (Samasya) & Solution / Resolution (Hal) ⚖️✔️</div></div>
+            </div>
+
+            <div class="section-header">
+                <h3>💖 Emotions & Reactions Adjectives (20 Words - Lines 34–58)</h3>
+            </div>
+            <div class="grid-cards">
+                <div class="card" onclick="speakText('うれしいとかなしい')"><div class="card-top"><div class="jp-text">嬉しい (うれしい) / 悲しい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Ureshii / Kanashii</div><div class="meaning-text">Happy / Glad & Sad / Sorrowful 😊😢</div></div>
+                <div class="card" onclick="speakText('たのしいとさびしい')"><div class="card-top"><div class="jp-text">楽しい (たのしい) / 寂しい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Tanoshii / Sabishii</div><div class="meaning-text">Fun / Enjoyable & Lonely / Solitary 🎉😔</div></div>
+                <div class="card" onclick="speakText('くやしいとはずかしい')"><div class="card-top"><div class="jp-text">悔しい (くやしい) / 恥ずかしい</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kuyashii / Hazukashii</div><div class="meaning-text">Frustrating / Regretful & Embarrassed / Ashamed 😖😳</div></div>
+                <div class="card" onclick="speakText('こわいといやだ')"><div class="card-top"><div class="jp-text">怖い (こわい) / 嫌だ (いやだ)</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Kowai / Iya da</div><div class="meaning-text">Scary / Frightening & Hate it / Unpleasant 😨🙅‍♂️</div></div>
+                <div class="card" onclick="speakText('びっくりしたとがっかりした')"><div class="card-top"><div class="jp-text">びっくりした / がっかりした</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Bikkuri shita / Gakkari shita</div><div class="meaning-text">Surprised (Hairan) & Disappointed (Nirash) 😲😞</div></div>
+                <div class="card" onclick="speakText('ほっとしたとどきどきした')"><div class="card-top"><div class="jp-text">ほっとした / どきどきした</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Hotto shita / Dokidoki shita</div><div class="meaning-text">Relieved (Sukoon) & Nervous-excited (Heart pounding) 😌💓</div></div>
+                <div class="card" onclick="speakText('わくわくしたといらいらした')"><div class="card-top"><div class="jp-text">わくわくした / いらいらした</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Wakuwaku shita / Iraira shita</div><div class="meaning-text">Thrilled / Excited & Annoyed / Irritated ✨💢</div></div>
+                <div class="card" onclick="speakText('しんぱいしたとあんしんした')"><div class="card-top"><div class="jp-text">心配した (しんぱいした) / 安心した</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Shinpai shita / Anshin shita</div><div class="meaning-text">Worried (Chinta) & Felt relieved (Sukoon mila) 😟🕊️</div></div>
+                <div class="card" onclick="speakText('こまったとつかれた')"><div class="card-top"><div class="jp-text">困った (こまった) / 疲れた</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Komatta / Tsukareta</div><div class="meaning-text">Troubled (Pareshan) & Tired / Exhausted (Thak gaya) 😰😮‍💨</div></div>
+                <div class="card" onclick="speakText('あきたとなっとくした')"><div class="card-top"><div class="jp-text">飽きた (あきた) / 納得した</div><button class="btn-audio">🔊</button></div><div class="romaji-text">Akita / Nattoku shita</div><div class="meaning-text">Got bored (Bor ho gaya) & Convinced / Understood (Samajh aaya) 🥱💡</div></div>
+            </div>
+        </div>
+
+        <!-- TAB KANJI: Chapter 1 Kanji Mastery (24 Kanjis) -->
+        <div id="tab-kanji" class="tab-content">
+            <div class="section-header">
+                <h3>🈹 Chapter 01 Kanji Mastery (24 Kanjis)</h3>
+                <p>Learn the 24 foundational Kanjis for Chapter 1 daily events, reactions, and explanations! Click example words to listen.</p>
+            </div>
+
+            <div class="kanji-grid">
+                <!-- Kanji 1: 出 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">出</div>
+                        <div class="kanji-info">
+                            <h5>Exit / Come out (Niklna)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>で・る / だ・す (de / da)</span><br>
+                                On: <span>シュツ (shutsu)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('できごと')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">出来事 (できごと)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Dekigoto → Happening / Event</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 2: 来 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">来</div>
+                        <div class="kanji-info">
+                            <h5>Come / Future (Aana)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>く・る / き・た (ku / ki)</span><br>
+                                On: <span>ライ (rai)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('できる')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">出来る (できる)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Dekiru → Able / Be made</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 3: 事 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">事</div>
+                        <div class="kanji-info">
+                            <h5>Thing / Matter (Baat/Kaam)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>こと / ごと (koto / goto)</span><br>
+                                On: <span>ジ (ji)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('じこ')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">事故 (じこ)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Jiko → Accident / Durghatna</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 4: 件 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">件</div>
+                        <div class="kanji-info">
+                            <h5>Matter / Case (Mudda)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>くだん (kudan)</span><br>
+                                On: <span>ケン (ken)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('じけん')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">事件 (じけん)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Jiken → Incident / Case</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 5: 故 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">故</div>
+                        <div class="kanji-info">
+                            <h5>Reason / Cause (Wajah)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>ゆえ (yue)</span><br>
+                                On: <span>コ (ko)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('じこ')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">事故 (じこ)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Jiko → Accident</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 6: 話 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">話</div>
+                        <div class="kanji-info">
+                            <h5>Talk / Story (Baat)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>はな・す / はなし (hana)</span><br>
+                                On: <span>ワ (wa)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('はなし')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">話 (はなし)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Hanashi → Story / Talk</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 7: 噂 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">噂</div>
+                        <div class="kanji-info">
+                            <h5>Rumor / Gossip (Afwah)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>うわさ (uwasa)</span><br>
+                                On: <span>ソン (son)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('うわさ')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">噂 (うわさ)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Uwasa → Rumor / Gossip</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 8: 興 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">興</div>
+                        <div class="kanji-info">
+                            <h5>Interest / Entertain (Dilchaspi)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>おこ・る (oko)</span><br>
+                                On: <span>キョウ / コウ (kyou / kou)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('きょうみ')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">興味 (きょうみ)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kyoumi → Interest</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 9: 味 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">味</div>
+                        <div class="kanji-info">
+                            <h5>Flavor / Taste (Swad)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>あじ / あじ・わう (aji)</span><br>
+                                On: <span>ミ (mi)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('きょうみ')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">興味 (きょうみ)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kyoumi → Interest / Dilchaspi</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 10: 関 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">関</div>
+                        <div class="kanji-info">
+                            <h5>Connect / Barrier (Jodna)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>かか・わる / せき (kaka)</span><br>
+                                On: <span>カン (kan)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('かんしん')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">関心 (かんしん)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kanshin → Concern / Interest</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 11: 心 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">心</div>
+                        <div class="kanji-info">
+                            <h5>Heart / Mind (Dil/Man)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>こころ (kokoro)</span><br>
+                                On: <span>シン (shin)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('しんぱい')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">心配 (しんぱい)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Shinpai → Worry / Chinta</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 12: 経 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">経</div>
+                        <div class="kanji-info">
+                            <h5>Pass through / Manage (Beetna)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>へ・る (he)</span><br>
+                                On: <span>ケイ / キョウ (kei / kyou)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('けいけん')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">経験 (けいけん)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Keiken → Experience</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 13: 験 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">験</div>
+                        <div class="kanji-info">
+                            <h5>Test / Examine (Jaanch/Anubhav)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>ため・す (tame)</span><br>
+                                On: <span>ケン / ゲン (ken / gen)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('けいけん')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">経験 (けいけん)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Keiken → Experience / Anubhav</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 14: 記 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">記</div>
+                        <div class="kanji-info">
+                            <h5>Record / Scribe (Likha/Yaad)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>しる・す (shiru)</span><br>
+                                On: <span>キ (ki)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('きおく')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">記憶 (きおく)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kioku → Memory / Yaad</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 15: 憶 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">憶</div>
+                        <div class="kanji-info">
+                            <h5>Remember / Recollect (Yaad)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>おも・う (omo)</span><br>
+                                On: <span>オク (oku)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('きおく')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">記憶 (きおく)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kioku → Memory / Smriti</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 16: 気 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">気</div>
+                        <div class="kanji-info">
+                            <h5>Spirit / Mood / Air (Ehsaas)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>いき (iki)</span><br>
+                                On: <span>キ / ケ (ki / ke)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('きもち')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">気持ち (きもち)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kimochi → Feeling / Mood</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 17: 持 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">持</div>
+                        <div class="kanji-info">
+                            <h5>Hold / Have (Pakadna/Rakhna)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>も・つ / も・ち (motsu)</span><br>
+                                On: <span>ジ (ji)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('きもち')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">気持ち (きもち)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kimochi → Feeling / Ehsaas</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 18: 理 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">理</div>
+                        <div class="kanji-info">
+                            <h5>Logic / Reason (Tark/Wajah)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>ことわり (kotowari)</span><br>
+                                On: <span>リ (ri)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('りゆう')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">理由 (りゆう)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Riyuu → Reason / Wajah</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 19: 由 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">由</div>
+                        <div class="kanji-info">
+                            <h5>Origin / Reason (Srot/Wajah)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>よし / よる (yoshi)</span><br>
+                                On: <span>ユウ / ユ / ユイ (yuu / yu)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('りゆう')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">理由 (りゆう)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Riyuu → Reason / Kaaran</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 20: 原 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">原</div>
+                        <div class="kanji-info">
+                            <h5>Origin / Meadow (Mool/Srot)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>はら (hara)</span><br>
+                                On: <span>ゲン (gen)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('げんいん')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">原因 (げんいん)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Genin → Cause / Kaaran</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 21: 因 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">因</div>
+                        <div class="kanji-info">
+                            <h5>Cause / Factor (Wajah)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>よ・る / ちな・む (yo)</span><br>
+                                On: <span>イン (in)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('げんいん')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">原因 (げんいん)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Genin → Cause / Wajah</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 22: 結 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">結</div>
+                        <div class="kanji-info">
+                            <h5>Tie / Bind (Jodna/Nateeja)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>むす・ぶ / ゆ・う (musu)</span><br>
+                                On: <span>ケツ / ケッ (ketsu)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('けっか')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">結果 (けっか)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kekka → Result / Nateeja</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 23: 果 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">果</div>
+                        <div class="kanji-info">
+                            <h5>Fruit / Result (Phal/Nateeja)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>は・たす / は・て (ha)</span><br>
+                                On: <span>カ (ka)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('けっか')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">結果 (けっか)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Kekka → Result / Phal</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+
+                <!-- Kanji 24: 問 -->
+                <div class="kanji-card">
+                    <div class="kanji-top">
+                        <div class="kanji-char">問</div>
+                        <div class="kanji-info">
+                            <h5>Question / Ask (Sawaal)</h5>
+                            <div class="kanji-readings">
+                                Kun: <span>と・う / と・い (to)</span><br>
+                                On: <span>モン (mon)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanji-example" onclick="speakText('もんだい')">
+                        <div>
+                            <span style="font-family:var(--font-jp); font-weight:700; font-size:1.1rem;">問題 (もんだい)</span>
+                            <span style="font-size:0.85rem; color:var(--text-muted); display:block;">Mondai → Problem / Samasya</span>
+                        </div>
+                        <button class="btn-audio">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: 10-Question Comprehensive Quiz -->
+        <div id="tab-quiz" class="tab-content">
+            <div class="quiz-container">
+                <div class="section-header" style="text-align: center;">
+                    <h3>🎯 Irodori Elem 2 Ch 01 Today's Happenings Quiz</h3>
+                    <p>Test your knowledge of Plain Forms, explanations (`～んです`), emotions (`～て+emotion`), conditionals (`～たら`), concessions (`～ても`), and native reactions!</p>
+                </div>
+
+                <div id="quiz-area">
+                    <!-- Quiz dynamically rendered by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Verbatim Original Text (100% Complete) -->
+        <div id="tab-verbatim" class="tab-content">
+            <div class="verbatim-box">
+                <div class="verbatim-header">
+                    <span style="font-weight: 700; color: #38bdf8;">📄 Original irodori2.txt Content (Lines 1 to 385 - Chapter 01 Complete Guide)</span>
+                    <span class="badge-100">✔ 100% Zero Character Loss Guarantee</span>
+                </div>
+                <pre># Irodori (いろどり) Elementary 2 - Chapter 1 to 3 Complete Guide
+
+---
+
+# 📘 Chapter 1: きょうのできごと (Kyou no Dekigoto) - Today's Happenings
+
+## 🎯 Goal: Din bhar ki baatein share karna, recent events batana, reactions dena, casual conversation
+
+---
+
+### **Daily Events Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| できごと (出来事) | Dekigoto | Ghatna/Event/Happening |
+| ニュース | Nyuusu | News/Khabar |
+| じけん (事件) | Jiken | Incident/Case |
+| じこ (事故) | Jiko | Accident |
+| はなし (話) | Hanashi | Baat/Story/Talk |
+| うわさ (噂) | Uwasa | Afwah/Rumor |
+| きょうみ (興味) | Kyoumi | Interest/Dilchaspi |
+| かんしん (関心) | Kanshin | Concern/Interest |
+| けいけん (経験) | Keiken | Experience/Anubhav |
+| きおく (記憶) | Kioku | Yaad/Memory |
+| きもち (気持ち) | Kimochi | Feeling/Ehsaas |
+| りゆう (理由) | Riyuu | Reason/Wajah |
+| げんいん (原因) | Genin | Cause/Kaaran |
+| けっか (結果) | Kekka | Result/Nateeja |
+| もんだい (問題) | Mondai | Problem/Samasya |
+| かいけつ (解決) | Kaiketsu | Solution/Hal |
+
+---
+
+### **Emotions & Reactions Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| うれしい (嬉しい) | Ureshii | Khush/Happy |
+| かなしい (悲しい) | Kanashii | Dukhi/Sad |
+| たのしい (楽しい) | Tanoshii | Mazedaar/Fun |
+| さびしい (寂しい) | Sabishii | Akela/Lonely |
+| くやしい (悔しい) | Kuyashii | Frustrating/Regretful |
+| はずかしい (恥ずかしい) | Hazukashii | Sharminda/Embarrassed |
+| こわい (怖い) | Kowai | Darawna/Scary |
+| いやだ (嫌だ) | Iya da | Pasand nahi/Hate it |
+| びっくりした | Bikkuri shita | Hairan ho gaya/Surprised |
+| がっかりした | Gakkari shita | Nirash ho gaya/Disappointed |
+| ほっとした | Hotto shita | Sukoon mila/Relieved |
+| どきどきした | Dokidoki shita | Dhadkan badh gayi/Nervous-excited |
+| わくわくした | Wakuwaku shita | Excited ho gaya/Thrilled |
+| いらいらした | Iraira shita | Irritate ho gaya/Annoyed |
+| しんぱいした (心配した) | Shinpai shita | Chinta hui/Worried |
+| あんしんした (安心した) | Anshin shita | Sukoon mila/Felt relieved |
+| こまった (困った) | Komatta | Pareshan ho gaya/Troubled |
+| つかれた (疲れた) | Tsukareta | Thak gaya/Tired |
+| あきた (飽きた) | Akita | Bor ho gaya/Got bored |
+| なっとくした (納得した) | Nattoku shita | Samajh aaya/Convinced |
+
+---
+
+### **Grammar Point 1: Plain Form Review (Casual Speech Foundation)**
+
+Elementary 2 mein **plain form** bahut important hai. Pehle quick review:
+
+#### **Verb Plain Forms:**
+
+| Type | ます form | Dictionary (plain +) | ない form (plain -) | た form (past +) | なかった (past -) |
+|------|----------|---------------------|--------------------|-----------------|--------------------|
+| Group 1 | いきます | いく | いかない | いった | いかなかった |
+| Group 1 | のみます | のむ | のまない | のんだ | のまなかった |
+| Group 1 | かきます | かく | かかない | かいた | かかなかった |
+| Group 1 | はなします | はなす | はなさない | はなした | はなさなかった |
+| Group 1 | まちます | まつ | またない | まった | またなかった |
+| Group 1 | かいます | かう | かわない | かった | かわなかった |
+| Group 2 | たべます | たべる | たべない | たべた | たべなかった |
+| Group 2 | みます | みる | みない | みた | みなかった |
+| Group 3 | します | する | しない | した | しなかった |
+| Group 3 | きます | くる | こない | きた | こなかった |
+
+#### **Adjective Plain Forms:**
+
+| Type | Present + | Present - | Past + | Past - |
+|------|-----------|-----------|--------|--------|
+| い-adj | たかい | たかくない | たかかった | たかくなかった |
+| い-adj (いい) | いい | よくない | よかった | よくなかった |
+| な-adj | しずかだ | しずかじゃない | しずかだった | しずかじゃなかった |
+
+#### **Noun + です Plain Forms:**
+
+| Form | Polite | Plain |
+|------|--------|-------|
+| Present + | がくせい です | がくせい だ |
+| Present - | がくせい じゃないです | がくせい じゃない |
+| Past + | がくせい でした | がくせい だった |
+| Past - | がくせい じゃなかったです | がくせい じゃなかった |
+
+---
+
+### **Grammar Point 2: ～んです / ～のです (Explanation & Emphasis)**
+
+**Plain form + んです = Actually _____ hai / Baat yeh hai ki _____**
+
+Yeh tab use hota hai jab:
+- Koi cheez explain kar rahe ho
+- Reason bata rahe ho
+- Background de rahe ho
+- Emphasis kar rahe ho
+
+#### **Formation:**
+
+| Type | Pattern | Example |
+|------|---------|---------|
+| Verb | Plain + んです | いく**んです** |
+| い-adj | い-adj + んです | たかい**んです** |
+| な-adj | な-adj + **な** + んです | しずか**なんです** |
+| Noun | Noun + **な** + んです | びょうき**なんです** |
+
+#### **Examples:**
+
+**Explaining situation:**
+```
+A: どうしたんですか？
+(Doushitan desu ka?)
+Kya hua? (What happened?)
+
+B: あたま が いたいんです。
+(Atama ga itain desu.)
+Actually sir dard hai.
+```
+
+**Giving reason:**
+```
+A: きょう は やすみますか？
+(Kyou wa yasumimasu ka?)
+Aaj chutti loge?
+
+B: はい、ねつ が あるんです。
+(Hai, netsu ga arun desu.)
+Haan, actually bukhar hai.
+```
+
+**Asking for explanation:**
+```
+どうして おくれたんですか？
+(Doushite okuretan desu ka?)
+Kyun late hue? (What's the reason?)
+
+でんしゃ が とまったんです。
+(Densha ga tomattan desu.)
+Actually train ruk gayi thi.
+```
+
+#### **Casual form: ～んだ / ～の**
+
+| Polite | Casual (male/neutral) | Casual (female/soft) |
+|--------|----------------------|---------------------|
+| いくんです | いくんだ | いくの |
+| おいしいんです | おいしいんだ | おいしいの |
+| びょうきなんです | びょうきなんだ | びょうきなの |
+
+**Casual examples:**
+```
+A: どうしたの？ (Doushita no?) - Kya hua?
+B: ちょっと つかれたんだ。(Chotto tsukaretan da.) - Thoda thak gaya.
+```
+
+---
+
+### **Grammar Point 3: ～て + Emotion (Reason for feeling)**
+
+**て-form + [Emotion word] = _____ hone ki wajah se [emotion]**
+
+**Examples:**
+```
+しけん に うかって、うれしい です。
+(Shiken ni ukatte, ureshii desu.)
+Exam pass hokar, khush hoon.
+
+ともだち が くに に かえって、さびしい です。
+(Tomodachi ga kuni ni kaette, sabishii desu.)
+Dost desh laut gaya, isliye akela feel ho raha.
+
+でんしゃ に おくれて、こまりました。
+(Densha ni okurete, komarimashita.)
+Train late ho gayi, isliye pareshan hua.
+
+さいふ を なくして、びっくりしました。
+(Saifu wo nakushite, bikkuri shimashita.)
+Wallet kho gayi, hairan ho gaya.
+
+プレゼント を もらって、うれしかった です。
+(Purezento wo moratte, ureshikatta desu.)
+Gift milke, khush hua.
+```
+
+---
+
+### **Grammar Point 4: ～たら (If/When - Conditional)**
+
+**た form + ら = Agar _____ ho toh / Jab _____ ho tab**
+
+#### **Formation:**
+- Verb た form + ら: いった**ら**、たべた**ら**、した**ら**
+- い-adj かった + ら: たかかった**ら**、よかった**ら**
+- な-adj だった + ら: しずかだった**ら**
+- Noun だった + ら: あめだった**ら**
+
+#### **Uses:**
+
+**1. Conditional (If):**
+```
+あした あめ が ふったら、うち に います。
+(Ashita ame ga futtara, uchi ni imasu.)
+Kal baarish hui toh, ghar pe rahunga.
+
+やすかったら、かいます。
+(Yasukattara, kaimasu.)
+Sasta hua toh, khareedunga.
+
+ひまだったら、あそびに きて ください。
+(Hima dattara, asobi ni kite kudasai.)
+Free ho toh, ghumne aao.
+```
+
+**2. When (time):**
+```
+うち に かえったら、でんわ します。
+(Uchi ni kaettara, denwa shimasu.)
+Ghar pahunchke, phone karunga.
+
+しごと が おわったら、のみに いきましょう。
+(Shigoto ga owattara, nomi ni ikimashou.)
+Kaam khatam hone pe, peene chalte hain.
+```
+
+**3. Discovery (When I did, I found):**
+```
+まど を あけたら、とり が いました。
+(Mado wo aketara, tori ga imashita.)
+Khidki kholi toh, chidiya thi.
+
+かばん を あけたら、さいふ が なかった。
+(Kaban wo aketara, saifu ga nakatta.)
+Bag khola toh, wallet nahi thi.
+```
+
+---
+
+### **Grammar Point 5: ～ても (Even if / _____ ke baawajood)**
+
+**て-form + も = _____ ke baawajood bhi / Chahe _____ ho**
+
+#### **Formation:**
+- Verb て form + も: いって**も**、たべて**も**
+- い-adj くて + も: たかくて**も**
+- な-adj で + も: しずかで**も**
+- Noun で + も: あめで**も**
+
+#### **Examples:**
+```
+あめ が ふっても、いきます。
+(Ame ga futtemo, ikimasu.)
+Baarish ho ke bhi, jaunga.
+
+たかくても、ほしい です。
+(Takakutemo, hoshii desu.)
+Mehenga ho ke bhi, chahiye.
+
+いそがしくても、れんしゅう します。
+(Isogashikutemo, renshuu shimasu.)
+Busy ho ke bhi, practice karunga.
+
+にちようびでも、しごと が あります。
+(Nichiyoubi demo, shigoto ga arimasu.)
+Sunday ho ke bhi, kaam hai.
+
+なんかい よんでも、わかりません。
+(Nankai yondemo, wakarimasen.)
+Kitni baar bhi padho, samajh nahi aata.
+```
+
+---
+
+### **Talking About Your Day:**
+
+**Pattern: Today's events + Feelings**
+
+```
+きょう は たいへんな いちにち でした。
+(Kyou wa taihen na ichinichi deshita.)
+Aaj bahut mushkil din tha.
+
+あさ、でんしゃ が おくれて、かいしゃ に おくれて しまいました。
+(Asa, densha ga okurete, kaisha ni okurete shimaimashita.)
+Subah train late thi, office late pahunch gaya.
+
+それから、だいじな かいぎ が あったんですが、
+しりょう (資料) を わすれて しまって、こまりました。
+(Sorekara, daiji na kaigi ga attan desu ga,
+shiryou wo wasurete shimatte, komarimashita.)
+Phir, important meeting thi, lekin
+documents bhool gaya, bahut pareshan hua.
+
+でも、ぶちょう が やさしくて、だいじょうぶ でした。
+(Demo, buchou ga yasashikute, daijoubu deshita.)
+Lekin, boss acche the, toh theek ho gaya.
+
+ほっとしました。
+(Hotto shimashita.)
+Sukoon mila.
+
+つかれましたが、いい けいけん でした。
+(Tsukaremashita ga, ii keiken deshita.)
+Thak gaya, lekin accha experience tha.
+```
+
+---
+
+### **Reacting to News/Stories:**
+
+| Japanese | Reading | Meaning | When to use |
+|----------|---------|---------|-------------|
+| えー！ | Ee! | What! | Surprise |
+| うそ！/ うそー！ | Uso! | No way!/Jhooth! | Disbelief |
+| まじ？/ まじで？ | Maji? / Maji de? | Seriously? | Casual surprise |
+| ほんとう？/ ほんと？ | Hontou? / Honto? | Really? | Asking confirmation |
+| すごい！/ すごーい！ | Sugoi! | Amazing! | Impressed |
+| やばい！ | Yabai! | Wow!/Oh no! | Strong reaction (+/-) |
+| かわいそう (可哀想) | Kawaisou | Poor thing | Sympathy |
+| よかったね！ | Yokatta ne! | Good for you! | Happy for someone |
+| たいへんだったね | Taihen datta ne | That was tough | Sympathy |
+| それは こまりますね | Sore wa komarimasu ne | That's troubling | Understanding |
+| しんじられない (信じられない) | Shinjirarenai | Unbelievable | Strong disbelief |
+| なるほど | Naruhodo | I see / Makes sense | Understanding |
+| そうなんだ | Sou nan da | Is that so | Acknowledging |
+| へー | Hee | Hmm/Oh | Mild interest |
+
+---
+
+### **Conversation Practice:**
+
+```
+A: きのう、すごい こと が あったんだ。
+(Kinou, sugoi koto ga attan da.)
+Kal bahut amazing cheez hui.
+
+B: えー、なに なに？
+(Ee, nani nani?)
+Kya kya? Bata!
+
+A: えき で ゆうめいな サッカーせんしゅ (選手) に あったんだ！
+(Eki de yuumei na sakkaa senshu ni attan da!)
+Station pe famous football player se mila!
+
+B: うそ！まじで？
+(Uso! Maji de?)
+Jhooth! Seriously?
+
+A: ほんと ほんと。いっしょに しゃしん も とったんだ。
+(Honto honto. Issho ni shashin mo tottan da.)
+Sach sach. Saath mein photo bhi liya.
+
+B: すごーい！いいなー！みせて みせて！
+(Sugooi! Ii naa! Misete misete!)
+Amazing! Lucky! Dikha dikha!
+
+A: はい、これ。
+(Hai, kore.)
+Haan, yeh dekh.
+
+B: わー、ほんとう だ！どきどき したでしょ？
+(Waa, hontou da! Dokidoki shita desho?)
+Wow, sach mein hai! Nervous hua hoga na?
+
+A: うん、すごく きんちょう (緊張) した。でも、やさしい ひと だったよ。
+(Un, sugoku kinchou shita. Demo, yasashii hito datta yo.)
+Haan, bahut nervous hua. Lekin, accha aadmi tha.
+
+B: よかったね！
+(Yokatta ne!)
+Accha hua!
+```
+
+---</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="color:#fff; font-size:1.4rem; margin-bottom:0.5rem;">🌸 Irodori Elementary 2 (A2-2) Interactive Course 🌸</h3>
+        <p style="margin-bottom:1rem; color:var(--text-main);">Chapter 01: きょうのできごと (Today's Happenings) • News, Reactions & Plain Form Hub</p>
+        <p style="font-size: 0.85rem; opacity: 0.7;">Built with passion and technical precision • 100% Content Preservation Guaranteed • Keep studying Japanese! がんばってください！ 💪</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                icon.innerText = '☀️';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerText = '🌙';
+            }
+        }
+
+        // Web Speech API - Japanese TTS
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Speech synthesis is not supported in this browser.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.95;
+            
+            const voices = window.speechSynthesis.getVoices();
+            const jpVoice = voices.find(v => v.lang.includes('ja') || v.lang.includes('JP'));
+            if (jpVoice) utterance.voice = jpVoice;
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Daily Storyteller Logic
+        const stEvents = {
+            train: { jp: "電車（でんしゃ）が 止（と）まったんです", mean: "Actually train ruk gayi thi (densha ga tomarkan desu)", icon: "🚆" },
+            head: { jp: "頭（あたま）が 痛（いた）いんです", mean: "Actually sir dard ho raha hai (atama ga itain desu)", icon: "🤕" },
+            fever: { jp: "熱（ねつ）が あるんです", mean: "Baat ye hai ki bukhar hai (netsu ga arun desu)", icon: "🤒" },
+            tired: { jp: "ちょっと 疲（つか）れたんだ", mean: "Actually thoda thak gaya tha (chotto tsukaretan da)", icon: "😮‍💨" },
+            doc: { jp: "資料（しりょう）を 忘（わす）れたんです", mean: "Actually documents bhool gaya (shiryou wo wasuretan desu)", icon: "📁" },
+            soccer: { jp: "有名（ゆうめい）な 選手（せんしゅ）に 会（あ）ったんだ", mean: "Actually famous football player se mila (senshu ni attan da)", icon: "⚽" }
+        };
+
+        const stResults = {
+            late: { jp: "会社（かいしゃ）に 遅（おく）れて しまいました", mean: "office late pahunch gaya (okurete shimaimashita)", icon: "⏰" },
+            off: { jp: "今日（きょう）は 休（やす）みたいんです", mean: "aaj chutti lena chahta hoon (yasumitain desu)", icon: "🏠" },
+            trouble: { jp: "とても 困（こま）りました", mean: "bahut pareshan hua (totemo komarimashita)", icon: "😰" },
+            photo: { jp: "いっしょに 写真（しゃしん）も 撮（と）ったんだ", mean: "saath mein photo bhi liya (shashin mo tottan da)", icon: "📸" }
+        };
+
+        const stEmotions = {
+            relieved: { jp: "部長（ぶちょう）が 優（やさ）しくて、ほっとしました", mean: "boss acche the toh sukoon mila (hotto shimashita)", icon: "😌" },
+            sad: { jp: "友達（ともだち）が 帰（かえ）って、寂（さび）しいです", mean: "dost chala gaya isliye akela feel ho raha (sabishii desu)", icon: "😢" },
+            happy: { jp: "試験（しけん）に 受（う）かって、嬉（うれ）しいです", mean: "exam pass karke khush hoon (ureshii desu)", icon: "🎉" },
+            shocked: { jp: "財布（さいふ）を なくして、びっくりしました", mean: "wallet kho gayi toh hairan ho gaya (bikkuri shimashita)", icon: "😲" },
+            nervous: { jp: "すごく どきどき しました", mean: "dhadkan badh gayi / bahut nervous-excited tha (dokidoki shimashita)", icon: "💓" }
+        };
+
+        function updateStory() {
+            const eKey = document.getElementById('st-event').value;
+            const rKey = document.getElementById('st-result').value;
+            const emKey = document.getElementById('st-emotion').value;
+            const e = stEvents[eKey];
+            const r = stResults[rKey];
+            const em = stEmotions[emKey];
+
+            document.getElementById('st-jp').innerHTML = `
+                きょう は たいへんな いちにち でした。<br>
+                ${e.icon} あさ、<span style="color:var(--accent-info);">${e.jp}。</span><br>
+                ${r.icon} だから、<span style="color:var(--accent-warning);">${r.jp}。</span><br>
+                ${em.icon} でも、<span style="color:var(--accent-success);">${em.jp}！</span>
+            `;
+
+            document.getElementById('st-meaning').innerText = `Hindi Translation: Aaj ka din bahut intense tha. Subah ${e.mean}. Isliye ${r.mean}. Lekin ${em.mean}!`;
+        }
+
+        function speakStory() {
+            const eKey = document.getElementById('st-event').value;
+            const rKey = document.getElementById('st-result').value;
+            const emKey = document.getElementById('st-emotion').value;
+            speakText(`きょうはたいへんなっていちにちでした。あさ、${stEvents[eKey].jp}。だから、${stResults[rKey].jp}。でも、${stEmotions[emKey].jp}。`);
+        }
+
+        // Gossip Simulator Logic
+        const gosNews = {
+            soccer: { a: "えき で ゆうめいな サッカーせんしゅ に あったんだ！", reply: "ほんと ほんと。いっしょに しゃしん も とったんだ！", mean: "Station pe famous football player se mila!" },
+            wallet: { a: "きのう、さいふ を なくして しまったんだ！", reply: "うん。けいさつ に とどけたけど、まだ みつからないんだ。", mean: "Kal wallet kho gayi!" },
+            jlpt: { a: "にほんご の しけん に まんてん で ごうかく したよ！", reply: "ありがとう！まいにち ３じかん べんきょう したんだ！", mean: "JLPT exam full marks se pass kiya!" },
+            train: { a: "でんしゃ が ２じかん も おくれたんだよ！", reply: "そうなんだ。えき は ひと が いっぱいで あまれないぐらいだったよ。", mean: "Train 2 ghante late thi!" },
+            marry: { a: "らいげつ、けっこん することに なったんだ！", reply: "ありがとう！あした みんな に しょうかい するよ！", mean: "Agle mahine shaadi ho rahi hai!" }
+        };
+
+        const gosReacts = {
+            uso: { b: "うそ！まじで？すごーい！みせて みせて！", mean: "Jhooth! Seriously? Amazing! Dikha dikha!" },
+            sugoi: { b: "すごーい！よかったね！おめでとう！", mean: "Amazing! Accha hua! Congratulations!" },
+            kawai: { b: "えー！かわいそう。たいへんだったね。だいじょうぶ？", mean: "What! Bechara/Poor thing. Bahut mushkil tha. Theek ho?" },
+            naru: { b: "なるほど！そうなんだ。それは こまるね。", mean: "I see! Makes sense! Is that so! Woh toh problem hai." },
+            yabai: { b: "やばい！しんじられない！ほんとう？", mean: "Whoa! Unbelievable! Sach mein?" }
+        };
+
+        function updateGossip() {
+            const nKey = document.getElementById('gos-news').value;
+            const rKey = document.getElementById('gos-react').value;
+            const n = gosNews[nKey];
+            const r = gosReacts[rKey];
+
+            document.getElementById('gos-jp').innerHTML = `
+                🗣️ <strong>友達 (A):</strong> <span style="color:var(--accent-info);">${n.a}</span><br>
+                💬 <strong>あなた (B):</strong> <span style="color:var(--accent-warning);">${r.b}</span><br>
+                🗣️ <strong>友達 (A):</strong> ${n.reply}
+            `;
+
+            document.getElementById('gos-meaning').innerText = `Hindi Translation: Dost: ${n.mean} Aap: ${r.mean} Dost replies!`;
+        }
+
+        function speakGossip() {
+            const nKey = document.getElementById('gos-news').value;
+            const rKey = document.getElementById('gos-react').value;
+            speakText(`${gosNews[nKey].a} ${gosReacts[rKey].b} ${gosNews[nKey].reply}`);
+        }
+
+        // Grammar Conjugator Logic
+        const grData = {
+            iku: {
+                title: "行きます (Ikimasu - To Go - Group 1 Verb)",
+                plainPos: "いく (Iku - Dictionary form)",
+                plainNeg: "いかない (Ikanai - ない-form)",
+                pastPos: "いった (Itta - た-form)",
+                pastNeg: "いかなかった (Ikanakatta)",
+                tara: "いったら (Ittara - If I go / When I go)",
+                temo: "いっても (Ittemo - Even if I go / Despite going)"
+            },
+            nomu: {
+                title: "飲みます (Nomimasu - To Drink - Group 1 Verb)",
+                plainPos: "のむ (Nomu)",
+                plainNeg: "のまない (Nomanai)",
+                pastPos: "のんだ (Nonda)",
+                pastNeg: "のまなかった (Nomanakatta)",
+                tara: "のんだら (Nondara - If I drink)",
+                temo: "のんでも (Nondemo - Even if I drink)"
+            },
+            taberu: {
+                title: "食べます (Tabemasu - To Eat - Group 2 Verb)",
+                plainPos: "たべる (Taberu)",
+                plainNeg: "たべない (Tabenai)",
+                pastPos: "たべた (Tabeta)",
+                pastNeg: "たべなかった (Tabenakatta)",
+                tara: "たべたら (Tabetara - If I eat)",
+                temo: "たべて も (Tabetemo - Even if I eat)"
+            },
+            suru: {
+                title: "します (Shimasu - To Do - Group 3 Verb)",
+                plainPos: "する (Suru)",
+                plainNeg: "しない (Shinai)",
+                pastPos: "した (Shita)",
+                pastNeg: "しなかった (Shinakatatta)",
+                tara: "したら (Shitara - If I do)",
+                temo: "しても (Shitemo - Even if I do)"
+            },
+            takai: {
+                title: "高い (Takai - High/Expensive - い-Adjective)",
+                plainPos: "たかい (Takai)",
+                plainNeg: "たかくない (Takakunai)",
+                pastPos: "たかかった (Takakatta)",
+                pastNeg: "たかくなかった (Takakunakatta)",
+                tara: "たかかったら (Takakattara - If expensive)",
+                temo: "たかくても (Takakutemo - Even if expensive)"
+            },
+            shizuka: {
+                title: "静かだ (Shizuka da - Quiet - な-Adjective)",
+                plainPos: "しずかだ (Shizuka da)",
+                plainNeg: "しずかじゃない (Shizuka janai)",
+                pastPos: "しずかだった (Shizuka datta)",
+                pastNeg: "しずかじゃなかった (Shizuka janakatta)",
+                tara: "しずかだったら (Shizuka dattara - If quiet)",
+                temo: "しずか でも (Shizuka demo - Even if quiet)"
+            },
+            ame: {
+                title: "雨だ (Ame da - Rain - Noun)",
+                plainPos: "あめだ (Ame da)",
+                plainNeg: "あめじゃない (Ame janai)",
+                pastPos: "あめだった (Ame datta)",
+                pastNeg: "あめじゃなかった (Ame janakatta)",
+                tara: "あめだったら (Ame dattara - If it rains)",
+                temo: "あめ でも (Ame demo - Even if it rains)"
+            }
+        };
+
+        function updateGrammar() {
+            const key = document.getElementById('gr-word').value;
+            const d = grData[key];
+            const out = document.getElementById('gr-output');
+
+            out.innerHTML = `
+                <div style="background:var(--bg-tertiary); padding:1rem; border-radius:12px; border:1px solid var(--border-color);" onclick="speakText('${d.plainPos}')">
+                    <span style="font-size:0.8rem; color:var(--text-muted); display:block;">Plain Present (+):</span>
+                    <strong style="font-size:1.2rem; color:var(--accent-primary);">${d.plainPos}</strong>
+                </div>
+                <div style="background:var(--bg-tertiary); padding:1rem; border-radius:12px; border:1px solid var(--border-color);" onclick="speakText('${d.plainNeg}')">
+                    <span style="font-size:0.8rem; color:var(--text-muted); display:block;">Plain Present (-):</span>
+                    <strong style="font-size:1.2rem; color:var(--accent-rose);">${d.plainNeg}</strong>
+                </div>
+                <div style="background:var(--bg-tertiary); padding:1rem; border-radius:12px; border:1px solid var(--border-color);" onclick="speakText('${d.pastPos}')">
+                    <span style="font-size:0.8rem; color:var(--text-muted); display:block;">Plain Past (+):</span>
+                    <strong style="font-size:1.2rem; color:var(--accent-info);">${d.pastPos}</strong>
+                </div>
+                <div style="background:var(--bg-tertiary); padding:1rem; border-radius:12px; border:1px solid var(--border-color);" onclick="speakText('${d.pastNeg}')">
+                    <span style="font-size:0.8rem; color:var(--text-muted); display:block;">Plain Past (-):</span>
+                    <strong style="font-size:1.2rem; color:var(--text-dim);">${d.pastNeg}</strong>
+                </div>
+                <div style="background:rgba(52, 211, 153, 0.15); padding:1rem; border-radius:12px; border:1px solid var(--accent-success); grid-column: 1 / -1;" onclick="speakText('${d.tara}')">
+                    <span style="font-size:0.85rem; color:var(--accent-success); font-weight:700; display:block;">Pt 4: Conditional (If / When - たら):</span>
+                    <strong style="font-size:1.3rem; color:#fff;">${d.tara}</strong>
+                </div>
+                <div style="background:rgba(244, 63, 94, 0.15); padding:1rem; border-radius:12px; border:1px solid var(--accent-rose); grid-column: 1 / -1;" onclick="speakText('${d.temo}')">
+                    <span style="font-size:0.85rem; color:var(--accent-rose); font-weight:700; display:block;">Pt 5: Concessive (Even if / Despite - ても):</span>
+                    <strong style="font-size:1.3rem; color:#fff;">${d.temo}</strong>
+                </div>
+            `;
+        }
+
+        // Quiz Module Logic (10 Questions)
+        const quizQuestions = [
+            {
+                q: "1. What is the Plain Past (-) form of the Group 1 verb '行く' (to go)?",
+                options: [
+                    "いかなかった (Ikanakatta) ✔️",
+                    "いかないで (Ikanaide)",
+                    "いかなかったでした",
+                    "いきませんでした"
+                ],
+                correct: 0
+            },
+            {
+                q: "2. When explaining a reason or emphasizing 'Actually...' with a Noun or な-Adjective using ～んです, what must be added before んです?",
+                options: [
+                    "な (e.g., びょうき な んです) ✔️",
+                    "い (e.g., びょうき い んです)",
+                    "だ (e.g., びょうき だ んです)",
+                    "を (e.g., びょうき を んです)"
+                ],
+                correct: 0
+            },
+            {
+                q: "3. Which sentence correctly expresses 'I feel happy because I passed the exam' using Grammar Pt 3 (て-form + Emotion)?",
+                options: [
+                    "しけん に うかって、うれしい です (Shiken ni ukatte, ureshii desu) ✔️",
+                    "しけん が うかる から、うれしい です",
+                    "しけん に うかった のに、うれしい です",
+                    "しけん を うかって も、うれしい です"
+                ],
+                correct: 0
+            },
+            {
+                q: "4. What does the Japanese reaction 'うそ！まじで？ (Uso! Maji de?)' mean in natural conversation?",
+                options: [
+                    "Where is the station?",
+                    "No way! Seriously? / Jhooth! Seriously? ✔️",
+                    "I am very sorry about that.",
+                    "Please wait a moment."
+                ],
+                correct: 1
+            },
+            {
+                q: "5. How do you say 'Even if it rains tomorrow, I will go' using Grammar Pt 5 (～ても)?",
+                options: [
+                    "あした あめ が ふっても、いきます (Ashita ame ga futtemo, ikimasu) ✔️",
+                    "あした あめ が ふったら、いきます",
+                    "あした あめ が ふるから、いきます",
+                    "あした あめ が ふらなくて、いきます"
+                ],
+                correct: 0
+            },
+            {
+                q: "6. Which reaction is best used to show deep understanding or acknowledgment ('I see / Makes sense')?",
+                options: [
+                    "なるほど (Naruhodo) ✔️",
+                    "かわいそう (Kawaisou)",
+                    "いやだ (Iya da)",
+                    "うそー！ (Usoo!)"
+                ],
+                correct: 0
+            },
+            {
+                q: "7. In Grammar Pt 4 (～たら), what happens when you open the window in 'まど を あけたら、とり が いました'?",
+                options: [
+                    "This is the 'Discovery' usage: When I opened the window, I found there was a bird! ✔️",
+                    "This means 'If you open the window, please feed the bird'",
+                    "This means 'Even if you open the window, the bird will not leave'",
+                    "This means 'Do not open the window because of the bird'"
+                ],
+                correct: 0
+            },
+            {
+                q: "8. What does 'ほっとした (Hotto shita)' mean in the emotion vocabulary list?",
+                options: [
+                    "Felt hot / warm",
+                    "Felt relieved / sukoon mila ✔️",
+                    "Got bored / akita",
+                    "Was very angry"
+                ],
+                correct: 1
+            },
+            {
+                q: "9. What is the Plain Present form of '学生です' (Gakusei desu - I am a student)?",
+                options: [
+                    "がくせい だ (Gakusei da) ✔️",
+                    "がくせい な",
+                    "がくせい い",
+                    "がくせい でした"
+                ],
+                correct: 0
+            },
+            {
+                q: "10. Which word means 'Rumor / Gossip / Afwah' in our daily events vocabulary?",
+                options: [
+                    "うわさ (噂 - Uwasa) ✔️",
+                    "ニュース (Nyuusu)",
+                    "じこ (事故 - Jiko)",
+                    "りゆう (理由 - Riyuu)"
+                ],
+                correct: 0
+            }
+        ];
+
+        function renderQuiz() {
+            const quizArea = document.getElementById('quiz-area');
+            let html = '';
+            quizQuestions.forEach((item, index) => {
+                html += `
+                    <div class="question-box" id="q-${index}">
+                        <div class="question-text"><span>${item.q}</span></div>
+                        <div class="options-grid">
+                            ${item.options.map((opt, optIndex) => `
+                                <button class="option-btn" onclick="checkAnswer(${index}, ${optIndex})">
+                                    <span>${opt}</span>
+                                    <span class="status-icon"></span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            quizArea.innerHTML = html;
+        }
+
+        let score = 0;
+        let answered = new Array(quizQuestions.length).fill(false);
+
+        function checkAnswer(qIndex, optIndex) {
+            if (answered[qIndex]) return;
+            answered[qIndex] = true;
+
+            const qBox = document.getElementById(`q-${qIndex}`);
+            const buttons = qBox.querySelectorAll('.option-btn');
+            const correctIndex = quizQuestions[qIndex].correct;
+
+            if (optIndex === correctIndex) {
+                buttons[optIndex].classList.add('correct');
+                buttons[optIndex].querySelector('.status-icon').innerText = '🎉 Correct!';
+                score++;
+                speakText('せいかい！すばらしい！');
+            } else {
+                buttons[optIndex].classList.add('wrong');
+                buttons[optIndex].querySelector('.status-icon').innerText = '❌ Incorrect';
+                buttons[correctIndex].classList.add('correct');
+                buttons[correctIndex].querySelector('.status-icon').innerText = '✔ Correct Answer';
+            }
+
+            if (answered.every(val => val === true)) {
+                const quizArea = document.getElementById('quiz-area');
+                const scoreDiv = document.createElement('div');
+                scoreDiv.className = 'quiz-score';
+                scoreDiv.innerHTML = `🌟 Irodori Elem 2 Ch 01 Mastery Quiz Completed!<br><span style="font-size:2.2rem; color:#fff; display:block; margin:0.5rem 0;">Score: ${score} / ${quizQuestions.length}</span><span style="font-size:1.15rem; color:#fbbf24; font-weight:700; display:block; margin-bottom:0.5rem;">おめでとう ございます！ (Omedetou Gozaimasu!) 🎉</span><span style="font-size:1rem; color:var(--text-main); font-weight:500;">You have mastered Today's Happenings, Plain Form rules, explanations, emotions, conditionals, and conversational reactions! Ready for Chapter 2! 🎌</span>`;
+                quizArea.appendChild(scoreDiv);
+                speakText('おめでとうございます！きょうのできごとクイズがすべてしゅうりょうしました！とてもすばらしいです！');
+            }
+        }
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+            updateGrammar();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        });
+    </script>
+<script src="nav.js"></script>
+</body>
+</html>

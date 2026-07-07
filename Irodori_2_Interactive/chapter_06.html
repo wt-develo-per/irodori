@@ -1,0 +1,961 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 06: ひっこし (Moving & Housing)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 6: ひっこし - Moving & Housing. Covers real estate, floor plans, utilities, and grammar (~ことにする/なる, ~ようにする/なる, ~てある).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🚀 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 06: ひっこし (Moving & Housing) • Real Estate, Layouts & Neighbor Etiquette</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('あたらしい アパート に ひっこす ことにしました。まいにち ろくじ に おきる ようにしています。まど が あけて あります。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>🏠 ひっこし (Hikkoshi) - Moving & Housing / Ghar Badalna</h2>
+        <p>Master real estate terminology, apartment layouts (<strong>1K / 1LDK / 2LDK</strong>), security deposits & key money (<strong>敷金・礼金</strong>), utility setups, and essential housing grammar (<strong>～ことにする・なる / ～ようにする・なる / ～てある</strong>)! Includes comprehensive Chapter 4–6 Grammar & Vocab Summary.</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 2195–2699</span>
+            <span class="meta-pill">💬 Grammar Points 30–34</span>
+            <span class="meta-pill">📚 40+ Housing & Utility Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">📦 Neighbor Greeting Roleplay</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('property',this)"><span>🏠</span> Real Estate Layout Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Decisions & States (Pt 30–34)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 40+ Audio Vocab & Utility Cards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 06 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>📦</span> Moving & Neighbor Greeting Roleplay</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Housing Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Real Estate Property Finder & Layout Simulator -->
+    <div id="tab-property" class="tab-content active">
+        <div class="interactive-box">
+            <h4>🏠 Interactive Apartment Layout & Property Viewing Simulator (物件・間取りシミュレーター)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Explore Japanese apartment layouts and conditions! Select a floor plan and a grammar pattern to see how real estate agents and tenants describe properties in native Japanese.</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Floor Plan & Property Type (間取り・物件)</label>
+                    <select id="sim-plan" onchange="updatePropertySim()">
+                        <option value="1k">🛏️ 1K Apartment (ワンケー - 1 Room + Kitchen • Compact & Budget)</option>
+                        <option value="1ldk">🛋️ 1LDK Apartment (ワンエルディーケー - 1 Room + Living/Dining/Kitchen)</option>
+                        <option value="2ldk">🏡 2LDK Family Apartment (ニーエルディーケー - 2 Rooms + LDK • Spacious)</option>
+                        <option value="features">✨ Special Features (バストイレ別・南向き・オートロック付き)</option>
+                        <option value="utilities">⚡ Utilities & Setup (ライフライン - 電気・ガス・水道・ネット)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updatePropertySim()">
+                        <option value="decide">🧑‍💼 Personal Decision (～ことにする - I decided to...)</option>
+                        <option value="turnout">🏢 Situation / Result (～ことになる - It was decided / Turned out...)</option>
+                        <option value="try">💪 Habit & Effort (～ようにする - Make sure to / Try to...)</option>
+                        <option value="able">🌱 Ability Change (～ようになる - Became able to...)</option>
+                        <option value="state">🪟 Result State (～てある - Has been done / Is set up...)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">家賃（やちん）が 安（やす）いので、この １Ｋの アパートに 引（ひ）っ越（こ）す ことにしました。</div>
+                <div class="output-rom" id="sim-rom">Yachin ga yasui node, kono 1K no apaato ni hikkosu koto ni shimashita.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Rent sasta hai, isliye is 1K apartment mein shift hone ka decide kiya.</div>
+                <button class="btn-speak" onclick="speakPropertySim()">🔊 Speak Description in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🏢 Japanese Apartment Layout Guide (間取り・まどり)</h3>
+            <p>Click any card to listen to the Japanese pronunciation and understand what each layout code means!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">1K（ワンケー）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Wan-kee • 1 Room + Kitchen</div><div class="meaning-text">1 main room with a small separated kitchen. Standard for single students and young working professionals.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">1DK（ワンディーケー）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Wan-dii-kee • 1 Room + Dining Kitchen</div><div class="meaning-text">1 main bedroom plus a dining-kitchen room large enough to put a small dining table and chairs.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">1LDK（ワンエルディーケー）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Wan-eru-dii-kee • 1 Room + LDK</div><div class="meaning-text">1 bedroom plus a spacious Living, Dining, and Kitchen area. Very popular for couples or comfortable single living.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">2LDK（ニーエルディーケー）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Nii-eru-dii-kee • 2 Rooms + LDK</div><div class="meaning-text">2 private bedrooms plus a Living-Dining-Kitchen room. Standard layout for small families in Japan.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">敷金（しききん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shikikin • Security Deposit</div><div class="meaning-text">Deposit paid when moving in (usually 1-2 months rent). Refunded after deducting cleaning/repair fees upon moving out.</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">礼金（れいきん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Reikin • Key Money (Gratuity)</div><div class="meaning-text">Non-refundable gift money paid to the landlord as gratitude for letting you rent. Unique traditional Japanese housing custom!</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Decision vs Situation: Decide to / Turn out to be</span><span class="particle-badge">Pt 30 & 31</span></div>
+            <div class="grammar-formula">～ことにする (Personal Decision) vs ～ことになる (External / Situation)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ことにする</strong> when YOU make a personal decision. Use <strong>～ことになる</strong> when a decision is made by external circumstances, organization transfer, or naturally turns out that way!</p>
+            <ul class="example-list">
+                <li onclick="speakText('あたらしい アパート に ひっこす ことにしました。')">
+                    <span class="ex-jp">新しい アパート に 引っ越す ことにしました。</span>
+                    <span class="ex-rom">Atarashii apaato ni hikkosu koto ni shimashita. (Naye apartment mein shift hone ka decide kiya - My decision.)</span>
+                </li>
+                <li onclick="speakText('らいげつ から ジム に かよう ことにしました。')">
+                    <span class="ex-jp">来月 から ジム に 通う ことにしました。</span>
+                    <span class="ex-rom">Raigetsu kara jimu ni kayou koto ni shimashita. (Agle mahine se gym jaane ka decide kiya.)</span>
+                </li>
+                <li onclick="speakText('らいげつ、とうきょう に てんきん する ことになりました。')">
+                    <span class="ex-jp">来月、東京 に 転勤 する ことになりました。</span>
+                    <span class="ex-rom">Raigetsu, Toukyou ni tenkin suru koto ni narimashita. (Agle mahine, Tokyo transfer hona tay hua - Organization decision.)</span>
+                </li>
+                <li onclick="speakText('けっきょく、ひっこし しない ことになりました。')">
+                    <span class="ex-jp">結局、引っ越し しない ことになりました。</span>
+                    <span class="ex-rom">Kekkyoku, hikkoshi shinai koto ni narimashita. (Aakhir mein, shift nahi karna hua - Situation result.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-success);">
+            <div class="grammar-title"><span>2. Habit vs Ability Change: Make sure to / Become able to</span><span class="particle-badge" style="background:var(--accent-success);">Pt 32 & 33</span></div>
+            <div class="grammar-formula">～ようにする (Try / Habit) vs ～ようになる (Come to / Ability Change)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;"><strong>～ようにする</strong> indicates conscious effort or building a habit ("I make sure to / try to"). <strong>～ようになる</strong> indicates a change in state or gaining a new ability over time ("I came to / became able to").</p>
+            <ul class="example-list">
+                <li onclick="speakText('やちん は まいつき おくれないように はらう ようにしています。')">
+                    <span class="ex-jp">家賃 は 毎月 遅れないように 払う ようにしています。</span>
+                    <span class="ex-rom">Yachin wa maitsuki okurenai you ni harau you ni shite imasu. (Rent har mahine late na ho, aise pay karta hoon - Conscious effort.)</span>
+                </li>
+                <li onclick="speakText('きんじょ に めいわく を かけない ようにしてください。')">
+                    <span class="ex-jp">近所 に 迷惑 を かけない ようにして ください。</span>
+                    <span class="ex-rom">Kinjo ni meiwaku wo kakenai you ni shite kudasai. (Padosiyon ko pareshani na do - Rule/Habit.)</span>
+                </li>
+                <li onclick="speakText('にほん に きて から、まいにち じてんしゃ に のる ようになりました。')">
+                    <span class="ex-jp">日本 に 来て から、毎日 自転車 に 乗る ようになりました。</span>
+                    <span class="ex-rom">Nihon ni kite kara, mainichi jitensha ni noru you ni narimashita. (Japan aake, har roz cycle use karne laga - Change in lifestyle.)</span>
+                </li>
+                <li onclick="speakText('この まち に すんでから、にほんご が はなせる ようになりました。')">
+                    <span class="ex-jp">この 街 に 住んでから、日本語 が 話せる ようになりました。</span>
+                    <span class="ex-rom">Kono machi ni sunde kara, nihongo ga hanaseru you ni narimashita. (Is sheher mein rehke, Japanese bolne laga - Ability change.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Result State of Action: Has been done (State)</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 34</span></div>
+            <div class="grammar-formula">Transitive verb て-form + ある (Has been done by someone)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Unlike <strong>～ている</strong> (natural state, e.g., 窓が開いている - window is open), <strong>～てある</strong> expresses that someone purposely performed an action and that result remains (e.g., 窓が開けてある - window has been left open by someone for ventilation).</p>
+            <ul class="example-list">
+                <li onclick="speakText('まど が あけて あります。')">
+                    <span class="ex-jp">窓 が 開けて あります。</span>
+                    <span class="ex-rom">Mado ga akete arimasu. (Khidki khuli hui hai - kisi ne kholi hai.)</span>
+                </li>
+                <li onclick="speakText('でんき が けして あります。')">
+                    <span class="ex-jp">電気 が 消して あります。</span>
+                    <span class="ex-rom">Denki ga keshite arimasu. (Light band ki hui hai.)</span>
+                </li>
+                <li onclick="speakText('へや は もう そうじして あります。')">
+                    <span class="ex-jp">部屋 は もう 掃除して あります。</span>
+                    <span class="ex-rom">Heya wa mou souji shite arimasu. (Room already saaf kiya hua hai.)</span>
+                </li>
+                <li onclick="speakText('かいせん は もう ひいて あるので、すぐ つかえます。')">
+                    <span class="ex-jp">回線 は もう 引いて あるので、すぐ 使えます。</span>
+                    <span class="ex-rom">Kaisen wa mou hiite aru node, sugu tsukaemasu. (Internet line already lagi hui hai, toh turant use kar sakte ho.)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 6 Real Estate, Housing & Utilities Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize property terminology.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">引っ越し（ひっこし）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hikkoshi</div><div class="meaning-text">Shifting / Moving (noun)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">引っ越す（ひっこす）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hikkosu</div><div class="meaning-text">Shift karna / To move (verb)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">不動産屋（ふどうさんや）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Fudousanya</div><div class="meaning-text">Real estate agent / Property agency</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">物件（ぶっけん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Bukken</div><div class="meaning-text">Property / Real estate listing</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">契約（けいやく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Keiyaku</div><div class="meaning-text">Contract / Agreement</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">解約（かいやく）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaiyaku</div><div class="meaning-text">Contract cancellation</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">敷金（しききん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shikikin</div><div class="meaning-text">Security deposit</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">礼金（れいきん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Reikin</div><div class="meaning-text">Key money / Gratuity money to landlord</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">家賃（やちん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Yachin</div><div class="meaning-text">Rent / Kiraya</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">共益費（きょうえきひ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kyouekihi</div><div class="meaning-text">Common area maintenance fee</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">管理費（かんりひ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kanrihi</div><div class="meaning-text">Management fee</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">保証人（ほしょうにん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hoshounin</div><div class="meaning-text">Guarantor for rental contract</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">内見（ないけん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Naiken</div><div class="meaning-text">House viewing / Property viewing</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">間取り（まどり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Madori</div><div class="meaning-text">Floor plan / Room layout</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">畳（じょう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Jou</div><div class="meaning-text">Tatami mat unit (e.g., 6畳 = 6 tatami mats size)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">バストイレ別（べつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Basu toire betsu</div><div class="meaning-text">Separate bathroom and toilet rooms</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">オートロック</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ooto rokku</div><div class="meaning-text">Auto lock building security</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">南向き（みなみむき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Minami muki</div><div class="meaning-text">South facing (best for sunlight in Japan)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">日当たり（ひあたり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hiatari</div><div class="meaning-text">Sunlight / Roshni exposure</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">電気（でんき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Denki</div><div class="meaning-text">Electricity / Light</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">水道（すいどう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Suidou</div><div class="meaning-text">Water supply / Tap water</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">光熱費（こうねつひ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kounetsuhi</div><div class="meaning-text">Utility bills (gas, electricity, heating)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">手続き（てつづき）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tetsuduki</div><div class="meaning-text">Procedure / Formalities</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">住所変更（じゅうしょへんこう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Juusho henkou</div><div class="meaning-text">Address change registration</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 6 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for housing, moving, contracts, rent, security deposits, and utilities.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">引</div><div class="kanji-info"><h5>Pull / Draw / Move</h5><div class="kanji-readings">Onyomi: <span>イン (in)</span><br>Kunyomi: ひ-く、ひ-ける</div></div></div><div class="kanji-example" onclick="speakText('引っ越し、引く')"><span>引っ越し（ひっこし）- moving<br>引く（ひく）- to pull / draw</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">越</div><div class="kanji-info"><h5>Cross / Exceed / Move</h5><div class="kanji-readings">Onyomi: <span>エツ (etsu)</span><br>Kunyomi: こ-す、こ-える</div></div></div><div class="kanji-example" onclick="speakText('引っ越す、越える')"><span>引っ越す（ひっこす）- to move<br>越える（こえる）- to cross over</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">動</div><div class="kanji-info"><h5>Move / Motion</h5><div class="kanji-readings">Onyomi: <span>ドウ (dou)</span><br>Kunyomi: うご-く、うご-かす</div></div></div><div class="kanji-example" onclick="speakText('不動産、動物、動く')"><span>不動産（ふどうさん）- real estate<br>動物（どうぶつ）- animal</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">産</div><div class="kanji-info"><h5>Produce / Birth / Property</h5><div class="kanji-readings">Onyomi: <span>サン (san)</span><br>Kunyomi: う-む、う-まれる</div></div></div><div class="kanji-example" onclick="speakText('不動産屋、生産、土産')"><span>不動産屋（ふどうさんや）- agency<br>お土産（おみやげ）- souvenir</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">物</div><div class="kanji-info"><h5>Thing / Object</h5><div class="kanji-readings">Onyomi: <span>ブツ、モツ (butsu)</span><br>Kunyomi: もの</div></div></div><div class="kanji-example" onclick="speakText('物件、荷物、食べ物')"><span>物件（ぶっけん）- property<br>荷物（にもつ）- luggage</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">件</div><div class="kanji-info"><h5>Matter / Case / Item</h5><div class="kanji-readings">Onyomi: <span>ケン (ken)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('物件、事件、条件')"><span>物件（ぶっけん）- property<br>条件（じょうけん）- conditions</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">契</div><div class="kanji-info"><h5>Pledge / Promise / Contract</h5><div class="kanji-readings">Onyomi: <span>ケイ (kei)</span><br>Kunyomi: ちぎ-る</div></div></div><div class="kanji-example" onclick="speakText('契約、契約書')"><span>契約（けいやく）- contract<br>契約書（けいやくしょ）- document</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">約</div><div class="kanji-info"><h5>Promise / Approximately</h5><div class="kanji-readings">Onyomi: <span>ヤク (yaku)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('契約、解約、約束')"><span>契約（けいやく）- contract<br>解約（かいやく）- cancel contract</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">敷</div><div class="kanji-info"><h5>Spread / Lay / Deposit</h5><div class="kanji-readings">Onyomi: <span>フ (fu)</span><br>Kunyomi: し-く</div></div></div><div class="kanji-example" onclick="speakText('敷金、敷く')"><span>敷金（しききん）- deposit<br>敷く（しく）- to spread out</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">礼</div><div class="kanji-info"><h5>Salute / Bow / Thanks</h5><div class="kanji-readings">Onyomi: <span>レイ、ライ (rei)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('礼金、お礼、礼儀')"><span>礼金（れいきん）- key money<br>お礼（おれい）- gratitude / thanks</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">家</div><div class="kanji-info"><h5>House / Home / Family</h5><div class="kanji-readings">Onyomi: <span>カ、ケ (ka, ke)</span><br>Kunyomi: いえ、うち、や</div></div></div><div class="kanji-example" onclick="speakText('家賃、家、家族')"><span>家賃（やちん）- rent<br>家族（かぞく）- family</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">賃</div><div class="kanji-info"><h5>Fare / Rent / Wages</h5><div class="kanji-readings">Onyomi: <span>チン (chin)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('家賃、運賃、賃金')"><span>家賃（やちん）- rent<br>運賃（うんちん）- passenger fare</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">共</div><div class="kanji-info"><h5>Together / Both / All</h5><div class="kanji-readings">Onyomi: <span>キョウ (kyou)</span><br>Kunyomi: とも</div></div></div><div class="kanji-example" onclick="speakText('共益費、共同、共に')"><span>共益費（きょうえきひ）- maintenance<br>共に（とも・に）- together</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">益</div><div class="kanji-info"><h5>Benefit / Gain / Profit</h5><div class="kanji-readings">Onyomi: <span>エキ、ヤク (eki)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('共益費、利益')"><span>共益費（きょうえきひ）- fee<br>利益（りえき）- profit</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">管</div><div class="kanji-info"><h5>Pipe / Manage / Control</h5><div class="kanji-readings">Onyomi: <span>カン (kan)</span><br>Kunyomi: くだ</div></div></div><div class="kanji-example" onclick="speakText('管理費、管理、水道管')"><span>管理費（かんりひ）- admin fee<br>管理（かんり）- management</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">理</div><div class="kanji-info"><h5>Reason / Logic / Manage</h5><div class="kanji-readings">Onyomi: <span>リ (ri)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('管理費、料理、理由')"><span>管理費（かんりひ）- management fee<br>理由（りゆう）- reason</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">保</div><div class="kanji-info"><h5>Protect / Guarantee</h5><div class="kanji-readings">Onyomi: <span>ホ、ホウ (ho)</span><br>Kunyomi: たも-つ</span></div></div></div><div class="kanji-example" onclick="speakText('保証人、保険、保存')"><span>保証人（ほしょうにん）- guarantor<br>保険（ほけん）- insurance</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">証</div><div class="kanji-info"><h5>Evidence / Proof</h5><div class="kanji-readings">Onyomi: <span>ショウ (shou)</span><br>Kunyomi: あかし</div></div></div><div class="kanji-example" onclick="speakText('保証人、証明書、免許証')"><span>保証人（ほしょうにん）- guarantor<br>証明書（しょうめいしょ）- certificate</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">入</div><div class="kanji-info"><h5>Enter / Insert</h5><div class="kanji-readings">Onyomi: <span>ニュウ (nyuu)</span><br>Kunyomi: い-る、はい-る、い-れる</div></div></div><div class="kanji-example" onclick="speakText('入居、入り口、入れる')"><span>入居（にゅうきょ）- move in<br>入り口（いりぐち）- entrance</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">居</div><div class="kanji-info"><h5>Reside / Be / Exist</h5><div class="kanji-readings">Onyomi: <span>キョ、コ (kyo)</span><br>Kunyomi: い-る、お-る</div></div></div><div class="kanji-example" onclick="speakText('入居、居酒屋、居る')"><span>入居（にゅうきょ）- move in<br>居酒屋（いざかや）- Japanese pub</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">退</div><div class="kanji-info"><h5>Retreat / Withdraw / Leave</h5><div class="kanji-readings">Onyomi: <span>タイ (tai)</span><br>Kunyomi: しりぞ-く</span></div></div></div><div class="kanji-example" onclick="speakText('退去、退院、引退')"><span>退去（たいきょ）- move out<br>退院（たいいん）- hospital discharge</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">去</div><div class="kanji-info"><h5>Leave / Past / Eliminate</h5><div class="kanji-readings">Onyomi: <span>キョ、コ (kyo)</span><br>Kunyomi: さ-る</span></div></div></div><div class="kanji-example" onclick="speakText('退去、去年、過去')"><span>退去（たいきょ）- move out<br>去年（きょねん）- last year</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">電</div><div class="kanji-info"><h5>Electricity</h5><div class="kanji-readings">Onyomi: <span>デン (den)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('電気、電車、電話')"><span>電気（でんき）- electricity<br>電車（でんしゃ）- train</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">気</div><div class="kanji-info"><h5>Spirit / Atmosphere / Air</h5><div class="kanji-readings">Onyomi: <span>キ、ケ (ki, ke)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('電気、気持ち、天気')"><span>電気（でんき）- electricity<br>天気（てんき）- weather</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay Module -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>📦 Moving Day & Neighbor Greeting Roleplay (引っ越しのあいさつ)</h3>
+            <p>Master checking apartment viewings with agents and introducing yourself to neighbors with traditional gift etiquette!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-info);">
+            <h4>🏢 Scene 1: Apartment Viewing with Agent (内見で)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('こちら が リビング です。みなみむき で ひあたり が いいです。')">
+                    <strong style="color:var(--accent-primary);">不動産屋 (Agent):</strong> こちら が リビング です。南向き（みなみむき）で 日当たり（ひあたり）が いいです。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kochira ga ribingu desu. Minami muki de hiatari ga ii desu. (This is the living room. It's south-facing with great sunlight.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('ひろくて、あかるい ですね。しゅうのう は どのくらい ありますか？')">
+                    <strong style="color:var(--accent-secondary);">客 (Customer):</strong> 広くて（ひろくて）、明（あか）るい ですね。収納（しゅうのう）は どのくらい ありますか？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hirokute, akarui desu ne. Shuunou wa dono kurai arimasu ka? (It's spacious and bright! How much storage space is there?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('おしいれ が ここ と、ここ に あります。エアコン は リビング と しんしつ に ついて います。')">
+                    <strong style="color:var(--accent-primary);">不動産屋 (Agent):</strong> 押（お）し入（い）れ が ここ と、ここ に あります。エアコン は リビング と 寝室（しんしつ）に ついて います。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Oshiire ga koko to, koko ni arimasu. Eakon wa ribingu to shinshitsu ni tsuite imasu. (Closets are here and here. AC is installed in the living room and bedroom.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('この ぶっけん、きめたいん ですが、けいやく の ながれ を おしえて もらえますか？')">
+                    <strong style="color:var(--accent-secondary);">客 (Customer):</strong> この 物件（ぶっけん）、決（き）めたいん ですが、契約（けいやく）の 流（なが）れ を 教（おし）えて もらえますか？<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kono bukken, kimetain desu ga, keiyaku no nagare wo oshiete moraemasu ka? (I'd like to take this property! Could you explain the contract process?)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-success);">
+            <h4>🎁 Scene 2: Traditional Neighbor Greeting (引っ越しのあいさつ)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('すみません、となり に ひっこして きた ラジェシュ と もうします。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> すみません、隣（となり）に 引（ひ）っ越（こ）して きた ラジェシュ と 申（もう）します。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sumimasen, tonari ni hikkoshite kita Rajeshu to moushimasu. (Excuse me, I am Rajesh, I just moved in next door.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('これ、つまらない もの ですが、よかったら どうぞ。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> これ、つまらない もの ですが、よかったら どうぞ。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kore, tsumaranai mono desu ga, yokattara douzo. (This is a small/humble gift, please take it if you like. Note: Traditional humble expression!)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('あ、ごていねいに どうも ありがとうございます。')">
+                    <strong style="color:var(--accent-primary);">お隣さん (Neighbor):</strong> あ、ご丁寧（ていねい）に どうも ありがとうございます。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">A, goteinei ni doumo arigatou gozaimasu. (Oh, how polite of you! Thank you very much.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('これから おせわ に なります。よろしく おねがいします。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> これから お世話（せわ）に なります。よろしく お願（ねが）いします。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Korekara osewa ni narimasu. Yoroshiku onegaishimasu. (I will be in your care from now on. Please be kind to me / Best regards.)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 6 Moving & Housing Quiz</h3>
+                <p>Test your knowledge of apartment layouts, real estate fees, utility terms, and grammar points 30–34!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 2195–2699)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 6: ひっこし (Hikkoshi) - Moving / Ghar Badalna
+
+## 🎯 Goal: Ghar dhundhna, real estate se baat karna, moving process, address change, utilities
+
+---
+
+### **Moving & Housing Vocabulary:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| ひっこし (引っ越し) | Hikkoshi | Shifting/Moving |
+| ひっこす (引っ越す) | Hikkosu | Shift karna |
+| ふどうさんや (不動産屋) | Fudousanya | Real estate agent |
+| ぶっけん (物件) | Bukken | Property |
+| けいやく (契約) | Keiyaku | Contract |
+| かいやく (解約) | Kaiyaku | Contract cancel |
+| しききん (敷金) | Shikikin | Security deposit |
+| れいきん (礼金) | Reikin | Key money (Japan specific) |
+| やちん (家賃) | Yachin | Rent/Kiraya |
+| きょうえきひ (共益費) | Kyouekihi | Maintenance fee |
+| かんりひ (管理費) | Kanrihi | Management fee |
+| ほしょうにん (保証人) | Hoshounin | Guarantor |
+| ほしょうかいしゃ (保証会社) | Hoshou gaisha | Guarantor company |
+| にゅうきょ (入居) | Nyuukyo | Move in |
+| たいきょ (退去) | Taikyo | Move out |
+| げんじょうかいふく (現状回復) | Genjou kaifuku | Restoring original condition |
+| ないけん (内見) | Naiken | House viewing |
+
+---
+
+### **House/Apartment Features:**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| まどり (間取り) | Madori | Floor plan/Layout |
+| 1K (ワンケー) | Wan-kee | 1 room + Kitchen |
+| 1DK | Wan-dii-kee | 1 room + Dining Kitchen |
+| 1LDK | Wan-eru-dii-kee | 1 room + Living Dining Kitchen |
+| 2LDK | Nii-eru-dii-kee | 2 rooms + LDK |
+| じょう (畳) | Jou | Tatami mat (size unit) |
+| へいべい (平米/㎡) | Heibei | Square meter |
+| バストイレべつ | Basu toire betsu | Separate bath & toilet |
+| ユニットバス | Yunitto basu | Unit bath (bath+toilet together) |
+| オートロック | Ooto rokku | Auto lock |
+| エアコンつき | Eakon tsuki | AC included |
+| かぐつき (家具付き) | Kagu tsuki | Furnished |
+| ペットかのう (ペット可能) | Petto kanou | Pets allowed |
+| ちゅうしゃじょうあり (駐車場あり) | Chuushajou ari | Parking available |
+| みなみむき (南向き) | Minami muki | South facing |
+| ひあたり (日当たり) | Hiatari | Sunlight/Roshni |
+| つうき (通気) | Tsuuki | Ventilation |
+| ぼうおん (防音) | Bouon | Soundproof |
+
+---
+
+### **Utilities (ライフライン / Raifurain):**
+
+| Japanese | Reading | Meaning |
+|----------|---------|---------|
+| でんき (電気) | Denki | Electricity |
+| ガス | Gasu | Gas |
+| すいどう (水道) | Suidou | Water |
+| インターネット | Intaanetto | Internet |
+| でんわ (電話) | Denwa | Telephone |
+| こうねつひ (光熱費) | Kounetsuhi | Utility bills |
+| でんきだい (電気代) | Denkidai | Electricity bill |
+| ガスだい | Gasudai | Gas bill |
+| すいどうだい (水道代) | Suidoudai | Water bill |
+| かいせん (回線) | Kaisen | Line (internet/phone) |
+| けいやく (契約) | Keiyaku | Contract |
+| かいやく (解約) | Kaiyaku | Cancellation |
+| めいぎへんこう (名義変更) | Meigi henkou | Name transfer |
+| てつづき (手続き) | Tetsuduki | Procedure |
+
+---
+
+### **Grammar Point 30: ～ことにする (Decide to)**
+
+**Dictionary form + ことにする = _____ karne ka faisla kiya**
+**ない form + ことにする = _____ na karne ka faisla kiya**
+
+Apna decision batane ke liye:
+
+#### **Examples:**
+
+```
+あたらしい アパート に ひっこす ことにしました。
+(Atarashii apaato ni hikkosu koto ni shimashita.)
+Naye apartment mein shift hone ka decide kiya.
+
+らいげつ から ジム に かよう ことにしました。
+(Raigetsu kara jimu ni kayou koto ni shimashita.)
+Agle mahine se gym jaane ka decide kiya.
+
+おさけ を やめる ことにしました。
+(Osake wo yameru koto ni shimashita.)
+Sharab chhod ne ka decide kiya.
+
+もう たばこ を すわない ことにしました。
+(Mou tabako wo suwanai koto ni shimashita.)
+Ab cigarette nahi peene ka decide kiya.
+
+まよったけど、この ぶっけん に きめる ことにしました。
+(Mayotta kedo, kono bukken ni kimeru koto ni shimashita.)
+Confused tha, lekin yeh property choose karne ka decide kiya.
+```
+
+---
+
+### **Grammar Point 31: ～ことになる (It's been decided / Turn out)**
+
+**Dictionary form + ことになる = _____ hona tay hua / _____ hoga**
+**ない form + ことになる = _____ nahi hoga (situation wise)**
+
+External decision ya situation ke result batane ke liye:
+
+#### **Examples:**
+
+```
+らいげつ、とうきょう に てんきん (転勤) する ことになりました。
+(Raigetsu, Toukyou ni tenkin suru koto ni narimashita.)
+Agle mahine, Tokyo transfer hona tay hua.
+
+かいしゃ の りょう (寮) に すむ ことになりました。
+(Kaisha no ryou ni sumu koto ni narimashita.)
+Company ke hostel mein rehna tay hua.
+
+この アパート を でる ことになりました。
+(Kono apaato wo deru koto ni narimashita.)
+Yeh apartment chhod na padega (situation).
+
+けっきょく、ひっこし しない ことになりました。
+(Kekkyoku, hikkoshi shinai koto ni narimashita.)
+Aakhir mein, shift nahi karna hua.
+
+にほん に もう 2ねん いる ことになりました。
+(Nihon ni mou 2nen iru koto ni narimashita.)
+Japan mein 2 saal aur rehna tay hua.
+```
+
+#### **Difference: ことにする vs ことになる:**
+
+| Pattern | Who decides | Example |
+|---------|-------------|---------|
+| ことにする | Main/Apna decision | ひっこす **ことにしました** (Maine decide kiya) |
+| ことになる | Situation/Others | ひっこす **ことになりました** (Situation hua) |
+
+---
+
+### **Grammar Point 32: ～ようにする (Try to / Make sure to)**
+
+**Dictionary form + ようにする = _____ karne ki koshish karna**
+**ない form + ようにする = _____ na karne ki koshish karna**
+
+Habit ya effort batane ke liye:
+
+#### **Examples:**
+
+```
+まいにち 6じ に おきる ようにしています。
+(Mainichi 6ji ni okiru you ni shite imasu.)
+Har roz 6 baje uthne ki koshish karta hoon.
+
+やちん は まいつき おくれないように はらう ようにしています。
+(Yachin wa maitsuki okurenai you ni harau you ni shite imasu.)
+Rent har mahine late na ho, aise pay karta hoon.
+
+あたらしい ぶっけん では、でんき を けす ようにします。
+(Atarashii bukken de wa, denki wo kesu you ni shimasu.)
+Naye ghar mein, light band karne ki aadat dalunga.
+
+ゴミ の ひ を わすれない ようにして ください。
+(Gomi no hi wo wasurenai you ni shite kudasai.)
+Garbage day bhoolna mat.
+
+きんじょ に めいわく (迷惑) を かけない ようにして ください。
+(Kinjo ni meiwaku wo kakenai you ni shite kudasai.)
+Padosiyon ko pareshani na do.
+```
+
+---
+
+### **Grammar Point 33: ～ようになる (Come to / Become able to)**
+
+**Dictionary form + ようになる = _____ karne laga / _____ kar paane laga**
+**ない form + ようになる = _____ nahi karne laga**
+
+Change in ability ya habit batane ke liye:
+
+#### **Examples:**
+
+```
+にほん に きて から、まいにち じてんしゃ に のる ようになりました。
+(Nihon ni kite kara, mainichi jitensha ni noru you ni narimashita.)
+Japan aake, har roz cycle use karne laga.
+
+さいきん、はやおき できる ようになりました。
+(Saikin, hayaoki dekiru you ni narimashita.)
+Aajkal, jaldi uthne laga.
+
+この まち に すんでから、にほんご が はなせる ようになりました。
+(Kono machi ni sunde kara, nihongo ga hanaseru you ni narimashita.)
+Is sheher mein rehke, Japanese bolne laga.
+
+あかちゃん が あるける ようになりました。
+(Akachan ga arukeru you ni narimashita.)
+Baby chalne laga.
+
+ねつ が さがって、たべられる ようになりました。
+(Netsu ga sagatte, taberareru you ni narimashita.)
+Bukhar kam hua, kha paane laga.
+```
+
+---
+
+### **Grammar Point 34: ～てある (Has been done / State of completion)**
+
+**Transitive verb て-form + ある = _____ kiya hua hai (kisi ne)**
+
+Koi action ka result abhi bhi hai - state batata hai:
+
+#### **Examples:**
+
+```
+まど が あけて あります。
+(Mado ga akete arimasu.)
+Khidki khuli hui hai. (kisi ne kholi)
+
+でんき が けして あります。
+(Denki ga keshite arimasu.)
+Light band ki hui hai.
+
+つくえ の うえ に メモ が かいて あります。
+(Tsukue no ue ni memo ga kaite arimasu.)
+Table pe note likha hua hai.
+
+れいぞうこ に ビール が ひやして あります。
+(Reizouko ni biiru ga hiyashite arimasu.)
+Fridge mein beer thanda kiya hua hai.
+
+へや は もう そうじして あります。
+(Heya wa mou soujishite arimasu.)
+Room already saaf kiya hua hai.
+
+ひっこし の ために、にもつ が つめて あります。(詰める)
+(Hikkoshi no tame ni, nimotsu ga tsumete arimasu.)
+Shifting ke liye, saamaan pack kiya hua hai.
+```
+
+#### **Difference: ている vs てある:**
+
+| Pattern | Meaning | Example |
+|---------|---------|---------|
+| ている | Action happening / State (natural) | まど が あいて**いる** (Khidki khuli hai - state) |
+| てある | Action done by someone (result) | まど が あけて**ある** (Kisi ne kholi hai) |
+
+⚠️ **てある** sirf transitive verbs ke saath use hota hai!
+
+---
+
+### **Real Estate Conversation:**
+
+```
+【ぶっけん を さがす】(Looking for property)
+
+きゃく: すみません、1LDK の ぶっけん を さがして いるんですが...
+(Kyaku: Sumimasen, 1LDK no bukken wo sagashite irun desu ga...)
+Customer: Excuse me, 1LDK property dhundh raha hoon...
+
+ふどうさん: はい、どの あたり で おさがし ですか？
+(Fudousan: Hai, dono atari de osagashi desu ka?)
+Agent: Haan, kaun se area mein dhundh rahe ho?
+
+きゃく: えき から あるいて 10ぷん いない が いいんですが。
+(Kyaku: Eki kara aruite 10pun inai ga iin desu ga.)
+Customer: Station se paidal 10 minute ke andar chahiye.
+
+ふどうさん: よさん (予算) は おいくら くらい ですか？
+(Fudousan: Yosan wa oikura kurai desu ka?)
+Agent: Budget kitna hai?
+
+きゃく: やちん は 8まんえん まで で かんがえて います。
+(Kyaku: Yachin wa 8man'en made de kangaete imasu.)
+Customer: Rent 80,000 yen tak soch raha hoon.
+
+ふどうさん: なにか じょうけん (条件) は ありますか？
+(Fudousan: Nanika jouken wa arimasu ka?)
+Agent: Koi conditions hain?
+
+きゃく: バストイレべつ で、2かい いじょう が いいです。
+あと、ペットかのう の ところ が いいんですが...
+(Kyaku: Basu toire betsu de, 2kai ijou ga ii desu.
+Ato, petto kanou no tokoro ga iin desu ga...)
+Customer: Bath toilet alag, 2nd floor ya upar chahiye.
+Aur, pets allowed jagah chahiye...
+
+ふどうさん: わかりました。いくつか ぶっけん が ありますので、
+ないけん されますか？
+(Fudousan: Wakarimashita. Ikutsuka bukken ga arimasu node,
+naiken saremasu ka?)
+Agent: Samajh gaya. Kuch properties hain, viewing karoge?
+
+きゃく: はい、おねがいします。
+(Kyaku: Hai, onegaishimasu.)
+Customer: Haan, please.
+```
+
+```
+【ないけん で】(During viewing)
+
+ふどうさん: こちら が リビング です。みなみむき で ひあたり が いいです。
+(Fudousan: Kochira ga ribingu desu. Minami muki de hiatari ga ii desu.)
+Agent: Yeh living room hai. South facing hai, sunlight acchi hai.
+
+きゃく: ひろくて、あかるい ですね。
+しゅうのう (収納) は どの くらい ありますか？
+(Kyaku: Hirokute, akarui desu ne. Shuunou wa dono kurai arimasu ka?)
+Customer: Bada aur ujala hai na. Storage kitna hai?
+
+ふどうさん: おしいれ が ここ と、ここ に あります。
+(Fudousan: Oshiire ga koko to, koko ni arimasu.)
+Agent: Closet yahaan aur yahaan hai.
+
+きゃく: エアコン は ついて いますか？
+(Kyaku: Eakon wa tsuite imasu ka?)
+Customer: AC laga hai?
+
+ふどうさん: はい、リビング と しんしつ に ついて います。
+(Fudousan: Hai, ribingu to shinshitsu ni tsuite imasu.)
+Agent: Haan, living aur bedroom mein laga hai.
+
+きゃく: いい ですね。インターネット は すぐ つかえますか？
+(Kyaku: Ii desu ne. Intaanetto wa sugu tsukaemasu ka?)
+Customer: Accha hai. Internet turant use kar sakta hoon?
+
+ふどうさん: はい、かいせん は もう ひいて あるので、
+プロバイダー と けいやく すれば すぐ つかえます。
+(Fudousan: Hai, kaisen wa mou hiite aru node,
+purobaidaa to keiyaku sureba sugu tsukaemasu.)
+Agent: Haan, line already lagi hai, toh provider se contract karo toh turant use kar sakte ho.
+
+きゃく: この ぶっけん、きめたいん ですが、けいやく の ながれ を おしえて もらえますか？
+(Kyaku: Kono bukken, kimetain desu ga, keiyaku no nagare wo oshiete moraemasu ka?)
+Customer: Yeh property lena chahta hoon, contract ka process bata sakte ho?
+```
+
+---
+
+### **Moving Process Checklist:**
+
+```
+【ひっこし の ながれ】(Moving process)
+
+1. ぶっけん を さがす
+   (Bukken wo sagasu)
+   Property dhundhna
+
+2. ないけん を する
+   (Naiken wo suru)
+   Viewing karna
+
+3. もうしこみ を する
+   (Moushikomi wo suru)
+   Application karna
+
+4. しんさ (審査) を まつ
+   (Shinsa wo matsu)
+   Screening ka wait karna
+
+5. けいやく を する
+   (Keiyaku wo suru)
+   Contract karna
+
+6. しききん・れいきん・やちん を はらう
+   (Shikikin, reikin, yachin wo harau)
+   Deposit, key money, rent pay karna
+
+7. かぎ を もらう
+   (Kagi wo morau)
+   Key lena
+
+8. ライフライン の てつづき を する
+   (Raifurain no tetsuduki wo suru)
+   Utilities ka procedure karna
+   - でんき、ガス、すいどう の けいやく
+   - インターネット の けいやく
+
+9. じゅうしょへんこう (住所変更) の てつづき を する
+   (Juusho henkou no tetsuduki wo suru)
+   Address change ka procedure karna
+   - くやくしょ で てんにゅうとどけ (転入届)
+   - ぎんこう、カード、かいしゃ など
+
+10. ひっこし を する
+    (Hikkoshi wo suru)
+    Shifting karna
+
+11. きんじょ に あいさつ する
+    (Kinjo ni aisatsu suru)
+    Padosiyon ko greeting karna
+```
+
+---
+
+### **Neighbor Greeting (引っ越し の あいさつ):**
+
+```
+すみません、となり に ひっこして きた [なまえ] と もうします。
+(Sumimasen, tonari ni hikkoshite kita [namae] to moushimasu.)
+Excuse me, bagal mein shift hoke aaya, [naam] hoon.
+
+これ、つまらない もの ですが、よかったら どうぞ。
+(Kore, tsumaranai mono desu ga, yokattara douzo.)
+Yeh chhoti si cheez hai, agar accha lage toh lijiye.
+
+これから おせわ に なります。よろしく おねがいします。
+(Korekara osewa ni narimasu. Yoroshiku onegaishimasu.)
+Ab se aapki care mein hoon. Please acche se rehna.
+```
+
+⚠️ Japan mein shift hone pe padosiyon ko chhota gift dena common hai - sabun, towel, sweets etc.
+
+---
+
+# 📝 GRAMMAR SUMMARY (Chapter 4-6):
+
+| # | Pattern | Meaning | Example |
+|---|---------|---------|---------|
+| 19 | ～てから | After doing | たべてから、でかけます |
+| 20 | ～まえに | Before doing | ねるまえに、はをみがきます |
+| 21 | ～ておく | Do in advance | りょうりをつくっておきます |
+| 22 | ～ながら | While doing | おんがくをききながら |
+| 23 | ～たらいい | Should (advice) | れんしゅうしたらいい |
+| 24 | Duration + かかる | Takes time | 1じかんかかります |
+| 25 | Duration に Frequency | X times per Y | 1しゅうかんに3かい |
+| 26 | ～あいだ/あいだに | During/While | なつやすみのあいだに |
+| 27 | ～までに | By (deadline) | 5じまでに |
+| 28 | ～ところ | Just about to/did | いまでかけるところ |
+| 29 | ～てしまう | Completely/Regret | わすれてしまった |
+| 30 | ～ことにする | Decide to | ひっこすことにした |
+| 31 | ～ことになる | It's been decided | てんきんすることになった |
+| 32 | ～ようにする | Try to/Make sure | はやくおきるようにする |
+| 33 | ～ようになる | Come to/Become able | はなせるようになった |
+| 34 | ～てある | Has been done | まどがあけてある |
+
+---
+
+# 📝 VOCABULARY CATEGORIES (Ch 4-6):
+
+### **Cooking (りょうり):**
+```
+きります、やきます、にます、ゆでます、いためます、
+あげます、むします、まぜます、いれます、くわえます
+うすぎり、せんぎり、みじんぎり
+```
+
+### **Ingredients (ざいりょう):**
+```
+たまねぎ、にんじん、じゃがいも、キャベツ、
+ぎゅうにく、ぶたにく、とりにく、さかな、えび
+しお、さとう、しょうゆ、みそ、あぶら
+```
+
+### **Time (じかん):**
+```
+～ふん、～じかん、～にち、～しゅうかん、～かげつ、～ねん
+まえに、あとで、あいだに、までに、ところ
+```
+
+### **Housing (すまい):**
+```
+ひっこし、ふどうさんや、ぶっけん、けいやく
+やちん、しききん、れいきん
+1K、1DK、1LDK、バストイレべつ
+でんき、ガス、すいどう
+```
+
+---
+
+# ⚡ Quick Practice Tips (Ch 4-6):
+
+1. **Cooking verbs** practice karo - Recipe dekhke samjho
+2. **Time expressions** bahut use hote hain - Routine describe karo
+3. **てから/まえに/ながら** sequence batane ke liye important
+4. **ことにする vs ことになる** - Apna decision vs Situation
+5. **ようにする vs ようになる** - Effort vs Change
+6. **てしまう** casual mein **ちゃう/じゃう** banta hai
+7. **てある** - Result state batane ke liye
+
+---
+
+**Chapter 7-9 chahiye toh bata do!** 💪🎌
+
+**つづけて がんばって ください！**
+(Tsudukete ganbatte kudasai!)
+Keep going, all the best!
+
+========================================================
+
+========================================================
+
+Bilkul — chalo ab **Irodori (いろどり) Elementary 2, Chapter 7 to 9** karte hain.  
+Main response **Hinglish** mein rakhunga, aur **kanji ke saath ひらがな reading** dunga.
+
+---
+
+# Irodori (いろどり) Elementary 2 - Chapter 7 to 9 Complete Guide
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 06: ひっこし (Moving & Housing) • Built with 100% Verbatim Fidelity & Advanced Interactive Audio</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const propertyData = {
+        "1k": {
+            decide: { jp: "家賃（やちん）が 安（やす）いので、この １Ｋの アパートに 引（ひ）っ越（こ）す ことにしました。", rom: "Yachin ga yasui node, kono 1K no apaato ni hikkosu koto ni shimashita.", hi: "Hindi Translation: Rent sasta hai, isliye is 1K apartment mein shift hone ka decide kiya (my decision)." },
+            turnout: { jp: "会社（かいしゃ）の 寮（りょう）の １Ｋに 住（す）む ことになりました。", rom: "Kaisha no ryou no 1K ni sumu koto ni narimashita.", hi: "Hindi Translation: Company ke hostel ke 1K room mein rehna tay hua (organization decision)." },
+            try: { jp: "１Ｋは 狭（せま）いので、荷物（にもつ）を 増（ふ）やさない ようにしています。", rom: "1K wa semai node, nimotsu wo fuyasanai you ni shite imasu.", hi: "Hindi Translation: 1K chhota hai, isliye saamaan na badhane ki koshish karta hoon (habit/effort)." },
+            able: { jp: "１Ｋの 一人（ひとり）暮（ぐ）らしに 慣（な）れて、料理（りょうり）ができる ようになりました。", rom: "1K no hitorigurashi ni narete, ryouri ga dekiru you ni narimashita.", hi: "Hindi Translation: 1K mein akele rehne ki aadat ho gayi, aur khana bana paane laga (ability change)." },
+            state: { jp: "１Ｋの 部屋（へや）には、もう エアコンが つけて あります。", rom: "1K no heya ni wa, mou eakon ga tsukete arimasu.", hi: "Hindi Translation: 1K room mein already AC laga hua hai (result state by landlord)." }
+        },
+        "1ldk": {
+            decide: { jp: "広（ひろ）い リビングが 欲（ほ）しかったので、１ＬＤＫに 決（き）める ことにしました。", rom: "Hiroi ribingu ga hoshikatta node, 1LDK ni kimeru koto ni shimashita.", hi: "Hindi Translation: Bada living room chahiye tha, isliye 1LDK choose karne ka decide kiya." },
+            turnout: { jp: "結婚（けっこん）するので、二人（ふたり）で １ＬＤＫに 住（す）む ことになりました。", rom: "Kekkon suru node, futari de 1LDK ni sumu koto ni narimashita.", hi: "Hindi Translation: Shaadi kar rahe hain, isliye dono ke liye 1LDK mein rehna tay hua." },
+            try: { jp: "１ＬＤＫの 部屋（へや）を 毎日（まいにち）綺麗（きれい）に 掃除（そうじ）する ようにしています。", rom: "1LDK no heya wo mainichi kirei ni souji suru you ni shite imasu.", hi: "Hindi Translation: 1LDK room ko har roz saaf rakhne ki koshish karta hoon." },
+            able: { jp: "キッチンが 広（ひろ）くなって、友達（ともだち）を 招待（しょうたい）できる ようになりました。", rom: "Kitchin ga hiroku natte, tomodachi wo shoutai dekiru you ni narimashita.", hi: "Hindi Translation: Kitchen bada ho gaya, toh doston ko invite kar paane laga." },
+            state: { jp: "１ＬＤＫの 窓（まど）には、防音（ぼうおん）カーテンが 掛（か）けて あります。", rom: "1LDK no mado ni wa, bouon kaaten ga kakete arimasu.", hi: "Hindi Translation: 1LDK ki khidki pe soundproof curtain laga hua hai (result state)." }
+        },
+        "2ldk": {
+            decide: { jp: "子供（こども）が 生（う）まれたので、２ＬＤＫの 物件（ぶっけん）を 探（さが）す ことにしました。", rom: "Kodomo ga umareta node, 2LDK no bukken wo sagasu koto ni shimashita.", hi: "Hindi Translation: Baccha hua hai, isliye 2LDK property dhundhne ka decide kiya." },
+            turnout: { jp: "来月（らいげつ）、駅前（えきまえ）の ２ＬＤＫの マンションに 引（ひ）っ越（こ）す ことになりました。", rom: "Raigetsu, ekimae no 2LDK no manshon ni hikkosu koto ni narimashita.", hi: "Hindi Translation: Agle mahine station ke saamne 2LDK flat mein shift hona tay hua." },
+            try: { jp: "２ＬＤＫの 家賃（やちん）は 高（たか）いので、電気代（でんきだい）を 節約（せつやく）する ようにしています。", rom: "2LDK no yachin wa takai node, denkidai wo setsuyaku suru you ni shite imasu.", hi: "Hindi Translation: 2LDK ka rent mehnga hai, isliye bijli bil bachaane ki koshish karta hoon." },
+            able: { jp: "２ＬＤＫに 住（す）んでから、心（こころ）に 余裕（よゆう）が 持（も）てる ようになりました。", rom: "2LDK ni sunde kara, kokoro ni yoyuu ga moteru you ni narimashita.", hi: "Hindi Translation: 2LDK mein rehne ke baad, dil/mind mein relax ho paane laga." },
+            state: { jp: "２ＬＤＫの 玄関（げんかん）には、防犯（ぼうはん）カメラが 設置（せっち）して あります。", rom: "2LDK no genkan ni wa, bouhan kamera ga setchi shite arimasu.", hi: "Hindi Translation: 2LDK ke entrance pe security camera laga hua hai." }
+        },
+        features: {
+            decide: { jp: "バストイレ別（べつ）で 南向き（みなみむき）の 部屋（へや）を 選（えら）ぶ ことにしました。", rom: "Basu toire betsu de minamimuki no heya wo erabu koto ni shimashita.", hi: "Hindi Translation: Separate bath/toilet aur south-facing room chunne ka decide kiya." },
+            turnout: { jp: "審査（しんさ）に 通（とお）って、オートロック付（つ）きの 物件（ぶっけん）に 決（き）まる ことになりました。", rom: "Shinsa ni tootte, ooto rokku tsuki no bukken ni kimaru koto ni narimashita.", hi: "Hindi Translation: Screening pass ho gayi, aur auto-lock property milna tay hua." },
+            try: { jp: "南向き（みなみむき）の 部屋（へや）の 日当たり（ひあたり）を 活（い）かして、植物（しょくぶつ）を 育（そだ）てる ようにしています。", rom: "Minamimuki no heya no hiatari wo ikashite, shokubutsu wo sodateru you ni shite imasu.", hi: "Hindi Translation: South-facing roshni ka fayda utha ke plants ugaane ki koshish karta hoon." },
+            able: { jp: "防音（ぼうおん）の 部屋（へや）に 引（ひ）っ越（こ）して、夜（よる）も 静（しず）かに 眠（ねむ）れる ようになりました。", rom: "Bouon no heya ni hikkoshite, yoru mo shizuka ni nemureru you ni narimashita.", hi: "Hindi Translation: Soundproof room mein aake raat ko shanti se so paane laga." },
+            state: { jp: "内見（ないけん）の 部屋（へや）には、綺麗（きれい）な 家具（かぐ）が 置（お）いて あります。", rom: "Naiken no heya ni wa, kirei na kagu ga oite arimasu.", hi: "Hindi Translation: Viewing wale room mein sundar furniture rakha hua hai." }
+        },
+        utilities: {
+            decide: { jp: "入居（にゅうきょ）の 前（まえ）に、インターネットの 回線（かいせん）を 契約（けいやく）する ことにしました。", rom: "Nyuukyo no mae ni, intaanetto no kaisen wo keiyaku suru koto ni shimashita.", hi: "Hindi Translation: Move-in se pehle internet line contract karne ka decide kiya." },
+            turnout: { jp: "来週（らいしゅう）、電気（でんき）と ガスの 開通（かいつう）工事（こうじ）を する ことになりました。", rom: "Raishuu, denki to gasu no kaitsuu kouji wo suru koto ni narimashita.", hi: "Hindi Translation: Agle hafte bijli aur gas chalu karne ka kaam hona tay hua." },
+            try: { jp: "退去（たいきょ）する 時（とき）、１週間前（いっしゅうかんまえ）に 解約（かいやく）の 連絡（れんらく）を する ようにしてください。", rom: "Taikyo suru toki, isshuukan mae ni kaiyaku no renraku wo suru you ni shite kudasai.", hi: "Hindi Translation: Move out karte waqt, 1 week pehle cancellation inform karne ki aadat rakho." },
+            able: { jp: "スマホの アプリで、光熱費（こうねつひ）を 確認（かくにん）できる ようになりました。", rom: "Sumaho no apuri de, kounetsuhi wo kakunin dekiru you ni narimashita.", hi: "Hindi Translation: Smartphone app se utility bills check kar paane laga." },
+            state: { jp: "水道（すいどう）と 電気（でんき）は、もう 繋（つな）げて あります。", rom: "Suidou to denki wa, mou tsunagete arimasu.", hi: "Hindi Translation: Paani aur bijli already connect ki hui hai (ready to use)." }
+        }
+    };
+
+    function updatePropertySim() {
+        const p = document.getElementById('sim-plan').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = propertyData[p][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakPropertySim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 新しい アパートに 引っ越す _______。\n(I DECIDED on my own to move to a new apartment)", opt: ["ことにしました (koto ni shimashita)", "ことになりました (koto ni narimashita)", "ようにしました (you ni shimashita)", "ようになりました (you ni narimashita)"], ans: 0 },
+        { q: "2. 来月、東京に 転勤する _______。\n(It HAS BEEN DECIDED by my company that I will transfer to Tokyo)", opt: ["ことにしました (koto ni shimashita)", "ことになりました (koto ni narimashita)", "ようにしています (you ni shite imasu)", "てあります (te arimasu)"], ans: 1 },
+        { q: "3. 家賃は 毎月 遅れない _______ 払う ようにしています。\n(I MAKE SURE / TRY NOT to be late paying rent every month)", opt: ["ように (you ni)", "ために (tame ni)", "のに (no ni)", "せいで (sei de)"], ans: 0 },
+        { q: "4. 日本に 来てから、毎日 自転車に 乗る _______。\n(I CAME TO / BECAME ABLE to ride a bicycle every day after coming to Japan)", opt: ["ようにしました (you ni shimashita)", "ようになりました (you ni narimashita)", "ことにしました (koto ni shimashita)", "てあります (te arimasu)"], ans: 1 },
+        { q: "5. 窓が 開けて _______。\n(The window HAS BEEN OPENED BY SOMEONE and remains open for ventilation)", opt: ["います (imasu)", "あります (arimasu)", "みます (mimasu)", "おきます (okimasu)"], ans: 1 },
+        { q: "6. 「1LDK」の 「LDK」の 正しい 意味 は 何ですか？\n(What does LDK stand for in Japanese apartment layouts?)", opt: ["Living, Dining, Kitchen", "Large Dining Kitchen", "Luxury Double Kitchen", "Light Day Kitchen"], ans: 0 },
+        { q: "7. 「礼金（れいきん）」の 正しい 意味 と 日本の 文化 は どれですか？\n(What is the traditional Japanese meaning of 礼金 - reikin?)", opt: ["Security deposit (refunded later)", "Key money / Gratuity gift money paid to the landlord (non-refundable)", "Monthly maintenance fee", "Real estate agency broker fee"], ans: 1 },
+        { q: "8. 引っ越しの あいさつで、お隣さんに プレゼントを 渡す時、何と 言いますか？\n(Traditional humble phrase when giving a greeting gift to a neighbor?)", opt: ["これは 高い 物です (Kore wa takai mono desu)", "これ、つまらない 物ですが、よかったら どうぞ (Kore, tsumaranai mono desu ga...)", "必ず 食べてください (Kanarazu tabete kudasai)", "お金を 払ってください (Okane wo haratte kudasai)"], ans: 1 },
+        { q: "9. 「光熱費（こうねつひ）」の 正しい 意味 は 何ですか？\n(What does 光熱費 - kounetsuhi mean?)", opt: ["Real estate agency fee", "Utility bills (electricity, gas, heating)", "Apartment key replacement fee", "Internet router rental fee"], ans: 1 },
+        { q: "10. 「内見（ないけん）」の 正しい 意味 は 何ですか？\n(What is the meaning of 内見 - naiken?)", opt: ["Signing the rental contract", "House / property viewing in person", "Paying the security deposit", "Moving furniture into the room"], ans: 1 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Amazing! You are a master of Japanese real estate & housing grammar!':'💪 Keep practicing! Review the layout codes and grammar cards!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

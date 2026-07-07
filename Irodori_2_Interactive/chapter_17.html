@@ -1,0 +1,695 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori Elem 2 – Chapter 17: ルール と あんぜん (Rules and Safety)</title>
+    <meta name="description" content="Interactive Japanese study for Irodori Elementary 2 Chapter 17: ルールとあんぜん. Covers rules, safety, trash sorting, disaster evacuation, and grammar (~ことになっています, ~場合は, ~ようです, ~ないようにしてください).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo-area">
+        <div class="logo-badge">🛡️ 初級 2 (ELEM 2)</div>
+        <div class="logo-text">
+            <h1>Irodori Elementary 2 (A2-2) • Enriched Edition</h1>
+            <p>Chapter 17: ルール と あんぜん (Rules and Safety) • Disaster Prevention & Regulations</p>
+        </div>
+    </div>
+    <div class="header-controls">
+        <button class="btn-audio-global" onclick="speakText('この アパート では よる じゅうじ いこう は しずかに する ことに なって います。じしん の ばあい は エレベーター を つかわないで ください。ここ に くるま を とめない ように して ください。')"><span>🔊</span> Speak Chapter Highlights</button>
+        <button class="btn-theme" onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="banner">
+        <h2>🌟 ルール と あんぜん (Ruuru to Anzen) - Rules and Safety</h2>
+        <p>Master community rules, trash sorting, and safety manners (<strong>ルール・決まり・マナー・安全・危険・注意・分別・資源ゴミ</strong>), handling disasters and evacuation (<strong>地震・台風・火事・避難所・防災・非常袋・懐中電灯</strong>), and regulatory & prevention grammar (<strong>～ことになっています / ～場合は / ～ようです / ～ないようにしてください</strong>)!</p>
+        <div class="banner-meta">
+            <span class="meta-pill">📍 Lines 5879–6090</span>
+            <span class="meta-pill">💬 Grammar Points 84–87</span>
+            <span class="meta-pill">📚 40+ Rules & Safety Cards</span>
+            <span class="meta-pill">🔊 Native TTS Audio</span>
+            <span class="meta-pill">🈹 24 Kanjis</span>
+            <span class="meta-pill">🚀 Evacuation Roleplays</span>
+        </div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('simulator',this)"><span>🌟</span> Rules & Disaster Safety Simulator</button>
+        <button class="tab-btn" onclick="switchTab('grammar',this)"><span>⚡</span> Grammar: Regulations & Safety (Pt 84–87)</button>
+        <button class="tab-btn" onclick="switchTab('vocab',this)"><span>🗣️</span> 40+ Audio Rules & Emergency Flashcards</button>
+        <button class="tab-btn" onclick="switchTab('kanji',this)"><span>🈹</span> Kanji Mastery (24 Ch 17 Kanjis)</button>
+        <button class="tab-btn" onclick="switchTab('roleplay',this)"><span>🚀</span> Trash Sorting & Earthquake Evacuation Roleplays</button>
+        <button class="tab-btn" onclick="switchTab('quiz',this)"><span>🎮</span> 10-Question Safety & Rules Quiz</button>
+        <button class="tab-btn" onclick="switchTab('verbatim',this)"><span>📖</span> Verbatim Original Text (100% Complete)</button>
+    </div>
+
+    <!-- TAB 1: Rules & Safety Simulator -->
+    <div id="tab-simulator" class="tab-content active">
+        <div class="interactive-box">
+            <h4>🌟 Interactive Community Rules & Disaster Safety Simulator (ルール・防災安全シミュレーター)</h4>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;">Select an apartment rule or emergency disaster scenario and a grammar pattern to generate authentic Japanese safety instructions and regulations!</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Select Scenario (場面)</label>
+                    <select id="sim-scene" onchange="updateSafetySim()">
+                        <option value="garbage">🗑️ Garbage Sorting & Disposal (ゴミの分別・朝8時までに出すこと / Trash rules)</option>
+                        <option value="earthquake">🌋 Earthquake Evacuation (地震の場合・エレベーターを使わない / Disaster response)</option>
+                        <option value="fire">🔥 Fire Emergency (火事の場合・すぐ119番・非常口 / Fire safety)</option>
+                        <option value="typhoon">🌀 Typhoon Warning & Prep (台風警報・非常袋と懐中電灯を備える / Storm prep)</option>
+                        <option value="nosmoking">🚭 No Smoking / No Entry Rules (禁煙・立入禁止・ここで吸わないこと / Prohibitions)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Grammar Focus</label>
+                    <select id="sim-gram" onchange="updateSafetySim()">
+                        <option value="kotoninatteiru">📋 Established Rule (～ことになっています - Rule hai ki / It has been decided that)</option>
+                        <option value="baai">🚨 Conditional Case (～場合は - In case of / Agar aisi situation ho)</option>
+                        <option value="youdesu">🔍 Evidential Conjecture (～ようです - It seems / Lagta hai situation dekhkar)</option>
+                        <option value="naiyouni">🛑 Preventative Instruction (～ないようにしてください - Please make sure not to)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="output-panel">
+                <div class="output-jp" id="sim-jp">この アパート では、もえる ゴミ は げつようび と もくようび に だす ことに なって います。</div>
+                <div class="output-rom" id="sim-rom">Kono apaato dewa, moeru gomi wa getsuyoubi to mokuyoubi ni dasu koto ni natte imasu.</div>
+                <div class="output-meaning" id="sim-hi">Hindi Translation: Is apartment mein rule hai ki burnable kachra Monday aur Thursday ko nikalna hota hai!</div>
+                <button class="btn-speak" onclick="speakSafetySim()">🔊 Speak Rule/Safety Instruction in Japanese</button>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h3>🚀 Essential Disaster & Safety Keywords (防災と安全のキーワード)</h3>
+            <p>Click any card to listen to the native pronunciation and learn vital Japanese safety terminology!</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">じしん (地震) と ひなん (避難)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Jishin to Hinan • Earthquake and evacuation</div><div class="meaning-text">Bhookamp (地震) aur Bachao ke liye bhagna / Evacuate karna (避難). "近くの公園が避難所になっています。"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ぶんべつ (分別) / しげん ゴミ (資源ゴミ)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Bunbetsu / Shigen gomi • Trash sorting / Recyclables</div><div class="meaning-text">Kachra alag alag karna (分別). Japan mein garbage sorting strictly follow karna padta hai!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ひじょうぶくろ (非常袋) と かいちゅうでんとう (懐中電灯)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hijoubukuro / Kaichuudentou • Emergency bag / Flashlight</div><div class="meaning-text">Emergency bag aur Torch. "地震に備えて、水や懐中電灯を準備しています。"</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">きんえん (禁煙) / たちいり きんし (立入禁止)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kin'en / Tachiiri kinshi • No smoking / No entry</div><div class="meaning-text"> धूम्रपान निषेध (禁煙) aur No entry / Andar aana mana hai (立入禁止).</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">けいほう (警報) と ひじょうぐち (非常口)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Keihou to Hijouguchi • Warning alarm / Emergency exit</div><div class="meaning-text">Chetawani (警報) aur Emergency exit (非常口 - green glowing sign). Always check where it is!</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ぼうさい (防災) と そなえる (備える)</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Bousai to Sonaeru • Disaster prevention / To prepare for</div><div class="meaning-text">Aapda prabandhan (防災) aur Taiyari rakhna (備える). "防災のために水を準備しておいたほうがいいです。"</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 2: Grammar Simulator -->
+    <div id="tab-grammar" class="tab-content">
+        <div class="grammar-card">
+            <div class="grammar-title"><span>1. Established Rules & System: It is decided that / Rule hai ki</span><span class="particle-badge">Pt 84</span></div>
+            <div class="grammar-formula">Dictionary form / ない-form + ことに なって います</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ことになっています</strong> to describe established regulations, apartment rules, customs, or organizational arrangements ("Rule hai ki... / It has been decided that..."). Unlike <i>~nakereba narimasen</i> (personal obligation), this expresses an objective social or institutional rule!</p>
+            <ul class="example-list">
+                <li onclick="speakText('この アパート では、よる じゅうじ いこう は しずかに する ことに なって います。')">
+                    <span class="ex-jp">この アパートでは、夜（よる）10時（じ）以降（いこう）は 静（しず）かに する ことに なっています。</span>
+                    <span class="ex-rom">Kono apaato dewa, yoru 10-ji ikou wa shizuka ni suru koto ni natte imasu. (Rule hai ki raat 10 ke baad shaant rehna hota hai.)</span>
+                </li>
+                <li onclick="speakText('ゴミ は げつようび と もくようび に だす ことに なって います。')">
+                    <span class="ex-jp">ゴミは 月曜日（げつようび）と 木曜日（もくようび）に 出（だ）す ことに なっています。</span>
+                    <span class="ex-rom">Gomi wa getsuyoubi to mokuyoubi ni dasu koto ni natte imasu. (Rule hai ki garbage Monday aur Thursday ko nikalna hota hai.)</span>
+                </li>
+                <li onclick="speakText('ここ では たばこ を すわない ことに なって います。')">
+                    <span class="ex-jp">ここ では たばこ を 吸（す）わない ことに なっています。</span>
+                    <span class="ex-rom">Koko dewa tabako wo suwanai koto ni natte imasu. (Yahaan smoking mana hai / rule hai ki smoke nahi karte.)</span>
+                </li>
+                <li onclick="speakText('かいぎ には ごふん まえに くる ことに なって います。')">
+                    <span class="ex-jp">会議（かいぎ）には 5分（ふん）前（まえ）に 来（く）る ことに なっています。</span>
+                    <span class="ex-rom">Kaigi ni wa 5-fun mae ni kuru koto ni natte imasu. (Rule hai ki meeting mein 5 min pehle aana hota hai.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-secondary);">
+            <div class="grammar-title"><span>2. Conditional Situation: In case of / Agar aisi situation ho</span><span class="particle-badge" style="background:var(--accent-secondary);">Pt 85</span></div>
+            <div class="grammar-formula">Noun + の 場合は / Verb plain form + 場合は</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～場合は（ばあいは）</strong> to talk about emergency conditions, hypothetical scenarios, or special cases ("Agar aisi situation ho / In case of_____"). Highly used in safety manuals and disaster instructions!</p>
+            <ul class="example-list">
+                <li onclick="speakText('じしん の ばあい は、エレベーター を つかわないで ください。')">
+                    <span class="ex-jp">地震（じしん）の 場合（ばあい）は、エレベーター を 使（つか）わないで ください。</span>
+                    <span class="ex-rom">Jishin no baai wa, erebeetaa wo tsukawanaide kudasai. (Earthquake ke case mein elevator use mat kijiye!)</span>
+                </li>
+                <li onclick="speakText('かじ の ばあい は、すぐ ひゃくじゅうきゅうばん に でんわ して ください。')">
+                    <span class="ex-jp">火事（かじ）の 場合は、すぐ 119番（ばん）に 電話（でんわ）してください。</span>
+                    <span class="ex-rom">Kaji no baai wa, sugu 119-ban ni denwa shite kudasai. (Aag lagne ke case mein turant 119 pe phone kijiye.)</span>
+                </li>
+                <li onclick="speakText('あめ が つよい ばあい は、イベント は ちゅうし です。')">
+                    <span class="ex-jp">雨（あめ）が 強（つよ）い 場合は、イベントは 中止（ちゅうし）です。</span>
+                    <span class="ex-rom">Ame ga tsuyoi baai wa, ibento wa chuushi desu. (Agar baarish tez ho toh event cancel hai.)</span>
+                </li>
+                <li onclick="speakText('なにか こまった こと が あった ばあい は、かんりにん に れんらく して ください。')">
+                    <span class="ex-jp">何（なに）か 困（こま）った ことが あった 場合は、管理人（かんりにん）に 連絡（れんらく）してください。</span>
+                    <span class="ex-rom">Nanika komatta koto ga atta baai wa, kanrinin ni renraku shite kudasai. (Agar koi problem ho toh manager ko contact kijiye.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-warning);">
+            <div class="grammar-title"><span>3. Evidential Conjecture: It seems / Lagta hai situation dekhkar</span><span class="particle-badge" style="background:var(--accent-warning);">Pt 86</span></div>
+            <div class="grammar-formula">Verb plain / Adj / Noun + ようです (It appears / seems based on visual evidence)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ようです</strong> when you make a judgment or guess based on what you see or sense around you ("Lagta hai / It seems"). Note: <i>~soudesu</i> is used for things you heard or immediate visual feeling, while <i>~youdesu</i> represents analytical observation!</p>
+            <ul class="example-list">
+                <li onclick="speakText('そと は さむい よう です。')">
+                    <span class="ex-jp">外（そと）は 寒（さむ）い ようです。</span>
+                    <span class="ex-rom">Soto wa samui you desu. (Bahar thand lagti hai - e.g., seeing people shiver or wind blowing.)</span>
+                </li>
+                <li onclick="speakText('この みち は あぶない よう です。')">
+                    <span class="ex-jp">この 道（みち）は 危（あぶ）ない ようです。</span>
+                    <span class="ex-rom">Kono michi wa abunai you desu. (Yeh road dangerous lagti hai - seeing dark unlit path.)</span>
+                </li>
+                <li onclick="speakText('でんしゃ が とまって いる よう です。')">
+                    <span class="ex-jp">電車（でんしゃ）が 止（と）まっている ようです。</span>
+                    <span class="ex-rom">Densha ga tomatte iru you desu. (Lagta hai train ruk gayi hai - seeing crowd waiting on platform.)</span>
+                </li>
+                <li onclick="speakText('だれ も いない よう です。')">
+                    <span class="ex-jp">誰（だれ）も いない ようです。</span>
+                    <span class="ex-rom">Dare mo inai you desu. (Lagta hai koi nahi hai - seeing dark windows and silence.)</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="grammar-card" style="border-color:var(--accent-primary);">
+            <div class="grammar-title"><span>4. Preventative Instruction: Please make sure not to...</span><span class="particle-badge" style="background:var(--accent-primary);">Pt 87</span></div>
+            <div class="grammar-formula">ない-form + ように してください (Please make an effort / ensure not to do)</div>
+            <p style="color:var(--text-muted);margin-bottom:1rem;">Use <strong>～ないようにしてください</strong> to politely give negative instructions or warnings, asking someone to make sure they avoid a certain action ("Please make sure not to..."). Softer and more instructional than plain <i>~naide kudasai</i>!</p>
+            <ul class="example-list">
+                <li onclick="speakText('ここ に くるま を とめない ように して ください。')">
+                    <span class="ex-jp">ここ に 車（くるま）を 止（と）めない ように してください。</span>
+                    <span class="ex-rom">Koko ni kuruma wo tomenai you ni shite kudasai. (Please yahaan gaadi park na karein.)</span>
+                </li>
+                <li onclick="speakText('よる おそく、おおきい こえ で はなさない ように して ください。')">
+                    <span class="ex-jp">夜（よる）遅（おそ）く、大（おお）きい 声（こえ）で 話（はな）さない ように してください。</span>
+                    <span class="ex-rom">Yoru osoku, ookii koe de hanasanai you ni shite kudasai. (Please raat der tak loud awaaz mein mat boliye.)</span>
+                </li>
+                <li onclick="speakText('じしん の とき は あわてない ように して ください。')">
+                    <span class="ex-jp">地震（じしん）の ときは 慌（あわ）てない ように してください。</span>
+                    <span class="ex-rom">Jishin no toki wa awatenai you ni shite kudasai. (Earthquake ke waqt panic mat kijiye / ensure you stay calm.)</span>
+                </li>
+                <li onclick="speakText('ひなん する とき は エレベーター を つかわない ように して ください。')">
+                    <span class="ex-jp">避難（ひなん）するときは エレベーターを 使（つか）わない ように してください。</span>
+                    <span class="ex-rom">Hinan suru toki wa erebeetaa wo tsukawanai you ni shite kudasai. (Evacuation ke waqt elevator use na kijiye.)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TAB 3: Audio Vocab Cards -->
+    <div id="tab-vocab" class="tab-content">
+        <div class="section-header">
+            <h3>🗣️ Chapter 17 Rules, Safety & Disaster Flashcards</h3>
+            <p>Click any card to listen to the Japanese pronunciation and memorize safety regulations and emergency items.</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ルール / 決（き）まり / マナー</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Ruuru / Kimari / Manaa</div><div class="meaning-text">Rule / Regulation (niyam) / Manners</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">安全（あんぜん）/ 危険（きけん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Anzen / Kiken</div><div class="meaning-text">Safety / Danger / hazard</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">注意（ちゅうい）/ 警報（けいほう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Chuui / Keihou</div><div class="meaning-text">Caution / Warning alarm</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">地震（じしん）/ 台風（たいふう）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Jishin / Taifuu</div><div class="meaning-text">Earthquake (bhookamp) / Typhoon (toofan)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">火事（かじ）/ 防災（ぼうさい）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaji / Bousai</div><div class="meaning-text">Fire / Disaster prevention</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">避難（ひなん）/ 避難所（ひなんじょ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hinan / Hinanjo</div><div class="meaning-text">Evacuation / Evacuation shelter</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">備（そな）える / 準備（じゅんび）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Sonaeru / Junbi</div><div class="meaning-text">To prepare for / Preparation (taiyari)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">非常（ひじょう）/ 非常口（ひじょうぐち）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hijou / Hijouguchi</div><div class="meaning-text">Emergency / Emergency exit door</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">禁止（きんし）/ 禁煙（きんえん）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kinshi / Kin'en</div><div class="meaning-text">Prohibited / No smoking (dhumrapan nishedh)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">立入（たちいり）禁止（きんし）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Tachiiri kinshi</div><div class="meaning-text">No entry / Authorized personnel only</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ゴミ / 分別（ぶんべつ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Gomi / Bunbetsu</div><div class="meaning-text">Garbage / Trash sorting (alag alag karna)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">燃（も）える ゴミ / 燃（も）えない ゴミ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Moeru gomi / Moenai gomi</div><div class="meaning-text">Burnable trash / Non-burnable trash</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ペットボトル / 資源（しげん）ゴミ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Pettobotoru / Shigen gomi</div><div class="meaning-text">PET bottle / Recyclable garbage</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">出（だ）す / 捨（す）てる</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Dasu / Suteru</div><div class="meaning-text">To put out trash / To throw away</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">閉（しま）る / 止（とま）る / 開（あ）ける</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shimaru / Tomaru / Akeru</div><div class="meaning-text">To close (intr) / To stop / To open (tr)</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">静（しず）かに する / 守（まも）る</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Shizuka ni suru / Mamoru</div><div class="meaning-text">To stay quiet / To obey / follow rules</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">非常袋（ひじょうぶくろ）/ 水（みず）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Hijoubukuro / Mizu</div><div class="meaning-text">Emergency preparedness bag / Drinking water</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">乾（かん）パン / 毛布（もうふ）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kanpan / Moufu</div><div class="meaning-text">Dry emergency biscuits / Blanket</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">懐中電灯（かいちゅうでんとう）/ 電池（でんち）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Kaichuudentou / Denchi</div><div class="meaning-text">Flashlight / Torch / Batteries</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">ラジオ / 薬（くすり）</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Rajio / Kusuri</div><div class="meaning-text">Portable radio / Medicine / first aid</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">マスク / ティッシュ</span><button class="btn-audio">🔊</button></div><div class="romaji-text">Masuku / Tisshu</div><div class="meaning-text">Face mask / Tissues / hygiene items</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～ことに なって います</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~koto ni natte imasu</div><div class="meaning-text">It is a rule that / It is decided that</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～の 場合（ばあい）は</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~no baai wa</div><div class="meaning-text">In the case of _____ / Agar aisi situation ho</div></div>
+            <div class="card" onclick="speakCard(this)"><div class="card-top"><span class="jp-text">～ない ように して ください</span><button class="btn-audio">🔊</button></div><div class="romaji-text">~nai you ni shite kudasai</div><div class="meaning-text">Please ensure / make an effort not to do</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 4: Kanji Mastery -->
+    <div id="tab-kanji" class="tab-content">
+        <div class="section-header">
+            <h3>🈹 Chapter 17 Kanji Mastery (24 Essential Kanjis)</h3>
+            <p>Master the Kanji for safety, danger, earthquakes, fire, disasters, evacuation, prohibition, rules, and garbage disposal.</p>
+        </div>
+        <div class="kanji-grid">
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">安</div><div class="kanji-info"><h5>Relax / Cheap / Safe</h5><div class="kanji-readings">Onyomi: <span>アン (an)</span><br>Kunyomi: やす-い</div></div></div><div class="kanji-example" onclick="speakText('安全、安い、安心')"><span>安全（あんぜん）- safety<br>安い（やすい）- cheap / inexpensive</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">全</div><div class="kanji-info"><h5>Whole / Entire / All</h5><div class="kanji-readings">Onyomi: <span>ゼン (zen)</span><br>Kunyomi: まった-く、すべ-て</div></div></div><div class="kanji-example" onclick="speakText('安全、全部、全国')"><span>安全（あんぜん）- safety<br>全部（ぜんぶ）- all / everything</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">危</div><div class="kanji-info"><h5>Dangerous / Fear / Uneasy</h5><div class="kanji-readings">Onyomi: <span>キ (ki)</span><br>Kunyomi: あぶ-ない、あや-うい</div></div></div><div class="kanji-example" onclick="speakText('危険、危ない、危機')"><span>危険（きけん）- danger / hazard<br>危ない（あぶない）- dangerous</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">険</div><div class="kanji-info"><h5>Precipitous / Inaccessible / Sharp</h5><div class="kanji-readings">Onyomi: <span>ケン (ken)</span><br>Kunyomi: けわ-しい</div></div></div><div class="kanji-example" onclick="speakText('危険、保険、険しい')"><span>危険（きけん）- danger / peril<br>保険（ほけん）- insurance</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">注</div><div class="kanji-info"><h5>Pour / Concentrate / Note</h5><div class="kanji-readings">Onyomi: <span>チュウ (chuu)</span><br>Kunyomi: そそ-ぐ</div></div></div><div class="kanji-example" onclick="speakText('注意、注文、注目')"><span>注意（ちゅうい）- caution / attention<br>注文（ちゅうもん）- order</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">意</div><div class="kanji-info"><h5>Idea / Mind / Heart / Taste</h5><div class="kanji-readings">Onyomi: <span>イ (i)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('注意、意見、意味')"><span>注意（ちゅうい）- caution<br>意味（いみ）- meaning</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">地</div><div class="kanji-info"><h5>Ground / Earth / Soil</h5><div class="kanji-readings">Onyomi: <span>チ、ジ (chi, ji)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('地震、地図、地下')"><span>地震（じしん）- earthquake<br>地図（ちず）- map</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">震</div><div class="kanji-info"><h5>Quake / Shake / Tremble</h5><div class="kanji-readings">Onyomi: <span>シン (shin)</span><br>Kunyomi: ふる-う、ふる-える</div></div></div><div class="kanji-example" onclick="speakText('地震、震度、震える')"><span>地震（じしん）- earthquake<br>震度（しんど）- seismic intensity scale</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">台</div><div class="kanji-info"><h5>Pedestal / Stand / Machine counter</h5><div class="kanji-readings">Onyomi: <span>ダイ、タイ (dai, tai)</span><br>Kunyomi: うてな</div></div></div><div class="kanji-example" onclick="speakText('台風、台所、一台')"><span>台風（たいふう）- typhoon<br>台所（だいどころ）- kitchen</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">風</div><div class="kanji-info"><h5>Wind / Air / Style</h5><div class="kanji-readings">Onyomi: <span>フウ、フ (fuu)</span><br>Kunyomi: かぜ</div></div></div><div class="kanji-example" onclick="speakText('台風、風、和風')"><span>台風（たいふう）- typhoon<br>風（かぜ）- wind / breeze</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">火</div><div class="kanji-info"><h5>Fire / Tuesday</h5><div class="kanji-readings">Onyomi: <span>カ (ka)</span><br>Kunyomi: ひ、ほ</div></div></div><div class="kanji-example" onclick="speakText('火事、火曜日、花火')"><span>火事（かじ）- house fire<br>花火（はなび）- fireworks</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">事</div><div class="kanji-info"><h5>Matter / Thing / Business</h5><div class="kanji-readings">Onyomi: <span>ジ、ズ (ji)</span><br>Kunyomi: こと</div></div></div><div class="kanji-example" onclick="speakText('火事、仕事、事故')"><span>火事（かじ）- fire emergency<br>仕事（しごと）- job / work</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">避</div><div class="kanji-info"><h5>Evade / Avoid / Ward off</h5><div class="kanji-readings">Onyomi: <span>ヒ (hi)</span><br>Kunyomi: さ-ける</div></div></div><div class="kanji-example" onclick="speakText('避難、避ける、避難所')"><span>避難（ひなん）- evacuation<br>避ける（さける）- to avoid</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">難</div><div class="kanji-info"><h5>Difficult / Impossible / Trouble</h5><div class="kanji-readings">Onyomi: <span>ナン (nan)</span><br>Kunyomi: むずか-しい</div></div></div><div class="kanji-example" onclick="speakText('避難、難しい、困難')"><span>避難（ひなん）- evacuation<br>難しい（むずかしい）- difficult</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">防</div><div class="kanji-info"><h5>Ward off / Defend / Protect</h5><div class="kanji-readings">Onyomi: <span>ボウ (bou)</span><br>Kunyomi: ふせ-ぐ</div></div></div><div class="kanji-example" onclick="speakText('防災、防ぐ、予防')"><span>防災（ぼうさい）- disaster prevention<br>防ぐ（ふせぐ）- to prevent / defend</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">備</div><div class="kanji-info"><h5>Equip / Provision / Preparation</h5><div class="kanji-readings">Onyomi: <span>ビ (bi)</span><br>Kunyomi: そな-える、そな-わる</div></div></div><div class="kanji-example" onclick="speakText('備える、準備、設備')"><span>備える（そなえる）- prepare for<br>準備（じゅんび）- preparation</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">警</div><div class="kanji-info"><h5>Admonish / Commandment / Guard</h5><div class="kanji-readings">Onyomi: <span>ケイ (kei)</span><br>Kunyomi: いまし-める</div></div></div><div class="kanji-example" onclick="speakText('警報、警察、警備')"><span>警報（けいほう）- warning alarm<br>警察（けいさつ）- police</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">報</div><div class="kanji-info"><h5>Report / News / Reward</h5><div class="kanji-readings">Onyomi: <span>ホウ (hou)</span><br>Kunyomi: むく-いる</div></div></div><div class="kanji-example" onclick="speakText('警報、報告、天気予報')"><span>警報（けいほう）- warning<br>天気予報（てんきよほう）- weather forecast</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">非</div><div class="kanji-info"><h5>Un- / Mistake / Negative / Injustice</h5><div class="kanji-readings">Onyomi: <span>ヒ (hi)</span><br>Kunyomi: あら-ず</div></div></div><div class="kanji-example" onclick="speakText('非常、非常口、非常袋')"><span>非常（ひじょう）- emergency<br>非常口（ひじょうぐち）- emergency exit</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">常</div><div class="kanji-info"><h5>Usual / Ordinary / Normal</h5><div class="kanji-readings">Onyomi: <span>ジョウ (jou)</span><br>Kunyomi: つね、とこ</div></div></div><div class="kanji-example" onclick="speakText('非常、日常、正常')"><span>非常（ひじょう）- emergency (not normal)<br>日常（にちじょう）- everyday / daily</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">禁</div><div class="kanji-info"><h5>Prohibition / Ban / Forbid</h5><div class="kanji-readings">Onyomi: <span>キン (kin)</span><br>Kunyomi: -</div></div></div><div class="kanji-example" onclick="speakText('禁止、禁煙、厳禁')"><span>禁止（きんし）- prohibition<br>禁煙（きんえん）- no smoking</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">止</div><div class="kanji-info"><h5>Stop / Halt / Abort</h5><div class="kanji-readings">Onyomi: <span>シ (shi)</span><br>Kunyomi: と-まる、と-める</div></div></div><div class="kanji-example" onclick="speakText('禁止、止まる、中止')"><span>禁止（きんし）- prohibition / ban<br>止まる（とまる）- to stop</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">守</div><div class="kanji-info"><h5>Guard / Protect / Obey</h5><div class="kanji-readings">Onyomi: <span>シュ、ス (shu)</span><br>Kunyomi: まも-る、も-り</div></div></div><div class="kanji-example" onclick="speakText('守る、留守、お守り')"><span>守る（まもる）- to obey / protect<br>留守（るす）- absence from home</span>🔊</div></div>
+            <div class="kanji-card"><div class="kanji-top"><div class="kanji-char">捨</div><div class="kanji-info"><h5>Discard / Throw away / Abandon</h5><div class="kanji-readings">Onyomi: <span>シャ (sha)</span><br>Kunyomi: す-てる</div></div></div><div class="kanji-example" onclick="speakText('捨てる、取捨選択')"><span>捨てる（すてる）- to throw away<br>ゴミを捨てる - throw out trash</span>🔊</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 5: Roleplay Module -->
+    <div id="tab-roleplay" class="tab-content">
+        <div class="section-header">
+            <h3>🚀 Rules & Disaster Evacuation Roleplays (アパートのルールと防災ガイダンス)</h3>
+            <p>Master explaining apartment trash regulations to a new resident and receiving vital safety instructions during an earthquake!</p>
+        </div>
+        <div class="interactive-box" style="border-color:var(--accent-primary);">
+            <h4>📋 Scene 1: Apartment Rules Explanation (アパートのルールの説明)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('この アパート の ルール について せつめい します。')">
+                    <strong style="color:var(--accent-primary);">管理人 (Manager):</strong> この アパートの ルールに ついて 説明（せつめい）します。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kono apaato no ruuru ni tsuite setsumei shimasu. (I will explain the rules of this apartment building.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('はい、よろしく おねがいします。ゴミ は どう したら いい です か。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> はい、よろしく お願（ねが）いします。ゴミは どう したら いいですか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hai, yoroshiku onegaishimasu. Gomi wa dou shitara ii desu ka. (Yes, please do. What should I do with the garbage?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('ゴミ は あさ はちじ までに だす ことに なって います。げつようび が もえる ゴミ です。')">
+                    <strong style="color:var(--accent-primary);">管理人 (Manager):</strong> ゴミは 朝（あさ）8時（じ）までに 出（だ）す ことに なっています。月曜日（げつようび）が 燃（も）えるゴミ です。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Gomi wa asa 8-ji made ni dasu koto ni natte imasu. Getsuyoubi ga moeru gomi desu. (The rule is to put out garbage by 8:00 AM. Monday is burnable garbage.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('わかりました。ペット を かう こと は できます か。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> わかりました。ペットを 飼（か）う ことは できますか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Wakarimashita. Petto wo kau koto wa dekimasu ka. (I understand. Can I keep a pet?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('ペット を かう とき は、かんり がいしゃ に れんらく する ことに なって います。それから、よる じゅうじ いこう は しずかに する ことに なって います。')">
+                    <strong style="color:var(--accent-primary);">管理人 (Manager):</strong> ペットを 飼（か）う ときは、管理（かんり）会社（かいしゃ）に 連絡（れんらく）する ことに なっています。それから、夜（よる）10時（じ）以降（いこう）は 静（しず）かに する ことに なっています。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Petto wo kau toki wa, kanri kaisha ni renraku suru koto ni natte imasu. Sorekara, yoru 10-ji ikou wa shizuka ni suru koto ni natte imasu. (When keeping a pet, the rule is to contact the management company. Also, the rule is to be quiet after 10:00 PM.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('はい、きまり を しっかり まもります。ありがとう ございます。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> はい、決（き）まりを しっかり 守（まも）ります。ありがとうございます！<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hai, kimari wo shikkari mamorimasu. Arigatou gozaimasu. (Yes, I will strictly follow the rules. Thank you very much!)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-box" style="border-color:var(--accent-warning);">
+            <h4>🌋 Scene 2: Disaster Safety & Earthquake Evacuation Guidance (地震・防災ガイダンス)</h4>
+            <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem;">
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('この たてもの では、じしん の とき、どう したら いい です か。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> この 建物（たてもの）では、地震（じしん）の とき、どう したら いいですか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Kono tatemono dewa, jishin no toki, dou shitara ii desu ka. (What should I do during an earthquake in this building?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('まず、あわてないで ください。')">
+                    <strong style="color:var(--accent-primary);">防災担当 (Safety Officer):</strong> まず、慌（あわ）てないで ください。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Mazu, awatenaide kudasai. (First of all, please do not panic.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('はい。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> はい。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hai. (Understood.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('それから、エレベーター を つかわない ように して ください。かいだん を つかって ください。')">
+                    <strong style="color:var(--accent-primary);">防災担当 (Safety Officer):</strong> それから、エレベーター を 使（つか）わない ように してください。階段（かいだん）を 使（つか）ってください。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Sorekara, erebeetaa wo tsukawanai you ni shite kudasai. Kaidan wo tsukatte kudasai. (And then, please make sure not to use the elevator. Please use the stairs.)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-secondary);cursor:pointer;" onclick="speakText('ひなんじょ は どこ です か。')">
+                    <strong style="color:var(--accent-secondary);">あなた (You):</strong> 避難所（ひなんじょ）は どこですか。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Hinanjo wa doko desu ka. (Where is the evacuation shelter?)</span>
+                </div>
+                <div style="background:var(--bg-tertiary);padding:1.2rem;border-radius:14px;border-left:4px solid var(--accent-primary);cursor:pointer;" onclick="speakText('ちかく の こうえん が ひなんじょ に なって います。ひじょうぶくろ を もって ひなん して ください。')">
+                    <strong style="color:var(--accent-primary);">防災担当 (Safety Officer):</strong> 近（ちか）くの 公園（こうえん）が 避難所（ひなんじょ）に なっています。非常袋（ひじょうぶくろ）を 持（も）って 避難（ひなん）してください。<br>
+                    <span style="font-size:0.9rem;color:var(--text-muted);">Chikaku no kouen ga hinanjo ni natte imasu. Hijoubukuro wo motte hinan shite kudasai. (The nearby park is designated as the evacuation shelter. Please evacuate carrying your emergency bag.)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Quiz Module -->
+    <div id="tab-quiz" class="tab-content">
+        <div class="quiz-container">
+            <div class="section-header" style="text-align:center;">
+                <h3>🎮 Chapter 17 Rules, Safety & Disaster Quiz</h3>
+                <p>Test your understanding of established rules, conditional cases, evidential conjectures, and disaster preparedness!</p>
+            </div>
+            <div id="quiz-questions"></div>
+            <div class="quiz-score" id="quiz-score" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- TAB 7: Verbatim Text -->
+    <div id="tab-verbatim" class="tab-content">
+        <div class="verbatim-box">
+            <div class="verbatim-header">
+                <div><strong>📖 irodori2.txt Verbatim Source Text</strong> (Lines 5879–6090)</div>
+                <span class="badge-100">100% Zero-Loss Verbatim</span>
+            </div>
+            <pre># 📘 Chapter 17: ルール と あんぜん (ルール と 安全) - Rules and Safety
+
+## 🎯 Goal:
+- rules samajhna  
+- safety instructions follow karna  
+- disaster / emergency situation mein kya karna hai  
+- apartment aur town ke rules samajhna  
+
+---
+
+## 1) Safety / Rules Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ルール | るうる | Rule |
+| きまり | きまり | Rule / Niyam |
+| マナー | まなあ | Manners |
+| あんぜん (安全) | あんぜん | Safety |
+| きけん (危険) | きけん | Danger |
+| ちゅうい (注意) | ちゅうい | Caution |
+| じしん (地震) | じしん | Earthquake |
+| たいふう (台風) | たいふう | Typhoon |
+| かじ (火事) | かじ | Fire |
+| ひなん (避難) | ひなん | Evacuation |
+| ひなんじょ (避難所) | ひなんじょ | Evacuation shelter |
+| ぼうさい (防災) | ぼうさい | Disaster prevention |
+| そなえる (備える) | そなえる | Prepare for |
+| じゅんび (準備) | じゅんび | Preparation |
+| けいほう (警報) | けいほう | Warning |
+| ひじょう (非常) | ひじょう | Emergency |
+| ひじょうぐち (非常口) | ひじょうぐち | Emergency exit |
+| きんし (禁止) | きんし | Prohibited |
+| きんえん (禁煙) | きんえん | No smoking |
+| たちいりきんし (立入禁止) | たちいりきんし | No entry |
+
+---
+
+## 2) Daily Life Rules Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ゴミ | ごみ | Garbage |
+| ぶんべつ (分別) | ぶんべつ | Sorting |
+| もえる ゴミ (燃えるゴミ) | もえる ごみ | Burnable garbage |
+| もえない ゴミ (燃えないゴミ) | もえない ごみ | Non-burnable garbage |
+| ペットボトル | ぺっとぼとる | PET bottle |
+| しげんゴミ (資源ゴミ) | しげんごみ | Recyclables |
+| だす (出す) | だす | Put out |
+| しまる / しめる (閉まる / 閉める) | しまる / しめる | Close |
+| とまる / とめる (止まる / 止める) | とまる / とめる | Stop |
+| あける (開ける) | あける | Open |
+| しずかに する | しずかに する | Stay quiet |
+| まもる (守る) | まもる | Follow / protect |
+| すてる (捨てる) | すてる | Throw away |
+
+---
+
+## 3) Grammar Point 84: ～ことに なって います  
+## Meaning: “Rule hai ki... / It has been decided that...”
+
+**Dictionary form + ことに なって います**  
+**ない form + ことに なって います**
+
+Bahut important pattern hai. Rules, school, office, apartment regulations mein bahut use hota hai.
+
+### Examples:
+- この アパート では、よる 10じ いこう は しずかに する **ことに なって います**。  
+  → Is apartment mein rule hai ki raat 10 baje ke baad shaant rehna hota hai.
+
+- ゴミ は げつようび と もくようび に だす **ことに なって います**。  
+  → Rule hai ki garbage Monday aur Thursday ko nikalna hota hai.
+
+- ここ では たばこ を すわない **ことに なって います**。  
+  → Yahaan smoking mana hai / rule hai ki smoke nahi karte.
+
+- かいぎ には 5ふん まえに くる **ことに なって います**。  
+  → Rule hai ki meeting mein 5 minute pehle aana hota hai.
+
+### Difference:
+- **～なければ なりません** = karna zaroori hai  
+- **～ことに なって います** = system / rule / decided arrangement
+
+---
+
+## 4) Grammar Point 85: ～ばあい は  
+## Meaning: “Agar aisi situation ho / in case of”
+
+**Noun + の ばあい は**  
+**Verb plain + ばあい は**
+
+### Examples:
+- じしん の **ばあい は**、エレベーター を つかわないで ください。  
+  → Earthquake ke case mein elevator use mat kijiye.
+
+- かじ の **ばあい は**、すぐ 119ばん に でんわ してください。  
+  → Aag lagne ke case mein turant 119 pe phone kijiye.
+
+- あめ が つよい **ばあい は**、イベント は ちゅうし です。  
+  → Agar baarish tez ho toh event cancel hai.
+
+- なにか こまった こと が あった **ばあい は**、かんりにん (管理人) に れんらく してください。  
+  → Agar koi problem ho toh manager ko contact kijiye.
+
+---
+
+## 5) Grammar Point 86: ～ようです  
+## Meaning: “Lagta hai / It seems”
+
+Ye pattern **appearance / situation dekhkar** use hota hai.
+
+### Examples:
+- そと は さむい **ようです**。  
+  → Bahar thand lagti hai.
+
+- この みち は あぶない **ようです**。  
+  → Yeh road dangerous lagti hai.
+
+- でんしゃ が とまって いる **ようです**。  
+  → Lagta hai train ruk gayi hai.
+
+- だれも いない **ようです**。  
+  → Lagta hai koi nahi hai.
+
+### Difference:
+- **～そうです** = suna hai / ya dekhkar “looks like”
+- **～ようです** = situation dekhkar “it seems”
+
+---
+
+## 6) Grammar Point 87: ～ない ように して ください  
+## Meaning: “Please make sure not to...”
+
+**ない-form + ように して ください**
+
+### Examples:
+- ここ に くるま を とめない **ように して ください**。  
+  → Please yahaan gaadi park na karein.
+
+- よる おそく、おおきい こえ で はなさない **ように して ください**。  
+  → Please raat der tak loud awaaz mein mat boliye.
+
+- じしん の とき は あわてない **ように して ください**。  
+  → Earthquake ke waqt panic mat kijiye.
+
+- ひなん するとき は エレベーター を つかわない **ように して ください**。  
+  → Evacuation ke waqt elevator use na kijiye.
+
+---
+
+## 7) Sample Rule Explanations
+
+### Apartment rules:
+```
+この アパート では、
+・ゴミは あさ 8じ までに だす ことに なって います。
+・ペットを かう ときは、かんりがいしゃ に れんらくする ことに なって います。
+・よる 10じ いこう は しずかに する ことに なって います。
+```
+
+### Hinglish meaning:
+Is apartment mein:
+- garbage subah 8 baje tak nikalna hota hai  
+- pet rakhna ho toh management company ko contact karna hota hai  
+- raat 10 ke baad shaant rehna hota hai  
+
+---
+
+## 8) Disaster Preparedness Vocabulary
+
+| Japanese | よみかた | Meaning |
+|---|---|---|
+| ひじょうぶくろ (非常袋) | ひじょうぶくろ | Emergency bag |
+| みず (水) | みず | Water |
+| かんぱん (乾パン) | かんぱん | Dry emergency biscuits |
+| かいちゅうでんとう (懐中電灯) | かいちゅうでんとう | Flashlight |
+| でんち (電池) | でんち | Battery |
+| ラジオ | らじお | Radio |
+| くすり (薬) | くすり | Medicine |
+| もうふ (毛布) | もうふ | Blanket |
+| マスク | ますく | Mask |
+| ティッシュ | てぃっしゅ | Tissue |
+
+### Useful sentences:
+- じしん に そなえて、ひじょうぶくろ を じゅんびして います。  
+  → Earthquake ke liye emergency bag ready rakha hai.
+
+- ぼうさい の ために、みず と たべもの を じゅんびして おいた ほうが いいです。  
+  → Disaster prevention ke liye paani aur khana ready rakhna accha hai.
+
+---
+
+## 9) Sample Conversation - Safety guidance
+
+**A:** この たてもの (建物) では、じしん の とき、どう したら いいですか。  
+**B:** まず、あわてないで ください。  
+**A:** はい。  
+**B:** それから、エレベーター を つかわない ように して ください。  
+**A:** ひなんじょ は どこですか。  
+**B:** ちかく の こうえん が ひなんじょ に なって います。  
+
+### Hinglish meaning:
+A: Is building mein earthquake ke waqt kya karna chahiye?  
+B: Sabse pehle panic mat kijiye.  
+A: Theek hai.  
+B: Phir elevator use mat kijiye.  
+A: Evacuation shelter kahaan hai?  
+B: Paas ka park evacuation shelter hai.
+
+---</pre>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>🎌 Irodori Elementary 2 (A2-2) • Chapter 17: ルールとあんぜん • Built with 100% Verbatim Fidelity & Disaster Preparedness Audio Simulators</p>
+</footer>
+
+<script>
+    function speakText(text) {
+        if (!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.95;
+        const voices = window.speechSynthesis.getVoices();
+        const jpVoice = voices.find(v => v.lang.includes('ja') && v.name.includes('Google')) || voices.find(v => v.lang.includes('ja'));
+        if (jpVoice) utterance.voice = jpVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+    function speakCard(el) {
+        const jp = el.querySelector('.jp-text')?.innerText || '';
+        speakText(jp);
+    }
+    function toggleTheme() {
+        const html = document.documentElement;
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+
+    const safetyData = {
+        garbage: {
+            kotoninatteiru: { jp: "この アパート では、ゴミ は あさ 8じ までに だす ことに なって います。", rom: "Kono apaato dewa, gomi wa asa 8-ji made ni dasu koto ni natte imasu.", hi: "Hindi Translation: Is apartment mein rule hai ki garbage subah 8 baje tak nikalna hota hai!" },
+            baai: { jp: "もえない ゴミ の 場合（ばあい）は、専用（せんよう）の 袋（ふくろ）に 入（い）れて 出（だ）して ください。", rom: "Moenai gomi no baai wa, senyou no fukuro ni irete dashite kudasai.", hi: "Hindi Translation: Non-burnable kachre ke case mein, special official bag mein daal kar nikaliye!" },
+            youdesu: { jp: "来週（らいしゅう）の 月曜日（げつようび）は 祝日（しゅくじつ）なので、ゴミの 回収（かいしゅう）が 休み（やすみ）の ようです。", rom: "Raishuu no getsuyoubi wa shukujitsu nanode, gomi no kaishuu ga yasumi no you desu.", hi: "Hindi Translation: Agle Monday ko holiday hai isliye lagta hai garbage collection band rahega!" },
+            naiyouni: { jp: "夜（よる）遅（おそ）い 時間（じかん）に ゴミを 出（だ）さない ように してください。", rom: "Yoru osoi jikan ni gomi wo dasanai you ni shite kudasai.", hi: "Hindi Translation: Please make sure not to put out garbage late at night!" }
+        },
+        earthquake: {
+            kotoninatteiru: { jp: "近（ちか）くの 小学校（しょうがっこう）が、地震（じしん）の ときの 避難所（ひなんじょ）に なっています。", rom: "Chikaku no shougakkou ga, jishin no toki no hinanjo ni natte imasu.", hi: "Hindi Translation: System hai ki paas ka primary school earthquake ke waqt evacuation shelter ban jata hai!" },
+            baai: { jp: "地震（じしん）の 場合（ばあい）は、絶対（ぜったい）に エレベーターを 使（つか）わないで ください。", rom: "Jishin no baai wa, zettai ni erebeetaa wo tsukawanaide kudasai.", hi: "Hindi Translation: Earthquake ke case mein bilkul bhi elevator use mat kijiye!" },
+            youdesu: { jp: "今（いま）の 揺（ゆ）れは 震度（しんど）3 くらいの ようです。机（つくえ）の 下（した）に 隠（かく）れましょう。", rom: "Ima no yure wa shindo 3 kurai no you desu. Tsukue no shita ni kakuremashou.", hi: "Hindi Translation: Abhi ka jhatka lagta hai shindo 3 ke karib ka tha. Table ke niche chhip jaate hain!" },
+            naiyouni: { jp: "地震（じしん）の ときは、慌（あわ）てて 外（そと）に 走（はし）り出（だ）さない ように してください。", rom: "Jishin no toki wa, awatete soto ni hashiridasanai you ni shite kudasai.", hi: "Hindi Translation: Please make sure not to panic and run outside during an earthquake!" }
+        },
+        fire: {
+            kotoninatteiru: { jp: "アパートの 廊下（ろうか）に 荷物（にもつ）を 置（お）かない ことに なっています。", rom: "Apaato no rouka ni nimotsu wo okanai koto ni natte imasu.", hi: "Hindi Translation: Rule hai ki apartment ke corridor (hallway) mein saman nahi rakhte!" },
+            baai: { jp: "火事（かじ）の 場合（ばあい）は、大（おお）きい 声（こえ）で「火事だ！」と 叫（さけ）んで 119番（ばん）に 電話（でんわ）してください。", rom: "Kaji no baai wa, ookii koe de 'Kaji da!' to sakende 119-ban ni denwa shite kudasai.", hi: "Hindi Translation: Aag lagne ke case mein loud awaaz mein 'Aag lagi hai!' chilla kar 119 pe call kijiye!" },
+            youdesu: { jp: "あそこの ビル から 煙（けむり）が 出（で）て いる ようです。消防車（しょうぼうしゃ）が 来（き）ました。", rom: "Asoko no biru kara kemuri ga dete iru you desu. Shoubousha ga kimashita.", hi: "Hindi Translation: Wahaan us building se dhuan nikalta lagta hai. Fire engine aa gayi hai!" },
+            naiyouni: { jp: "煙（けむり）を 吸（す）わない ように、ハンカチで 口（くち）と 鼻（はな）を 覆（おお）う ように してください。", rom: "Kemuri wo suwanai you ni, hankachi de kuchi to hana wo oou you ni shite kudasai.", hi: "Hindi Translation: Ensure you cover your mouth and nose with a handkerchief so you don't inhale smoke!" }
+        },
+        typhoon: {
+            kotoninatteiru: { jp: "台風（たいふう）が 来（く）る 前（まえ）に、ベランダの ものを 中（なか）に 入（い）れる ことに なっています。", rom: "Taifuu ga kuru mae ni, beranda no mono wo naka ni ireru koto ni natte imasu.", hi: "Hindi Translation: Rule/custom hai ki typhoon aane se pehle balcony ki cheezein andar rakh li jati hain!" },
+            baai: { jp: "台風（たいふう）の 警報（けいほう）が出（で）た 場合（ばあい）は、無理（むり）に 外出（がいしゅつ）しないで ください。", rom: "Taifuu no keihou ga deta baai wa, muri ni gaishutsu shinaide kudasai.", hi: "Hindi Translation: Typhoon warning nikalne ke case mein zabardasti bahar na niklen!" },
+            youdesu: { jp: "雨（あめ）と 風（かぜ）が だんだん 強（つよ）く なって きた ようです。今夜（こんや）が ピークです。", rom: "Ame to kaze ga dandan tsuyoku natte kita you desu. Konya ga piiku desu.", hi: "Hindi Translation: Baarish aur hawa dheere dheere tez hoti lagti hai. Aaj raat peak hai!" },
+            naiyouni: { jp: "停電（ていでん）に 備（そな）えて、懐中電灯（かいちゅうでんとう）の 電池（でんち）が 切（き）れない ように してください。", rom: "Teiden ni sonaete, kaichuudentou no denchi ga kirenai you ni shite kudasai.", hi: "Hindi Translation: Power cut ke liye, please make sure flashlight ki battery dead na ho!" }
+        },
+        nosmoking: {
+            kotoninatteiru: { jp: "この 公園（こうえん）や 道路（どうろ）では、たばこを 吸（す）わない ことに なっています。", rom: "Kono kouen ya douro dewa, tabako wo suwanai koto ni natte imasu.", hi: "Hindi Translation: Is park aur road pe smoking mana hai / rule hai ki smoke nahi karte!" },
+            baai: { jp: "ルールに 違反（いはん）した 場合（ばあい）は、罰金（ばっきん）を 払（はら）わなければ なりません。", rom: "Ruuru ni ihan shita baai wa, bakkin wo harawanakereba narimasen.", hi: "Hindi Translation: Rule toden ke case mein fine ( जुर्माना) bharna padta hai!" },
+            youdesu: { jp: "あそこ は 工事中（こうじちゅう）なので、立入（たちいり）禁止（きんし）の ようです。", rom: "Asoko wa koujichuu nanode, tachiiri kinshi no you desu.", hi: "Hindi Translation: Wahaan construction chal raha hai isliye lagta hai no entry hai!" },
+            naiyouni: { jp: "ご近所（きんじょ）の 人（ひと）に 迷惑（めいわく）を かけない ように してください。", rom: "Gokinjo no hito ni meiwaku wo kakenai you ni shite kudasai.", hi: "Hindi Translation: Please make sure not to cause inconvenience or trouble to neighbors!" }
+        }
+    };
+
+    function updateSafetySim() {
+        const s = document.getElementById('sim-scene').value;
+        const g = document.getElementById('sim-gram').value;
+        const d = safetyData[s][g];
+        document.getElementById('sim-jp').innerHTML = d.jp;
+        document.getElementById('sim-rom').innerHTML = d.rom;
+        document.getElementById('sim-hi').innerHTML = d.hi;
+    }
+    function speakSafetySim() {
+        speakText(document.getElementById('sim-jp').innerText);
+    }
+
+    const quizData = [
+        { q: "1. 「この アパートでは、夜 10時 以降は 静かにする _______。」\n(It is AN ESTABLISHED RULE / SYSTEM in this apartment to stay quiet after 10 PM)", opt: ["ことに なって います (koto ni natte imasu)", "ように して います (you ni shite imasu)", "つもり です (tsumori desu)", "ことがあります (koto ga arimasu)"], ans: 0 },
+        { q: "2. 「地震の _______、エレベーターを 使わないで ください。」\n(IN CASE OF an earthquake, please do not use the elevator)", opt: ["場合は (baai wa)", "ときは (toki wa)", "せいで (seide)", "おかげで (okagede)"], ans: 0 },
+        { q: "3. 「誰も いない _______。部屋が 暗くて 静かです。」\n(IT SEEMS / APPEARS based on visual observation that nobody is here)", opt: ["ようです (you desu)", "そうです (sou desu)", "ことになっています (koto ni natte imasu)", "ためです (tame desu)"], ans: 0 },
+        { q: "4. 「ここに 車を 止めない _______ください。」\n(PLEASE MAKE SURE / ENSURE NOT TO park your car here - polite preventative instruction)", opt: ["ように して (you ni shite)", "ことで (koto de)", "ところで (tokoro de)", "ほどに (hodo ni)"], ans: 0 },
+        { q: "5. 「ゴミは _______と 木曜日に 出す ことに なって います。」\n(According to the sample rule, when do you put out garbage?)", opt: ["月曜日（げつようび - Monday）", "日曜日（にちようび - Sunday）", "金曜日（きんようび - Friday）", "土曜日（どようび - Saturday）"], ans: 0 },
+        { q: "6. 「～なければなりません」と 「～ことになっています」の 正しい 違いは どれですか？\n(What is the difference between nakereba narimasen and koto ni natte imasu?)", opt: ["~nakereba narimasen is personal obligation/necessity; ~koto ni natte imasu is an objective institutional rule, regulation, or arrangement!", "~nakereba narimasen is for food; ~koto ni natte imasu is for sports", "Both mean that you can do whatever you want without rules", "There is no difference at all between them"], ans: 0 },
+        { q: "7. 「防災（ぼうさい）」の 正しい 意味は どれですか？\n(What does bousai mean?)", opt: ["Disaster prevention / Emergency preparedness", "Fire festival", "Traffic accident", "Garbage collection truck"], ans: 0 },
+        { q: "8. 「非常袋（ひじょうぶくろ）」に 入れて おく べき もの（Items for emergency bag）として、irodori2.txt に 書かれている のは どれですか？", opt: ["水（みず）、乾パン（かんぱん）、懐中電灯（かいちゅうでんとう）、ラジオ、毛布（もうふ）", "ゲーム機、アイスクリーム、高級ワイン", "ギター、ピアノ、ドラム", "ペットの象（ぞう）"], ans: 0 },
+        { q: "9. 「立入禁止（たちいりきんし）」の サインがある 場所では、どうしなければ なりませんか？\n(What must you do when you see a Tachiiri Kinshi sign?)", opt: ["Do NOT enter / Keep out (Andar aana mana hai)", "Please come in freely and smoke", "Park your car here for free", "Throw your burnable garbage here"], ans: 0 },
+        { q: "10. 日本の アパートで ペットを 飼い（かい）たい ときは、どうする ことに なっていますか？\n(What is the rule when you want to keep a pet in a Japanese apartment?)", opt: ["管理会社（かんりがいしゃ - management company）や 管理人に 連絡・相談する ことになっている", "内緒で（ないしょで - in secret）勝手に 10匹の 猫を 飼う", "交番（こうばん）に 行って 警察官に 許可を もらう", "駅の ホームに ペットを 捨てる"], ans: 0 }
+    ];
+
+    let score = 0, answered = 0;
+    function renderQuiz() {
+        const cont = document.getElementById('quiz-questions');
+        cont.innerHTML = quizData.map((item, idx) => `
+            <div class="question-box" id="qbox-${idx}">
+                <div class="question-text"><span class="q-number">Q${idx+1}.</span><span class="q-text">${item.q}</span></div>
+                <div class="options-grid">
+                    ${item.opt.map((o, oIdx) => `
+                        <button class="option-btn" onclick="checkAnswer(${idx}, ${oIdx}, ${item.ans}, this)">
+                            <span>${o}</span><span class="status-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(qIdx, selected, correct, btn) {
+        const qbox = document.getElementById(`qbox-${qIdx}`);
+        if (qbox.dataset.answered) return;
+        qbox.dataset.answered = "true";
+        answered++;
+        const btns = qbox.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.disabled = true;
+            if (i === correct) { b.classList.add('correct'); b.querySelector('.status-icon').innerText = '✓ Correct'; }
+            else if (i === selected) { b.classList.add('wrong'); b.querySelector('.status-icon').innerText = '✗ Wrong'; }
+        });
+        if (selected === correct) score++;
+        if (answered === quizData.length) {
+            const sc = document.getElementById('quiz-score');
+            sc.style.display = 'block';
+            sc.innerHTML = `🎉 Quiz Completed! Your Score: ${score} / ${quizData.length} (${Math.round(score/quizData.length*100)}%)<br><span style="font-size:1rem;color:#cbd5e1;font-weight:400;margin-top:0.5rem;display:block;">${score>=8?'🌟 Superb! You can now confidently follow Japanese community rules and disaster safety instructions!':'💪 Keep trying! Review rule patterns (~ことになっています) and conditional cases (~場合は)!'}</span>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderQuiz);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>
